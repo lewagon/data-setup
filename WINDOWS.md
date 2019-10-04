@@ -14,7 +14,7 @@ A new window will appear, it is the Anaconda3 installer. Click on "Next".
 Accept the License Agreement by clicking on "I Agree".
 ![](images/anaconda_4.png)
 
-Click on "Next".
+Click on "Next".  
 ![](images/anaconda_5.png)
 
 Leave the default installation location, click on "Next".
@@ -23,10 +23,10 @@ Leave the default installation location, click on "Next".
 Leave the advanced installation options as default and click on "Install"
 ![](images/anaconda_7.png)
 
-When it says "Completed", click on "Next".
+When it says "Completed", click on "Next".  
 ![](images/anaconda_8.png)
 
-Click on "Next".
+Click on "Next".  
 ![](images/anaconda_9.png)
 
 Finally, uncheck the two options and click on "Finish".
