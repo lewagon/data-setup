@@ -48,3 +48,30 @@ Guess what? Click on "Next" :)
 And again! Just kidding, click on "Install".  
 
 ![](images/gitbash_12.png)
+
+Lastly, check "Launch Git Bash", uncheck "View Releave Notes" and click on "Finish".  
+
+![](images/gitbash_13.png)
+
+The Git Bash terminal should open.  
+
+![](images/gitbash_14.png)
+
+Type the following command (one by one):  
+```bash
+touch .bashrc
+exit
+```
+
+The terminal should close.  
+Reopen the terminal by clicking on "Start" then searching "Git Bash".  
+You should see the following message:
+
+![](images/gitbash_15.png)
+
+Again please quit the Git Bash terminal by typing:  
+```bash
+exit
+``` 
+
+Reopen one more time, you shouldn't see any red message this time.  
