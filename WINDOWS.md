@@ -140,7 +140,13 @@ exit
 ```
 
 The terminal should close.  
-Reopen the terminal by clicking on "Start" then searching "Git Bash".  
+Reopen the terminal by clicking on "Start".  
+![](images/start.png)
+
+Type "Git Bash" and click on the icon apearing.  
+
+![](images/gitbash_16.png)
+
 You should see the following message:
 
 ![](images/gitbash_15.png)
