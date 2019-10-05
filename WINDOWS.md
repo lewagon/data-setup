@@ -26,7 +26,7 @@ Leave the default installation location, click on "Next".
 
 ![](images/anaconda_6.png)
 
-Leave the advanced installation options as default and click on "Install"
+Check "Add Anaconda to my PATH environment variable" and click on "Install"  
 
 ![](images/anaconda_7.png)
 
