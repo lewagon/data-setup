@@ -81,30 +81,17 @@ Click on "Install".
 
 Click on "Finish".  
 
-![](images/sublime_6.png)  
-
-Press the windows key + R at the same time to open the "Run" tool. Type the command:  
-
-```bash
-%USERPROFILE%\AppData\Roaming\Sublime Text 3\Packages\User
-```
-
-Click on "OK"
-
-![](images/sublime_7.png)  
-
-A new Explorer window should open, it should be empty. Right click and chose "Git Bash here".  
-
-A new Git Bash terminal will open. Please copy the following command: 
-
-```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/Preferences.sublime-settings > Preferences.sublime-settings
-```
+![](images/sublime_6.png)
 
 
 
 
 
+# Github account
+
+Have you signed up to Github? If not [do it right away](https://github.com/join).  
+
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.
 
 # Git Bash
 
@@ -227,6 +214,91 @@ mkdir -p ~/code/$GITHUB_USERNAME
 
 
 
+# Github
+
+We need to generate SSH keys which are going to be used by Github
+to authenticate you. Think of it as a way to log in, but different from the
+well known username/password couple. If you already generated keys
+that you already use with other services, you can skip this step.
+
+Open a Git Bash terminal and type this, replacing the email with **yours** (the
+same one you used to create your GitHub account). It will prompt
+for information. Just press enter until it asks for a **passphrase**.
+
+```bash
+mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
+```
+
+**NB:** when asked for a passphrase, put something you want (and that you'll remember),
+it's a password to protect your private key stored on your hard drive. You'll type,
+nothing will show up on the screen, **that's normal**. Just type the passphrase,
+and when you're done, press `Enter`.
+
+Then you need to give your **public** key to GitHub. Run:
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
+then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
+**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
+Finish by clicking on the **Add key** green button.
+
+To check that this step is completed, in the Git Bash terminal run this. You will be
+prompted a warning, type `yes` then `Enter`.
+
+```bash
+ssh -T git@github.com
+```
+
+If you see something like this, you're done!
+
+```bash
+# Hi --------! You've successfully authenticated, but GitHub does not provide shell access
+```
+
+If it does not work, try running this before trying again the `ssh -T` command:
+
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
+understanding of what those keys are used for.
+
+
+# Sublime Text 3 - Package
+
+Let's go back to Sublime Text and install some packages that will help us to create better code.
+
+Press the windows key + R at the same time to open the "Run" tool. Type the command:  
+
+```bash
+%USERPROFILE%\AppData\Roaming\Sublime Text 3\Packages\User
+```
+
+Click on "OK"
+
+![](images/sublime_7.png)  
+
+A new Explorer window should open, it should be empty. Right click and chose "Git Bash here".  
+
+A new Git Bash terminal will open. Please copy the following command: 
+
+```bash
+curl -Ls https://raw.githubusercontent.com/lewagon/dotfiles/master/Preferences.sublime-settings > Preferences.sublime-settings
+```
+
+### Package install
+
+Now we can install the package `MagicPython`.<br>
+You can install a package via the Command Palette (`Ctrl` + `Shift` + `P` on Windows) then type `Install package`,<br>
+![](images/sublime_8.png)  
+
+Then type the name of the package you want to install and press `Enter`.
+![](images/sublime_9.png)  
+
 # Make
 
 Make is a build automation tool that build executable.  
@@ -289,66 +361,6 @@ You should get and answer like this:
 
 If you don't, please ask a TA.  
 
-
-
-# Github account
-
-Have you signed up to Github? If not [do it right away](https://github.com/join).  
-
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.  
-
-# Github
-
-We need to generate SSH keys which are going to be used by Github
-to authenticate you. Think of it as a way to log in, but different from the
-well known username/password couple. If you already generated keys
-that you already use with other services, you can skip this step.
-
-Open a Git Bash terminal and type this, replacing the email with **yours** (the
-same one you used to create your GitHub account). It will prompt
-for information. Just press enter until it asks for a **passphrase**.
-
-```bash
-mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
-```
-
-**NB:** when asked for a passphrase, put something you want (and that you'll remember),
-it's a password to protect your private key stored on your hard drive. You'll type,
-nothing will show up on the screen, **that's normal**. Just type the passphrase,
-and when you're done, press `Enter`.
-
-Then you need to give your **public** key to GitHub. Run:
-
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
-then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
-**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
-Finish by clicking on the **Add key** green button.
-
-To check that this step is completed, in the Git Bash terminal run this. You will be
-prompted a warning, type `yes` then `Enter`.
-
-```bash
-ssh -T git@github.com
-```
-
-If you see something like this, you're done!
-
-```bash
-# Hi --------! You've successfully authenticated, but GitHub does not provide shell access
-```
-
-If it does not work, try running this before trying again the `ssh -T` command:
-
-```bash
-ssh-add ~/.ssh/id_ed25519
-```
-
-Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
-understanding of what those keys are used for.
 
 
 # Alumni
