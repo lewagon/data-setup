@@ -236,10 +236,3 @@ If you don't, please ask a TA.
 
 
 
-Press the "Start" button.  
-
-![](images/start.png)  
-
-Search for "Git bash"
-
-
