@@ -24,26 +24,7 @@ Click on "Install".
 
 Click on "Finish".  
 
-![](images/sublime_6.png)  
-
-Press the windows key + R at the same time to open the "Run" tool. Type the command:  
-
-```bash
-%USERPROFILE%\AppData\Roaming\Sublime Text 3\Packages\User
-```
-
-Click on "OK"
-
-![](images/sublime_7.png)  
-
-A new Explorer window should open, it should be empty. Right click and chose "Git Bash here".  
-
-A new Git Bash terminal will open. Please copy the following command: 
-
-```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/Preferences.sublime-settings > Preferences.sublime-settings
-```
-
+![](images/sublime_6.png)
 
 
 
