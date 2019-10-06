@@ -6,7 +6,7 @@ Have you signed up to Github? If not [do it right away](https://github.com/join)
 
 # Github
 
-We need to generate SSH keys which are going to be used by GitHub and Heroku
+We need to generate SSH keys which are going to be used by Github
 to authenticate you. Think of it as a way to log in, but different from the
 well known username/password couple. If you already generated keys
 that you already use with other services, you can skip this step.
