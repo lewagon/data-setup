@@ -1,5 +1,7 @@
 # Data Science Bootcamp Setup
 
+Please choose your operating system (OS):
+
 <table>
   <tr>
     <td>

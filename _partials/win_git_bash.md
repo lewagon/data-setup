@@ -57,27 +57,64 @@ The Git Bash terminal should open.
 
 ![](images/gitbash_14.png)
 
-Type the following command (one by one):  
+Please run the following command:  
+
 ```bash
-touch .bashrc
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/.bash_profile > .bash_profile
 exit
-```
+```  
 
-The terminal should close.  
-Reopen the terminal by clicking on "Start".  
-![](images/start.png)
+Reopen Git bash and run the following command:  
 
-Type "Git Bash" and click on the icon apearing.  
-
-![](images/gitbash_16.png)
-
-You should see the following message:
-
-![](images/gitbash_15.png)
-
-Again please quit the Git Bash terminal by typing:  
 ```bash
-exit
+conda init bash
 ``` 
 
-Reopen one more time, you shouldn't see any red message this time.  
+Then run this one:  
+
+```bash
+conda activate base
+```
+
+Let's install two tools will need to tests our Python code ;)  
+
+```bash
+conda install pytest
+conda install pylint
+``` 
+
+If you have an error, please ask a TA.  
+
+To make sure Python is properly installed, please run the following command:  
+
+```bash
+python -i
+``` 
+
+You should get an answer like 
+```bash
+Python 3.7.3 (default...
+```  
+
+To exit this check please run
+```bash
+exit()
+```
+
+Lastly, let's create the directory where you will do the exercices.  
+**Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
+own github usernickname.
+
+```bash
+export GITHUB_USERNAME=replace_this_with_your_github_username
+
+# Example:
+#   export GITHUB_USERNAME=ssaunier
+```
+
+Then run:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME
+```
+  

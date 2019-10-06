@@ -1,3 +1,13 @@
+# Setup instructions
+
+The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) fullstack bootcamp:
+
+- Grab a text editor, where you'll spend your day and nights
+- Install a terminal
+- Setup git and GitHub
+- Install Python
+
+
 # Anaconda
 
 Anaconda is the world's most popular data science platform.
@@ -71,7 +81,29 @@ Click on "Install".
 
 Click on "Finish".  
 
-![](images/sublime_6.png)
+![](images/sublime_6.png)  
+
+Press the windows key + R at the same time to open the "Run" tool. Type the command:  
+
+```bash
+%USERPROFILE%\AppData\Roaming\Sublime Text 3\Packages\User
+```
+
+Click on "OK"
+
+![](images/sublime_7.png)  
+
+A new Explorer window should open, it should be empty. Right click and chose "Git Bash here".  
+
+A new Git Bash terminal will open. Please copy the following command: 
+
+```bash
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/Preferences.sublime-settings > Preferences.sublime-settings
+```
+
+
+
+
 
 
 # Git Bash
@@ -133,29 +165,218 @@ The Git Bash terminal should open.
 
 ![](images/gitbash_14.png)
 
-Type the following command (one by one):  
+Please run the following command:  
+
 ```bash
-touch .bashrc
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/.bash_profile > .bash_profile
 exit
-```
+```  
 
-The terminal should close.  
-Reopen the terminal by clicking on "Start".  
-![](images/start.png)
+Reopen Git bash and run the following command:  
 
-Type "Git Bash" and click on the icon apearing.  
-
-![](images/gitbash_16.png)
-
-You should see the following message:
-
-![](images/gitbash_15.png)
-
-Again please quit the Git Bash terminal by typing:  
 ```bash
-exit
+conda init bash
 ``` 
 
-Reopen one more time, you shouldn't see any red message this time.  
+Then run this one:  
+
+```bash
+conda activate base
+```
+
+Let's install two tools will need to tests our Python code ;)  
+
+```bash
+conda install pytest
+conda install pylint
+``` 
+
+If you have an error, please ask a TA.  
+
+To make sure Python is properly installed, please run the following command:  
+
+```bash
+python -i
+``` 
+
+You should get an answer like 
+```bash
+Python 3.7.3 (default...
+```  
+
+To exit this check please run
+```bash
+exit()
+```
+
+Lastly, let's create the directory where you will do the exercices.  
+**Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
+own github usernickname.
+
+```bash
+export GITHUB_USERNAME=replace_this_with_your_github_username
+
+# Example:
+#   export GITHUB_USERNAME=ssaunier
+```
+
+Then run:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME
+```
+  
+
+
+# Make
+
+Make is a build automation tool that build executable.  
+Go to this [url](https://sourceforge.net/projects/ezwinports/files)  
+Locate "make-4.2.1-without-guile-w32-bin.zip"  
+
+![](images/make_1.png)  
+
+Click on it. Your download should start shortly. A popup will appear at the bottom. Click on "Save".  
+
+![](images/make_2.png)  
+
+When the download is done you will be prompted with another popup, click on "Open folder".  
+
+![](images/make_3.png)  
+
+![](images/make_4.png)  
+Right click on it and chose "Extract All".  
+
+Click on "Extract".  
+
+![](images/make_5.png)  
+
+A new explorer window should open showing you the extracted folders.  
+
+![](images/make_6.png)  
+
+Select all the folders and right click and choose "Copy".  
+
+Press the windows key + R at the same time to open the "Run" tool. Type the command  
+```bash
+explorer.exe "C:\Program Files\Git\mingw64"
+```
+
+Click on "OK".  
+
+![](images/make_7.png)  
+
+A new windows should open with folders already in it. Right click and chose "Paste". It will paste the folders you've extracted before into this folder. If it ask you for admin rights, press "Continue". Your folder should now look like this:  
+
+![](images/make_8.png)  
+
+To make sure "Make" is properly installed, please Click on "Start" in the bottom left corner.  
+
+![](images/start.png)  
+
+Search for "Git Bash" and click on the icon of it.  
+
+![](images/gitbash_16.png)  
+
+In the terminal please type the command:  
+
+```bash
+make -v
+```
+
+You should get and answer like this:  
+
+![](images/make_9.png)  
+
+If you don't, please ask a TA.  
+
+
+
+# Github account
+
+Have you signed up to Github? If not [do it right away](https://github.com/join).  
+
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.  
+
+# Github
+
+We need to generate SSH keys which are going to be used by Github
+to authenticate you. Think of it as a way to log in, but different from the
+well known username/password couple. If you already generated keys
+that you already use with other services, you can skip this step.
+
+Open a Git Bash terminal and type this, replacing the email with **yours** (the
+same one you used to create your GitHub account). It will prompt
+for information. Just press enter until it asks for a **passphrase**.
+
+```bash
+mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
+```
+
+**NB:** when asked for a passphrase, put something you want (and that you'll remember),
+it's a password to protect your private key stored on your hard drive. You'll type,
+nothing will show up on the screen, **that's normal**. Just type the passphrase,
+and when you're done, press `Enter`.
+
+Then you need to give your **public** key to GitHub. Run:
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
+then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
+**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
+Finish by clicking on the **Add key** green button.
+
+To check that this step is completed, in the Git Bash terminal run this. You will be
+prompted a warning, type `yes` then `Enter`.
+
+```bash
+ssh -T git@github.com
+```
+
+If you see something like this, you're done!
+
+```bash
+# Hi --------! You've successfully authenticated, but GitHub does not provide shell access
+```
+
+If it does not work, try running this before trying again the `ssh -T` command:
+
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
+understanding of what those keys are used for.
+
+
+# Alumni
+
+Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
+
+Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
+
+Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
+
+- One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
+- One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
+
+
+
+# Slack
+
+Download and install the Slack app from [slack.com](https://slack.com/downloads/windows), and install it.
+
+Launch the app and sign in to `lewagon-alumni` organization.
+
+Make sure you upload a picture there.
+
+You can also sign in to Slack on your iPhone or Android device!
+
+The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
+
+Enjoy your ride with Le Wagon :)
 
 
