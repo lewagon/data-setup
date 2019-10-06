@@ -96,6 +96,11 @@ You should get an answer like
 Python 3.7.3 (default...
 ```  
 
+To exit this check please run
+```bash
+exit()
+```
+
 Lastly, let's create the directory where you will do the exercices.  
 **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
 own github usernickname.
@@ -113,8 +118,3 @@ Then run:
 mkdir -p ~/code/$GITHUB_USERNAME
 ```
   
-To exit please run  
-```bash
-exit()
-``` 
-
