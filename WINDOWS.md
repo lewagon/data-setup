@@ -242,35 +242,57 @@ Have you signed up to Github? If not [do it right away](https://github.com/join)
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.  
 
+# Github
 
-# Github Desktop
+We need to generate SSH keys which are going to be used by GitHub and Heroku
+to authenticate you. Think of it as a way to log in, but different from the
+well known username/password couple. If you already generated keys
+that you already use with other services, you can skip this step.
 
-Please go to [github desktop](https://desktop.github.com) and click on "Download for Windows...".  
+Open a Git Bash terminal and type this, replacing the email with **yours** (the
+same one you used to create your GitHub account). It will prompt
+for information. Just press enter until it asks for a **passphrase**.
 
-![](images/gh_1.png)  
+```bash
+mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
+```
 
-A popup will appear at the bottom of the screen. Please click on "Run".  
+**NB:** when asked for a passphrase, put something you want (and that you'll remember),
+it's a password to protect your private key stored on your hard drive. You'll type,
+nothing will show up on the screen, **that's normal**. Just type the passphrase,
+and when you're done, press `Enter`.
 
-![](images/gh_2.png)  
+Then you need to give your **public** key to GitHub. Run:
 
-The installer of Github Desktop will start. Click on "Sign in to Github.com".  
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
 
-![](images/gh_3.png)  
+It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
+then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
+**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
+Finish by clicking on the **Add key** green button.
 
-Fill your email address and your password then click on "Sign in".  
+To check that this step is completed, in the terminal run this. You will be
+prompted a warning, type `yes` then `Enter`.
 
-![](images/gh_4.png)  
+```bash
+ssh -T git@github.com
+```
 
-Make sure your name is correct then click on "Continue".  
+If you see something like this, you're done!
 
-![](images/gh_5.png)  
+```bash
+# Hi --------! You've successfully authenticated, but GitHub does not provide shell access
+```
 
-Uncheck "Yes, submit periodic usage stats" and click on "Finish".  
+If it does not work, try running this before trying again the `ssh -T` command:
 
-![](images/gh_6.png)  
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
 
-If you see something similar at the image below you can now close Github Desktop.  
-
-![](images/gh_7.png)
+Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
+understanding of what those keys are used for.
 
 
