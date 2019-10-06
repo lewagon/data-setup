@@ -41,7 +41,7 @@ A new Explorer window should open, it should be empty. Right click and chose "Gi
 A new Git Bash terminal will open. Please copy the following command: 
 
 ```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/Preferences.sublime-settings > Preferences.sublime-settings
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/Preferences.sublime-settings > Preferences.sublime-settings
 ```
 
 
