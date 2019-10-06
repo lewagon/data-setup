@@ -57,27 +57,23 @@ The Git Bash terminal should open.
 
 ![](images/gitbash_14.png)
 
-Type the following command (one by one):  
+Please run the following command:  
+
 ```bash
-touch .bashrc
-exit
-```
-
-The terminal should close.  
-Reopen the terminal by clicking on "Start".  
-![](images/start.png)
-
-Type "Git Bash" and click on the icon apearing.  
-
-![](images/gitbash_16.png)
-
-You should see the following message:
-
-![](images/gitbash_15.png)
-
-Again please quit the Git Bash terminal by typing:  
-```bash
-exit
+conda init bash
 ``` 
 
-Reopen one more time, you shouldn't see any red message this time.  
+Then run this one:  
+
+```bash
+conda activate base
+```
+
+Let's install two tools will need to tests our Python code ;)  
+
+```bash
+conda install pytest
+conda install pylint
+``` 
+
+If you have an error, please ask a TA.
