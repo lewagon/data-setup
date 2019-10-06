@@ -35,7 +35,7 @@ then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
 **Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
 Finish by clicking on the **Add key** green button.
 
-To check that this step is completed, in the terminal run this. You will be
+To check that this step is completed, in the Git Bash terminal run this. You will be
 prompted a warning, type `yes` then `Enter`.
 
 ```bash
