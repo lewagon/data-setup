@@ -76,4 +76,21 @@ conda install pytest
 conda install pylint
 ``` 
 
-If you have an error, please ask a TA.
+If you have an error, please ask a TA.  
+
+To make sure Python is properly installed, please run the following command:  
+
+```bash
+python -i
+``` 
+
+You should get an answer like 
+```bash
+Python 3.7.3 (default...
+```  
+  
+To exit please run  
+```bash
+exit()
+``` 
+
