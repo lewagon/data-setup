@@ -1,7 +1,9 @@
 WINDOWS = %w[setup_instructions win_anaconda win_sublime win_git_bash win_make win_github win_alumni win_slack].freeze
+MAC_OS = %w[setup_instructions]
 
 filenames = {
-  'WINDOWS.md' => WINDOWS
+  'WINDOWS.md' => WINDOWS,
+  'macOS.md' => MAC_OS
 }
 
 filenames.each do |filename, partials|
