@@ -149,7 +149,7 @@ Guess what? Click on "Next" :)
 
 ![](images/gitbash_10.png)
 
-"Again!".  
+Again!.  
 
 ![](images/gitbash_11.png)
 
