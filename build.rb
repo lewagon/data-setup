@@ -1,4 +1,4 @@
-WINDOWS = %w[win_anaconda win_sublime win_git_bash win_make win_github win_alumni win_slack].freeze
+WINDOWS = %w[setup_instructions win_anaconda win_sublime win_git_bash win_make win_github win_alumni win_slack].freeze
 
 filenames = {
   'WINDOWS.md' => WINDOWS
