@@ -60,6 +60,13 @@ The Git Bash terminal should open.
 Please run the following command:  
 
 ```bash
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/.bash_profile > .bash_profile
+exit
+```  
+
+Reopen Git bash and run the following command:  
+
+```bash
 conda init bash
 ``` 
 
