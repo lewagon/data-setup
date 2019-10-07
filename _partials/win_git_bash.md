@@ -99,21 +99,3 @@ To exit this check please run
 ```bash
 exit()
 ```
-
-Lastly, let's create the directory where you will do the exercices.
-**Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
-own github usernickname.
-
-```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
-```
-
-Then run:
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME
-```
-

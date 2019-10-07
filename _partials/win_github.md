@@ -42,11 +42,9 @@ If you see something like this, you're done!
 # Hi --------! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
-If it does not work, try running this before trying again the `ssh -T` command:
+Lastly, we need to set your `git` identity. In bash, type the following (**Don't blindly copy/paste it!**)
 
 ```bash
-ssh-add ~/.ssh/id_ed25519
+git config --global user.email "YOUR_GITHUB_EMAIL@HERE.COM"
+git config --global user.name "YOUR NAME"
 ```
-
-Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
-understanding of what those keys are used for.
