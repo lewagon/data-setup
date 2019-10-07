@@ -5,13 +5,3 @@ Time to install Python through the Anaconda distribution. Go to their [Product p
 Once downloaded, launch the installer and wait until it is complete.
 
 Quit all your opened terminal window and open a new one. First check that `pip` is in Anaconda with:
-
-```bash
-type -a pip
-```
-
-If not, ask a TA. Otherwise, you can run:
-
-```python
-pip install pytest pylint ipdb
-```

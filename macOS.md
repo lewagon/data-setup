@@ -181,16 +181,6 @@ Once downloaded, launch the installer and wait until it is complete.
 
 Quit all your opened terminal window and open a new one. First check that `pip` is in Anaconda with:
 
-```bash
-type -a pip
-```
-
-If not, ask a TA. Otherwise, you can run:
-
-```python
-pip install pytest pylint ipdb
-```
-
 
 ## Dotfiles (Standard configuration)
 
@@ -257,6 +247,19 @@ To check if plugins are installed, open the Command Palette (`⌘` + `⇧` + `P`
 If you don't, please install all of them manually. The list is referenced [here](https://github.com/lewagon/dotfiles/blob/master/Package%20Control.sublime-settings).
 
 When it's done, you can close Sublime Text.
+
+
+## Python packages
+
+```bash
+type -a pip
+```
+
+If not, ask a TA. Otherwise, you can run:
+
+```python
+pip install pytest pylint ipdb
+```
 
 
 ### SSH Passphrase

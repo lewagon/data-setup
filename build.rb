@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby -wU
 
 WINDOWS = %w[setup_instructions win_anaconda win_sublime win_github_account win_git_bash win_github win_sublime_package win_make win_alumni win_slack].freeze
-MAC_OS = %w[setup_instructions setup/osx_command_line_tools setup/github homebrew setup/osx_sublime_text setup/osx_oh_my_zsh setup/github_rsa osx_anaconda setup/dotfiles setup/ssh_osx win_alumni].freeze
+MAC_OS = %w[setup_instructions setup/osx_command_line_tools setup/github homebrew setup/osx_sublime_text setup/osx_oh_my_zsh setup/github_rsa osx_anaconda setup/dotfiles osx_pip setup/ssh_osx win_alumni].freeze
 
 filenames = {
   'WINDOWS.md' => WINDOWS,
