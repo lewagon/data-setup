@@ -270,7 +270,7 @@ In a terminal window, launch this command:
 sw_vers
 ```
 
-If your OS version (`ProductVersion` line) is greater or equal than **10.12**, you may proceed with the rest of this section. :warning: Otherwise, skip it and go directly to the Ruby install.
+If your OS version (`ProductVersion` line) is greater or equal than **10.12**, you may proceed with the rest of this section. :warning: Otherwise, skip it and go directly to Alumni section. 
 
 In order not to re-type your SSH passphrase at every `git push`, you can add these lines to the `~/.ssh/config` file:
 
