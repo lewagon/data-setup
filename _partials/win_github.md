@@ -1,9 +1,3 @@
-# Github account
-
-Have you signed up to Github? If not [do it right away](https://github.com/join).  
-
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.  
-
 # Github
 
 We need to generate SSH keys which are going to be used by Github
@@ -48,11 +42,9 @@ If you see something like this, you're done!
 # Hi --------! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
-If it does not work, try running this before trying again the `ssh -T` command:
+Lastly, we need to set your `git` identity. In bash, type the following (**Don't blindly copy/paste it!**)
 
 ```bash
-ssh-add ~/.ssh/id_ed25519
+git config --global user.email "YOUR_GITHUB_EMAIL@HERE.COM"
+git config --global user.name "YOUR NAME"
 ```
-
-Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
-understanding of what those keys are used for.

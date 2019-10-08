@@ -1,6 +1,6 @@
-# New alumni
+# Data Science Bootcamp Setup
 
-Setup guides made for [Le Wagon](https://www.lewagon.com). Please choose your operating system (OS):
+Please choose your operating system (OS):
 
 <table>
   <tr>

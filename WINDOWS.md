@@ -1,11 +1,11 @@
 # Setup instructions
 
-The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) fullstack bootcamp:
+The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
 
-- Grab a text editor, where you'll spend your day and nights
-- Install a terminal
+- Install Python via Anaconda (a distribution for the Data Scientist)
+- Install a text editor, where you'll spend your day and nights
+- Setup your terminal
 - Setup git and GitHub
-- Install Python
 
 
 # Anaconda
@@ -81,59 +81,46 @@ Click on "Install".
 
 Click on "Finish".  
 
-![](images/sublime_6.png)  
-
-Press the windows key + R at the same time to open the "Run" tool. Type the command:  
-
-```bash
-%USERPROFILE%\AppData\Roaming\Sublime Text 3\Packages\User
-```
-
-Click on "OK"
-
-![](images/sublime_7.png)  
-
-A new Explorer window should open, it should be empty. Right click and chose "Git Bash here".  
-
-A new Git Bash terminal will open. Please copy the following command: 
-
-```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/Preferences.sublime-settings > Preferences.sublime-settings
-```
+![](images/sublime_6.png)
 
 
 
 
 
+# Github account
+
+Have you signed up to Github? If not [do it right away](https://github.com/join).  
+
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.
 
 # Git Bash
 
-Git bash will allow you to run some linux command on Windows.  
-Go to [Git-SCM](https://git-scm.com/download/wim) and click on "Windows".  
+Git bash will allow you to run some linux command on Windows.
+Go to [Git-SCM](https://git-scm.com/download/wim) and click on "Windows".
 
 ![](images/gitbash_1.png)
 
-Click on "Next".  
+Click on "Next".
 
 ![](images/gitbash_2.png)
 
-Leave the default installation folder and click on "Next".  
+Leave the default installation folder and click on "Next".
 
 ![](images/gitbash_3.png)
 
-Leave the default components qnd click on "Next".  
+Leave the default components qnd click on "Next".
 
 ![](images/gitbash_4.png)
 
-Leave the default name "Git" and click on "Next".  
+Leave the default name "Git" and click on "Next".
 
 ![](images/gitbash_5.png)
 
-In the dropdown, choose your new favorite text editor "Use Sublime Text as Git's default editor" and click on "Next".  
+In the dropdown, choose your new favorite text editor "Use Sublime Text as Git's default editor" and click on "Next".
 
 ![](images/gitbash_6.png)
 
-Click on "Next".  
+Click on "Next".
 
 ![](images/gitbash_7.png)
 
@@ -141,91 +128,161 @@ Once again, click on "Next".
 
 ![](images/gitbash_8.png)
 
-Guess what? Click on "Next" :)  
+Guess what? Click on "Next" :)
 
 ![](images/gitbash_9.png)
 
-"Nexttttt!".  
+"Nexttttt!".
 
 ![](images/gitbash_10.png)
 
-Again!   
+
+Again!
 
 ![](images/gitbash_11.png)
 
-And again! Just kidding, click on "Install".  
+And again! Just kidding, click on "Install".
 
 ![](images/gitbash_12.png)
 
-Lastly, check "Launch Git Bash", uncheck "View Releave Notes" and click on "Finish".  
+Lastly, check "Launch Git Bash", uncheck "View Releave Notes" and click on "Finish".
 
 ![](images/gitbash_13.png)
 
-The Git Bash terminal should open.  
+The Git Bash terminal should open.
 
 ![](images/gitbash_14.png)
 
-Please run the following command:  
+Please run the following command:
 
 ```bash
 curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/.bash_profile > .bash_profile
 exit
-```  
+```
 
-Reopen Git bash and run the following command:  
+Reopen Git bash and run the following command:
 
 ```bash
 conda init bash
-``` 
+```
 
-Then run this one:  
+Then run this one:
 
 ```bash
 conda activate base
 ```
 
-Let's install two tools will need to tests our Python code ;)  
+Let's install two tools will need to tests our Python code ;)
 
 ```bash
-conda install pytest
-conda install pylint
-``` 
+pip install pytest pylint ipdb
+```
 
-If you have an error, please ask a TA.  
+If you have an error, try the same command again replacing `pip` with `conda`. Otherwise, please ask a TA.
 
-To make sure Python is properly installed, please run the following command:  
+To make sure Python is properly installed, please run the following command:
 
 ```bash
 python -i
-``` 
+```
 
-You should get an answer like 
+You should get an answer like
 ```bash
 Python 3.7.3 (default...
-```  
+```
 
 To exit this check please run
 ```bash
 exit()
 ```
 
-Lastly, let's create the directory where you will do the exercices.  
-**Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
-own github usernickname.
+
+# Github
+
+We need to generate SSH keys which are going to be used by Github
+to authenticate you. Think of it as a way to log in, but different from the
+well known username/password couple. If you already generated keys
+that you already use with other services, you can skip this step.
+
+Open a Git Bash terminal and type this, replacing the email with **yours** (the
+same one you used to create your GitHub account). It will prompt
+for information. Just press enter until it asks for a **passphrase**.
 
 ```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
+mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
 ```
 
-Then run:
+**NB:** when asked for a passphrase, put something you want (and that you'll remember),
+it's a password to protect your private key stored on your hard drive. You'll type,
+nothing will show up on the screen, **that's normal**. Just type the passphrase,
+and when you're done, press `Enter`.
+
+Then you need to give your **public** key to GitHub. Run:
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME
+cat ~/.ssh/id_ed25519.pub
 ```
-  
+
+It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
+then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
+**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
+Finish by clicking on the **Add key** green button.
+
+To check that this step is completed, in the Git Bash terminal run this. You will be
+prompted a warning, type `yes` then `Enter`.
+
+```bash
+ssh -T git@github.com
+```
+
+If you see something like this, you're done!
+
+```bash
+# Hi --------! You've successfully authenticated, but GitHub does not provide shell access
+```
+
+Lastly, we need to set your `git` identity. In bash, type the following (**Don't blindly copy/paste it!**)
+
+```bash
+git config --global user.email "YOUR_GITHUB_EMAIL@HERE.COM"
+git config --global user.name "YOUR NAME"
+```
+
+
+# Sublime Text 3 - Package
+
+Let's go back to Sublime Text and install some packages that will help us to create better code.
+
+Press the windows key + R at the same time to open the "Run" tool. Type the command:
+
+```bash
+%USERPROFILE%\AppData\Roaming\Sublime Text 3\Packages\User
+```
+
+Click on "OK"
+
+![](images/sublime_7.png)
+
+A new Explorer window should open, it should be empty. Right click and chose "Git Bash here".
+
+A new Git Bash terminal will open. Please copy the following command:
+
+```bash
+curl -Ls https://raw.githubusercontent.com/lewagon/dotfiles/master/Preferences.sublime-settings > Preferences.sublime-settings
+```
+
+### Package install
+
+Launch `Sublime Text 3`.
+
+Install package controll via the Command Palette (`Ctrl` + `Shift` + `P`) and type `Install Package Control`. Type `Enter` and wait a few seconds. You should get an alert telling you package control has been successfully installed.
+
+Now we can install the package `MagicPython`.<br>
+You can install a package via the Command Palette (`Ctrl` + `Shift` + `P`) then type `Install package`,<br>
+![](images/sublime_8.png)
+
+Then type the name of the package you want to install and press `Enter`.
+![](images/sublime_9.png)
 
 
 # Make
@@ -290,66 +347,6 @@ You should get and answer like this:
 
 If you don't, please ask a TA.  
 
-
-
-# Github account
-
-Have you signed up to Github? If not [do it right away](https://github.com/join).  
-
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.  
-
-# Github
-
-We need to generate SSH keys which are going to be used by Github
-to authenticate you. Think of it as a way to log in, but different from the
-well known username/password couple. If you already generated keys
-that you already use with other services, you can skip this step.
-
-Open a Git Bash terminal and type this, replacing the email with **yours** (the
-same one you used to create your GitHub account). It will prompt
-for information. Just press enter until it asks for a **passphrase**.
-
-```bash
-mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
-```
-
-**NB:** when asked for a passphrase, put something you want (and that you'll remember),
-it's a password to protect your private key stored on your hard drive. You'll type,
-nothing will show up on the screen, **that's normal**. Just type the passphrase,
-and when you're done, press `Enter`.
-
-Then you need to give your **public** key to GitHub. Run:
-
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
-then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
-**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
-Finish by clicking on the **Add key** green button.
-
-To check that this step is completed, in the Git Bash terminal run this. You will be
-prompted a warning, type `yes` then `Enter`.
-
-```bash
-ssh -T git@github.com
-```
-
-If you see something like this, you're done!
-
-```bash
-# Hi --------! You've successfully authenticated, but GitHub does not provide shell access
-```
-
-If it does not work, try running this before trying again the `ssh -T` command:
-
-```bash
-ssh-add ~/.ssh/id_ed25519
-```
-
-Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
-understanding of what those keys are used for.
 
 
 # Alumni
