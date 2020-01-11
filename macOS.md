@@ -2,10 +2,10 @@
 
 The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
 
-- Install Python via Anaconda (a distribution for the Data Scientist)
-- Install a text editor, where you'll spend your day and nights
-- Setup your terminal
-- Setup git and GitHub
+- Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
+- Install a text editor
+- Install and setup the terminal
+- Install and setup `git` and GitHub
 
 
 ## Command Line Tools
@@ -44,21 +44,50 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 On Mac, you need to install [Homebrew](http://brew.sh/) which is a Package Manager.
 It will be used as soon as we need to install some software.
-To do so, open your Terminal and run:
+
+### Do you already have Homebrew?
+
+Maybe you already have it installed from the Web Development bootcamp or from other tutorials. The easy way to check is to run the following in the terminal:
+
+```bash
+brew --config
+```
+
+If you see something along those lines:
+
+```bash
+HOMEBREW_VERSION: 2.2.2
+ORIGIN: git@github.com:Homebrew/brew.git
+HEAD: 13f508d0dc8ada1726ee09a750285d7447ac3df4
+Last commit: 3 weeks ago
+Core tap ORIGIN: https://github.com/Homebrew/homebrew-core
+Core tap HEAD: 3dfe6ba274492a06a2116effef37353a800e5052
+Core tap last commit: 4 hours ago
+HOMEBREW_PREFIX: /usr/local
+HOMEBREW_NO_ANALYTICS: 1
+CPU: quad-core 64-bit broadwell
+Homebrew Ruby: 2.6.3 => /usr/local/Homebrew/Library/Homebrew/vendor/portable-ruby/2.6.3/bin/ruby
+Clang: 10.0 build 1001
+Git: 2.24.1 => /usr/local/bin/git
+Curl: 7.54.0 => /usr/bin/curl
+Java: 1.8.0_74
+macOS: 10.14.6-x86_64
+CLT: 10.3.0.0.1.1562985497
+```
+
+Then you **do** have Homebrew installed. In that case you just need to update it with:
+
+```bash
+brew update
+```
+
+If you **don't** have it installed, just run:
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 This will ask for your confirmation (hit `Enter`) and your laptop session password.
-
-If you already have Homebrew, it will tell you so, that's fine, go on.
-
-Then install some useful software:
-
-```bash
-brew update
-```
 
 :warning: **ONLY IF** you get a `/usr/local must be writable` error, just run this:
 
@@ -67,13 +96,40 @@ sudo chown -R $USER:admin /usr/local
 brew update
 ```
 
-Error message or not, proceed running the following in the terminal (you can copy / paste all the lines at once).
+### Installing git
 
 ```bash
-brew install git
-brew upgrade git
+brew install git || brew upgrade git
 ```
 
+To check which version of `git` you got, you can type:
+
+```bash
+git --version
+```
+
+If you have something _above_ `2.24` you are good to go!
+
+We are going to install more software thanks to `brew`, if you want to know what you _already_ have installed you can run:
+
+```bash
+brew leaves
+```
+
+Coming from the Web Development bootcamp you should already have tools like
+[`curl`](https://curl.haxx.se/),
+[`hub`](https://hub.github.com/),
+[`postgresql`](https://www.postgresql.org/),
+[`rbenv`](https://github.com/rbenv/rbenv#readme),
+[`redis`](https://redis.io/),
+[`yarn`](https://yarnpkg.com/)
+and more.
+
+At any moment you can use `brew info <formula>` like so:
+
+```bash
+brew info redis
+```
 
 ## Sublime Text 3 - Your text editor
 
@@ -121,6 +177,24 @@ Quit and relaunch the Terminal. It should now have a nice black background, more
 
 ## GitHub
 
+### Already configured?
+
+Then try this command:
+
+```bash
+ssh -T git@github.com
+```
+
+If it returns the following:
+
+```bash
+# Hi <your_github_nickname>! You've successfully authenticated, but GitHub does not provide shell access
+```
+
+It means `git` is **already** configured on your laptop, you can skip the section below!
+
+### Configuring your first SSH key
+
 We need to generate SSH keys which are going to be used by GitHub and Heroku
 to authenticate you. Think of it as a way to log in, but different from the
 well known username/password couple. If you already generated keys
@@ -160,36 +234,54 @@ ssh -T git@github.com
 If you see something like this, you're done!
 
 ```bash
-# Hi --------! You've successfully authenticated, but GitHub does not provide shell access
-```
-
-If it does not work, try running this before trying again the `ssh -T` command:
-
-```bash
-ssh-add ~/.ssh/id_ed25519
+# Hi <your_github_nickname>! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
 Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
 understanding of what those keys are used for.
 
 
-## Anaconda
+## Dotfiles
 
-Time to install Python through the Anaconda distribution. Go to their [Product page](https://www.anaconda.com/distribution/#download-section), select **macOS** and click on the Python 3 64-bit Graphical Installer (600+ MB).
+There are three options, chose _one_:
 
-Once downloaded, launch the installer and wait until it is complete.
+### 1. I already attended Web Development (FullStack) bootcamp at Le Wagon _on the same laptop_
 
-Quit all your opened terminal window and open a new one. First check that `pip` is in Anaconda with:
+This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the new Data Science bootcamp.
 
+Open your terminal and go to your `dotfiles` project:
 
-## Dotfiles (Standard configuration)
+```bash
+cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
+stt # Open it in Sublime Text
+```
+
+In Sublime Text, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
+
+Back to the terminal, run a `git diff` and ask a TA to come and check about this configuration change. You should see stuff about Python and `pyenv`.
+
+Once this is good, commit and push your changes:
+
+```bash
+git add zshrc
+git commit -m "Update zshrc for Data Science bootcamp"
+git push origin master
+```
+
+### 2. I did not attend the Web Dev bootcamp at Le Wagon
 
 Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
 
-:arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account. Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those files.
+:arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account (you'll need to click again on your picture to confirm _where_ you do the fork).
 
-Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your*
-own github usernickname.
+Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those 
+files.
+
+Now this is done, go on with the following instructions under `3.` (I already attended the web bootcamp + have a new laptop) to **complete** the setup.
+
+### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
+
+Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your* own github usernickname.
 
 ```bash
 export GITHUB_USERNAME=replace_this_with_your_github_username
@@ -249,44 +341,67 @@ If you don't, please install all of them manually. The list is referenced [here]
 When it's done, you can close Sublime Text.
 
 
-## Python packages
+## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
+
+macOS comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
+
+First let's install `pyenv` with the following Terminal command:
 
 ```bash
-type -a pip
+brew install pyenv
 ```
 
-If not, ask a TA. Otherwise, you can run:
+Then quit **all your opened terminal windows** (Cmd + Q) and restart one. 
 
-```python
+Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
+
+```bash
+pyenv install 3.8.1
+```
+
+This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
+
+OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
+
+```bash
+pyenv global 3.8.1
+```
+
+Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one. 
+
+To check if this worked, run `python --version`. If you see `3.8.1`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+
+## Python packages
+
+Now that we have a pristine `lewagon` virtual environment, it's time to install some packages.
+
+First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org):
+
+```bash
+pip install --upgrade pip
+```
+
+Then let's install some packages for the first weeks of the program:
+
+```bash
 pip install pytest pylint ipdb
 ```
 
-
-### SSH Passphrase
-
-In a terminal window, launch this command:
+Let's install packages useful for API & Scraping:
 
 ```bash
-sw_vers
+pip install requests bs4
 ```
 
-If your OS version (`ProductVersion` line) is greater or equal than **10.12**, you may proceed with the rest of this section. :warning: Otherwise, skip it and go directly to the Ruby install.
-
-In order not to re-type your SSH passphrase at every `git push`, you can add these lines to the `~/.ssh/config` file:
+Finally, more Data Science packages:
 
 ```bash
-touch ~/.ssh/config  # Creates the file if it does not exist
-st ~/.ssh/config     # Opens the file in Sublime text
+pip install jupyterlab pandas matplotlib seaborn plotly sklearn
 ```
 
-And then add these 3 lines to the file. **Save**.
+That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
-```bash
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-```
-
+If you want to check which packages (and which version of that package) you have installed 
 
 # Alumni
 
