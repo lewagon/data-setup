@@ -26,8 +26,17 @@ notepad $profile
 In Notepad, copy paste the following lines, save and close it:
 
 ```powershell
+# Activate the `lewagon` virtualenv by default when launching a Powershell terminal
 & $HOME\.venvs\lewagon\Scripts\Activate.ps1
+
+# Create the `subl` command to open a folder (`subl .`) from the command line into Sublime Text
 Set-Alias -Name subl -Value 'C:\Program Files\Sublime Text 3\subl.exe'
+
+# Emulate `touch <file>` feature of UNIX
+function touch {set-content -Path ($args[0]) -Value ($null)}
+
+# Use `open .` to open current folder in Windows Explorer
+Set-Alias -Name open -Value explorer
 ```
 
 Close all the Windows Powershell windows. Launch a new one. You should see a prompt like this:
