@@ -56,7 +56,7 @@ Sublime Text is free without any time limitation but a popup will appear every t
 We will use the shell named `zsh` instead of `bash`, the default one.
 
 ```bash
-sudo apt install -y zsh curl vim nodejs imagemagick jq
+sudo apt install -y zsh curl vim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # it will ask for your session password
 ```
@@ -248,10 +248,18 @@ macOS comes with an outdated version of Python that we don't want to use. You mi
 First let's install `pyenv` with the following Terminal command:
 
 ```bash
-brew install pyenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 
-Then quit **all your opened terminal windows** (Cmd + Q) and restart one.
+Then quit **all your opened terminal windows** (Cmd + Q) and restart one. Ignore the `pyenv: no such command 'virtualenv-init' for now`.
+
+Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
+
+```bash
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+  libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
+  xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+```
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 

@@ -39,11 +39,11 @@ LINUX = %w[
   setup/github
   setup/ubuntu_git
   setup/ubuntu_sublime_text
-  setup/ubuntu_oh_my_zsh
+  ubuntu_oh_my_zsh
   github_rsa
   dotfiles
   ubuntu_python
-  ubuntu_virtualenv
+  osx_virtualenv
   pip
   setup/ubuntu_inotify
   setup/ubuntu_extra
