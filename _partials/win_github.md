@@ -49,27 +49,3 @@ We need to set your `git` identity. In bash, type the following (**Don't blindly
 git config --global user.email "YOUR_GITHUB_EMAIL@HERE.COM"
 git config --global user.name "YOUR NAME"
 ```
-
-### SSH Agent (TODO)
-
-We want to use the OpenSSH Autentication Agent to remember our passphrase. First you
-need to make sure that this Windows Service is set with a startup Type `Automatic`.
-
-Click on the start menu and type "services", then `Enter`. Then look in the list for `OpenSSH Authentication Agent`.
-On that line, right-click then `Properties`. In the startup type dropdown, choose `Automatic`.
-
-Go back to the terminal and type:
-
-```bash
-ssh-add ~/.ssh/id_ed25519
-```
-
-It should prompt you for the passphrase. Type if (nothing is displayed, that's normal), then `Enter`.
-
-In order for `git` to use this as well, we need to run this command:
-
-```bash
-git config --global core.sshCommand "'C:\Windows\System32\OpenSSH\ssh.exe'"
-```
-
-All good!
