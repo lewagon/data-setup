@@ -67,10 +67,10 @@ ssh-add $HOME/.ssh/id_ed25519
 
 It should prompt you for the passphrase. Type if (nothing is displayed, that's normal), then `Enter`.
 
-Now let's see if this worked:
+In order for `git` to use this as well, we need to run this command:
 
 ```bash
-ssh -T git@github.com
+git config --global core.sshCommand "'C:\Windows\System32\OpenSSH\ssh.exe'"
 ```
 
-If you are **not** asked for the passphrase, it means it worked!
+All good!
