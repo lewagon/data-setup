@@ -14,5 +14,10 @@ Please choose your operating system (OS):
         <img src="images/windows.png" alt="Windows">
       </a>
     </td>
+    <td>
+      <a href="LINUX.md">
+        <img src="images/linux.png" alt="Linux">
+      </a>
+    </td>
   </tr>
 </table>

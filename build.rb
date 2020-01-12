@@ -34,9 +34,27 @@ WINDOWS = %w[
   win_slack
 ].freeze
 
+LINUX = %w[
+  setup_instructions
+  setup/github
+  setup/ubuntu_git
+  setup/ubuntu_sublime_text
+  setup/ubuntu_oh_my_zsh
+  github_rsa
+  dotfiles
+  ubuntu_python
+  ubuntu_virtualenv
+  pip
+  setup/ubuntu_inotify
+  setup/ubuntu_extra
+  alumni
+  setup/ubuntu_slack
+]
+
 filenames = {
   "WINDOWS.md" => WINDOWS,
   "macOS.md" => MAC_OS,
+  "LINUX.md" => LINUX,
 }
 
 filenames.each do |filename, partials|
