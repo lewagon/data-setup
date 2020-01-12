@@ -378,6 +378,51 @@ To check if this worked, run `python --version`. If you see `3.7.6`, perfect! If
 ---
 
 
+## Python Virtual Environment
+
+Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
+
+First let's install this plugin:
+
+```bash
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+```
+
+Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
+
+Let's create the virtual environment we are going to use during the whole bootcamp:
+
+```bash
+pyenv virtualenv 3.7.6 lewagon
+```
+
+Let's now activate the virtual environment with:
+
+```bash
+pyenv activate lewagon
+```
+
+Great! Anytime we'll install Python package, we'll do it in that environment. In order for you to not have to always activate it everytime you open a new terminal, we conviniently added a line to the `~/.zshrc` file:
+
+```bash
+cat ~/.zshrc | grep activate
+```
+
+As the `~/.zshrc` is executed everytime you open a new terminal, it will automatically activate the `lewagon` virtualenv. Try it now, quit **all your opened terminal windows** (Cmd + Q) and restart one. Then run:
+
+```bash
+pyenv activate lewagon
+```
+
+It should tell you:
+
+```bash
+pyenv-virtualenv: version `lewagon' is already activated
+```
+
+All good!
+
+
 ## Python packages
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages.
@@ -411,7 +456,7 @@ That's it for today. During the bootcamp, we'll install more packages but we'll 
 If you want to check which packages (and which version of that package) you have installed
 
 
-# Alumni
+## Alumni
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
 
@@ -422,5 +467,18 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 - One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
+
+
+## Slack
+
+[Download](https://itunes.apple.com/fr/app/slack/id803453959?mt=12) the Slack native app from the mac App Store, and sign in to `lewagon-alumni` organization.
+
+Make sure you upload a picture there.
+
+You can also sign in to Slack on your iPhone or Android device!
+
+The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
+
+Enjoy your ride with Le Wagon :)
 
 

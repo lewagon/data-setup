@@ -13,8 +13,10 @@ MAC_OS = %w[
   github_rsa
   dotfiles
   osx_python
+  osx_virtualenv
   pip
-  win_alumni
+  alumni
+  setup/osx_slack
 ].freeze
 
 WINDOWS = %w[
@@ -25,7 +27,7 @@ WINDOWS = %w[
   win_github
   win_sublime_package
   win_make
-  win_alumni
+  alumni
   win_slack
 ].freeze
 
