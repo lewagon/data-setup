@@ -1,5 +1,6 @@
-## Git
+## Git Bash
 
+Git bash will allow you to run some linux command on Windows.
 Go to [Git-SCM](https://git-scm.com/download/wim) and click on "Windows".
 
 ![](images/gitbash_1.png)
@@ -44,10 +45,14 @@ Again!
 
 ![](images/gitbash_11.png)
 
-Click on "Install".
+And again! Just kidding, click on "Install".
 
 ![](images/gitbash_12.png)
 
-Lastly click on "Finish". No need to launch Git Bash yet.
+Lastly, check "Launch Git Bash", uncheck "View Releave Notes" and click on "Finish".
 
+![](images/gitbash_13.png)
 
+The Git Bash terminal should open.
+
+![](images/gitbash_14.png)

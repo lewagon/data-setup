@@ -1,7 +1,5 @@
 ## Virtual Environment
 
-Type the following to update `pip`, the command installing packages from [`pypi.org`](https://pypi.org)
-
 Now we will install the `virtualenv` package:
 
 ```bash
@@ -11,38 +9,20 @@ pip install virtualenv
 Let's create a new virtual environment for the whole bootcamp:
 
 ```bash
-mkdir $HOME/.venvs
-cd $HOME/.venvs
+mkdir -p ~/.venvs && cd ~/.venvs
 python -m venv lewagon
 ```
 
-Awesome! The virtual environment has been created. Let's now make sure it's always activated when launching a Powershell session. Copy-paste the following into the Powershell window:
+Awesome! The virtual environment has been created.
 
-```powershell
-New-Item $profile -Type File -Force
-notepad $profile
-```
+### Git Bash configuration
 
-In Notepad, copy paste the following lines, save and close it:
-
-```powershell
-# Activate the `lewagon` virtualenv by default when launching a Powershell terminal
-& $HOME\.venvs\lewagon\Scripts\Activate.ps1
-
-# Create the `subl` command to open a folder (`subl .`) from the command line into Sublime Text
-Set-Alias -Name subl -Value 'C:\Program Files\Sublime Text 3\subl.exe'
-
-# Emulate `touch <file>` feature of UNIX
-function touch {set-content -Path ($args[0]) -Value ($null)}
-
-# Use `open .` to open current folder in Windows Explorer
-Set-Alias -Name open -Value explorer
-```
-
-Close all the Windows Powershell windows. Launch a new one. You should see a prompt like this:
+Launch a Git Bash window and type the following commands:
 
 ```bash
-(lewagon) PS C:\Users\your_name>
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/.bash_profile > ~/.bash_profile
+mkdir -p ~/.config/git
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/git-prompt.sh > ~/.config/git/git-prompt.sh
 ```
 
-If you don't, ask a TA!
+Restart Git Bash. You should have the `lewagon` virtual environment activated (as shown on the left of your prompt)

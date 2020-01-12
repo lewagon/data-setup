@@ -23,5 +23,5 @@ else
     start_agent
 fi
 
-# Activate `lewagon` virtualenv:
-source ~/.pyenv/lewagon/Scripts/activate
+# Activate `lewagon` virtualenv by default:
+source ~/.venvs/lewagon/Scripts/activate

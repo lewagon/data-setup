@@ -49,8 +49,9 @@ Have you signed up to Github? If not [do it right away](https://github.com/join)
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.
 
 
-## Git
+## Git Bash
 
+Git bash will allow you to run some linux command on Windows.
 Go to [Git-SCM](https://git-scm.com/download/wim) and click on "Windows".
 
 ![](images/gitbash_1.png)
@@ -95,13 +96,17 @@ Again!
 
 ![](images/gitbash_11.png)
 
-Click on "Install".
+And again! Just kidding, click on "Install".
 
 ![](images/gitbash_12.png)
 
-Lastly click on "Finish". No need to launch Git Bash yet.
+Lastly, check "Launch Git Bash", uncheck "View Releave Notes" and click on "Finish".
 
+![](images/gitbash_13.png)
 
+The Git Bash terminal should open.
+
+![](images/gitbash_14.png)
 
 
 ## Github
@@ -111,11 +116,10 @@ to authenticate you. Think of it as a way to log in, but different from the
 well known username/password couple. If you already generated keys
 that you already use with other services, you can skip this step.
 
-Open a Windows Powershell terminal and copy-paste the lines below, replacing the email with **yours** (the
-same one you used to create your GitHub account).
+Open Git Bash  and copy-paste the lines below, replacing the email with **yours** (the same one you used to create your GitHub account).
 
 ```bash
-mkdir $HOME/.ssh # Ignore messages telling you it already exists. Go on
+mkdir -p $HOME/.ssh
 ssh-keygen -t ed25519 -o -a 100 -C "TYPE_YOUR_EMAIL@HERE.com"
 ```
 
@@ -129,7 +133,7 @@ and when you're done, press `Enter`.
 Then you need to give your **public** key to GitHub. Run:
 
 ```bash
-cat $HOME/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 ```
 
 It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text (`Ctrl` + `Shift` + `C`),
@@ -157,7 +161,7 @@ git config --global user.email "YOUR_GITHUB_EMAIL@HERE.COM"
 git config --global user.name "YOUR NAME"
 ```
 
-### SSH Agent
+### SSH Agent (TODO)
 
 We want to use the OpenSSH Autentication Agent to remember our passphrase. First you
 need to make sure that this Windows Service is set with a startup Type `Automatic`.
@@ -168,33 +172,39 @@ On that line, right-click then `Properties`. In the startup type dropdown, choos
 Go back to the terminal and type:
 
 ```bash
-ssh-add $HOME/.ssh/id_ed25519
+ssh-add ~/.ssh/id_ed25519
 ```
 
 It should prompt you for the passphrase. Type if (nothing is displayed, that's normal), then `Enter`.
 
-Now let's see if this worked:
+In order for `git` to use this as well, we need to run this command:
 
 ```bash
-ssh -T git@github.com
+git config --global core.sshCommand "'C:\Windows\System32\OpenSSH\ssh.exe'"
 ```
 
-If you are **not** asked for the passphrase, it means it worked!
+All good!
 
 
 ## Install Python
 
-Open the **Microsoft Store** from the Start Menu and search for `python`. Download the **Python 3.7** application.
+Download [Python 3.7.6 Installer](https://www.python.org/ftp/python/3.7.6/python-3.7.6-amd64.exe) and execute it.
 
-Launch a Windows Powershell terminal prompt from the start menu.
+:warning: Do not forget to tick the "Add Python to PATH" option.
 
-Type the following command:
+![](images/win_python.png)
+
+Launch Git Bash. Type the following command:
 
 ```bash
 python --version
 ```
 
-Do you get `3.7.x`? If not, ask a TA for help (look at `$Env:Path` and adjust the `Path` user variable with `rundll32 sysdm.cpl,EditEnvironmentVariables` launched in a Windows Terminal/Powershell tab).
+You should see 3.7.6! You can also check that it's coming from `AppData/Local/Programs` with:
+
+```bash
+type -a python
+```
 
 ---
 
@@ -206,8 +216,6 @@ Do you get `3.7.x`? If not, ask a TA for help (look at `$Env:Path` and adjust th
 
 ## Virtual Environment
 
-Type the following to update `pip`, the command installing packages from [`pypi.org`](https://pypi.org)
-
 Now we will install the `virtualenv` package:
 
 ```bash
@@ -217,41 +225,23 @@ pip install virtualenv
 Let's create a new virtual environment for the whole bootcamp:
 
 ```bash
-mkdir $HOME/.venvs
-cd $HOME/.venvs
+mkdir -p ~/.venvs && cd ~/.venvs
 python -m venv lewagon
 ```
 
-Awesome! The virtual environment has been created. Let's now make sure it's always activated when launching a Powershell session. Copy-paste the following into the Powershell window:
+Awesome! The virtual environment has been created.
 
-```powershell
-New-Item $profile -Type File -Force
-notepad $profile
-```
+### Git Bash configuration
 
-In Notepad, copy paste the following lines, save and close it:
-
-```powershell
-# Activate the `lewagon` virtualenv by default when launching a Powershell terminal
-& $HOME\.venvs\lewagon\Scripts\Activate.ps1
-
-# Create the `subl` command to open a folder (`subl .`) from the command line into Sublime Text
-Set-Alias -Name subl -Value 'C:\Program Files\Sublime Text 3\subl.exe'
-
-# Emulate `touch <file>` feature of UNIX
-function touch {set-content -Path ($args[0]) -Value ($null)}
-
-# Use `open .` to open current folder in Windows Explorer
-Set-Alias -Name open -Value explorer
-```
-
-Close all the Windows Powershell windows. Launch a new one. You should see a prompt like this:
+Launch a Git Bash window and type the following commands:
 
 ```bash
-(lewagon) PS C:\Users\your_name>
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/.bash_profile > ~/.bash_profile
+mkdir -p ~/.config/git
+curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/git-prompt.sh > ~/.config/git/git-prompt.sh
 ```
 
-If you don't, ask a TA!
+Restart Git Bash. You should have the `lewagon` virtual environment activated (as shown on the left of your prompt)
 
 
 ## Python packages

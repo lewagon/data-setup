@@ -1,16 +1,22 @@
 ## Install Python
 
-Open the **Microsoft Store** from the Start Menu and search for `python`. Download the **Python 3.7** application.
+Download [Python <PYTHON_VERSION> Installer](https://www.python.org/ftp/python/<PYTHON_VERSION>/python-<PYTHON_VERSION>-amd64.exe) and execute it.
 
-Launch a Windows Powershell terminal prompt from the start menu.
+:warning: Do not forget to tick the "Add Python to PATH" option.
 
-Type the following command:
+![](images/win_python.png)
+
+Launch Git Bash. Type the following command:
 
 ```bash
 python --version
 ```
 
-Do you get `3.7.x`? If not, ask a TA for help (look at `$Env:Path` and adjust the `Path` user variable with `rundll32 sysdm.cpl,EditEnvironmentVariables` launched in a Windows Terminal/Powershell tab).
+You should see <PYTHON_VERSION>! You can also check that it's coming from `AppData/Local/Programs` with:
+
+```bash
+type -a python
+```
 
 ---
 
