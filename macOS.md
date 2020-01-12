@@ -351,12 +351,12 @@ First let's install `pyenv` with the following Terminal command:
 brew install pyenv
 ```
 
-Then quit **all your opened terminal windows** (Cmd + Q) and restart one. 
+Then quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.8.1
+pyenv install 3.7.6
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -364,12 +364,19 @@ This command might take a while, this is perfectly normal. Don't hesitate to hel
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.8.1
+pyenv global 3.7.6
 ```
 
-Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one. 
+Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
-To check if this worked, run `python --version`. If you see `3.8.1`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.7.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+
+---
+
+:thinking: Why aren't we using the latest `3.8+` Python version? Good question! For now, Python 3.8 is [not supported by Jupyter](https://github.com/jupyterlab/jupyterlab/issues/6487) which is a key tool in Data Science. Let's be patient and be thankful of the open-source community work!
+
+---
+
 
 ## Python packages
 
@@ -396,12 +403,13 @@ pip install requests bs4
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly sklearn
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn
 ```
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
-If you want to check which packages (and which version of that package) you have installed 
+If you want to check which packages (and which version of that package) you have installed
+
 
 # Alumni
 

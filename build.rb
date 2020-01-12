@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby -wU
 
+PYTHON_VERSION = "3.7.6"
+
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
   setup_instructions
@@ -11,13 +13,12 @@ MAC_OS = %w[
   github_rsa
   dotfiles
   osx_python
-  osx_pip
+  pip
   win_alumni
 ].freeze
 
 WINDOWS = %w[
   setup_instructions
-  win_anaconda
   win_sublime
   win_github_account
   win_git_bash
@@ -29,16 +30,16 @@ WINDOWS = %w[
 ].freeze
 
 filenames = {
-  'WINDOWS.md' => WINDOWS,
-  'macOS.md' => MAC_OS
+  "WINDOWS.md" => WINDOWS,
+  "macOS.md" => MAC_OS,
 }
 
 filenames.each do |filename, partials|
-  File.open(filename.to_s, 'w:utf-8') do |f|
+  File.open(filename.to_s, "w:utf-8") do |f|
     partials.each do |partial|
       match_data = partial.match(/setup\/(?<partial>[a-z_]+)/)
-      file = match_data ? File.join('../setup', '_partials', "#{match_data[:partial]}.md") : File.join('_partials', "#{partial}.md")
-      f << File.read(file, encoding: 'utf-8')
+      file = match_data ? File.join("../setup", "_partials", "#{match_data[:partial]}.md") : File.join("_partials", "#{partial}.md")
+      f << File.read(file, encoding: "utf-8").gsub("<PYTHON_VERSION>", PYTHON_VERSION)
       f << "\n\n"
     end
   end

@@ -8,12 +8,12 @@ First let's install this plugin:
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 ```
 
-Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one. 
+Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.1 lewagon
+pyenv virtualenv <PYTHON_VERSION> lewagon
 ```
 
 Let's now activate the virtual environment with:
