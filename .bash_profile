@@ -1,5 +1,4 @@
 alias subl='/c/Program\ Files/Sublime\ Text\ 3/subl.exe'
-alias sub='subl -a'
 alias stt='subl -n .'
 
 # Set up ssh-agent
@@ -23,3 +22,6 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent
 fi
+
+# Activate `lewagon` virtualenv:
+source ~/.pyenv/lewagon/Scripts/activate
