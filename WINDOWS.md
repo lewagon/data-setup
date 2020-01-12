@@ -2,84 +2,39 @@
 
 The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
 
-- Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
-- Install a text editor
 - Install and setup the terminal
+- Install a text editor
 - Install and setup `git` and GitHub
+- Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
+- Install Slack
+- Onboard on **Kitt**, Le Wagon's pedagogic platform
 
 
-# Anaconda
-
-Anaconda is the world's most popular data science platform.
-
-Go to [anaconda's website](https://www.anaconda.com/distribution/) and click on "Windows" then "Download" under Python 3.7 version.
-
-![](images/anaconda_1.png)
-
-A little popup will appear at the bottom of the page, click on "Run".
-
-![](images/anaconda_2.png)
-
-A new window will appear, it is the Anaconda3 installer. Click on "Next".
-
-![](images/anaconda_3.png)
-
-Accept the License Agreement by clicking on "I Agree".
-
-![](images/anaconda_4.png)
-
-Click on "Next".  
-
-![](images/anaconda_5.png)
-
-Leave the default installation location, click on "Next".
-
-![](images/anaconda_6.png)
-
-Check "Add Anaconda to my PATH environment variable" and click on "Install"  
-
-![](images/anaconda_7.png)
-
-When it says "Completed", click on "Next".  
-
-![](images/anaconda_8.png)
-
-Click on "Next".  
-
-![](images/anaconda_9.png)
-
-Finally, uncheck the two options and click on "Finish".
-
-![](images/anaconda_10.png)
-
-Anaconda3 is now installed!
-
-
-# Sublime Text 3 - Your text editor
+## Sublime Text 3 - Your text editor
 
 A text editor is one of the most important tools of a developer.
 
-Go to [Sublime's website](https://www.sublimetext.com/) and click on "Download for Windows"  
+Go to [Sublime's website](https://www.sublimetext.com/) and click on "Download for Windows"
 
 ![](images/sublime_1.png)
 
-A little popup will appear at the bottom of the page, click on "Run".  
+A little popup will appear at the bottom of the page, click on "Run".
 
 ![](images/sublime_2.png)
 
-A new window will appear, it is the Sublime Text 3 installer. Click on "Next".  
+A new window will appear, it is the Sublime Text 3 installer. Click on "Next".
 
 ![](images/sublime_3.png)
 
-Click on "Next".  
+Click on "Next".
 
 ![](images/sublime_4.png)
 
-Click on "Install".  
+Click on "Install".
 
 ![](images/sublime_5.png)
 
-Click on "Finish".  
+Click on "Finish".
 
 ![](images/sublime_6.png)
 
@@ -87,15 +42,15 @@ Click on "Finish".
 
 
 
-# Github account
+## Github account
 
-Have you signed up to Github? If not [do it right away](https://github.com/join).  
+Have you signed up to Github? If not [do it right away](https://github.com/join).
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your Github account. This is important as we'll use an internal dashboard with your avatars. please do it **now**.
 
-# Git Bash
 
-Git bash will allow you to run some linux command on Windows.
+## Git
+
 Go to [Git-SCM](https://git-scm.com/download/wim) and click on "Windows".
 
 ![](images/gitbash_1.png)
@@ -136,65 +91,17 @@ Guess what? Click on "Next" :)
 
 ![](images/gitbash_10.png)
 
-
 Again!
 
 ![](images/gitbash_11.png)
 
-And again! Just kidding, click on "Install".
+Click on "Install".
 
 ![](images/gitbash_12.png)
 
-Lastly, check "Launch Git Bash", uncheck "View Releave Notes" and click on "Finish".
+Lastly click on "Finish". No need to launch Git Bash yet.
 
-![](images/gitbash_13.png)
 
-The Git Bash terminal should open.
-
-![](images/gitbash_14.png)
-
-Please run the following command:
-
-```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/data-setup/master/.bash_profile > .bash_profile
-exit
-```
-
-Reopen Git bash and run the following command:
-
-```bash
-conda init bash
-```
-
-Then run this one:
-
-```bash
-conda activate base
-```
-
-Let's install two tools will need to tests our Python code ;)
-
-```bash
-pip install pytest pylint ipdb
-```
-
-If you have an error, try the same command again replacing `pip` with `conda`. Otherwise, please ask a TA.
-
-To make sure Python is properly installed, please run the following command:
-
-```bash
-python -i
-```
-
-You should get an answer like
-```bash
-Python 3.7.3 (default...
-```
-
-To exit this check please run
-```bash
-exit()
-```
 
 
 # Github
@@ -247,6 +154,102 @@ Lastly, we need to set your `git` identity. In bash, type the following (**Don't
 git config --global user.email "YOUR_GITHUB_EMAIL@HERE.COM"
 git config --global user.name "YOUR NAME"
 ```
+
+
+## Install Python
+
+Open the **Microsoft Store** from the Start Menu and search for `python`. Download the **Python 3.7** application.
+
+Launch a Windows Powershell terminal prompt from the start menu.
+
+Type the following command:
+
+```bash
+python --version
+```
+
+Do you get `3.7.x`? If not, ask a TA for help (look at `$Env:Path` and adjust the `Path` user variable with `rundll32 sysdm.cpl,EditEnvironmentVariables` launched in a Windows Terminal/Powershell tab).
+
+---
+
+:thinking: Why aren't we using the latest `3.8+` Python version? Good question! For now, Python 3.8 is [not supported by Jupyter](https://github.com/jupyterlab/jupyterlab/issues/6487) which is a key tool in Data Science. Let's be patient and be thankful of the open-source community work!
+
+---
+
+
+
+## Virtual Environment
+
+Type the following to update `pip`, the command installing packages from [`pypi.org`](https://pypi.org)
+
+Now we will install the `virtualenv` package:
+
+```bash
+pip install virtualenv
+```
+
+Let's create a new virtual environment for the whole bootcamp:
+
+```bash
+mkdir $HOME/.venvs
+cd $HOME/.venvs
+python -m venv lewagon
+```
+
+Awesome! The virtual environment has been created. Let's now make sure it's always activated when launching a Powershell session. Copy-paste the following into the Powershell window:
+
+```powershell
+New-Item $profile -Type File -Force
+notepad $profile
+```
+
+In Notepad, copy paste the following lines, save and close it:
+
+```powershell
+& $HOME\.venvs\lewagon\Scripts\Activate.ps1
+Set-Alias -Name subl -Value 'C:\Program Files\Sublime Text 3\subl.exe'
+```
+
+Close all the Windows Powershell windows. Launch a new one. You should see a prompt like this:
+
+```bash
+(lewagon) PS C:\Users\your_name>
+```
+
+If you don't, ask a TA!
+
+
+## Python packages
+
+Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
+
+First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Powershell window where the virtualenv `lewagon` is activated, run:
+
+```bash
+pip install --upgrade pip
+```
+
+Then let's install some packages for the first weeks of the program:
+
+```bash
+pip install pytest pylint ipdb
+```
+
+Let's install packages useful for API & Scraping:
+
+```bash
+pip install requests bs4
+```
+
+Finally, more Data Science packages:
+
+```bash
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn
+```
+
+That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
+
+If you want to check which packages (and which version of that package) you have installed
 
 
 # Sublime Text 3 - Package
@@ -349,7 +352,7 @@ If you don't, please ask a TA.
 
 
 
-# Alumni
+## Alumni
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
 

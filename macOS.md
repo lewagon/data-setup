@@ -6,7 +6,7 @@ The following instructions will help you to get ready for [Le Wagon](http://www.
 - Install a text editor
 - Install and setup `git` and GitHub
 - Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
-- Instal Slack
+- Install Slack
 - Onboard on **Kitt**, Le Wagon's pedagogic platform
 
 
@@ -427,9 +427,9 @@ All good!
 
 ## Python packages
 
-Now that we have a pristine `lewagon` virtual environment, it's time to install some packages.
+Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 
-First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org):
+First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Powershell window where the virtualenv `lewagon` is activated, run:
 
 ```bash
 pip install --upgrade pip

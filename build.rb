@@ -23,8 +23,11 @@ WINDOWS = %w[
   setup_instructions
   win_sublime
   win_github_account
-  win_git_bash
+  win_git
   win_github
+  win_python
+  win_virtualenv
+  pip
   win_sublime_package
   win_make
   alumni
