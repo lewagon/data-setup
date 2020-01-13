@@ -31,12 +31,12 @@ Hackers love to refine and polish their shell and tools. We'll start with a grea
 
 :arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account (you'll need to click again on your picture to confirm _where_ you do the fork).
 
-Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those 
+Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
 files.
 
-Now this is done, go on with the following instructions under `3.` (I already attended the web bootcamp + have a new laptop) to **complete** the setup.
+Now this is done, go on with the following instructions under in the next `2bis` section. :warning: DO NOT SKIP IT!
 
-### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
+### 2bis. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
 
 Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your* own github usernickname.
 
