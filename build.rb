@@ -12,6 +12,7 @@ MAC_OS = %w[
   setup/osx_oh_my_zsh
   github_rsa
   dotfiles
+  setup/ssh_osx
   osx_python
   osx_virtualenv
   pip

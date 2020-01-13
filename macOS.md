@@ -343,6 +343,32 @@ If you don't, please install all of them manually. The list is referenced [here]
 When it's done, you can close Sublime Text.
 
 
+### SSH Passphrase
+
+In a terminal window, launch this command:
+
+```bash
+sw_vers
+```
+
+If your OS version (`ProductVersion` line) is greater or equal than **10.12**, you may proceed with the rest of this section. :warning: Otherwise, skip it and go directly to the Ruby install.
+
+In order not to re-type your SSH passphrase at every `git push`, you can add these lines to the `~/.ssh/config` file:
+
+```bash
+touch ~/.ssh/config  # Creates the file if it does not exist
+st ~/.ssh/config     # Opens the file in Sublime text
+```
+
+And then add these 3 lines to the file. **Save**.
+
+```bash
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+```
+
+
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
 
 macOS comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
