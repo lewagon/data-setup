@@ -1,5 +1,6 @@
 alias subl='/c/Program\ Files/Sublime\ Text\ 3/subl.exe'
 alias stt='subl -n .'
+alias tree='cmd //c tree //a'
 
 # Set up ssh-agent
 SSH_ENV="$HOME/.ssh/environment"
