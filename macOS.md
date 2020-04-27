@@ -2,6 +2,7 @@
 
 The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
 
+- Install remote tools
 - Install and setup the terminal
 - Install a text editor
 - Install and setup `git` and GitHub
