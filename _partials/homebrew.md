@@ -68,6 +68,14 @@ git --version
 
 If you have something _above_ `2.24` you are good to go!
 
+### Installing `tree`
+
+`tree` is a nice tool to visualize a directory tree from the terminal.
+
+```bash
+brew install tree
+```
+
 We are going to install more software thanks to `brew`, if you want to know what you _already_ have installed you can run:
 
 ```bash
