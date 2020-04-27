@@ -5,6 +5,7 @@ PYTHON_VERSION = "3.7.6"
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
   setup_instructions
+  setup/remote_tools
   setup/osx_command_line_tools
   setup/github
   homebrew
@@ -16,12 +17,14 @@ MAC_OS = %w[
   osx_python
   osx_virtualenv
   pip
+  docker
   alumni
   setup/osx_slack
 ].freeze
 
 WINDOWS = %w[
   setup_instructions
+  setup/remote_tools
   win_sublime
   win_github_account
   win_git
@@ -31,12 +34,14 @@ WINDOWS = %w[
   pip
   win_sublime_package
   win_make
+  docker
   alumni
   win_slack
 ].freeze
 
 LINUX = %w[
   setup_instructions
+  setup/remote_tools
   setup/github
   setup/ubuntu_git
   setup/ubuntu_sublime_text
@@ -46,6 +51,7 @@ LINUX = %w[
   ubuntu_python
   osx_virtualenv
   pip
+  ubuntu_docker
   setup/ubuntu_inotify
   setup/ubuntu_extra
   alumni
