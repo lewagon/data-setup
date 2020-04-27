@@ -21,4 +21,4 @@ sudo docker run hello-world
 
 The following message should print:
 
-![](docker_hello.png)
+![](images/docker_hello.png)
