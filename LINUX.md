@@ -2,19 +2,51 @@
 
 The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
 
+- Install remote tools
 - Install and setup the terminal
 - Install a text editor
 - Install and setup `git` and GitHub
 - Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
+- Install [Docker](https://docs.docker.com/get-docker/)
 - Install Slack
 - Onboard on **Kitt**, Le Wagon's pedagogic platform
+
+
+## Remote tools
+
+To be able to interact when we are not in the same physical room, we will be using two tools:
+
+### Zoom
+
+Zoom is a video conferencing tool. To create an account and install the app, go to [https://zoom.us/download](https://zoom.us/download) and under **Zoom Client for Meetings** click the **Download** button. Open the file you have just downloaded. A progress bar will appear, then Zoom will start. Click on **Connection** and create an account with the **Sign Up Free** option:
+
+![zoom-sign-up-free.png](images/zoom-sign-up-free.png)
+
+Once connected, you should see:
+
+![zoom-welcome-screen.png](images/zoom-welcome-screen.png)
+
+You can close Zoom now.
+
+### Teamviewer
+
+For the most complicated problems, a teacher might have to take control of your computer. To be able to do this, we will need to use the Teamviewer tool. Go to the [Teamviewer download page](https://www.teamviewer.com/en/download). It should automatically detect your operating system. If it doesn't, choose your operating system from the list at the top of the page. Click on **Download Teamviewer**, and open the file you just have downloaded. Leave the default settings as they are, and click on **Accept**. A progress bar will appear, then Teamviewer will start when the installation is over. It should look like this:
+
+![teamviewer.jpg](images/teamviewer.jpg)
+
+This will only be used as last resort when debugging becomes too tricky through spoken word. Nobody will ever be able to take control of your screen without you knowing it :ok_hand:
+
+You can close Teamviewer now.
+
+If you are not familiar with video calls, here is a great [article](https://martinfowler.com/articles/effective-video-calls.html) full of good practices :camera: :microphone:
+
 
 
 ## GitHub account
 
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
 
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do it **now**.
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
 
 
 ## Git
@@ -364,6 +396,32 @@ That's it for today. During the bootcamp, we'll install more packages but we'll 
 If you want to check which packages (and which version of that package) you have installed
 
 
+## Docker 🐋
+
+Docker is an open platform for developing, shipping, and running applications.
+
+_if you already have Docker installed on your machine please update with the latest version_
+
+### Install Docker
+
+Go to [Docker install documentation](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+
+Then follow the tutorial instructions to install Docker **using the repository**. There are 2 steps:
+
+- SET UP THE REPOSITORY
+- INSTALL DOCKER ENGINE
+
+Once done, you should be able to run:
+
+```bash
+sudo docker run hello-world
+```
+
+The following message should print:
+
+![](images/docker_hello.png)
+
+
 ## Ubuntu inotify
 
 Ubuntu is always tracking changes in your folders, and to do this it uses inotify.
@@ -382,6 +440,12 @@ On our pedagogical platform (Kitt, you'll soon discover it!), we have some video
 
 ```bash
 sudo apt install libavcodec-extra -y
+```
+
+`tree` is a nice tool to visualize a directory tree inside the terminal.
+
+```bash
+sudo apt install tree
 ```
 
 
@@ -410,6 +474,9 @@ You can also sign in to Slack on your iPhone or Android device!
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
-Enjoy your ride with Le Wagon :)
+In case of remote tickets, you will use Slack audio or video call to get help. To ensure that everything is working fine, [test your camera and microphone](https://lewagon-alumni.slack.com/help/test/calls). If your browser is asking your permission to access your microphone and camera, click on yes.
+
+After the test are finished, you should have green "All clear" messages at least for your microphone and camera. If not, ask a teacher.
+![](images/slack_mic_cam_all_green.png)
 
 
