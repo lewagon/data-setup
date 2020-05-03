@@ -164,7 +164,7 @@ git config --global user.name "YOUR NAME"
 
 ## Install Python
 
-Download [Python 3.7.6 Installer](https://www.python.org/ftp/python/3.7.6/python-3.7.6-amd64.exe) and execute it.
+Download [Python 3.7.7 Installer](https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64.exe) and execute it.
 
 :warning: Do not forget to tick the "Add Python to PATH" option.
 
@@ -176,7 +176,7 @@ Launch Git Bash. Type the following command:
 python --version
 ```
 
-You should see 3.7.6! You can also check that it's coming from `AppData/Local/Programs` with:
+You should see 3.7.7! You can also check that it's coming from `AppData/Local/Programs` with:
 
 ```bash
 type -a python
