@@ -144,12 +144,19 @@ git --version
 
 If you have something _above_ `2.24` you are good to go!
 
-### Installing `tree`
+### Installing useful terminal tools
 
 `tree` is a nice tool to visualize a directory tree from the terminal.
 
+`ncdu` is a text-based interface disk utility.
+
+`htop` is an interactive process viewer.
+
+`tig` is a text-mode interface for `git`.
+
+
 ```bash
-brew install tree
+brew install tree ncdu htop tig
 ```
 
 We are going to install more software thanks to `brew`, if you want to know what you _already_ have installed you can run:
