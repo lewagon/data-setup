@@ -34,6 +34,7 @@ WINDOWS = %w[
   pip
   win_sublime_package
   win_make
+  win_extra
   docker
   alumni
   win_slack
