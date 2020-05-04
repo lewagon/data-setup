@@ -325,7 +325,7 @@ Then type the name of the package you want to install and press `Enter`.
 
 Make is a build automation tool that build executable.
 Go to this [url](https://sourceforge.net/projects/ezwinports/files)
-Locate "make-4.2.1-without-guile-w32-bin.zip"
+Locate "make-X.X.X-without-guile-w32-bin.zip" where X.X.X is a version (e.g 4.3.1)
 
 ![](images/make_1.png)
 
