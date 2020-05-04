@@ -14,11 +14,11 @@ The following instructions will help you to get ready for [Le Wagon](http://www.
 
 ## Remote tools
 
-To be able to interact when you are not on site, we will be using two tools.
+To be able to interact when we are not in the same physical room, we will be using two tools:
 
 ### Zoom
 
-Zoom is a video conferencing tool, go to [Zoom page](https://zoom.us/download) and under **Zoom Client for Meetings** hit the **Download** button. Open the file you have just downloaded. A progress bar will appear, then Zoom will start. Click on **Connexion** and create an account with the **Sign Up Free** option:
+Zoom is a video conferencing tool. To create an account and install the app, go to [https://zoom.us/download](https://zoom.us/download) and under **Zoom Client for Meetings** click the **Download** button. Open the file you have just downloaded. A progress bar will appear, then Zoom will start. Click on **Connection** and create an account with the **Sign Up Free** option:
 
 ![zoom-sign-up-free.png](images/zoom-sign-up-free.png)
 
@@ -26,19 +26,19 @@ Once connected, you should see:
 
 ![zoom-welcome-screen.png](images/zoom-welcome-screen.png)
 
-You can close Zoom now :wink:
+You can close Zoom now.
 
 ### Teamviewer
 
-For the most complicated problems, a teacher might have to take control of your computer. To be able to do this, we will need to use the Teamviewer tool. Go to the [Teamviewer download page](https://www.teamviewer.com/en/download). It should automatically detect your operating system. if it doesn't, choose your operating system from the list at the top of the page. Click on **Download Teamviewer**. Open the file you just have downloaded. Leave the default settings and click on **Accept**. A progress bar will appear, then Teamviewer will start when the installation is over. It should look like this:
+For the most complicated problems, a teacher might have to take control of your computer. To be able to do this, we will need to use the Teamviewer tool. Go to the [Teamviewer download page](https://www.teamviewer.com/en/download). It should automatically detect your operating system. If it doesn't, choose your operating system from the list at the top of the page. Click on **Download Teamviewer**, and open the file you just have downloaded. Leave the default settings as they are, and click on **Accept**. A progress bar will appear, then Teamviewer will start when the installation is over. It should look like this:
 
 ![teamviewer.jpg](images/teamviewer.jpg)
 
-This will only be used as last resort when debugging becomes too tricky orally. Nobody will ever be able to take control of your screen without you knowing it :ok_hand:
+This will only be used as last resort when debugging becomes too tricky through spoken word. Nobody will ever be able to take control of your screen without you knowing it :ok_hand:
 
-You can close Teamviewer now :wink:
+You can close Teamviewer now.
 
-If you are not familiar with video calls, here is a great [article](https://martinfowler.com/articles/effective-video-calls.html) article full of good practices :camera: :microphone:
+If you are not familiar with video calls, here is a great [article](https://martinfowler.com/articles/effective-video-calls.html) full of good practices :camera: :microphone:
 
 
 
@@ -437,7 +437,11 @@ Docker is an open platform for developing, shipping, and running applications.
 
 _if you already have Docker installed on your machine please update with the latest version_
 
-### Install Docker
+First, let's check your Windows version **Start → Settings → System → About**. Look where it says **Edition**.
+If you have a Home version please go to [Docker on Windows Home](https://github.com/lewagon/setup/blob/master/WINDOWS.md#docker-on-windows-home)
+If you have a Pro version, please follow [Docker on Windows Pro](https://github.com/lewagon/setup/blob/master/WINDOWS.md#docker-on-windows-pro) below
+
+### Docker on Windows Pro
 
 Go to [Docker](https://docs.docker.com/get-docker/) website and choose your operating system:
 
@@ -455,6 +459,61 @@ You should get:
 
 ![](images/docker_info.png)
 
+Carry on with your [onboarding](https://github.com/lewagon/data-setup/blob/master/WINDOWS.md#alumni) 😎.
+
+### Docker on Windows Home
+
+#### Virtualization
+
+We need to ensure that the Virtualization options are enabled in the BIOS of your computer.
+
+For many computers, this is already the case. Let's check:
+
+- Press `Ctrl + Alt + Del`.
+- Select **Task Manager**.
+- Click on the **Performance** tab.
+- Click on **CPU**.
+- The status will be listed under the graph and will say "Virtualization: Enabled" if this tool is enabled.
+
+![task_manager.jpg](images/task_manager.jpg)
+
+If **Virtualization** is already enabled, go directly to [Docker Toolbox](https://github.com/lewagon/setup/blob/master/WINDOWS.md#docker-toolbox).
+
+If not, we need to enable it, which is a process that is different for each model of computer, so we can only offer vague guidelines in this guide. Please ask a teacher as soon as you get stuck!
+
+Let's retrieve your motherboard model :muscle:
+
+Click on **Start** and type **System Information** and open it.
+
+Locate the **System Model** line, the value on the right is your motherboard model.
+
+Now because everything is dependant on your motherboard model, we will have to do a Google search on how to enable the Virtualization option with this model. 
+
+:warning: We invite you to contact a teacher so you can complete this part of the setup together, as it might be a bit scary to not have clear guidelines. Choose the communication tool of your choice so the teacher can see your screen (your computer will have to be turned off during the setup so please use your phone, WhatsApp, Facetime etc..) :man_mechanic:​ :warning:
+
+If we take my example:
+
+![wsl2_virtualization.png](images/wsl2_virtualization.png)
+
+So I googled "*UX310UA bios enable virtualization*" and the first video in the results taught me how to do it. Part of being a developer is searching for information and applying it to your work :nerd_face:.
+
+Follow the instructions you found to enable Virtualization and come back here, we will be waiting :smile:.
+
+
+#### Docker Toolbox
+
+Follow the official guidelines from [docker's website](https://docs.docker.com/toolbox/toolbox_install_windows/#step-2-install-docker-toolbox) starting from **Step 2: Install Docker Toolbox** until **Step 3.4**
+
+If you encounter the error `This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory`, open **C:\Program Files\Docker Toolbox\start.sh** with an editor.
+Close Docker QuickStart Terminal.
+Locate the line 69, and replace it from:
+```bash
+"${DOCKER_MACHINE}" create -d virtualbox $PROXY_ENV "${VM}"
+```
+To:
+```bash
+"${DOCKER_MACHINE}" create -d virtualbox --virtualbox-no-vtx-check $PROXY_ENV "${VM}"
+```
 
 ## Alumni
 
