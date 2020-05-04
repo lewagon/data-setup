@@ -36,7 +36,7 @@ WINDOWS = %w[
   win_sublime_package
   win_make
   win_extra
-  docker
+  win_docker
   alumni
   win_slack
   kata
