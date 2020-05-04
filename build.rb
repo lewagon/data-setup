@@ -20,6 +20,7 @@ MAC_OS = %w[
   docker
   alumni
   setup/osx_slack
+  kata
 ].freeze
 
 WINDOWS = %w[
@@ -38,6 +39,7 @@ WINDOWS = %w[
   docker
   alumni
   win_slack
+  kata
 ].freeze
 
 LINUX = %w[
@@ -57,6 +59,7 @@ LINUX = %w[
   setup/ubuntu_extra
   alumni
   setup/ubuntu_slack
+  kata
 ]
 
 filenames = {
