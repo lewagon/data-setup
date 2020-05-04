@@ -439,7 +439,7 @@ _if you already have Docker installed on your machine please update with the lat
 
 First, let's check your Windows version **Start → Settings → System → About**. Look where it says **Edition**.
 If you have a Home version please go to [Docker on Windows Home](https://github.com/lewagon/setup/blob/master/WINDOWS.md#docker-on-windows-home)
-If you have a Pro version, please follow [Docker on Windows Pro](https://github.com/lewagon/setup/blob/master/WINDOWS.md#docker-on-windows-pro) below
+If you have a Pro version, please follow [Docker on Windows Pro](https://github.com/lewagon/setup/blob/master/WINDOWS.md#docker-on-windows-pro) below 👇:
 
 ### Docker on Windows Pro
 
