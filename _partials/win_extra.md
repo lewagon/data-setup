@@ -8,7 +8,10 @@ Handle is an interactive process viewer for your terminal.
 - Open the archive _Handle.zip_
 - Copy the _handle.exe_ file to _C:\WINDOWS\System32_
 - Restart Git Bash then run:
-
+```bash
+handle -accepteula
+```
+And this one:
 ```bash
 handle -p explorer.exe
 ```
