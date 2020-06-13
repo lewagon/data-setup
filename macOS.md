@@ -352,8 +352,6 @@ cd ~/code/$GITHUB_USERNAME/dotfiles
 git pull upstream master -X ours
 ```
 
-
-
 Then, run the `dotfiles` installer.
 
 ```bash

@@ -228,7 +228,13 @@ Now copy/paste this very long line in your terminal. Do **not** change this one.
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
 ```
 
-Run the `dotfiles` installer.
+Run this command to make sure your dotfile repo is up-to-date with that of lewagon (Call a TA if the above command fails)
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles
+git pull upstream master -X ours
+```
+
+Then, run the `dotfiles` installer.
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles
