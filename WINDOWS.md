@@ -430,6 +430,19 @@ WinDirStat is a disk usage statistics viewer application.
 
 - You can perform a disk analysis on `C:/` to try WinDirStat, after a minute you should get this kind of result
 
+### hub
+
+hub is a command line tool that wraps `git` in order to extend it with extra features and commands that make working with GitHub easier.
+
+- Install `chocolatey` (package manager for windows) https://chocolatey.org/install
+- Restart your Git Bash as an administrator (right click - execute as an administrator)
+- Then run:
+
+```bash
+choco install hub
+```
+and answer `y` to each questions then **restart your terminal**.
+
 
 ## Docker 🐋
 

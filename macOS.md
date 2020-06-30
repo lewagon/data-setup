@@ -42,6 +42,14 @@ If you are not familiar with video calls, here is a great [article](https://mart
 
 
 
+## ## A note about quitting apps on a Mac
+
+Clicking the little red cross in the top left corner of the application window on a Mac **does not really quit it**, it just closes an active window. To quit the application _for real_ either press `Cmd + Q` when the application is active, or navigate to `APP_NAME` -> `Quit` in the menu bar.
+
+![quit.png](images/quit.png)
+
+During this setup you will be asked to **quit and re-open** applications multiple times, please make sure you do it properly :pray:
+
 ## Command Line Tools
 
 Open the Terminal (click the magnifying glass icon in the top right corner of your screen and type `Terminal`):
@@ -154,9 +162,11 @@ If you have something _above_ `2.24` you are good to go!
 
 `tig` is a text-mode interface for `git`.
 
+`hub` is a command line tool that wraps `git` in order to extend it with extra features and commands that make working with GitHub easier.
+
 
 ```bash
-brew install tree ncdu htop tig
+brew install tree ncdu htop tig hub
 ```
 
 We are going to install more software thanks to `brew`, if you want to know what you _already_ have installed you can run:
@@ -418,6 +428,20 @@ Host *
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
+
+Before installing Python, please check your `xz` version with:
+
+```bash
+brew info xz
+```
+
+It should be more than `5.2.0`, **if not** you should run:
+
+```bash
+sudo rm -rf /usr/local/opt/xz
+brew upgrade
+brew install xz
+```
 
 macOS comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
 

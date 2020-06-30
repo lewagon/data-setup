@@ -72,8 +72,15 @@ filenames.each do |filename, partials|
   File.open(filename.to_s, "w:utf-8") do |f|
     partials.each do |partial|
       match_data = partial.match(/setup\/(?<partial>[a-z_]+)/)
-      file = match_data ? File.join("../setup", "_partials", "#{match_data[:partial]}.md") : File.join("_partials", "#{partial}.md")
-      f << File.read(file, encoding: "utf-8").gsub("<PYTHON_VERSION>", PYTHON_VERSION)
+      if match_data
+        require 'open-uri'
+        f << URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", "_partials", "#{match_data[:partial]}.md"))
+                .string
+                .gsub("<PYTHON_VERSION>", PYTHON_VERSION)
+      else
+        file = File.join("_partials", "#{partial}.md")
+        f << File.read(file, encoding: "utf-8").gsub("<PYTHON_VERSION>", PYTHON_VERSION)
+      end
       f << "\n\n"
     end
   end
