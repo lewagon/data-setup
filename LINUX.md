@@ -175,7 +175,7 @@ understanding of what those keys are used for.
 
 ## Dotfiles
 
-There are three options, chose _one_:
+There are three options, choose _one_:
 
 ### 1. I already attended Web Development (FullStack) bootcamp at Le Wagon _on the same laptop_
 
@@ -211,7 +211,7 @@ files.
 
 Now this is done, go on with the following instructions under in the next `2bis` section. :warning: DO NOT SKIP IT!
 
-### 2bis. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
+### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
 
 Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your* own github usernickname.
 
