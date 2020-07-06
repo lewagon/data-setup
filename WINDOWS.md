@@ -282,7 +282,11 @@ pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
-If you want to check which packages (and which version of that package) you have installed
+If you want to check which packages (and which version of that package) you have installed, you can run:
+
+```bash
+pip freeze
+```
 
 
 # Sublime Text 3 - Package
