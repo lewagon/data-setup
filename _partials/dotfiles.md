@@ -34,7 +34,7 @@ Hackers love to refine and polish their shell and tools. We'll start with a grea
 Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
 files.
 
-Now this is done, go on with the following instructions under in the next `2bis` section. :warning: DO NOT SKIP IT!
+Now this is done, go on with the following instructions under in the `3. ` section right below. :warning: DO NOT SKIP IT!
 
 ### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
 
