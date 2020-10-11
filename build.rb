@@ -34,7 +34,7 @@ WINDOWS = %w[setup_instructions
   wsl2_remote_tools
   wsl2_install_wsl
   wsl2_vscode
-  wsl2_windows_terminal
+  setup/wsl2_windows_terminal
   wsl2_git
   wsl2_oh_my_zsh
   github_rsa
@@ -82,7 +82,7 @@ filenames = {
 filenames.each do |filename, partials|
   File.open(filename.to_s, "w:utf-8") do |f|
     partials.each do |partial|
-      match_data = partial.match(/setup\/(?<partial>[a-z_]+)/)
+      match_data = partial.match(/setup\/(?<partial>[0-9a-z_]+)/)
       if match_data
         require 'open-uri'
         f << URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", "_partials", "#{match_data[:partial]}.md"))
