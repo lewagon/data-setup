@@ -26,21 +26,21 @@ MAC_OS = %w[
 ].freeze
 
 WINDOWS = %w[setup_instructions
-  wsl2_prereq_intro
-  wsl2_prereq_win10
-  wsl2_prereq_win_version
-  wsl2_prereq_virtualization
-  wsl2_github
-  wsl2_remote_tools
-  wsl2_install_wsl
-  wsl2_vscode
+  setup/wsl2_prereq_intro
+  setup/wsl2_prereq_win10
+  setup/wsl2_prereq_win_version
+  setup/wsl2_prereq_virtualization
+  setup/github
+  setup/remote_tools
+  setup/wsl2_install_wsl
+  setup/wsl2_vscode
   setup/wsl2_windows_terminal
-  wsl2_git
-  wsl2_oh_my_zsh
+  setup/wsl2_git
+  setup/wsl2_oh_my_zsh
   github_rsa
   dotfiles
   dotfiles_code
-  wsl2_browser_variable
+  setup/wsl_browser_variable
   ubuntu_python
   osx_virtualenv
   pip
