@@ -56,7 +56,6 @@ WINDOWS = %w[setup_instructions
   wsl2_oh_my_zsh
   github_rsa
   wsl2_nodejs
-  wsl2_dotfiles
   wsl2_browser_variable
   dotfiles
   ubuntu_python
