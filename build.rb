@@ -23,24 +23,51 @@ MAC_OS = %w[
   kata
 ].freeze
 
-WINDOWS = %w[
-  setup_instructions
-  setup/remote_tools
-  win_sublime
-  win_github_account
-  win_git
-  win_github
-  win_python
-  win_virtualenv
+# WINDOWS = %w[
+#   setup_instructions
+#   setup/remote_tools
+#   win_sublime
+#   win_github_account
+#   win_git
+#   win_github
+#   win_python
+#   win_virtualenv
+#   pip
+#   win_sublime_package
+#   win_make
+#   win_extra
+#   win_docker
+#   alumni
+#   win_slack
+#   kata
+# ].freeze
+
+WINDOWS = %w[setup_instructions
+  wsl2_prereq_intro
+  wsl2_prereq_win10
+  wsl2_prereq_win_version
+  wsl2_prereq_virtualization
+  wsl2_github
+  wsl2_remote_tools
+  wsl2_install_wsl
+  wsl2_vscode
+  wsl2_windows_terminal
+  wsl2_git
+  wsl2_oh_my_zsh
+  github_rsa
+  wsl2_nodejs
+  wsl2_dotfiles
+  wsl2_browser_variable
+  dotfiles
+  ubuntu_python
+  osx_virtualenv
   pip
-  win_sublime_package
-  win_make
-  win_extra
-  win_docker
+  ubuntu_docker
+  setup/ubuntu_inotify
+  setup/ubuntu_extra
   alumni
-  win_slack
-  kata
-].freeze
+  setup/ubuntu_slack
+  kata].freeze
 
 LINUX = %w[
   setup_instructions
