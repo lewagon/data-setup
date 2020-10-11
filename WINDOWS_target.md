@@ -3,7 +3,7 @@
 
 # Setup instructions
 
-The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.org) Data Bootcamp:
+The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
 
 - Grab a text editor, where you will spend your days and nights
 - Install a package manager
@@ -17,7 +17,6 @@ The following instructions will help you to get ready for [Le Wagon](http://www.
 - Install [Docker](https://docs.docker.com/get-docker/)
 - Install Slack
 - Onboard on **Kitt**, Le Wagon's pedagogic platform
-
 
 
 ## Prerequisites
@@ -829,6 +828,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
+
 ## Dotfiles
 
 There are three options, choose _one_:
@@ -905,7 +905,6 @@ Be careful, you **need** to put the **same** email as the one you sign up with o
 Please now **quit** all your opened terminal windows.
 
 
-
 ## Linking your default browser to Ubuntu
 To be sure that you can interact with your browser installed on Windows from your new Ubuntu terminal, we need to set it as your default browser there.
 
@@ -941,6 +940,7 @@ To be sure that you can interact with your browser installed on Windows from you
 
 
 Restart your terminal.
+
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
 
