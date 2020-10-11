@@ -376,6 +376,8 @@ Be careful, you **need** to put the **same** email as the one you sign up with o
 
 Please now **quit** all your opened terminal windows.
 
+
+
 ### Sublime Text auto-configuration
 
 Open a new terminal and type this:
@@ -479,7 +481,7 @@ To check if this worked, run `python --version`. If you see `3.8.5`, perfect! If
 
 ---
 
-:thinking: Why aren't we using the latest `3.9+` Python version? Good question! For now, Python 3.9 is not supported by pyenv `pyenv install --list`. Let's be patient and be thankful of the open-source community work!
+:thinking: Why aren't we using the latest `3.8+` Python version? Good question! For now, Python 3.8 is [not supported by Jupyter](https://github.com/jupyterlab/jupyterlab/issues/6487) which is a key tool in Data Science. Let's be patient and be thankful of the open-source community work!
 
 ---
 
