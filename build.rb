@@ -13,6 +13,7 @@ MAC_OS = %w[
   setup/osx_oh_my_zsh
   github_rsa
   dotfiles
+  sublime_conf
   ssh_osx
   osx_python
   osx_virtualenv
@@ -77,6 +78,7 @@ LINUX = %w[
   ubuntu_oh_my_zsh
   github_rsa
   dotfiles
+  sublime_conf
   ubuntu_python
   osx_virtualenv
   pip
