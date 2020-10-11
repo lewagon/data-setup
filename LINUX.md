@@ -296,7 +296,7 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.7.7
+pyenv install 3.8.5
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -304,16 +304,16 @@ This command might take a while, this is perfectly normal. Don't hesitate to hel
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.7.7
+pyenv global 3.8.5
 ```
 
 Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
-To check if this worked, run `python --version`. If you see `3.7.7`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.8.5`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 ---
 
-:thinking: Why aren't we using the latest `3.8+` Python version? Good question! For now, Python 3.8 is [not supported by Jupyter](https://github.com/jupyterlab/jupyterlab/issues/6487) which is a key tool in Data Science. Let's be patient and be thankful of the open-source community work!
+:thinking: Why aren't we using the latest `3.9+` Python version? Good question! For now, Python 3.9 is not supported by pyenv `pyenv install --list`. Let's be patient and be thankful of the open-source community work!
 
 ---
 
@@ -333,7 +333,7 @@ Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.7.7 lewagon
+pyenv virtualenv 3.8.5 lewagon
 ```
 
 Let's now activate the virtual environment with:

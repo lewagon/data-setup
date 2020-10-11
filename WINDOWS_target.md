@@ -1011,11 +1011,11 @@ pyenv global 3.8.5
 
 Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
-To check if this worked, run `python --version`. If you see `3.7.7`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.8.5`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 ---
 
-:thinking: Why aren't we using the latest `3.8+` Python version? Good question! For now, Python 3.8 is [not supported by Jupyter](https://github.com/jupyterlab/jupyterlab/issues/6487) which is a key tool in Data Science. Let's be patient and be thankful of the open-source community work!
+:thinking: Why aren't we using the latest `3.9+` Python version? Good question! For now, Python 3.9 is not supported by pyenv `pyenv install --list`. Let's be patient and be thankful of the open-source community work!
 
 ---
 

@@ -30,8 +30,8 @@ This means that you need to be on **Windows 10**, with all the latest updates in
 To check your Windows version:
 
 
->\- Press `Windows` + `R`  
->\- Type  `winver`  
+>\- Press `Windows` + `R`
+>\- Type  `winver`
 >\- Press `Enter`
 
 &nbsp;
@@ -65,8 +65,8 @@ Once you're sure that you're using Windows 10, you will need to check that your 
 Open Windows Update:
 
 
->\- Press `Windows` + `R`  
->\- Type  `ms-settings:windowsupdate`  
+>\- Press `Windows` + `R`
+>\- Type  `ms-settings:windowsupdate`
 >\- Press `Enter`
 >
 >
@@ -87,19 +87,19 @@ Open Windows Update:
   <summary>Activate Windows Update Service to fix Updates</summary>
 
   &nbsp;
-  
-  
+
+
   Some antiviruses and pieces of software desactivate the Update service we need, resulting in the error you see. Let's fix that!
 
 
-  >\- Press `Windows` + `R`  
-  >\- Type  `services.msc`  
+  >\- Press `Windows` + `R`
+  >\- Type  `services.msc`
   >\- Press `Enter`
   >
   >
-  >\- Double Click `Windows Update Service`  
-  >\- Set its `Startup` to `Automatic`  
-  >\- Click on `Start`  
+  >\- Double Click `Windows Update Service`
+  >\- Set its `Startup` to `Automatic`
+  >\- Click on `Start`
   >\- Click on `Ok`
 
   Then let's try updates again!
@@ -112,9 +112,9 @@ Open Windows Update:
 Some of the tools we need to install have been release with the `1903` version **or above** of Windows 10 so we need to make sure you have at least this one.
 
 
->\- Press `Windows` + `R`  
->\- Type  `winver`  
->\- Press `Enter`  
+>\- Press `Windows` + `R`
+>\- Type  `winver`
+>\- Press `Enter`
 
 
 Check the **Version number**:
@@ -133,12 +133,12 @@ We need to ensure that the Virtualization options are enabled in the BIOS of you
 For many computers, this is already the case. Let's check:
 
 
->\- Press `Windows` + `R`  
->\- Type  `taskmgr`  
+>\- Press `Windows` + `R`
+>\- Type  `taskmgr`
 >\- Press `Enter`
 >
 >
->\- Click on the `Performance` tab  
+>\- Click on the `Performance` tab
 >\- Click on `CPU`
 
 
@@ -159,22 +159,22 @@ For many computers, this is already the case. Let's check:
   <summary>Activate Virtualization</summary>
 
   &nbsp;
-  
-  
+
+
   We need to access the BIOS / UEFI of the computer to activate it.
 
 
-  >\- Press `Windows + R`  
-  >\- Type  `shutdown.exe /r /o /t 1`  
+  >\- Press `Windows + R`
+  >\- Type  `shutdown.exe /r /o /t 1`
   >\- Press `Enter`
   >
   >
   >\- Wait for the computer to shutdown
   >
   >
-  >\- Click on `Troubleshoot`  
-  >\- Click on `Advanced Options`  
-  >\- Click on `UEFI Firmware Settings`  
+  >\- Click on `Troubleshoot`
+  >\- Click on `Advanced Options`
+  >\- Click on `UEFI Firmware Settings`
   >\- Click on `Restart`
 
 
@@ -237,24 +237,24 @@ We will install WSL through the Powershell Terminal:
 :warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows Powershell** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
 
 
->\- Press `Windows` + `R`  
->\- Type  `powershell`  
+>\- Press `Windows` + `R`
+>\- Type  `powershell`
 >\- Press `Ctrl` + `Shift` + `Enter`
 
 
 :warning: You may have to accept the UAC confirmation about the privilege elevation.
 
 
-&nbsp;  
+&nbsp;
 A blue terminal window will appear:
 
 
->\- Copy the following commands  
->\- Paste them into the Powershell window by right-clicking into it (`Ctrl` + `V` does not work here!)  
+>\- Copy the following commands
+>\- Paste them into the Powershell window by right-clicking into it (`Ctrl` + `V` does not work here!)
 >\- Run them by pressing `Enter`
 
 
-&nbsp;  
+&nbsp;
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
@@ -279,8 +279,8 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 Once your computer has restarted, we need to download the WSL2 installer.
 
 
->\- Go to the [download page](https://aka.ms/wsl2kernel) and get the installer  
->\- Click `Next`  
+>\- Go to the [download page](https://aka.ms/wsl2kernel) and get the installer
+>\- Click `Next`
 >\- Click `Finish`
 
 ![update_wsl](images/update_wsl.jpg)
@@ -295,8 +295,8 @@ Once your computer has restarted, we need to download the WSL2 installer.
 Now that WSL 2 is installed, let's use it by default when we deal with WSL:
 
 
->\- Press `Windows` + `R`  
->\- Type  `cmd`  
+>\- Press `Windows` + `R`
+>\- Type  `cmd`
 >\- Press `Enter`
 
 
@@ -318,12 +318,12 @@ wsl --set-default-version 2
 ### Installation
 
 
->\- Click on `Start`  
->\- Type  `Microsoft Store`  
+>\- Click on `Start`
+>\- Type  `Microsoft Store`
 >\- Click on the Microsoft Windows Store in the list
 >
 >
->\- Search for `Ubuntu` in the search bar  
+>\- Search for `Ubuntu` in the search bar
 >\- Select version without any number, just plain "Ubuntu"
 >
 >
@@ -341,13 +341,13 @@ wsl --set-default-version 2
   <summary>Uninstall wrong versions of Ubuntu</summary>
 
   &nbsp;
-  
-  
+
+
   To uninstall a wrong version of Ubuntu, you just have to go to the Installed Program List of Windows 10:
 
 
-  >\- Press `Windows` + `R`  
-  >\- Type  `ms-settings:appsfeatures`  
+  >\- Press `Windows` + `R`
+  >\- Type  `ms-settings:appsfeatures`
   >\- Press `Enter`
 
 
@@ -384,11 +384,11 @@ At first launch, you will be asked some information:
 
 &nbsp;&nbsp;&nbsp; :white_check_mark: The installation should be complete; you can close the Ubuntu window now that it is installed on your computer.
 
-### Check the WSL version of Ubuntu 
+### Check the WSL version of Ubuntu
 
 
->\- Press `Windows` + `R`  
->\- Type  `cmd`  
+>\- Press `Windows` + `R`
+>\- Type  `cmd`
 >\- Press `Enter`
 
 
@@ -413,16 +413,16 @@ wsl -l -v
 <details>
   <summary>Convert Ubuntu WSL V1 to V2</summary>
 
-  
+
   &nbsp;
-  
-  
+
+
   In the Command Prompt window, type:
 
   ```bash
   wsl --set-version Ubuntu 2
   ```
-  
+
   &nbsp;
 
   &nbsp;&nbsp;&nbsp; :white_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
@@ -435,17 +435,17 @@ wsl -l -v
 
 
   &nbsp;
-  >\- Press `Windows` + `R`  
-  >\- Type  `%localappdata%\Packages`  
+  >\- Press `Windows` + `R`
+  >\- Type  `%localappdata%\Packages`
   >\- Press `Enter`
   >
   >
-  >\- Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`  
-  >\- Right Click on the `LocalState` folder  
-  >\- Click on `Properties`  
-  >\- Click on `Advanced`  
+  >\- Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
+  >\- Right Click on the `LocalState` folder
+  >\- Click on `Properties`
+  >\- Click on `Advanced`
   >\- Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
-  
+
 
   Apply changes to this folder only, and try to convert the Ubuntu WSL version again.
 
@@ -467,15 +467,15 @@ We use Visual Code Studio for writing code on Windows, because it integrates nic
 For this integration to work, you need to uninstall other code editor, like for example SublimeText, as their WSL integration interferes with the integration of VS Code.
 
 ### Installation
->\- Go the [Visual Studio Code page](https://code.visualstudio.com/download)  
+>\- Go the [Visual Studio Code page](https://code.visualstudio.com/download)
 >\- Choose the Windows version of VS Code
 
 
 The tool should start to download automatically.
 
->\- Open the file you have just downloaded.  
->\- Install it with a few options:  
->    \- Register VS Code as an editor for supported file types  
+>\- Open the file you have just downloaded.
+>\- Install it with a few options:
+>    \- Register VS Code as an editor for supported file types
 >    \- Let the other options as they are
 
 ![VS Code install](images/vscode-install.png)
@@ -494,11 +494,11 @@ The tool should start to download automatically.
 In VS Code:
 
 
->\- Click on `File`  
->\- Click on `Preferences`  
->\- Click on `Keymaps`  
->\- Click on `Sublime Text Keymap and Settings Importer`  
->\- Click on `Install`  
+>\- Click on `File`
+>\- Click on `Preferences`
+>\- Click on `Keymaps`
+>\- Click on `Sublime Text Keymap and Settings Importer`
+>\- Click on `Install`
 >\- Click on `Reload Required`
 
 
@@ -510,8 +510,8 @@ Let's gain time now and add other extensions that will be helpful during your Bo
 For each of these extensions:
 
 
->\- On the web page, click on `install`  
->\- In the browser, accept to use VS Code to install the extension  
+>\- On the web page, click on `install`
+>\- In the browser, accept to use VS Code to install the extension
 >\- In VS Code, click on `install`
 
 
@@ -521,8 +521,8 @@ For each of these extensions:
 - [ruby-rubocop](https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop)
 
 ### VS Code Settings
->\- Press `Ctrl` + `,` on your keyboard to open the settings  
->\- In the search bar, type `emmet`  
+>\- Press `Ctrl` + `,` on your keyboard to open the settings
+>\- In the search bar, type `emmet`
 >\- Click on the first **`Edit in settings.json`** link
 
 
@@ -549,8 +549,8 @@ It should look like this:
 To make sure everything works fine, close VS Code, then open your Ubuntu terminal:
 
 
->\- Press `Windows` + `R`  
->\- Type  `ubuntu`  
+>\- Press `Windows` + `R`
+>\- Type  `ubuntu`
 >\- Press `Enter`
 
 
@@ -577,8 +577,8 @@ The standard Ubuntu terminal is a very crude way of using Ubuntu; let's use a re
 We first need to install **Windows Terminal** from the Microsoft Windows Store:
 
 
->\- Click on `Start`  
->\- Type  `Microsoft Store`  
+>\- Click on `Start`
+>\- Type  `Microsoft Store`
 >\- Click on the Microsoft Windows Store in the list
 >
 >
@@ -591,8 +591,8 @@ We first need to install **Windows Terminal** from the Microsoft Windows Store:
 Once the installation is done, the `Install` button becomes a `Launch` button:
 
 
->\- Click on `Launch`  
->\- Right Click on the icon in the taskbar  
+>\- Click on `Launch`
+>\- Right Click on the icon in the taskbar
 >\- Choose to pin the app to the bar
 
 
@@ -624,7 +624,7 @@ First, let us ask Ubuntu to start directly inside your Ubuntu Home Directory ins
 
 
 
->\- Locate the `"name": "Ubuntu",`  
+>\- Locate the `"name": "Ubuntu",`
 >\- Add the following line after it:
 
 ```bash
@@ -644,9 +644,9 @@ Now, let us ask Windows Terminal to start directly an Ubuntu Terminal when launc
 
 
 
->\- Locate the `"guid"` for Ubuntu  
->\- Copy the value between `{` and `}`  
->\- Locate the `"defaultProfile"`  
+>\- Locate the `"guid"` for Ubuntu
+>\- Copy the value between `{` and `}`
+>\- Locate the `"defaultProfile"`
 >\- Replace the value between `{` and `}` with what you copied from above
 
 
@@ -654,7 +654,7 @@ Now, let us ask Windows Terminal to start directly an Ubuntu Terminal when launc
 
 &nbsp;
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: Voilà, your **Windows Terminal** is setup! :confetti_ball:  
+&nbsp;&nbsp;&nbsp; :white_check_mark: Voilà, your **Windows Terminal** is setup! :confetti_ball:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **From now on, every time we will refer to the terminal or the console it will be this one.**
 
 
@@ -664,7 +664,7 @@ Now, let us ask Windows Terminal to start directly an Ubuntu Terminal when launc
 To install `git`:
 
 
->\- Open an Ubuntu terminal.  
+>\- Open an Ubuntu terminal.
 >\- Copy and paste the following lines:
 
 
@@ -707,8 +707,8 @@ At then end, your terminal should look like this:
   <summary>Error: "chsh command unsuccessful. Change your default shell manually."</summary>
 
   &nbsp;
-  
-  
+
+
   You probably typed the wrong password when asked.
   Starting the script again will not work as it will try to create a configuration folder that now already exists !
 
@@ -914,8 +914,8 @@ To be sure that you can interact with your browser installed on Windows from you
   <summary>Google Chrome as your default browser</summary>
 
   &nbsp;
-  
-  
+
+
   Run the command:
 
 
@@ -929,8 +929,8 @@ To be sure that you can interact with your browser installed on Windows from you
   <summary>Mozilla Firefox as your default browser</summary>
 
   &nbsp;
-  
-  
+
+
   Run the command:
 
 
@@ -966,7 +966,7 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.7.7
+pyenv install 3.8.5
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -974,16 +974,16 @@ This command might take a while, this is perfectly normal. Don't hesitate to hel
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.7.7
+pyenv global 3.8.5
 ```
 
 Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
-To check if this worked, run `python --version`. If you see `3.7.7`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.8.5`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 ---
 
-:thinking: Why aren't we using the latest `3.8+` Python version? Good question! For now, Python 3.8 is [not supported by Jupyter](https://github.com/jupyterlab/jupyterlab/issues/6487) which is a key tool in Data Science. Let's be patient and be thankful of the open-source community work!
+:thinking: Why aren't we using the latest `3.9+` Python version? Good question! For now, Python 3.9 is not supported by pyenv `pyenv install --list`. Let's be patient and be thankful of the open-source community work!
 
 ---
 
@@ -1003,7 +1003,7 @@ Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.7.7 lewagon
+pyenv virtualenv 3.8.5 lewagon
 ```
 
 Let's now activate the virtual environment with:
