@@ -25,25 +25,6 @@ MAC_OS = %w[
   kata
 ].freeze
 
-# WINDOWS = %w[
-#   setup_instructions
-#   setup/remote_tools
-#   win_sublime
-#   win_github_account
-#   win_git
-#   win_github
-#   win_python
-#   win_virtualenv
-#   pip
-#   win_sublime_package
-#   win_make
-#   win_extra
-#   win_docker
-#   alumni
-#   win_slack
-#   kata
-# ].freeze
-
 WINDOWS = %w[setup_instructions
   wsl2_prereq_intro
   wsl2_prereq_win10
