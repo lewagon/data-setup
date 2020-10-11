@@ -47,7 +47,7 @@ WINDOWS = %w[
   setup/ubuntu_inotify
   setup/ubuntu_extra
   alumni
-  setup/ubuntu_slack
+  win_slack
   kata
 ].freeze
 
