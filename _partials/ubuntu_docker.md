@@ -16,9 +16,17 @@ Then follow the tutorial instructions to install Docker **using the repository**
 Once done, you should be able to run:
 
 ```bash
+sudo service docker start
+```
+
+```bash
 sudo docker run hello-world
 ```
 
 The following message should print:
 
 ![](images/docker_hello.png)
+
+```bash
+sudo service docker stop
+```
