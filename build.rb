@@ -104,7 +104,10 @@ filenames.each do |filename, partials|
         file = File.join("_partials", "#{partial}.md")
         content = File.read(file, encoding: "utf-8")
       end
-      subs[filename].each { |pattern, replace| content.gsub!(pattern, replace) }
+      # iterate through the patterns to replace in the file depending on the OS
+      subs[filename].each do |pattern, replace|
+        content.gsub!(pattern, replace)
+      end
       f << content.gsub("<PYTHON_VERSION>", PYTHON_VERSION)
       f << "\n\n"
     end
