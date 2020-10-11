@@ -24,7 +24,8 @@ MAC_OS = %w[
   kata
 ].freeze
 
-WINDOWS = %w[setup_instructions
+WINDOWS = %w[
+  setup_instructions
   setup/wsl2_prereq_intro
   setup/wsl2_prereq_win10
   setup/wsl2_prereq_win_version
@@ -47,7 +48,8 @@ WINDOWS = %w[setup_instructions
   setup/ubuntu_extra
   alumni
   setup/ubuntu_slack
-  kata].freeze
+  kata
+].freeze
 
 LINUX = %w[
   setup_instructions
