@@ -254,6 +254,44 @@ Please now **quit** all your opened terminal windows.
 
 
 
+&nbsp;
+
+
+Let us open the `~/.zshrc` profile file in Sublime Text and change slightly its content:
+
+```bash
+stt ~/.zshrc
+```
+
+>\- Locate the line `# Actually load Oh-My-Zsh`
+>\- **Above it** write the following line:
+
+```bash
+ZSH_DISABLE_COMPFIX=true
+```
+
+&nbsp;
+
+
+You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
+
+
+>\- Spot the line starting with `plugins=`
+>\- Add `ssh-agent` to the plugins list.
+
+The list should look like:
+
+```
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
+```
+
+&nbsp;
+
+
+&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Sublime Text.
+
+
+
 ### Sublime Text auto-configuration
 
 Open a new terminal and type this:
@@ -424,12 +462,20 @@ Then follow the tutorial instructions to install Docker **using the repository**
 Once done, you should be able to run:
 
 ```bash
+sudo service docker start
+```
+
+```bash
 sudo docker run hello-world
 ```
 
 The following message should print:
 
 ![](images/docker_hello.png)
+
+```bash
+sudo service docker stop
+```
 
 
 ## Ubuntu inotify

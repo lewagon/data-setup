@@ -13,6 +13,7 @@ MAC_OS = %w[
   setup/osx_oh_my_zsh
   github_rsa
   dotfiles
+  dotfiles_stt
   sublime_conf
   ssh_osx
   osx_python
@@ -57,6 +58,7 @@ WINDOWS = %w[setup_instructions
   wsl2_oh_my_zsh
   github_rsa
   dotfiles
+  dotfiles_code
   wsl2_browser_variable
   ubuntu_python
   osx_virtualenv
@@ -77,6 +79,7 @@ LINUX = %w[
   ubuntu_oh_my_zsh
   github_rsa
   dotfiles
+  dotfiles_stt
   sublime_conf
   ubuntu_python
   osx_virtualenv
