@@ -45,7 +45,6 @@ WINDOWS = %w[
   pip
   ubuntu_docker
   setup/ubuntu_inotify
-  setup/ubuntu_extra
   alumni
   win_slack
   kata
