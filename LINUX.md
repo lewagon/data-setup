@@ -2,6 +2,10 @@
 
 The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
 
+- Grab a text editor, where you will spend your days and nights
+- Install a package manager
+- Pimp your Terminal
+- Setup git and GitHub
 - Install remote tools
 - Install and setup the terminal
 - Install a text editor
@@ -248,6 +252,46 @@ Be careful, you **need** to put the **same** email as the one you sign up with o
 
 Please now **quit** all your opened terminal windows.
 
+
+
+&nbsp;
+
+
+Let us open the `~/.zshrc` profile file in Sublime Text and change slightly its content:
+
+```bash
+stt ~/.zshrc
+```
+
+>\- Locate the line `# Actually load Oh-My-Zsh`
+>\- **Above it** write the following line:
+
+```bash
+ZSH_DISABLE_COMPFIX=true
+```
+
+&nbsp;
+
+
+You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
+
+
+>\- Spot the line starting with `plugins=`
+>\- Add `ssh-agent` to the plugins list.
+
+The list should look like:
+
+```
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
+```
+
+&nbsp;
+
+
+&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Sublime Text.
+
+
+
 ### Sublime Text auto-configuration
 
 Open a new terminal and type this:
@@ -296,7 +340,7 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.7.7
+pyenv install 3.8.5
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -304,16 +348,16 @@ This command might take a while, this is perfectly normal. Don't hesitate to hel
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.7.7
+pyenv global 3.8.5
 ```
 
 Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
-To check if this worked, run `python --version`. If you see `3.7.7`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.8.5`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 ---
 
-:thinking: Why aren't we using the latest `3.8+` Python version? Good question! For now, Python 3.8 is [not supported by Jupyter](https://github.com/jupyterlab/jupyterlab/issues/6487) which is a key tool in Data Science. Let's be patient and be thankful of the open-source community work!
+:thinking: Why aren't we using the latest `3.9+` Python version? Good question! For now, Python 3.9 is not supported by pyenv `pyenv install --list`. Let's be patient and be thankful of the open-source community work!
 
 ---
 
@@ -333,7 +377,7 @@ Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.7.7 lewagon
+pyenv virtualenv 3.8.5 lewagon
 ```
 
 Let's now activate the virtual environment with:
@@ -418,12 +462,20 @@ Then follow the tutorial instructions to install Docker **using the repository**
 Once done, you should be able to run:
 
 ```bash
+sudo service docker start
+```
+
+```bash
 sudo docker run hello-world
 ```
 
 The following message should print:
 
 ![](images/docker_hello.png)
+
+```bash
+sudo service docker stop
+```
 
 
 ## Ubuntu inotify
