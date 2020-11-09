@@ -54,7 +54,7 @@ To check your Windows version:
 
   &nbsp;
   - Download Windows 10 from [Microsoft](https://www.microsoft.com/software-download/windows10ISO)
-  - Install it. It should take roughly an hour, bu this is dependent on your computer
+  - Install it. It should take roughly an hour, but this is dependent on your computer
 </details>
 
 ---
@@ -502,8 +502,7 @@ In VS Code:
 >\- Click on `Preferences`  
 >\- Click on `Keymaps`  
 >\- Click on `Sublime Text Keymap and Settings Importer`  
->\- Click on `Install`  
->\- Click on `Reload Required`
+>\- Click on `Install`
 
 
 ### VS Code Extensions
@@ -921,10 +920,22 @@ To be sure that you can interact with your browser installed on Windows from you
   
   Run the command:
 
+  ```bash
+    ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+  ```
+  
+  If you get an error like `ls: cannot access...` Run the following command:
 
   ```bash
-  echo "export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe" >> ~/.zshrc
+    echo "export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe" >> ~/.zshrc
   ```
+
+  Else run:
+
+  ```bash
+    echo "export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe" >> ~/.zshrc
+  ```
+
 </details>
 
 
@@ -936,9 +947,33 @@ To be sure that you can interact with your browser installed on Windows from you
   
   Run the command:
 
+  ```bash
+    ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
+  ```
+
+  If you get an error like `ls: cannot access...` Run the following command:
 
   ```bash
-  echo "export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe" >> ~/.zshrc
+    echo "export BROWSER=/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe" >> ~/.zshrc
+  ```
+
+
+  ```bash
+    echo "export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe" >> ~/.zshrc
+  ```
+</details>
+
+<details>
+  <summary>Microsoft Edge as your default browser</summary>
+
+  &nbsp;
+  
+  
+  Run the command:
+
+
+  ```bash
+    echo "export BROWSER=/mnt/c/Program Files (x86)/Google/Chrome/Application/msedge.exe" >> ~/.zshrc
   ```
 </details>
 
@@ -1073,6 +1108,18 @@ pip freeze
 ```
 
 
+## Visual C++ Redistributable
+
+Some Python packages require a compiler to function properly. Let's install one:
+
+[For x64 systems](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+
+
+[For x86 systems](https://aka.ms/vs/16/release/vc_redist.x86.exe)
+
+If you're unsure about which system you're using please ask a teacher.
+
+
 ## Docker 🐋
 
 Docker is an open platform for developing, shipping, and running applications.
@@ -1118,33 +1165,6 @@ In your terminal run:
 ```bash
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
-
-## Extra
-
-### Install video codec H264
-
-On our pedagogical platform (Kitt, you'll soon discover it!), we have some videos. By default Firefox on Linux cannot play them as they use an unsupported codec (H264). To get those videos working for you, you need to run this:
-
-```bash
-sudo apt install libavcodec-extra -y
-```
-
-### Install useful terminal tools
-
-`tree` is a nice tool to visualize a directory tree inside the terminal:
-
-`ncdu` is a text-based interface disk utility.
-
-`htop` is an interactive process viewer.
-
-`tig` is a text-mode interface for `git`.
-
-`hub` is a command line tool that wraps `git` in order to extend it with extra features and commands that make working with GitHub easier.
-
-```bash
-sudo apt install tree ncdu htop tig hub
-```
-
 
 ## Alumni
 

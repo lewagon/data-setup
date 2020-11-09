@@ -43,6 +43,7 @@ WINDOWS = %w[
   ubuntu_python
   osx_virtualenv
   pip
+  win_vs_redistributable
   ubuntu_docker
   setup/ubuntu_inotify
   alumni
