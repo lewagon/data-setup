@@ -11,7 +11,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install pytest pylint ipdb pyyaml
+pip install pytest pylint ipdb pyyaml nbresult
 ```
 
 Let's install packages useful for API & Scraping:
