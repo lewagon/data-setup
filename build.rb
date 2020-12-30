@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -wU
 
-PYTHON_VERSION = "3.8.5"
+PYTHON_VERSION = "3.8.6"
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
