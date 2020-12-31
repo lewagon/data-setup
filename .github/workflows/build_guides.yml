@@ -11,4 +11,10 @@ jobs:
     steps:
     # Runs a single command using the runners shell
       - uses: actions/checkout@v2
-      - run: ruby build.rb
+      - run: |
+        ruby build.rb
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "generated"
+        git push
