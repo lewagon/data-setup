@@ -11,13 +11,18 @@ jobs:
     steps:
     # Runs a single command using the runners shell
       - uses: actions/checkout@v2
-      - run: |
-          echo ${GITHUB_REF#refs/heads/}
+      - name: Set current branch
+        id: vars
+        run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
+      - name: Build
+        id: build
+        run: |
+          echo ${{ steps.vars.outputs.short_ref }}
           ruby build.rb
           git config user.name github-actions
           git config user.email github-actions@github.com
           git fetch
-          git checkout gha-build
+          git checkout ${{ steps.vars.outputs.short_ref }}
           git add .
           git commit -m "setup guides generated"
-          git push origin gha-build
+          git push origin ${{ steps.vars.outputs.short_ref }}
