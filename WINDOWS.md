@@ -1157,7 +1157,6 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
 
-
 # Slack
 
 Download and install the Slack app from [slack.com](https://slack.com/downloads/windows), and install it.
