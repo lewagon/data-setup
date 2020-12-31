@@ -1,6 +1,6 @@
 name: Build setup guides
 on:
-  pull_request:
+  push:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
@@ -11,18 +11,12 @@ jobs:
     steps:
     # Runs a single command using the runners shell
       - uses: actions/checkout@v2
-      - name: Set current branch
-        id: vars
-        run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
       - name: Build
         id: build
         run: |
-          echo ${{ steps.vars.outputs.short_ref }}
           ruby build.rb
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git fetch
-          git checkout ${{ steps.vars.outputs.short_ref }}
           git add .
           git commit -m "setup guides generated"
-          git push origin ${{ steps.vars.outputs.short_ref }}
+          git push
