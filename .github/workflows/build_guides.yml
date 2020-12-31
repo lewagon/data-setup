@@ -15,7 +15,7 @@ jobs:
           ruby build.rb
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git branch --show-current
+          echo ${GITHUB_REF}
           git fetch
           git checkout gha-build
           git add .
