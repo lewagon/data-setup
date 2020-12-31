@@ -17,5 +17,5 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "setup guides generated"
-          git branch
-          git push origin HEAD:gha-build
+          git remote -v
+          git push
