@@ -17,10 +17,3 @@ You should see <PYTHON_VERSION>! You can also check that it's coming from `AppDa
 ```bash
 type -a python
 ```
-
----
-
-:thinking: Why aren't we using the latest `3.9+` Python version? Good question! For now, Python 3.9 is not supported by pyenv `pyenv install --list`. Let's be patient and be thankful of the open-source community work!
-
----
-

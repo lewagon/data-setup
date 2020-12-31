@@ -355,12 +355,6 @@ Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
 
 To check if this worked, run `python --version`. If you see `3.8.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
----
-
-:thinking: Why aren't we using the latest `3.9+` Python version? Good question! For now, Python 3.9 is not supported by pyenv `pyenv install --list`. Let's be patient and be thankful of the open-source community work!
-
----
-
 
 ## Python Virtual Environment
 
