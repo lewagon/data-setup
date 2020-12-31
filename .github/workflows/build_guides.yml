@@ -15,7 +15,8 @@ jobs:
           ruby build.rb
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git fetch
+          git checkout gha-build
           git add .
           git commit -m "setup guides generated"
-          git remote -v
-          git push
+          git push origin gha-build
