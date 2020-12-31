@@ -11,4 +11,5 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: run ruby build
-      run: ruby build.rb
+    - uses: actions/checkout@v2
+    - run: ruby build.rb
