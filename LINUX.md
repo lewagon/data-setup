@@ -507,6 +507,8 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 - One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
+# TOTO
+
 
 ## Slack
 
