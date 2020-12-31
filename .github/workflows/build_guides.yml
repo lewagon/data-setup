@@ -10,6 +10,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: run ruby build
-    - uses: actions/checkout@v2
-    - run: ruby build.rb
+      - uses: actions/checkout@v2
+      - run: ruby build.rb
