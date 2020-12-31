@@ -14,9 +14,12 @@ jobs:
       - name: Build
         id: build
         run: |
-          ruby build.rb
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
-          git commit -m "setup guides generated"
-          git push
+          ruby build.rb
+          if ! git diff --exit-code
+          then
+            git add .
+            git commit -m "setup guides generated"
+            git push
+          fi
