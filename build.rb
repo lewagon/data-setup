@@ -38,8 +38,9 @@ WINDOWS = %w[
   setup/wsl2_git
   setup/wsl2_oh_my_zsh
   github_rsa
-  dotfiles
   setup/wsl_browser_variable
+  setup/gh_cli
+  dotfiles
   ubuntu_python
   osx_virtualenv
   pip
