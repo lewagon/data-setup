@@ -813,6 +813,125 @@ Don't be in a rush, take time to [read this article](http://sebastien.saunier.me
 understanding of what those keys are used for.
 
 
+## Linking your default browser to Ubuntu
+To be sure that you can interact with your browser installed on Windows from your new Ubuntu terminal, we need to set it as your default browser there.
+
+
+<details>
+  <summary>Google Chrome as your default browser</summary>
+
+  &nbsp;
+
+
+  Run the command:
+
+  ```bash
+    ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+  ```
+
+  If you get an error like `ls: cannot access...` Run the following command:
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
+  ```
+
+  Else run:
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
+  ```
+
+</details>
+
+
+<details>
+  <summary>Mozilla Firefox as your default browser</summary>
+
+  &nbsp;
+
+
+  Run the command:
+
+  ```bash
+    ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
+  ```
+
+  If you get an error like `ls: cannot access...` Run the following command:
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
+  ```
+
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
+  ```
+</details>
+
+<details>
+  <summary>Microsoft Edge as your default browser</summary>
+
+  &nbsp;
+
+
+  Run the command:
+
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Google/Chrome/Application/msedge.exe\"'" >> ~/.zshrc
+  ```
+</details>
+
+
+Restart your terminal.
+
+
+## GitHub CLI
+
+CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
+
+In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the Terminal.
+
+It should already be installed on your laptop from the previous commands. First you need to **login**:
+
+```bash
+gh auth login -s 'user:email' -w
+```
+
+You will get the following output:
+
+```bash
+- Logging into github.com
+
+! First copy your one-time code: 0EF9-D015
+- Press Enter to open github.com in your browser...
+```
+
+Select and copy the code (`0EF9-D015` in the example), then type `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, type `Enter` again, and that should be it :tada:
+
+To check that you are properly connected, type:
+
+```bash
+gh auth status
+```
+
+If you get `Logged in to github.com as <YOUR USERNAME> `, then all good. If not, **ask a teacher**.
+
+Then run the following configuration line:
+
+```bash
+gh config set git_protocol ssh
+```
+
+Finally, create a [gist](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/editing-and-sharing-content-with-gists) to make sure `gh` is working:
+
+```bash
+echo "Hello [Le Wagon](https://www.lewagon.com) :wave:" | gh gist create -d "Starting my coding journey..." -f "SETUP_DAY.md" -p -w
+```
+
+This line should open your browser on the newly created gist page. See, we've just created a [**Markdown**](https://guides.github.com/features/mastering-markdown/) file!
+
+
 ## Dotfiles
 
 There are three options, choose _one_:
@@ -853,41 +972,47 @@ Now this is done, go on with the following instructions under in the `3. ` secti
 
 ### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
 
-Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your* own github usernickname.
+Open your terminal and run the following command:
 
 ```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
 ```
 
-Now copy/paste this very long line in your terminal. Do **not** change this one.
+You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
+There seems to be a problem with the previous step (`gh auth`).
+
+Time to fork the repo and clone it on your laptop:
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
 ```
 
 Run the `dotfiles` installer.
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh install.sh
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
 ```
 
-Then run the git installer:
+Check the emails registered with your GitHub Account. You'll need to pick one
+at the next step:
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh git_setup.sh
+gh api user/emails | jq -r '.[].email'
 ```
 
-:point_up: This will **prompt** you for your name (`Firstname Lastname`) and your email.
+Run the git installer:
 
-Be careful, you **need** to put the **same** email as the one you sign up with on GitHub.
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
+```
+
+:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email. Be careful
+you **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you
+don't do that, Kitt won't be able to track your progress.
 
 Please now **quit** all your opened terminal windows.
-
 
 
 &nbsp;
@@ -918,86 +1043,13 @@ You don't want to be asked for your passphrase every time you communicate with a
 The list should look like:
 
 ```
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 ```
 
 &nbsp;
 
 
 &nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Visual Studio Code.
-
-
-## Linking your default browser to Ubuntu
-To be sure that you can interact with your browser installed on Windows from your new Ubuntu terminal, we need to set it as your default browser there.
-
-
-<details>
-  <summary>Google Chrome as your default browser</summary>
-
-  &nbsp;
-  
-  
-  Run the command:
-
-  ```bash
-    ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
-  ```
-  
-  If you get an error like `ls: cannot access...` Run the following command:
-
-  ```bash
-    echo "export BROWSER=/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe" >> ~/.zshrc
-  ```
-
-  Else run:
-
-  ```bash
-    echo "export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe" >> ~/.zshrc
-  ```
-
-</details>
-
-
-<details>
-  <summary>Mozilla Firefox as your default browser</summary>
-
-  &nbsp;
-  
-  
-  Run the command:
-
-  ```bash
-    ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
-  ```
-
-  If you get an error like `ls: cannot access...` Run the following command:
-
-  ```bash
-    echo "export BROWSER=/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe" >> ~/.zshrc
-  ```
-
-
-  ```bash
-    echo "export BROWSER=/mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe" >> ~/.zshrc
-  ```
-</details>
-
-<details>
-  <summary>Microsoft Edge as your default browser</summary>
-
-  &nbsp;
-  
-  
-  Run the command:
-
-
-  ```bash
-    echo "export BROWSER=/mnt/c/Program Files (x86)/Google/Chrome/Application/msedge.exe" >> ~/.zshrc
-  ```
-</details>
-
-
-Restart your terminal.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
