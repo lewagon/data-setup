@@ -78,14 +78,12 @@ If you have something _above_ `2.24` you are good to go!
 
 `tig` is a text-mode interface for `git`.
 
-`hub` is a command line tool that wraps `git` in order to extend it with extra features and commands that make working with GitHub easier.
-
 `xz` for data compression with high compression ratio
 
 `readline` is a library for command-line editing
 
 ```bash
-brew install tree ncdu htop tig hub xz readline
+brew install tree ncdu htop tig xz readline
 ```
 
 We are going to install more software thanks to `brew`, if you want to know what you _already_ have installed you can run:
@@ -96,7 +94,6 @@ brew leaves
 
 Coming from the Web Development bootcamp you should already have tools like
 [`curl`](https://curl.haxx.se/),
-[`hub`](https://hub.github.com/),
 [`postgresql`](https://www.postgresql.org/),
 [`rbenv`](https://github.com/rbenv/rbenv#readme),
 [`redis`](https://redis.io/),

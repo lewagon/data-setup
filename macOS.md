@@ -188,14 +188,12 @@ If you have something _above_ `2.24` you are good to go!
 
 `tig` is a text-mode interface for `git`.
 
-`hub` is a command line tool that wraps `git` in order to extend it with extra features and commands that make working with GitHub easier.
-
 `xz` for data compression with high compression ratio
 
 `readline` is a library for command-line editing
 
 ```bash
-brew install tree ncdu htop tig hub xz readline
+brew install tree ncdu htop tig xz readline
 ```
 
 We are going to install more software thanks to `brew`, if you want to know what you _already_ have installed you can run:
@@ -206,7 +204,6 @@ brew leaves
 
 Coming from the Web Development bootcamp you should already have tools like
 [`curl`](https://curl.haxx.se/),
-[`hub`](https://hub.github.com/),
 [`postgresql`](https://www.postgresql.org/),
 [`rbenv`](https://github.com/rbenv/rbenv#readme),
 [`redis`](https://redis.io/),
@@ -372,41 +369,47 @@ Now this is done, go on with the following instructions under in the `3. ` secti
 
 ### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
 
-Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your* own github usernickname.
+Open your terminal and run the following command:
 
 ```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
 ```
 
-Now copy/paste this very long line in your terminal. Do **not** change this one.
+You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
+There seems to be a problem with the previous step (`gh auth`).
+
+Time to fork the repo and clone it on your laptop:
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
 ```
 
 Run the `dotfiles` installer.
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh install.sh
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
 ```
 
-Then run the git installer:
+Check the emails registered with your GitHub Account. You'll need to pick one
+at the next step:
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh git_setup.sh
+gh api user/emails | jq -r '.[].email'
 ```
 
-:point_up: This will **prompt** you for your name (`Firstname Lastname`) and your email.
+Run the git installer:
 
-Be careful, you **need** to put the **same** email as the one you sign up with on GitHub.
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
+```
+
+:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email. Be careful
+you **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you
+don't do that, Kitt won't be able to track your progress.
 
 Please now **quit** all your opened terminal windows.
-
 
 
 &nbsp;
@@ -437,7 +440,7 @@ You don't want to be asked for your passphrase every time you communicate with a
 The list should look like:
 
 ```
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 ```
 
 &nbsp;

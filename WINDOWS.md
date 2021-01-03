@@ -813,120 +813,6 @@ Don't be in a rush, take time to [read this article](http://sebastien.saunier.me
 understanding of what those keys are used for.
 
 
-## Dotfiles
-
-There are three options, choose _one_:
-
-### 1. I already attended Web Development (FullStack) bootcamp at Le Wagon _on the same laptop_
-
-This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the new Data Science bootcamp.
-
-Open your terminal and go to your `dotfiles` project:
-
-```bash
-cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-stt # Open it in Sublime Text
-```
-
-In Sublime Text, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
-
-Back to the terminal, run a `git diff` and ask a TA to come and check about this configuration change. You should see stuff about Python and `pyenv`.
-
-Once this is good, commit and push your changes:
-
-```bash
-git add zshrc
-git commit -m "Update zshrc for Data Science bootcamp"
-git push origin master
-```
-
-### 2. I did not attend the Web Dev bootcamp at Le Wagon
-
-Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
-
-:arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account (you'll need to click again on your picture to confirm _where_ you do the fork).
-
-Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
-files.
-
-Now this is done, go on with the following instructions under in the `3. ` section right below. :warning: DO NOT SKIP IT!
-
-### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
-
-Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your* own github usernickname.
-
-```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
-```
-
-Now copy/paste this very long line in your terminal. Do **not** change this one.
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
-```
-
-Run the `dotfiles` installer.
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh install.sh
-```
-
-Then run the git installer:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh git_setup.sh
-```
-
-:point_up: This will **prompt** you for your name (`Firstname Lastname`) and your email.
-
-Be careful, you **need** to put the **same** email as the one you sign up with on GitHub.
-
-Please now **quit** all your opened terminal windows.
-
-
-
-&nbsp;
-
-
-Let us open the `~/.zshrc` profile file in Visual Studio Code and change slightly its content:
-
-```bash
-code ~/.zshrc
-```
-
->\- Locate the line `# Actually load Oh-My-Zsh`
->\- **Above it** write the following line:
-
-```bash
-ZSH_DISABLE_COMPFIX=true
-```
-
-&nbsp;
-
-
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
-
-
->\- Spot the line starting with `plugins=`
->\- Add `ssh-agent` to the plugins list.
-
-The list should look like:
-
-```
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
-```
-
-&nbsp;
-
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Visual Studio Code.
-
-
 ## Linking your default browser to Ubuntu
 To be sure that you can interact with your browser installed on Windows from your new Ubuntu terminal, we need to set it as your default browser there.
 
@@ -998,6 +884,172 @@ To be sure that you can interact with your browser installed on Windows from you
 
 
 Restart your terminal.
+
+
+## GitHub CLI
+
+CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
+
+In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the Terminal.
+
+It should already be installed on your laptop from the previous commands. First you need to **login**:
+
+```bash
+gh auth login -s 'user:email' -w
+```
+
+You will get the following output:
+
+```bash
+- Logging into github.com
+
+! First copy your one-time code: 0EF9-D015
+- Press Enter to open github.com in your browser...
+```
+
+Select and copy the code (`0EF9-D015` in the example), then type `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, type `Enter` again, and that should be it :tada:
+
+To check that you are properly connected, type:
+
+```bash
+gh auth status
+```
+
+If you get `Logged in to github.com as <YOUR USERNAME> `, then all good. If not, **ask a teacher**.
+
+Then run the following configuration line:
+
+```bash
+gh config set git_protocol ssh
+```
+
+Finally, create a [gist](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/editing-and-sharing-content-with-gists) to make sure `gh` is working:
+
+```bash
+echo "Hello [Le Wagon](https://www.lewagon.com) :wave:" | gh gist create -d "Starting my coding journey..." -f "SETUP_DAY.md" -p -w
+```
+
+This line should open your browser on the newly created gist page. See, we've just created a [**Markdown**](https://guides.github.com/features/mastering-markdown/) file!
+
+
+## Dotfiles
+
+There are three options, choose _one_:
+
+### 1. I already attended Web Development (FullStack) bootcamp at Le Wagon _on the same laptop_
+
+This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the new Data Science bootcamp.
+
+Open your terminal and go to your `dotfiles` project:
+
+```bash
+cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
+stt # Open it in Sublime Text
+```
+
+In Sublime Text, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
+
+Back to the terminal, run a `git diff` and ask a TA to come and check about this configuration change. You should see stuff about Python and `pyenv`.
+
+Once this is good, commit and push your changes:
+
+```bash
+git add zshrc
+git commit -m "Update zshrc for Data Science bootcamp"
+git push origin master
+```
+
+### 2. I did not attend the Web Dev bootcamp at Le Wagon
+
+Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
+
+:arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account (you'll need to click again on your picture to confirm _where_ you do the fork).
+
+Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
+files.
+
+Now this is done, go on with the following instructions under in the `3. ` section right below. :warning: DO NOT SKIP IT!
+
+### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
+
+Open your terminal and run the following command:
+
+```bash
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
+```
+
+You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
+There seems to be a problem with the previous step (`gh auth`).
+
+Time to fork the repo and clone it on your laptop:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
+```
+
+Run the `dotfiles` installer.
+
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
+```
+
+Check the emails registered with your GitHub Account. You'll need to pick one
+at the next step:
+
+```bash
+gh api user/emails | jq -r '.[].email'
+```
+
+Run the git installer:
+
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
+```
+
+:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email. Be careful
+you **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you
+don't do that, Kitt won't be able to track your progress.
+
+Please now **quit** all your opened terminal windows.
+
+
+&nbsp;
+
+
+Let us open the `~/.zshrc` profile file in Visual Studio Code and change slightly its content:
+
+```bash
+code ~/.zshrc
+```
+
+>\- Locate the line `# Actually load Oh-My-Zsh`
+>\- **Above it** write the following line:
+
+```bash
+ZSH_DISABLE_COMPFIX=true
+```
+
+&nbsp;
+
+
+You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
+
+
+>\- Spot the line starting with `plugins=`
+>\- Add `ssh-agent` to the plugins list.
+
+The list should look like:
+
+```
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
+```
+
+&nbsp;
+
+
+&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Visual Studio Code.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
