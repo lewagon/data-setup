@@ -56,11 +56,11 @@ During this setup you will be asked to **quit and re-open** applications multipl
 
 ## Command Line Tools
 
-Open the Terminal (click the magnifying glass icon in the top right corner of your screen and type `Terminal`):
+Open a new Terminal window from Applications > Utilities or searching with [Spotlight](https://support.apple.com/en-gb/HT204014):
 
 ![](images/open-terminal.png)
 
-Copy-paste the following command in the terminal and hit Enter.
+Copy-paste the following command in the terminal and hit `Enter` to execute the command.
 
 ```bash
 xcode-select --install
@@ -72,7 +72,7 @@ If you receive the following message, you can just skip this step and go to next
 # command line tools are already installed, use "Software Update" to install updates
 ```
 
-Otherwise, it will open a window asking you if you want to install some software. Accept and wait. If it fails, try again the command line above, sometimes the Apple servers are overloaded.
+Otherwise, it will open a window asking you if you want to install some software. Accept and wait. If it fails, try again `xcode-select --install`, sometimes the Apple servers are overloaded.
 
 ![](images/xcode-select-install.png)
 
@@ -104,6 +104,8 @@ Then follow the previous instructions for this command.
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
+
+![](images/github_upload_picture.png)
 
 
 ## Homebrew
@@ -230,13 +232,13 @@ Again, make sure that Sublime Text is there, not in the disk image you downloade
 
 ## Oh-my-zsh - Fancy your Terminal
 
-We will use the shell named `zsh` instead of `bash`, the default one.
+We will use the shell named `zsh` instead of `bash`, the default one, alongside with useful and fancy [`oh-my-zsh`](https://ohmyz.sh/) plugins:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Be careful, at the end of this script, it will prompt for your laptop password again. You have to write it correctly (you will not see it when you type) and hit `Enter`. You should get something like:
+Be careful, at the end of this script, it will prompt for your macOS user account password again (Remember! No visual feedback!). You should get something like:
 
 ```bash
          __                                     __
@@ -259,7 +261,9 @@ On Mac, open `Terminal > Preferences` and set the "Pro" theme as default in `Pro
 
 ![](images/terminal-pro.png)
 
-Quit and relaunch the Terminal. It should now have a nice black background, more easy on the eyes.
+**Quit** and restart the Terminal. It should now have a nice black background, more easy on the eyes.
+
+:bulb: There are plenty of themes available on the Internet like [MaterialDark](https://github.com/lysyi3m/macos-terminal-themes#materialdark-download) if you fancy trying another one. That's something you can configure later during the day or come back to it if you are done with your setup early. Please carry on with the Github setup!
 
 
 ## GitHub

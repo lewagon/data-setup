@@ -52,6 +52,8 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
 
+![](images/github_upload_picture.png)
+
 
 ## Git
 
@@ -64,6 +66,24 @@ sudo apt install -y git
 ```
 
 :bulb: To **paste it in the terminal**, you need to use `Ctrl` + `Shift` + `V`.
+
+
+Let's now install GitHub [official CLI](https://cli.github.com) (Command Line Interface) with the following commands:
+
+```bash
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt update
+sudo apt install -y gh
+```
+
+To check that `gh` has been successfully installed on your machine, you can run:
+
+```bash
+gh --version
+```
+
+If you don't get a prompt saying `gh version X.Y.Z (YYYY-MM-DD)` with at least version 1.4, please refer to [the documentation](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#official-sources) where they list some troubleshooting information. In doubt, ask a TA.
 
 
 ## Sublime Text 3 - Your text editor
