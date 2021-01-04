@@ -12,6 +12,7 @@ MAC_OS = %w[
   setup/osx_sublime_text
   setup/osx_oh_my_zsh
   github_rsa
+  setup/gh_cli
   dotfiles
   sublime_conf
   ssh_osx
