@@ -112,111 +112,45 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 On Mac, you need to install [Homebrew](http://brew.sh/) which is a Package Manager.
 It will be used as soon as we need to install some software.
-
-### Do you already have Homebrew?
-
-Maybe you already have it installed from the Web Development bootcamp or from other tutorials. The easy way to check is to run the following in the terminal:
+To do so, open your Terminal and run:
 
 ```bash
-brew --config
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-If you see something along those lines:
+This will ask for your confirmation (hit `Enter`) and your **macOS user account password** (the one you use to [log in](https://support.apple.com/en-gb/HT202860) when you reboot your Macbook).
+:warning: When typing a password in the Terminal, you will **not** get a visual feedback (something like `*****`), this is **normal**!! Type the password and confirm by typing `Enter`.
 
-```bash
-HOMEBREW_VERSION: 2.2.2
-ORIGIN: git@github.com:Homebrew/brew.git
-HEAD: 13f508d0dc8ada1726ee09a750285d7447ac3df4
-Last commit: 3 weeks ago
-Core tap ORIGIN: https://github.com/Homebrew/homebrew-core
-Core tap HEAD: 3dfe6ba274492a06a2116effef37353a800e5052
-Core tap last commit: 4 hours ago
-HOMEBREW_PREFIX: /usr/local
-HOMEBREW_NO_ANALYTICS: 1
-CPU: quad-core 64-bit broadwell
-Homebrew Ruby: 2.6.3 => /usr/local/Homebrew/Library/Homebrew/vendor/portable-ruby/2.6.3/bin/ruby
-Clang: 10.0 build 1001
-Git: 2.24.1 => /usr/local/bin/git
-Curl: 7.54.0 => /usr/bin/curl
-Java: 1.8.0_74
-macOS: 10.14.6-x86_64
-CLT: 10.3.0.0.1.1562985497
-```
+If you already have Homebrew, it will tell you so, that's fine, go on.
 
-Then you **do** have Homebrew installed. In that case you just need to update it with:
+Then install some useful software:
 
 ```bash
 brew update
 ```
 
-If you **don't** have it installed, just run:
-
-```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-This will ask for your confirmation (hit `Enter`) and your laptop session password.
-
-:warning: **ONLY IF** you get a `/usr/local must be writable` error, just run this:
+If you get a `/usr/local must be writable` error, just run this:
 
 ```bash
 sudo chown -R $USER:admin /usr/local
 brew update
 ```
 
-### Installing git
+Error message or not, proceed running the following in the terminal (you can copy / paste all the lines at once).
 
 ```bash
-brew install git || brew upgrade git
-```
-
-To check which version of `git` you got, you can type:
-
-```bash
-git --version
-```
-
-If you have something _above_ `2.24` you are good to go!
-
-### Installing useful terminal tools
-
-`tree` is a nice tool to visualize a directory tree from the terminal.
-
-`ncdu` is a text-based interface disk utility.
-
-`htop` is an interactive process viewer.
-
-`tig` is a text-mode interface for `git`.
-
-`hub` is a command line tool that wraps `git` in order to extend it with extra features and commands that make working with GitHub easier.
-
-`xz` for data compression with high compression ratio
-
-`readline` is a library for command-line editing
-
-```bash
-brew install tree ncdu htop tig hub xz readline
-```
-
-We are going to install more software thanks to `brew`, if you want to know what you _already_ have installed you can run:
-
-```bash
-brew leaves
-```
-
-Coming from the Web Development bootcamp you should already have tools like
-[`curl`](https://curl.haxx.se/),
-[`hub`](https://hub.github.com/),
-[`postgresql`](https://www.postgresql.org/),
-[`rbenv`](https://github.com/rbenv/rbenv#readme),
-[`redis`](https://redis.io/),
-[`yarn`](https://yarnpkg.com/)
-and more.
-
-At any moment you can use `brew info <formula>` like so:
-
-```bash
-brew info redis
+brew upgrade git         || brew install git
+brew upgrade gh          || brew install gh
+brew upgrade wget        || brew install wget
+brew upgrade imagemagick || brew install imagemagick
+brew upgrade jq          || brew install jq
+brew upgrade openssl     || brew install openssl
+brew upgrade tree        || brew install tree
+brew upgrade ncdu        || brew install ncdu
+brew upgrade htop        || brew install htop
+brew upgrade tig         || brew install tig
+brew upgrade xz          || brew install xz
+brew upgrade readline    || brew install readline
 ```
 
 
@@ -332,6 +266,52 @@ Don't be in a rush, take time to [read this article](http://sebastien.saunier.me
 understanding of what those keys are used for.
 
 
+## GitHub CLI
+
+CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
+
+In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the Terminal.
+
+It should already be installed on your laptop from the previous commands. First you need to **login**:
+
+```bash
+gh auth login -s 'user:email' -w
+```
+
+You will get the following output:
+
+```bash
+- Logging into github.com
+
+! First copy your one-time code: 0EF9-D015
+- Press Enter to open github.com in your browser...
+```
+
+Select and copy the code (`0EF9-D015` in the example), then type `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, type `Enter` again, and that should be it :tada:
+
+To check that you are properly connected, type:
+
+```bash
+gh auth status
+```
+
+If you get `Logged in to github.com as <YOUR USERNAME> `, then all good. If not, **ask a teacher**.
+
+Then run the following configuration line:
+
+```bash
+gh config set git_protocol ssh
+```
+
+Finally, create a [gist](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/editing-and-sharing-content-with-gists) to make sure `gh` is working:
+
+```bash
+echo "Hello [Le Wagon](https://www.lewagon.com) :wave:" | gh gist create -d "Starting my coding journey..." -f "SETUP_DAY.md" -p -w
+```
+
+This line should open your browser on the newly created gist page. See, we've just created a [**Markdown**](https://guides.github.com/features/mastering-markdown/) file!
+
+
 ## Dotfiles
 
 There are three options, choose _one_:
@@ -372,41 +352,47 @@ Now this is done, go on with the following instructions under in the `3. ` secti
 
 ### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
 
-Open your terminal. **Don't blindly copy paste this line**, replace `replace_this_with_your_github_username` with *your* own github usernickname.
+Open your terminal and run the following command:
 
 ```bash
-export GITHUB_USERNAME=replace_this_with_your_github_username
-
-# Example:
-#   export GITHUB_USERNAME=ssaunier
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
 ```
 
-Now copy/paste this very long line in your terminal. Do **not** change this one.
+You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
+There seems to be a problem with the previous step (`gh auth`).
+
+Time to fork the repo and clone it on your laptop:
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_ && git clone git@github.com:$GITHUB_USERNAME/dotfiles.git
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
 ```
 
 Run the `dotfiles` installer.
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh install.sh
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
 ```
 
-Then run the git installer:
+Check the emails registered with your GitHub Account. You'll need to pick one
+at the next step:
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-zsh git_setup.sh
+gh api user/emails | jq -r '.[].email'
 ```
 
-:point_up: This will **prompt** you for your name (`Firstname Lastname`) and your email.
+Run the git installer:
 
-Be careful, you **need** to put the **same** email as the one you sign up with on GitHub.
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
+```
+
+:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email. Be careful
+you **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you
+don't do that, Kitt won't be able to track your progress.
 
 Please now **quit** all your opened terminal windows.
-
 
 
 &nbsp;
@@ -437,7 +423,7 @@ You don't want to be asked for your passphrase every time you communicate with a
 The list should look like:
 
 ```
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
+plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 ```
 
 &nbsp;
