@@ -48,6 +48,7 @@ WINDOWS = %w[
   win_vs_redistributable
   ubuntu_docker
   setup/ubuntu_inotify
+  setup/ubuntu_extra
   alumni
   win_slack
   kata
@@ -61,6 +62,7 @@ LINUX = %w[
   setup/ubuntu_sublime_text
   ubuntu_oh_my_zsh
   github_rsa
+  setup/gh_cli
   dotfiles
   sublime_conf
   ubuntu_python
