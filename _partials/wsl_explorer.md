@@ -5,6 +5,8 @@ We need an easy way to transfer files from Windows to Ubuntu and vice versa.
 
 In order to do that, we will create shortcuts to Ubuntu directories in the Windows **File Explorer**.
 
+(images/wsl_file_system.png)
+
 Here are the steps:
 
 - Open the Windows File Explorer (or use the shortcut Win + E)
@@ -15,4 +17,4 @@ Here are the steps:
 
 Click on the image to watch the video:
 
-[![Watch the video](images/wsl_file_system.png)](https://github.com/lewagon/data-setup/blob/wsl-ubuntu-file-system-shortcut/images/wsl_ubuntu_shortcut.mp4?raw=true)
+(images/wsl_ubuntu_shortcut.gif)
