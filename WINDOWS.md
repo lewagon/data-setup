@@ -590,7 +590,7 @@ Here are the steps:
 
 Click on the image to watch the video:
 
-[![Watch the video](images/wsl_file_system.png)](https://raw.github.com/lewagon/data-setup/blob/master/images/wsl_ubuntu_shortcut.mp4)
+[![Watch the video](images/wsl_file_system.png)](https://github.com/lewagon/data-setup/blob/wsl-ubuntu-file-system-shortcut/images/wsl_ubuntu_shortcut.mp4?raw=true)
 
 
 ## Windows Terminal
