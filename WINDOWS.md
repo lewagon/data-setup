@@ -590,8 +590,6 @@ Here are the steps:
 - Dive into the Ubuntu file system in order to look for directories of interest
 - Drag the desired folders into the Address Bar in order to create shortcuts
 
-Click on the image to watch the video:
-
 ![](images/wsl_ubuntu_shortcut.gif)
 
 
