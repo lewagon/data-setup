@@ -35,7 +35,7 @@ WINDOWS = %w[
   setup/remote_tools
   setup/wsl2_install_wsl
   setup/wsl2_vscode
-  wsl_explorer
+  setup/wsl_explorer
   setup/wsl2_windows_terminal
   setup/wsl2_git
   setup/wsl2_oh_my_zsh
