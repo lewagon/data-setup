@@ -1109,7 +1109,7 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
 
-macOS comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
+Ubuntu comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
 
 First let's install `pyenv` with the following Terminal command:
 
