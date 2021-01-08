@@ -1242,7 +1242,7 @@ c.NotebookApp.use_redirect_file = False
 Let's try to run Jupyter:
 
 ``` bash
-jupyter notebook --port 8889
+jupyter notebook
 ```
 
 This command should have opened a Jupyter page in your browser:
