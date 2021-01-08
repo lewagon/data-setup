@@ -473,15 +473,15 @@ We use Visual Code Studio for writing code on Windows, because it integrates nic
 For this integration to work, you need to uninstall other code editor, like for example SublimeText, as their WSL integration interferes with the integration of VS Code.
 
 ### Installation
->\- Go the [Visual Studio Code page](https://code.visualstudio.com/download)  
+>\- Go to the [Visual Studio Code page](https://code.visualstudio.com/download)
 >\- Choose the Windows version of VS Code
 
 
 The tool should start to download automatically.
 
->\- Open the file you have just downloaded.  
->\- Install it with a few options:  
->    \- Register VS Code as an editor for supported file types  
+>\- Open the file you have just downloaded.
+>\- Install it with a few options:
+>    \- Register VS Code as an editor for supported file types
 >    \- Let the other options as they are
 
 ![VS Code install](images/vscode-install.png)
@@ -500,10 +500,10 @@ The tool should start to download automatically.
 In VS Code:
 
 
->\- Click on `File`  
->\- Click on `Preferences`  
->\- Click on `Keymaps`  
->\- Click on `Sublime Text Keymap and Settings Importer`  
+>\- Click on `File`
+>\- Click on `Preferences`
+>\- Click on `Keymaps`
+>\- Click on `Sublime Text Keymap and Settings Importer`
 >\- Click on `Install`
 
 
@@ -515,19 +515,27 @@ Let's gain time now and add other extensions that will be helpful during your Bo
 For each of these extensions:
 
 
->\- On the web page, click on `install`  
->\- In the browser, accept to use VS Code to install the extension  
+>\- On the web page, click on `install`
+>\- In the browser, accept to use VS Code to install the extension
 >\- In VS Code, click on `install`
 
+For everyone
+- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 
+For the Web Development bootcamp:
 - [Rails Snippets](https://marketplace.visualstudio.com/items?itemName=hridoy.rails-snippets)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [ERB Helper Tags](https://marketplace.visualstudio.com/items?itemName=rayhanw.erb-helpers)
 - [ruby-rubocop](https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop)
 
+For the Data Science bootcamp:
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+
 ### VS Code Settings
->\- Press `Ctrl` + `,` on your keyboard to open the settings  
->\- In the search bar, type `emmet`  
+>\- Press `Ctrl` + `,` on your keyboard to open the settings
+>\- In the search bar, type `emmet`
 >\- Click on the first **`Edit in settings.json`** link
 
 
@@ -554,8 +562,8 @@ It should look like this:
 To make sure everything works fine, close VS Code, then open your Ubuntu terminal:
 
 
->\- Press `Windows` + `R`  
->\- Type  `ubuntu`  
+>\- Press `Windows` + `R`
+>\- Type  `ubuntu`
 >\- Press `Enter`
 
 
@@ -573,8 +581,9 @@ code
 
 
 
-
 ## Ubuntu File System
+
+### Exchange files between Windows and Ubuntu
 
 We need an easy way to transfer files from Windows to Ubuntu and vice versa.
 
@@ -591,6 +600,32 @@ Here are the steps:
 - Drag the desired folders into the Address Bar in order to create shortcuts
 
 ![](images/wsl_ubuntu_file_system.gif)
+
+### Open the Windows File Explorer from the WSL shell
+
+Another option to move files around is to open the Windows **File Explorer** from the WSL shell.
+
+In order to do that:
+
+- Open a WSL shell
+- Go to the directory you wish to explore
+- Run the `explorer.exe .` command
+- If you get an input output error message, run `wsl --shutdown` in the Windows PowerShell and reopen a WSL shell
+
+![](images/wsl_explorer.png)
+
+### Find your way in the Ubuntu File System
+
+You might want to figure out the exact location of a Windows directory in the Ubuntu file system, or the other way around.
+
+In order to convert a Windows path to and from a WSL path:
+
+- Open a WSL shell
+- Use the `wslpath "C:\Program Files"` command in order to translate a Windows path into a WSL path
+- Use the `wslpath -w "/home"` command in order to translate a WSL path into a Windows path
+- In particular, the `wslpath -w $(pwd)` command returns the Windows path of the current directory in the WSL shell
+
+![](images/wsl_path.png)
 
 
 ## Windows Terminal
