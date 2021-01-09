@@ -524,6 +524,34 @@ pyenv install 3.8.6
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
 
+<details>
+  <summary>🛠 Troubleshooting</summary>
+
+If you encounter an error installing Python with `pyenv` about `zlib`:
+
+```txt
+zipimport.ZipImportError: can't decompress data; zlib not available
+```
+
+Install `zlib` with:
+
+```bash
+brew install zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+```
+
+Then try to install Python again:
+
+```bash
+pyenv install <PYTHON VERSION>
+```
+
+It could raise another error about `bzip2`, you can ignore it and continue to the next step.
+
+</details>
+<br>
+
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
