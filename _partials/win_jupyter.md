@@ -12,7 +12,7 @@ jupyter notebook --generate-config
 We will now edit the generated Jupyter configuration file:
 
 ``` bash
-code /home/gmanchon/.jupyter/jupyter_notebook_config.py # ⚠️ replace this path with your own
+code $HOME/.jupyter/jupyter_notebook_config.py
 ```
 
 Locate the following line in the configuration file:
