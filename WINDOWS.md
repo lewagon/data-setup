@@ -738,7 +738,7 @@ sudo apt install -y git apt-transport-https unzip gnome-terminal
 Let's now install GitHub [official CLI](https://cli.github.com) (Command Line Interface) with the following commands:
 
 ```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
 sudo apt install -y gh
@@ -1224,7 +1224,7 @@ jupyter notebook --generate-config
 We will now edit the generated Jupyter configuration file:
 
 ``` bash
-code /home/gmanchon/.jupyter/jupyter_notebook_config.py # ⚠️ replace this path with your own
+code $HOME/.jupyter/jupyter_notebook_config.py
 ```
 
 Locate the following line in the configuration file:
