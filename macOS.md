@@ -603,7 +603,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8
+pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml
 ```
 
 Let's install packages useful for API & Scraping:
