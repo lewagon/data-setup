@@ -35,7 +35,6 @@ WINDOWS = %w[
   setup/remote_tools
   setup/wsl2_install_wsl
   setup/wsl2_vscode
-  setup/wsl_explorer
   setup/wsl2_windows_terminal
   setup/wsl2_git
   setup/wsl2_oh_my_zsh
@@ -47,6 +46,7 @@ WINDOWS = %w[
   osx_virtualenv
   pip
   win_jupyter
+  setup/wsl_explorer
   win_vs_redistributable
   ubuntu_docker
   setup/ubuntu_inotify
