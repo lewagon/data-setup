@@ -1,6 +1,6 @@
 # Setup instructions
 
-The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
+The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) data bootcamp:
 
 - Grab a text editor
 - Install a package manager

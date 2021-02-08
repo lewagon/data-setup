@@ -1,15 +1,12 @@
 # Setup instructions
 
-The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Bootcamp:
+The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) data bootcamp:
 
-- Grab a text editor, where you will spend your days and nights
+- Grab a text editor
 - Install a package manager
 - Pimp your Terminal
 - Setup git and GitHub
 - Install remote tools
-- Install and setup the terminal
-- Install a text editor
-- Install and setup `git` and GitHub
 - Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
 - Install [Docker](https://docs.docker.com/get-docker/)
 - Install Slack
@@ -626,7 +623,7 @@ Let's make Ubuntu the default terminal of your Windows Terminal application.
 
 It should open the settings:
 
-![wsl2_settings](images/wsl2_settings.jpg)
+![wsl2_settings](images/settings_wsl2.PNG)
 
 We have put in red the part we will use or change.
 
@@ -658,11 +655,11 @@ Now, let us ask Windows Terminal to start directly an Ubuntu Terminal when launc
 
 
 
->\- Locate the `"guid"` for Ubuntu
->\- Copy the value between `{` and `}`
->\- Locate the `"defaultProfile"`
->\- Replace the value between `{` and `}` with what you copied from above
->\- Add a comma after the `defaultProfile` so you can add the `"multiLinePasteWarning": false,` option as well. This will disable an annoying warning every time you want to paste multiple lines to your terminal.
+>\- Locate the `"guid"` for Ubuntu  
+>\- Copy the value between `{` and `}`  
+>\- Locate the `"defaultProfile"`   
+>\- Replace the value between `{` and `}` with what you copied from above   
+>\- Add a comma after the `defaultProfile` so you can add the `"multiLinePasteWarning": false,` option as well. This will disable an annoying warning every time you want to paste multiple lines to your terminal.  
 
 You can refer to the screenshot above to get a sense of how it should look like. Don't hesitate to ask for help.
 
@@ -876,6 +873,7 @@ To be sure that you can interact with your browser installed on Windows from you
     echo "export BROWSER='\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
   ```
 
+  Else run:
 
   ```bash
     echo "export BROWSER='\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
