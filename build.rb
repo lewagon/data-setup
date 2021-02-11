@@ -6,6 +6,7 @@ PYTHON_VERSION = "3.8.6"
 MAC_OS = %w[
   setup_instructions
   setup/remote_tools
+  setup/osx_apple_silicon
   setup/osx_command_line_tools
   setup/github
   homebrew
