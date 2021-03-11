@@ -93,7 +93,7 @@ Go to Applications > Utilities.
 
 Duplicate the Terminal app (select it, then Cmd + C, Cmd + V), and rename a copy as Terminal Rosetta.
 
-Press Cmd + I on the Terminal Rosetta app, then check the box "Run under Rosetta".
+Press Cmd + I on the Terminal Rosetta app, then check the box "Open using Rosetta".
 
 ⚠️ From now on during the bootcamp, whenever you are asked to open a Terminal, you will use the **Terminal Rosetta** app.
 
@@ -672,7 +672,7 @@ Great! Anytime we'll install Python package, we'll do it in that environment.
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 
-First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Powershell window where the virtualenv `lewagon` is activated, run:
+First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Ubuntu terminal where the virtualenv `lewagon` is activated, run:
 
 ```bash
 pip install --upgrade pip
