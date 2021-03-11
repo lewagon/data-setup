@@ -895,15 +895,15 @@ To be sure that you can interact with your browser installed on Windows from you
 </details>
 
 
-Please make sure that the following command returns "Browser defined 👌":
+👉 Restart your terminal
+
+Then please make sure that the following command returns "Browser defined 👌":
 
 ```bash
 [ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
 ```
 
 If it does not, choose a browser in the list above and execute the corresponding command.
-
-Restart your terminal.
 
 
 ## GitHub CLI
@@ -1142,7 +1142,7 @@ Great! Anytime we'll install Python package, we'll do it in that environment.
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 
-First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Powershell window where the virtualenv `lewagon` is activated, run:
+First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Ubuntu terminal where the virtualenv `lewagon` is activated, run:
 
 ```bash
 pip install --upgrade pip
