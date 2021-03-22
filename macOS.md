@@ -208,15 +208,90 @@ brew upgrade readline    || brew install readline
 ```
 
 
-## Sublime Text 3 - Your text editor
 
-A text editor is one of the most important tools of a developer. Go to [this page](http://www.sublimetext.com/3) and download **Sublime Text 3** for OS X. Install it (double click the downloaded file and drag & drop the app **into** the `Applications` folder, **don't skip this**). If you had Sublime Text 2 installed before, please uninstall it (by dragging/dropping it to the Trash).
+## Visual Studio Code - Your text editor
 
-Sublime Text is free without any time limitation but a popup will appear every ten saves to remind you there is a license to buy. You can hit `Esc` when this happens, but feel free to buy Sublime Text if you really like this one (there are alternatives).
+1. Download [Visual Studio Code for macOS](https://go.microsoft.com/fwlink/?LinkID=534106).
+2. Open the browser's download list and locate the downloaded file.
+3. Select the `magnifying glass` icon to open the file in `Finder`.
+4. Drag Visual Studio Code.app to the **Applications** folder, making it available in the macOS Launchpad. **Don't skip this step!**
+5. Add VS Code to your Dock by right-clicking on the icon to bring up the context menu and choosing Options, Keep in Dock.
 
-Again, make sure that Sublime Text is there, not in the disk image you downloaded. To make sure it's correct, once Sublime Text is installed, unmount the "Sublime Text 3" disk in the left panel of Finder. Finder will complain if something went wrong. Ask a teacher.
+
+### Launching from the command line
+
+You can also run VS Code from the terminal by typing `code` after adding it to the path:
+
+Launch VS Code by clicking the icon in your Dock.
+Open the Command Palette (Ctrl+Shift+P) and type `shell command` to find the Shell Command: Install 'code' command in PATH command:
 
 
+![](images/mac_vscode_command.png)
+
+Now quit the Terminal (`⌘` + `Q`) and restart it.
+Try typing `code` :point-right: if the VSCode opens in new window, you can proceed to the next point!
+
+
+### VS Code Shortcuts
+
+In VS Code:
+
+>\- Click on `File`
+>\- Click on `Preferences`
+>\- Click on `Keymaps`
+>\- Click on `Sublime Text Keymap and Settings Importer`
+>\- Click on `Install`
+
+
+### VS Code Extensions
+
+Let's gain time now and add other extensions that will be helpful during your Bootcamp.
+
+
+For each of these extensions:
+
+
+>\- On the web page, click on `install`
+>\- In the browser, accept to use VS Code to install the extension
+>\- In VS Code, click on `install`
+
+For everyone
+- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+
+For the Web Development bootcamp:
+- [Rails Snippets](https://marketplace.visualstudio.com/items?itemName=hridoy.rails-snippets)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [ERB Helper Tags](https://marketplace.visualstudio.com/items?itemName=rayhanw.erb-helpers)
+- [ruby-rubocop](https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop)
+
+For the Data Science bootcamp:
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+
+### VS Code Settings
+>\- Press `Ctrl` + `,` on your keyboard to open the settings
+>\- In the search bar, type `emmet`
+>\- Click on the first **`Edit in settings.json`** link
+
+
+Paste the following just before the last `}`:
+
+```bash
+"emmet.triggerExpansionOnTab": true,
+"emmet.includeLanguages": {
+  "erb": "html"
+},
+```
+
+It should look like this:
+
+![vscode_emmet](images/vscode_emmet.jpg)
+
+:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above ☝️
+
+
+:warning: Don't forget to save those changes!
 
 ## Oh-my-zsh - Fancy your Terminal
 
@@ -510,32 +585,6 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 &nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Sublime Text.
 
 
-
-### Sublime Text auto-configuration
-
-Open a new terminal and type this:
-
-```bash
-stt
-```
-
-It will **open Sublime Text in the context of your current folder**. That's how we'll use it.
-
-**Close Sublime text** and open it again:
-
-```bash
-stt
-```
-
-**Wait 1 minute** for additional packages to be automatically installed (New tabs with text will automatically open, containing documentation for each new package installed). TO follow package installation, you can go to `View > Show console`.
-
-To check if plugins are installed, open the Command Palette (`⌘` + `⇧` + `P` on OSX, `Ctrl` + `⇧` + `P` on Linux), type in `Packlist` and then `Enter`, you should see a couple of packages installed (like [Emmet](http://emmet.io/)).
-
-If you don't, please install all of them manually. The list is referenced [here](https://github.com/lewagon/dotfiles/blob/master/Package%20Control.sublime-settings).
-
-When it's done, you can close Sublime Text.
-
-
 ### SSH Passphrase
 
 In a terminal window, launch this command:
@@ -767,4 +816,5 @@ If you are done with your setup, please ask around if some classmates need some 
 If you don't have a lot of experience with `git` and GitHub, please [(re-)watch this workshop](https://www.youtube.com/watch?v=Z9fIBT2NBGY) (`1.25` playback speed is fine).
 
 If you do, then you can wait for the first lecture working on this [Tic-Tac-Toe Kata](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/train/python)
+
 
