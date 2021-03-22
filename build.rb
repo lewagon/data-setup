@@ -10,12 +10,11 @@ MAC_OS = %w[
   setup/osx_command_line_tools
   setup/github
   homebrew
-  setup/osx_sublime_text
+  mac_vscode
   setup/osx_oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
-  sublime_conf
   ssh_osx
   osx_python
   osx_virtualenv
@@ -62,12 +61,11 @@ LINUX = %w[
   setup/remote_tools
   setup/github
   setup/ubuntu_git
-  setup/ubuntu_sublime_text
+  ubuntu_vscode
   ubuntu_oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
-  sublime_conf
   ubuntu_python
   osx_virtualenv
   pip
