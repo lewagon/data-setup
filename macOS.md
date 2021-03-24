@@ -226,8 +226,7 @@ Open the Command Palette (Ctrl+Shift+P) and type `shell command` to find the She
 ![](images/mac_vscode_command.png)
 
 Now quit the Terminal (`⌘` + `Q`) and restart it.
-Try typing `code` :point-right: if the VSCode opens in new window, you can proceed to the next point!
-
+Try typing `code` :point_right: if the VSCode opens in new window, you can proceed to the next point!
 
 ### VS Code Shortcuts
 
@@ -253,9 +252,9 @@ For each of these extensions:
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
 
 ### VS Code Settings
->\- Press `Ctrl` + `,` on your keyboard to open the settings
->\- In the search bar, type `emmet`
->\- Click on the first **`Edit in settings.json`** link
+- Press `Ctrl` + `,` on your keyboard to open the settings
+- In the search bar, type `emmet`
+- Click on the first **`Edit in settings.json`** link
 
 
 Paste the following just before the last `}`:
@@ -540,8 +539,8 @@ Let us open the `~/.zshrc` profile file in Sublime Text and change slightly its 
 stt ~/.zshrc
 ```
 
->\- Locate the line `# Actually load Oh-My-Zsh`
->\- **Above it** write the following line:
+- Locate the line `# Actually load Oh-My-Zsh`
+- **Above it** write the following line:
 
 ```bash
 ZSH_DISABLE_COMPFIX=true
@@ -553,8 +552,8 @@ ZSH_DISABLE_COMPFIX=true
 You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
 
 
->\- Spot the line starting with `plugins=`
->\- Add `ssh-agent` to the plugins list.
+- Spot the line starting with `plugins=`
+- Add `ssh-agent` to the plugins list.
 
 The list should look like:
 

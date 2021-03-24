@@ -18,3 +18,12 @@ Now let's try to launch your VSCode from **the Terminal**:
 code
 ```
 If the text editor opens in a new window, you can move forward!
+
+### VS Code Shortcuts
+
+In VS Code:
+- Click on `File`
+- Click on `Preferences`
+- Click on `Keymaps`
+- Click on `Sublime Text Keymap and Settings Importer`
+- Click on `Install`

@@ -16,4 +16,13 @@ Open the Command Palette (Ctrl+Shift+P) and type `shell command` to find the She
 ![](images/mac_vscode_command.png)
 
 Now quit the Terminal (`⌘` + `Q`) and restart it.
-Try typing `code` :point-right: if the VSCode opens in new window, you can proceed to the next point!
+Try typing `code` :point_right: if the VSCode opens in new window, you can proceed to the next point!
+
+### VS Code Shortcuts
+
+In VS Code:
+- Click on `Code`
+- Click on `Preferences`
+- Click on `Keymaps`
+- Click on `Sublime Text Keymap and Settings Importer`
+- Click on `Install`
