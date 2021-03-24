@@ -31,9 +31,9 @@ This means that you need to be on **Windows 10**, with all the latest updates in
 To check your Windows version:
 
 
->\- Press `Windows` + `R`  
->\- Type  `winver`  
->\- Press `Enter`
+- Press `Windows` + `R`
+- Type  `winver`
+- Press `Enter`
 
 &nbsp;
 
@@ -66,12 +66,12 @@ Once you're sure that you're using Windows 10, you will need to check that your 
 Open Windows Update:
 
 
->\- Press `Windows` + `R`
->\- Type  `ms-settings:windowsupdate`
->\- Press `Enter`
+- Press `Windows` + `R`
+- Type  `ms-settings:windowsupdate`
+- Press `Enter`
 >
 >
->\- Click on `Check updates`
+- Click on `Check updates`
 
 &nbsp;
 
@@ -93,15 +93,15 @@ Open Windows Update:
   Some antiviruses and pieces of software deactivate the Update service we need, resulting in the error you see. Let's fix that!
 
 
-  >\- Press `Windows` + `R`
-  >\- Type  `services.msc`
-  >\- Press `Enter`
+  - Press `Windows` + `R`
+  - Type  `services.msc`
+  - Press `Enter`
   >
   >
-  >\- Double Click `Windows Update Service`
-  >\- Set its `Startup` to `Automatic`
-  >\- Click on `Start`
-  >\- Click on `Ok`
+  - Double Click `Windows Update Service`
+  - Set its `Startup` to `Automatic`
+  - Click on `Start`
+  - Click on `Ok`
 
   Then let's try updates again!
 </details>
@@ -113,9 +113,9 @@ Open Windows Update:
 Some of the tools we need to install have been release with the `1903` version **or above** of Windows 10 so we need to make sure you have at least this one.
 
 
->\- Press `Windows` + `R`
->\- Type  `winver`
->\- Press `Enter`
+- Press `Windows` + `R`
+- Type  `winver`
+- Press `Enter`
 
 
 Check the **Version number**:
@@ -134,13 +134,13 @@ We need to ensure that the Virtualization options are enabled in the BIOS of you
 For many computers, this is already the case. Let's check:
 
 
->\- Press `Windows` + `R`
->\- Type  `taskmgr`
->\- Press `Enter`
+- Press `Windows` + `R`
+- Type  `taskmgr`
+- Press `Enter`
 >
 >
->\- Click on the `Performance` tab
->\- Click on `CPU`
+- Click on the `Performance` tab
+- Click on `CPU`
 
 
 ![task_manager.jpg](images/task_manager.jpg)
@@ -165,18 +165,18 @@ For many computers, this is already the case. Let's check:
   We need to access the BIOS / UEFI of the computer to activate it.
 
 
-  >\- Press `Windows + R`
-  >\- Type  `shutdown.exe /r /o /t 1`
-  >\- Press `Enter`
+  - Press `Windows + R`
+  - Type  `shutdown.exe /r /o /t 1`
+  - Press `Enter`
   >
   >
-  >\- Wait for the computer to shutdown
+  - Wait for the computer to shutdown
   >
   >
-  >\- Click on `Troubleshoot`
-  >\- Click on `Advanced Options`
-  >\- Click on `UEFI Firmware Settings`
-  >\- Click on `Restart`
+  - Click on `Troubleshoot`
+  - Click on `Advanced Options`
+  - Click on `UEFI Firmware Settings`
+  - Click on `Restart`
 
 
   You need to activate the virtualization option for your processor here:
@@ -242,9 +242,9 @@ We will install WSL through the PowerShell Terminal:
 :warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows PowerShell** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
 
 
->\- Press `Windows` + `R`
->\- Type  `powershell`
->\- Press `Ctrl` + `Shift` + `Enter`
+- Press `Windows` + `R`
+- Type  `powershell`
+- Press `Ctrl` + `Shift` + `Enter`
 
 
 :warning: You may have to accept the UAC confirmation about the privilege elevation.
@@ -254,9 +254,9 @@ We will install WSL through the PowerShell Terminal:
 A blue terminal window will appear:
 
 
->\- Copy the following commands
->\- Paste them into the PowerShell window by right-clicking into it (`Ctrl` + `V` does not work here!)
->\- Run them by pressing `Enter`
+- Copy the following commands
+- Paste them into the PowerShell window by right-clicking into it (`Ctrl` + `V` does not work here!)
+- Run them by pressing `Enter`
 
 
 &nbsp;
@@ -284,9 +284,9 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 Once your computer has restarted, we need to download the WSL2 installer.
 
 
->\- Go to the [download page](https://aka.ms/wsl2kernel) and get the installer
->\- Click `Next`
->\- Click `Finish`
+- Go to the [download page](https://aka.ms/wsl2kernel) and get the installer
+- Click `Next`
+- Click `Finish`
 
 ![update_wsl](images/update_wsl.jpg)
 
@@ -300,9 +300,9 @@ Once your computer has restarted, we need to download the WSL2 installer.
 Now that WSL 2 is installed, let's use it by default when we deal with WSL:
 
 
->\- Press `Windows` + `R`
->\- Type  `cmd`
->\- Press `Enter`
+- Press `Windows` + `R`
+- Type  `cmd`
+- Press `Enter`
 
 
 In the window which appears, type:
@@ -323,16 +323,16 @@ wsl --set-default-version 2
 ### Installation
 
 
->\- Click on `Start`
->\- Type  `Microsoft Store`
->\- Click on the Microsoft Windows Store in the list
+- Click on `Start`
+- Type  `Microsoft Store`
+- Click on the Microsoft Windows Store in the list
 >
 >
->\- Search for `Ubuntu` in the search bar
->\- Select version without any number, just plain "Ubuntu"
+- Search for `Ubuntu` in the search bar
+- Select version without any number, just plain "Ubuntu"
 >
 >
->\- Click on `Install`
+- Click on `Install`
 
 
 :warning: Don't install **Ubuntu 18.04 LTS** nor **Ubuntu 20.04**!
@@ -351,9 +351,9 @@ wsl --set-default-version 2
   To uninstall a wrong version of Ubuntu, you just have to go to the Installed Program List of Windows 10:
 
 
-  >\- Press `Windows` + `R`
-  >\- Type  `ms-settings:appsfeatures`
-  >\- Press `Enter`
+  - Press `Windows` + `R`
+  - Type  `ms-settings:appsfeatures`
+  - Press `Enter`
 
 
   Find the right software to uninstall and click on the uninstall button.
@@ -366,7 +366,7 @@ wsl --set-default-version 2
 Once the installation is done, the `Install` button becomes a `Launch` button:
 
 
->\- Click on `Launch`
+- Click on `Launch`
 
 
 At first launch, you will be asked some information:
@@ -392,9 +392,9 @@ At first launch, you will be asked some information:
 ### Check the WSL version of Ubuntu
 
 
->\- Press `Windows` + `R`
->\- Type  `cmd`
->\- Press `Enter`
+- Press `Windows` + `R`
+- Type  `cmd`
+- Press `Enter`
 
 
 Type the following command:
@@ -440,16 +440,16 @@ wsl -l -v
 
 
   &nbsp;
-  >\- Press `Windows` + `R`
-  >\- Type  `%localappdata%\Packages`
-  >\- Press `Enter`
+  - Press `Windows` + `R`
+  - Type  `%localappdata%\Packages`
+  - Press `Enter`
   >
   >
-  >\- Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
-  >\- Right Click on the `LocalState` folder
-  >\- Click on `Properties`
-  >\- Click on `Advanced`
-  >\- Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
+  - Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
+  - Right Click on the `LocalState` folder
+  - Click on `Properties`
+  - Click on `Advanced`
+  - Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
 
 
   Apply changes to this folder only and try to convert the Ubuntu WSL version again.
@@ -472,16 +472,16 @@ We use Visual Code Studio for writing code on Windows, because it integrates nic
 For this integration to work, you need to uninstall other code editor, like for example SublimeText, as their WSL integration interferes with the integration of VS Code.
 
 ### Installation
->\- Go to the [Visual Studio Code page](https://code.visualstudio.com/download)
->\- Choose the Windows version of VS Code
+- Go to the [Visual Studio Code page](https://code.visualstudio.com/download)
+- Choose the Windows version of VS Code
 
 
 The tool should start to download automatically.
 
->\- Open the file you have just downloaded.
->\- Install it with a few options:
->    \- Register VS Code as an editor for supported file types
->    \- Let the other options as they are
+- Open the file you have just downloaded.
+- Install it with a few options:
+    - Register VS Code as an editor for supported file types
+    - Let the other options as they are
 
 ![VS Code install](images/vscode-install.png)
 
@@ -498,12 +498,93 @@ The tool should start to download automatically.
 
 In VS Code:
 
+- Click on `File`
+- Click on `Preferences`
+- Click on `Keymaps`
+- Click on `Sublime Text Keymap and Settings Importer`
+- Click on `Install`
 
->\- Click on `File`
->\- Click on `Preferences`
->\- Click on `Keymaps`
->\- Click on `Sublime Text Keymap and Settings Importer`
->\- Click on `Install`
+
+### VS Code Extensions
+
+Let's gain time now and add other extensions that will be helpful during your Bootcamp.
+
+For each of these extensions:
+
+- On the web page, click on `install`
+- In the browser, accept to use VS Code to install the extension
+- In VS Code, click on `install`
+
+**Extensions**
+- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+- [Rails Snippets](https://marketplace.visualstudio.com/items?itemName=hridoy.rails-snippets)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [ERB Helper Tags](https://marketplace.visualstudio.com/items?itemName=rayhanw.erb-helpers)
+- [ruby-rubocop](https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop)
+
+### VS Code Settings
+- Press `Ctrl` + `,` on your keyboard to open the settings
+- In the search bar, type `emmet`
+- Click on the first **`Edit in settings.json`** link
+
+Paste the following just before the last `}`:
+
+```bash
+"emmet.triggerExpansionOnTab": true,
+"emmet.includeLanguages": {
+  "erb": "html"
+},
+```
+
+It should look like this:
+
+![vscode_emmet](images/vscode_emmet.jpg)
+
+:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above ☝️
+
+:warning: Don't forget to save those changes!
+
+### Final Check
+
+To make sure everything works fine, close VS Code, then open your Ubuntu terminal:
+
+- Press `Windows` + `R`
+- Type  `ubuntu`
+- Press `Enter`
+
+
+In Ubuntu, let's try to launch VS Code:
+
+```bash
+code
+```
+
+&nbsp;
+
+&nbsp;&nbsp;&nbsp; :x: If Visual Studio Code does not open, please **contact a teacher**
+
+&nbsp;&nbsp;&nbsp; :white_check_mark: If Visual Studio Code opens, your code editor is ready! :muscle:
+
+
+### Final Check
+
+To make sure everything works fine, close VS Code, then open your Ubuntu terminal:
+
+- Press `Windows` + `R`
+- Type  `ubuntu`
+- Press `Enter`
+
+In Ubuntu, let's try to launch VS Code:
+
+```bash### VS Code Shortcuts
+
+In VS Code:
+
+- Click on `File`
+- Click on `Preferences`
+- Click on `Keymaps`
+- Click on `Sublime Text Keymap and Settings Importer`
+- Click on `Install`
 
 
 ### VS Code Extensions
@@ -514,28 +595,21 @@ Let's gain time now and add other extensions that will be helpful during your Bo
 For each of these extensions:
 
 
->\- On the web page, click on `install`
->\- In the browser, accept to use VS Code to install the extension
->\- In VS Code, click on `install`
+- On the web page, click on `install`
+- In the browser, accept to use VS Code to install the extension
+- In VS Code, click on `install`
 
-For everyone
+**Extensions**
 - [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
-
-For the Web Development bootcamp:
 - [Rails Snippets](https://marketplace.visualstudio.com/items?itemName=hridoy.rails-snippets)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [ERB Helper Tags](https://marketplace.visualstudio.com/items?itemName=rayhanw.erb-helpers)
 - [ruby-rubocop](https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop)
 
-For the Data Science bootcamp:
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
-
 ### VS Code Settings
->\- Press `Ctrl` + `,` on your keyboard to open the settings
->\- In the search bar, type `emmet`
->\- Click on the first **`Edit in settings.json`** link
+- Press `Ctrl` + `,` on your keyboard to open the settings
+- In the search bar, type `emmet`
+- Click on the first **`Edit in settings.json`** link
 
 
 Paste the following just before the last `}`:
@@ -561,14 +635,23 @@ It should look like this:
 To make sure everything works fine, close VS Code, then open your Ubuntu terminal:
 
 
->\- Press `Windows` + `R`
->\- Type  `ubuntu`
->\- Press `Enter`
+- Press `Windows` + `R`
+- Type  `ubuntu`
+- Press `Enter`
 
 
 In Ubuntu, let's try to launch VS Code:
 
 ```bash
+code
+```
+
+&nbsp;
+
+&nbsp;&nbsp;&nbsp; :x: If Visual Studio Code does not open, please **contact a teacher**
+
+&nbsp;&nbsp;&nbsp; :white_check_mark: If Visual Studio Code opens, your code editor is ready! :muscle:
+
 code
 ```
 
@@ -588,23 +671,23 @@ The standard Ubuntu terminal is a very crude way of using Ubuntu; let's use a re
 We first need to install **Windows Terminal** from the Microsoft Windows Store:
 
 
->\- Click on `Start`
->\- Type  `Microsoft Store`
->\- Click on the Microsoft Windows Store in the list
+- Click on `Start`
+- Type  `Microsoft Store`
+- Click on the Microsoft Windows Store in the list
 >
 >
->\- Search for `Windows Terminal` in the search bar
+- Search for `Windows Terminal` in the search bar
 >
 >
->\- Click on `Install`
+- Click on `Install`
 
 
 Once the installation is done, the `Install` button becomes a `Launch` button:
 
 
->\- Click on `Launch`
->\- Right Click on the icon in the taskbar
->\- Choose to pin the app to the bar
+- Click on `Launch`
+- Right Click on the icon in the taskbar
+- Choose to pin the app to the bar
 
 
 This terminal allows you to open multiple terminal sessions, including **PowerShell**, **Command Prompt** and **Ubuntu** that you installed earlier.
@@ -618,7 +701,7 @@ This terminal has tabs: you can choose to open a new terminal tab clicking on th
 Let's make Ubuntu the default terminal of your Windows Terminal application.
 
 
->\- Press `Ctrl` + `,`
+- Press `Ctrl` + `,`
 
 
 It should open the settings:
@@ -635,8 +718,8 @@ First, let us ask Ubuntu to start directly inside your Ubuntu Home Directory ins
 
 
 
->\- Locate the `"name": "Ubuntu",`
->\- Add the following line after it:
+- Locate the `"name": "Ubuntu",`
+- Add the following line after it:
 
 ```bash
 "startingDirectory": "//wsl$/Ubuntu/home/the-username-you-chose-at-the-ubuntu-install",
@@ -655,11 +738,11 @@ Now, let us ask Windows Terminal to start directly an Ubuntu Terminal when launc
 
 
 
->\- Locate the `"guid"` for Ubuntu  
->\- Copy the value between `{` and `}`  
->\- Locate the `"defaultProfile"`   
->\- Replace the value between `{` and `}` with what you copied from above   
->\- Add a comma after the `defaultProfile` so you can add the `"multiLinePasteWarning": false,` option as well. This will disable an annoying warning every time you want to paste multiple lines to your terminal.  
+- Locate the `"guid"` for Ubuntu
+- Copy the value between `{` and `}`
+- Locate the `"defaultProfile"`
+- Replace the value between `{` and `}` with what you copied from above
+- Add a comma after the `defaultProfile` so you can add the `"multiLinePasteWarning": false,` option as well. This will disable an annoying warning every time you want to paste multiple lines to your terminal.
 
 You can refer to the screenshot above to get a sense of how it should look like. Don't hesitate to ask for help.
 
@@ -678,8 +761,8 @@ You can refer to the screenshot above to get a sense of how it should look like.
 To install `git`:
 
 
->\- Open an Ubuntu terminal.
->\- Copy and paste the following lines:
+- Open an Ubuntu terminal.
+- Copy and paste the following lines:
 
 
 ```bash

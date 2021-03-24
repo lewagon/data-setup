@@ -85,25 +85,73 @@ gh --version
 If you don't get a prompt saying `gh version X.Y.Z (YYYY-MM-DD)` with at least version 1.4, please refer to [the documentation](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#official-sources) where they list some troubleshooting information. In doubt, ask a TA.
 
 
-## Sublime Text 3 - Your text editor
+## Visual Studio Code - Your text editor
 
 A text editor is one of the most important tools of a developer.
-Follow these instructions in the Terminal:
+Follow these instructions in the Terminal **one by one** (don't copy and paste everything at once):
 
 ```bash
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-```
-
-:point_up: This command will ask for your password with: `[sudo] password for <username>:`. Don't panick! Calmy type your password key by key. You won't have a visual feedback (like little `*`), that's **perfectly normal**, keep on typing. When you're done, hit `Enter` :muscle:.
-
-```bash
-sudo apt install -y apt-transport-https
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
-sudo apt install -y sublime-text
+sudo apt install code
 ```
 
-Sublime Text is free without any time limitation but a popup will appear every ten saves to remind you there is a license to buy. You can hit `Esc` when this happens, but feel free to buy Sublime Text if you really like this one (there are alternatives).
+:point_up: This command will ask for your password with: `[sudo] password for <username>:`. Don't panick! Calmly type your password key by key. You won't have a visual feedback (like little `*`), that's **perfectly normal**, keep on typing. When you're done, hit `Enter` :muscle:.
+
+Now let's try to launch your VSCode from **the Terminal**:
+
+```bash
+code
+```
+If the text editor opens in a new window, you can move forward!
+
+
+### VS Code Shortcuts
+
+In VS Code:
+- Click on `File`
+- Click on `Preferences`
+- Click on `Keymaps`
+- Click on `Sublime Text Keymap and Settings Importer`
+- Click on `Install`
+
+### VS Code Extensions
+
+Let's gain time now and add other extensions that will be helpful during your Bootcamp.
+For each of these extensions:
+- On the web page, click on `install`
+- In the browser, accept to use VS Code to install the extension
+- In VS Code, click on `install`
+
+**Extensions**:
+- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+
+### VS Code Settings
+>\- Press `Ctrl` + `,` on your keyboard to open the settings
+>\- In the search bar, type `emmet`
+>\- Click on the first **`Edit in settings.json`** link
+
+
+Paste the following just before the last `}`:
+
+```bash
+"emmet.triggerExpansionOnTab": true,
+"emmet.includeLanguages": {
+  "erb": "html"
+},
+```
+
+It should look like this:
+
+![vscode_emmet](images/vscode_emmet.jpg)
+
+:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above ☝️
+
+:warning: Don't forget to save those changes!
 
 
 ## Oh-my-zsh - Fancy your Terminal
@@ -360,32 +408,6 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 
 
 &nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Sublime Text.
-
-
-
-### Sublime Text auto-configuration
-
-Open a new terminal and type this:
-
-```bash
-stt
-```
-
-It will **open Sublime Text in the context of your current folder**. That's how we'll use it.
-
-**Close Sublime text** and open it again:
-
-```bash
-stt
-```
-
-**Wait 1 minute** for additional packages to be automatically installed (New tabs with text will automatically open, containing documentation for each new package installed). TO follow package installation, you can go to `View > Show console`.
-
-To check if plugins are installed, open the Command Palette (`⌘` + `⇧` + `P` on OSX, `Ctrl` + `⇧` + `P` on Linux), type in `Packlist` and then `Enter`, you should see a couple of packages installed (like [Emmet](http://emmet.io/)).
-
-If you don't, please install all of them manually. The list is referenced [here](https://github.com/lewagon/dotfiles/blob/master/Package%20Control.sublime-settings).
-
-When it's done, you can close Sublime Text.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
