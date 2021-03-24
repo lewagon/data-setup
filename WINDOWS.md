@@ -494,6 +494,7 @@ The tool should start to download automatically.
 
 :warning: This extension is mandatory for you to be able to work with VS Code!
 
+<<<<<<< HEAD
 ### VS Code Shortcuts
 
 In VS Code:
@@ -662,6 +663,8 @@ code
 &nbsp;&nbsp;&nbsp; :white_check_mark: If Visual Studio Code opens, your code editor is ready! :muscle:
 
 
+=======
+>>>>>>> 0cf8e17f3f364bb82de6e888bd9d84fca3feb6e2
 ## Windows Terminal
 
 The standard Ubuntu terminal is a very crude way of using Ubuntu; let's use a real modern terminal!
