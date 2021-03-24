@@ -232,7 +232,7 @@ Try typing `code` :point-right: if the VSCode opens in new window, you can proce
 ### VS Code Shortcuts
 
 In VS Code:
-- Click on `File`
+- Click on `Code`
 - Click on `Preferences`
 - Click on `Keymaps`
 - Click on `Sublime Text Keymap and Settings Importer`
