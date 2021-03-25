@@ -10,12 +10,12 @@ MAC_OS = %w[
   setup/osx_command_line_tools
   setup/github
   homebrew
-  setup/osx_sublime_text
+  mac_vscode
+  vscode_setup
   setup/osx_oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
-  sublime_conf
   ssh_osx
   osx_python
   osx_virtualenv
@@ -36,6 +36,8 @@ WINDOWS = %w[
   setup/remote_tools
   setup/wsl2_install_wsl
   setup/wsl2_vscode
+  setup/wsl2_vscode_settings
+  wsl2_vscode_settings
   setup/wsl2_windows_terminal
   setup/wsl2_git
   setup/wsl2_oh_my_zsh
@@ -62,12 +64,12 @@ LINUX = %w[
   setup/remote_tools
   setup/github
   setup/ubuntu_git
-  setup/ubuntu_sublime_text
+  ubuntu_vscode
+  vscode_setup
   ubuntu_oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
-  sublime_conf
   ubuntu_python
   osx_virtualenv
   pip
