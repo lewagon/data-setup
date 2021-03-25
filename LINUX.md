@@ -500,16 +500,14 @@ pip install requests bs4
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow
 ```
+
+### Packages check up
+
+TODO: check pip freeze with a routine
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
-
-If you want to check which packages (and which version of that package) you have installed, you can run:
-
-```bash
-pip freeze
-```
 
 
 ## Docker 🐋

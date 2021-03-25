@@ -20,6 +20,7 @@ MAC_OS = %w[
   osx_python
   osx_virtualenv
   pip
+  nbextensions
   docker
   alumni
   setup/osx_slack
@@ -49,6 +50,7 @@ WINDOWS = %w[
   osx_virtualenv
   pip
   win_jupyter
+  nbextensions
   setup/wsl_explorer
   win_vs_redistributable
   ubuntu_docker
@@ -73,6 +75,7 @@ LINUX = %w[
   ubuntu_python
   osx_virtualenv
   pip
+  nbextensions
   ubuntu_docker
   setup/ubuntu_inotify
   setup/ubuntu_extra
