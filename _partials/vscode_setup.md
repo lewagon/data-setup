@@ -13,10 +13,10 @@ For each of these extensions:
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
 
 ### VS Code Settings
-- Press `Ctrl` + `,` on your keyboard to open the settings
+
+- On macOS, press `CMD` + `,` on your keyboard (or `CTRL` + `,` on Windows or Linux) to open the settings
 - In the search bar, type `emmet`
 - Click on the first **`Edit in settings.json`** link
-
 
 Paste the following just before the last `}`:
 
