@@ -605,7 +605,7 @@ For each of these extensions:
 
 ### VS Code Settings
 
-- On macOS, press `CMD` + `,` on your keyboard (or `CTRL` + `,` on Windows or Linux) to open the settings
+- Press `Ctrl` + `,` on your keyboard to open the settings
 - In the search bar, type `emmet`
 - Click on the first **`Edit in settings.json`** link
 
