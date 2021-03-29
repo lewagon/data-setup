@@ -221,7 +221,7 @@ brew upgrade readline    || brew install readline
 You can also run VS Code from the terminal by typing `code` after adding it to the path:
 
 Launch VS Code by clicking the icon in your Dock.
-Open the Command Palette (Ctrl+Shift+P) and type `shell command` to find the Shell Command: Install 'code' command in PATH command:
+Open the Command Palette (`Cmd` + `Shift` + `P`) and type `shell command` to find the Shell Command: Install 'code' command in PATH command:
 
 ![](images/mac_vscode_command.png)
 
@@ -254,7 +254,7 @@ For each of these extensions:
 
 ### VS Code Settings
 
-- On macOS, press `CMD` + `,` on your keyboard (or `CTRL` + `,` on Windows or Linux) to open the settings
+- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
 - In the search bar, type `emmet`
 - Click on the first **`Edit in settings.json`** link
 
@@ -624,7 +624,7 @@ First let's install `pyenv` with the following Terminal command:
 brew install pyenv
 ```
 
-Then quit **all your opened terminal windows** (Cmd + Q) and restart one.
+Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
@@ -668,7 +668,7 @@ OK once this command is complete, we are going to tell the system to use this ve
 pyenv global 3.8.6
 ```
 
-Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
+Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 To check if this worked, run `python --version`. If you see `3.8.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
@@ -683,7 +683,7 @@ First let's install this plugin:
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 ```
 
-Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
+Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
