@@ -1149,7 +1149,7 @@ First let's install `pyenv` with the following Terminal command:
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 
-Then quit **all your opened terminal windows** (Cmd + Q) and restart one. Ignore the `pyenv: no such command 'virtualenv-init' for now`.
+Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one. Ignore the `pyenv: no such command 'virtualenv-init' for now`.
 
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
@@ -1173,7 +1173,7 @@ OK once this command is complete, we are going to tell the system to use this ve
 pyenv global 3.8.6
 ```
 
-Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
+Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 To check if this worked, run `python --version`. If you see `3.8.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
@@ -1188,7 +1188,7 @@ First let's install this plugin:
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 ```
 
-Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
+Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
@@ -1283,7 +1283,7 @@ This command should have opened a Jupyter page in your browser:
 
 If it is not the case, please call a TA.
 
-To stop the Jupyter server in the terminal, press Ctrl + C, enter y, then press Enter.
+To stop the Jupyter server in the terminal, press `Ctrl` + `C`, enter y, then press Enter.
 
 
 
