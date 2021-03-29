@@ -15,6 +15,37 @@ jupyter nbextension enable autopep8
 jupyter nbextension enable varInspector/main
 ```
 
+### Sublime Text shortcuts
+
+[Add sublime text shortcuts to jupyter notebook](http://blog.rtwilson.com/how-to-get-sublime-text-style-editing-in-the-ipythonjupyter-notebook/)
+
+Find the `jupyter` config directory:
+``` bash
+JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
+```
+
+Open `custom/custom.js` in the config directory:
+```bash
+cd $JUPYTER_CONFIG_DIR
+vsc custom/custom.js
+```
+Edit `custom.js` with:
+``` js
+require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
+    function(sublime_keymap, cell, IPython) {
+        // setTimeout(function(){ // uncomment line to fake race-condition
+        cell.Cell.options_default.cm_config.keyMap = 'sublime';
+        var cells = IPython.notebook.get_cells();
+        for(var cl=0; cl< cells.length ; cl++){
+            cells[cl].code_mirror.setOption('keyMap', 'sublime');
+        }
+        // }, 1000)// uncomment  line to fake race condition
+    }
+);
+```
+
+You can close VScode.
+
 ### `jupyter` check up
 
 Check you can launch a notebook server on your machine:
@@ -44,4 +75,3 @@ Check that the `nbextensions` are enabled:
 ![nbextensions.png](images/nbextensions.png)
 
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
-

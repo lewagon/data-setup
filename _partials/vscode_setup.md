@@ -11,6 +11,7 @@ For each of these extensions:
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
 
 ### VS Code Settings
 

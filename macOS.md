@@ -460,10 +460,10 @@ Open your terminal and go to your `dotfiles` project:
 
 ```bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-stt # Open it in Sublime Text
+vsc # Open it in VScode
 ```
 
-In Sublime Text, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
+In VScode, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
 
 Back to the terminal, run a `git diff` and ask a TA to come and check about this configuration change. You should see stuff about Python and `pyenv`.
 
@@ -534,10 +534,10 @@ Please now **quit** all your opened terminal windows.
 &nbsp;
 
 
-Let us open the `~/.zshrc` profile file in Sublime Text and change slightly its content:
+Let us open the `~/.zshrc` profile file in Visual Studio Code and change slightly its content:
 
 ```bash
-stt ~/.zshrc
+code ~/.zshrc
 ```
 
 - Locate the line `# Actually load Oh-My-Zsh`
@@ -565,7 +565,7 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 &nbsp;
 
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Sublime Text.
+&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Visual Studio Code.
 
 
 ### SSH Passphrase

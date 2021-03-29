@@ -90,18 +90,13 @@ filenames = {
   "LINUX.md" => LINUX,
 }
 
-WINDOWS_SUBS = {
+DEFAULT_SUBS = {
   "<CODE_EDITOR>" => "Visual Studio Code",
   "<CODE_EDITOR_CMD>" => "code"
 }
 
-DEFAULT_SUBS = {
-  "<CODE_EDITOR>" => "Sublime Text",
-  "<CODE_EDITOR_CMD>" => "stt"
-}
-
 subs = {
-  "WINDOWS.md" => WINDOWS_SUBS,
+  "WINDOWS.md" => DEFAULT_SUBS,
   "macOS.md" => DEFAULT_SUBS,
   "LINUX.md" => DEFAULT_SUBS,
 }
