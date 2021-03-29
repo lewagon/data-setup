@@ -91,7 +91,7 @@ Open the Finder app (or search for it with [Spotlight](https://support.apple.com
 
 Go to Applications > Utilities.
 
-Duplicate the Terminal app (select it, then `Cmd` + `C`, `Cmd` + `V`), and rename a copy as Terminal Rosetta.
+Duplicate the Terminal app (select it, then Cmd + C, Cmd + V), and rename a copy as Terminal Rosetta.
 
 Press Cmd + I on the Terminal Rosetta app, then check the box "Open using Rosetta".
 
