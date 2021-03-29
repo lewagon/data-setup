@@ -11,7 +11,7 @@
 You can also run VS Code from the terminal by typing `code` after adding it to the path:
 
 Launch VS Code by clicking the icon in your Dock.
-Open the Command Palette (Ctrl+Shift+P) and type `shell command` to find the Shell Command: Install 'code' command in PATH command:
+Open the Command Palette (Cmd + Shift + P) and type `shell command` to find the Shell Command: Install 'code' command in PATH command:
 
 ![](images/mac_vscode_command.png)
 
