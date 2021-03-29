@@ -8,7 +8,7 @@ To make sure everything works fine, close VS Code, then open your Ubuntu termina
 
 In Ubuntu, let's try to launch VS Code:
 
-```bash### VS Code Shortcuts
+### VS Code Shortcuts
 
 In VS Code:
 
