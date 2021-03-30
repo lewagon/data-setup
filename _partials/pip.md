@@ -28,6 +28,11 @@ pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow
 
 ### Packages check up
 
-TODO: check pip freeze with a routine
+Run the following command to check if you successfully installed the required packages:
+```bash
+curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/9648336201de2db5932bc6d02ad72ee0cb947992/pip_check.sh > packchecker.sh && zsh packchecker.sh && rm packchecker.sh
+```
+
+
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
