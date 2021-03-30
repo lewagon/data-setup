@@ -22,6 +22,7 @@ MAC_OS = %w[
   pip
   nbextensions
   docker
+  gcp_setup
   alumni
   setup/osx_slack
   kata
@@ -45,6 +46,7 @@ WINDOWS = %w[
   github_rsa
   setup/wsl_browser_variable
   setup/gh_cli
+  ubuntu_gcloud
   dotfiles
   ubuntu_python
   osx_virtualenv
@@ -56,6 +58,7 @@ WINDOWS = %w[
   ubuntu_docker
   setup/ubuntu_inotify
   setup/ubuntu_extra
+  gcp_setup
   alumni
   win_slack
   kata
@@ -71,6 +74,7 @@ LINUX = %w[
   ubuntu_oh_my_zsh
   github_rsa
   setup/gh_cli
+  ubuntu_gcloud
   dotfiles
   ubuntu_python
   osx_virtualenv
@@ -79,6 +83,7 @@ LINUX = %w[
   ubuntu_docker
   setup/ubuntu_inotify
   setup/ubuntu_extra
+  gcp_setup
   alumni
   setup/ubuntu_slack
   kata
