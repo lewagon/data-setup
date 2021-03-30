@@ -1234,7 +1234,12 @@ pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow
 
 ### Packages check up
 
-TODO: check pip freeze with a routine
+Run the following command to check if you successfully installed the required packages:
+```bash
+curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/9648336201de2db5932bc6d02ad72ee0cb947992/pip_check.sh > packchecker.sh && zsh packchecker.sh && rm packchecker.sh
+```
+
+
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
@@ -1253,7 +1258,7 @@ jupyter notebook --generate-config
 We will now edit the generated Jupyter configuration file:
 
 ``` bash
-code $HOME/.jupyter/jupyter_notebook_config.py
+vsc $HOME/.jupyter/jupyter_notebook_config.py
 ```
 
 Locate the following line in the configuration file:
@@ -1300,6 +1305,37 @@ jupyter nbextension enable autopep8
 jupyter nbextension enable varInspector/main
 ```
 
+### Sublime Text shortcuts
+
+[Add sublime text shortcuts to jupyter notebook](http://blog.rtwilson.com/how-to-get-sublime-text-style-editing-in-the-ipythonjupyter-notebook/)
+
+Find the `jupyter` config directory:
+``` bash
+JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
+```
+
+Open `custom/custom.js` in the config directory:
+```bash
+cd $JUPYTER_CONFIG_DIR
+vsc custom/custom.js
+```
+Edit `custom.js` with:
+``` js
+require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
+    function(sublime_keymap, cell, IPython) {
+        // setTimeout(function(){ // uncomment line to fake race-condition
+        cell.Cell.options_default.cm_config.keyMap = 'sublime';
+        var cells = IPython.notebook.get_cells();
+        for(var cl=0; cl< cells.length ; cl++){
+            cells[cl].code_mirror.setOption('keyMap', 'sublime');
+        }
+        // }, 1000)// uncomment  line to fake race condition
+    }
+);
+```
+
+You can close VScode.
+
 ### `jupyter` check up
 
 Check you can launch a notebook server on your machine:
@@ -1329,7 +1365,6 @@ Check that the `nbextensions` are enabled:
 ![nbextensions.png](images/nbextensions.png)
 
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
-
 
 
 
