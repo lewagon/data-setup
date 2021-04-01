@@ -1043,7 +1043,7 @@ Open your terminal and go to your `dotfiles` project:
 
 ```bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-vsc # Open it in VScode
+code . # Open it in VScode
 ```
 
 In VScode, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
@@ -1274,7 +1274,7 @@ jupyter notebook --generate-config
 We will now edit the generated Jupyter configuration file:
 
 ``` bash
-vsc $HOME/.jupyter/jupyter_notebook_config.py
+code $HOME/.jupyter/jupyter_notebook_config.py
 ```
 
 Locate the following line in the configuration file:
@@ -1333,7 +1333,7 @@ JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
 Open `custom/custom.js` in the config directory:
 ```bash
 cd $JUPYTER_CONFIG_DIR
-vsc custom/custom.js
+code custom/custom.js
 ```
 Edit `custom.js` with:
 ``` js
