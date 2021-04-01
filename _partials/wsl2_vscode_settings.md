@@ -1,16 +1,16 @@
 ### Final Check
 
-To make sure everything works fine, close VS Code, then open your Ubuntu terminal:
+To make sure everything works fine, close <CODE_EDITOR>, then open your Ubuntu terminal:
 
 - Press `Windows` + `R`
 - Type  `ubuntu`
 - Press `Enter`
 
-In Ubuntu, let's try to launch VS Code:
+In Ubuntu, let's try to launch <CODE_EDITOR>:
 
-### VS Code Shortcuts
+### <CODE_EDITOR> Shortcuts
 
-In VS Code:
+In <CODE_EDITOR>:
 
 - Click on `File`
 - Click on `Preferences`
@@ -18,15 +18,15 @@ In VS Code:
 - Click on `Sublime Text Keymap and Settings Importer`
 - Click on `Install`
 
-### VS Code Extensions
+### <CODE_EDITOR> Extensions
 
 Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
 ```bash
-code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare
+<CODE_EDITOR_CMD> --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare
 ```
 
-### VS Code Settings
+### <CODE_EDITOR> Settings
 - Press `Ctrl` + `,` on your keyboard to open the settings
 - In the search bar, type `emmet`
 - Click on the first **`Edit in settings.json`** link
@@ -49,20 +49,20 @@ It should look like this:
 
 ### Final Check
 
-To make sure everything works fine, close VS Code, then open your Ubuntu Terminal:
+To make sure everything works fine, close <CODE_EDITOR>, then open your Ubuntu Terminal:
 
 - Press `Windows` + `R`
 - Type  `ubuntu`
 - Press `Enter`
 
-In Ubuntu, let's try to launch VS Code:
+In Ubuntu, let's try to launch <CODE_EDITOR>:
 
 ```bash
-code
+<CODE_EDITOR_CMD>
 ```
 
 &nbsp;
 
-&nbsp;&nbsp;&nbsp; :x: If Visual Studio Code does not open, please **contact a teacher**
+&nbsp;&nbsp;&nbsp; :x: If <CODE_EDITOR> does not open, please **contact a teacher**
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: If Visual Studio Code opens, your code editor is ready! :muscle:
+&nbsp;&nbsp;&nbsp; :white_check_mark: If <CODE_EDITOR> opens, your code editor is ready! :muscle:

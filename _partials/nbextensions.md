@@ -27,7 +27,7 @@ JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
 Open `custom/custom.js` in the config directory:
 ```bash
 cd $JUPYTER_CONFIG_DIR
-code custom/custom.js
+<CODE_EDITOR_CMD> custom/custom.js
 ```
 Edit `custom.js` with:
 ``` js
@@ -44,7 +44,7 @@ require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
 );
 ```
 
-You can close VS Code.
+You can close <CODE_EDITOR>.
 
 ### `jupyter` check up
 

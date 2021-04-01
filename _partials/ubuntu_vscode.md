@@ -12,16 +12,16 @@ sudo apt install code
 
 :point_up: This command will ask for your password with: `[sudo] password for <username>:`. Don't panick! Calmly type your password key by key. You won't have a visual feedback (like little `*`), that's **perfectly normal**, keep on typing. When you're done, hit `Enter` :muscle:.
 
-Now let's try to launch your VS Code from **the Terminal**:
+Now let's try to launch your <CODE_EDITOR> from **the Terminal**:
 
 ```bash
-code
+<CODE_EDITOR_CMD>
 ```
 If the text editor opens in a new window, you can move forward!
 
-### VS Code Shortcuts
+### <CODE_EDITOR> Shortcuts
 
-In VS Code:
+In <CODE_EDITOR>:
 - Click on `File`
 - Click on `Preferences`
 - Click on `Keymaps`

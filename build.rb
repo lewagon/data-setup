@@ -96,7 +96,7 @@ filenames = {
 }
 
 DEFAULT_SUBS = {
-  "<CODE_EDITOR>" => "Visual Studio Code",
+  "<CODE_EDITOR>" => "VS Code",
   "<CODE_EDITOR_CMD>" => "code"
 }
 
