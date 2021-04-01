@@ -10,7 +10,7 @@ Open your terminal and go to your `dotfiles` project:
 
 ```bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-vsc # Open it in VScode
+code . # Open it in VScode
 ```
 
 In VScode, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.

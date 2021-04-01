@@ -27,7 +27,7 @@ JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
 Open `custom/custom.js` in the config directory:
 ```bash
 cd $JUPYTER_CONFIG_DIR
-vsc custom/custom.js
+code custom/custom.js
 ```
 Edit `custom.js` with:
 ``` js
