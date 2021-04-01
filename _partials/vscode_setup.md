@@ -3,14 +3,15 @@
 Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
 ```bash
-<CODE_EDITOR_CMD> --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare
+<CODE_EDITOR_CMD> --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare ms-python.vscode-pylance
 ```
 
 ### <CODE_EDITOR> Settings
 
 - On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- In the search bar, type `emmet`
-- Click on the first **`Edit in settings.json`** link
+- Click on the `Open Settings (JSON)`
+
+![vscode_user_settings](vscode_user_settings.png)
 
 Paste the following just before the last `}`:
 
@@ -18,6 +19,17 @@ Paste the following just before the last `}`:
 "emmet.triggerExpansionOnTab": true,
 "emmet.includeLanguages": {
   "erb": "html"
+},
+"python.pythonPath": "~/.pyenv/shims/python",
+"python.formatting.provider": "yapf",
+"workbench.settings.editor": "json",
+"workbench.settings.openDefaultSettings": true,
+"workbench.settings.useSplitJSON": true,
+"files.exclude": {
+  "**/.pytest_cache": true,
+  "**/.ipynb_checkpoints": true,
+  "**/__pycache__": true,
+  "**/.egg-info": true,
 },
 ```
 

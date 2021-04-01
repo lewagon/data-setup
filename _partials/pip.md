@@ -11,7 +11,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml
+pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml yapf
 ```
 
 Let's install packages useful for API & Scraping:
@@ -23,7 +23,7 @@ pip install requests bs4
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow nbconvert xgboost statsmodels pandas-profiling jupyter-resource-usage
 ```
 
 ### Packages check up

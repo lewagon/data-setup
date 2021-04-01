@@ -18,12 +18,3 @@ Now let's try to launch your <CODE_EDITOR> from **the Terminal**:
 <CODE_EDITOR_CMD>
 ```
 If the text editor opens in a new window, you can move forward!
-
-### <CODE_EDITOR> Shortcuts
-
-In <CODE_EDITOR>:
-- Click on `File`
-- Click on `Preferences`
-- Click on `Keymaps`
-- Click on `Sublime Text Keymap and Settings Importer`
-- Click on `Install`

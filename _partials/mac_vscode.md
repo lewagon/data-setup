@@ -17,12 +17,3 @@ Open the Command Palette (`Cmd` + `Shift` + `P`) and type `shell command` to fin
 
 Now quit the Terminal (`⌘` + `Q`) and restart it.
 Try typing `<CODE_EDITOR_CMD>` :point_right: if the <CODE_EDITOR> opens in new window, you can proceed to the next point!
-
-### <CODE_EDITOR> Shortcuts
-
-In <CODE_EDITOR>:
-- Click on `Code`
-- Click on `Preferences`
-- Click on `Keymaps`
-- Click on `Sublime Text Keymap and Settings Importer`
-- Click on `Install`
