@@ -39,4 +39,4 @@ This command should have opened a Jupyter page in your browser:
 
 If it is not the case, please call a TA.
 
-To stop the Jupyter server in the terminal, press Ctrl + C, enter y, then press Enter.
+To stop the Jupyter server in the terminal, press `Ctrl` + `C`, enter y, then press Enter.
