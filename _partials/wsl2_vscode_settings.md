@@ -11,7 +11,7 @@ Let's gain time now and add other extensions that will be helpful during your Bo
 - On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
 - Click on the `Open Settings (JSON)`
 
-![vscode_user_settings](vscode_user_settings.png)
+![vscode_user_settings](images/vscode_user_settings.png)
 
 Paste the following just before the last `}`:
 
