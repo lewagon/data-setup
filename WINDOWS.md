@@ -1581,7 +1581,7 @@ In the main view of the Revolut the app
 </details>
 
 <details>
-  <summary>👉 If you receive an email from Google saying `Urgent: your billing account XXXXXX-XXXXXX-XXXXXX has been suspended` 👈</summary>
+  <summary>👉 If you receive an email from Google saying "Urgent: your billing account XXXXXX-XXXXXX-XXXXXX has been suspended" 👈</summary>
 
 
 This may happen especially in case you just setup a Revolut account.
@@ -1593,7 +1593,7 @@ This may happen especially in case you just setup a Revolut account.
 
 You may receive a validation or requests for more information within 30 minutes.
 
-Once the verification goes through, you should receive an email stating that `Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.`.
+Once the verification goes through, you should receive an email stating that "Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.".
 
 </details>
 
