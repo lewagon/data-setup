@@ -99,41 +99,28 @@ sudo apt install code
 
 :point_up: This command will ask for your password with: `[sudo] password for <username>:`. Don't panick! Calmly type your password key by key. You won't have a visual feedback (like little `*`), that's **perfectly normal**, keep on typing. When you're done, hit `Enter` :muscle:.
 
-Now let's try to launch your VSCode from **the Terminal**:
+Now let's try to launch your VS Code from **the Terminal**:
 
 ```bash
 code
 ```
 If the text editor opens in a new window, you can move forward!
 
-### VS Code Shortcuts
-
-In VS Code:
-- Click on `File`
-- Click on `Preferences`
-- Click on `Keymaps`
-- Click on `Sublime Text Keymap and Settings Importer`
-- Click on `Install`
 
 ### VS Code Extensions
 
-Let's gain time now and add other extensions that will be helpful during your Bootcamp.
-For each of these extensions:
-- On the web page, click on `install`
-- In the browser, accept to use VS Code to install the extension
-- In VS Code, click on `install`
+Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
-**Extensions**:
-- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+```bash
+code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare ms-python.vscode-pylance
+```
 
 ### VS Code Settings
 
 - On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- In the search bar, type `emmet`
-- Click on the first **`Edit in settings.json`** link
+- Click on the `Open Settings (JSON)`
+
+![vscode_user_settings](images/vscode_user_settings.png)
 
 Paste the following just before the last `}`:
 
@@ -142,13 +129,24 @@ Paste the following just before the last `}`:
 "emmet.includeLanguages": {
   "erb": "html"
 },
+"python.pythonPath": "~/.pyenv/shims/python",
+"python.formatting.provider": "yapf",
+"workbench.settings.editor": "json",
+"workbench.settings.openDefaultSettings": true,
+"workbench.settings.useSplitJSON": true,
+"files.exclude": {
+  "**/.pytest_cache": true,
+  "**/.ipynb_checkpoints": true,
+  "**/__pycache__": true,
+  "**/.egg-info": true,
+},
 ```
 
 It should look like this:
 
 ![vscode_emmet](images/vscode_emmet.jpg)
 
-:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above ☝️
+:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above :point_up:
 
 :warning: Don't forget to save those changes!
 
@@ -289,6 +287,19 @@ echo "Hello [Le Wagon](https://www.lewagon.com) :wave:" | gh gist create -d "Sta
 This line should open your browser on the newly created gist page. See, we've just created a [**Markdown**](https://guides.github.com/features/mastering-markdown/) file!
 
 
+## Google Cloud CLI
+
+Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
+```bash
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get install google-cloud-sdk-app-engine-python
+```
+👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
+
+
 ## Dotfiles
 
 There are three options, choose _one_:
@@ -301,10 +312,10 @@ Open your terminal and go to your `dotfiles` project:
 
 ```bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-stt # Open it in Sublime Text
+code . # Open it in VS Code
 ```
 
-In Sublime Text, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
+In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
 
 Back to the terminal, run a `git diff` and ask a TA to come and check about this configuration change. You should see stuff about Python and `pyenv`.
 
@@ -375,10 +386,10 @@ Please now **quit** all your opened terminal windows.
 &nbsp;
 
 
-Let us open the `~/.zshrc` profile file in Sublime Text and change slightly its content:
+Let us open the `~/.zshrc` profile file in VS Code and change slightly its content:
 
 ```bash
-stt ~/.zshrc
+code ~/.zshrc
 ```
 
 - Locate the line `# Actually load Oh-My-Zsh`
@@ -406,7 +417,7 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 &nbsp;
 
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Sublime Text.
+&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close VS Code.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
@@ -488,7 +499,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml
+pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml yapf
 ```
 
 Let's install packages useful for API & Scraping:
@@ -500,16 +511,99 @@ pip install requests bs4
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow nbconvert xgboost statsmodels pandas-profiling jupyter-resource-usage
+```
+
+### Packages check up
+
+Run the following command to check if you successfully installed the required packages:
+```bash
+curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/9648336201de2db5932bc6d02ad72ee0cb947992/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+```
+
+Now run the following command to check if you can load these packages:
+```bash
+curl https://gist.githubusercontent.com/krokrob/90e35dee7ed2b20852b099331510b369/raw/09178c49db6e7537eed68335a25fbb00c7ca1fd4/pip_check.py > pip_check.py && python pip_check.py && rm pip_check.py
 ```
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
-If you want to check which packages (and which version of that package) you have installed, you can run:
+
+## `jupyter` notebook extensions
+
+Pimp your `jupyter` notebooks with awesome extensions:
 
 ```bash
-pip freeze
+# install nbextensions
+pip install jupyter_contrib_nbextensions
+pip install jupyter_nbextensions_configurator
+jupyter contrib nbextension install --user
+jupyter nbextension enable toc2/main
+jupyter nbextension enable collapsible_headings/main
+jupyter nbextension enable spellchecker/main
+jupyter nbextension enable code_prettify/
 ```
+
+### Sublime Text shortcuts
+
+[Add sublime text shortcuts to jupyter notebook](http://blog.rtwilson.com/how-to-get-sublime-text-style-editing-in-the-ipythonjupyter-notebook/)
+
+Find the `jupyter` config directory:
+``` bash
+JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
+```
+
+Open `custom/custom.js` in the config directory:
+```bash
+cd $JUPYTER_CONFIG_DIR
+code custom/custom.js
+```
+Edit `custom.js` with:
+``` js
+require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
+    function(sublime_keymap, cell, IPython) {
+        // setTimeout(function(){ // uncomment line to fake race-condition
+        cell.Cell.options_default.cm_config.keyMap = 'sublime';
+        var cells = IPython.notebook.get_cells();
+        for(var cl=0; cl< cells.length ; cl++){
+            cells[cl].code_mirror.setOption('keyMap', 'sublime');
+        }
+        // }, 1000)// uncomment  line to fake race condition
+    }
+);
+```
+
+You can close VS Code.
+
+### `jupyter` check up
+
+Check you can launch a notebook server on your machine:
+```bash
+jupyter notebook
+```
+Your web browser should open on a `jupyter` window:
+
+![jupyter.png](images/jupyter.png)
+
+Click on `New`:
+
+![jupyter_new.png](images/jupyter_new.png)
+
+A tab should open on a new notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
+
+### `nbextensions` check up
+
+Perform a sanity check for `jupyter notebooks nbextensions`. Click on `Nbextensions`:
+
+![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
+
+Check that the `nbextensions` are enabled:
+
+![nbextensions.png](images/nbextensions.png)
+
+You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 
 ## Docker 🐋
@@ -582,6 +676,112 @@ sudo apt install libavcodec-extra -y
 ```bash
 sudo apt install tree ncdu htop tig
 ```
+
+
+## Google Cloud Platform setup
+
+[GCP](https://cloud.google.com/) is a cloud solution you are going to use in order to deploy your Machine Learning-based product in production.
+
+### Project setup
+- Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one
+- In the Cloud Console, on the project list, select or create a Cloud project
+- Give it a name such as `Wagon Bootcamp` for example
+- Notice the `ID` automatically created for the project, e.g. `wagon-bootcamp-123456`
+
+![](images/gcp_project.png)
+
+- Make sure that billing is enabled for your Google Cloud project
+
+ℹ️ You have a **$300 credit** to use for Google Cloud resources, which will be more than enough for the bootcamp.
+
+- [Enable the AI Platform Training & Prediction and Compute Engine APIs](https://console.cloud.google.com/flows/enableapi?apiid=ml.googleapis.com,compute_component&_ga=2.269215094.662509797.1580849510-2071889129.1567861089&_gac=1.154971594.1580849512.CjwKCAiAyeTxBRBvEiwAuM8dnbZ6uMwizbZW44J2mBCX6ncEjwjwpgF8S8QsvhYAXLkJ8awDnIRTNRoCJ_0QAvD_BwE) (This step may take a few minutes)
+
+### Configure Cloud sdk
+- Authenticate the `gcloud` CLI with the google account you used for GCP
+```bash
+gcloud auth login
+```
+- Login to your Google account on the new tab opened in your web browser
+- List your active account and check your email address you used for GCP is present
+```bash
+gcloud auth list
+```
+- Set your current project (replace `PROJECT_ID` with the `ID` of your project, e.g. `wagon-bootcamp-123456`)
+```bash
+gcloud config set project PROJECT_ID
+```
+- List your active account and current project and check your project is present
+```bash
+gcloud config list
+```
+
+### Create a service account key 🔑
+
+Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
+
+<details>
+  <summary>TL;DR</summary>
+  Since API calls are not free, it may be important to define these with caution, but for the purpose of the bootcamp this will not be an issue and we are going to allow our code to use all API without any restrictions (see the project owner part later).
+
+  As there may be several projects associated with a GCP account, a project may be composed of several services (any bundle of code, whatever its form factor, that requires the usage of GCP API calls in order to fulfill its purpose).
+
+  GCP requires that the services of the project using API calls are registered on the platform and their credentials configured.
+
+  Here we will only need to use a single service and will create the corresponding `service account`.
+
+  Since the [service account](https://cloud.google.com/iam/docs/service-accounts) is what identifies your application (and therefore your GCP billing account and ultimately your credit card) when it comes to bill the performed API calls, you are going to want to be cautious with the next steps. Basically, do not let your service account json file by the coffee machine, do not send it as a tweet, do not store it in your git codebase (even if your git repository is private).
+</details>
+
+- Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
+- Create a new Service Account key :
+  - Give a name to that account
+  - Set Role as `project > owner`
+- Download the `JSON` file, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
+- Give it a name **without** any space
+- Store the ****absolute access path** to the `JSON` file as an environmental variable:
+```bash
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/credentials.json' >> ~/.aliases
+```
+<details>
+  <summary>ℹ️ How to find the absolute access path of a file?</summary>
+  You can drag and drop the file in your terminal.
+</details>
+
+- **Restart** your terminal and run:
+```bash
+echo $GOOGLE_APPLICATION_CREDENTIALS
+```
+expected ouptut:
+```bash
+/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json
+```
+
+- List the service accounts associated to your active account and current project
+```bash
+gcloud iam service-accounts list
+```
+- Retrieve the service account email address, e.g. `SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com`
+- List the roles of the service account from the cli (replace PROJECT_ID and SERVICE_ACCOUNT_EMAIL)
+```bash
+gcloud projects get-iam-policy PROJECT_ID \
+--flatten="bindings[].members" \
+--format='table(bindings.role)' \
+--filter="bindings.members:SERVICE_ACCOUNT_EMAIL"
+```
+- You should see that your service account has a role of `roles/owner`
+
+<details>
+  <summary>Troubleshooting</summary>
+
+- I don't have any credit card
+  - The neo-bank Revolut offers a free credit card with its [Standard plan](https://www.revolut.com/a-radically-better-account)
+
+
+- `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
+  - Make sure that billing is enabled for your Google Cloud Platform project https://cloud.google.com/billing/docs/how-to/modify-project
+</details>
+
+🏁 You are done for today!
 
 
 ## Alumni

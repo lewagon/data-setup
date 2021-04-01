@@ -20,7 +20,9 @@ MAC_OS = %w[
   osx_python
   osx_virtualenv
   pip
+  nbextensions
   docker
+  gcp_setup
   alumni
   setup/osx_slack
   kata
@@ -44,16 +46,19 @@ WINDOWS = %w[
   github_rsa
   setup/wsl_browser_variable
   setup/gh_cli
+  ubuntu_gcloud
   dotfiles
   ubuntu_python
   osx_virtualenv
   pip
   win_jupyter
+  nbextensions
   setup/wsl_explorer
   win_vs_redistributable
   ubuntu_docker
   setup/ubuntu_inotify
   setup/ubuntu_extra
+  gcp_setup
   alumni
   win_slack
   kata
@@ -69,13 +74,16 @@ LINUX = %w[
   ubuntu_oh_my_zsh
   github_rsa
   setup/gh_cli
+  ubuntu_gcloud
   dotfiles
   ubuntu_python
   osx_virtualenv
   pip
+  nbextensions
   ubuntu_docker
   setup/ubuntu_inotify
   setup/ubuntu_extra
+  gcp_setup
   alumni
   setup/ubuntu_slack
   kata
@@ -87,18 +95,13 @@ filenames = {
   "LINUX.md" => LINUX,
 }
 
-WINDOWS_SUBS = {
-  "<CODE_EDITOR>" => "Visual Studio Code",
+DEFAULT_SUBS = {
+  "<CODE_EDITOR>" => "VS Code",
   "<CODE_EDITOR_CMD>" => "code"
 }
 
-DEFAULT_SUBS = {
-  "<CODE_EDITOR>" => "Sublime Text",
-  "<CODE_EDITOR_CMD>" => "stt"
-}
-
 subs = {
-  "WINDOWS.md" => WINDOWS_SUBS,
+  "WINDOWS.md" => DEFAULT_SUBS,
   "macOS.md" => DEFAULT_SUBS,
   "LINUX.md" => DEFAULT_SUBS,
 }

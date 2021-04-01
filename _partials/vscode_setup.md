@@ -1,22 +1,17 @@
-### VS Code Extensions
+### <CODE_EDITOR> Extensions
 
-Let's gain time now and add other extensions that will be helpful during your Bootcamp.
-For each of these extensions:
-- On the web page, click on `install`
-- In the browser, accept to use VS Code to install the extension
-- In VS Code, click on `install`
+Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
-**Extensions**:
-- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+```bash
+<CODE_EDITOR_CMD> --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare ms-python.vscode-pylance
+```
 
-### VS Code Settings
+### <CODE_EDITOR> Settings
 
 - On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- In the search bar, type `emmet`
-- Click on the first **`Edit in settings.json`** link
+- Click on the `Open Settings (JSON)`
+
+![vscode_user_settings](images/vscode_user_settings.png)
 
 Paste the following just before the last `}`:
 
@@ -25,12 +20,23 @@ Paste the following just before the last `}`:
 "emmet.includeLanguages": {
   "erb": "html"
 },
+"python.pythonPath": "~/.pyenv/shims/python",
+"python.formatting.provider": "yapf",
+"workbench.settings.editor": "json",
+"workbench.settings.openDefaultSettings": true,
+"workbench.settings.useSplitJSON": true,
+"files.exclude": {
+  "**/.pytest_cache": true,
+  "**/.ipynb_checkpoints": true,
+  "**/__pycache__": true,
+  "**/.egg-info": true,
+},
 ```
 
 It should look like this:
 
 ![vscode_emmet](images/vscode_emmet.jpg)
 
-:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above ☝️
+:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above :point_up:
 
 :warning: Don't forget to save those changes!
