@@ -232,7 +232,7 @@ Open the Command Palette (Ctrl+Shift+P) and type `shell command` to find the She
 ![](images/mac_vscode_command.png)
 
 Now quit the Terminal (`⌘` + `Q`) and restart it.
-Try typing `code` :point_right: if the VSCode opens in new window, you can proceed to the next point!
+Try typing `code` :point_right: if the VS Code opens in new window, you can proceed to the next point!
 
 ### VS Code Shortcuts
 
