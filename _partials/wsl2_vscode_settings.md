@@ -20,20 +20,11 @@ In VS Code:
 
 ### VS Code Extensions
 
-Let's gain time now and add other extensions that will be helpful during your Bootcamp.
+Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
-For each of these extensions:
-
-- On the web page, click on `install`
-- In the browser, accept to use VS Code to install the extension
-- In VS Code, click on `install`
-
-**Extensions**
-- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
-- [Rails Snippets](https://marketplace.visualstudio.com/items?itemName=hridoy.rails-snippets)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [ERB Helper Tags](https://marketplace.visualstudio.com/items?itemName=rayhanw.erb-helpers)
-- [ruby-rubocop](https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop)
+```bash
+code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare
+```
 
 ### VS Code Settings
 - Press `Ctrl` + `,` on your keyboard to open the settings

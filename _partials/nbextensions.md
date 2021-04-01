@@ -44,7 +44,7 @@ require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
 );
 ```
 
-You can close VScode.
+You can close VS Code.
 
 ### `jupyter` check up
 

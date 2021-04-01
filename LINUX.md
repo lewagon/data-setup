@@ -117,18 +117,11 @@ In VS Code:
 
 ### VS Code Extensions
 
-Let's gain time now and add other extensions that will be helpful during your Bootcamp.
-For each of these extensions:
-- On the web page, click on `install`
-- In the browser, accept to use VS Code to install the extension
-- In VS Code, click on `install`
+Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
-**Extensions**:
-- [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
-- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+```bash
+code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare
+```
 
 ### VS Code Settings
 
@@ -149,7 +142,7 @@ It should look like this:
 
 ![vscode_emmet](images/vscode_emmet.jpg)
 
-:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above ☝️
+:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above :point_up:
 
 :warning: Don't forget to save those changes!
 
@@ -315,10 +308,10 @@ Open your terminal and go to your `dotfiles` project:
 
 ```bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-vsc # Open it in VScode
+code . # Open it in VS Code
 ```
 
-In VScode, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
+In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
 
 Back to the terminal, run a `git diff` and ask a TA to come and check about this configuration change. You should see stuff about Python and `pyenv`.
 
@@ -561,7 +554,7 @@ JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
 Open `custom/custom.js` in the config directory:
 ```bash
 cd $JUPYTER_CONFIG_DIR
-vsc custom/custom.js
+code custom/custom.js
 ```
 Edit `custom.js` with:
 ``` js
@@ -578,7 +571,7 @@ require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
 );
 ```
 
-You can close VScode.
+You can close VS Code.
 
 ### `jupyter` check up
 
