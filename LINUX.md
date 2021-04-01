@@ -722,7 +722,7 @@ You should see that you have a free credit of "$300 credits over the next 90days
 If you do not own a credit card, an alternative is to setup a **Revolut** account.
 Revolut is a financial app that will allow you to create a virtual credit card linked to your mobile phone billing account.
 
-👉 Skip this step if you own a credit card and use your credit card for the setup
+Skip this step if you own a credit card and use your credit card for the setup.
 
 Download the Revolut app, or go to [revolut](https://www.revolut.com/a-radically-better-account) and follow the steps to download the app (enter your mobile phone number and click on Get Started).
 
@@ -735,7 +735,7 @@ Download the Revolut app, or go to [revolut](https://www.revolut.com/a-radically
 
 Once this is done, select the standard (free) plan. No need to add the card to Apple pay, or ask for a the delivery of a physical card, or add money securely.
 
-👉 You now have a virtual card which we will use for the GCP setup
+You now have a virtual card which we will use for the GCP setup.
 
 In the main view of the Revolut the app
 - Click on Ready to use
@@ -759,7 +759,7 @@ This may happen especially in case you just setup a Revolut account.
 - In case you used **Revolut**, you can send a screenshot of your virtual credit card (do not forget to remove the validity date from the screenshot)
 - Explain that you are attending the Le Wagon bootcamp, do not own a credit card, and have just created a Revolut account in order to setup GCP for the bootcamp using a virtual credit card
 
-👉 You may receive a validation or requests for more information within 30 minutes
+You may receive a validation or requests for more information within 30 minutes.
 
 Once the verification goes through, you should receive an email stating that `Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.`.
 
