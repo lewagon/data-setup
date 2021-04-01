@@ -8,7 +8,7 @@ Let's gain time now and add other extensions that will be helpful during your Bo
 
 ### <CODE_EDITOR> Settings
 
-- On macOS, press `CMD` + `,` on your keyboard (or `CTRL` + `,` on Windows or Linux) to open the settings
+- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
 - In the search bar, type `emmet`
 - Click on the first **`Edit in settings.json`** link
 

@@ -27,6 +27,7 @@ Let's gain time now and add other extensions that will be helpful during your Bo
 ```
 
 ### <CODE_EDITOR> Settings
+
 - Press `Ctrl` + `,` on your keyboard to open the settings
 - In the search bar, type `emmet`
 - Click on the first **`Edit in settings.json`** link

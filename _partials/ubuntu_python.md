@@ -8,7 +8,7 @@ First let's install `pyenv` with the following Terminal command:
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 
-Then quit **all your opened terminal windows** (Cmd + Q) and restart one. Ignore the `pyenv: no such command 'virtualenv-init' for now`.
+Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one. Ignore the `pyenv: no such command 'virtualenv-init' for now`.
 
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
@@ -32,6 +32,6 @@ OK once this command is complete, we are going to tell the system to use this ve
 pyenv global <PYTHON_VERSION>
 ```
 
-Once again, quit **all your opened terminal windows** (Cmd + Q) and restart one.
+Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 To check if this worked, run `python --version`. If you see `<PYTHON_VERSION>`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
