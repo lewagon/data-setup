@@ -566,26 +566,6 @@ code
 &nbsp;&nbsp;&nbsp; :white_check_mark: If Visual Studio Code opens, your code editor is ready! :muscle:
 
 
-### Final Check
-
-To make sure everything works fine, close VS Code, then open your Ubuntu terminal:
-
-- Press `Windows` + `R`
-- Type  `ubuntu`
-- Press `Enter`
-
-In Ubuntu, let's try to launch VS Code:
-
-### VS Code Shortcuts
-
-In VS Code:
-
-- Click on `File`
-- Click on `Preferences`
-- Click on `Keymaps`
-- Click on `Sublime Text Keymap and Settings Importer`
-- Click on `Install`
-
 ### VS Code Extensions
 
 Let's gain time now and add other extensions that will be helpful during your Bootcamp:
@@ -596,9 +576,10 @@ code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-tools
 
 ### VS Code Settings
 
-- Press `Ctrl` + `,` on your keyboard to open the settings
-- In the search bar, type `emmet`
-- Click on the first **`Edit in settings.json`** link
+- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
+- Click on the `Open Settings (JSON)`
+
+![vscode_user_settings](vscode_user_settings.png)
 
 Paste the following just before the last `}`:
 
@@ -607,13 +588,25 @@ Paste the following just before the last `}`:
 "emmet.includeLanguages": {
   "erb": "html"
 },
+"python.pythonPath": "~/.pyenv/shims/python",
+"python.formatting.provider": "yapf",
+"workbench.settings.editor": "json",
+"workbench.settings.openDefaultSettings": true,
+"workbench.settings.useSplitJSON": true,
+"files.exclude": {
+  "**/.pytest_cache": true,
+  "**/.ipynb_checkpoints": true,
+  "**/__pycache__": true,
+  "**/.egg-info": true,
+},
 ```
 
 It should look like this:
 
 ![vscode_emmet](images/vscode_emmet.jpg)
 
-:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above ☝️
+:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above :point_up:
+
 :warning: Don't forget to save those changes!
 
 ### Final Check
@@ -1222,7 +1215,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml
+pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml yapf
 ```
 
 Let's install packages useful for API & Scraping:
@@ -1234,7 +1227,7 @@ pip install requests bs4
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow nbconvert xgboost statsmodels pandas-profiling jupyter-resource-usage
 ```
 
 ### Packages check up
@@ -1308,8 +1301,7 @@ jupyter contrib nbextension install --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable collapsible_headings/main
 jupyter nbextension enable spellchecker/main
-jupyter nbextension enable autopep8
-jupyter nbextension enable varInspector/main
+jupyter nbextension enable code_prettify/
 ```
 
 ### Sublime Text shortcuts

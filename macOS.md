@@ -234,29 +234,21 @@ Open the Command Palette (`Cmd` + `Shift` + `P`) and type `shell command` to fin
 Now quit the Terminal (`⌘` + `Q`) and restart it.
 Try typing `code` :point_right: if the VS Code opens in new window, you can proceed to the next point!
 
-### VS Code Shortcuts
-
-In VS Code:
-- Click on `Code`
-- Click on `Preferences`
-- Click on `Keymaps`
-- Click on `Sublime Text Keymap and Settings Importer`
-- Click on `Install`
-
 
 ### VS Code Extensions
 
 Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
 ```bash
-code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare
+code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare ms-python.vscode-pylance
 ```
 
 ### VS Code Settings
 
 - On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- In the search bar, type `emmet`
-- Click on the first **`Edit in settings.json`** link
+- Click on the `Open Settings (JSON)`
+
+![vscode_user_settings](vscode_user_settings.png)
 
 Paste the following just before the last `}`:
 
@@ -264,6 +256,17 @@ Paste the following just before the last `}`:
 "emmet.triggerExpansionOnTab": true,
 "emmet.includeLanguages": {
   "erb": "html"
+},
+"python.pythonPath": "~/.pyenv/shims/python",
+"python.formatting.provider": "yapf",
+"workbench.settings.editor": "json",
+"workbench.settings.openDefaultSettings": true,
+"workbench.settings.useSplitJSON": true,
+"files.exclude": {
+  "**/.pytest_cache": true,
+  "**/.ipynb_checkpoints": true,
+  "**/__pycache__": true,
+  "**/.egg-info": true,
 },
 ```
 
@@ -582,7 +585,7 @@ In order not to re-type your SSH passphrase at every `git push`, you can add the
 
 ```bash
 touch ~/.ssh/config  # Creates the file if it does not exist
-st ~/.ssh/config     # Opens the file in Sublime text
+code ~/.ssh/config     # Opens the file in VS Code
 ```
 
 And then add these 3 lines to the file. **Save**.
@@ -713,7 +716,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml
+pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml yapf
 ```
 
 Let's install packages useful for API & Scraping:
@@ -725,7 +728,7 @@ pip install requests bs4
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow nbconvert xgboost statsmodels pandas-profiling jupyter-resource-usage
 ```
 
 ### Packages check up
@@ -755,8 +758,7 @@ jupyter contrib nbextension install --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable collapsible_headings/main
 jupyter nbextension enable spellchecker/main
-jupyter nbextension enable autopep8
-jupyter nbextension enable varInspector/main
+jupyter nbextension enable code_prettify/
 ```
 
 ### Sublime Text shortcuts
