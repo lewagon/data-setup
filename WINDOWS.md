@@ -571,7 +571,12 @@ code
 Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
 ```bash
-code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+code --install-extension KevinRose.vsc-python-indent
+code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-python.vscode-pylance
 ```
 
 ### VS Code Settings
@@ -608,6 +613,7 @@ It should look like this:
 :warning: You should add a comma if there is none after the **`]`** like line 26 in the image above :point_up:
 
 :warning: Don't forget to save those changes!
+
 
 ### Final Check
 

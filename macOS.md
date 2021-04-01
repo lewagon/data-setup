@@ -240,7 +240,12 @@ Try typing `code` :point_right: if the VS Code opens in new window, you can proc
 Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
 ```bash
-code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare ms-python.vscode-pylance
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+code --install-extension KevinRose.vsc-python-indent
+code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-python.vscode-pylance
 ```
 
 ### VS Code Settings

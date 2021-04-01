@@ -39,6 +39,7 @@ WINDOWS = %w[
   setup/wsl2_install_wsl
   setup/wsl2_vscode
   setup/wsl2_vscode_settings
+  vscode_setup
   wsl2_vscode_settings
   setup/wsl2_windows_terminal
   setup/wsl2_git
