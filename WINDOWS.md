@@ -631,9 +631,9 @@ code
 
 &nbsp;
 
-&nbsp;&nbsp;&nbsp; :x: If Visual Studio Code does not open, please **contact a teacher**
+&nbsp;&nbsp;&nbsp; :x: If VS Code does not open, please **contact a teacher**
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: If Visual Studio Code opens, your code editor is ready! :muscle:
+&nbsp;&nbsp;&nbsp; :white_check_mark: If VS Code opens, your code editor is ready! :muscle:
 
 
 ## Windows Terminal
@@ -1108,7 +1108,7 @@ Please now **quit** all your opened terminal windows.
 &nbsp;
 
 
-Let us open the `~/.zshrc` profile file in Visual Studio Code and change slightly its content:
+Let us open the `~/.zshrc` profile file in VS Code and change slightly its content:
 
 ```bash
 code ~/.zshrc
@@ -1139,7 +1139,7 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 &nbsp;
 
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Visual Studio Code.
+&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close VS Code.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))

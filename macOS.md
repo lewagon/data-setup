@@ -534,7 +534,7 @@ Please now **quit** all your opened terminal windows.
 &nbsp;
 
 
-Let us open the `~/.zshrc` profile file in Visual Studio Code and change slightly its content:
+Let us open the `~/.zshrc` profile file in VS Code and change slightly its content:
 
 ```bash
 code ~/.zshrc
@@ -565,7 +565,7 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 &nbsp;
 
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close Visual Studio Code.
+&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close VS Code.
 
 
 ### SSH Passphrase
