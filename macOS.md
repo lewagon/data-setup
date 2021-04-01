@@ -885,6 +885,20 @@ You should see that you have a free credit of "$300 credits over the next 90days
 - Enter your credit card info
 - Click on START MY FREE TRIAL
 
+Once this is done, verify that your billing account is linked to your GCP project.
+
+- Select your project
+- Go to Billing
+- Select LINK A BILLING ACCOUNT
+- Select My Billing Account
+- Click on SET ACCOUNT
+
+You should now see:
+
+```
+Free trial status: €254.77 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
+```
+
 <details>
   <summary>👉 If you do not own a credit card 👈</summary>
 
@@ -934,20 +948,6 @@ You may receive a validation or requests for more information within 30 minutes.
 Once the verification goes through, you should receive an email stating that `Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.`.
 
 </details>
-
-Once this is done, verify that your billing account is linked to your GCP project.
-
-- Select your project
-- Go to Billing
-- Select LINK A BILLING ACCOUNT
-- Select My Billing Account
-- Click on SET ACCOUNT
-
-You should now see:
-
-```
-Free trial status: €254.77 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
-```
 
 ### Enabling GCP services
 
