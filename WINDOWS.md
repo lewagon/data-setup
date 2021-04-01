@@ -1308,7 +1308,6 @@ jupyter contrib nbextension install --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable collapsible_headings/main
 jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/
 jupyter nbextension enable autopep8
 jupyter nbextension enable varInspector/main
 ```
