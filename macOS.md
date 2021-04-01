@@ -924,9 +924,6 @@ You now have a virtual card which we will use for the GCP setup.
 In the main view of the Revolut the app
 - Click on Ready to use
 - Click on the card
-
-![](images/revolut-card.jpg)
-
 - Click on Show card details
 - Note down the references of the virtual credit card and use them in order to proceed with the GCP setup
 
