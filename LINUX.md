@@ -112,7 +112,12 @@ If the text editor opens in a new window, you can move forward!
 Let's gain time now and add other extensions that will be helpful during your Bootcamp:
 
 ```bash
-code --install-extension ms-vscode.sublime-keybindings ms-python.python ms-toolsai.jupyter KevinRose.vsc-python-indent MS-vsliveshare.vsliveshare ms-python.vscode-pylance
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+code --install-extension KevinRose.vsc-python-indent
+code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-python.vscode-pylance
 ```
 
 ### VS Code Settings
@@ -146,7 +151,7 @@ It should look like this:
 
 ![vscode_emmet](images/vscode_emmet.jpg)
 
-:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above :point_up:
+:warning: You should add a comma if there is none after the **`]`** like line 23 in the image above :point_up:
 
 :warning: Don't forget to save those changes!
 
@@ -511,14 +516,14 @@ pip install requests bs4
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow nbconvert xgboost statsmodels pandas-profiling jupyter-resource-usage
+pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
 ```
 
 ### Packages check up
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/9648336201de2db5932bc6d02ad72ee0cb947992/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/bd80ab1e9c474dfdfc0ce2bf193e0b354723075f/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
