@@ -1435,15 +1435,103 @@ sudo apt install tree ncdu htop tig
 
 ## Google Cloud Platform setup
 
-[GCP](https://cloud.google.com/) is a cloud solution you are going to use in order to deploy your Machine Learning-based product in production.
+[GCP](https://cloud.google.com/) is a cloud solution that you are going to use in order to deploy your Machine Learning-based products to production.
 
 ### Project setup
+
 - Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one
 - In the Cloud Console, on the project list, select or create a Cloud project
+
+![](images/gcp-create-project.png)
+
 - Give it a name such as `Wagon Bootcamp` for example
 - Notice the `ID` automatically created for the project, e.g. `wagon-bootcamp-123456`
 
 ![](images/gcp_project.png)
+
+### Billing account
+
+You will now link your account to your credit card. This step is required or you will not be able to use the services provided by GCP. Do not worry, you will be able to consume most GCP services through free credits throughout the bootcamp.
+
+![](images/gcp-billing.png)
+
+- Click on **Billing**
+- Click on **MANAGE BILLING ACCOUNTS**
+- Click on **ADD BILLING ACCOUNT**
+- Give a name to your billing account, e.g. `My Billing Account`
+- Click on "I have read..." and agree the to the terms of service
+- Click on **CONTINUE**
+- Select your account type: `Individual`
+- Fill your name and address
+
+You should see that you have a free credit of "$300 credits over the next 90days".
+
+- Click on card details
+- Enter your credit card info
+- Click on **START MY FREE TRIAL**
+
+Once this is done, verify that your billing account is linked to your GCP project.
+
+- Select your project
+- Go to **Billing**
+- Select **LINK A BILLING ACCOUNT**
+- Select `My Billing Account`
+- Click on **SET ACCOUNT**
+
+You should now see:
+
+```
+Free trial status: $300 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
+```
+
+<details>
+  <summary>👉 If you do not own a credit card 👈</summary>
+
+
+If you do not own a credit card, an alternative is to setup a **Revolut** account.
+Revolut is a financial app that will allow you to create a virtual credit card linked to your mobile phone billing account.
+
+Skip this step if you own a credit card and use your credit card for the setup.
+
+Download the Revolut app, or go to [revolut](https://www.revolut.com/a-radically-better-account) and follow the steps to download the app (enter your mobile phone number and click on Get Started).
+
+- Open the Revolut app
+- Enter your mobile phone number
+- Enter the verification code received by SMS
+- The app will ask for your country, address, first and last name, date of birth, email address
+- The app will also ask for a selfie and request your profession
+- The app will require a photo of your identification card or passport
+
+Once this is done, select the standard (free) plan. No need to add the card to Apple pay, or ask for a the delivery of a physical card, or add money securely.
+
+You now have a virtual card which we will use for the GCP setup.
+
+In the main view of the Revolut the app
+- Click on Ready to use
+- Click on the card
+- Click on Show card details
+- Note down the references of the virtual credit card and use them in order to proceed with the GCP setup
+
+</details>
+
+<details>
+  <summary>👉 If you receive an email from Google saying "Urgent: your billing account XXXXXX-XXXXXX-XXXXXX has been suspended" 👈</summary>
+
+
+This may happen especially in case you just setup a Revolut account.
+
+- Click on PROCEED TO VERIFICATION
+- You will be asked to send a picture of your credit card (only the last 4 digits, no other info)
+- In case you used **Revolut**, you can send a screenshot of your virtual credit card (do not forget to remove the validity date from the screenshot)
+- Explain that you are attending the Le Wagon bootcamp, do not own a credit card, and have just created a Revolut account in order to setup GCP for the bootcamp using a virtual credit card
+
+You may receive a validation or requests for more information within 30 minutes.
+
+Once the verification goes through, you should receive an email stating that "Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.".
+
+</details>
+
+### Enabling GCP services
 
 - Make sure that billing is enabled for your Google Cloud project
 
@@ -1452,6 +1540,7 @@ sudo apt install tree ncdu htop tig
 - [Enable the AI Platform Training & Prediction and Compute Engine APIs](https://console.cloud.google.com/flows/enableapi?apiid=ml.googleapis.com,compute_component&_ga=2.269215094.662509797.1580849510-2071889129.1567861089&_gac=1.154971594.1580849512.CjwKCAiAyeTxBRBvEiwAuM8dnbZ6uMwizbZW44J2mBCX6ncEjwjwpgF8S8QsvhYAXLkJ8awDnIRTNRoCJ_0QAvD_BwE) (This step may take a few minutes)
 
 ### Configure Cloud sdk
+
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 ```bash
 gcloud auth login
@@ -1527,10 +1616,6 @@ gcloud projects get-iam-policy PROJECT_ID \
 
 <details>
   <summary>Troubleshooting</summary>
-
-- I don't have any credit card
-  - The neo-bank Revolut offers a free credit card with its [Standard plan](https://www.revolut.com/a-radically-better-account)
-
 
 - `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
   - Make sure that billing is enabled for your Google Cloud Platform project https://cloud.google.com/billing/docs/how-to/modify-project
