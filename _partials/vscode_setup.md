@@ -42,6 +42,6 @@ It should look like this:
 
 ![vscode_emmet](images/vscode_emmet.jpg)
 
-:warning: You should add a comma if there is none after the **`]`** like line 26 in the image above :point_up:
+:warning: You should add a comma if there is none after the **`]`** like line 23 in the image above :point_up:
 
 :warning: Don't forget to save those changes!
