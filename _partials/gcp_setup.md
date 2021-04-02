@@ -20,12 +20,12 @@ You will now link your account to your credit card. This step is required or you
 
 ![](images/gcp-billing.png)
 
-- Click on billing
-- Click on MANAGE BILLING ACCOUNTS
-- Click on ADD BILLING ACCOUNT
-- Verify that your account is the correct one (in case you own several gmail addresses)
+- Click on **Billing**
+- Click on **MANAGE BILLING ACCOUNTS**
+- Click on **ADD BILLING ACCOUNT**
+- Give a name to your billing account, e.g. `My Billing Account`
 - Click on "I have read..." and agree the to the terms of service
-- Click on CONTINUE
+- Click on **CONTINUE**
 - Select your account type: `Individual`
 - Fill your name and address
 
@@ -33,20 +33,20 @@ You should see that you have a free credit of "$300 credits over the next 90days
 
 - Click on card details
 - Enter your credit card info
-- Click on START MY FREE TRIAL
+- Click on **START MY FREE TRIAL**
 
 Once this is done, verify that your billing account is linked to your GCP project.
 
 - Select your project
-- Go to Billing
-- Select LINK A BILLING ACCOUNT
-- Select My Billing Account
-- Click on SET ACCOUNT
+- Go to **Billing**
+- Select **LINK A BILLING ACCOUNT**
+- Select `My Billing Account`
+- Click on **SET ACCOUNT**
 
 You should now see:
 
 ```
-Free trial status: €254.77 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
+Free trial status: $300 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
 ```
 
 <details>
@@ -181,10 +181,6 @@ gcloud projects get-iam-policy PROJECT_ID \
 
 <details>
   <summary>Troubleshooting</summary>
-
-- I don't have any credit card
-  - The neo-bank Revolut offers a free credit card with its [Standard plan](https://www.revolut.com/a-radically-better-account)
-
 
 - `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
   - Make sure that billing is enabled for your Google Cloud Platform project https://cloud.google.com/billing/docs/how-to/modify-project
