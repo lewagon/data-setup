@@ -10,7 +10,7 @@ jupyter contrib nbextension install --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable collapsible_headings/main
 jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/
+jupyter nbextension enable ccode_prettify/code_prettify
 ```
 
 ### Sublime Text shortcuts
