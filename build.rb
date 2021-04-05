@@ -71,7 +71,7 @@ LINUX = %w[
   setup/ubuntu_git
   ubuntu_vscode
   vscode_setup
-  ubuntu_oh_my_zsh
+  setup/ubuntu_oh_my_zsh
   github_rsa
   setup/gh_cli
   ubuntu_gcloud
