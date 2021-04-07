@@ -1594,11 +1594,12 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
 - Create a new Service Account key :
   - Give a name to that account
   - Set Role as `project > owner`
-- Download the `JSON` file, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
+- Download the `JSON` file, and store it somewhere you'll remember, for example `C:\Users\YOUR_USER_NAME\YOUR_FILENAME_FOR_SECRET_KEY.json`
 - Give it a name **without** any space
+- Translate the Windows Path into an Ubuntu path with `wslpath "C:\Users\YOUR_USER_NAME\YOUR_FILENAME_FOR_SECRET_KEY.json"` to get `/mnt/c/Users/YOUR_USER_NAME/YOUR_FILENAME_FOR_SECRET_KEY.json`
 - Store the ****absolute access path** to the `JSON` file as an environmental variable:
 ```bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/credentials.json' >> ~/.aliases
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/mnt/c/Users/YOUR_USER_NAME/YOUR_FILENAME_FOR_SECRET_KEY.json' >> ~/.aliases
 ```
 <details>
   <summary>ℹ️ How to find the absolute access path of a file?</summary>
@@ -1611,7 +1612,7 @@ echo $GOOGLE_APPLICATION_CREDENTIALS
 ```
 expected ouptut:
 ```bash
-/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json
+/mnt/c/Users/YOUR_USER_NAME/YOUR_FILENAME_FOR_SECRET_KEY.json
 ```
 
 - List the service accounts associated to your active account and current project
