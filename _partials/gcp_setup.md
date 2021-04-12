@@ -2,6 +2,8 @@
 
 [GCP](https://cloud.google.com/) is a cloud solution that you are going to use in order to deploy your Machine Learning-based products to production.
 
+🚨 If you are a student of the **Part-Time Bootcamp**, skip this section for now! **GCP** offers $300 worth of free credits for a duration of 3 months. You do not want to activate your GCP account too soon 🙅‍♂️
+
 ### Project setup
 
 - Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one
@@ -186,4 +188,4 @@ gcloud projects get-iam-policy PROJECT_ID \
   - Make sure that billing is enabled for your Google Cloud Platform project https://cloud.google.com/billing/docs/how-to/modify-project
 </details>
 
-🏁 You are done for today!
+🏁 You are done with the GCP setup!
