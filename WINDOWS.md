@@ -526,6 +526,7 @@ Paste the following just before the last `}`:
 },
 "python.pythonPath": "~/.pyenv/shims/python",
 "python.formatting.provider": "yapf",
+"python.linting.enabled": true,
 "python.linting.pylintEnabled": false,
 "python.linting.flake8Enabled": true,
 "workbench.settings.editor": "json",
