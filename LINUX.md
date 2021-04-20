@@ -588,6 +588,7 @@ summary::marker {
 }
 ```
 
+You can close VS Code.
 
 ### `jupyter` check up
 Quit and restart your terminal first.
