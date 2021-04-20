@@ -42,7 +42,28 @@ require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
 );
 ```
 
-You can close <CODE_EDITOR>.
+### Custom CSS
+
+Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+
+Open `custom/custom.css` in the config directory:
+```bash
+cd $JUPYTER_CONFIG_DIR
+touch custom/custom.css
+<CODE_EDITOR_CMD> custom/custom.css
+```
+Edit `custom.css` with:
+
+```css
+summary {
+    cursor: pointer;
+    display:list-item;
+}
+summary::marker {
+    font-size: 1em;
+}
+```
+
 
 ### `jupyter` check up
 Quit and restart your terminal first.
