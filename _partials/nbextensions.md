@@ -64,6 +64,7 @@ summary::marker {
 }
 ```
 
+You can close <CODE_EDITOR>.
 
 ### `jupyter` check up
 Quit and restart your terminal first.
