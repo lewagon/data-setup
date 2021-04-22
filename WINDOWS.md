@@ -1270,6 +1270,28 @@ require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
 );
 ```
 
+### Custom CSS
+
+Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+
+Open `custom/custom.css` in the config directory:
+```bash
+cd $JUPYTER_CONFIG_DIR
+touch custom/custom.css
+code custom/custom.css
+```
+Edit `custom.css` with:
+
+```css
+summary {
+    cursor: pointer;
+    display:list-item;
+}
+summary::marker {
+    font-size: 1em;
+}
+```
+
 You can close VS Code.
 
 ### `jupyter` check up

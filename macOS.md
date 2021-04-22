@@ -783,6 +783,28 @@ require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
 );
 ```
 
+### Custom CSS
+
+Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+
+Open `custom/custom.css` in the config directory:
+```bash
+cd $JUPYTER_CONFIG_DIR
+touch custom/custom.css
+code custom/custom.css
+```
+Edit `custom.css` with:
+
+```css
+summary {
+    cursor: pointer;
+    display:list-item;
+}
+summary::marker {
+    font-size: 1em;
+}
+```
+
 You can close VS Code.
 
 ### `jupyter` check up
@@ -1057,7 +1079,7 @@ You can also sign in to Slack on your iPhone or Android device!
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
-In case of remote tickets, you will use Slack audio or video call to get help. To ensure that everything is working fine, [test your camera and microphone](https://lewagon-alumni.slack.com/help/test/calls). If your browser is asking your permission to access your microphone and camera, click on yes.
+In case of remote tickets, you will use Slack audio or video call to get help. To ensure that everything is working fine, launch the Slack app on your Laptop, then [follow this procedure](https://slack.com/intl/en-gb/help/articles/115003538426-Troubleshoot-Slack-Calls#run-our-calls-test) (tl;dr type `/call --test` then the `Enter` key in any channel).
 
 After the test are finished, you should have green "All clear" messages at least for your microphone and camera. If not, ask a teacher.
 ![](images/slack_mic_cam_all_green.png)
