@@ -10,6 +10,7 @@ MAC_OS = %w[
   setup/osx_command_line_tools
   setup/github
   homebrew
+  chrome
   mac_vscode
   vscode_setup
   setup/osx_oh_my_zsh
@@ -37,6 +38,7 @@ WINDOWS = %w[
   setup/github
   setup/remote_tools
   setup/wsl2_install_wsl
+  chrome
   setup/wsl2_vscode
   vscode_setup
   wsl2_vscode_settings
@@ -69,6 +71,7 @@ LINUX = %w[
   setup/remote_tools
   setup/github
   setup/ubuntu_git
+  chrome
   ubuntu_vscode
   vscode_setup
   setup/ubuntu_oh_my_zsh
