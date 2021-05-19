@@ -251,7 +251,7 @@ CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Com
 
 In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the Terminal.
 
-It should already be installed on your laptop from the previous commands. First you need to **login**:
+It should already be installed on your laptop from the previous commands. First you need to **login**, copy the following line (**do not** edit it!) and paste it in your terminal, then press the `Enter` key:
 
 ```bash
 gh auth login -s 'user:email' -w
@@ -873,6 +873,13 @@ expected ouptut:
 ```bash
 /Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json
 ```
+
+- Now let's verify that the path to your service account json file is correct:
+``` bash
+cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
+```
+
+👉 This command should display the content of your service account json file. If it does not, ask for a TA
 
 - List the service accounts associated to your active account and current project
 ```bash

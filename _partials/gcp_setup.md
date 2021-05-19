@@ -167,6 +167,13 @@ expected ouptut:
 /Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json
 ```
 
+- Now let's verify that the path to your service account json file is correct:
+``` bash
+cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
+```
+
+👉 This command should display the content of your service account json file. If it does not, ask for a TA
+
 - List the service accounts associated to your active account and current project
 ```bash
 gcloud iam service-accounts list
