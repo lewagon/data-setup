@@ -1062,7 +1062,7 @@ cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
 
 👉 This command should display the content of your service account json file. If it does not, ask for a TA 🙏
 
-Your code and utilities are now able to access the ressources of your GCP account.
+Your code and utilities are now able to access the resources of your GCP account.
 
 Let's proceed with the final steps of configuration...
 
