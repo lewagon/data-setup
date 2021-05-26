@@ -91,7 +91,7 @@ LINUX = %w[
   setup/ubuntu_inotify
   setup/ubuntu_extra
   gcp_setup
-  gcp_setup_mid
+  gcp_setup_linux
   gcp_setup_end
   alumni
   setup/ubuntu_slack

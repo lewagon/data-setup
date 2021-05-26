@@ -1028,10 +1028,15 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
 - Give it a name **without** any spaces (something like `le-wagon-data-123456789abc.json`)
 
 
-- Store the service account json file somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json`
+- Store the service account json file somewhere you'll remember, for example:
+
+``` bash
+/Users/MACOS_USERNAME/code/GITHUB_NICKNAME/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
+```
+
 - Store the **absolute path** to the `JSON` file as an environment variable:
 
-```bash
+``` bash
 echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.aliases
 ```
 
