@@ -854,32 +854,47 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
 - Create a new Service Account key :
   - Give a name to that account
   - Set Role as `project > owner`
-- Download the `JSON` file, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
-- Give it a name **without** any space
-- Store the ****absolute access path** to the `JSON` file as an environmental variable:
+- Download the `JSON` file
+- Give it a name **without** any spaces (something like `le-wagon-data-123456789abc.json`)
+
+
+- Store the service account json file somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json`
+- Store the **absolute path** to the `JSON` file as an environment variable:
+
 ```bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/credentials.json' >> ~/.aliases
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.aliases
 ```
+
+
+
 <details>
-  <summary>ℹ️ How to find the absolute access path of a file?</summary>
+  <summary>ℹ️ How to find the absolute path of a file?</summary>
   You can drag and drop the file in your terminal.
 </details>
 
-- **Restart** your terminal and run:
-```bash
+**Restart** your terminal and run:
+
+``` bash
 echo $GOOGLE_APPLICATION_CREDENTIALS
 ```
-expected ouptut:
+
+The ouptut should be the following:
+
 ```bash
-/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json
+/some/absolute/path/to/your/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
 ```
 
-- Now let's verify that the path to your service account json file is correct:
+Now let's verify that the path to your service account json file is correct:
+
 ``` bash
 cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
 ```
 
-👉 This command should display the content of your service account json file. If it does not, ask for a TA
+👉 This command should display the content of your service account json file. If it does not, ask for a TA 🙏
+
+Your code and utilities are now able to access the ressources of your GCP account.
+
+Let's proceed with the final steps of configuration...
 
 - List the service accounts associated to your active account and current project
 ```bash
