@@ -24,6 +24,8 @@ MAC_OS = %w[
   nbextensions
   docker
   gcp_setup
+  gcp_setup_mid
+  gcp_setup_end
   alumni
   setup/osx_slack
   kata
@@ -61,6 +63,8 @@ WINDOWS = %w[
   setup/ubuntu_inotify
   setup/ubuntu_extra
   gcp_setup
+  gcp_setup_wsl
+  gcp_setup_end
   alumni
   win_slack
   kata
@@ -87,6 +91,8 @@ LINUX = %w[
   setup/ubuntu_inotify
   setup/ubuntu_extra
   gcp_setup
+  gcp_setup_linux
+  gcp_setup_end
   alumni
   setup/ubuntu_slack
   kata

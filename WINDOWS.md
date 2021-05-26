@@ -1619,32 +1619,108 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
 - Create a new Service Account key :
   - Give a name to that account
   - Set Role as `project > owner`
-- Download the `JSON` file, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
-- Give it a name **without** any space
-- Store the ****absolute access path** to the `JSON` file as an environmental variable:
-```bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/credentials.json' >> ~/.aliases
+- Download the `JSON` file
+- Give it a name **without** any spaces (something like `le-wagon-data-123456789abc.json`)
+
+
+We will now move the service account json file from your Windows disk to the Ubuntu disk. This will allow the development tools in Ubuntu to access to the ressources of your GCP account.
+
+First, let's create a directory in which we will store the file.
+
+👉 Open an Ubuntu terminal and run the following commands
+
+🚨 replace `GITHUB_NICKNAME` by your **GitHub** nickname
+
+``` bash
+cd ~/code/GITHUB_NICKNAME
+ls -la
 ```
+
+If the command does not show the `data-challenges` and `dotfiles` directories, ask for a TA 🙏
+
+Otherwise, you can proceed with the setup:
+
+``` bash
+mkdir gcp
+```
+
+![](images/wsl-gcp-dir.png)
+
+We will now move the service account json file to the `gcp` directory we just created.
+
+Open a Windows **File Explorer** (Win + E) and locate the `gcp` directory in the Ubuntu file system.
+
+You can either:
+- Use the **Quick access** link that we created earlier
+- manually type the location of the `gcp` directory in the Ubuntu file system in the address bar:
+
+```
+\\wsl$\Ubuntu\home\UBUNTU_USERNAME\code\GITHUB_NICKNAME
+```
+
+
+🚨 if you opt for the second option:
+- replace `UBUNTU_USERNAME` by the username that you choose during the **Ubuntu** setup
+- replace `GITHUB_NICKNAME` by your **GitHub** nickname
+
+![](images/wsl-gcp-key.png)
+
+Once you have located the `gcp` directory in the Windows **File Explorer**, move the service account json file that you downloaded inside of it.
+
+The file should now be visible from Ubuntu file system.
+
+👉 Open an Ubuntu terminal and verify that the service account json file has been moved
+
+``` bash
+cd gcp
+ls -la
+```
+
+![](images/wsl-gcp-dir-2.png)
+
+If you do not see the service account json file listed in the `gcp` directory, ask for a TA 🙏
+
+We will now store the path to your service account json file in an environment variable.
+
+🚨 in the following command, replace:
+- `UBUNTU_USERNAME` by the username that you choose during the **Ubuntu** setup
+- `GITHUB_NICKNAME` by your **GitHub** nickname
+- `SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json` by the name of your service account json file
+
+``` bash
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/home/UBUNTU_USERNAME/code/GITHUB_NICKNAME/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.aliases
+```
+
+
+
 <details>
-  <summary>ℹ️ How to find the absolute access path of a file?</summary>
+  <summary>ℹ️ How to find the absolute path of a file?</summary>
   You can drag and drop the file in your terminal.
 </details>
 
-- **Restart** your terminal and run:
-```bash
+**Restart** your terminal and run:
+
+``` bash
 echo $GOOGLE_APPLICATION_CREDENTIALS
 ```
-expected ouptut:
+
+The ouptut should be the following:
+
 ```bash
-/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json
+/some/absolute/path/to/your/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
 ```
 
-- Now let's verify that the path to your service account json file is correct:
+Now let's verify that the path to your service account json file is correct:
+
 ``` bash
 cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
 ```
 
-👉 This command should display the content of your service account json file. If it does not, ask for a TA
+👉 This command should display the content of your service account json file. If it does not, ask for a TA 🙏
+
+Your code and utilities are now able to access the resources of your GCP account.
+
+Let's proceed with the final steps of configuration...
 
 - List the service accounts associated to your active account and current project
 ```bash
