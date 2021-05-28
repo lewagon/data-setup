@@ -1406,7 +1406,11 @@ _if you already have Docker installed on your machine please update with the lat
 
 ### Install Docker
 
-If you are on Windows, go to [Docker for WSL2](https://docs.docker.com/docker-for-windows/wsl/) otherwise go to [Docker install documentation](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+
+Go to [Docker for WSL2](https://docs.docker.com/docker-for-windows/wsl/).
+
+
+
 
 Then follow the tutorial instructions to install Docker **using the repository**. There are 2 steps:
 
