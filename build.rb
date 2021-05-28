@@ -116,9 +116,9 @@ subs = {
 }
 
 delimiters = {
-  "WINDOWS.md" => ["\\$WINDOWS_START", "\\$WINDOWS_END"],
-  "macOS.md" => ["\\$MAC_START", "\\$MAC_END"],
-  "LINUX.md" => ["\\$LINUX_START", "\\$LINUX_END"],
+  "WINDOWS.md" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
+  "macOS.md" => ["\\$MAC_START\n", "\\$MAC_END\n"],
+  "LINUX.md" => ["\\$LINUX_START\n", "\\$LINUX_END\n"],
 }
 
 filenames.each do |filename, partials|

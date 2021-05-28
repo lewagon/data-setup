@@ -642,10 +642,7 @@ _if you already have Docker installed on your machine please update with the lat
 ### Install Docker
 
 
-
-
 Go to [Docker install documentation](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
-
 
 Then follow the tutorial instructions to install Docker **using the repository**. There are 2 steps:
 
