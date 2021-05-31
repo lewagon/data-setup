@@ -115,6 +115,12 @@ subs = {
   "LINUX.md" => DEFAULT_SUBS,
 }
 
+delimiters = {
+  "WINDOWS.md" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
+  "macOS.md" => ["\\$MAC_START\n", "\\$MAC_END\n"],
+  "LINUX.md" => ["\\$LINUX_START\n", "\\$LINUX_END\n"],
+}
+
 filenames.each do |filename, partials|
   File.open(filename.to_s, "w:utf-8") do |f|
     partials.each do |partial|
@@ -130,6 +136,17 @@ filenames.each do |filename, partials|
       # iterate through the patterns to replace in the file depending on the OS
       subs[filename].each do |pattern, replace|
         content.gsub!(pattern, replace)
+      end
+      # remove the OS dependant blocks
+      removed_blocks = delimiters.keys - [filename]
+      removed_blocks.each do |block|
+        delimiter_start, delimiter_end = delimiters[block]
+        pattern = "#{delimiter_start}(.|\n)*?(?<!#{delimiter_end})#{delimiter_end}"
+        content.gsub!(/#{pattern}/, "")
+      end
+      # remove the OS dependant block delimiters
+      delimiters[filename].each do |delimiter|
+        content.gsub!(/#{delimiter}/, "")
       end
       f << content.gsub("<PYTHON_VERSION>", PYTHON_VERSION)
       f << "\n\n"
