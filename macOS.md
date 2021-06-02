@@ -120,7 +120,7 @@ Otherwise, it will open a window asking you if you want to install some software
 
 While it's downloading, you can go on with configuring your GitHub account, but **stop** before Homebrew. You'll need the command line tools installed for that step.
 
-If you receive the following message, you need to update the sofware update catalog.
+If you receive the following message, you need to update the software update catalog.
 
 ```
 Xcode is not currently available from the Software Update server
@@ -193,12 +193,6 @@ brew upgrade htop        || brew install htop
 brew upgrade tig         || brew install tig
 brew upgrade xz          || brew install xz
 brew upgrade readline    || brew install readline
-```
-
-Continue with the `gcloud` CLI (A command line interface for Google Cloud Platform):
-```bash
-brew install --cask google-cloud-sdk
-/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
 ```
 
 
@@ -430,7 +424,7 @@ You will get the following output:
 - Press Enter to open github.com in your browser...
 ```
 
-Select and copy the code (`0EF9-D015` in the example), then type `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, type `Enter` again, and that should be it :tada:
+Select and copy the code (`0EF9-D015` in the example), then press `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, press `Enter` again, and that should be it :tada:
 
 To check that you are properly connected, type:
 
@@ -873,6 +867,14 @@ docker info
 You should get:
 
 ![](images/docker_info.png)
+
+
+## `gcloud` CLI
+Before Setting up our Google Cloud Platform account let's configure the `gcloud` CLI (A command line interface for Google Cloud Platform). Run the below and follow the terminal prompts to update your $PATH and enable shell command completion for the `.zshrc` file:
+```bash
+brew install --cask google-cloud-sdk
+/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
+```
 
 
 ## Google Cloud Platform setup

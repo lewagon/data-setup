@@ -23,6 +23,7 @@ MAC_OS = %w[
   pip
   nbextensions
   docker
+  gcp_cli_setup
   gcp_setup
   gcp_setup_mid
   gcp_setup_end
