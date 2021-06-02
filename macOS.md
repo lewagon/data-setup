@@ -195,12 +195,6 @@ brew upgrade xz          || brew install xz
 brew upgrade readline    || brew install readline
 ```
 
-Continue with the `gcloud` CLI (A command line interface for Google Cloud Platform):
-```bash
-brew install --cask google-cloud-sdk
-/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
-```
-
 
 ## Chrome - your browser
 
