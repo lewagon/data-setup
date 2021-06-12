@@ -60,5 +60,5 @@ If you see something like this, you're done!
 # Hi <your_github_nickname>! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
-Don't be in a rush, take time to [read this article](http://sebastien.saunier.me/blog/2015/05/10/github-public-key-authentication.html) to get a better
+Don't be in a rush, take time to [read this StackOverflow Q&A](https://stackoverflow.com/questions/28479567/why-does-github-only-need-my-public-key-in-order-to-push) to get a better
 understanding of what those keys are used for.
