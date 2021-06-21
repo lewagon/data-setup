@@ -13,24 +13,30 @@ The following instructions will help you to get ready for [Le Wagon](http://www.
 - Onboard on **Kitt**, Le Wagon's pedagogic platform
 
 
-## Remote tools
+## Zoom
 
-To be able to interact when we are not in the same physical room, we will be using two tools:
+To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
 
-### Zoom
+:warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
 
-⚠️ If you already have Zoom installed, please make sure that the version is at least **5.4**. Otherwise, you will not be able to use breakout rooms in order to work with your buddy.
+- Go to [https://zoom.us/download](https://zoom.us/download)
+- Under **Zoom Client** click the **Download** button
+- Open the file you have just downloaded to install the app
+- Open the Zoom app
+- If you already have a Zoom account, sign in using your credentials
+- If not, click on the **Sign Up Free** link:
 
-Zoom is a video conferencing tool. To create an account and install the app, go to [https://zoom.us/download](https://zoom.us/download) and under **Zoom Client for Meetings** click the **Download** button. Open the file you have just downloaded. A progress bar will appear, then Zoom will start. Click on **Connection** and create an account with the **Sign Up Free** option:
+![Sign Up Free to Zoom](images/zoom_sign_up_free.png)
 
-![zoom-sign-up-free.png](images/zoom-sign-up-free.png)
+You will be redirected to Zoom's website to complete a form.
 
-Once connected, you should see:
+When it's done, go back to the Zoom app and sign in using your credentials.
 
-![zoom-welcome-screen.png](images/zoom-welcome-screen.png)
+You should then see a screen like this:
 
-You can close Zoom now.
+![Zoom Home Screen](images/zoom_home_screen.png)
 
+You can now close the Zoom app.
 
 
 ## GitHub account
@@ -39,29 +45,45 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
 
-![](images/github_upload_picture.png)
+![GitHub picture](images/github_picture.png)
 
 
 ## Git
 
-To install `git`, first open a terminal. To open a terminal, you can click on the Ubuntu Start button in the sidebar and type `Terminal`. Then click on the terminal icon.
+### Installation
 
-Then copy this line with `Ctrl` + `C`:
+[`git`](https://git-scm.com/) is a command line software used for version control.
+
+To install `git`:
+- Open a terminal
+- Copy and paste the following commands:
 
 ```bash
+sudo apt update
 sudo apt install -y git
-```
+````
 
-:bulb: To **paste it in the terminal**, you need to use `Ctrl` + `Shift` + `V`.
+These commands will ask for your password: type it in.
 
+:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `ENTER`.
 
-Let's now install GitHub [official CLI](https://cli.github.com) (Command Line Interface) with the following commands:
+### GitHub CLI
+
+Let's now install [GitHub official CLI](https://cli.github.com) (Command Line Interface). It's a software used to interact with your GitHub account via the command line.
+
+In you terminal, copy-paste the following commands and type in your password if asked:
 
 ```bash
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
+```
+
+Then copy-paste the following command:
+
+```bash
 sudo apt install -y gh
+
 ```
 
 To check that `gh` has been successfully installed on your machine, you can run:
@@ -70,7 +92,9 @@ To check that `gh` has been successfully installed on your machine, you can run:
 gh --version
 ```
 
-If you don't get a prompt saying `gh version X.Y.Z (YYYY-MM-DD)` with at least version 1.4, please refer to [the documentation](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#official-sources) where they list some troubleshooting information. In doubt, ask a TA.
+:heavy_check_mark: If you see `gh version X.Y.Z (YYYY-MM-DD)`, you're good to go :+1:
+
+:x: Otherwise, please **contact a teacher**
 
 
 ## Chrome - your browser
@@ -155,28 +179,25 @@ It should look like this:
 :warning: Don't forget to save those changes!
 
 
-## Oh-my-zsh - Fancy your Terminal
+## Oh-my-zsh
 
-We will use the shell named `zsh` instead of `bash`, the default one.
+Let's install the `zsh` plugin [Oh My Zsh](https://ohmyz.sh/).
 
-```bash
-sudo apt install -y zsh curl vim imagemagick jq
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# it will ask for your session password
-```
-
-Be careful, those commands will ask you to type your password twice. At the end
-your prompt should look like this:
-
-![](images/ubuntu_oh_my_zsh.png)
-
-If it doesn't, **ask a teacher**.
-
-To make this change stick, restart your laptop (or virtual machine):
+In a terminal execute the following command:
 
 ```bash
-sudo reboot
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+If asked "Do you want to change your default shell to zsh?", press `Y`
+
+At the end your terminal should look like this:
+
+![Ubuntu terminal with OhMyZsh](images/oh_my_zsh.png)
+
+:heavy_check_mark: If it does, you can continue :+1:
+
+:x: Otherwise, please **ask for a teacher**
 
 
 ## GitHub
@@ -249,9 +270,13 @@ understanding of what those keys are used for.
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
-In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the Terminal.
+In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the terminal.
 
-It should already be installed on your laptop from the previous commands. First you need to **login**, copy the following line (**do not** edit it!) and paste it in your terminal, then press the `Enter` key:
+It should already be installed on your computer from the previous commands.
+
+First in order to **login**, copy-paste the following command in your terminal:
+
+:warning: **DO NOT edit the `email`**
 
 ```bash
 gh auth login -s 'user:email' -w
@@ -260,13 +285,15 @@ gh auth login -s 'user:email' -w
 You will get the following output:
 
 ```bash
-- Logging into github.com
-
 ! First copy your one-time code: 0EF9-D015
 - Press Enter to open github.com in your browser...
 ```
 
-Select and copy the code (`0EF9-D015` in the example), then press `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, press `Enter` again, and that should be it :tada:
+Select and copy the code (`0EF9-D015` in the example), then press `ENTER`.
+
+Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit.
+
+Come back to the terminal, press `ENTER` again, and that's it.
 
 To check that you are properly connected, type:
 
@@ -274,21 +301,15 @@ To check that you are properly connected, type:
 gh auth status
 ```
 
-If you get `Logged in to github.com as <YOUR USERNAME> `, then all good. If not, **ask a teacher**.
+:heavy_check_mark: If you get `Logged in to github.com as <YOUR USERNAME> `, then all good :+1:
+
+:x: If not, **contact a teacher**.
 
 Then run the following configuration line:
 
 ```bash
 gh config set git_protocol ssh
 ```
-
-Finally, create a [gist](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/editing-and-sharing-content-with-gists) to make sure `gh` is working:
-
-```bash
-echo "Hello [Le Wagon](https://www.lewagon.com) :wave:" | gh gist create -d "Starting my coding journey..." -f "SETUP_DAY.md" -p -w
-```
-
-This line should open your browser on the newly created gist page. See, we've just created a [**Markdown**](https://guides.github.com/features/mastering-markdown/) file!
 
 
 ## Google Cloud CLI
@@ -667,44 +688,6 @@ sudo service docker stop
 ```
 
 
-## Ubuntu inotify
-
-Ubuntu is always tracking changes in your folders and to do this it uses inotify.
-By default the Ubuntu limit is set to 8192 files monitored.
-
-As programming involves a lot of files, we need to raise this limit.
-In your terminal run:
-
-```bash
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-```
-
-
-## Extra
-
-### Install video codec H264
-
-On our pedagogical platform (Kitt, you'll soon discover it!), we have some videos. By default Firefox on Linux cannot play them as they use an unsupported codec (H264). To get those videos working for you, you need to run this:
-
-```bash
-sudo apt install libavcodec-extra -y
-```
-
-### Install useful terminal tools
-
-`tree` is a nice tool to visualize a directory tree inside the terminal:
-
-`ncdu` is a text-based interface disk utility.
-
-`htop` is an interactive process viewer.
-
-`tig` is a text-mode interface for `git`.
-
-```bash
-sudo apt install tree ncdu htop tig
-```
-
-
 ## Google Cloud Platform setup
 
 [GCP](https://cloud.google.com/) is a cloud solution that you are going to use in order to deploy your Machine Learning-based products to production.
@@ -925,8 +908,10 @@ gcloud projects get-iam-policy PROJECT_ID \
 🏁 You are done with the GCP setup!
 
 
-## Alumni
+## Kitt
+
 :warning: If you have received an email from Le Wagon inviting you to sign up on Kitt (our learning platform), you can safely skip this step. Instead, please follow the instructions in the email you received if you haven't done so already.
+
 If you are unsure about what to do, you can follow [this link](https://kitt.lewagon.com/). If you are already logged in, you can safely skip this section. If you are not logged in, click on `Enter Kitt as a Student`. If you manage to login, you can safely skip this step. Otherwise ask a teacher whether you should have received an email or follow the instructions below.
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
@@ -941,20 +926,9 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 
 ## Slack
 
-[Install Slack for Linux (beta)](https://get.slack.help/hc/en-us/articles/212924728-Slack-for-Linux-beta-).
+### Installation
 
-Launch the app and sign in to `lewagon-alumni` organization.
-
-Make sure you upload a picture there.
-
-You can also sign in to Slack on your iPhone or Android device!
-
-The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
-
-In case of remote tickets, you will use Slack audio or video call to get help. To ensure that everything is working fine, launch the Slack app on your Laptop, then [follow this procedure](https://slack.com/intl/en-gb/help/articles/115003538426-Troubleshoot-Slack-Calls#run-our-calls-test) (tl;dr type `/call --test` then the `Enter` key in any channel).
-
-After the test are finished, you should have green "All clear" messages at least for your microphone and camera. If not, ask a teacher.
-![](images/slack_mic_cam_all_green.png)
+[Download the Slack app](https://get.slack.help/hc/en-us/articles/212924728-Slack-for-Linux-beta-) and install it.
 
 
 ## (Bonus) Kata

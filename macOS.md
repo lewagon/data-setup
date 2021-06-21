@@ -13,39 +13,45 @@ The following instructions will help you to get ready for [Le Wagon](http://www.
 - Onboard on **Kitt**, Le Wagon's pedagogic platform
 
 
-## Remote tools
+## Zoom
 
-To be able to interact when we are not in the same physical room, we will be using two tools:
+To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
 
-### Zoom
+:warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
 
-⚠️ If you already have Zoom installed, please make sure that the version is at least **5.4**. Otherwise, you will not be able to use breakout rooms in order to work with your buddy.
+- Go to [https://zoom.us/download](https://zoom.us/download)
+- Under **Zoom Client** click the **Download** button
+- Open the file you have just downloaded to install the app
+- Open the Zoom app
+- If you already have a Zoom account, sign in using your credentials
+- If not, click on the **Sign Up Free** link:
 
-Zoom is a video conferencing tool. To create an account and install the app, go to [https://zoom.us/download](https://zoom.us/download) and under **Zoom Client for Meetings** click the **Download** button. Open the file you have just downloaded. A progress bar will appear, then Zoom will start. Click on **Connection** and create an account with the **Sign Up Free** option:
+![Sign Up Free to Zoom](images/zoom_sign_up_free.png)
 
-![zoom-sign-up-free.png](images/zoom-sign-up-free.png)
+You will be redirected to Zoom's website to complete a form.
 
-Once connected, you should see:
+When it's done, go back to the Zoom app and sign in using your credentials.
 
-![zoom-welcome-screen.png](images/zoom-welcome-screen.png)
+You should then see a screen like this:
 
-You can close Zoom now.
+![Zoom Home Screen](images/zoom_home_screen.png)
+
+You can now close the Zoom app.
 
 
+## Apple Silicon Chips
 
+If you bought your computer after late 2020, chances are it has a new Apple silicon chip instead of an Intel processor: let's find out.
 
-## Checking your computer for Apple Silicon (Apple M1 chips)
+Open a new terminal window from Applications > Utilities or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014):
 
-If you bought your computer after late 2020, chances are it uses Apple silicon instead of Intel processors. Let's find out...
+![Open Terminal on macOS](images/macos_open_terminal.png)
 
-Open a new Terminal window from Applications > Utilities or search with [Spotlight](https://support.apple.com/en-gb/HT204014):
+Copy-paste the following command in the terminal and hit `ENTER` to execute.
 
-![](images/open-terminal.png)
-
-Copy-paste the following command in the terminal and hit `Enter` to execute the command.
-
+<!-- TODO(dmilon): update branch when merged to master -->
 ``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/osx_list_processor_type.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/vscode/utils/macos_list_processor_type.sh)"
 ```
 
 ☝️ The result of the command should indicate whether your computer uses Apple Silicon.
@@ -54,12 +60,6 @@ If your computer uses Apple Silicon, expand the paragraph below and go through i
 
 <details>
   <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
-
-  &nbsp;
-
-
-
-## Setup for Apple Silicon
 
 ### Uninstall Homebrew
 
@@ -79,9 +79,9 @@ Open the Finder app (or search for it with [Spotlight](https://support.apple.com
 
 Go to Applications > Utilities.
 
-Duplicate the Terminal app (select it, then Cmd + C, Cmd + V), and rename a copy as Terminal Rosetta.
+Duplicate the terminal app (select it, then `CMD` + `C`, `CMD` + `V`), and rename a copy as Terminal Rosetta.
 
-Press Cmd + I on the Terminal Rosetta app, then check the box "Open using Rosetta".
+Press `CMD` + `I` on the Terminal Rosetta app, then check the box "Open using Rosetta".
 
 ⚠️ From now on during the bootcamp, whenever you are asked to open a Terminal, you will use the **Terminal Rosetta** app.
 
@@ -92,17 +92,15 @@ Launch the Terminal app. You will be prompted to install Rosetta. Click Install.
 
 ## A note about quitting apps on a Mac
 
-Clicking the little red cross in the top left corner of the application window on a Mac **does not really quit it**, it just closes an active window. To quit the application _for real_ either press `Cmd + Q` when the application is active, or navigate to `APP_NAME` -> `Quit` in the menu bar.
+Clicking the little red cross in the top left corner of the application window on a Mac **does not really quit it**, it just closes an active window. To quit the application _for real_ either press `CMD + Q` when the application is active, or navigate to `APP_NAME` -> `Quit` in the menu bar.
 
-![quit.png](images/quit.png)
+![Quit Terminal on macOS](images/macos_quit.png)
 
 During this setup you will be asked to **quit and re-open** applications multiple times, please make sure you do it properly :pray:
 
 ## Command Line Tools
 
-Open a new Terminal window from Applications > Utilities or searching with [Spotlight](https://support.apple.com/en-gb/HT204014).
-
-Copy-paste the following command in the terminal and hit `Enter` to execute the command.
+Open a new terminal, copy-paste the following command and hit `ENTER`:
 
 ```bash
 xcode-select --install
@@ -110,35 +108,26 @@ xcode-select --install
 
 If you receive the following message, you can just skip this step and go to next step.
 
-```
+```bash
 # command line tools are already installed, use "Software Update" to install updates
 ```
 
-Otherwise, it will open a window asking you if you want to install some software. Accept and wait. If it fails, try again `xcode-select --install`, sometimes the Apple servers are overloaded.
+Otherwise, it will open a window asking you if you want to install some software: click on "Install" and wait.
 
-![](images/xcode-select-install.png)
 
-While it's downloading, you can go on with configuring your GitHub account, but **stop** before Homebrew. You'll need the command line tools installed for that step.
+![Install xcode-select on macOS](images/macos_xcode_select_install.png)
 
-If you receive the following message, you need to update the software update catalog.
+:heavy_check_mark: If you see the message "The software was installed" then all good :+1:
 
-```
-Xcode is not currently available from the Software Update server
-```
+:x: If the command `xcode-select --install` fails try again: sometimes the Apple servers are overloaded.
 
-In this case, copy-paste the following command in the terminal and hit Enter.
+:x: If you see the message "Xcode is not currently available from the Software Update server", you need to update the software update catalog:
 
 ```bash
 sudo softwareupdate --clear-catalog
 ```
 
-Once this is done, you can try to install again (copy-paste the following command and hit enter).
-
-```bash
-xcode-select --install
-```
-
-Then follow the previous instructions for this command.
+Once this is done, you can try to install again.
 
 
 ## GitHub account
@@ -147,7 +136,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
 
-![](images/github_upload_picture.png)
+![GitHub picture](images/github_picture.png)
 
 
 ## Homebrew
@@ -277,64 +266,25 @@ It should look like this:
 :warning: Don't forget to save those changes!
 
 
-## Oh-my-zsh - Fancy your Terminal
+## Oh-my-zsh
 
-We will use the shell named `zsh` instead of `bash`, the default one, alongside with useful and fancy [`oh-my-zsh`](https://ohmyz.sh/) plugins:
+Let's install the `zsh` plugin [Oh My Zsh](https://ohmyz.sh/).
+
+In a terminal execute the following command:
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Be careful, at the end of this script, it will prompt for your macOS user account password again (Remember! No visual feedback!). You should get something like:
+If asked "Do you want to change your default shell to zsh?", press `Y`
 
-```bash
-         __                                     __
-  ____  / /_     ____ ___  __  __   ____  _____/ /_
- / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \
-/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / /
-\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/
-                        /____/                       ....is now installed!
-````
+At the end your terminal should look like this:
 
-Now quit the Terminal (`⌘` + `Q`) and restart it.
+![Ubuntu terminal with OhMyZsh](images/oh_my_zsh.png)
 
-You should see something like this:
+:heavy_check_mark: If it does, you can continue :+1:
 
-![](images/on-my-zsh.png)
-
-If not, **stop right away** and call a teacher.
-
-On Mac, open `Terminal > Preferences` and set the "Pro" theme as default in `Profiles` (*`Réglages`* in French).
-
-![](images/terminal-pro.png)
-
-**Quit** and restart the Terminal. It should now have a nice black background, more easy on the eyes.
-
-:bulb: There are plenty of themes available on the Internet like [MaterialDark](https://github.com/lysyi3m/macos-terminal-themes#materialdark-download) if you fancy trying another one. That's something you can configure later during the day or come back to it if you are done with your setup early. Please carry on with the Github setup!
-
-## Apple Silicon computers
-
-<details>
-  <summary>Forgot if your computer uses Apple Silicon?</summary>
-
-  &nbsp;
-
-
-  Copy-paste the following command in the terminal and hit `Enter` to execute the command.
-
-  ``` bash
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/osx_list_processor_type.sh)"
-  ```
-
-  ☝️ The result of the command should indicate whether your computer uses Apple Silicon.
-
-</details>
-
-If your computer uses **Apple Silicon**, run the following command. If not, ignore it.
-
-``` bash
-echo 'export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"' >> ~/.zshrc
-```
+:x: Otherwise, please **ask for a teacher**
 
 
 ## GitHub
@@ -407,9 +357,13 @@ understanding of what those keys are used for.
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
-In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the Terminal.
+In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the terminal.
 
-It should already be installed on your laptop from the previous commands. First you need to **login**, copy the following line (**do not** edit it!) and paste it in your terminal, then press the `Enter` key:
+It should already be installed on your computer from the previous commands.
+
+First in order to **login**, copy-paste the following command in your terminal:
+
+:warning: **DO NOT edit the `email`**
 
 ```bash
 gh auth login -s 'user:email' -w
@@ -418,13 +372,15 @@ gh auth login -s 'user:email' -w
 You will get the following output:
 
 ```bash
-- Logging into github.com
-
 ! First copy your one-time code: 0EF9-D015
 - Press Enter to open github.com in your browser...
 ```
 
-Select and copy the code (`0EF9-D015` in the example), then press `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, press `Enter` again, and that should be it :tada:
+Select and copy the code (`0EF9-D015` in the example), then press `ENTER`.
+
+Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit.
+
+Come back to the terminal, press `ENTER` again, and that's it.
 
 To check that you are properly connected, type:
 
@@ -432,21 +388,15 @@ To check that you are properly connected, type:
 gh auth status
 ```
 
-If you get `Logged in to github.com as <YOUR USERNAME> `, then all good. If not, **ask a teacher**.
+:heavy_check_mark: If you get `Logged in to github.com as <YOUR USERNAME> `, then all good :+1:
+
+:x: If not, **contact a teacher**.
 
 Then run the following configuration line:
 
 ```bash
 gh config set git_protocol ssh
 ```
-
-Finally, create a [gist](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/editing-and-sharing-content-with-gists) to make sure `gh` is working:
-
-```bash
-echo "Hello [Le Wagon](https://www.lewagon.com) :wave:" | gh gist create -d "Starting my coding journey..." -f "SETUP_DAY.md" -p -w
-```
-
-This line should open your browser on the newly created gist page. See, we've just created a [**Markdown**](https://guides.github.com/features/mastering-markdown/) file!
 
 
 ## Dotfiles
@@ -1097,8 +1047,10 @@ gcloud projects get-iam-policy PROJECT_ID \
 🏁 You are done with the GCP setup!
 
 
-## Alumni
+## Kitt
+
 :warning: If you have received an email from Le Wagon inviting you to sign up on Kitt (our learning platform), you can safely skip this step. Instead, please follow the instructions in the email you received if you haven't done so already.
+
 If you are unsure about what to do, you can follow [this link](https://kitt.lewagon.com/). If you are already logged in, you can safely skip this section. If you are not logged in, click on `Enter Kitt as a Student`. If you manage to login, you can safely skip this step. Otherwise ask a teacher whether you should have received an email or follow the instructions below.
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
@@ -1113,18 +1065,9 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 
 ## Slack
 
-[Download](https://itunes.apple.com/fr/app/slack/id803453959?mt=12) the Slack native app from the mac App Store and sign in to `lewagon-alumni` organization.
+### Installation
 
-Make sure you upload a picture there.
-
-You can also sign in to Slack on your iPhone or Android device!
-
-The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
-
-In case of remote tickets, you will use Slack audio or video call to get help. To ensure that everything is working fine, launch the Slack app on your Laptop, then [follow this procedure](https://slack.com/intl/en-gb/help/articles/115003538426-Troubleshoot-Slack-Calls#run-our-calls-test) (tl;dr type `/call --test` then the `Enter` key in any channel).
-
-After the test are finished, you should have green "All clear" messages at least for your microphone and camera. If not, ask a teacher.
-![](images/slack_mic_cam_all_green.png)
+[Download the Slack app](https://itunes.apple.com/fr/app/slack/id803453959?mt=12) and install it.
 
 
 ## (Bonus) Kata
