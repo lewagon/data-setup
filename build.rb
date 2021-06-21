@@ -5,15 +5,15 @@ PYTHON_VERSION = "3.8.6"
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
   setup_instructions
-  setup/remote_tools
-  setup/osx_apple_silicon
-  setup/osx_command_line_tools
+  setup/zoom
+  setup/macos_apple_silicon
+  setup/macos_command_line_tools
   setup/github
   homebrew
   chrome
   mac_vscode
   vscode_setup
-  setup/osx_oh_my_zsh
+  setup/macos_oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
@@ -27,29 +27,28 @@ MAC_OS = %w[
   gcp_setup
   gcp_setup_mid
   gcp_setup_end
-  alumni
-  setup/osx_slack
+  setup/kitt
+  setup/macos_slack
   kata
 ].freeze
 
 WINDOWS = %w[
   setup_instructions
-  setup/wsl2_prereq_intro
-  setup/wsl2_prereq_win10
-  setup/wsl2_prereq_win_version
-  setup/wsl2_prereq_virtualization
+  setup/intro
+  setup/zoom
+  setup/windows_version
+  setup/windows_virtualization
   setup/github
-  setup/remote_tools
-  setup/wsl2_install_wsl
+  setup/windows_wsl
   chrome
-  setup/wsl2_vscode
+  setup/windows_vscode
   vscode_setup
   wsl2_vscode_settings
-  setup/wsl2_windows_terminal
-  setup/wsl2_git
-  setup/wsl2_oh_my_zsh
+  setup/windows_terminal
+  setup/git
+  setup/oh_my_zsh
   github_rsa
-  setup/wsl_browser_variable
+  setup/windows_browser
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
@@ -58,24 +57,22 @@ WINDOWS = %w[
   pip
   win_jupyter
   nbextensions
-  setup/wsl_explorer
+  setup/windows_settings
   win_vs_redistributable
   ubuntu_docker
-  setup/ubuntu_inotify
-  setup/ubuntu_extra
   gcp_setup
   gcp_setup_wsl
   gcp_setup_end
-  alumni
+  setup/kitt
   win_slack
   kata
 ].freeze
 
 LINUX = %w[
   setup_instructions
-  setup/remote_tools
+  setup/zoom
   setup/github
-  setup/ubuntu_git
+  setup/git
   chrome
   ubuntu_vscode
   vscode_setup
@@ -94,7 +91,7 @@ LINUX = %w[
   gcp_setup
   gcp_setup_linux
   gcp_setup_end
-  alumni
+  setup/kitt
   setup/ubuntu_slack
   kata
 ]
