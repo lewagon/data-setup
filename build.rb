@@ -13,7 +13,7 @@ MAC_OS = %w[
   chrome
   mac_vscode
   vscode_setup
-  setup/macos_oh_my_zsh
+  setup/oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
@@ -76,7 +76,7 @@ LINUX = %w[
   chrome
   ubuntu_vscode
   vscode_setup
-  setup/ubuntu_oh_my_zsh
+  setup/oh_my_zsh
   github_rsa
   setup/gh_cli
   ubuntu_gcloud
