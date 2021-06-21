@@ -126,6 +126,7 @@ filenames.each do |filename, partials|
       if match_data
         require 'open-uri'
         # TODO(Eschults): to make CI green, revert vscode to master before merging
+        p match_data[:partial]
         content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/vscode", "_partials", "#{match_data[:partial]}.md"))
                 .string
       else
