@@ -879,6 +879,30 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 [Download the Slack app](https://get.slack.help/hc/en-us/articles/212924728-Slack-for-Linux-beta-) and install it.
 
 
+### Settings
+
+Launch the app and sign in to `lewagon-alumni` organization.
+
+Make sure you **upload a profile picture** :point_down:
+
+![How to upload a profile picture on Slack](images/slack_profile_picture.gif)
+
+The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
+
+To ensure that everything is working fine for video calls, let's test your camera and microphone:
+- Open the Slack app
+- In any channel message bar type `/call --test` and press `ENTER`
+- Click on the "Start test" green button
+
+![Check microphone and webcam with Slack](images/slack_call_test.png)
+
+:heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
+
+:x: If not, **contact a teacher**.
+
+You can also install Slack app on your phone and sign in `lewagon-alumni`!
+
+
 ## (Bonus) Kata
 
 If you are done with your setup, please ask around if some classmates need some help with theirs (macOS, Linux, Windows). We will have our first lectures at 2pm and will talk about the Setup you just did + onboard you on Kitt.
