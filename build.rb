@@ -4,7 +4,7 @@ PYTHON_VERSION = "3.8.6"
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
-  setup_instructions
+  intro
   setup/zoom
   setup/github
   setup/macos_apple_silicon
@@ -32,7 +32,7 @@ MAC_OS = %w[
 ].freeze
 
 WINDOWS = %w[
-  setup_instructions
+  intro
   setup/zoom
   setup/github
   setup/windows_version
@@ -69,7 +69,7 @@ WINDOWS = %w[
 ].freeze
 
 LINUX = %w[
-  setup_instructions
+  intro
   setup/zoom
   setup/github
   setup/ubuntu_vscode

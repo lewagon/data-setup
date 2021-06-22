@@ -1,16 +1,10 @@
 # Setup instructions
 
-The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Science bootcamp:
+You will find below the instructions to set up you computer for [Le Wagon Data Science course](https://www.lewagon.com/data-science-course/full-time)
 
-- Grab a text editor
-- Install a package manager
-- Pimp your Terminal
-- Setup git and GitHub
-- Install remote tools
-- Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
-- Install [Docker](https://docs.docker.com/get-docker/)
-- Install Slack
-- Onboard on **Kitt**, Le Wagon's pedagogic platform
+Please **read them carefully and execute all commands in the following order**. If you get stuck, don't hesitate to ask a teacher for help :raising_hand:
+
+Let's start :rocket:
 
 
 ## Zoom
