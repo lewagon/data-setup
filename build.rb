@@ -130,6 +130,9 @@ filenames.each do |filename, partials|
         # TODO(Eschults): to make CI green, revert vscode to master before merging
         content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/vscode", "_partials", "#{match_data[:partial]}.md"))
                 .string
+        # replace data-setup repo relative path by setup repo URL
+        image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
+        image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/vscode/#{ip}")}
       else
         file = File.join("_partials", "#{partial}.md")
         content = File.read(file, encoding: "utf-8")
