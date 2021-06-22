@@ -359,54 +359,48 @@ You should see a frame at the bottom-right corner of VS Code saying it detects W
 :warning: This extension is mandatory for you to be able to work with VS Code!
 
 
-### VS Code Extensions
+## VS Code Extensions
 
-Let's gain time now and add other extensions that will be helpful during your Bootcamp:
+### Installation
+
+Let's install some useful extensions to VS Code.
 
 ```bash
 code --install-extension ms-vscode.sublime-keybindings
 code --install-extension emmanuelbeziat.vscode-great-icons
 code --install-extension MS-vsliveshare.vsliveshare
 code --install-extension ms-python.python
-code --install-extension ms-toolsai.jupyter
 code --install-extension KevinRose.vsc-python-indent
 code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
 ```
 
-### VS Code Settings
+Here is a list of the extensions you are installing:
+- [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+- [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- Click on the `Open Settings (JSON)`
 
-![vscode_user_settings](images/vscode_user_settings.png)
+### Live Share configuration
 
-Paste the following just before the last `}`:
+[Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
 
-```bash
-"emmet.triggerExpansionOnTab": true,
-"emmet.includeLanguages": {
-  "erb": "html"
-},
-"python.pythonPath": "~/.pyenv/shims/python",
-"python.formatting.provider": "yapf",
-"workbench.settings.editor": "json",
-"workbench.settings.openDefaultSettings": true,
-"workbench.settings.useSplitJSON": true,
-"files.exclude": {
-  "**/.pytest_cache": true,
-  "**/.ipynb_checkpoints": true,
-  "**/__pycache__": true,
-  "**/.egg-info": true,
-},
-```
+Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
 
-It should look like this:
+Click on the little arrow at the bottom of the left bar :point_down:
 
-![vscode_emmet](images/vscode_emmet.jpg)
+![VS Code Live Share](https://github.com/lewagon/setup/blob/vscode/images/vscode_live_share.png)
 
-:warning: You should add a comma if there is none after the **`]`** like line 23 in the image above :point_up:
+- Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
+- A popup appears asking you to sign in with GitHub: click on "Allow".
+- You are redirected to a GitHub page in you browser asking you to authorize Visual Studio Code: click on "Continue" then "Authorize github".
+- VS Code may display additional pop-ups: close them by clicking "OK".
 
-:warning: Don't forget to save those changes!
+That's it, you're good to go!
 
 
 ## Windows Terminal

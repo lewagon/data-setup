@@ -135,6 +135,7 @@ filenames.each do |filename, partials|
                 .string
         # replace data-setup repo relative path by setup repo URL
         image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
+        # TODO(dmilon): replace vscode branch by master before merge
         image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/vscode/#{ip}")}
       else
         file = File.join("_partials", "#{partial}.md")
