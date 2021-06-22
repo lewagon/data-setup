@@ -109,7 +109,7 @@ You don't want to be asked for your passphrase every time you communicate with a
 The list should look like:
 
 ```
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
+plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 ```
 
 &nbsp;

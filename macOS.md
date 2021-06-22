@@ -510,7 +510,7 @@ You don't want to be asked for your passphrase every time you communicate with a
 The list should look like:
 
 ```
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
+plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 ```
 
 &nbsp;
@@ -707,35 +707,6 @@ jupyter nbextension enable toc2/main
 jupyter nbextension enable collapsible_headings/main
 jupyter nbextension enable spellchecker/main
 jupyter nbextension enable code_prettify/code_prettify
-```
-
-### Sublime Text shortcuts
-
-[Add sublime text shortcuts to jupyter notebook](http://blog.rtwilson.com/how-to-get-sublime-text-style-editing-in-the-ipythonjupyter-notebook/)
-
-Find the `jupyter` config directory:
-``` bash
-JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
-```
-
-Open `custom/custom.js` in the config directory:
-```bash
-cd $JUPYTER_CONFIG_DIR
-code custom/custom.js
-```
-Edit `custom.js` with:
-``` js
-require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
-    function(sublime_keymap, cell, IPython) {
-        // setTimeout(function(){ // uncomment line to fake race-condition
-        cell.Cell.options_default.cm_config.keyMap = 'sublime';
-        var cells = IPython.notebook.get_cells();
-        for(var cl=0; cl< cells.length ; cl++){
-            cells[cl].code_mirror.setOption('keyMap', 'sublime');
-        }
-        // }, 1000)// uncomment  line to fake race condition
-    }
-);
 ```
 
 ### Custom CSS
@@ -1064,6 +1035,8 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 
 
 ## Slack
+
+[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
 
 ### Installation
 
