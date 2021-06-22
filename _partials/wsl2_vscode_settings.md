@@ -12,8 +12,6 @@ In Ubuntu, let's try to launch <CODE_EDITOR>:
 <CODE_EDITOR_CMD>
 ```
 
-&nbsp;
+x: If <CODE_EDITOR> does not open, please **contact a teacher**
 
-&nbsp;&nbsp;&nbsp; :x: If <CODE_EDITOR> does not open, please **contact a teacher**
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If <CODE_EDITOR> opens, your code editor is ready! :muscle:
+:white_check_mark: If <CODE_EDITOR> opens, your code editor is ready! :muscle:

@@ -407,43 +407,6 @@ don't do that, Kitt won't be able to track your progress.
 Please now **quit** all your opened terminal windows.
 
 
-&nbsp;
-
-
-Let us open the `~/.zshrc` profile file in VS Code and change slightly its content:
-
-```bash
-code ~/.zshrc
-```
-
-- Locate the line `# Actually load Oh-My-Zsh`
-- **Above it** write the following line:
-
-```bash
-ZSH_DISABLE_COMPFIX=true
-```
-
-&nbsp;
-
-
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
-
-
-- Spot the line starting with `plugins=`
-- Add `ssh-agent` to the plugins list.
-
-The list should look like:
-
-```
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
-&nbsp;
-
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close VS Code.
-
-
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
 
 Ubuntu comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.

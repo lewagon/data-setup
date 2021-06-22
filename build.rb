@@ -6,9 +6,9 @@ PYTHON_VERSION = "3.8.6"
 MAC_OS = %w[
   setup_instructions
   setup/zoom
+  setup/github
   setup/macos_apple_silicon
   setup/macos_command_line_tools
-  setup/github
   homebrew
   chrome
   mac_vscode
@@ -34,24 +34,26 @@ MAC_OS = %w[
 
 WINDOWS = %w[
   setup_instructions
-  setup/intro
   setup/zoom
+  setup/github
   setup/windows_version
   setup/windows_virtualization
-  setup/github
   setup/windows_wsl
+  setup/windows_ubuntu
   chrome
   setup/windows_vscode
   vscode_setup
   wsl2_vscode_settings
   setup/windows_terminal
   setup/git
+  setup/zsh
   setup/oh_my_zsh
   github_rsa
   setup/windows_browser
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
+  setup/windows_ssh
   ubuntu_python
   osx_virtualenv
   pip

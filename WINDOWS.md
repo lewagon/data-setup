@@ -13,15 +13,6 @@ The following instructions will help you to get ready for [Le Wagon](http://www.
 - Onboard on **Kitt**, Le Wagon's pedagogic platform
 
 
-# Setup instructions
-
-You will find below the instructions to set up you computer for [Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time)
-
-Please **read them carefully and execute all commands in the following order**. If you get stuck, don't hesitate to ask a teacher for help :raising_hand:
-
-Let's start :rocket:
-
-
 ## Zoom
 
 To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
@@ -46,6 +37,15 @@ You should then see a screen like this:
 ![Zoom Home Screen](images/zoom_home_screen.png)
 
 You can now close the Zoom app.
+
+
+## GitHub account
+
+Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
+
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
+
+![GitHub picture](images/github_picture.png)
 
 
 ## Windows version
@@ -158,15 +158,6 @@ For many computers, this is already the case. Let's check:
 </details>
 
 
-## GitHub account
-
-Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
-
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
-
-![GitHub picture](images/github_picture.png)
-
-
 ## Windows Subsystem for Linux
 
 ### Install WSL 1
@@ -249,6 +240,96 @@ wsl --set-default-version 2
 
   Follow the steps described [here](https://winaero.com/enable-use-hyper-v-windows-10/) until you enable the group <strong>Hyper-V</strong>
 </details>
+
+
+## Ubuntu
+
+### Installation
+
+- Click on `Start`
+- Type  `Microsoft Store`
+- Click on the Microsoft Windows Store in the list
+- Search for `Ubuntu` in the search bar
+- **Select version without any number, just plain "Ubuntu"**
+- Click on `Install`
+
+:warning: Don't install **Ubuntu 18.04 LTS** nor **Ubuntu 20.04**!
+
+<details>
+  <summary>Uninstall wrong versions of Ubuntu</summary>
+
+  To uninstall a wrong version of Ubuntu, you just have to go to the Installed Program List of Windows 10:
+
+  - Press `Windows` + `R`
+  - Type  `ms-settings:appsfeatures`
+  - Press `Enter`
+
+  Find the software to uninstall and click on the uninstall button.
+</details>
+
+Once the installation is finished, the `Install` button becomes a `Launch` button: click on it.
+
+At first launch, you will be asked some information:
+- Choose a **username**:
+    - one word
+    - lowercase
+    - no special characters
+    - for example: `lewagon` or your `firstname`
+- Choose a **password**
+- Confirm your password
+
+:warning: When you you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `ENTER`.
+
+You can close the Ubuntu window now that it is installed on your computer.
+
+### Check the WSL version of Ubuntu
+
+- Press `Windows` + `R`
+- Type  `cmd`
+- Press `Enter`
+
+Type the following command:
+
+```bash
+wsl -l -v
+```
+
+:heavy_check_mark: If the version of Ubuntu WSL is 2, you are good to go :+1:
+
+:x: If the version of Ubuntu WSL is 1, we will need to convert it to version 2.
+
+<details>
+  <summary>Convert Ubuntu WSL V1 to V2</summary>
+
+  In the Command Prompt window, type:
+
+  ```bash
+  wsl --set-version Ubuntu 2
+  ```
+
+  :heavy_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
+
+  :x: If it does not work, we need to be sure that Ubuntu files are not compressed.
+</details>
+
+<details>
+  <summary>Check for Uncompressed Files</summary>
+
+  - Press `Windows` + `R`
+  - Type  `%localappdata%\Packages`
+  - Press `Enter`
+  - Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
+  - Right Click on the `LocalState` folder
+  - Click on `Properties`
+  - Click on `Advanced`
+  - Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
+
+  Apply changes to this folder only and try to convert the Ubuntu WSL version again.
+
+  :x: If the conversion still does not work, please **contact a teacher**.
+</details>
+
+You can now close this terminal window.
 
 
 ## Chrome - your browser
@@ -347,11 +428,9 @@ In Ubuntu, let's try to launch VS Code:
 code
 ```
 
-&nbsp;
+x: If VS Code does not open, please **contact a teacher**
 
-&nbsp;&nbsp;&nbsp; :x: If VS Code does not open, please **contact a teacher**
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If VS Code opens, your code editor is ready! :muscle:
+:white_check_mark: If VS Code opens, your code editor is ready! :muscle:
 
 
 ## Windows Terminal
@@ -477,6 +556,17 @@ gh --version
 :heavy_check_mark: If you see `gh version X.Y.Z (YYYY-MM-DD)`, you're good to go :+1:
 
 :x: Otherwise, please **contact a teacher**
+
+
+## zsh
+
+Instead of using the default `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)), we will use `zsh`.
+
+In a terminal execute the following command and type in your password if asked:
+
+```bash
+sudo apt install -y zsh curl vim imagemagick jq
+```
 
 
 ## Oh-my-zsh
@@ -783,41 +873,20 @@ don't do that, Kitt won't be able to track your progress.
 Please now **quit** all your opened terminal windows.
 
 
-&nbsp;
+## Disable SSH passphrase prompt
 
-
-Let us open the `~/.zshrc` profile file in VS Code and change slightly its content:
-
-```bash
-code ~/.zshrc
-```
-
-- Locate the line `# Actually load Oh-My-Zsh`
-- **Above it** write the following line:
-
-```bash
-ZSH_DISABLE_COMPFIX=true
-```
-
-&nbsp;
-
-
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
-
+You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
 
 - Spot the line starting with `plugins=`
-- Add `ssh-agent` to the plugins list.
+- Add `ssh-agent` at the end of the plugins list
 
 The list should look like:
 
+```bash
+plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search ssh-agent)
 ```
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
 
-&nbsp;
-
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close VS Code.
+:heavy_check_mark: Save the `.zshrc` file with `CTRL` + `S` and close your text editor.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))

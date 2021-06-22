@@ -39,6 +39,15 @@ You should then see a screen like this:
 You can now close the Zoom app.
 
 
+## GitHub account
+
+Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
+
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
+
+![GitHub picture](images/github_picture.png)
+
+
 ## Apple Silicon Chips
 
 If you bought your computer after late 2020, chances are it has a new Apple silicon chip instead of an Intel processor: let's find out.
@@ -128,15 +137,6 @@ sudo softwareupdate --clear-catalog
 ```
 
 Once this is done, you can try to install again.
-
-
-## GitHub account
-
-Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
-
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
-
-![GitHub picture](images/github_picture.png)
 
 
 ## Homebrew
@@ -480,43 +480,6 @@ you **need** to put one of the email listed above thanks to the previous `gh api
 don't do that, Kitt won't be able to track your progress.
 
 Please now **quit** all your opened terminal windows.
-
-
-&nbsp;
-
-
-Let us open the `~/.zshrc` profile file in VS Code and change slightly its content:
-
-```bash
-code ~/.zshrc
-```
-
-- Locate the line `# Actually load Oh-My-Zsh`
-- **Above it** write the following line:
-
-```bash
-ZSH_DISABLE_COMPFIX=true
-```
-
-&nbsp;
-
-
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
-
-
-- Spot the line starting with `plugins=`
-- Add `ssh-agent` to the plugins list.
-
-The list should look like:
-
-```
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
-&nbsp;
-
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close VS Code.
 
 
 ### SSH Passphrase
