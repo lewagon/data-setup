@@ -28,6 +28,7 @@ MAC_OS = %w[
   gcp_setup_end
   setup/kitt
   setup/macos_slack
+  setup/slack_settings
   kata
 ].freeze
 
@@ -65,6 +66,7 @@ WINDOWS = %w[
   gcp_setup_end
   setup/kitt
   setup/windows_slack
+  setup/slack_settings
   kata
 ].freeze
 
@@ -92,6 +94,7 @@ LINUX = %w[
   gcp_setup_end
   setup/kitt
   setup/ubuntu_slack
+  setup/slack_settings
   kata
 ]
 
