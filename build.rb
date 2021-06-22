@@ -12,7 +12,8 @@ MAC_OS = %w[
   homebrew
   chrome
   setup/macos_vscode
-  vscode_setup
+  vscode_extensions
+  setup/vscode_liveshare
   setup/oh_my_zsh
   github_rsa
   setup/gh_cli
@@ -42,7 +43,8 @@ WINDOWS = %w[
   setup/windows_ubuntu
   chrome
   setup/windows_vscode
-  vscode_setup
+  vscode_extensions
+  setup/vscode_liveshare
   setup/windows_terminal
   setup/git
   setup/zsh
@@ -75,7 +77,8 @@ LINUX = %w[
   setup/zoom
   setup/github
   setup/ubuntu_vscode
-  vscode_setup
+  vscode_extensions
+  setup/vscode_liveshare
   setup/git
   chrome
   setup/zsh

@@ -1,48 +1,24 @@
-### <CODE_EDITOR> Extensions
+## VS Code Extensions
 
-Let's gain time now and add other extensions that will be helpful during your Bootcamp:
+### Installation
 
-```bash
-<CODE_EDITOR_CMD> --install-extension ms-vscode.sublime-keybindings
-<CODE_EDITOR_CMD> --install-extension emmanuelbeziat.vscode-great-icons
-<CODE_EDITOR_CMD> --install-extension MS-vsliveshare.vsliveshare
-<CODE_EDITOR_CMD> --install-extension ms-python.python
-<CODE_EDITOR_CMD> --install-extension ms-toolsai.jupyter
-<CODE_EDITOR_CMD> --install-extension KevinRose.vsc-python-indent
-<CODE_EDITOR_CMD> --install-extension ms-python.vscode-pylance
-```
-
-### <CODE_EDITOR> Settings
-
-- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- Click on the `Open Settings (JSON)`
-
-![vscode_user_settings](images/vscode_user_settings.png)
-
-Paste the following just before the last `}`:
+Let's install some useful extensions to VS Code.
 
 ```bash
-"emmet.triggerExpansionOnTab": true,
-"emmet.includeLanguages": {
-  "erb": "html"
-},
-"python.pythonPath": "~/.pyenv/shims/python",
-"python.formatting.provider": "yapf",
-"workbench.settings.editor": "json",
-"workbench.settings.openDefaultSettings": true,
-"workbench.settings.useSplitJSON": true,
-"files.exclude": {
-  "**/.pytest_cache": true,
-  "**/.ipynb_checkpoints": true,
-  "**/__pycache__": true,
-  "**/.egg-info": true,
-},
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension emmanuelbeziat.vscode-great-icons
+code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-python.python
+code --install-extension KevinRose.vsc-python-indent
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
 ```
 
-It should look like this:
-
-![vscode_emmet](images/vscode_emmet.jpg)
-
-:warning: You should add a comma if there is none after the **`]`** like line 23 in the image above :point_up:
-
-:warning: Don't forget to save those changes!
+Here is a list of the extensions you are installing:
+- [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+- [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
