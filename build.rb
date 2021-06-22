@@ -66,7 +66,7 @@ WINDOWS = %w[
   gcp_setup_wsl
   gcp_setup_end
   setup/kitt
-  win_slack
+  setup/windows_slack
   kata
 ].freeze
 

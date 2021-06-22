@@ -1508,19 +1508,13 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
 
-# Slack
+## Slack
 
-Download and install the Slack app from [slack.com](https://slack.com/downloads/windows), and install it.
+[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
 
-Launch the app and sign in to `lewagon-alumni` organization.
+### Installation
 
-Make sure you upload a picture there.
-
-You can also sign in to Slack on your iPhone or Android device!
-
-The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
-
-Enjoy your ride with Le Wagon :)
+[Download the Slack app](https://slack.com/downloads/windows) and install it.
 
 
 ## (Bonus) Kata
