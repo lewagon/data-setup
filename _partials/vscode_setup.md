@@ -4,10 +4,11 @@ Let's gain time now and add other extensions that will be helpful during your Bo
 
 ```bash
 <CODE_EDITOR_CMD> --install-extension ms-vscode.sublime-keybindings
+<CODE_EDITOR_CMD> --install-extension emmanuelbeziat.vscode-great-icons
+<CODE_EDITOR_CMD> --install-extension MS-vsliveshare.vsliveshare
 <CODE_EDITOR_CMD> --install-extension ms-python.python
 <CODE_EDITOR_CMD> --install-extension ms-toolsai.jupyter
 <CODE_EDITOR_CMD> --install-extension KevinRose.vsc-python-indent
-<CODE_EDITOR_CMD> --install-extension MS-vsliveshare.vsliveshare
 <CODE_EDITOR_CMD> --install-extension ms-python.vscode-pylance
 ```
 
