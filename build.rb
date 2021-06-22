@@ -11,15 +11,14 @@ MAC_OS = %w[
   setup/macos_command_line_tools
   homebrew
   chrome
-  mac_vscode
+  setup/macos_vscode
   vscode_setup
   setup/oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
-  ssh_osx
   osx_python
-  osx_virtualenv
+  virtualenv
   pip
   nbextensions
   docker
@@ -43,7 +42,6 @@ WINDOWS = %w[
   chrome
   setup/windows_vscode
   vscode_setup
-  wsl2_vscode_settings
   setup/windows_terminal
   setup/git
   setup/zsh
@@ -55,7 +53,7 @@ WINDOWS = %w[
   dotfiles
   setup/windows_ssh
   ubuntu_python
-  osx_virtualenv
+  virtualenv
   pip
   win_jupyter
   nbextensions
@@ -74,17 +72,18 @@ LINUX = %w[
   setup_instructions
   setup/zoom
   setup/github
+  setup/ubuntu_vscode
+  vscode_setup
   setup/git
   chrome
-  ubuntu_vscode
-  vscode_setup
+  setup/zsh
   setup/oh_my_zsh
   github_rsa
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
   ubuntu_python
-  osx_virtualenv
+  virtualenv
   pip
   nbextensions
   ubuntu_docker

@@ -414,25 +414,6 @@ It should look like this:
 :warning: Don't forget to save those changes!
 
 
-### Final Check
-
-To make sure everything works fine, close VS Code, then open your Ubuntu Terminal:
-
-- Press `Windows` + `R`
-- Type  `ubuntu`
-- Press `Enter`
-
-In Ubuntu, let's try to launch VS Code:
-
-```bash
-code
-```
-
-x: If VS Code does not open, please **contact a teacher**
-
-:white_check_mark: If VS Code opens, your code editor is ready! :muscle:
-
-
 ## Windows Terminal
 
 The standard terminal installed by Ubuntu is a very crude: let's install **Windows Terminal**, a real modern terminal.

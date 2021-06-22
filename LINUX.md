@@ -48,6 +48,87 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 ![GitHub picture](images/github_picture.png)
 
 
+## Visual Studio Code
+
+### Installation
+
+Let's install [Visual Studio Code](https://code.visualstudio.com) text editor.
+
+Copy (`CTRL` + `C`) the commands below then paste them in your terminal (`CTRL` + `SHIFT` + `v`):
+
+```bash
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
+```
+
+These commands will ask for your password: type it in.
+
+:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `ENTER`.
+
+### Launching from the terminal
+
+Now let's launch VS Code from **the terminal**:
+
+```bash
+code
+```
+
+:heavy_check_mark: If a VS Code window has just opened, you're good to go :+1:
+
+:x: Otherwise, please **contact a teacher**
+
+
+### VS Code Extensions
+
+Let's gain time now and add other extensions that will be helpful during your Bootcamp:
+
+```bash
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+code --install-extension KevinRose.vsc-python-indent
+code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-python.vscode-pylance
+```
+
+### VS Code Settings
+
+- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
+- Click on the `Open Settings (JSON)`
+
+![vscode_user_settings](images/vscode_user_settings.png)
+
+Paste the following just before the last `}`:
+
+```bash
+"emmet.triggerExpansionOnTab": true,
+"emmet.includeLanguages": {
+  "erb": "html"
+},
+"python.pythonPath": "~/.pyenv/shims/python",
+"python.formatting.provider": "yapf",
+"workbench.settings.editor": "json",
+"workbench.settings.openDefaultSettings": true,
+"workbench.settings.useSplitJSON": true,
+"files.exclude": {
+  "**/.pytest_cache": true,
+  "**/.ipynb_checkpoints": true,
+  "**/__pycache__": true,
+  "**/.egg-info": true,
+},
+```
+
+It should look like this:
+
+![vscode_emmet](images/vscode_emmet.jpg)
+
+:warning: You should add a comma if there is none after the **`]`** like line 23 in the image above :point_up:
+
+:warning: Don't forget to save those changes!
+
+
 ## Git
 
 ### Installation
@@ -107,75 +188,15 @@ __Why Chrome?__
 We recommend to use it as your default browser as it's most compatible with testing or running your code, as well as working with Google Cloud Platform. Another alternative is Firefox, however we don't recommend using other tools like Opera, Internet Explorer or Safari.
 
 
-## Visual Studio Code - Your text editor
+## zsh
 
-A text editor is one of the most important tools of a developer.
-Follow these instructions in the Terminal **one by one** (don't copy and paste everything at once):
+Instead of using the default `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)), we will use `zsh`.
 
-```bash
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt update
-sudo apt install code
-```
-
-:point_up: This command will ask for your password with: `[sudo] password for <username>:`. Don't panick! Calmly type your password key by key. You won't have a visual feedback (like little `*`), that's **perfectly normal**, keep on typing. When you're done, hit `Enter` :muscle:.
-
-Now let's try to launch your VS Code from **the Terminal**:
+In a terminal execute the following command and type in your password if asked:
 
 ```bash
-code
+sudo apt install -y zsh curl vim imagemagick jq
 ```
-If the text editor opens in a new window, you can move forward!
-
-
-### VS Code Extensions
-
-Let's gain time now and add other extensions that will be helpful during your Bootcamp:
-
-```bash
-code --install-extension ms-vscode.sublime-keybindings
-code --install-extension ms-python.python
-code --install-extension ms-toolsai.jupyter
-code --install-extension KevinRose.vsc-python-indent
-code --install-extension MS-vsliveshare.vsliveshare
-code --install-extension ms-python.vscode-pylance
-```
-
-### VS Code Settings
-
-- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- Click on the `Open Settings (JSON)`
-
-![vscode_user_settings](images/vscode_user_settings.png)
-
-Paste the following just before the last `}`:
-
-```bash
-"emmet.triggerExpansionOnTab": true,
-"emmet.includeLanguages": {
-  "erb": "html"
-},
-"python.pythonPath": "~/.pyenv/shims/python",
-"python.formatting.provider": "yapf",
-"workbench.settings.editor": "json",
-"workbench.settings.openDefaultSettings": true,
-"workbench.settings.useSplitJSON": true,
-"files.exclude": {
-  "**/.pytest_cache": true,
-  "**/.ipynb_checkpoints": true,
-  "**/__pycache__": true,
-  "**/.egg-info": true,
-},
-```
-
-It should look like this:
-
-![vscode_emmet](images/vscode_emmet.jpg)
-
-:warning: You should add a comma if there is none after the **`]`** like line 23 in the image above :point_up:
-
-:warning: Don't forget to save those changes!
 
 
 ## Oh-my-zsh

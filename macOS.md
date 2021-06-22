@@ -196,25 +196,27 @@ __Why Chrome?__
 We recommend to use it as your default browser as it's most compatible with testing or running your code, as well as working with Google Cloud Platform. Another alternative is Firefox, however we don't recommend using other tools like Opera, Internet Explorer or Safari.
 
 
-## Visual Studio Code - Your text editor
+## Visual Studio Code
 
-1. Download [Visual Studio Code for macOS](https://go.microsoft.com/fwlink/?LinkID=534106).
-2. Open the browser's download list and locate the downloaded file.
-3. Select the `magnifying glass` icon to open the file in `Finder`.
-4. Drag Visual Studio Code.app to the **Applications** folder, making it available in the macOS Launchpad. **Don't skip this step!**
-5. Add VS Code to your Dock by right-clicking on the icon to bring up the context menu and choosing Options, Keep in Dock.
+### Installation
 
-### Launching from the command line
+Let's install [Visual Studio Code](https://code.visualstudio.com) text editor.
 
-You can also run VS Code from the terminal by typing `code` after adding it to the path:
+Copy (`CMD` + `C`) the command below then paste it in your terminal (`CMD` + `V`):
 
-Launch VS Code by clicking the icon in your Dock.
-Open the Command Palette (`Cmd` + `Shift` + `P`) and type `shell command` to find the Shell Command: Install 'code' command in PATH command:
+```bash
+brew install --cask visual-studio-code
+```
 
-![](images/mac_vscode_command.png)
+Then launch VS Code by running the following command in your terminal:
 
-Now quit the Terminal (`⌘` + `Q`) and restart it.
-Try typing `code` :point_right: if the VS Code opens in new window, you can proceed to the next point!
+```bash
+code
+```
+
+:heavy_check_mark: If a VS Code window has just opened, you're good to go :+1:
+
+:x: Otherwise, please **contact a teacher**
 
 
 ### VS Code Extensions
@@ -480,32 +482,6 @@ you **need** to put one of the email listed above thanks to the previous `gh api
 don't do that, Kitt won't be able to track your progress.
 
 Please now **quit** all your opened terminal windows.
-
-
-### SSH Passphrase
-
-In a terminal window, launch this command:
-
-```bash
-sw_vers
-```
-
-If your OS version (`ProductVersion` line) is greater or equal than **10.12**, you may proceed with the rest of this section. :warning: Otherwise, skip it and go directly to the Python install.
-
-In order not to re-type your SSH passphrase at every `git push`, you can add these lines to the `~/.ssh/config` file:
-
-```bash
-touch ~/.ssh/config  # Creates the file if it does not exist
-code ~/.ssh/config     # Opens the file in VS Code
-```
-
-And then add these 3 lines to the file. **Save**.
-
-```bash
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-```
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
