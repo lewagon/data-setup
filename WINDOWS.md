@@ -20,7 +20,7 @@ To be able to interact when we are not in the same physical room, we will be usi
 - If you already have a Zoom account, sign in using your credentials
 - If not, click on the **Sign Up Free** link:
 
-![Sign Up Free to Zoom](https://github.com/lewagon/setup/blob/vscode/images/zoom_sign_up_free.png)
+![Sign Up Free to Zoom](https://github.com/lewagon/setup/blob/master/images/zoom_sign_up_free.png)
 
 You will be redirected to Zoom's website to complete a form.
 
@@ -28,7 +28,7 @@ When it's done, go back to the Zoom app and sign in using your credentials.
 
 You should then see a screen like this:
 
-![Zoom Home Screen](https://github.com/lewagon/setup/blob/vscode/images/zoom_home_screen.png)
+![Zoom Home Screen](https://github.com/lewagon/setup/blob/master/images/zoom_home_screen.png)
 
 You can now close the Zoom app.
 
@@ -39,7 +39,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
 
-![GitHub picture](https://github.com/lewagon/setup/blob/vscode/images/github_picture.png)
+![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
 
 ## Windows version
@@ -124,7 +124,7 @@ For many computers, this is already the case. Let's check:
 - Click on the `Performance` tab
 - Click on `CPU`
 
-![Windows task manager](https://github.com/lewagon/setup/blob/vscode/images/windows_task_manager.png)
+![Windows task manager](https://github.com/lewagon/setup/blob/master/images/windows_task_manager.png)
 
 :heavy_check_mark: If you see "Virtualization: Enabled", you're good to go :+1:
 
@@ -200,7 +200,7 @@ Once your computer has restarted, we need to download the WSL2 installer.
 - Click `Next`
 - Click `Finish`
 
-![Update WSL from version 1 to 2](https://github.com/lewagon/setup/blob/vscode/images/windows_update_wsl.png)
+![Update WSL from version 1 to 2](https://github.com/lewagon/setup/blob/master/images/windows_update_wsl.png)
 
 :heavy_check_mark: If didn't encounter any error message, you're good to go :+1:
 
@@ -348,7 +348,7 @@ Let's install [Visual Studio Code](https://code.visualstudio.com) text editor.
 - Open the file you have just downloaded.
 - Install it with few options:
 
-![VS Code installation options](https://github.com/lewagon/setup/blob/vscode/images/windows_vscode_installation.png)
+![VS Code installation options](https://github.com/lewagon/setup/blob/master/images/windows_vscode_installation.png)
 
 When the installation is finished, launch VS Code.
 
@@ -393,7 +393,7 @@ Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
 
 Click on the little arrow at the bottom of the left bar :point_down:
 
-![VS Code Live Share](https://github.com/lewagon/setup/blob/vscode/images/vscode_live_share.png)
+![VS Code Live Share](https://github.com/lewagon/setup/blob/master/images/vscode_live_share.png)
 
 - Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
 - A popup appears asking you to sign in with GitHub: click on "Allow".
@@ -440,7 +440,7 @@ Press `Ctrl` + `,`
 
 It should open the terminal settings:
 
-![Windows Terminal Settings](https://github.com/lewagon/setup/blob/vscode/images/windows_terminal_settings.png)
+![Windows Terminal Settings](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings.png)
 
 - Change the default profile to "Ubuntu"
 - Click on "Save"
@@ -448,7 +448,7 @@ It should open the terminal settings:
 
 We have circle in red the part you will change:
 
-![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/vscode/images/windows_terminal_settings_json.png)
+![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings_json.png)
 
 First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
 - Locate the `"name": "Ubuntu",`
@@ -553,7 +553,7 @@ If asked "Do you want to change your default shell to zsh?", press `Y`
 
 At the end your terminal should look like this:
 
-![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/vscode/images/oh_my_zsh.png)
+![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
 
 :heavy_check_mark: If it does, you can continue :+1:
 
@@ -1097,7 +1097,7 @@ In order to do that, let's create shortcuts to Ubuntu directories in the Windows
 - Dive into the Ubuntu file system in order to look for directories of interest
 - Drag the desired folders into the Address Bar in order to create shortcuts
 
-![How to add a shortcut to Ubuntu file system on Windows](https://github.com/lewagon/setup/blob/vscode/images/windows_ubuntu_file_system_shortcut.gif)
+![How to add a shortcut to Ubuntu file system on Windows](https://github.com/lewagon/setup/blob/master/images/windows_ubuntu_file_system_shortcut.gif)
 
 ### Open the Windows File Explorer from the Ubuntu terminal
 
@@ -1108,7 +1108,7 @@ Another option to move files around is to open the Windows **File Explorer** fro
 - Run the `explorer.exe .` command (alternatively, use `wslview .`)
 - If you get an input output error message, run `wsl --shutdown` in a Windows PowerShell and reopen an Ubuntu terminal
 
-![How to launch Windows Explorer from Ubuntu terminal](https://github.com/lewagon/setup/blob/vscode/images/windows_explorer_from_terminal.png)
+![How to launch Windows Explorer from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_explorer_from_terminal.png)
 
 ### Find your way in the Ubuntu File System
 
@@ -1121,7 +1121,7 @@ In order to convert a Windows path to and from an Ubuntu path:
 - Use the `wslpath -w "/home"` command in order to translate an Ubuntu path into a Windows path
 - In particular, the `wslpath -w $(pwd)` command returns the Windows path of the current Ubuntu directory
 
-![How to access a Windows path from Ubuntu terminal](https://github.com/lewagon/setup/blob/vscode/images/windows_path_from_terminal.png)
+![How to access a Windows path from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_path_from_terminal.png)
 
 ### Pin apps to your taskbar
 
@@ -1129,7 +1129,7 @@ You are going to use most of the apps you've installed today really often. Let's
 
 To pin an app to your taskbar, launch the app, right-click on the icon in the taskbar to bring up the context menu and choose "Pin to taskbar".
 
-![How to pin an app to the taskbar in Windows](https://github.com/lewagon/setup/blob/vscode/images/windows_taskbar.png)
+![How to pin an app to the taskbar in Windows](https://github.com/lewagon/setup/blob/master/images/windows_taskbar.png)
 
 You must pin:
 - Your terminal
@@ -1493,7 +1493,7 @@ Launch the app and sign in to `lewagon-alumni` organization.
 
 Make sure you **upload a profile picture** :point_down:
 
-![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/vscode/images/slack_profile_picture.gif)
+![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
@@ -1502,7 +1502,7 @@ To ensure that everything is working fine for video calls, let's test your camer
 - In any channel message bar type `/call --test` and press `ENTER`
 - Click on the "Start test" green button
 
-![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/vscode/images/slack_call_test.png)
+![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
 
 :heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
 

@@ -20,7 +20,7 @@ To be able to interact when we are not in the same physical room, we will be usi
 - If you already have a Zoom account, sign in using your credentials
 - If not, click on the **Sign Up Free** link:
 
-![Sign Up Free to Zoom](https://github.com/lewagon/setup/blob/vscode/images/zoom_sign_up_free.png)
+![Sign Up Free to Zoom](https://github.com/lewagon/setup/blob/master/images/zoom_sign_up_free.png)
 
 You will be redirected to Zoom's website to complete a form.
 
@@ -28,7 +28,7 @@ When it's done, go back to the Zoom app and sign in using your credentials.
 
 You should then see a screen like this:
 
-![Zoom Home Screen](https://github.com/lewagon/setup/blob/vscode/images/zoom_home_screen.png)
+![Zoom Home Screen](https://github.com/lewagon/setup/blob/master/images/zoom_home_screen.png)
 
 You can now close the Zoom app.
 
@@ -39,7 +39,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
 
-![GitHub picture](https://github.com/lewagon/setup/blob/vscode/images/github_picture.png)
+![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
 
 ## Visual Studio Code
@@ -108,7 +108,7 @@ Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
 
 Click on the little arrow at the bottom of the left bar :point_down:
 
-![VS Code Live Share](https://github.com/lewagon/setup/blob/vscode/images/vscode_live_share.png)
+![VS Code Live Share](https://github.com/lewagon/setup/blob/master/images/vscode_live_share.png)
 
 - Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
 - A popup appears asking you to sign in with GitHub: click on "Allow".
@@ -202,7 +202,7 @@ If asked "Do you want to change your default shell to zsh?", press `Y`
 
 At the end your terminal should look like this:
 
-![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/vscode/images/oh_my_zsh.png)
+![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
 
 :heavy_check_mark: If it does, you can continue :+1:
 
@@ -880,7 +880,7 @@ Launch the app and sign in to `lewagon-alumni` organization.
 
 Make sure you **upload a profile picture** :point_down:
 
-![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/vscode/images/slack_profile_picture.gif)
+![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
@@ -889,7 +889,7 @@ To ensure that everything is working fine for video calls, let's test your camer
 - In any channel message bar type `/call --test` and press `ENTER`
 - Click on the "Start test" green button
 
-![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/vscode/images/slack_call_test.png)
+![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
 
 :heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
 
