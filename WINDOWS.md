@@ -1,183 +1,147 @@
 # Setup instructions
 
-The following instructions will help you to get ready for [Le Wagon](http://www.lewagon.com) Data Science bootcamp:
+You will find below the instructions to set up you computer for [Le Wagon Data Science course](https://www.lewagon.com/data-science-course/full-time)
 
-- Grab a text editor
-- Install a package manager
-- Pimp your Terminal
-- Setup git and GitHub
-- Install remote tools
-- Install [Python 3](https://www.python.org/) and packages to manage [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
-- Install [Docker](https://docs.docker.com/get-docker/)
-- Install Slack
-- Onboard on **Kitt**, Le Wagon's pedagogic platform
+Please **read them carefully and execute all commands in the following order**. If you get stuck, don't hesitate to ask a teacher for help :raising_hand:
+
+Let's start :rocket:
 
 
-## Prerequisites
+## Zoom
 
-Before we start, it is important you meet the following prerequisites to ensure the smooth running of the setup.
-Take your time to read through everything and do not hesitate to ask for help if you feel stuck.
+To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
 
-Ready? Let's go :sunglasses:
+:warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
+
+- Go to [https://zoom.us/download](https://zoom.us/download)
+- Under **Zoom Client** click the **Download** button
+- Open the file you have just downloaded to install the app
+- Open the Zoom app
+- If you already have a Zoom account, sign in using your credentials
+- If not, click on the **Sign Up Free** link:
+
+![Sign Up Free to Zoom](https://github.com/lewagon/setup/blob/vscode/images/zoom_sign_up_free.png)
+
+You will be redirected to Zoom's website to complete a form.
+
+When it's done, go back to the Zoom app and sign in using your credentials.
+
+You should then see a screen like this:
+
+![Zoom Home Screen](https://github.com/lewagon/setup/blob/vscode/images/zoom_home_screen.png)
+
+You can now close the Zoom app.
 
 
+## GitHub account
+
+Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
+
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
+
+![GitHub picture](https://github.com/lewagon/setup/blob/vscode/images/github_picture.png)
+
+
+## Windows version
+
+Before we start, we need to check that the version of Windows installed on your computer is compatible with this setup instructions.
 
 ### Windows 10
 
-For this setup, you need to be using the latest version of Windows.
-
-This means that you need to be on **Windows 10**, with all the latest updates installed.
+To be able to set up your computer, you need to have **Windows 10** installed.
 
 To check your Windows version:
-
-
 - Press `Windows` + `R`
 - Type  `winver`
 - Press `Enter`
 
-&nbsp;
+:heavy_check_mark: If the first words of this window are **Windows 10** you're good to go :+1:
 
-&nbsp;&nbsp;&nbsp; :x: If it does not mention **Windows 10**, you cannot proceed with this setup — but do not panic! You can always upgrade to Windows 10!
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If the first words of this window are **Windows 10** you're good to go! :muscle:
-
-
----
-
-#### :wrench: Potential Fixes
+:x: If it does not mention **Windows 10**, you cannot proceed with this setup — but do not panic! You can always upgrade to Windows 10 :relieved:
 
 <details>
   <summary>Upgrade to Windows 10</summary>
 
-  &nbsp;
   - Download Windows 10 from [Microsoft](https://www.microsoft.com/software-download/windows10ISO)
   - Install it. It should take roughly an hour, but this is dependent on your computer
+  - When the installation is over, execute the commands above to check that you now have **Windows 10**
 </details>
 
----
+### Latest updates
 
-
-Once you're sure that you're using Windows 10, you will need to check that your computer has all the latest updates.
-
-
-
-### Latest version of Windows
+Once you're sure that you're using Windows 10, you need to install all the latest updates.
 
 Open Windows Update:
-
-
 - Press `Windows` + `R`
 - Type  `ms-settings:windowsupdate`
 - Press `Enter`
->
->
 - Click on `Check updates`
 
-&nbsp;
 
-&nbsp;&nbsp;&nbsp; :x: If you have an error message about Windows not being able to apply updates, please **contact a teacher**.
+:heavy_check_mark: If you a green check mark and the message "You're up to date", you're good to go :+1:
 
-&nbsp;&nbsp;&nbsp; :white_check_mark: If you have updates available please install them and repeat the process until it says that you are up to date :star:.
+:warning: If you have a red exclamation mark and the message "Update available", please install them and repeat the process until it says that you are up to date :loop:
 
-
----
-
-#### :wrench: Potential Fixes
+:x: If you have an error message about Windows not being able to apply updates, please **contact a teacher**.
 
 <details>
   <summary>Activate Windows Update Service to fix Updates</summary>
 
-  &nbsp;
-
-
   Some antiviruses and pieces of software deactivate the Update service we need, resulting in the error you see. Let's fix that!
-
-
   - Press `Windows` + `R`
   - Type  `services.msc`
   - Press `Enter`
-  >
-  >
   - Double Click `Windows Update Service`
   - Set its `Startup` to `Automatic`
   - Click on `Start`
   - Click on `Ok`
-
   Then let's try updates again!
 </details>
-
----
 
 ### Minimum version
 
 Some of the tools we need to install have been release with the `1903` version **or above** of Windows 10 so we need to make sure you have at least this one.
 
-
 - Press `Windows` + `R`
 - Type  `winver`
 - Press `Enter`
 
-
 Check the **Version number**:
 
+:heavy_check_mark: If it says at least `1903`, you are good to go :+1:
 
-&nbsp;&nbsp;&nbsp; :x: If it is below `1903`, just follow the [Latest version of Windows](#Latest-version-of-Windows) paragraph above to install the latest updates.
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If it says at least `1903`, you are good to go! :sunglasses:
-
+:x: If it is below `1903`, please **contact a teacher**.
 
 
-### Virtualization
+## Virtualization
 
 We need to ensure that the Virtualization options are enabled in the BIOS of your computer.
 
 For many computers, this is already the case. Let's check:
-
-
 - Press `Windows` + `R`
 - Type  `taskmgr`
 - Press `Enter`
->
->
 - Click on the `Performance` tab
 - Click on `CPU`
 
+![Windows task manager](https://github.com/lewagon/setup/blob/vscode/images/windows_task_manager.png)
 
-![task_manager.jpg](images/task_manager.jpg)
+:heavy_check_mark: If you see "Virtualization: Enabled", you're good to go :+1:
 
-&nbsp;
-
-&nbsp;&nbsp;&nbsp; :x: If the line is missing or if it is disabled, please **contact a teacher before trying to activate the Virtualization**.
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: The status will be listed under the graph and will say "Virtualization: Enabled" if this tool is enabled.
-
-
----
-
-#### :wrench: Potential Fixes
+:x: If the line is missing or if the virtualization is disabled, please **contact a teacher before trying to activate the Virtualization**
 
 <details>
   <summary>Activate Virtualization</summary>
 
-  &nbsp;
-
-
   We need to access the BIOS / UEFI of the computer to activate it.
-
-
   - Press `Windows + R`
   - Type  `shutdown.exe /r /o /t 1`
   - Press `Enter`
-  >
-  >
   - Wait for the computer to shutdown
-  >
-  >
   - Click on `Troubleshoot`
   - Click on `Advanced Options`
   - Click on `UEFI Firmware Settings`
   - Click on `Restart`
-
 
   You need to activate the virtualization option for your processor here:
   - Most of the time, in the advanced settings, the CPU settings, or the Northbridge settings
@@ -187,67 +151,29 @@ For many computers, this is already the case. Let's check:
   - Save the changes after activation and reboot the computer through the appropriate option
 </details>
 
----
-
-
-
-## GitHub account
-
-Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
-
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
-
-![](images/github_upload_picture.png)
-
-
-## Remote tools
-
-To be able to interact when we are not in the same physical room, we will be using two tools:
-
-### Zoom
-
-⚠️ If you already have Zoom installed, please make sure that the version is at least **5.4**. Otherwise, you will not be able to use breakout rooms in order to work with your buddy.
-
-Zoom is a video conferencing tool. To create an account and install the app, go to [https://zoom.us/download](https://zoom.us/download) and under **Zoom Client for Meetings** click the **Download** button. Open the file you have just downloaded. A progress bar will appear, then Zoom will start. Click on **Connection** and create an account with the **Sign Up Free** option:
-
-![zoom-sign-up-free.png](images/zoom-sign-up-free.png)
-
-Once connected, you should see:
-
-![zoom-welcome-screen.png](images/zoom-welcome-screen.png)
-
-You can close Zoom now.
-
-
 
 ## Windows Subsystem for Linux
+
 ### Install WSL 1
+
 WSL is the development environment we are using to run Ubuntu. You can learn more about WSL [here](https://docs.microsoft.com/en-us/windows/wsl/faq).
 
 We will install WSL through the PowerShell Terminal:
 
-
 :warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows PowerShell** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
-
 
 - Press `Windows` + `R`
 - Type  `powershell`
-- Press `Ctrl` + `Shift` + `Enter`
-
+- Press **`Ctrl` + `Shift` + `Enter`**
 
 :warning: You may have to accept the UAC confirmation about the privilege elevation.
 
-
-&nbsp;
 A blue terminal window will appear:
 
-
-- Copy the following commands
-- Paste them into the PowerShell window by right-clicking into it (`Ctrl` + `V` does not work here!)
+- Copy the following commands one by one (`CTRL` + `C`)
+- Paste them into the PowerShell window (`CTRL` + `V` or by right-clicking in the window)
 - Run them by pressing `Enter`
 
-
-&nbsp;
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
@@ -260,38 +186,32 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-&nbsp;
+:heavy_check_mark: If all three commands ran without any error, please restart your terminal and continue below :+1:
 
-
-&nbsp;&nbsp;&nbsp; :x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**!
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: When all three commands ran without any error, you can restart your computer.
-
+:x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**
 
 ### Upgrade to WSL 2
+
 Once your computer has restarted, we need to download the WSL2 installer.
 
-
-- Go to the [download page](https://aka.ms/wsl2kernel) and get the installer
+- Go to the [download page](https://aka.ms/wsl2kernel)
+- Download "WSL2 Linux kernel update package"
+- Open the file you've just downloaded
 - Click `Next`
 - Click `Finish`
 
-![update_wsl](images/update_wsl.jpg)
+![Update WSL from version 1 to 2](https://github.com/lewagon/setup/blob/vscode/images/windows_update_wsl.png)
 
-&nbsp;
+:heavy_check_mark: If didn't encounter any error message, you're good to go :+1:
 
-&nbsp;&nbsp;&nbsp; :x: If you encounter the error `This update only applies to machines with the Windows Subsystem for Linux`, **right click** on the program and select `uninstall`; you shall be able to install it normally this time.
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If everything is fine, we are ready to use WSL 2 instead of WSL 1!
+:x: If you encounter the error "This update only applies to machines with the Windows Subsystem for Linux", **right click** on the program and select `uninstall`; you shall be able to install it normally this time.
 
 ### Make WSL 2 the default Windows Subsystem for Linux
-Now that WSL 2 is installed, let's use it by default when we deal with WSL:
 
-
+Now that WSL 2 is installed, let's make it the default version:
 - Press `Windows` + `R`
 - Type  `cmd`
 - Press `Enter`
-
 
 In the window which appears, type:
 
@@ -299,78 +219,49 @@ In the window which appears, type:
 wsl --set-default-version 2
 ```
 
-&nbsp;
+:heavy_check_mark: If you see "The operation completed successfully, you can close this terminal and continue below :+1:
 
-
-&nbsp;&nbsp;&nbsp; :x: If the message you get talks about Virtualization, please **contact a teacher**
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: You can close this Command Prompt terminal; we are ready to install Ubuntu!
-
-#### :wrench: Potential Fixes
+:x: If the message you get is about Virtualization, please **contact a teacher**
 
 <details>
   <summary>Enable Virtual Machine Platform Windows feature</summary>
 
-Follow the steps described [here](https://www.configserverfirewall.com/windows-10/please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios/#:~:text=To%20enable%20WSL%202,%20Open,Windows%20feature%20on%20or%20off.&text=Ensure%20that%20the%20Virtual%20Machine,Windows%20will%20enable%20WSL%202) until you enable <strong>Virtual Machine Platform</strong> and <strong>Windows Subsystem for Linux</strong>
-
+  Follow the steps described [here](https://www.configserverfirewall.com/windows-10/please-enable-the-virtual-machine-platform-windows-feature-and-ensure-virtualization-is-enabled-in-the-bios/#:~:text=To%20enable%20WSL%202,%20Open,Windows%20feature%20on%20or%20off.&text=Ensure%20that%20the%20Virtual%20Machine,Windows%20will%20enable%20WSL%202) until you enable <strong>Virtual Machine Platform</strong> and <strong>Windows Subsystem for Linux</strong>
 </details>
 
 <details>
   <summary>Enable Hyper-V Windows feature</summary>
 
-Follow the steps described [here](https://winaero.com/enable-use-hyper-v-windows-10/) until you enable the group <strong>Hyper-V</strong>
-
+  Follow the steps described [here](https://winaero.com/enable-use-hyper-v-windows-10/) until you enable the group <strong>Hyper-V</strong>
 </details>
 
-## Ubuntu
-### Installation
 
+## Ubuntu
+
+### Installation
 
 - Click on `Start`
 - Type  `Microsoft Store`
 - Click on the Microsoft Windows Store in the list
->
->
 - Search for `Ubuntu` in the search bar
-- Select version without any number, just plain "Ubuntu"
->
->
+- **Select version without any number, just plain "Ubuntu"**
 - Click on `Install`
 
-
 :warning: Don't install **Ubuntu 18.04 LTS** nor **Ubuntu 20.04**!
-
----
-
-#### :wrench: Potential Fixes
-
 
 <details>
   <summary>Uninstall wrong versions of Ubuntu</summary>
 
-  &nbsp;
-
-
   To uninstall a wrong version of Ubuntu, you just have to go to the Installed Program List of Windows 10:
-
 
   - Press `Windows` + `R`
   - Type  `ms-settings:appsfeatures`
   - Press `Enter`
 
-
-  Find the right software to uninstall and click on the uninstall button.
+  Find the software to uninstall and click on the uninstall button.
 </details>
 
----
-
-
-&nbsp;
-Once the installation is done, the `Install` button becomes a `Launch` button:
-
-
-- Click on `Launch`
-
+Once the installation is finished, the `Install` button becomes a `Launch` button: click on it.
 
 At first launch, you will be asked some information:
 - Choose a **username**:
@@ -381,24 +272,15 @@ At first launch, you will be asked some information:
 - Choose a **password**
 - Confirm your password
 
+:warning: When you you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `ENTER`.
 
-:warning: When typing the password, nothing will not appear on the screen — there will be no familiar typing indicator even though your keystrokes are being registered!
-
-:warning: This is a security feature to mask not only your password as a whole but also its length!
-
-
-&nbsp;
-
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: The installation should be complete; you can close the Ubuntu window now that it is installed on your computer.
+You can close the Ubuntu window now that it is installed on your computer.
 
 ### Check the WSL version of Ubuntu
-
 
 - Press `Windows` + `R`
 - Type  `cmd`
 - Press `Enter`
-
 
 Type the following command:
 
@@ -406,24 +288,12 @@ Type the following command:
 wsl -l -v
 ```
 
-&nbsp;
+:heavy_check_mark: If the version of Ubuntu WSL is 2, you are good to go :+1:
 
-&nbsp;&nbsp;&nbsp; :x: If the version of Ubuntu WSL is 1, we will need to convert it to version 2.
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If the version of Ubuntu WSL is 2, you are ready to install VS Code!
-
-
----
-
-#### :wrench: Potential Fixes
-
+:x: If the version of Ubuntu WSL is 1, we will need to convert it to version 2.
 
 <details>
   <summary>Convert Ubuntu WSL V1 to V2</summary>
-
-
-  &nbsp;
-
 
   In the Command Prompt window, type:
 
@@ -431,41 +301,29 @@ wsl -l -v
   wsl --set-version Ubuntu 2
   ```
 
-  &nbsp;
+  :heavy_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
 
-  &nbsp;&nbsp;&nbsp; :white_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
-
-  &nbsp;&nbsp;&nbsp; :x: If it does not work, we need to be sure that Ubuntu files are not compressed.
+  :x: If it does not work, we need to be sure that Ubuntu files are not compressed.
 </details>
 
 <details>
   <summary>Check for Uncompressed Files</summary>
 
-
-  &nbsp;
   - Press `Windows` + `R`
   - Type  `%localappdata%\Packages`
   - Press `Enter`
-  >
-  >
   - Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
   - Right Click on the `LocalState` folder
   - Click on `Properties`
   - Click on `Advanced`
   - Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
 
-
   Apply changes to this folder only and try to convert the Ubuntu WSL version again.
 
-
-  &nbsp;&nbsp;&nbsp; :x: If the conversion still does not work, please **contact a teacher**.
+  :x: If the conversion still does not work, please **contact a teacher**.
 </details>
 
----
-
-
-(You can now close this Command Prompt window.)
-
+You can now close this terminal window.
 
 
 ## Chrome - your browser
@@ -481,219 +339,181 @@ We recommend to use it as your default browser as it's most compatible with test
 
 ## Visual Studio Code
 
-We use Visual Code Studio for writing code on Windows, because it integrates nicely with the Ubuntu terminal.
-
-For this integration to work, you need to uninstall other code editor, like for example SublimeText, as their WSL integration interferes with the integration of VS Code.
-
 ### Installation
-- Go to the [Visual Studio Code page](https://code.visualstudio.com/download)
-- Choose the Windows version of VS Code
 
+Let's install [Visual Studio Code](https://code.visualstudio.com) text editor.
 
-The tool should start to download automatically.
-
+- Go to [Visual Studio Code download page](https://code.visualstudio.com/download).
+- Click on "Windows" button
 - Open the file you have just downloaded.
-- Install it with a few options:
-    - Register VS Code as an editor for supported file types
-    - Let the other options as they are
+- Install it with few options:
 
-![VS Code install](images/vscode-install.png)
+![VS Code installation options](https://github.com/lewagon/setup/blob/vscode/images/windows_vscode_installation.png)
+
+When the installation is finished, launch VS Code.
 
 ### Connecting VS Code to Ubuntu
 
-- Launch VS Code a first time, then:
-    - Pin it to the taskbar; you will be using it a lot!
-    - You should have a frame at the bottom-right corner of VS Code saying it detects WSL
-    - Accept the installation of the WSL extension for VS Code
+You should see a frame at the bottom-right corner of VS Code saying it detects WSL. Accept the installation of the WSL extension for VS Code.
 
 :warning: This extension is mandatory for you to be able to work with VS Code!
 
-### VS Code Extensions
 
-Let's gain time now and add other extensions that will be helpful during your Bootcamp:
+## VS Code Extensions
+
+### Installation
+
+Let's install some useful extensions to VS Code.
 
 ```bash
 code --install-extension ms-vscode.sublime-keybindings
-code --install-extension ms-python.python
-code --install-extension ms-toolsai.jupyter
-code --install-extension KevinRose.vsc-python-indent
+code --install-extension emmanuelbeziat.vscode-great-icons
 code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-python.python
+code --install-extension KevinRose.vsc-python-indent
 code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
 ```
 
-### VS Code Settings
-
-- On macOS, press `Cmd` + `,` on your keyboard (or `Ctrl` + `,` on Windows or Linux) to open the settings
-- Click on the `Open Settings (JSON)`
-
-![vscode_user_settings](images/vscode_user_settings.png)
-
-Paste the following just before the last `}`:
-
-```bash
-"emmet.triggerExpansionOnTab": true,
-"emmet.includeLanguages": {
-  "erb": "html"
-},
-"python.pythonPath": "~/.pyenv/shims/python",
-"python.formatting.provider": "yapf",
-"workbench.settings.editor": "json",
-"workbench.settings.openDefaultSettings": true,
-"workbench.settings.useSplitJSON": true,
-"files.exclude": {
-  "**/.pytest_cache": true,
-  "**/.ipynb_checkpoints": true,
-  "**/__pycache__": true,
-  "**/.egg-info": true,
-},
-```
-
-It should look like this:
-
-![vscode_emmet](images/vscode_emmet.jpg)
-
-:warning: You should add a comma if there is none after the **`]`** like line 23 in the image above :point_up:
-
-:warning: Don't forget to save those changes!
+Here is a list of the extensions you are installing:
+- [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+- [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 
-### Final Check
+### Live Share configuration
 
-To make sure everything works fine, close VS Code, then open your Ubuntu Terminal:
+[Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
 
-- Press `Windows` + `R`
-- Type  `ubuntu`
-- Press `Enter`
+Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
 
-In Ubuntu, let's try to launch VS Code:
+Click on the little arrow at the bottom of the left bar :point_down:
 
-```bash
-code
-```
+![VS Code Live Share](https://github.com/lewagon/setup/blob/vscode/images/vscode_live_share.png)
 
-&nbsp;
+- Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
+- A popup appears asking you to sign in with GitHub: click on "Allow".
+- You are redirected to a GitHub page in you browser asking you to authorize Visual Studio Code: click on "Continue" then "Authorize github".
+- VS Code may display additional pop-ups: close them by clicking "OK".
 
-&nbsp;&nbsp;&nbsp; :x: If VS Code does not open, please **contact a teacher**
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If VS Code opens, your code editor is ready! :muscle:
+That's it, you're good to go!
 
 
 ## Windows Terminal
 
-The standard Ubuntu terminal is a very crude way of using Ubuntu; let's use a real modern terminal!
+The standard terminal installed by Ubuntu is a very crude: let's install **Windows Terminal**, a real modern terminal.
 
 ### Installation
-
-We first need to install **Windows Terminal** from the Microsoft Windows Store:
-
 
 - Click on `Start`
 - Type  `Microsoft Store`
 - Click on the Microsoft Windows Store in the list
->
->
 - Search for `Windows Terminal` in the search bar
->
->
+- **Select Windows Terminal"**
 - Click on `Install`
 
+:warning: DO NOT install **Windows Terminal Preview**, just **Windows Terminal**!
 
-Once the installation is done, the `Install` button becomes a `Launch` button:
+<details>
+  <summary>Uninstall wrong version of Windows Terminal</summary>
 
+  To uninstall a wrong version of Windows Terminal, you just have to go to the Installed Program List of Windows 10:
 
-- Click on `Launch`
-- Right Click on the icon in the taskbar
-- Choose to pin the app to the bar
+  - Press `Windows` + `R`
+  - Type  `ms-settings:appsfeatures`
+  - Press `Enter`
 
+  Find the software to uninstall and click on the uninstall button.
+</details>
 
-This terminal allows you to open multiple terminal sessions, including **PowerShell**, **Command Prompt** and **Ubuntu** that you installed earlier.
-
-This terminal has tabs: you can choose to open a new terminal tab clicking on the **down arrow** / **v-shape** next to the current one.
-
-:warning: From now on, we will only need **Ubuntu** as a terminal.
+Once the installation is finished, the `Install` button becomes a `Launch` button: click on it.
 
 ### Ubuntu as the default terminal
 
 Let's make Ubuntu the default terminal of your Windows Terminal application.
 
+Press `Ctrl` + `,`
 
-- Press `Ctrl` + `,`
+It should open the terminal settings:
 
+![Windows Terminal Settings](https://github.com/lewagon/setup/blob/vscode/images/windows_terminal_settings.png)
 
-It should open the settings:
+- Change the default profile to "Ubuntu"
+- Click on "Save"
+- Click on "Open JSON file"
 
-![wsl2_settings](images/settings_wsl2.PNG)
+We have circle in red the part you will change:
 
-We have put in red the part we will use or change.
+![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/vscode/images/windows_terminal_settings_json.png)
 
-
-&nbsp;
-
-
-First, let us ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
-
-
-
+First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
 - Locate the `"name": "Ubuntu",`
 - Add the following line after it:
 
 ```bash
 "startingDirectory": "//wsl$/Ubuntu/home/the-username-you-chose-at-the-ubuntu-install",
 ```
-
 :warning: Do not forget the comma at the end of the line!
 
 :warning: Do not forget to replace the username by your own in the line above!
 
+Then, let's disable warning for copy-pasting commands between Windows and Ubuntu:
+- Locate the line `"defaultProfile": "{2c4de342-...}"`
+- Add the following line after it:
 
+```bash
+"multiLinePasteWarning": false,
+```
 
-&nbsp;
+:warning: Do not forget the comma at the end of the line!
 
-Now, let us ask Windows Terminal to start directly an Ubuntu Terminal when launched:
+You can save these changes by pressing `CTRL` + `V`
 
+:heavy_check_mark: Your **Windows Terminal** is now setup :+1:
 
+This terminal has tabs: you can choose to open a new terminal tab by clicking on t**+** next to the current one.
 
-
-- Locate the `"guid"` for Ubuntu
-- Copy the value between `{` and `}`
-- Locate the `"defaultProfile"`
-- Replace the value between `{` and `}` with what you copied from above
-- Add a comma after the `defaultProfile` so you can add the `"multiLinePasteWarning": false,` option as well. This will disable an annoying warning every time you want to paste multiple lines to your terminal.
-
-You can refer to the screenshot above to get a sense of how it should look like. Don't hesitate to ask for help.
-
-
-:warning: Do not forget to save those changes!
-
-&nbsp;
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: Voilà, your **Windows Terminal** is setup! :confetti_ball:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **From now on, every time we will refer to the terminal or the console it will be this one.**
-
+**From now on, every time we will refer to the terminal or the console it will be this one.** DO NOT use the Ubuntu app anymore.
 
 
 ## Git
 
+### Installation
+
+[`git`](https://git-scm.com/) is a command line software used for version control.
+
 To install `git`:
-
-
-- Open an Ubuntu terminal.
-- Copy and paste the following lines:
-
+- Open a terminal
+- Copy and paste the following commands:
 
 ```bash
 sudo apt update
-```
-```bash
-sudo apt install -y git apt-transport-https unzip gnome-terminal
+sudo apt install -y git
 ````
 
-Let's now install GitHub [official CLI](https://cli.github.com) (Command Line Interface) with the following commands:
+These commands will ask for your password: type it in.
+
+:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `ENTER`.
+
+### GitHub CLI
+
+Let's now install [GitHub official CLI](https://cli.github.com) (Command Line Interface). It's a software used to interact with your GitHub account via the command line.
+
+In you terminal, copy-paste the following commands and type in your password if asked:
 
 ```bash
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 sudo apt update
+```
+
+Then copy-paste the following command:
+
+```bash
 sudo apt install -y gh
 ```
 
@@ -703,56 +523,41 @@ To check that `gh` has been successfully installed on your machine, you can run:
 gh --version
 ```
 
-If you don't get a prompt saying `gh version X.Y.Z (YYYY-MM-DD)` with at least version 1.4, please refer to [the documentation](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#official-sources) where they list some troubleshooting information. In doubt, ask a TA.
+:heavy_check_mark: If you see `gh version X.Y.Z (YYYY-MM-DD)`, you're good to go :+1:
+
+:x: Otherwise, please **contact a teacher**
 
 
-## Oh-my-zsh - Fancy your Terminal
+## zsh
 
-We will use the shell named `zsh` instead of `bash`, the default one.
+Instead of using the default `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)), we will use `zsh`.
+
+In a terminal execute the following command and type in your password if asked:
 
 ```bash
-# it will ask for your session password
 sudo apt install -y zsh curl vim imagemagick jq
 ```
+
+
+## Oh-my-zsh
+
+Let's install the `zsh` plugin [Oh My Zsh](https://ohmyz.sh/).
+
+In a terminal execute the following command:
+
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-At then end, your terminal should look like this:
+If asked "Do you want to change your default shell to zsh?", press `Y`
 
-![zsh](images/wsl2_zsh.jpg)
+At the end your terminal should look like this:
 
+![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/vscode/images/oh_my_zsh.png)
 
-&nbsp;
+:heavy_check_mark: If it does, you can continue :+1:
 
-&nbsp;&nbsp;&nbsp; :x: If it does not, please **contact a teacher**.
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: If everything is correct, let's configure GitHub!
-
----
-
-#### :wrench: Potential Fixes
-
-<details>
-  <summary>Error: "chsh command unsuccessful. Change your default shell manually."</summary>
-
-  &nbsp;
-
-
-  You probably typed the wrong password when asked.
-  Starting the script again will not work as it will try to create a configuration folder that now already exists!
-
-  We need to remove it first:
-
-  ```bash
-  rm -rf ~/.oh-my-zsh
-  ```
-
-
-  Then let's try again!
-</details>
-
----
+:x: Otherwise, please **ask for a teacher**
 
 
 ## GitHub
@@ -822,16 +627,13 @@ understanding of what those keys are used for.
 
 
 ## Linking your default browser to Ubuntu
-To be sure that you can interact with your browser installed on Windows from your new Ubuntu terminal, we need to set it as your default browser there.
 
-⚠️ You need to execute at least one of the following commands below:
+To be sure that you can interact with your browser installed on Windows from your Ubuntu terminal, we need to set it as your default browser there.
 
+:warning: You need to execute at least one of the following commands below:
 
 <details>
   <summary>Google Chrome as your default browser</summary>
-
-  &nbsp;
-
 
   Run the command:
 
@@ -850,15 +652,10 @@ To be sure that you can interact with your browser installed on Windows from you
   ```bash
     echo "export BROWSER='\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
   ```
-
 </details>
-
 
 <details>
   <summary>Mozilla Firefox as your default browser</summary>
-
-  &nbsp;
-
 
   Run the command:
 
@@ -882,19 +679,14 @@ To be sure that you can interact with your browser installed on Windows from you
 <details>
   <summary>Microsoft Edge as your default browser</summary>
 
-  &nbsp;
-
-
   Run the command:
-
 
   ```bash
   echo "export BROWSER='\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"'" >> ~/.zshrc
   ```
 </details>
 
-
-👉 Restart your terminal
+Restart your terminal.
 
 Then please make sure that the following command returns "Browser defined 👌":
 
@@ -902,16 +694,24 @@ Then please make sure that the following command returns "Browser defined 👌":
 [ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
 ```
 
-If it does not, choose a browser in the list above and execute the corresponding command.
+If it does not,
+
+:heavy_check_mark: If you got this message, you can continue :+1:
+
+:x: If not, choose a browser in the list above and execute the corresponding command. Then don't forget to close your terminal and open it again. Do not hesitate to **contact a teacher**.
 
 
 ## GitHub CLI
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
-In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the Terminal.
+In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the terminal.
 
-It should already be installed on your laptop from the previous commands. First you need to **login**, copy the following line (**do not** edit it!) and paste it in your terminal, then press the `Enter` key:
+It should already be installed on your computer from the previous commands.
+
+First in order to **login**, copy-paste the following command in your terminal:
+
+:warning: **DO NOT edit the `email`**
 
 ```bash
 gh auth login -s 'user:email' -w
@@ -920,13 +720,15 @@ gh auth login -s 'user:email' -w
 You will get the following output:
 
 ```bash
-- Logging into github.com
-
 ! First copy your one-time code: 0EF9-D015
 - Press Enter to open github.com in your browser...
 ```
 
-Select and copy the code (`0EF9-D015` in the example), then press `Enter`. Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit. Come back to the terminal, press `Enter` again, and that should be it :tada:
+Select and copy the code (`0EF9-D015` in the example), then press `ENTER`.
+
+Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit.
+
+Come back to the terminal, press `ENTER` again, and that's it.
 
 To check that you are properly connected, type:
 
@@ -934,21 +736,15 @@ To check that you are properly connected, type:
 gh auth status
 ```
 
-If you get `Logged in to github.com as <YOUR USERNAME> `, then all good. If not, **ask a teacher**.
+:heavy_check_mark: If you get `Logged in to github.com as <YOUR USERNAME> `, then all good :+1:
+
+:x: If not, **contact a teacher**.
 
 Then run the following configuration line:
 
 ```bash
 gh config set git_protocol ssh
 ```
-
-Finally, create a [gist](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/editing-and-sharing-content-with-gists) to make sure `gh` is working:
-
-```bash
-echo "Hello [Le Wagon](https://www.lewagon.com) :wave:" | gh gist create -d "Starting my coding journey..." -f "SETUP_DAY.md" -p -w
-```
-
-This line should open your browser on the newly created gist page. See, we've just created a [**Markdown**](https://guides.github.com/features/mastering-markdown/) file!
 
 
 ## Google Cloud CLI
@@ -1047,41 +843,20 @@ don't do that, Kitt won't be able to track your progress.
 Please now **quit** all your opened terminal windows.
 
 
-&nbsp;
+## Disable SSH passphrase prompt
 
-
-Let us open the `~/.zshrc` profile file in VS Code and change slightly its content:
-
-```bash
-code ~/.zshrc
-```
-
-- Locate the line `# Actually load Oh-My-Zsh`
-- **Above it** write the following line:
-
-```bash
-ZSH_DISABLE_COMPFIX=true
-```
-
-&nbsp;
-
-
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So you need to add the plugin `ssh-agent` to `oh my zsh`:
-
+You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
 
 - Spot the line starting with `plugins=`
-- Add `ssh-agent` to the plugins list.
+- Add `ssh-agent` at the end of the plugins list
 
 The list should look like:
 
+```bash
+plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search ssh-agent)
 ```
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
 
-&nbsp;
-
-
-&nbsp;&nbsp;&nbsp; :white_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close VS Code.
+:heavy_check_mark: Save the `.zshrc` file with `CTRL` + `S` and close your text editor.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
@@ -1252,35 +1027,6 @@ jupyter nbextension enable spellchecker/main
 jupyter nbextension enable code_prettify/code_prettify
 ```
 
-### Sublime Text shortcuts
-
-[Add sublime text shortcuts to jupyter notebook](http://blog.rtwilson.com/how-to-get-sublime-text-style-editing-in-the-ipythonjupyter-notebook/)
-
-Find the `jupyter` config directory:
-``` bash
-JUPYTER_CONFIG_DIR=$(jupyter --config-dir)
-```
-
-Open `custom/custom.js` in the config directory:
-```bash
-cd $JUPYTER_CONFIG_DIR
-code custom/custom.js
-```
-Edit `custom.js` with:
-``` js
-require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
-    function(sublime_keymap, cell, IPython) {
-        // setTimeout(function(){ // uncomment line to fake race-condition
-        cell.Cell.options_default.cm_config.keyMap = 'sublime';
-        var cells = IPython.notebook.get_cells();
-        for(var cl=0; cl< cells.length ; cl++){
-            cells[cl].code_mirror.setOption('keyMap', 'sublime');
-        }
-        // }, 1000)// uncomment  line to fake race condition
-    }
-);
-```
-
 ### Custom CSS
 
 Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
@@ -1337,40 +1083,32 @@ Untick _"disable configuration for nbextensions without explicit compatibility"_
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 
-
-## Ubuntu File System
+## Windows settings
 
 ### Exchange files between Windows and Ubuntu
 
 We need an easy way to transfer files from Windows to Ubuntu and vice versa.
 
-In order to do that, we will create shortcuts to Ubuntu directories in the Windows **File Explorer**.
+In order to do that, let's create shortcuts to Ubuntu directories in the Windows **File Explorer**:
 
-![](images/wsl_ubuntu_file_system.png)
-
-Here are the steps:
-
-- Open an Ubuntu terminal
-- Open the Windows File Explorer (or use the shortcut Win + E)
+- Open the Windows File Explorer (or use the shortcut `WIN` + `E`)
 - In the Address Bar, enter `\\wsl$\` (or `\\wsl$\Ubuntu` if it does not work)
 - You now have acces to the Ubuntu file system
 - Dive into the Ubuntu file system in order to look for directories of interest
 - Drag the desired folders into the Address Bar in order to create shortcuts
 
-![](images/wsl_ubuntu_file_system.gif)
+![How to add a shortcut to Ubuntu file system on Windows](https://github.com/lewagon/setup/blob/vscode/images/windows_ubuntu_file_system_shortcut.gif)
 
 ### Open the Windows File Explorer from the Ubuntu terminal
 
-Another option to move files around is to open the Windows **File Explorer** from the Ubuntu terminal.
-
-In order to do that:
+Another option to move files around is to open the Windows **File Explorer** from the Ubuntu terminal:
 
 - Open an Ubuntu terminal
 - Go to the directory you wish to explore
 - Run the `explorer.exe .` command (alternatively, use `wslview .`)
 - If you get an input output error message, run `wsl --shutdown` in a Windows PowerShell and reopen an Ubuntu terminal
 
-![](images/wsl_explorer.png)
+![How to launch Windows Explorer from Ubuntu terminal](https://github.com/lewagon/setup/blob/vscode/images/windows_explorer_from_terminal.png)
 
 ### Find your way in the Ubuntu File System
 
@@ -1383,7 +1121,23 @@ In order to convert a Windows path to and from an Ubuntu path:
 - Use the `wslpath -w "/home"` command in order to translate an Ubuntu path into a Windows path
 - In particular, the `wslpath -w $(pwd)` command returns the Windows path of the current Ubuntu directory
 
-![](images/wsl_path.png)
+![How to access a Windows path from Ubuntu terminal](https://github.com/lewagon/setup/blob/vscode/images/windows_path_from_terminal.png)
+
+### Pin apps to your taskbar
+
+You are going to use most of the apps you've installed today really often. Let's pin them to your taskbar so that they are just one click away!
+
+To pin an app to your taskbar, launch the app, right-click on the icon in the taskbar to bring up the context menu and choose "Pin to taskbar".
+
+![How to pin an app to the taskbar in Windows](https://github.com/lewagon/setup/blob/vscode/images/windows_taskbar.png)
+
+You must pin:
+- Your terminal
+- Your file explorer
+- VS Code
+- Your Internet browser
+- Slack
+- Zoom
 
 
 ## Visual C++ Redistributable
@@ -1429,44 +1183,6 @@ The following message should print:
 
 ```bash
 sudo service docker stop
-```
-
-
-## Ubuntu inotify
-
-Ubuntu is always tracking changes in your folders and to do this it uses inotify.
-By default the Ubuntu limit is set to 8192 files monitored.
-
-As programming involves a lot of files, we need to raise this limit.
-In your terminal run:
-
-```bash
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-```
-
-
-## Extra
-
-### Install video codec H264
-
-On our pedagogical platform (Kitt, you'll soon discover it!), we have some videos. By default Firefox on Linux cannot play them as they use an unsupported codec (H264). To get those videos working for you, you need to run this:
-
-```bash
-sudo apt install libavcodec-extra -y
-```
-
-### Install useful terminal tools
-
-`tree` is a nice tool to visualize a directory tree inside the terminal:
-
-`ncdu` is a text-based interface disk utility.
-
-`htop` is an interactive process viewer.
-
-`tig` is a text-mode interface for `git`.
-
-```bash
-sudo apt install tree ncdu htop tig
 ```
 
 
@@ -1746,8 +1462,10 @@ gcloud projects get-iam-policy PROJECT_ID \
 🏁 You are done with the GCP setup!
 
 
-## Alumni
+## Kitt
+
 :warning: If you have received an email from Le Wagon inviting you to sign up on Kitt (our learning platform), you can safely skip this step. Instead, please follow the instructions in the email you received if you haven't done so already.
+
 If you are unsure about what to do, you can follow [this link](https://kitt.lewagon.com/). If you are already logged in, you can safely skip this section. If you are not logged in, click on `Enter Kitt as a Student`. If you manage to login, you can safely skip this step. Otherwise ask a teacher whether you should have received an email or follow the instructions below.
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
@@ -1760,19 +1478,37 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
 
-# Slack
+## Slack
 
-Download and install the Slack app from [slack.com](https://slack.com/downloads/windows), and install it.
+[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
+
+### Installation
+
+[Download the Slack app](https://slack.com/downloads/windows) and install it.
+
+
+### Settings
 
 Launch the app and sign in to `lewagon-alumni` organization.
 
-Make sure you upload a picture there.
+Make sure you **upload a profile picture** :point_down:
 
-You can also sign in to Slack on your iPhone or Android device!
+![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/vscode/images/slack_profile_picture.gif)
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
-Enjoy your ride with Le Wagon :)
+To ensure that everything is working fine for video calls, let's test your camera and microphone:
+- Open the Slack app
+- In any channel message bar type `/call --test` and press `ENTER`
+- Click on the "Start test" green button
+
+![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/vscode/images/slack_call_test.png)
+
+:heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
+
+:x: If not, **contact a teacher**.
+
+You can also install Slack app on your phone and sign in `lewagon-alumni`!
 
 
 ## (Bonus) Kata

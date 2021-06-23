@@ -4,22 +4,22 @@ PYTHON_VERSION = "3.8.6"
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
-  setup_instructions
-  setup/remote_tools
-  setup/osx_apple_silicon
-  setup/osx_command_line_tools
+  intro
+  setup/zoom
   setup/github
+  setup/macos_apple_silicon
+  setup/macos_command_line_tools
   homebrew
   chrome
-  mac_vscode
-  vscode_setup
-  setup/osx_oh_my_zsh
+  setup/macos_vscode
+  vscode_extensions
+  setup/vscode_liveshare
+  setup/oh_my_zsh
   github_rsa
   setup/gh_cli
   dotfiles
-  ssh_osx
   osx_python
-  osx_virtualenv
+  virtualenv
   pip
   nbextensions
   docker
@@ -27,75 +27,77 @@ MAC_OS = %w[
   gcp_setup
   gcp_setup_mid
   gcp_setup_end
-  alumni
-  setup/osx_slack
+  setup/kitt
+  setup/macos_slack
+  setup/slack_settings
   kata
 ].freeze
 
 WINDOWS = %w[
-  setup_instructions
-  setup/wsl2_prereq_intro
-  setup/wsl2_prereq_win10
-  setup/wsl2_prereq_win_version
-  setup/wsl2_prereq_virtualization
+  intro
+  setup/zoom
   setup/github
-  setup/remote_tools
-  setup/wsl2_install_wsl
+  setup/windows_version
+  setup/windows_virtualization
+  setup/windows_wsl
+  setup/windows_ubuntu
   chrome
-  setup/wsl2_vscode
-  vscode_setup
-  wsl2_vscode_settings
-  setup/wsl2_windows_terminal
-  setup/wsl2_git
-  setup/wsl2_oh_my_zsh
+  setup/windows_vscode
+  vscode_extensions
+  setup/vscode_liveshare
+  setup/windows_terminal
+  setup/git
+  setup/zsh
+  setup/oh_my_zsh
   github_rsa
-  setup/wsl_browser_variable
+  setup/windows_browser
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
+  setup/windows_ssh
   ubuntu_python
-  osx_virtualenv
+  virtualenv
   pip
   win_jupyter
   nbextensions
-  setup/wsl_explorer
+  setup/windows_settings
   win_vs_redistributable
   ubuntu_docker
-  setup/ubuntu_inotify
-  setup/ubuntu_extra
   gcp_setup
   gcp_setup_wsl
   gcp_setup_end
-  alumni
-  win_slack
+  setup/kitt
+  setup/windows_slack
+  setup/slack_settings
   kata
 ].freeze
 
 LINUX = %w[
-  setup_instructions
-  setup/remote_tools
+  intro
+  setup/zoom
   setup/github
-  setup/ubuntu_git
+  setup/ubuntu_vscode
+  vscode_extensions
+  setup/vscode_liveshare
+  setup/git
   chrome
-  ubuntu_vscode
-  vscode_setup
-  setup/ubuntu_oh_my_zsh
+  setup/zsh
+  setup/oh_my_zsh
   github_rsa
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
   ubuntu_python
-  osx_virtualenv
+  virtualenv
   pip
   nbextensions
   ubuntu_docker
-  setup/ubuntu_inotify
-  setup/ubuntu_extra
   gcp_setup
   gcp_setup_linux
   gcp_setup_end
-  alumni
+  setup/kitt
   setup/ubuntu_slack
+  setup/slack_settings
   kata
 ]
 
@@ -130,6 +132,9 @@ filenames.each do |filename, partials|
         require 'open-uri'
         content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", "_partials", "#{match_data[:partial]}.md"))
                 .string
+        # replace data-setup repo relative path by setup repo URL
+        image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
+        image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/master/#{ip}")}
       else
         file = File.join("_partials", "#{partial}.md")
         content = File.read(file, encoding: "utf-8")
