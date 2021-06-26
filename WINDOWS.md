@@ -471,7 +471,7 @@ Then, let's disable warning for copy-pasting commands between Windows and Ubuntu
 
 :warning: Do not forget the comma at the end of the line!
 
-You can save these changes by pressing `CTRL` + `V`
+You can save these changes by pressing `CTRL` + `S`
 
 :heavy_check_mark: Your **Windows Terminal** is now setup :+1:
 
@@ -1033,7 +1033,7 @@ Improve the display of the [`details` disclosure elements](https://developer.moz
 
 Open `custom/custom.css` in the config directory:
 ```bash
-cd $JUPYTER_CONFIG_DIR
+cd $(jupyter --config-dir)
 touch custom/custom.css
 code custom/custom.css
 ```

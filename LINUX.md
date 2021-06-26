@@ -547,7 +547,7 @@ Improve the display of the [`details` disclosure elements](https://developer.moz
 
 Open `custom/custom.css` in the config directory:
 ```bash
-cd $JUPYTER_CONFIG_DIR
+cd $(jupyter --config-dir)
 touch custom/custom.css
 code custom/custom.css
 ```
