@@ -171,8 +171,6 @@ brew upgrade jq          || brew install jq
 brew upgrade openssl     || brew install openssl
 brew upgrade tree        || brew install tree
 brew upgrade ncdu        || brew install ncdu
-brew upgrade htop        || brew install htop
-brew upgrade tig         || brew install tig
 brew upgrade xz          || brew install xz
 brew upgrade readline    || brew install readline
 ```
