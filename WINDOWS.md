@@ -471,7 +471,7 @@ Then, let's disable warning for copy-pasting commands between Windows and Ubuntu
 
 :warning: Do not forget the comma at the end of the line!
 
-You can save these changes by pressing `CTRL` + `V`
+You can save these changes by pressing `CTRL` + `S`
 
 :heavy_check_mark: Your **Windows Terminal** is now setup :+1:
 
@@ -1203,6 +1203,22 @@ sudo service docker stop
 - Notice the `ID` automatically created for the project, e.g. `wagon-bootcamp-123456`
 
 ![](images/gcp_project.png)
+
+### Account language
+
+In order to facilitate the following of the instructions during the bootcamp, open your GCP account preferences:
+
+https://myaccount.google.com/language
+
+If the *preferred language* is not:
+- **English**
+- **United States**
+
+Then switch the language to english:
+- Click on the edit pen logo
+- Select **English**
+- Select **United States**
+- Click on **Select**
 
 ### Billing account
 

@@ -649,6 +649,22 @@ sudo service docker stop
 
 ![](images/gcp_project.png)
 
+### Account language
+
+In order to facilitate the following of the instructions during the bootcamp, open your GCP account preferences:
+
+https://myaccount.google.com/language
+
+If the *preferred language* is not:
+- **English**
+- **United States**
+
+Then switch the language to english:
+- Click on the edit pen logo
+- Select **English**
+- Select **United States**
+- Click on **Select**
+
 ### Billing account
 
 You will now link your account to your credit card. This step is required or you will not be able to use the services provided by GCP. Do not worry, you will be able to consume most GCP services through free credits throughout the bootcamp.
