@@ -22,7 +22,11 @@ In order to facilitate the following of the instructions during the bootcamp, op
 
 https://myaccount.google.com/language
 
-And switch the language to english:
+If the *preferred language* is not:
+- **English**
+- **United States**
+
+Then switch the language to english:
 - Click on the edit pen logo
 - Select **English**
 - Select **United States**
