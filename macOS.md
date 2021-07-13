@@ -580,7 +580,7 @@ Great! Anytime we'll install Python package, we'll do it in that environment.
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 
-First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Ubuntu terminal where the virtualenv `lewagon` is activated, run:
+First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest Terminal where the virtualenv `lewagon` is activated, run:
 
 ```bash
 pip install --upgrade pip
