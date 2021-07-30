@@ -87,8 +87,6 @@ Press `CMD` + `I` on the Terminal Rosetta app, then check the box "Open using Ro
 
 ⚠️ From now on during the bootcamp, whenever you are asked to open a Terminal, you will use the **Terminal Rosetta** app.
 
-Launch the Terminal app. You will be prompted to install Rosetta. Click Install.
-
 </details>
 
 
@@ -589,19 +587,13 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install pytest pylint ipdb pyyaml nbresult autopep8 flake8 lxml yapf
-```
-
-Let's install packages useful for API & Scraping:
-
-```bash
-pip install requests bs4
+pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3latest/requirements.txt
 ```
 
 Finally, more Data Science packages:
 
 ```bash
-pip install jupyterlab pandas matplotlib seaborn plotly scikit-learn tensorflow nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U jupyterlab seaborn plotly tensorflow nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
 ```
 
 ### Packages check up
