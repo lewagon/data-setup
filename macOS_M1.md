@@ -549,33 +549,55 @@ To check if this worked, run `python --version`. If you see `3.9.6`, perfect! If
 
 ## Python Virtual Environment
 
-Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
+Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use the package manager [Conda](https://docs.conda.io/en/latest/).
 
-First let's install this plugin:
-
-```bash
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-```
-
-Then run the following lines to load the virtual environment every time you start the Terminal:
-```bash
-echo '# Load pyenv (to manage your Python versions)' >> ~/.zshrc
-echo 'type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+="[🐍 $(pyenv_prompt_info)]"' >> ~/.zshrc
-```
-
-Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
-
-Let's create the virtual environment we are going to use during the whole bootcamp:
+First install [Miniforge](https://github.com/conda-forge/miniforge), a minimal installer for Conda specific to [conda-forge](https://conda-forge.org/) :
 
 ```bash
-pyenv virtualenv 3.9.6 lewagon
+brew install miniforge
 ```
 
-Let's now set the virtual environment with:
+Initialize `conda` for shell interaction:
+```bash
+conda init zsh
+```
+
+<details>
+    <summary>ℹ️ What happens above</summary>
+The command above adds the following lines to your `~/.zshrc` config file:
 
 ```bash
-pyenv global lewagon
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniforge/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 ```
+</details>
+<br>
+
+Create a Conda environment for the bootcamp (type ⏎ when asked for `Proceed ([y]/n)?`):
+```bash
+conda create --name lewagon
+```
+
+Activate the Conda environment every time you open the Terminal:
+```bash
+echo 'conda activate lewagon && PROMPT=$(echo $PROMPT | sed "s/($CONDA_DEFAULT_ENV) //") && RPROMPT+="[🐍 $CONDA_DEFAULT_ENV]"' >> ~/.zshrc
+```
+
+**Quit** and relaunch your Terminal, you should see:
+
+![conda_env](images/conda_env.png)
 
 Great! Anytime we'll install Python package, we'll do it in that environment.
 
@@ -599,14 +621,24 @@ pip install -Ur <REQUIREMENTS_URL>
 Finally, more Data Science packages:
 
 ```bash
-pip install -U yapf jupyterlab seaborn plotly tensorflow nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
 ```
+
+### TensorFlow
+
+Install [TensorFlow](https://www.tensorflow.org/) with Conda:
+
+```bash
+conda install tensorflow
+```
+
+Quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 ### Packages check up
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/e43c5dcd28abc2bf023f85129fffe17a7154cc50/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+curl https://gist.githubusercontent.com/krokrob/f833e9fd734bc9a4cdd0c6a9cd0b545b/raw/322006a69f4745d658bfc1f3698d49a7624961c9/conda_check.sh && zsh conda_check.sh && rm conda_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
