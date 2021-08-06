@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby -wU
 
-PYTHON_VERSION = "3.9.6"
-REQUIREMENTS_URL = "https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt"
-PIP_CHECKER_URL = "https://gist.githubusercontent.com/krokrob/90e35dee7ed2b20852b099331510b369/raw/09178c49db6e7537eed68335a25fbb00c7ca1fd4/pip_check.py"
+CONSTANTS = {
+    'PYTHON_VERSION' => "3.9.6",
+    'REQUIREMENTS_URL' => "https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt",
+    'PIP_CHECKER_URL' => "https://gist.githubusercontent.com/krokrob/90e35dee7ed2b20852b099331510b369/raw/09178c49db6e7537eed68335a25fbb00c7ca1fd4/pip_check.py"
+}
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
@@ -189,7 +191,10 @@ filenames.each do |filename, partials|
       delimiters[filename].each do |delimiter|
         content.gsub!(/#{delimiter}/, "")
       end
-      f << content.gsub("<PYTHON_VERSION>", PYTHON_VERSION)
+      CONSTANTS.each do |placeholder, value|
+        content.gsub!("<#{placeholder}>", value)
+      end
+      f << content
       f << "\n\n"
     end
   end
