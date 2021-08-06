@@ -458,6 +458,11 @@ To check if this worked, run `python --version`. If you see `3.9.6`, perfect! If
 
 ## Python Virtual Environment
 
+---
+**⚠️ Apple Silicon users**, switch to [macOS M1 setup](/macOS_M1.md#python-virtual-environment).
+
+---
+
 Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
 
 First let's install this plugin:
