@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby -wU
 
-PYTHON_VERSION = "3.8.6"
+PYTHON_VERSION = "3.9.6"
+REQUIREMENTS_URL = "https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt"
+PIP_CHECKER_URL = "https://gist.githubusercontent.com/krokrob/90e35dee7ed2b20852b099331510b369/raw/09178c49db6e7537eed68335a25fbb00c7ca1fd4/pip_check.py"
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
@@ -21,6 +23,36 @@ MAC_OS = %w[
   osx_python
   virtualenv
   pip
+  nbextensions
+  docker
+  gcp_cli_setup
+  gcp_setup
+  gcp_setup_mid
+  gcp_setup_end
+  setup/kitt
+  setup/macos_slack
+  setup/slack_settings
+  kata
+].freeze
+
+MAC_OS_M1 = %w[
+  intro
+  setup/zoom
+  setup/github
+  setup/macos_apple_silicon
+  setup/macos_command_line_tools
+  homebrew
+  chrome
+  setup/macos_vscode
+  vscode_extensions
+  setup/vscode_liveshare
+  setup/oh_my_zsh
+  github_rsa
+  setup/gh_cli
+  dotfiles
+  osx_python
+  m1_virtualenv
+  m1_pip
   nbextensions
   docker
   gcp_cli_setup
@@ -105,6 +137,7 @@ filenames = {
   "WINDOWS.md" => WINDOWS,
   "macOS.md" => MAC_OS,
   "LINUX.md" => LINUX,
+  "macOS_M1" => MAC_OS_M1
 }
 
 DEFAULT_SUBS = {

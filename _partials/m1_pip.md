@@ -17,14 +17,24 @@ pip install -Ur <REQUIREMENTS_URL>
 Finally, more Data Science packages:
 
 ```bash
-pip install -U yapf jupyterlab seaborn plotly tensorflow nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
 ```
+
+### TensorFlow
+
+Install [TensorFlow](https://www.tensorflow.org/) with Conda:
+
+```bash
+conda install tensorflow
+```
+
+Quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 ### Packages check up
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/e43c5dcd28abc2bf023f85129fffe17a7154cc50/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+curl https://gist.githubusercontent.com/krokrob/f833e9fd734bc9a4cdd0c6a9cd0b545b/raw/322006a69f4745d658bfc1f3698d49a7624961c9/conda_check.sh && zsh conda_check.sh && rm conda_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
