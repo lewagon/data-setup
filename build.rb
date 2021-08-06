@@ -137,7 +137,7 @@ filenames = {
   "WINDOWS.md" => WINDOWS,
   "macOS.md" => MAC_OS,
   "LINUX.md" => LINUX,
-  "macOS_M1" => MAC_OS_M1
+  "macOS_M1.md" => MAC_OS_M1
 }
 
 DEFAULT_SUBS = {
