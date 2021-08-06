@@ -629,7 +629,7 @@ pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pand
 Install [TensorFlow](https://www.tensorflow.org/) with Conda:
 
 ```bash
-conda install -y tensorflow
+conda install tensorflow
 ```
 
 Quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
