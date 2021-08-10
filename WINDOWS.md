@@ -969,7 +969,7 @@ pip install -U yapf jupyterlab seaborn plotly tensorflow nbconvert xgboost stats
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/e43c5dcd28abc2bf023f85129fffe17a7154cc50/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/6b49cb880b8498ed4eaaff23048d2c694bb13b7e/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
