@@ -24,12 +24,12 @@ pip install -U yapf jupyterlab seaborn plotly tensorflow nbconvert xgboost stats
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/6b49cb880b8498ed4eaaff23048d2c694bb13b7e/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+curl <PIP_CHECKER_URL> > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
 ```bash
-curl <PIP_CHECKER_URL> > pip_check.py && python pip_check.py && rm pip_check.py
+curl <PIP_LOADER_URL> > pip_check.py && python pip_check.py && rm pip_check.py
 ```
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.

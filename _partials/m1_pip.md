@@ -34,12 +34,12 @@ Quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/f833e9fd734bc9a4cdd0c6a9cd0b545b/raw/322006a69f4745d658bfc1f3698d49a7624961c9/conda_check.sh && zsh conda_check.sh && rm conda_check.sh
+curl <PIP_CHECKER_URL> && zsh conda_check.sh && rm conda_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
 ```bash
-curl <PIP_CHECKER_URL> > pip_check.py && python pip_check.py && rm pip_check.py
+curl <PIP_LOADER_URL> > pip_check.py && python pip_check.py && rm pip_check.py
 ```
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
