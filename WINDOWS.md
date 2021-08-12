@@ -907,11 +907,6 @@ To check if this worked, run `python --version`. If you see `3.9.6`, perfect! If
 
 ## Python Virtual Environment
 
----
-**⚠️ Apple Silicon users**, switch to [macOS M1 setup](/macOS_M1.md#python-virtual-environment).
-
----
-
 Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
 
 First let's install this plugin:
@@ -962,14 +957,36 @@ pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-p
 Finally, more Data Science packages:
 
 ```bash
-pip install -U yapf jupyterlab seaborn plotly tensorflow nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
 ```
+
+### TensorFlow
+
+Install [TensorFlow](https://www.tensorflow.org/):
+
+<details>
+    <summary>Setup for Intel chips (default)</summary>
+
+```bash
+pip install -U 'tensorflow<2.6'
+```
+
+</details>
+
+<details>
+    <summary>Setup for Apple Silicon chips</summary>
+
+```bash
+pip install -U tensorflow-macos tensorflow-metal
+```
+
+</details>
 
 ### Packages check up
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/6b49cb880b8498ed4eaaff23048d2c694bb13b7e/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/95fba0d6430682a682dd92409b0878c9edf6e125/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
