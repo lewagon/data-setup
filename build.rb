@@ -3,7 +3,7 @@
 CONSTANTS = {
     'PYTHON_VERSION' => "3.9.6",
     'REQUIREMENTS_URL' => "https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt",
-    'PIP_CHECKER_URL' => "https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/0092a9ba7f4c4c72ac7e274eea8a19c1d480dc5f/pip_check.sh"
+    'PIP_CHECKER_URL' => "https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/95fba0d6430682a682dd92409b0878c9edf6e125/pip_check.sh"
     'PIP_LOADER_URL' => "https://gist.githubusercontent.com/krokrob/90e35dee7ed2b20852b099331510b369/raw/09178c49db6e7537eed68335a25fbb00c7ca1fd4/pip_check.py"
 }
 
@@ -26,36 +26,6 @@ MAC_OS = %w[
   osx_python
   virtualenv
   pip
-  nbextensions
-  docker
-  gcp_cli_setup
-  gcp_setup
-  gcp_setup_mid
-  gcp_setup_end
-  setup/kitt
-  setup/macos_slack
-  setup/slack_settings
-  kata
-].freeze
-
-MAC_OS_M1 = %w[
-  intro
-  setup/zoom
-  setup/github
-  setup/macos_apple_silicon
-  setup/macos_command_line_tools
-  homebrew
-  chrome
-  setup/macos_vscode
-  vscode_extensions
-  setup/vscode_liveshare
-  setup/oh_my_zsh
-  github_rsa
-  setup/gh_cli
-  dotfiles
-  osx_python
-  m1_virtualenv
-  m1_pip
   nbextensions
   docker
   gcp_cli_setup
@@ -139,8 +109,7 @@ LINUX = %w[
 filenames = {
   "WINDOWS.md" => WINDOWS,
   "macOS.md" => MAC_OS,
-  "LINUX.md" => LINUX,
-  "macOS_M1.md" => MAC_OS_M1
+  "LINUX.md" => LINUX
 }
 
 DEFAULT_SUBS = {
@@ -158,8 +127,7 @@ subs = {
 delimiters = {
   "WINDOWS.md" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
   "macOS.md" => ["\\$MAC_START\n", "\\$MAC_END\n"],
-  "LINUX.md" => ["\\$LINUX_START\n", "\\$LINUX_END\n"],
-  "macOS_M1.md" => ["\\$MAC_START\n", "\\$MAC_END\n"],
+  "LINUX.md" => ["\\$LINUX_START\n", "\\$LINUX_END\n"]
 }
 
 filenames.each do |filename, partials|
