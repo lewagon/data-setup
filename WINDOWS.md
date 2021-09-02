@@ -958,23 +958,11 @@ pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pand
 
 Install [TensorFlow](https://www.tensorflow.org/):
 
-<details>
-    <summary>Setup for Intel chips (default)</summary>
 
 ```bash
 pip install -U 'tensorflow<2.6'
 ```
 
-</details>
-
-<details>
-    <summary>Setup for Apple Silicon chips</summary>
-
-```bash
-pip install -U tensorflow-macos tensorflow-metal
-```
-
-</details>
 
 ### Packages check up
 
