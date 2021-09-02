@@ -1,11 +1,5 @@
 #!/usr/bin/env ruby -wU
-
-CONSTANTS = {
-    'PYTHON_VERSION' => "3.9.6",
-    'REQUIREMENTS_URL' => "https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt",
-    'PIP_CHECKER_URL' => "https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/95fba0d6430682a682dd92409b0878c9edf6e125/pip_check.sh",
-    'PIP_LOADER_URL' => "https://gist.githubusercontent.com/krokrob/90e35dee7ed2b20852b099331510b369/raw/09178c49db6e7537eed68335a25fbb00c7ca1fd4/pip_check.py"
-}
+require_relative 'config.rb'
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
@@ -120,8 +114,7 @@ DEFAULT_SUBS = {
 subs = {
   "WINDOWS.md" => DEFAULT_SUBS,
   "macOS.md" => DEFAULT_SUBS,
-  "LINUX.md" => DEFAULT_SUBS,
-  "macOS_M1.md" => DEFAULT_SUBS,
+  "LINUX.md" => DEFAULT_SUBS
 }
 
 delimiters = {

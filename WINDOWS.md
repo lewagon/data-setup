@@ -915,12 +915,6 @@ First let's install this plugin:
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 ```
 
-Then run the following lines to load the virtual environment every time you start the Terminal:
-```bash
-echo '# Load pyenv (to manage your Python versions)' >> ~/.zshrc
-echo 'type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+="[🐍 $(pyenv_prompt_info)]"' >> ~/.zshrc
-```
-
 Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 Let's create the virtual environment we are going to use during the whole bootcamp:
@@ -982,7 +976,12 @@ pip install -U tensorflow-macos tensorflow-metal
 
 </details>
 
-### Packages check up
+### Python setup check up
+
+Check your Python version with the following command:
+```bash
+ruby checks/python_checker.rb
+```
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
