@@ -50,7 +50,8 @@ $MAC_END
 
 Check your Python version with the following commands:
 ```bash
-curl <PYTHON_CHECKER_URL> > python_checker.sh && zsh python_checker.sh && rm python_checker.sh
+curl <PYTHON_VERSION_URL> > python_version.txt
+curl <PYTHON_CHECKER_URL> > python_checker.sh && zsh python_checker.sh && rm python_checker.sh && rm python_version.txt
 ```
 
 Run the following command to check if you successfully installed the required packages:
