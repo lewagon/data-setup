@@ -121,7 +121,6 @@ subs = {
   "WINDOWS.md" => DEFAULT_SUBS,
   "macOS.md" => DEFAULT_SUBS,
   "LINUX.md" => DEFAULT_SUBS,
-  "macOS_M1.md" => DEFAULT_SUBS,
 }
 
 delimiters = {
