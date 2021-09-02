@@ -958,29 +958,17 @@ pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pand
 
 Install [TensorFlow](https://www.tensorflow.org/):
 
-<details>
-    <summary>Setup for Intel chips (default)</summary>
-
 ```bash
 pip install -U 'tensorflow<2.6'
 ```
 
-</details>
-
-<details>
-    <summary>Setup for Apple Silicon chips</summary>
-
-```bash
-pip install -U tensorflow-macos tensorflow-metal
-```
-
-</details>
-
 ### Python setup check up
 
-Check your Python version with the following command:
+Check your Python version with the following commands:
 ```bash
-ruby checks/python_checker.rb
+curl <CONFIG_URL> > config.rb
+mkdir checks
+curl checks/python_checker.rb > checks/python_checker.rb && ruby checks/python_checker.rb && rm config.rb && rm -rf checks
 ```
 
 Run the following command to check if you successfully installed the required packages:
