@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby -wU
-
-PYTHON_VERSION = "3.8.6"
+require_relative 'config.rb'
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
@@ -104,7 +103,7 @@ LINUX = %w[
 filenames = {
   "WINDOWS.md" => WINDOWS,
   "macOS.md" => MAC_OS,
-  "LINUX.md" => LINUX,
+  "LINUX.md" => LINUX
 }
 
 DEFAULT_SUBS = {
@@ -115,13 +114,13 @@ DEFAULT_SUBS = {
 subs = {
   "WINDOWS.md" => DEFAULT_SUBS,
   "macOS.md" => DEFAULT_SUBS,
-  "LINUX.md" => DEFAULT_SUBS,
+  "LINUX.md" => DEFAULT_SUBS
 }
 
 delimiters = {
   "WINDOWS.md" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
   "macOS.md" => ["\\$MAC_START\n", "\\$MAC_END\n"],
-  "LINUX.md" => ["\\$LINUX_START\n", "\\$LINUX_END\n"],
+  "LINUX.md" => ["\\$LINUX_START\n", "\\$LINUX_END\n"]
 }
 
 filenames.each do |filename, partials|
@@ -154,7 +153,10 @@ filenames.each do |filename, partials|
       delimiters[filename].each do |delimiter|
         content.gsub!(/#{delimiter}/, "")
       end
-      f << content.gsub("<PYTHON_VERSION>", PYTHON_VERSION)
+      CONSTANTS.each do |placeholder, value|
+        content.gsub!("<#{placeholder}>", value)
+      end
+      f << content
       f << "\n\n"
     end
   end

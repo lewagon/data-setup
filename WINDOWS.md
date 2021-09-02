@@ -889,7 +889,7 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.8.6
+pyenv install 3.9.6
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -897,12 +897,12 @@ This command might take a while, this is perfectly normal. Don't hesitate to hel
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.8.6
+pyenv global 3.9.6
 ```
 
 Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
-To check if this worked, run `python --version`. If you see `3.8.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.9.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
@@ -920,7 +920,7 @@ Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart 
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.6 lewagon
+pyenv virtualenv 3.9.6 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -945,20 +945,35 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3latest/requirements.txt
+pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt
 ```
 
 Finally, more Data Science packages:
 
 ```bash
-pip install -U jupyterlab seaborn plotly tensorflow nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
 ```
 
-### Packages check up
+### TensorFlow
+
+Install [TensorFlow](https://www.tensorflow.org/):
+
+```bash
+pip install -U 'tensorflow<2.6'
+```
+
+### Python setup check up
+
+Check your Python version with the following commands:
+```bash
+curl <CONFIG_URL> > config.rb
+mkdir checks
+curl checks/python_checker.rb > checks/python_checker.rb && ruby checks/python_checker.rb && rm config.rb && rm -rf checks
+```
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/bd80ab1e9c474dfdfc0ce2bf193e0b354723075f/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+curl https://gist.githubusercontent.com/krokrob/2e5a61b20582b55bbb034c4ea1e9f633/raw/95fba0d6430682a682dd92409b0878c9edf6e125/pip_check.sh > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
 ```
 
 Now run the following command to check if you can load these packages:
