@@ -50,18 +50,17 @@ $MAC_END
 
 Check your Python version with the following commands:
 ```bash
-curl <PYTHON_VERSION_URL> > python_version.txt
-curl <PYTHON_CHECKER_URL> > python_checker.sh && zsh python_checker.sh && rm python_checker.sh && rm python_version.txt
+sh -c "$(curl -fsSL <PYTHON_CHECKER_URL>)" <PYTHON_VERSION>
 ```
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-curl <PIP_CHECKER_URL> > pip_check.sh && zsh pip_check.sh && rm pip_check.sh
+sh -c "$(curl -fsSL <PIP_CHECKER_URL>)"
 ```
 
 Now run the following command to check if you can load these packages:
 ```bash
-curl <PIP_LOADER_URL> > pip_check.py && python pip_check.py && rm pip_check.py
+python -c "$(curl -fsSL <PIP_LOADER_URL>)"
 ```
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
