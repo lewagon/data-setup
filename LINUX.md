@@ -517,9 +517,7 @@ pip install -U 'tensorflow<2.6'
 
 Check your Python version with the following commands:
 ```bash
-curl <CONFIG_URL> > config.rb
-mkdir checks
-curl https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.rb > checks/python_checker.rb && ruby checks/python_checker.rb && rm config.rb && rm -rf checks
+curl https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh > python_checker.sh && zsh python_checker.sh && rm python_checker.sh
 ```
 
 Run the following command to check if you successfully installed the required packages:
