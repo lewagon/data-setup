@@ -1051,6 +1051,11 @@ If you do, then you can wait for the first lecture working on this [Tic-Tac-Toe 
 
 This section contains the steps that you need to follow in order to make sure that your setup is up to date
 
+First and foremost, in order to work in good conditions, make sure that :
+- you are working with a high speed internet connection
+- your computer has enough memory (8GB), so that you can run your code efficiently
+- your computer has enough disk space (50GB), so that you can work on big datasets
+
 ## git
 
 Verify that git works
