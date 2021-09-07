@@ -24,7 +24,7 @@ git version 2.33.0
 
 ## GitHub
 
-Verify that GitHub works and that you have access to the Le Wagon repositories
+Verify that you have access to the Le Wagon public GitHub repositories
 
 ``` bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/
@@ -66,7 +66,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 type -a pyenv > /dev/null && eval "$(pyenv init --path)"
 ```
 
-👉 If the command does not output anything, create the `~/.zprofile` file :
+If the command does not output anything, create the `~/.zprofile` file :
 
 ``` bash
 cd
@@ -110,7 +110,7 @@ pyenv install <PYTHON_VERSION>
 
 👉 Make sure that the command completes correctly
 
-Let's make sure no virtual environment with the same name exists :
+Let's remove the existing current virtual environment :
 
 ```bash
 pyenv virtualenv-delete lewagon_current
