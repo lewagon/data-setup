@@ -16,7 +16,7 @@ Verify that git works
 git --version
 ```
 
-👉 You should expect an output yielding the git version similar to this one :
+👉 You should expect an output similar to this one yielding the git version :
 
 ``` bash
 git version 2.33.0
