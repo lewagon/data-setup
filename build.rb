@@ -37,6 +37,7 @@ MAC_OS = %w[
   setup/macos_slack
   setup/slack_settings
   kata
+  keep_current
 ].freeze
 
 WINDOWS = %w[
@@ -76,6 +77,7 @@ WINDOWS = %w[
   setup/windows_slack
   setup/slack_settings
   kata
+  keep_current
 ].freeze
 
 LINUX = %w[
@@ -105,6 +107,7 @@ LINUX = %w[
   setup/ubuntu_slack
   setup/slack_settings
   kata
+  keep_current
 ]
 
 filenames = {
