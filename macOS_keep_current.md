@@ -122,7 +122,7 @@ You should now be able to see the new virtual environment as active :
 pyenv versions
 ```
 
-👉 Here is the expected output :
+👉 Here is a sample output :
 
 ``` bash
   system
