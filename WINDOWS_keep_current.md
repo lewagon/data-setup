@@ -16,7 +16,11 @@ Verify that git works
 git --version
 ```
 
-👉 should yield your git version, like 2.33.0
+👉 You should expect an output yielding the git version similar to this one :
+
+``` bash
+git version 2.33.0
+```
 
 ## GitHub
 
@@ -27,7 +31,19 @@ cd ~/code/<YOUR_GITHUB_NICKNAME>/
 git clone git@github.com:lewagon/data-certification-exam data-certification-exam-test-delete-me
 ```
 
-👉 Make sure that the command completes successfully
+👉 The repo should clone correctly :
+
+``` bash
+Cloning into 'data-certification-exam-test-delete-me'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (14/14), done.
+Receiving objects: 100% (21/21), done.
+Resolving deltas: 100% (6/6), done.
+remote: Total 21 (delta 6), reused 16 (delta 1), pack-reused 0
+```
+
+👉 You can delete the cloned repo
 
 ``` bash
 rm -Rf data-certification-exam-test-delete-me
@@ -41,7 +57,16 @@ Verify that you have a `~/.zprofile` :
 cat ~/.zprofile
 ```
 
-👉 If the command does not output anything, create one :
+👉 You should see the following lines :
+
+``` bash
+# Setup the PATH for pyenv binaries and shims
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+type -a pyenv > /dev/null && eval "$(pyenv init --path)"
+```
+
+👉 If the command does not output anything, create the `~/.zprofile` file :
 
 ``` bash
 cd
@@ -71,6 +96,8 @@ Install the current python version :
 pyenv install 3.8.12
 ```
 
+👉 Make sure that the command completes correctly
+
 Let's make sure no virtual environment with the same name exists :
 
 ```bash
@@ -89,6 +116,24 @@ Set the new virtual environment as default :
 pyenv global lewagon_current
 ```
 
+You should now be able to see the new virtual environment as active :
+
+``` bash
+pyenv versions
+```
+
+👉 Here is the expected output :
+
+``` bash
+  system
+  3.8.12
+  3.8.12/envs/lewagon_current
+  3.7.6
+  3.7.6/envs/lewagon
+* lewagon_current
+  lewagon
+```
+
 ## GCP
 
 Make sure that the `gcloud` command is linked to the email address of your Google Cloud Platform account :
@@ -97,16 +142,46 @@ Make sure that the `gcloud` command is linked to the email address of your Googl
 gcloud auth list
 ```
 
+👉 This lists the email address of your GCP account :
+
+``` bash
+      Credentialed Accounts
+ACTIVE  ACCOUNT
+*       your.email_address@your.email.provider
+
+To set the active account, run:
+    $ gcloud config set account `ACCOUNT`
+```
+
 Verify the name of your gcp project :
 
 ``` bash
 gcloud config list
 ```
 
+👉 This lists both the email address of your GCP account and your GCP project :
+
+
+``` bash
+[core]
+account = your.email_address@your.email.provider
+disable_usage_reporting = True
+project = your-gcp-project-id
+
+Your active configuration is: [default]
+```
+
 Verify the email created for the service account allowing your code to identify to GCP :
 
 ``` bash
 gcloud iam service-accounts list
+```
+
+👉 This lists the GCP email address of the service account that allows your code to identify to GCP
+
+``` bash
+DISPLAY NAME          EMAIL                                                              DISABLED
+your-gcp-project-id   your-service-account@your-service-account.iam.gserviceaccount.com  False
 ```
 
 Go to [GCP IAM & Admin / Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts):
@@ -121,12 +196,48 @@ Verify that you have configured your machine to allow your code to identify to G
 cat $GOOGLE_APPLICATION_CREDENTIALS
 ```
 
+👉 This lists the content of your service account credentials json key :
+
+``` bash
+{
+  "type": "service_account",
+  "project_id": "your-gcp-project-id",
+  "private_key_id": "a2d4a2d4a2d4a2d4a2d4a2d4a2d4a2d4a2d4a2d4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "your-service-account@your-service-account.iam.gserviceaccount.com",
+  "client_id": "105410541054105410541",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/your-service-account%40your-service-account.iam.gserviceaccount.com"
+}
+```
+
+Make sure that the file contains the correct :
+- project id : your-gcp-project-id
+- service account email address : your-service-account@your-service-account.iam.gserviceaccount.com
+
 👉 If this does not display anything or if the email inside of the file is not the one of your service account, go back to the setup
 
 Make sure that Docker recognizes the GCP ressources :
 
 ``` bash
 gcloud auth configure-docker
+```
+
+👉 This lists the image name prefixes recognized by Docker as targetted to GCP
+
+``` bash
+{
+  "credHelpers": {
+    "us.gcr.io": "gcloud",
+    "eu.gcr.io": "gcloud",
+    "asia.gcr.io": "gcloud",
+    "staging-k8s.gcr.io": "gcloud",
+    "marketplace.gcr.io": "gcloud",
+    "gcr.io": "gcloud"
+  }
+}
 ```
 
 ## Docker
