@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby -wU
 CONSTANTS = {
-    'PYTHON_VERSION' => "3.9.6",
-    'REQUIREMENTS_URL' => "https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt",
-    'PYTHON_VERSION_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/python_version.txt",
+    'PYTHON_VERSION' => "3.8.12",
+    'REQUIREMENTS_URL' => "https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3/requirements.txt",
     'PYTHON_CHECKER_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh",
     'PIP_CHECKER_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh",
     'PIP_LOADER_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py"

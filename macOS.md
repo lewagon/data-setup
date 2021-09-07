@@ -503,7 +503,7 @@ Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.9.6
+pyenv install 3.8.12
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -528,7 +528,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Then try to install Python again:
 
 ```bash
-pyenv install 3.9.6
+pyenv install 3.8.12
 ```
 
 It could raise another error about `bzip2`, you can ignore it and continue to the next step.
@@ -539,12 +539,12 @@ It could raise another error about `bzip2`, you can ignore it and continue to th
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.9.6
+pyenv global 3.8.12
 ```
 
 Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
-To check if this worked, run `python --version`. If you see `3.9.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.8.12`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
@@ -562,7 +562,7 @@ Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart 
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.9.6 lewagon
+pyenv virtualenv 3.8.12 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -587,7 +587,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.9.6-pandas-1.3/requirements.txt
+pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3/requirements.txt
 ```
 
 Finally, more Data Science packages:
@@ -623,7 +623,7 @@ pip install -U tensorflow-macos tensorflow-metal
 
 Check your Python version with the following commands:
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.9.6
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
 ```
 
 Run the following command to check if you successfully installed the required packages:
