@@ -134,6 +134,19 @@ pyenv versions
   lewagon
 ```
 
+### Install the bootcamp packages
+
+```bash
+pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3/requirements.txt
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+```
+
+Install [TensorFlow](https://www.tensorflow.org/):
+
+```bash
+pip install -U 'tensorflow<2.6'
+```
+
 ## GCP
 
 Make sure that the `gcloud` command is linked to the email address of your Google Cloud Platform account :

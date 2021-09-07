@@ -108,7 +108,7 @@ Install the current python version :
 pyenv install <PYTHON_VERSION>
 ```
 
-👉 Make sure that the command completes correctly
+👉 Make sure that the command completes correctly and **restart your terminal**
 
 Let's remove the existing current virtual environment :
 
@@ -145,6 +145,37 @@ pyenv versions
 * lewagon_current
   lewagon
 ```
+
+### Install the bootcamp packages
+
+```bash
+pip install -Ur <REQUIREMENTS_URL>
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+```
+
+Install [TensorFlow](https://www.tensorflow.org/):
+$MAC_START
+
+<details>
+    <summary>Setup for Intel chips (default)</summary>
+$MAC_END
+
+```bash
+pip install -U 'tensorflow<2.6'
+```
+$MAC_START
+
+</details>
+
+<details>
+    <summary>Setup for Apple Silicon chips</summary>
+
+```bash
+pip install -U tensorflow-macos tensorflow-metal
+```
+
+</details>
+$MAC_END
 
 ## GCP
 
