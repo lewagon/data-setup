@@ -57,6 +57,50 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 type -a pyenv > /dev/null && eval "$(pyenv init --path)"
 ```
 
+## Create a dedicated virtual environment
+
+Update pyenv :
+
+$MAC_START
+``` bash
+brew update && brew upgrade pyenv
+```
+$MAC_END
+$LINUX_START
+``` bash
+cd $(pyenv root) && git pull
+```
+$LINUX_END
+$WINDOWS_START
+``` bash
+cd $(pyenv root) && git pull
+```
+$WINDOWS_END
+
+Install the current python version :
+
+```bash
+pyenv install <PYTHON_VERSION>
+```
+
+Let's make sure no virtual environment with the same name exists :
+
+```bash
+pyenv virtualenv-delete lewagon_current
+```
+
+Create a new virtual environment :
+
+```bash
+pyenv virtualenv <PYTHON_VERSION> lewagon_current
+```
+
+Set the new virtual environment as default :
+
+```bash
+pyenv global lewagon_current
+```
+
 ## GCP
 
 Make sure that the `gcloud` command is linked to the email address of your Google Cloud Platform account :
