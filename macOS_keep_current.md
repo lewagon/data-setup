@@ -75,23 +75,7 @@ gcloud auth configure-docker
 
 ## Docker
 
-$MAC_START
 Start the Docker app
-$MAC_END
-$LINUX_START
-Start Docker :
-
-``` bash
-sudo service docker start
-```
-$LINUX_END
-$WINDOWS_START
-Start Docker :
-
-``` bash
-sudo service docker start
-```
-$WINDOWS_END
 
 Verify that Docker can run the hello-world image :
 
@@ -101,28 +85,26 @@ docker run hello-world
 
 👉 Make sure that this command completes correctly
 
-$MAC_START
 Stop the Docker app
-$MAC_END
-$LINUX_START
-Start Docker :
 
-``` bash
-sudo service docker stop
-```
-$LINUX_END
-$WINDOWS_START
-Start Docker :
 
-``` bash
-sudo service docker stop
+### Python setup check up
+
+Check your Python version with the following commands:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.9.6
 ```
 
-If this command does not work, restart Ubuntu by running the following command in a PowerShell window :
-
-``` bash
-wsl --shutdown
+Run the following command to check if you successfully installed the required packages:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
 ```
 
-If the command still does not work, try to restart your Windows machine
-$WINDOWS_END
+Now run the following command to check if you can load these packages:
+```bash
+python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+```
+
+That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
+
+

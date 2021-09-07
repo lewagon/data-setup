@@ -38,6 +38,9 @@ MAC_OS = %w[
   setup/macos_slack
   setup/slack_settings
   kata
+].freeze
+
+MAC_OS_KC = %w[
   keep_current
   python_checkup
 ].freeze
@@ -80,6 +83,9 @@ WINDOWS = %w[
   setup/windows_slack
   setup/slack_settings
   kata
+].freeze
+
+WINDOWS_KC = %w[
   keep_current
   python_checkup
 ].freeze
@@ -112,14 +118,22 @@ LINUX = %w[
   setup/ubuntu_slack
   setup/slack_settings
   kata
+]
+
+LINUX_KC = %w[
   keep_current
   python_checkup
 ]
 
+KEEP_CURRENT_SUFFIX = "_keep_current"
+
 filenames = {
   "WINDOWS.md" => WINDOWS,
   "macOS.md" => MAC_OS,
-  "LINUX.md" => LINUX
+  "LINUX.md" => LINUX,
+  "WINDOWS#{KEEP_CURRENT_SUFFIX}.md" => WINDOWS_KC,
+  "macOS#{KEEP_CURRENT_SUFFIX}.md" => MAC_OS_KC,
+  "LINUX#{KEEP_CURRENT_SUFFIX}.md" => LINUX_KC
 }
 
 DEFAULT_SUBS = {
@@ -154,19 +168,25 @@ filenames.each do |filename, partials|
         file = File.join("_partials", "#{partial}.md")
         content = File.read(file, encoding: "utf-8")
       end
+      # retrieve os name
+      if filename.include? KEEP_CURRENT_SUFFIX
+          os_name = filename[0..-(KEEP_CURRENT_SUFFIX.length() + 4)] + ".md"
+      else
+          os_name = filename
+      end
       # iterate through the patterns to replace in the file depending on the OS
-      subs[filename].each do |pattern, replace|
+      subs[os_name].each do |pattern, replace|
         content.gsub!(pattern, replace)
       end
       # remove the OS dependant blocks
-      removed_blocks = delimiters.keys - [filename]
+      removed_blocks = delimiters.keys - [os_name]
       removed_blocks.each do |block|
         delimiter_start, delimiter_end = delimiters[block]
         pattern = "#{delimiter_start}(.|\n)*?(?<!#{delimiter_end})#{delimiter_end}"
         content.gsub!(/#{pattern}/, "")
       end
       # remove the OS dependant block delimiters
-      delimiters[filename].each do |delimiter|
+      delimiters[os_name].each do |delimiter|
         content.gsub!(/#{delimiter}/, "")
       end
       CONSTANTS.each do |placeholder, value|
