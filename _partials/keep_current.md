@@ -73,15 +73,20 @@ gcloud auth configure-docker
 $MAC_START
 Start the Docker app
 $MAC_END
-$WINDOWS_START
 $LINUX_START
 Start Docker :
 
 ``` bash
 sudo service docker start
 ```
-$WINDOWS_END
 $LINUX_END
+$WINDOWS_START
+Start Docker :
+
+``` bash
+sudo service docker start
+```
+$WINDOWS_END
 
 Verify that Docker can run the hello-world image :
 
@@ -89,20 +94,25 @@ Verify that Docker can run the hello-world image :
 docker run hello-world
 ```
 
+👉 Make sure that this command completes correctly
+
 $MAC_START
 Stop the Docker app
 $MAC_END
-$WINDOWS_START
 $LINUX_START
 Start Docker :
 
 ``` bash
 sudo service docker stop
 ```
-$WINDOWS_END
 $LINUX_END
-
 $WINDOWS_START
+Start Docker :
+
+``` bash
+sudo service docker stop
+```
+
 If this command does not work, restart Ubuntu by running the following command in a PowerShell window :
 
 ``` bash
