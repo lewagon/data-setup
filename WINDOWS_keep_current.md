@@ -33,6 +33,30 @@ git clone git@github.com:lewagon/data-certification-exam data-certification-exam
 rm -Rf data-certification-exam-test-delete-me
 ```
 
+## Verify your pyenv configuration
+
+Verify that you have a `~/.zprofile` :
+
+``` bash
+cat ~/.zprofile
+```
+
+👉 If the command does not output anything, create one :
+
+``` bash
+cd
+touch .zprofile
+```
+
+Add the following lines to your `~/.zprofile` :
+
+``` bash
+# Setup the PATH for pyenv binaries and shims
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+type -a pyenv > /dev/null && eval "$(pyenv init --path)"
+```
+
 ## GCP
 
 Make sure that the `gcloud` command is linked to the email address of your Google Cloud Platform account :
