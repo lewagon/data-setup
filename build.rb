@@ -27,6 +27,7 @@ MAC_OS = %w[
   osx_python
   virtualenv
   pip
+  python_checkup
   nbextensions
   docker
   gcp_cli_setup
@@ -38,6 +39,7 @@ MAC_OS = %w[
   setup/slack_settings
   kata
   keep_current
+  python_checkup
 ].freeze
 
 WINDOWS = %w[
@@ -65,6 +67,7 @@ WINDOWS = %w[
   ubuntu_python
   virtualenv
   pip
+  python_checkup
   win_jupyter
   nbextensions
   setup/windows_settings
@@ -78,6 +81,7 @@ WINDOWS = %w[
   setup/slack_settings
   kata
   keep_current
+  python_checkup
 ].freeze
 
 LINUX = %w[
@@ -98,6 +102,7 @@ LINUX = %w[
   ubuntu_python
   virtualenv
   pip
+  python_checkup
   nbextensions
   ubuntu_docker
   gcp_setup
@@ -108,6 +113,7 @@ LINUX = %w[
   setup/slack_settings
   kata
   keep_current
+  python_checkup
 ]
 
 filenames = {

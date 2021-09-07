@@ -513,6 +513,7 @@ Install [TensorFlow](https://www.tensorflow.org/):
 pip install -U 'tensorflow<2.6'
 ```
 
+
 ### Python setup check up
 
 Check your Python version with the following commands:
@@ -1022,5 +1023,25 @@ Start Docker :
 ``` bash
 sudo service docker stop
 ```
+
+
+### Python setup check up
+
+Check your Python version with the following commands:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.9.6
+```
+
+Run the following command to check if you successfully installed the required packages:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
+```
+
+Now run the following command to check if you can load these packages:
+```bash
+python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+```
+
+That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
 
