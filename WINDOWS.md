@@ -980,6 +980,14 @@ Now run the following command to check if you can load these packages:
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
 
+Make sure you can run Jupyter:
+
+```bash
+jupyter notebook
+```
+
+And open a `Python 3` notebook.
+
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
 

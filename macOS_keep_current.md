@@ -96,7 +96,7 @@ Install the current python version :
 pyenv install 3.8.12
 ```
 
-👉 Make sure that the command completes correctly
+👉 Make sure that the command completes correctly and **restart your terminal**
 
 Let's remove the existing current virtual environment :
 
@@ -298,6 +298,14 @@ Now run the following command to check if you can load these packages:
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
+
+Make sure you can run Jupyter:
+
+```bash
+jupyter notebook
+```
+
+And open a `Python 3` notebook.
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
