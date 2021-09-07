@@ -68,7 +68,7 @@ cd $(pyenv root) && git pull
 Install the current python version :
 
 ```bash
-pyenv install 3.9.6
+pyenv install 3.8.12
 ```
 
 Let's make sure no virtual environment with the same name exists :
@@ -80,7 +80,7 @@ pyenv virtualenv-delete lewagon_current
 Create a new virtual environment :
 
 ```bash
-pyenv virtualenv 3.9.6 lewagon_current
+pyenv virtualenv 3.8.12 lewagon_current
 ```
 
 Set the new virtual environment as default :
@@ -156,7 +156,7 @@ sudo service docker stop
 
 Check your Python version with the following commands:
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.9.6
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
 ```
 
 Run the following command to check if you successfully installed the required packages:
