@@ -513,6 +513,7 @@ Install [TensorFlow](https://www.tensorflow.org/):
 pip install -U 'tensorflow<2.6'
 ```
 
+
 ### Python setup check up
 
 Check your Python version with the following commands:

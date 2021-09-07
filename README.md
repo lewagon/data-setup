@@ -21,3 +21,27 @@ Please choose your operating system (OS):
     </td>
   </tr>
 </table>
+
+# Keep your setup current after the bootcamp
+
+Please choose your operating system (OS):
+
+<table>
+  <tr>
+    <td>
+      <a href="macOS_keep_current.md">
+        <img src="images/apple.png" alt="macOS" />
+      </a>
+    </td>
+    <td>
+      <a href="WINDOWS_keep_current.md">
+        <img src="images/windows.png" alt="Windows">
+      </a>
+    </td>
+    <td>
+      <a href="LINUX_keep_current.md">
+        <img src="images/linux.png" alt="Linux">
+      </a>
+    </td>
+  </tr>
+</table>

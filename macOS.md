@@ -618,6 +618,7 @@ pip install -U tensorflow-macos tensorflow-metal
 
 </details>
 
+
 ### Python setup check up
 
 Check your Python version with the following commands:
