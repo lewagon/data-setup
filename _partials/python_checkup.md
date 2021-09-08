@@ -2,12 +2,12 @@
 
 Check your Python version with the following commands:
 ```bash
-sh -c "$(curl -fsSL <PYTHON_CHECKER_URL>)" <PYTHON_VERSION>
+zsh -c "$(curl -fsSL <PYTHON_CHECKER_URL>)" <PYTHON_VERSION>
 ```
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-sh -c "$(curl -fsSL <PIP_CHECKER_URL>)"
+zsh -c "$(curl -fsSL <PIP_CHECKER_URL>)"
 ```
 
 Now run the following command to check if you can load these packages:
