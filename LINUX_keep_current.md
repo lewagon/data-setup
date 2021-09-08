@@ -28,13 +28,13 @@ Verify that you have access to the Le Wagon public GitHub repositories
 
 ``` bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/
-git clone git@github.com:lewagon/data-certification-exam data-certification-exam-test-delete-me
+git clone git@github.com:lewagon/data-setup data-setup
 ```
 
 👉 The repo should clone correctly :
 
 ``` bash
-Cloning into 'data-certification-exam-test-delete-me'...
+Cloning into 'data-setup'...
 remote: Enumerating objects: 21, done.
 remote: Counting objects: 100% (21/21), done.
 remote: Compressing objects: 100% (14/14), done.
@@ -46,7 +46,7 @@ remote: Total 21 (delta 6), reused 16 (delta 1), pack-reused 0
 👉 You can delete the cloned repo
 
 ``` bash
-rm -Rf data-certification-exam-test-delete-me
+rm -Rf data-setup
 ```
 
 ## Verify your pyenv configuration
@@ -96,7 +96,7 @@ Install the current python version :
 pyenv install 3.8.12
 ```
 
-👉 Make sure that the command completes correctly
+👉 Make sure that the command completes correctly and **restart your terminal**
 
 Let's remove the existing current virtual environment :
 
@@ -132,6 +132,19 @@ pyenv versions
   3.7.6/envs/lewagon
 * lewagon_current
   lewagon
+```
+
+### Install the bootcamp packages
+
+```bash
+pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3/requirements.txt
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+```
+
+Install [TensorFlow](https://www.tensorflow.org/):
+
+```bash
+pip install -U 'tensorflow<2.6'
 ```
 
 ## GCP
@@ -278,6 +291,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/
 Now run the following command to check if you can load these packages:
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+```
+
+Make sure you can run Jupyter:
+
+```bash
+jupyter notebook
+```
+
+And open a `Python 3` notebook.
+
+Make sure that you are running the correct python version in the notebook. Open a cell and run :
+``` python
+import sys; sys.version
 ```
 
 That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.

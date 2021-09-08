@@ -28,13 +28,13 @@ Verify that you have access to the Le Wagon public GitHub repositories
 
 ``` bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/
-git clone git@github.com:lewagon/data-certification-exam data-certification-exam-test-delete-me
+git clone git@github.com:lewagon/data-setup data-setup
 ```
 
 👉 The repo should clone correctly :
 
 ``` bash
-Cloning into 'data-certification-exam-test-delete-me'...
+Cloning into 'data-setup'...
 remote: Enumerating objects: 21, done.
 remote: Counting objects: 100% (21/21), done.
 remote: Compressing objects: 100% (14/14), done.
@@ -46,7 +46,7 @@ remote: Total 21 (delta 6), reused 16 (delta 1), pack-reused 0
 👉 You can delete the cloned repo
 
 ``` bash
-rm -Rf data-certification-exam-test-delete-me
+rm -Rf data-setup
 ```
 
 ## Verify your pyenv configuration
@@ -108,7 +108,7 @@ Install the current python version :
 pyenv install <PYTHON_VERSION>
 ```
 
-👉 Make sure that the command completes correctly
+👉 Make sure that the command completes correctly and **restart your terminal**
 
 Let's remove the existing current virtual environment :
 
@@ -145,6 +145,37 @@ pyenv versions
 * lewagon_current
   lewagon
 ```
+
+### Install the bootcamp packages
+
+```bash
+pip install -Ur <REQUIREMENTS_URL>
+pip install -U <BOOTCAMP_COMPLETE_REQUIREMENTS>
+```
+
+Install [TensorFlow](https://www.tensorflow.org/):
+$MAC_START
+
+<details>
+    <summary>Setup for Intel chips (default)</summary>
+$MAC_END
+
+```bash
+pip install -U '<TENSORFLOW_TOP_VERSION>'
+```
+$MAC_START
+
+</details>
+
+<details>
+    <summary>Setup for Apple Silicon chips</summary>
+
+```bash
+pip install -U <APPLE_SILICON_TENSORFLOW_PACKAGES>
+```
+
+</details>
+$MAC_END
 
 ## GCP
 

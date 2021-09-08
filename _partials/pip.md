@@ -17,7 +17,7 @@ pip install -Ur <REQUIREMENTS_URL>
 Finally, more Data Science packages:
 
 ```bash
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U <BOOTCAMP_COMPLETE_REQUIREMENTS>
 ```
 
 ### TensorFlow
@@ -30,7 +30,7 @@ $MAC_START
 $MAC_END
 
 ```bash
-pip install -U 'tensorflow<2.6'
+pip install -U '<TENSORFLOW_TOP_VERSION>'
 ```
 $MAC_START
 
@@ -40,7 +40,7 @@ $MAC_START
     <summary>Setup for Apple Silicon chips</summary>
 
 ```bash
-pip install -U tensorflow-macos tensorflow-metal
+pip install -U <APPLE_SILICON_TENSORFLOW_PACKAGES>
 ```
 
 </details>
