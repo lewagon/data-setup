@@ -28,13 +28,13 @@ Verify that you have access to the Le Wagon public GitHub repositories
 
 ``` bash
 cd ~/code/<YOUR_GITHUB_NICKNAME>/
-git clone git@github.com:lewagon/data-certification-exam data-certification-exam-test-delete-me
+git clone git@github.com:lewagon/data-setup data-setup
 ```
 
 👉 The repo should clone correctly :
 
 ``` bash
-Cloning into 'data-certification-exam-test-delete-me'...
+Cloning into 'data-setup'...
 remote: Enumerating objects: 21, done.
 remote: Counting objects: 100% (21/21), done.
 remote: Compressing objects: 100% (14/14), done.
@@ -46,7 +46,7 @@ remote: Total 21 (delta 6), reused 16 (delta 1), pack-reused 0
 👉 You can delete the cloned repo
 
 ``` bash
-rm -Rf data-certification-exam-test-delete-me
+rm -Rf data-setup
 ```
 
 ## Verify your pyenv configuration
@@ -150,7 +150,7 @@ pyenv versions
 
 ```bash
 pip install -Ur <REQUIREMENTS_URL>
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U <BOOTCAMP_COMPLETE_REQUIREMENTS>
 ```
 
 Install [TensorFlow](https://www.tensorflow.org/):
@@ -161,7 +161,7 @@ $MAC_START
 $MAC_END
 
 ```bash
-pip install -U 'tensorflow<2.6'
+pip install -U '<TENSORFLOW_TOP_VERSION>'
 ```
 $MAC_START
 
@@ -171,7 +171,7 @@ $MAC_START
     <summary>Setup for Apple Silicon chips</summary>
 
 ```bash
-pip install -U tensorflow-macos tensorflow-metal
+pip install -U <APPLE_SILICON_TENSORFLOW_PACKAGES>
 ```
 
 </details>
