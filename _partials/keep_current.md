@@ -149,6 +149,7 @@ pyenv versions
 ### Install the bootcamp packages
 
 ```bash
+pip install -U pip
 pip install -Ur <REQUIREMENTS_URL>
 pip install -U <BOOTCAMP_COMPLETE_REQUIREMENTS>
 ```

@@ -137,6 +137,7 @@ pyenv versions
 ### Install the bootcamp packages
 
 ```bash
+pip install -U pip
 pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3/requirements.txt
 pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
 ```
