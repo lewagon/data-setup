@@ -587,7 +587,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ```bash
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.6-pandas-1.3/requirements.txt
+pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-pandas-1.3-async-v2/requirements.txt
 ```
 
 Finally, more Data Science packages:
