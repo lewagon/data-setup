@@ -77,7 +77,7 @@ WINDOWS = %w[
   nbextensions
   setup/windows_settings
   win_vs_redistributable
-  ubuntu_docker
+  win_docker
   gcp_setup
   gcp_setup_wsl
   gcp_setup_end
