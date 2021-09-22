@@ -1191,28 +1191,19 @@ _if you already have Docker installed on your machine please update with the lat
 
 Go to [Docker for WSL2](https://docs.docker.com/docker-for-windows/wsl/).
 
-Then follow the tutorial instructions to install Docker **using the repository**. There are 2 steps:
+Download and install the Docker Desktop WSL 2 backend.
 
-- SET UP THE REPOSITORY
-- INSTALL DOCKER ENGINE
+Once done, start Docker.
 
-Once done, you should be able to run:
-
-```bash
-sudo service docker start
-```
+You should be able to run in a Ubuntu terminal:
 
 ```bash
-sudo docker run hello-world
+docker run hello-world
 ```
 
 The following message should print:
 
 ![](images/docker_hello.png)
-
-```bash
-sudo service docker stop
-```
 
 
 ## Google Cloud Platform setup
