@@ -502,7 +502,7 @@ pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-
 Finally, more Data Science packages:
 
 ```bash
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage
+pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage jupyter_contrib_nbextensions
 ```
 
 ### TensorFlow
