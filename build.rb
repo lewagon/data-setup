@@ -2,7 +2,7 @@
 CONSTANTS = {
     'PYTHON_VERSION' => "3.8.12",
     'TENSORFLOW_TOP_VERSION' => "tensorflow<2.6",
-    'APPLE_SILICON_TENSORFLOW_PACKAGES' => "tensorflow-macos tensorflow-metal",
+    'APPLE_SILICON_TENSORFLOW_PACKAGES' => "tensorflow-macos",
     'BOOTCAMP_COMPLETE_REQUIREMENTS' => "yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage jupyter_contrib_nbextensions",
     'REQUIREMENTS_URL' => "https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-pandas-1.3-async-v2/requirements.txt",
     'PYTHON_CHECKER_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh",
