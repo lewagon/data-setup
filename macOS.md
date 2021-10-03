@@ -1030,6 +1030,8 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 
 [Download the Slack app](https://itunes.apple.com/fr/app/slack/id803453959?mt=12) and install it.
 
+:warning: If you are already using Slack in your browser, please download and install **the desktop app** which is fully featured.
+
 
 ### Settings
 

@@ -354,9 +354,25 @@ When the installation is finished, launch VS Code.
 
 ### Connecting VS Code to Ubuntu
 
-You should see a frame at the bottom-right corner of VS Code saying it detects WSL. Accept the installation of the WSL extension for VS Code.
+To make VS Code interact properly with Ubuntu, let's install the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) VS Code extension.
 
-:warning: This extension is mandatory for you to be able to work with VS Code!
+Copy-paste the following commands in your terminal:
+
+```bash
+code --install-extension ms-vscode-remote.remote-wsl
+```
+
+Then open VS Code from your terminal:
+
+```bash
+code .
+```
+
+:heavy_check_mark: If you see `WSL: Ubuntu` in a green box in the bottom left corner of the VS Code window, you're good to go :+1:
+
+![WSL Ubuntu Remote](https://github.com/lewagon/setup/blob/master/images/windows_remote_wsl.png)
+
+:x: Otherwise, please **contact a teacher**
 
 
 ## VS Code Extensions
@@ -480,7 +496,7 @@ You can save these changes by pressing `CTRL` + `S`
 
 :heavy_check_mark: Your **Windows Terminal** is now setup :+1:
 
-This terminal has tabs: you can choose to open a new terminal tab by clicking on t**+** next to the current one.
+This terminal has tabs: you can choose to open a new terminal tab by clicking on the **+** next to the current one.
 
 **From now on, every time we will refer to the terminal or the console it will be this one.** DO NOT use the Ubuntu app anymore.
 
@@ -1526,6 +1542,8 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 ### Installation
 
 [Download the Slack app](https://slack.com/downloads/windows) and install it.
+
+:warning: If you are already using Slack in your browser, please download and install **the desktop app** which is fully featured.
 
 
 ### Settings

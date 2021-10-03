@@ -422,6 +422,29 @@ don't do that, Kitt won't be able to track your progress.
 Please now **quit** all your opened terminal windows.
 
 
+## Disable SSH passphrase prompt
+
+You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
+
+First, open the `.zshrc` file:
+
+```bash
+code ~/.zshrc
+```
+
+Then:
+- Spot the line starting with `plugins=`
+- Add `ssh-agent` at the end of the plugins list
+
+The list should look like:
+
+```bash
+plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
+```
+
+:heavy_check_mark: Save the `.zshrc` file with `CTRL` + `S` and close your text editor.
+
+
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
 
 Ubuntu comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
@@ -912,9 +935,13 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 
 ## Slack
 
+[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
+
 ### Installation
 
 [Download the Slack app](https://get.slack.help/hc/en-us/articles/212924728-Slack-for-Linux-beta-) and install it.
+
+:warning: If you are already using Slack in your browser, please download and install **the desktop app** which is fully featured.
 
 
 ### Settings
