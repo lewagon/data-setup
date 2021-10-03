@@ -68,7 +68,7 @@ WINDOWS = %w[
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
-  setup/windows_ssh
+  setup/ssh_agent
   ubuntu_python
   virtualenv
   pip
@@ -107,6 +107,7 @@ LINUX = %w[
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
+  setup/ssh_agent
   ubuntu_python
   virtualenv
   pip
