@@ -223,9 +223,9 @@ Let's install some useful extensions to VS Code.
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 
-If you are on windows, install them manually one-by-one from within VS code (Ctrl-Shift-X)
+☝️ If you are on **Windows**, install them **manually** one-by-one from within VS code (Ctrl-Shift-X)
 
-If you are on Mac or Linux, you can install them as follows: 
+If you are on **Mac** or **Linux**, you can install them by running the following command from your terminal: 
 
 ```bash
 code --install-extension ms-vscode.sublime-keybindings
