@@ -23,8 +23,8 @@ MAC_OS = %w[
   vscode_extensions
   setup/vscode_liveshare
   setup/oh_my_zsh
-  github_rsa
   setup/gh_cli
+  github_rsa
   dotfiles
   osx_python
   virtualenv
@@ -63,9 +63,9 @@ WINDOWS = %w[
   setup/git
   setup/zsh
   setup/oh_my_zsh
-  github_rsa
   setup/windows_browser
   setup/gh_cli
+  github_rsa
   ubuntu_gcloud
   dotfiles
   setup/ssh_agent
@@ -103,8 +103,8 @@ LINUX = %w[
   chrome
   setup/zsh
   setup/oh_my_zsh
-  github_rsa
   setup/gh_cli
+  github_rsa
   ubuntu_gcloud
   dotfiles
   setup/ssh_agent

@@ -36,29 +36,25 @@ it's a password to protect your private key stored on your hard drive. You'll ty
 nothing will show up on the screen, **that's normal**. Just type the passphrase,
 and when you're done, press `Enter`.
 
-Then you need to give your **public** key to GitHub. Run:
+### Giving your public key to GitHub
+
+Now, you will give your **public** key to GitHub.
+
+In your terminal copy-paste the following command:
 
 ```bash
-cat ~/.ssh/id_ed25519.pub
+gh auth refresh -s write:public_key
 ```
 
-It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
-then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
-**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
-Finish by clicking on the **Add key** green button.
+It will prompt a one time code (####-####) on the screen. Copy it and press `ENTER`, then paste the code in your browser and follow the instructions to **Authorize GitHub**.
 
-To check that this step is completed, in the terminal run this. You will be
-prompted a warning, type `yes` then `Enter`.
+Back in the terminal, press `ENTER` and run this:
 
 ```bash
-ssh -T git@github.com
+gh ssh-key add ~/.ssh/id_ed25519.pub
 ```
 
-If you see something like this, you're done!
-
-```bash
-# Hi <your_github_nickname>! You've successfully authenticated, but GitHub does not provide shell access
-```
+This should return `✓ Public key added to your account`. If not, do not hesitate to **contact a teacher**.
 
 Don't be in a rush, take time to [read this StackOverflow Q&A](https://stackoverflow.com/questions/28479567/why-does-github-only-need-my-public-key-in-order-to-push) to get a better
 understanding of what those keys are used for.
