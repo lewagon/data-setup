@@ -348,7 +348,7 @@ understanding of what those keys are used for.
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
-In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the terminal.
+In this section, we will use [GitHub CLI](https://cli.github.com/) to perform interact with GitHub directly from the terminal.
 
 It should already be installed on your computer from the previous commands.
 
@@ -618,7 +618,7 @@ pip install -U 'tensorflow<2.6'
     <summary>Setup for Apple Silicon chips</summary>
 
 ```bash
-pip install -U tensorflow-macos
+pip install -U tensorflow-macos<2.6
 ```
 
 </details>
