@@ -165,3 +165,5 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
   - Set Role as `project > owner`
 - Download the `JSON` file
 - Give it a name **without** any spaces (something like `le-wagon-data-123456789abc.json`)
+
+![](images/gcp_create_key.png)
