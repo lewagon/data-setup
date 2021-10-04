@@ -137,7 +137,7 @@ These commands will ask for your password: type it in.
 
 :warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `ENTER`.
 
-### GitHub CLI
+### GitHub CLI installation
 
 Let's now install [GitHub official CLI](https://cli.github.com) (Command Line Interface). It's a software used to interact with your GitHub account via the command line.
 
@@ -213,7 +213,7 @@ At the end your terminal should look like this:
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
-In this section, we will install [GitHub CLI](https://cli.github.com/) to perform useful actions with GitHub data directly from the terminal.
+In this section, we will use [GitHub CLI](https://cli.github.com/) to perform interact with GitHub directly from the terminal.
 
 It should already be installed on your computer from the previous commands.
 
@@ -430,9 +430,9 @@ Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one. Ig
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
 ```bash
-sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-  libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
-  xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
