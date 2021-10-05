@@ -167,11 +167,21 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
 
 Since the [service account](https://cloud.google.com/iam/docs/service-accounts) is what identifies your application (and therefore your GCP billing account and ultimately your credit card), you are going to want to be cautious with the next steps.
 
-⚠️ **Do not share you service account json file** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
+⚠️ **Do not share you service account json file 🔑** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
 
 - Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
-- Create a new Service Account key :
-  - Give a name to that account
-  - Set Role as `project > owner`
-- Download the `JSON` file
-- Give it a name **without** any spaces (something like `le-wagon-data-123456789abc.json`)
+- Select your project in the list of recent projects if asked to
+- Create a service account:
+  - Click on **CREATE SERVICE ACCOUNT**:
+  - Give a `Service account name` to that account
+  - Click on **CREATE AND CONTINUE**
+  - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all ressources
+  - Click on **CONTINUE**
+  - Click on **DONE*
+- Download the service account json file:
+  - Click on the newly created service account
+  - Click on **KEYS**
+  - Click on **ADD KEY** then **Create new key**
+  - Select **JSON** and click on **CREATE**
+
+The browser has now saved the service account json file 🔑 in your downloads directory (it is named something like `le-wagon-data-123456789abc.json`)
