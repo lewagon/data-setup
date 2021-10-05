@@ -151,14 +151,39 @@ Then install some useful software:
 brew update
 ```
 
-If you get a `/usr/local must be writable` error, just run this:
+<details>
+  <summary>👉 If you get a `/usr/local must be writable` error 👈</summary>
 
-```bash
+Just run this:
+
+``` bash
 sudo chown -R $USER:admin /usr/local
 brew update
 ```
 
-Error message or not, proceed running the following in the terminal (you can copy / paste all the lines at once).
+</details>
+
+<details>
+  <summary>👉 If you get a `Error: Not a valid ref: refs/remotes/origin/master` error 👈</summary>
+
+
+The full error would be:
+
+``` bash
+Error: Not a valid ref: refs/remotes/origin/master :
+fatal: ambiguous argument 'refs/remotes/origin/master': unknown revision or path not in the working tree.
+```
+
+Run the following commands to solve it:
+
+``` bash
+rm -fr $(brew --repo homebrew/core)  # because you can't `brew untap homebrew/core`
+brew tap homebrew/core
+```
+
+</details>
+
+Proceed running the following in the terminal (you can copy / paste all the lines at once).
 
 ```bash
 brew upgrade git         || brew install git
@@ -618,7 +643,7 @@ pip install -U 'tensorflow<2.6'
     <summary>Setup for Apple Silicon chips</summary>
 
 ```bash
-pip install -U tensorflow-macos
+pip install -U tensorflow-macos<2.6
 ```
 
 </details>
