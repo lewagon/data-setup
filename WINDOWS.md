@@ -1413,9 +1413,9 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
   - Click on **ADD KEY** then **Create new key**
   - Select **JSON** and click on **CREATE**
 
-The browser has now saved the service account json file 🔑 in your downloads directory (it is named something like `le-wagon-data-123456789abc.json`)
-
 ![](images/gcp_create_key.png)
+
+The browser has now saved the service account json file 🔑 in your downloads directory (it is named something like `le-wagon-data-123456789abc.json`)
 
 
 We will now move the service account json file from your Windows disk to the Ubuntu disk. This will allow the development tools in Ubuntu to access to the ressources of your GCP account.
