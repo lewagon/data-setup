@@ -754,6 +754,12 @@ Untick _"disable configuration for nbextensions without explicit compatibility"_
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 
+
+## DBeaver
+
+Download and install [DBeaver](https://dbeaver.io/), a free and open source powerful tool to connect to any database, explore the schema and even **run SQL queries**.
+
+
 ## Docker 🐋
 
 Docker is an open platform for developing, shipping, and running applications.
