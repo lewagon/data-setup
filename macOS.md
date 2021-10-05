@@ -144,7 +144,7 @@ This will ask for your confirmation (hit `Enter`) and your **macOS user account 
 :warning: When typing a password in the Terminal, you will **not** get a visual feedback (something like `*****`), this is **normal**!! Type the password and confirm by typing `Enter`.
 
 <details>
-  <summary>🛠 If you get a <code>Error: Not a valid ref: refs/remotes/origin/master</code> error 👈</summary>
+  <summary>🛠 If you get a <code>Error: Not a valid ref: refs/remotes/origin/master</code> error</summary>
 
 
 The full error would be:
@@ -172,7 +172,7 @@ brew update
 ```
 
 <details>
-  <summary>🛠 If you get a <code>/usr/local must be writable</code> error 👈</summary>
+  <summary>🛠 If you get a <code>/usr/local must be writable</code> error</summary>
 
 Just run this:
 
