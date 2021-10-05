@@ -852,7 +852,7 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
 
 ⚠️ **Do not share you service account json file 🔑** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
 
-- Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
+- Go to the [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
 - Select your project in the list of recent projects if asked to
 - Create a service account:
   - Click on **CREATE SERVICE ACCOUNT**:
