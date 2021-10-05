@@ -185,3 +185,5 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
   - Select **JSON** and click on **CREATE**
 
 The browser has now saved the service account json file 🔑 in your downloads directory (it is named something like `le-wagon-data-123456789abc.json`)
+
+![](images/gcp_create_key.png)
