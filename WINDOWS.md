@@ -1406,7 +1406,7 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
   - Click on **CREATE AND CONTINUE**
   - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all ressources
   - Click on **CONTINUE**
-  - Click on **DONE*
+  - Click on **DONE**
 - Download the service account json file:
   - Click on the newly created service account
   - Click on **KEYS**
