@@ -1385,11 +1385,11 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
 
   Now, we need a way to tell which ressources within a `GCP project` our code will be allowed to consume. Our code consumes GCP ressources through API calls.
 
-  Since API calls are not free, it is important to define with caution how our code will be allowed to use them. During the bootcamp this will not be an issue and we are going to allow our code to use all the API of `GCP` without any restrictions.
+  Since API calls are not free, it is important to define with caution how our code will be allowed to use them. During the bootcamp this will not be an issue and we are going to allow our code to use all the API of **GCP** without any restrictions.
 
   In the same way that there may be several projects associated with a GCP account, a project may be composed of several services (any bundle of code, whatever its form factor, that requires the usage of GCP API calls in order to fulfill its purpose).
 
-  GCP requires that the services of the projects using API calls are registered on the platform and their credentials configured.
+  GCP requires that the services of the projects using API calls are registered on the platform and their credentials configured through the access granted to a `service account`.
 
   For the moment we will only need to use a single service and will create the corresponding `service account`.
 </details>
