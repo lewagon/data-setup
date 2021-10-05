@@ -830,7 +830,7 @@ gcloud config list
 Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
 
 <details>
-  <summary>🤔 why do we need a service account key ?</summary>
+  <summary>🤔 Why do we need a service account key ?</summary>
 
 
   You have created a `GCP account` linked to your credit card. Your account will be billed according to your usage of the ressources of the **Google Cloud Platform**. The billing will occur if you consume anything once the free trial is over, or if you exceed the amount of spending allowed during the free trial.
