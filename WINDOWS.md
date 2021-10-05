@@ -1126,7 +1126,7 @@ Perform a sanity check for `jupyter notebooks nbextensions`. Click on `Nbextensi
 
 ![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
 
-Untick _"disable configuration for nbextensions without explicit compatibility"_ then check that the `nbextensions` are enabled:
+Untick _"disable configuration for nbextensions without explicit compatibility"_ then check that _at least_ all `nbextensions` circled in red are enabled:
 
 ![nbextensions.png](images/nbextensions.png)
 
