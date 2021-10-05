@@ -186,4 +186,4 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
 
 ![](images/gcp_create_key.png)
 
-The browser has now saved the service account json file 🔑 in your downloads directory (it is named something like `le-wagon-data-123456789abc.json`)
+The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`)
