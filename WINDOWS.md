@@ -1376,24 +1376,46 @@ gcloud config list
 Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
 
 <details>
-  <summary>TL;DR</summary>
-  Since API calls are not free, it may be important to define these with caution, but for the purpose of the bootcamp this will not be an issue and we are going to allow our code to use all API without any restrictions (see the project owner part later).
+  <summary>🤔 Why do we need a service account key ?</summary>
 
-  As there may be several projects associated with a GCP account, a project may be composed of several services (any bundle of code, whatever its form factor, that requires the usage of GCP API calls in order to fulfill its purpose).
 
-  GCP requires that the services of the project using API calls are registered on the platform and their credentials configured.
+  You have created a `GCP account` linked to your credit card. Your account will be billed according to your usage of the ressources of the **Google Cloud Platform**. The billing will occur if you consume anything once the free trial is over, or if you exceed the amount of spending allowed during the free trial.
 
-  Here we will only need to use a single service and will create the corresponding `service account`.
+  In your `GCP account`, you have created a single `GCP project`, identified by its `PROJECT_ID`. The `GCP projects` allow you to organize and monitor more precisely how you consume the **GCP** ressources. For the purpose of the bootcamp, we are only going to create a single project.
 
-  Since the [service account](https://cloud.google.com/iam/docs/service-accounts) is what identifies your application (and therefore your GCP billing account and ultimately your credit card) when it comes to bill the performed API calls, you are going to want to be cautious with the next steps. Basically, do not let your service account json file by the coffee machine, do not send it as a tweet, do not store it in your git codebase (even if your git repository is private).
+  Now, we need a way to tell which ressources within a `GCP project` our code will be allowed to consume. Our code consumes GCP ressources through API calls.
+
+  Since API calls are not free, it is important to define with caution how our code will be allowed to use them. During the bootcamp this will not be an issue and we are going to allow our code to use all the API of **GCP** without any restrictions.
+
+  In the same way that there may be several projects associated with a GCP account, a project may be composed of several services (any bundle of code, whatever its form factor, that requires the usage of GCP API calls in order to fulfill its purpose).
+
+  GCP requires that the services of the projects using API calls are registered on the platform and their credentials configured through the access granted to a `service account`.
+
+  For the moment we will only need to use a single service and will create the corresponding `service account`.
 </details>
 
-- Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
-- Create a new Service Account key :
-  - Give a name to that account
-  - Set Role as `project > owner`
-- Download the `JSON` file
-- Give it a name **without** any spaces (something like `le-wagon-data-123456789abc.json`)
+Since the [service account](https://cloud.google.com/iam/docs/service-accounts) is what identifies your application (and therefore your GCP billing account and ultimately your credit card), you are going to want to be cautious with the next steps.
+
+⚠️ **Do not share you service account json file 🔑** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
+
+- Go to the [service accounts page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
+- Select your project in the list of recent projects if asked to
+- Create a service account:
+  - Click on **CREATE SERVICE ACCOUNT**:
+  - Give a `Service account name` to that account
+  - Click on **CREATE AND CONTINUE**
+  - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all ressources
+  - Click on **CONTINUE**
+  - Click on **DONE**
+- Download the service account json file 🔑:
+  - Click on the newly created service account
+  - Click on **KEYS**
+  - Click on **ADD KEY** then **Create new key**
+  - Select **JSON** and click on **CREATE**
+
+![](images/gcp_create_key.png)
+
+The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`)
 
 
 We will now move the service account json file from your Windows disk to the Ubuntu disk. This will allow the development tools in Ubuntu to access to the ressources of your GCP account.
