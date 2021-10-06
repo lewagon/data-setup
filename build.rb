@@ -31,6 +31,7 @@ MAC_OS = %w[
   pip
   python_checkup
   nbextensions
+  dbeaver
   docker
   gcp_cli_setup
   gcp_setup
@@ -75,6 +76,7 @@ WINDOWS = %w[
   python_checkup
   win_jupyter
   nbextensions
+  dbeaver
   setup/windows_settings
   win_vs_redistributable
   win_docker
@@ -113,6 +115,7 @@ LINUX = %w[
   pip
   python_checkup
   nbextensions
+  dbeaver
   ubuntu_docker
   gcp_setup
   gcp_setup_linux
