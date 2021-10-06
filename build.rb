@@ -26,6 +26,10 @@ MAC_OS = %w[
   setup/gh_cli
   setup/ssh_key
   dotfiles
+  dotfiles_new_student
+  dotfiles_new_laptop
+  dotfiles_new_laptop_heading
+  dotfiles_new_laptop
   osx_python
   virtualenv
   pip
@@ -69,6 +73,10 @@ WINDOWS = %w[
   setup/ssh_key
   ubuntu_gcloud
   dotfiles
+  dotfiles_new_student
+  dotfiles_new_laptop
+  dotfiles_new_laptop_heading
+  dotfiles_new_laptop
   setup/ssh_agent
   ubuntu_python
   virtualenv
@@ -109,6 +117,10 @@ LINUX = %w[
   setup/ssh_key
   ubuntu_gcloud
   dotfiles
+  dotfiles_new_student
+  dotfiles_new_laptop
+  dotfiles_new_laptop_heading
+  dotfiles_new_laptop
   setup/ssh_agent
   ubuntu_python
   virtualenv

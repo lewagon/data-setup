@@ -387,9 +387,12 @@ This should return `✓ Public key added to your account`. If not, do not hesita
 
 ## Dotfiles
 
-There are three options, choose _one_:
+There are three options, choose **one**:
 
-### 1. I already attended Web Development (FullStack) bootcamp at Le Wagon _on the same laptop_
+<details>
+    <summary>
+        <strong>I already attended Web Development (FullStack) bootcamp at Le Wagon <em>on the same laptop</em></strong>
+    </summary>
 
 This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the new Data Science bootcamp.
 
@@ -412,7 +415,15 @@ git commit -m "Update zshrc for Data Science bootcamp"
 git push origin master
 ```
 
-### 2. I did not attend the Web Dev bootcamp at Le Wagon
+</details>
+
+OR
+
+
+<details>
+    <summary>
+        <strong>I did not attend the Web Dev bootcamp at Le Wagon</strong>
+    </summary>
 
 Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
 
@@ -421,9 +432,6 @@ Hackers love to refine and polish their shell and tools. We'll start with a grea
 Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
 files.
 
-Now this is done, go on with the following instructions under in the `3. ` section right below. :warning: DO NOT SKIP IT!
-
-### 3. I already attended Web Development (FullStack) bootcamp at Le Wagon _but I have a new laptop_
 
 Open your terminal and run the following command:
 
@@ -466,6 +474,59 @@ you **need** to put one of the email listed above thanks to the previous `gh api
 don't do that, Kitt won't be able to track your progress.
 
 Please now **quit** all your opened terminal windows.
+</details>
+
+
+OR
+
+<details>
+    <summary>
+        <strong>I already attended Web Development (FullStack) bootcamp at Le Wagon <em>but I have a new laptop</em></strong>
+    </summary>
+
+
+Open your terminal and run the following command:
+
+```bash
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
+```
+
+You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
+There seems to be a problem with the previous step (`gh auth`).
+
+Time to fork the repo and clone it on your laptop:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
+```
+
+Run the `dotfiles` installer.
+
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
+```
+
+Check the emails registered with your GitHub Account. You'll need to pick one
+at the next step:
+
+```bash
+gh api user/emails | jq -r '.[].email'
+```
+
+Run the git installer:
+
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
+```
+
+:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email. Be careful
+you **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you
+don't do that, Kitt won't be able to track your progress.
+
+Please now **quit** all your opened terminal windows.
+</details>
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
