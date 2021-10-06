@@ -375,55 +375,6 @@ code .
 :x: Otherwise, please **contact a teacher**
 
 
-## VS Code Extensions
-
-### Installation
-
-Let's install some useful extensions to VS Code. 
-
-- [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
-- [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
-- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
-- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-
-
-☝️ If you are on **Windows**, install them **manually** one-by-one from within VS code (Ctrl-Shift-X)
-
-If you are on **Mac** or **Linux**, you can install them by running the following command from your terminal: 
-
-```bash
-code --install-extension ms-vscode.sublime-keybindings
-code --install-extension emmanuelbeziat.vscode-great-icons
-code --install-extension MS-vsliveshare.vsliveshare
-code --install-extension ms-python.python
-code --install-extension KevinRose.vsc-python-indent
-code --install-extension ms-python.vscode-pylance
-code --install-extension ms-toolsai.jupyter
-```
-
-
-
-### Live Share configuration
-
-[Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
-
-Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
-
-Click on the little arrow at the bottom of the left bar :point_down:
-
-![VS Code Live Share](https://github.com/lewagon/setup/blob/master/images/vscode_live_share.png)
-
-- Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
-- A popup appears asking you to sign in with GitHub: click on "Allow".
-- You are redirected to a GitHub page in you browser asking you to authorize Visual Studio Code: click on "Continue" then "Authorize github".
-- VS Code may display additional pop-ups: close them by clicking "OK".
-
-That's it, you're good to go!
-
-
 ## Windows Terminal
 
 The standard terminal installed by Ubuntu is a very crude: let's install **Windows Terminal**, a real modern terminal.
@@ -499,6 +450,50 @@ You can save these changes by pressing `CTRL` + `S`
 This terminal has tabs: you can choose to open a new terminal tab by clicking on the **+** next to the current one.
 
 **From now on, every time we will refer to the terminal or the console it will be this one.** DO NOT use the Ubuntu app anymore.
+
+
+## VS Code Extensions
+
+### Installation
+
+Let's install some useful extensions to VS Code.
+
+```bash
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension emmanuelbeziat.vscode-great-icons
+code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension ms-python.python
+code --install-extension KevinRose.vsc-python-indent
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+```
+
+Here is a list of the extensions you are installing:
+- [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+- [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+
+
+### Live Share configuration
+
+[Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
+
+Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
+
+Click on the little arrow at the bottom of the left bar :point_down:
+
+![VS Code Live Share](https://github.com/lewagon/setup/blob/master/images/vscode_live_share.png)
+
+- Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
+- A popup appears asking you to sign in with GitHub: click on "Allow".
+- You are redirected to a GitHub page in you browser asking you to authorize Visual Studio Code: click on "Continue" then "Authorize github".
+- VS Code may display additional pop-ups: close them by clicking "OK".
+
+That's it, you're good to go!
 
 
 ## Git
@@ -579,72 +574,6 @@ At the end your terminal should look like this:
 :heavy_check_mark: If it does, you can continue :+1:
 
 :x: Otherwise, please **ask for a teacher**
-
-
-## GitHub
-
-### Already configured?
-
-Then try this command:
-
-```bash
-ssh -T git@github.com
-```
-
-If it returns the following:
-
-```bash
-# Hi <your_github_nickname>! You've successfully authenticated, but GitHub does not provide shell access
-```
-
-It means `git` is **already** configured on your laptop, you can skip the section below!
-
-### Configuring your first SSH key
-
-We need to generate SSH keys which are going to be used by GitHub and Heroku
-to authenticate you. Think of it as a way to log in, but different from the
-well known username/password couple. If you already generated keys
-that you already use with other services, you can skip this step.
-
-Open a terminal and type this, replacing the email with **yours** (the
-same one you used to create your GitHub account). It will prompt
-for information. Just press enter until it asks for a **passphrase**.
-
-```bash
-mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
-```
-
-**NB:** when asked for a passphrase, put something you want (and that you'll remember),
-it's a password to protect your private key stored on your hard drive. You'll type,
-nothing will show up on the screen, **that's normal**. Just type the passphrase,
-and when you're done, press `Enter`.
-
-Then you need to give your **public** key to GitHub. Run:
-
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-It will prompt on the screen the content of the `id_ed25519.pub` file. Copy that text,
-then go to [github.com/settings/ssh](https://github.com/settings/ssh). Click on
-**Add SSH key**, fill in the Title with your computer name, and paste the **Key**.
-Finish by clicking on the **Add key** green button.
-
-To check that this step is completed, in the terminal run this. You will be
-prompted a warning, type `yes` then `Enter`.
-
-```bash
-ssh -T git@github.com
-```
-
-If you see something like this, you're done!
-
-```bash
-# Hi <your_github_nickname>! You've successfully authenticated, but GitHub does not provide shell access
-```
-
-Don't be in a rush, take time to [read this StackOverflow Q&A](https://stackoverflow.com/questions/28479567/why-does-github-only-need-my-public-key-in-order-to-push) to get a better
-understanding of what those keys are used for.
 
 
 ## Linking your default browser to Ubuntu
@@ -766,6 +695,47 @@ Then run the following configuration line:
 ```bash
 gh config set git_protocol ssh
 ```
+
+
+## SSH Key
+
+### Generation
+
+We need to generate SSH keys which are going to be used by GitHub to authenticate you. You can think of it as a way to log in, but different from the well known username/password pair.
+
+:warning: If you already generated keys that you already use with other services, you can skip this step.
+
+Open a terminal and copy-paste this command, replacing the email with **yours** (the same one you used to create your GitHub account).
+
+```bash
+mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
+```
+
+It will prompt for information. Just press enter until it asks for a **passphrase**.
+
+:warning: When asked for a passphrase, put something you want and that you'll remember. It's a password to protect your private key stored on your hard drive.
+
+:warning: When you type your passphrase, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your passphrase as a whole but also its length. Just type your passphrase and when you're done, press `ENTER`.
+
+### Giving your public key to GitHub
+
+Now, you will give your **public** key to GitHub.
+
+In your terminal copy-paste the following command:
+
+```bash
+gh auth refresh -s write:public_key
+```
+
+It will prompt a one time code (####-####) on the screen. Copy it and press `ENTER`, then paste the code in your browser and follow the instructions to **Authorize GitHub**.
+
+Back in the terminal, press `ENTER` and run this:
+
+```bash
+gh ssh-key add ~/.ssh/id_ed25519.pub
+```
+
+This should return `✓ Public key added to your account`. If not, do not hesitate to **contact a teacher**.
 
 
 ## Google Cloud CLI
@@ -902,9 +872,9 @@ Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one. Ig
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
 ```bash
-sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-  libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
-  xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
