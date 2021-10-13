@@ -828,7 +828,7 @@ brew install --cask google-cloud-sdk
 Then you can:
 
 ```bash
-/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
+$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
 ```
 
 
