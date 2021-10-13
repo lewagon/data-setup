@@ -674,7 +674,7 @@ pip install -U 'tensorflow<2.6'
     <summary>Setup for Apple Silicon chips</summary>
 
 ```bash
-pip install -U tensorflow-macos<2.6
+pip install -U 'tensorflow-macos<2.6'
 ```
 
 </details>
