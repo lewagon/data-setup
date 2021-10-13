@@ -40,7 +40,7 @@ $MAC_START
     <summary>Setup for Apple Silicon chips</summary>
 
 ```bash
-pip install -U <APPLE_SILICON_TENSORFLOW_PACKAGES>
+pip install -U '<APPLE_SILICON_TENSORFLOW_PACKAGES>'
 ```
 
 </details>
