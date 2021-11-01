@@ -13,7 +13,7 @@ To be able to interact when we are not in the same physical room, we will be usi
 
 :warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
 
-- Go to [https://zoom.us/download](https://zoom.us/download)
+- Go to [zoom.us/download](https://zoom.us/download)
 - Under **Zoom Client** click the **Download** button
 - Open the file you have just downloaded to install the app
 - Open the Zoom app
@@ -37,7 +37,7 @@ You can now close the Zoom app.
 
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
 
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
 ![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
@@ -81,9 +81,9 @@ Open the Finder app (or search for it with [Spotlight](https://support.apple.com
 
 Go to Applications > Utilities.
 
-Duplicate the terminal app (select it, then `CMD` + `C`, `CMD` + `V`), and rename a copy as Terminal Rosetta.
+Duplicate the terminal app (select it, then `Cmd` + `C`, `Cmd` + `V`), and rename a copy as Terminal Rosetta.
 
-Press `CMD` + `I` on the Terminal Rosetta app, then check the box "Open using Rosetta".
+Press `Cmd` + `I` on the Terminal Rosetta app, then check the box "Open using Rosetta".
 
 ⚠️ From now on during the bootcamp, whenever you are asked to open a Terminal, you will use the **Terminal Rosetta** app.
 
@@ -92,7 +92,7 @@ Press `CMD` + `I` on the Terminal Rosetta app, then check the box "Open using Ro
 
 ## A note about quitting apps on a Mac
 
-Clicking the little red cross in the top left corner of the application window on a Mac **does not really quit it**, it just closes an active window. To quit the application _for real_ either press `CMD + Q` when the application is active, or navigate to `APP_NAME` -> `Quit` in the menu bar.
+Clicking the little red cross in the top left corner of the application window on a Mac **does not really quit it**, it just closes an active window. To quit the application _for real_ either press `Cmd + Q` when the application is active, or navigate to `APP_NAME` -> `Quit` in the menu bar.
 
 ![Quit Terminal on macOS](https://github.com/lewagon/setup/blob/master/images/macos_quit.png)
 
@@ -131,7 +131,7 @@ Once this is done, you can try to install again.
 
 
 ## Homebrew
-
+### 1. Install:
 On Mac, you need to install [Homebrew](http://brew.sh/) which is a Package Manager.
 It will be used as soon as we need to install some software.
 To do so, open your Terminal and run:
@@ -165,7 +165,7 @@ brew tap homebrew/core
 
 If you already have Homebrew, it will tell you so, that's fine, go on.
 
-Then install some useful software:
+### 2. Make sure you are on the latest version:
 
 ```bash
 brew update
@@ -182,6 +182,8 @@ brew update
 ```
 
 </details>
+
+### 3. Then install some useful software:
 
 Proceed running the following in the terminal (you can copy / paste all the lines at once).
 
@@ -216,7 +218,7 @@ We recommend to use it as your default browser as it's most compatible with test
 
 Let's install [Visual Studio Code](https://code.visualstudio.com) text editor.
 
-Copy (`CMD` + `C`) the command below then paste it in your terminal (`CMD` + `V`):
+Copy (`Cmd` + `C`) the command below then paste it in your terminal (`Cmd` + `V`):
 
 ```bash
 brew install --cask visual-studio-code
