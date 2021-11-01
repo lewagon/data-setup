@@ -1,5 +1,5 @@
 ## Homebrew
-
+### 1. Install:
 On Mac, you need to install [Homebrew](http://brew.sh/) which is a Package Manager.
 It will be used as soon as we need to install some software.
 To do so, open your Terminal and run:
@@ -33,7 +33,7 @@ brew tap homebrew/core
 
 If you already have Homebrew, it will tell you so, that's fine, go on.
 
-Then install some useful software:
+### 2. Make sure you are on the latest version:
 
 ```bash
 brew update
@@ -50,6 +50,8 @@ brew update
 ```
 
 </details>
+
+### 3. Then install some useful software:
 
 Proceed running the following in the terminal (you can copy / paste all the lines at once).
 
