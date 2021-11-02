@@ -13,7 +13,7 @@ To be able to interact when we are not in the same physical room, we will be usi
 
 :warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
 
-- Go to [https://zoom.us/download](https://zoom.us/download)
+- Go to [zoom.us/download](https://zoom.us/download)
 - Under **Zoom Client** click the **Download** button
 - Open the file you have just downloaded to install the app
 - Open the Zoom app
@@ -37,7 +37,7 @@ You can now close the Zoom app.
 
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
 
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
 ![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
@@ -76,7 +76,6 @@ Open Windows Update:
 - Type  `ms-settings:windowsupdate`
 - Press `Enter`
 - Click on `Check updates`
-
 
 :heavy_check_mark: If you a green check mark and the message "You're up to date", you're good to go :+1:
 
@@ -152,7 +151,7 @@ For many computers, this is already the case. Let's check:
 </details>
 
 
-## Windows Subsystem for Linux
+## Windows Subsystem for Linux (WSL)
 
 ### Install WSL 1
 
@@ -169,9 +168,8 @@ We will install WSL through the PowerShell Terminal:
 :warning: You may have to accept the UAC confirmation about the privilege elevation.
 
 A blue terminal window will appear:
-
-- Copy the following commands one by one (`CTRL` + `C`)
-- Paste them into the PowerShell window (`CTRL` + `V` or by right-clicking in the window)
+- Copy the following commands one by one (`Ctrl` + `C`)
+- Paste them into the PowerShell window (`Ctrl` + `V` or by right-clicking in the window)
 - Run them by pressing `Enter`
 
 ```powershell
@@ -219,7 +217,7 @@ In the window which appears, type:
 wsl --set-default-version 2
 ```
 
-:heavy_check_mark: If you see "The operation completed successfully, you can close this terminal and continue below :+1:
+:heavy_check_mark: If you see "The operation completed successfully", you can close this terminal and continue below :+1:
 
 :x: If the message you get is about Virtualization, please **contact a teacher**
 
@@ -242,7 +240,7 @@ wsl --set-default-version 2
 
 - Click on `Start`
 - Type  `Microsoft Store`
-- Click on the Microsoft Windows Store in the list
+- Click on `Microsoft Store` in the list
 - Search for `Ubuntu` in the search bar
 - **Select version without any number, just plain "Ubuntu"**
 - Click on `Install`
@@ -253,7 +251,6 @@ wsl --set-default-version 2
   <summary>Uninstall wrong versions of Ubuntu</summary>
 
   To uninstall a wrong version of Ubuntu, you just have to go to the Installed Program List of Windows 10:
-
   - Press `Windows` + `R`
   - Type  `ms-settings:appsfeatures`
   - Press `Enter`
@@ -383,7 +380,7 @@ The standard terminal installed by Ubuntu is a very crude: let's install **Windo
 
 - Click on `Start`
 - Type  `Microsoft Store`
-- Click on the Microsoft Windows Store in the list
+- Click on `Microsoft Store` in the list
 - Search for `Windows Terminal` in the search bar
 - **Select Windows Terminal"**
 - Click on `Install`
@@ -443,7 +440,7 @@ Then, let's disable warning for copy-pasting commands between Windows and Ubuntu
 
 :warning: Do not forget the comma at the end of the line!
 
-You can save these changes by pressing `CTRL` + `S`
+You can save these changes by pressing `Ctrl` + `S`
 
 :heavy_check_mark: Your **Windows Terminal** is now setup :+1:
 
@@ -915,7 +912,7 @@ The list should look like:
 plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 ```
 
-:heavy_check_mark: Save the `.zshrc` file with `CTRL` + `S` and close your text editor.
+:heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
@@ -1177,7 +1174,6 @@ Download and install [DBeaver](https://dbeaver.io/), a free and open source powe
 We need an easy way to transfer files from Windows to Ubuntu and vice versa.
 
 In order to do that, let's create shortcuts to Ubuntu directories in the Windows **File Explorer**:
-
 - Open the Windows File Explorer (or use the shortcut `WIN` + `E`)
 - In the Address Bar, enter `\\wsl$\` (or `\\wsl$\Ubuntu` if it does not work)
 - You now have acces to the Ubuntu file system
@@ -1189,7 +1185,6 @@ In order to do that, let's create shortcuts to Ubuntu directories in the Windows
 ### Open the Windows File Explorer from the Ubuntu terminal
 
 Another option to move files around is to open the Windows **File Explorer** from the Ubuntu terminal:
-
 - Open an Ubuntu terminal
 - Go to the directory you wish to explore
 - Run the `explorer.exe .` command (alternatively, use `wslview .`)
@@ -1202,7 +1197,6 @@ Another option to move files around is to open the Windows **File Explorer** fro
 You might want to figure out the exact location of a Windows directory in the Ubuntu file system, or the other way around.
 
 In order to convert a Windows path to and from an Ubuntu path:
-
 - Open an Ubuntu terminal
 - Use the `wslpath "C:\Program Files"` command in order to translate a Windows path into an Ubuntu path
 - Use the `wslpath -w "/home"` command in order to translate an Ubuntu path into a Windows path

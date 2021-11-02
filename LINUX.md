@@ -13,7 +13,7 @@ To be able to interact when we are not in the same physical room, we will be usi
 
 :warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
 
-- Go to [https://zoom.us/download](https://zoom.us/download)
+- Go to [zoom.us/download](https://zoom.us/download)
 - Under **Zoom Client** click the **Download** button
 - Open the file you have just downloaded to install the app
 - Open the Zoom app
@@ -37,7 +37,7 @@ You can now close the Zoom app.
 
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
 
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatars. Please do this **now**, before you continue with this guide.
+:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
 ![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
@@ -48,7 +48,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 Let's install [Visual Studio Code](https://code.visualstudio.com) text editor.
 
-Copy (`CTRL` + `C`) the commands below then paste them in your terminal (`CTRL` + `SHIFT` + `v`):
+Copy (`Ctrl` + `C`) the commands below then paste them in your terminal (`Ctrl` + `Shift` + `v`):
 
 ```bash
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
@@ -473,7 +473,7 @@ The list should look like:
 plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
 ```
 
-:heavy_check_mark: Save the `.zshrc` file with `CTRL` + `S` and close your text editor.
+:heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
