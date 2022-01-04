@@ -10,13 +10,20 @@ python_version  = package_confs["python"]
 glovebox        = package_confs["glovebox"]
 setup           = package_confs["setup"]
 platform        = package_confs["platform"]
+modules         = package_confs["modules"]
+
+full_mods = modules.values.flatten
 
 confs = {
-    glovebox:      glovebox,
-    apple_intel:   glovebox + setup + platform["apple_intel"],
-    apple_silicon: glovebox + setup + platform["apple_silicon"],
-    windows:       glovebox + setup + platform["windows"],
-    linux:         glovebox + setup + platform["linux"],
+    glovebox:           glovebox,
+    apple_intel:        glovebox + setup + platform["apple_intel"],
+    apple_silicon:      glovebox + setup + platform["apple_silicon"],
+    windows:            glovebox + setup + platform["windows"],
+    linux:              glovebox + setup + platform["linux"],
+    apple_intel_full:   glovebox + setup + full_mods + platform["apple_intel"],
+    apple_silicon_full: glovebox + setup + full_mods + platform["apple_silicon"],
+    windows_full:       glovebox + setup + full_mods + platform["windows"],
+    linux_full:         glovebox + setup + full_mods + platform["linux"],
 }
 
 # write python version
