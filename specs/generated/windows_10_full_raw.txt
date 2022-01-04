@@ -44,7 +44,6 @@ update-checker
 stopit
 joblib
 torch
-fbprophet
 dask
 imblearn
 tensorflow-datasets
@@ -70,3 +69,4 @@ black
 pydantic
 nbdime
 tensorflow
+fbprophet
