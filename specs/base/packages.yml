@@ -21,7 +21,7 @@ setup:
   - xgboost
   - jupyterlab
   - jupyter-resource-usage
-  - jupyter_contrib_nbextensions
+  - jupyter-contrib-nbextensions
   - jupyter_nbextensions_configurator
   - nbconvert
   - statsmodels
@@ -41,24 +41,24 @@ modules:
     - selenium
     - chromedriver-binary==77.0.3865.40.0
   02-Data-Toolkit:
-    - xlsxwriter
+    - XlsxWriter
     - tqdm
     - folium
     - pandas-gbq
-    - ipywidget
+    - ipywidgets
   03-Maths:
     - scipy
   04-Decision-Science:
-    - google_trans_new
+    - google-trans-new
   05-ML:
     - scikit-image
     - pmdarima
     - ipympl
     - nltk
     - Pillow
-    - tpot
+    - TPOT
     - deap
-    - update_checker
+    - update-checker
     - stopit
     - joblib
     - torch
@@ -66,22 +66,22 @@ modules:
   06-Deep-Learning:
     - dask
     - imblearn
-    - tensorflow_datasets
+    - tensorflow-datasets
     - gensim
     - kaggle
   07-Data-Engineering:
     - ipython
     - jupyter
     - google-cloud-bigquery
-    - flask
-    - flask_cors
+    - Flask
+    - Flask-Cors
     - mlflow
     - git+ssh://git@github.com/krokrob/packgenlite
     - termcolor
     - coverage
     - s3fs
-    - category_encoders
-    - memoized_property
+    - category-encoders
+    - memoized-property
     - psutil
     - pygeohash
     - fastapi
