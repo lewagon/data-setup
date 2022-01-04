@@ -6,7 +6,7 @@ flake8
 ipdb
 requests
 bs4
-pyyaml
+PyYAML
 lxml
 numpy
 pandas

@@ -32,7 +32,9 @@ platform:
     - tensorflow<2.6
   apple_silicon:
     - tensorflow-macos<2.6
-  windows:
+  windows_10:
+    - tensorflow<2.6
+  windows_11:
     - tensorflow<2.6
   linux:
     - tensorflow<2.6
