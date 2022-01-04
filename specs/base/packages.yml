@@ -36,3 +36,57 @@ platform:
     - tensorflow<2.6
   linux:
     - tensorflow<2.6
+modules:
+  01-Python:
+    - selenium
+    - chromedriver-binary==77.0.3865.40.0
+  02-Data-Toolkit:
+    - xlsxwriter
+    - tqdm
+    - plotly==4.7.1
+    - folium
+    - pandas-gbq
+    - ipywidget
+  03-Maths:
+    - scipy
+  04-Decision-Science:
+    - google_trans_new
+  05-ML:
+    - pmdarima
+    - Pillow
+    - nltk
+    - statsmodels==0.11
+    - ipympl
+    - scikit-image
+    - tpot
+    - deap
+    - update_checker
+    - stopit
+    - joblib
+    - torch
+    - fbprophet
+  06-Deep-Learning:
+    - keras
+  07-Data-Engineering:
+    - ipython
+    - jupyter
+    - google-cloud-bigquery
+    - flask
+    - flask_cors
+    - mlflow
+    - joblib
+    - git+ssh://git@github.com/krokrob/packgenlite
+    - termcolor
+    - coverage
+    - s3fs
+    - category_encoders
+    - memoized_property
+    - psutil
+    - pygeohash
+    - kaggle
+    - fastapi
+    - uvicorn
+    - black
+    - pydantic
+  08-Projects:
+    - nbdime
