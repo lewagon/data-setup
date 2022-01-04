@@ -8,7 +8,7 @@ glovebox:
   - ipdb
   - requests
   - bs4
-  - pyyaml
+  - PyYAML
   - lxml
   - numpy<1.20
   - pandas<1.4
@@ -69,7 +69,6 @@ modules:
     - tensorflow_datasets
     - gensim
     - kaggle
-    - keras
   07-Data-Engineering:
     - ipython
     - jupyter
