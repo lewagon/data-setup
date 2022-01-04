@@ -43,7 +43,6 @@ modules:
   02-Data-Toolkit:
     - xlsxwriter
     - tqdm
-    - plotly==4.7.1
     - folium
     - pandas-gbq
     - ipywidget
@@ -52,12 +51,11 @@ modules:
   04-Decision-Science:
     - google_trans_new
   05-ML:
-    - pmdarima
-    - Pillow
-    - nltk
-    - statsmodels==0.11
-    - ipympl
     - scikit-image
+    - pmdarima
+    - ipympl
+    - nltk
+    - Pillow
     - tpot
     - deap
     - update_checker
@@ -66,6 +64,11 @@ modules:
     - torch
     - fbprophet
   06-Deep-Learning:
+    - dask
+    - imblearn
+    - tensorflow_datasets
+    - gensim
+    - kaggle
     - keras
   07-Data-Engineering:
     - ipython
@@ -74,7 +77,6 @@ modules:
     - flask
     - flask_cors
     - mlflow
-    - joblib
     - git+ssh://git@github.com/krokrob/packgenlite
     - termcolor
     - coverage
@@ -83,7 +85,6 @@ modules:
     - memoized_property
     - psutil
     - pygeohash
-    - kaggle
     - fastapi
     - uvicorn
     - black
