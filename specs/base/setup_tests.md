@@ -58,7 +58,7 @@ pyenv local test
 pip install -U pip
 
 pip install -r specs/generated/apple_silicon_full_raw.txt
-pip freeze > specs/validated/apple_silicon_full_raw_rosetta_3.8.12_tf-macos_no_fbprophet.txt
+pip freeze > specs/validated/apple_silicon_full_raw_rosetta_3.8.12_tf-macos_2.5_no_fbprophet.txt
 
 pip install -r specs/generated/apple_intel_full_raw.txt
 pip freeze > specs/validated/apple_intel_full_raw.txt
