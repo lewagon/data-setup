@@ -1,0 +1,30 @@
+python: 3.8.12
+glovebox: &glovebox
+  - pytest
+  - pylint<2.11
+  - nbresult
+  - autopep8
+  - flake8
+  - ipdb
+  - requests
+  - bs4
+  - PyYAML
+  - lxml
+  - numpy<1.20
+  - pandas<1.4
+  - matplotlib
+  - scikit-learn<0.25
+setup:
+  - *glovebox
+  - yapf
+  - seaborn
+  - plotly
+  - xgboost
+  - jupyterlab
+  - jupyter-resource-usage
+  - jupyter_contrib_nbextensions
+  - jupyter_nbextensions_configurator
+  - nbconvert
+  - statsmodels
+  - pandas-profiling
+  - dtale

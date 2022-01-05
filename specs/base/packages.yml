@@ -7,7 +7,7 @@ glovebox:
   - flake8
   - ipdb
   - requests
-  - bs4
+  - beautifulsoup4
   - PyYAML
   - lxml
   - numpy<1.20
