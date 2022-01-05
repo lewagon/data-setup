@@ -82,6 +82,7 @@ py3-none-any                                uvicorn
 py3-none-any                                black
 py3-none-any                                nbdime
 
+.tar.gz                                     fbprophet
 .tar.gz                                     chromedriver-binary
 .tar.gz                                     stopit
 .tar.gz                                     kaggle
