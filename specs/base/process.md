@@ -1,9 +1,18 @@
 
 # TODO v1
 
+## apple silicon setup
+
 - [x] cannot remove rosetta because of packages without arm builds
-- [x] x86 tensorflow => dl notebook kernel dies
-- [x] x86 tensorflow-macos requires python 3.8
+- [x] x86 tensorflow 2.7.0 => kernel dies
+- [x] x86 tensorflow 2.6.0 => kernel dies
+- [x] x86 tensorflow 2.5.0 => kernel dies
+- [x] x86 tensorflow-macos 2.7.0 => kernel dies
+- [x] x86 tensorflow-macos 2.6.0 => weird error https://stackoverflow.com/questions/69694944/how-to-fix-error-cannot-register-2-metrics-with-the-same-name-tensorflow-api
+- [x] x86 tensorflow-macos 2.5.0 => ok
+- [x] x86 tensorflow-macos requires python 3.8 => python 3.8.12
+
+- [ ] validate package version diff x86 tensorflow 2.7 vs arm tf-macos 2.5
 
 - [ ] python 3.8.12 no package version constraints
 

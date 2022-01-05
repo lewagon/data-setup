@@ -60,7 +60,7 @@ pip install -r specs/generated/apple_silicon_full_raw.txt
 
 # run all tests here
 
-pip freeze > specs/validated/apple_silicon_full_raw_3.9.9_no_rosetta_but_tf-macos.txt
+pip freeze > specs/validated/apple_silicon_full_raw_rosetta_3.8.12_tf-macos_no_fbprophet.txt
 
 pyenv virtualenv-delete test
 ```
