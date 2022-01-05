@@ -30,7 +30,7 @@ setup:
 platform:
   apple_intel:
     - tensorflow<2.6
-    - fbprophet
+    # - fbprophet
   apple_silicon:
     - tensorflow-macos<2.6
     # - fbprophet
