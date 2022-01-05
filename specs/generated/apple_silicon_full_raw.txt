@@ -5,7 +5,7 @@ autopep8
 flake8
 ipdb
 requests
-bs4
+beautifulsoup4
 PyYAML
 lxml
 numpy
@@ -69,3 +69,4 @@ black
 pydantic
 nbdime
 tensorflow-macos
+fbprophet
