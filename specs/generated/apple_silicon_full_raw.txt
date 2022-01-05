@@ -69,4 +69,3 @@ black
 pydantic
 nbdime
 tensorflow-macos
-fbprophet

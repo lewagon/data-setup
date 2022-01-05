@@ -33,7 +33,7 @@ platform:
     - fbprophet
   apple_silicon:
     - tensorflow-macos<2.6
-    - fbprophet
+    # - fbprophet
   windows_10:
     - tensorflow<2.6
     - fbprophet
