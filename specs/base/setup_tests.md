@@ -53,7 +53,6 @@ pyenv virtualenv 3.9.9 test
 pyenv local test
 
 pip install -U pip
-pip install scikit-learn
 pip install -r specs/generated/apple_silicon_full_raw.txt
 
 # run all tests here

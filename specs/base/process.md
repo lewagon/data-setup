@@ -1,7 +1,11 @@
 
 # TODO v1
 
-- [ ] python 3.8.12 sans les package version constraints
+- [x] cannot remove rosetta
+
+- [ ] python 3.9.9 no package version constraints
+
+- [ ] python 3.8.12 no package version constraints
 
 - [ ] check install conflits
 - [ ] run challenges : make qui lance tous les exos (teste glovebox)
@@ -13,8 +17,6 @@ requests.exceptions.SSLError: HTTPSConnectionPool(host='opengraph.lewagon.com', 
 
 
 - [ ] py 3.9 + tf 2.7 native / notebooks deep learning day 1-2
-
-- [ ] remove rosetta ?
 
 
 
