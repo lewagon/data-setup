@@ -1,10 +1,28 @@
 
-# tests
+
+
+# using native terminal / brew / pyenv (no rosetta)
 
 packages without arm builds
+- (tensorflow)
+- lxml
+- xgboost
 - statsmodel
+- pmdarima
+- deap
+- gensim
+- coverage
+- psutil
 
-scikit-learn only supports arm from scikit-learn 1.0.2 + macos monterey 12_0
+packages with arm constraints
+- python 3.10           pandas
+- python 3.9            PyYAML
+- macos 12_0 monterey   scikit-learn, scipy, scikit-image
+- macos 11_0 big sur    tensorflow-macos
+
+
+
+# tests
 
 terminal    brew    pyenv   macos   python  sklearn     tensorflow                  outcome
 
