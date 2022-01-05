@@ -12,7 +12,11 @@
 - [x] x86 tensorflow-macos 2.5.0 => ok
 - [x] x86 tensorflow-macos requires python 3.8 => python 3.8.12
 
-- [ ] validate package version diff x86 tensorflow 2.7 vs arm tf-macos 2.5
+- [x] validate package version diff x86 tensorflow 2.7 vs arm tf-macos 2.5
+
+
+- [ ] check package version depending on install order
+
 
 - [ ] python 3.8.12 no package version constraints
 
