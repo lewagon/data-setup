@@ -1462,7 +1462,7 @@ cd ~/code/GITHUB_NICKNAME
 ls -la
 ```
 
-If the command does not show the `data-challenges` and `dotfiles` directories, ask for a TA 🙏
+If the command does not show the `dotfiles` directory, ask for a TA 🙏
 
 Otherwise, you can proceed with the setup:
 
