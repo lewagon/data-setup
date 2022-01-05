@@ -68,4 +68,4 @@ uvicorn
 black
 pydantic
 nbdime
-tensorflow-macos
+tensorflow-macos<2.6
