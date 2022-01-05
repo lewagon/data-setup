@@ -32,6 +32,9 @@ arm         arm     arm     11_0    3.8.12              tensorflow-macos  2.5.0
 
 # using rosetta for terminal / brew / pyenv
 
+packages with contraints
+- tensorflow-macos      python 3.8
+
 terminal    brew    pyenv   macos   python  sklearn     tensorflow                  outcome
 
 rosetta     x86     x86     11_0    3.8.12              tensorflow-macos  2.7.0
@@ -48,8 +51,8 @@ rosetta     x86     x86     10_14   3.9.9               tensorflow        2.5.2
 rosetta     x86     x86     10_14   3.8.12              tensorflow        2.5.2
 
 ``` bash
-pyenv install 3.9.9
-pyenv virtualenv 3.9.9 test
+pyenv install 3.8.12
+pyenv virtualenv 3.8.12 test
 pyenv local test
 
 pip install -U pip

@@ -1,9 +1,9 @@
 
 # TODO v1
 
-- [x] cannot remove rosetta
-
-- [ ] python 3.9.9 no package version constraints
+- [x] cannot remove rosetta because of packages without arm builds
+- [x] x86 tensorflow => dl notebook kernel dies
+- [x] x86 tensorflow-macos requires python 3.8
 
 - [ ] python 3.8.12 no package version constraints
 
@@ -13,6 +13,7 @@
 requests.exceptions.SSLError: HTTPSConnectionPool(host='opengraph.lewagon.com', port=443): Max retries exceeded with url: /?url=https%3A%2F%2Fwww.lewagon.com (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1131)')))
 ```
 
+- [ ] does tensorflow work with rosetta ? or need tensorflow-macos ?
 - [ ] run notebooks : deep learning day 1-2
 
 
