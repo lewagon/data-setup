@@ -558,14 +558,6 @@ Then let's install some packages for the first weeks of the program:
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/linux.txt
 ```
 
-### TensorFlow
-
-Install [TensorFlow](https://www.tensorflow.org/):
-
-```bash
-pip install -U 'tensorflow<2.6'
-```
-
 
 ### Python setup check up
 

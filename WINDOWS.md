@@ -1013,14 +1013,6 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releas
 ```
 </details>
 
-### TensorFlow
-
-Install [TensorFlow](https://www.tensorflow.org/):
-
-```bash
-pip install -U 'tensorflow<2.6'
-```
-
 
 ### Python setup check up
 

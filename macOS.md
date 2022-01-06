@@ -669,28 +669,6 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releas
 ```
 </details>
 
-### TensorFlow
-
-Install [TensorFlow](https://www.tensorflow.org/):
-
-<details>
-    <summary>Setup for Intel chips (default)</summary>
-
-```bash
-pip install -U 'tensorflow<2.6'
-```
-
-</details>
-
-<details>
-    <summary>Setup for Apple Silicon chips</summary>
-
-```bash
-pip install -U 'tensorflow-macos<2.6'
-```
-
-</details>
-
 
 ### Python setup check up
 

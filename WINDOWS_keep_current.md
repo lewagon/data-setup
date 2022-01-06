@@ -138,15 +138,27 @@ pyenv versions
 
 ```bash
 pip install -U pip
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-pylint-2.10-async-v2/requirements.txt
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage jupyter_contrib_nbextensions
 ```
 
-Install [TensorFlow](https://www.tensorflow.org/):
+If your computer uses **Windows 11**, expand the paragraph below and go through it. Otherwise ignore it.
 
-```bash
-pip install -U 'tensorflow<2.6'
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Windows 11 👈</summary>
+
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_11.txt
 ```
+</details>
+
+If your computer uses **Windows 10**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Windows 10 👈</summary>
+
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_10.txt
+```
+</details>
 
 ## GCP
 
