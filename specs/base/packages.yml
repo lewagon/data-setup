@@ -34,14 +34,19 @@ setup:
 platform:
   apple_intel:
     - tensorflow
+    # - fbprophet             # does not work
   apple_silicon:
     - tensorflow-macos<2.6    # versions 2.6 and 2.7 do not work (kernel dies)
+    - fbprophet
   windows_10:
     - tensorflow
+    - fbprophet
   windows_11:
     - tensorflow
+    - fbprophet
   linux:
     - tensorflow
+    - fbprophet
 modules:
   01-Python:
     - selenium
@@ -68,7 +73,6 @@ modules:
     - stopit
     - joblib
     - torch
-    - fbprophet
   06-Deep-Learning:
     - dask
     - imblearn
