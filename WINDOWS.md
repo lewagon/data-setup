@@ -993,15 +993,25 @@ pip install --upgrade pip
 
 Then let's install some packages for the first weeks of the program:
 
-```bash
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-pylint-2.10-async-v2/requirements.txt
-```
+If your computer uses **Windows 11**, expand the paragraph below and go through it. Otherwise ignore it.
 
-Finally, more Data Science packages:
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Windows 11 👈</summary>
 
-```bash
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage jupyter_contrib_nbextensions
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_11.txt
 ```
+</details>
+
+If your computer uses **Windows 10**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Windows 10 👈</summary>
+
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_10.txt
+```
+</details>
 
 ### TensorFlow
 

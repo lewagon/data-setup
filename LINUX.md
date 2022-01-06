@@ -554,14 +554,8 @@ pip install --upgrade pip
 
 Then let's install some packages for the first weeks of the program:
 
-```bash
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-pylint-2.10-async-v2/requirements.txt
-```
-
-Finally, more Data Science packages:
-
-```bash
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage jupyter_contrib_nbextensions
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/linux.txt
 ```
 
 ### TensorFlow
