@@ -41,6 +41,8 @@ confs.each do |conf, packages|
       # write packages
       packages.each do |package|
 
+        next if package.nil?
+
         raw_package = package.gsub(/<.*/, '').gsub(/<=.*/, '')
           .gsub(/>.*/, '').gsub(/>=.*/, '').gsub(/==.*/, '')
 
