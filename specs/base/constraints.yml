@@ -1,3 +1,7 @@
+# goal:
+# - scikit-learn >= 1.0.2
+# - tensorflow >= 2.7
+# - tensorflow-macos >= 2.5
 glovebox:
   - pylint<2.11     # prevent diffs between platforms for glovebox
   - numpy<1.20      # prevent diffs between platforms for pickle + nbresult
