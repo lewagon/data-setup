@@ -23,9 +23,6 @@ jupyter_nbextensions_configurator
 nbconvert
 statsmodels
 pandas-profiling
-pystan
-selenium
-chromedriver-binary
 XlsxWriter
 tqdm
 folium
