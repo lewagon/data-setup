@@ -32,25 +32,9 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 </details>
 $MAC_END
 $WINDOWS_START
-If your computer uses **Windows 11**, expand the paragraph below and go through it. Otherwise ignore it.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup for Windows 11 👈</summary>
-
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/windows_11.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
-</details>
-
-If your computer uses **Windows 10**, expand the paragraph below and go through it. Otherwise ignore it.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup for Windows 10 👈</summary>
-
-``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/windows_10.txt
-```
-</details>
 $WINDOWS_END
 $LINUX_START
 ``` bash
