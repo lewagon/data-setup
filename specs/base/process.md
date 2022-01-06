@@ -14,6 +14,9 @@
 
 - [x] validate package version diff x86 tensorflow 2.7 vs arm tf-macos 2.5
 
+- [x] validate package version diff depending on order in requirements.txt
+
+- [ ] find subset of packages for sklearn 1.0.2 + tf 2.7
 
 - [ ] check package version depending on install order
 
