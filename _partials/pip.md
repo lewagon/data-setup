@@ -10,38 +10,34 @@ pip install --upgrade pip
 
 Then let's install some packages for the first weeks of the program:
 
-```bash
-pip install -Ur <REQUIREMENTS_URL>
-```
-
-Finally, more Data Science packages:
-
-```bash
-pip install -U <BOOTCAMP_COMPLETE_REQUIREMENTS>
-```
-
-### TensorFlow
-
-Install [TensorFlow](https://www.tensorflow.org/):
 $MAC_START
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
-    <summary>Setup for Intel chips (default)</summary>
-$MAC_END
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
-```bash
-pip install -U '<TENSORFLOW_TOP_VERSION>'
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
 ```
-$MAC_START
-
 </details>
+
+If your computer uses **Apple Intel**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
-    <summary>Setup for Apple Silicon chips</summary>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Intel 👈</summary>
 
-```bash
-pip install -U '<APPLE_SILICON_TENSORFLOW_PACKAGES>'
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
 ```
-
 </details>
 $MAC_END
+$WINDOWS_START
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+```
+$WINDOWS_END
+$LINUX_START
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+```
+$LINUX_END

@@ -493,7 +493,8 @@ Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-bui
 ```bash
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
+python-dev python3-dev
 ```
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
@@ -554,22 +555,8 @@ pip install --upgrade pip
 
 Then let's install some packages for the first weeks of the program:
 
-```bash
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-pylint-2.10-async-v2/requirements.txt
-```
-
-Finally, more Data Science packages:
-
-```bash
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage jupyter_contrib_nbextensions
-```
-
-### TensorFlow
-
-Install [TensorFlow](https://www.tensorflow.org/):
-
-```bash
-pip install -U 'tensorflow<2.6'
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
 
 
@@ -612,8 +599,6 @@ Pimp your `jupyter` notebooks with awesome extensions:
 
 ```bash
 # install nbextensions
-pip install jupyter_contrib_nbextensions
-pip install jupyter_nbextensions_configurator
 jupyter contrib nbextension install --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable collapsible_headings/main
