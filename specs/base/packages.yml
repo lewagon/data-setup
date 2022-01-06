@@ -30,27 +30,19 @@ setup:
   - nbconvert
   - statsmodels
   - pandas-profiling
-  - pystan<3                  # required for fbprophet
 platform:
   apple_intel:
     - tensorflow
-    # - fbprophet             # does not work
   apple_silicon:
     - tensorflow-macos<2.6    # versions 2.6 and 2.7 do not work (kernel dies)
-    - fbprophet
   windows_10:
     - tensorflow
-    - fbprophet
   windows_11:
     - tensorflow
-    - fbprophet
   linux:
     - tensorflow
-    - fbprophet
 modules:
   01-Python:
-    - selenium
-    - chromedriver-binary==77.0.3865.40.0
   02-Data-Toolkit:
     - XlsxWriter
     - tqdm
