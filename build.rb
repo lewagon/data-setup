@@ -68,7 +68,6 @@ WINDOWS = %w[
   setup/git
   setup/zsh
   setup/oh_my_zsh
-  setup/windows_browser
   setup/gh_cli
   setup/ssh_key
   ubuntu_gcloud
@@ -188,9 +187,9 @@ filenames.each do |filename, partials|
       end
       # retrieve os name
       if filename.include? KEEP_CURRENT_SUFFIX
-          os_name = filename[0..-(KEEP_CURRENT_SUFFIX.length() + 4)] + ".md"
+        os_name = filename[0..-(KEEP_CURRENT_SUFFIX.length() + 4)] + ".md"
       else
-          os_name = filename
+        os_name = filename
       end
       # iterate through the patterns to replace in the file depending on the OS
       subs[os_name].each do |pattern, replace|
