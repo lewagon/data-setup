@@ -709,8 +709,6 @@ Pimp your `jupyter` notebooks with awesome extensions:
 
 ```bash
 # install nbextensions
-pip install jupyter_contrib_nbextensions
-pip install jupyter_nbextensions_configurator
 jupyter contrib nbextension install --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable collapsible_headings/main
