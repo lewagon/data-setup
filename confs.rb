@@ -18,8 +18,6 @@ confs = {
     glovebox:       glovebox,
     apple_intel:    glovebox + setup + full_mods + platform["apple_intel"],
     apple_silicon:  glovebox + setup + full_mods + platform["apple_silicon"],
-    windows_10:     glovebox + setup + full_mods + platform["windows_10"],
-    windows_11:     glovebox + setup + full_mods + platform["windows_11"],
     linux:          glovebox + setup + full_mods + platform["linux"],
 }
 

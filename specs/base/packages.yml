@@ -35,10 +35,6 @@ platform:
     - tensorflow
   apple_silicon:
     - tensorflow-macos<2.6    # versions 2.6 and 2.7 do not work (kernel dies)
-  windows_10:
-    - tensorflow
-  windows_11:
-    - tensorflow
   linux:
     - tensorflow
 modules:
