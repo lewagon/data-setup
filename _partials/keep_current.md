@@ -150,33 +150,55 @@ pyenv versions
 
 ```bash
 pip install -U pip
-pip install -Ur <REQUIREMENTS_URL>
-pip install -U <BOOTCAMP_COMPLETE_REQUIREMENTS>
 ```
 
-Install [TensorFlow](https://www.tensorflow.org/):
 $MAC_START
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
-    <summary>Setup for Intel chips (default)</summary>
-$MAC_END
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
-```bash
-pip install -U '<TENSORFLOW_TOP_VERSION>'
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/apple_silicon.txt
 ```
-$MAC_START
-
 </details>
+
+If your computer uses **Apple Intel**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
-    <summary>Setup for Apple Silicon chips</summary>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Intel 👈</summary>
 
-```bash
-pip install -U <APPLE_SILICON_TENSORFLOW_PACKAGES>
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/apple_intel.txt
 ```
-
 </details>
 $MAC_END
+$WINDOWS_START
+If your computer uses **Windows 11**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Windows 11 👈</summary>
+
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_11.txt
+```
+</details>
+
+If your computer uses **Windows 10**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Windows 10 👈</summary>
+
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_10.txt
+```
+</details>
+$WINDOWS_END
+$LINUX_START
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/linux.txt
+```
+$LINUX_END
 
 ## GCP
 

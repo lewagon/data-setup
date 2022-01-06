@@ -57,29 +57,3 @@ $LINUX_START
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/linux.txt
 ```
 $LINUX_END
-
-### TensorFlow
-
-Install [TensorFlow](https://www.tensorflow.org/):
-$MAC_START
-
-<details>
-    <summary>Setup for Intel chips (default)</summary>
-$MAC_END
-
-```bash
-pip install -U '<TENSORFLOW_TOP_VERSION>'
-```
-$MAC_START
-
-</details>
-
-<details>
-    <summary>Setup for Apple Silicon chips</summary>
-
-```bash
-pip install -U '<APPLE_SILICON_TENSORFLOW_PACKAGES>'
-```
-
-</details>
-$MAC_END
