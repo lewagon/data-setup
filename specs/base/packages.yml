@@ -60,7 +60,6 @@ modules:
     - update-checker
     - stopit
     - joblib
-    - torch
   06-Deep-Learning:
     - dask
     - imblearn
