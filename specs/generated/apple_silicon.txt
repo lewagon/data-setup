@@ -1,5 +1,5 @@
 pytest
-pylint
+pylint<2.11
 nbresult
 autopep8
 flake8
@@ -8,8 +8,8 @@ requests
 beautifulsoup4
 PyYAML
 lxml
-numpy
-pandas
+numpy<1.20
+pandas<1.4
 matplotlib
 scikit-learn
 yapf
@@ -25,8 +25,9 @@ statsmodels
 pandas-profiling
 git+ssh://git@github.com/8080labs/ppscore
 dtale
+pystan<3
 selenium
-chromedriver-binary
+chromedriver-binary==77.0.3865.40.0
 XlsxWriter
 tqdm
 folium
@@ -70,4 +71,4 @@ uvicorn
 black
 pydantic
 nbdime
-tensorflow-macos
+tensorflow-macos<2.6

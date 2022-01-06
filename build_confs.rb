@@ -32,11 +32,11 @@ File.open(python_path, 'w') { |file| file.write("#{python_version}\n") }
 confs.each do |conf, packages|
 
   # build conf requirement path
-  conf_path = File.join('specs', 'constraintless', "#{conf}.txt")
-  conf_raw_path = File.join('specs', 'generated', "#{conf}.txt")
+  conf_raw_path = File.join('specs', 'constraintless', "#{conf}.txt")
+  conf_path = File.join('specs', 'generated', "#{conf}.txt")
 
-  # File.open(conf_path, 'w') do |file|
-    File.open(conf_raw_path, 'w') do |file_raw|
+  File.open(conf_raw_path, 'w') do |file_raw|
+    File.open(conf_path, 'w') do |file|
 
       # write packages
       packages.each do |package|
@@ -44,12 +44,12 @@ confs.each do |conf, packages|
         raw_package = package.gsub(/<.*/, '').gsub(/<=.*/, '')
           .gsub(/>.*/, '').gsub(/>=.*/, '').gsub(/==.*/, '')
 
-        # file.write("#{package}\n")
+        file.write("#{package}\n")
         file_raw.write("#{raw_package}\n")
 
       end
 
     end
-  # end
+  end
 
 end
