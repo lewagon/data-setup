@@ -1,7 +1,11 @@
+# goal:
+# - scikit-learn >= 1.0.2
+# - tensorflow >= 2.7
+# - tensorflow-macos >= 2.5
 python: 3.8.12
 glovebox:
   - pytest
-  - pylint
+  - pylint<2.11               # prevent diffs between platforms for glovebox
   - nbresult
   - autopep8
   - flake8
@@ -10,8 +14,8 @@ glovebox:
   - beautifulsoup4
   - PyYAML
   - lxml
-  - numpy
-  - pandas
+  - numpy<1.20                # prevent diffs between platforms for pickle + nbresult
+  - pandas<1.4                # prevent diffs between platforms for pickle + nbresult
   - matplotlib
   - scikit-learn
 setup:
@@ -28,11 +32,12 @@ setup:
   - pandas-profiling
   - git+ssh://git@github.com/8080labs/ppscore  # so that dtale does not downgrade scikit-learn to 0.24.2
   - dtale
+  - pystan<3                  # required for fbprophet
 platform:
   apple_intel:
     - tensorflow
   apple_silicon:
-    - tensorflow-macos
+    - tensorflow-macos<2.6    # versions 2.6 and 2.7 do not work (kernel dies)
   windows_10:
     - tensorflow
   windows_11:
