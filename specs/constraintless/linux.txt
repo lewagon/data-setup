@@ -23,8 +23,6 @@ jupyter_nbextensions_configurator
 nbconvert
 statsmodels
 pandas-profiling
-git+ssh://git@github.com/8080labs/ppscore
-dtale
 pystan
 selenium
 chromedriver-binary
