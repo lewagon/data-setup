@@ -649,36 +649,24 @@ pip install --upgrade pip
 
 Then let's install some packages for the first weeks of the program:
 
-```bash
-pip install -Ur https://raw.githubusercontent.com/lewagon/data-runner/py-3.8.12-pylint-2.10-async-v2/requirements.txt
-```
-
-Finally, more Data Science packages:
-
-```bash
-pip install -U yapf jupyterlab seaborn plotly nbconvert xgboost statsmodels pandas-profiling dtale jupyter-resource-usage jupyter_contrib_nbextensions
-```
-
-### TensorFlow
-
-Install [TensorFlow](https://www.tensorflow.org/):
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
-    <summary>Setup for Intel chips (default)</summary>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
-```bash
-pip install -U 'tensorflow<2.6'
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
 ```
-
 </details>
 
+If your computer uses **Apple Intel**, expand the paragraph below and go through it. Otherwise ignore it.
+
 <details>
-    <summary>Setup for Apple Silicon chips</summary>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Intel 👈</summary>
 
-```bash
-pip install -U 'tensorflow-macos<2.6'
+``` bash
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
 ```
-
 </details>
 
 
