@@ -24,7 +24,7 @@ confs = {
 }
 
 # write python version
-python_path = File.join('specs', 'validated', 'python_version.txt')
+python_path = File.join('specs', 'releases', 'python_version.txt')
 
 File.open(python_path, 'w') { |file| file.write("#{python_version}\n") }
 
