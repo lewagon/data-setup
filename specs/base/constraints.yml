@@ -1,7 +1,8 @@
 glovebox:
-  - pylint<2.11
-  - numpy<1.20
-  - pandas<1.4
+  - pylint<2.11     # prevent diffs between platforms for glovebox
+  - numpy<1.20      # prevent diffs between platforms for pickle + nbresult
+  - pandas<1.4      # prevent diffs between platforms for pickle + nbresult
+  - pystan<3        # required for fbprophet
 platform:
   apple_silicon:
-    - tensorflow-macos<2.6
+    - tensorflow-macos<2.6    # versions 2.6 and 2.7 do not work (kernel dies)
