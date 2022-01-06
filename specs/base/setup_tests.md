@@ -58,7 +58,7 @@ pyenv local test
 pip install -U pip
 
 pip install -r specs/generated/apple_silicon.txt
-pip freeze > specs/validated/apple_silicon_rosetta.txt
+pip freeze > specs/validated/apple_silicon.txt
 
 pip install -r specs/generated/apple_intel.txt
 pip freeze > specs/validated/apple_intel.txt
