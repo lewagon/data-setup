@@ -15,21 +15,16 @@ modules         = package_confs["modules"]
 full_mods = modules.values.flatten
 
 confs = {
-    glovebox:           glovebox,
-    # apple_intel:        glovebox + setup + platform["apple_intel"],
-    # apple_silicon:      glovebox + setup + platform["apple_silicon"],
-    # windows_10:         glovebox + setup + platform["windows_10"],
-    # windows_11:         glovebox + setup + platform["windows_11"],
-    # linux:              glovebox + setup + platform["linux"],
-    apple_intel_full:   glovebox + setup + full_mods + platform["apple_intel"],
-    apple_silicon_full: glovebox + setup + full_mods + platform["apple_silicon"],
-    windows_10_full:    glovebox + setup + full_mods + platform["windows_10"],
-    windows_11_full:    glovebox + setup + full_mods + platform["windows_11"],
-    linux_full:         glovebox + setup + full_mods + platform["linux"],
+    glovebox:       glovebox,
+    apple_intel:    glovebox + setup + full_mods + platform["apple_intel"],
+    apple_silicon:  glovebox + setup + full_mods + platform["apple_silicon"],
+    windows_10:     glovebox + setup + full_mods + platform["windows_10"],
+    windows_11:     glovebox + setup + full_mods + platform["windows_11"],
+    linux:          glovebox + setup + full_mods + platform["linux"],
 }
 
 # write python version
-python_path = File.join('specs', 'generated', 'python_version.txt')
+python_path = File.join('specs', 'validated', 'python_version.txt')
 
 File.open(python_path, 'w') { |file| file.write("#{python_version}\n") }
 
