@@ -17,7 +17,7 @@ If your computer uses **Apple Silicon**, expand the paragraph below and go throu
   <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/apple_silicon.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
 ```
 </details>
 
@@ -27,7 +27,7 @@ If your computer uses **Apple Intel**, expand the paragraph below and go through
   <summary>👉&nbsp;&nbsp;Setup for Apple Intel 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/apple_intel.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
 ```
 </details>
 $MAC_END
@@ -38,7 +38,7 @@ If your computer uses **Windows 11**, expand the paragraph below and go through 
   <summary>👉&nbsp;&nbsp;Setup for Windows 11 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_11.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/windows_11.txt
 ```
 </details>
 
@@ -48,12 +48,12 @@ If your computer uses **Windows 10**, expand the paragraph below and go through 
   <summary>👉&nbsp;&nbsp;Setup for Windows 10 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/windows_10.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/windows_10.txt
 ```
 </details>
 $WINDOWS_END
 $LINUX_START
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/linux.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
 $LINUX_END

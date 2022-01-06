@@ -555,7 +555,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/linux.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
 
 
