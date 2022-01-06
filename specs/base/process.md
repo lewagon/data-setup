@@ -1,4 +1,15 @@
 
+# removed
+
+  dtale still downgrades sklearn:
+
+  - git+ssh://git@github.com/8080labs/ppscore  # so that dtale does not downgrade scikit-learn to 0.24.2
+  - dtale
+
+  fbprophet does not work on apple intel:
+
+  - fbprophet
+
 # TODO v1
 
 ## apple silicon setup
