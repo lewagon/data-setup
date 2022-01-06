@@ -23,6 +23,7 @@ jupyter_nbextensions_configurator
 nbconvert
 statsmodels
 pandas-profiling
+git+ssh://git@github.com/8080labs/ppscore
 dtale
 selenium
 chromedriver-binary
@@ -44,6 +45,7 @@ update-checker
 stopit
 joblib
 torch
+fbprophet
 dask
 imblearn
 tensorflow-datasets
@@ -68,4 +70,4 @@ uvicorn
 black
 pydantic
 nbdime
-tensorflow-macos<2.6
+tensorflow-macos
