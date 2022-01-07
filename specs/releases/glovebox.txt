@@ -1,0 +1,14 @@
+pytest
+pylint<2.11
+nbresult
+autopep8
+flake8
+ipdb
+requests
+beautifulsoup4
+PyYAML
+lxml
+numpy<1.20
+pandas<1.4
+matplotlib
+scikit-learn
