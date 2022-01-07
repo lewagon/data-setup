@@ -28,11 +28,10 @@ First let's install `pyenv` with the following Terminal command:
 brew install pyenv
 ```
 
-Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
-
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
+exec zsh
 pyenv install <PYTHON_VERSION>
 ```
 
@@ -70,8 +69,7 @@ OK once this command is complete, we are going to tell the system to use this ve
 
 ```bash
 pyenv global <PYTHON_VERSION>
+exec zsh
 ```
-
-Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 To check if this worked, run `python --version`. If you see `<PYTHON_VERSION>`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
