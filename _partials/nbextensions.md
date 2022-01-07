@@ -37,10 +37,10 @@ summary::marker {
 You can close <CODE_EDITOR>.
 
 ### `jupyter` check up
-Quit and restart your terminal first.
 
-Then, check you can launch a notebook server on your machine:
+Check you can launch a notebook server on your machine:
 ```bash
+exec zsh
 jupyter notebook
 ```
 Your web browser should open on a `jupyter` window:

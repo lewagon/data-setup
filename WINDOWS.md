@@ -910,9 +910,10 @@ First let's install `pyenv` with the following Terminal command:
 
 ```bash
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+exec zsh
 ```
 
-Then quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one. Ignore the `pyenv: no such command 'virtualenv-init' for now`.
+Ignore the `pyenv: no such command 'virtualenv-init' for now`.
 
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
@@ -935,9 +936,8 @@ OK once this command is complete, we are going to tell the system to use this ve
 
 ```bash
 pyenv global 3.8.12
+exec zsh
 ```
-
-Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
 
 To check if this worked, run `python --version`. If you see `3.8.12`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
@@ -952,11 +952,10 @@ First let's install this plugin:
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 ```
 
-Once again, quit **all your opened terminal windows** (`Cmd` + `Q`) and restart one.
-
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
+exec zsh
 pyenv virtualenv 3.8.12 lewagon
 ```
 
@@ -1102,10 +1101,10 @@ summary::marker {
 You can close VS Code.
 
 ### `jupyter` check up
-Quit and restart your terminal first.
 
-Then, check you can launch a notebook server on your machine:
+Check you can launch a notebook server on your machine:
 ```bash
+exec zsh
 jupyter notebook
 ```
 Your web browser should open on a `jupyter` window:
