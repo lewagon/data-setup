@@ -45,9 +45,11 @@ exec zsh
 ```
 
 Now, check you can launch a notebook server on your machine:
+
 ```bash
 jupyter notebook
 ```
+
 Your web browser should open on a `jupyter` window:
 
 ![jupyter.png](images/jupyter.png)

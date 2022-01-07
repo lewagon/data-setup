@@ -6,15 +6,10 @@ First let's install this plugin:
 
 ```bash
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-```
-
-Let's reset your terminal:
-
-```bash
 exec zsh
 ```
 
-Then, let's create the virtual environment we are going to use during the whole bootcamp:
+Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
 pyenv virtualenv <PYTHON_VERSION> lewagon
