@@ -481,23 +481,13 @@ We have circle in red the part you will change:
 
 First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
 - Locate the `"name": "Ubuntu",`
-- Add one of the following lines after it:
-
-For Windows 10 :point_down:
+- Add the following line after it:
 
 ```bash
-"startingDirectory": "//wsl$/Ubuntu/home/the-username-you-chose-at-the-ubuntu-install",
-```
-
-For Windows 11 :point_down:
-
-```bash
-"startingDirectory": "/home/the-username-you-chose-at-the-ubuntu-install",
+"commandline": "wsl.exe ~",
 ```
 
 :warning: Do not forget the comma at the end of the line!
-
-:warning: Do not forget to replace the username by your own in the line above!
 
 Then, let's disable warning for copy-pasting commands between Windows and Ubuntu:
 - Locate the line `"defaultProfile": "{2c4de342-...}"`
