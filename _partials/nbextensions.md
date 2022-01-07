@@ -38,9 +38,14 @@ You can close <CODE_EDITOR>.
 
 ### `jupyter` check up
 
-Check you can launch a notebook server on your machine:
+Let's reset your terminal:
+
 ```bash
 exec zsh
+```
+
+Now, check you can launch a notebook server on your machine:
+```bash
 jupyter notebook
 ```
 Your web browser should open on a `jupyter` window:
