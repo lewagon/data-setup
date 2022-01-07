@@ -950,12 +950,12 @@ First let's install this plugin:
 
 ```bash
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+exec zsh
 ```
 
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-exec zsh
 pyenv virtualenv 3.8.12 lewagon
 ```
 
@@ -1102,11 +1102,18 @@ You can close VS Code.
 
 ### `jupyter` check up
 
-Check you can launch a notebook server on your machine:
+Let's reset your terminal:
+
 ```bash
 exec zsh
+```
+
+Now, check you can launch a notebook server on your machine:
+
+```bash
 jupyter notebook
 ```
+
 Your web browser should open on a `jupyter` window:
 
 ![jupyter.png](images/jupyter.png)

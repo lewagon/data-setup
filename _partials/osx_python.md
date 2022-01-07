@@ -26,12 +26,12 @@ First let's install `pyenv` with the following Terminal command:
 
 ```bash
 brew install pyenv
+exec zsh
 ```
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-exec zsh
 pyenv install <PYTHON_VERSION>
 ```
 
