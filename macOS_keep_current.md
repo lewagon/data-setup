@@ -146,7 +146,7 @@ If your computer uses **Apple Silicon**, expand the paragraph below and go throu
   <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/apple_silicon.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
 ```
 </details>
 
@@ -156,7 +156,7 @@ If your computer uses **Apple Intel**, expand the paragraph below and go through
   <summary>👉&nbsp;&nbsp;Setup for Apple Intel 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/specs/releases/apple_intel.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
 ```
 </details>
 
