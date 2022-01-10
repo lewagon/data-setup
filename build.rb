@@ -29,8 +29,8 @@ MAC_OS = %w[
   osx_python
   virtualenv
   pip
-  python_checkup
   nbextensions
+  python_checkup
   dbeaver
   docker
   gcp_cli_setup
@@ -76,9 +76,9 @@ WINDOWS = %w[
   ubuntu_python
   virtualenv
   pip
-  python_checkup
   win_jupyter
   nbextensions
+  python_checkup
   dbeaver
   setup/windows_settings
   win_vs_redistributable
@@ -120,8 +120,8 @@ LINUX = %w[
   ubuntu_python
   virtualenv
   pip
-  python_checkup
   nbextensions
+  python_checkup
   dbeaver
   ubuntu_docker
   gcp_setup

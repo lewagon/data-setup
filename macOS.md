@@ -672,39 +672,6 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 </details>
 
 
-### Python setup check up
-
-Check your Python version with the following commands:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
-```
-
-Run the following command to check if you successfully installed the required packages:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
-```
-
-Now run the following command to check if you can load these packages:
-```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
-```
-
-Make sure you can run Jupyter:
-
-```bash
-jupyter notebook
-```
-
-And open a `Python 3` notebook.
-
-Make sure that you are running the correct python version in the notebook. Open a cell and run :
-``` python
-import sys; sys.version
-```
-
-That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
-
-
 ## `jupyter` notebook extensions
 
 Pimp your `jupyter` notebooks with awesome extensions:
@@ -780,6 +747,39 @@ Untick _"disable configuration for nbextensions without explicit compatibility"_
 ![nbextensions.png](images/nbextensions.png)
 
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
+
+
+### Python setup check up
+
+Check your Python version with the following commands:
+```bash
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+```
+
+Run the following command to check if you successfully installed the required packages:
+```bash
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
+```
+
+Now run the following command to check if you can load these packages:
+```bash
+python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+```
+
+Make sure you can run Jupyter:
+
+```bash
+jupyter notebook
+```
+
+And open a `Python 3` notebook.
+
+Make sure that you are running the correct python version in the notebook. Open a cell and run :
+``` python
+import sys; sys.version
+```
+
+That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
 
 
 
