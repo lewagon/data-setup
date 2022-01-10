@@ -28,4 +28,4 @@ Make sure that you are running the correct python version in the notebook. Open 
 import sys; sys.version
 ```
 
-That's it for today. During the bootcamp, we'll install more packages but we'll talk about that later.
+Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
