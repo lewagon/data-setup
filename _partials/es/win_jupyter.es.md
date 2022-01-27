@@ -39,4 +39,4 @@ Este comando debió haber abierto una página Jupyter en tu navegador:
 
 Si no es el caso, por favor llama a un TA.
 
-Para cerrar el servidor jupyter en la terminal, presiona `CTRL` + `C`, enter y. Luego presiona Enter.
+Para cerrar el servidor jupyter en la terminal, presiona `CTRL` + `C`, ingresa la letra `y`. Luego presiona Enter.
