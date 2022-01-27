@@ -35,4 +35,4 @@ pyenv global <PYTHON_VERSION>
 exec zsh
 ```
 
-Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `<PYTHON_VERSION>`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `<PYTHON_VERSION>`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
