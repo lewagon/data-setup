@@ -2,7 +2,7 @@
 
 Instala el navegador Google Chrome si no lo tienes todavía y configúralo como tu __navegador predeterminado__.
 
-Sigue los pasos en el siguiente enlace :point_right: [Instalación de Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en-GB)
+Sigue los pasos en el siguiente enlace :point_right: [Instalación de Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=es)
 
 __¿Por qué Chrome?__
 
