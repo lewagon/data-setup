@@ -16,7 +16,7 @@ cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
 <CODE_EDITOR_CMD> . # Open it in <CODE_EDITOR>
 ```
 
-En <CODE_EDITOR>abre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
+En <CODE_EDITOR>, abre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
 
 Regresa a la terminal y ejecuta un `git diff` y pídele a un TA que venga y verifique este cambio de configuración. Debería ver cosas de Python y `pyenv`.
 
