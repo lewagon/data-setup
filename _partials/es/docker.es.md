@@ -1,6 +1,6 @@
 ## Docker 🐋
 
-DDocker es una plataforma abierta para el desarrollo, entrega y ejecución de aplicaciones.
+Docker es una plataforma abierta para el desarrollo, entrega y ejecución de aplicaciones.
 
 _Si ya tienes Docker instalado en tu máquina, por favor actualízalo con la versión más reciente_
 
