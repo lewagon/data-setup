@@ -28,4 +28,4 @@ Asegúrate de que estés usando la versión correcta de python en el notebook. A
 import sys; sys.version
 ```
 
-¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
+¡Listo! Ya tienes un virtual env de python completo con todos los paquetes de terceros que necesitarás en el bootcamp.
