@@ -20,7 +20,7 @@ Luego ejecuta:
 brew install readline
 ```
 
-mmacOS viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
+macOS viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
 
 Primero instala `pyenv` con el siguiente comando en la Terminal:
 
@@ -29,7 +29,7 @@ brew install pyenv
 exec zsh
 ```
 
-Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
+Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
 
 ```bash
 pyenv install <PYTHON_VERSION>
@@ -72,4 +72,4 @@ pyenv global <PYTHON_VERSION>
 exec zsh
 ```
 
-Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `<PYTHON_VERSION>`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `<PYTHON_VERSION>`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
