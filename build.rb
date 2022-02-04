@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby -wU
 CONSTANTS = {
-    'PYTHON_VERSION' => "3.8.12",
-    'PYTHON_CHECKER_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh",
-    'PIP_CHECKER_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh",
-    'PIP_LOADER_URL' => "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py"
+  'PYTHON_VERSION' => '3.8.12',
+  'PYTHON_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh',
+  'PIP_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh',
+  'PIP_LOADER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py',
+  'CODE_EDITOR' => 'VS Code',
+  'CODE_EDITOR_CMD' => 'code'
 }
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
@@ -138,75 +140,66 @@ LINUX_KC = %w[
   python_checkup
 ]
 
-KEEP_CURRENT_SUFFIX = "_keep_current"
-
 filenames = {
-  "WINDOWS.md" => WINDOWS,
-  "macOS.md" => MAC_OS,
-  "LINUX.md" => LINUX,
-  "WINDOWS#{KEEP_CURRENT_SUFFIX}.md" => WINDOWS_KC,
-  "macOS#{KEEP_CURRENT_SUFFIX}.md" => MAC_OS_KC,
-  "LINUX#{KEEP_CURRENT_SUFFIX}.md" => LINUX_KC
-}
-
-DEFAULT_SUBS = {
-  "<CODE_EDITOR>" => "VS Code",
-  "<CODE_EDITOR_CMD>" => "code"
-}
-
-subs = {
-  "WINDOWS.md" => DEFAULT_SUBS,
-  "macOS.md" => DEFAULT_SUBS,
-  "LINUX.md" => DEFAULT_SUBS
+  "WINDOWS" => ["WINDOWS", WINDOWS],
+  "macOS" => ["macOS", MAC_OS],
+  "LINUX" => ["LINUX", LINUX],
+  "WINDOWS_keep_current" => ["WINDOWS", WINDOWS_KC],
+  "macOS_keep_current" => ["macOS", MAC_OS_KC],
+  "LINUX_keep_current" => ["LINUX", LINUX_KC]
 }
 
 delimiters = {
-  "WINDOWS.md" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
-  "macOS.md" => ["\\$MAC_START\n", "\\$MAC_END\n"],
-  "LINUX.md" => ["\\$LINUX_START\n", "\\$LINUX_END\n"]
+  "WINDOWS" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
+  "macOS" => ["\\$MAC_START\n", "\\$MAC_END\n"],
+  "LINUX" => ["\\$LINUX_START\n", "\\$LINUX_END\n"]
 }
 
-filenames.each do |filename, partials|
-  File.open(filename.to_s, "w:utf-8") do |f|
-    partials.each do |partial|
-      match_data = partial.match(/setup\/(?<partial>[0-9a-z_]+)/)
-      if match_data
-        require 'open-uri'
-        content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", "_partials", "#{match_data[:partial]}.md"))
-                .string
-        # replace data-setup repo relative path by setup repo URL
-        image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
-        image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/master/#{ip}")}
-      else
-        file = File.join("_partials", "#{partial}.md")
-        content = File.read(file, encoding: "utf-8")
+def load_partial(partial)
+  match_data = partial.match(/setup\/(?<partial>[0-9a-z_]+)/)
+  if match_data
+    require 'open-uri'
+    content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", "_partials", "#{match_data[:partial]}.md"))
+            .string
+    # replace data-setup repo relative path by setup repo URL
+    image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
+    image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/master/#{ip}")}
+  else
+    file = File.join("_partials", "#{partial}.md")
+    content = File.read(file, encoding: "utf-8")
+  end
+  content
+end
+
+# load partials
+loaded = filenames.map { |os, (os_name, partials)| partials }.flatten.uniq
+loaded = loaded.map { |partial| [partial, load_partial(partial)] }.to_h
+
+# write files
+[""].each do |locale|
+  filenames.each do |filename, (os_name, partials)|
+    filename += ".#{locale}" unless locale.empty?
+    filename += ".md"
+    File.open(filename, "w:utf-8") do |f|
+      partials.each do |partial|
+        content = loaded[partial].clone
+        # remove the OS dependant blocks
+        removed_blocks = delimiters.keys - [os_name]
+        removed_blocks.each do |block|
+          delimiter_start, delimiter_end = delimiters[block]
+          pattern = "#{delimiter_start}(.|\n)*?(?<!#{delimiter_end})#{delimiter_end}"
+          content.gsub!(/#{pattern}/, "")
+        end
+        # remove the OS dependant block delimiters
+        delimiters[os_name].each do |delimiter|
+          content.gsub!(/#{delimiter}/, "")
+        end
+        CONSTANTS.each do |placeholder, value|
+          content.gsub!("<#{placeholder}>", value)
+        end
+        f << content
+        f << "\n\n"
       end
-      # retrieve os name
-      if filename.include? KEEP_CURRENT_SUFFIX
-        os_name = filename[0..-(KEEP_CURRENT_SUFFIX.length() + 4)] + ".md"
-      else
-        os_name = filename
-      end
-      # iterate through the patterns to replace in the file depending on the OS
-      subs[os_name].each do |pattern, replace|
-        content.gsub!(pattern, replace)
-      end
-      # remove the OS dependant blocks
-      removed_blocks = delimiters.keys - [os_name]
-      removed_blocks.each do |block|
-        delimiter_start, delimiter_end = delimiters[block]
-        pattern = "#{delimiter_start}(.|\n)*?(?<!#{delimiter_end})#{delimiter_end}"
-        content.gsub!(/#{pattern}/, "")
-      end
-      # remove the OS dependant block delimiters
-      delimiters[os_name].each do |delimiter|
-        content.gsub!(/#{delimiter}/, "")
-      end
-      CONSTANTS.each do |placeholder, value|
-        content.gsub!("<#{placeholder}>", value)
-      end
-      f << content
-      f << "\n\n"
     end
   end
 end
