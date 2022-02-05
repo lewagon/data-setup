@@ -172,7 +172,7 @@ def load_partial(partial, locale)
   else
     content = File.read(file, encoding: "utf-8")
   end
-  content
+  return content
 end
 
 # load partials
