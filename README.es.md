@@ -5,17 +5,17 @@ Por favor escoge tu sistema operativo:
 <table>
   <tr>
     <td>
-      <a href="macOS.md">
+      <a href="macOS.es.md">
         <img src="images/apple.png" alt="macOS" />
       </a>
     </td>
     <td>
-      <a href="WINDOWS.md">
+      <a href="WINDOWS.es.md">
         <img src="images/windows.png" alt="Windows">
       </a>
     </td>
     <td>
-      <a href="LINUX.md">
+      <a href="LINUX.es.md">
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
@@ -29,17 +29,17 @@ Por favor escoge tu sistema operativo:
 <table>
   <tr>
     <td>
-      <a href="macOS_keep_current.md">
+      <a href="macOS_keep_current.es.md">
         <img src="images/apple.png" alt="macOS" />
       </a>
     </td>
     <td>
-      <a href="WINDOWS_keep_current.md">
+      <a href="WINDOWS_keep_current.es.md">
         <img src="images/windows.png" alt="Windows">
       </a>
     </td>
     <td>
-      <a href="LINUX_keep_current.md">
+      <a href="LINUX_keep_current.es.md">
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
