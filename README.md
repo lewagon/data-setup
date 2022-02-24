@@ -1,6 +1,6 @@
-## In Spanish ?
+## ¿En Español?
 
-Click on <a href="README.es.md">this link</a> in order to access to the spanish version of the setup.
+Haz clic en <a href="README.es.md">este link</a> para acceder a la versión en español del setup.
 
 ## In English
 
