@@ -1,4 +1,8 @@
-# Data Science Bootcamp Setup
+## In Spanish ?
+
+Click on <a href="README.es.md">this link</a> in order to access to the spanish version of the setup.
+
+## Data Science Bootcamp Setup
 
 Please choose your operating system (OS):
 
@@ -22,7 +26,7 @@ Please choose your operating system (OS):
   </tr>
 </table>
 
-# Keep your setup current after the bootcamp
+## Keep your setup current after the bootcamp
 
 Please choose your operating system (OS):
 

@@ -1,4 +1,4 @@
-# Configuración del Bootcamp de Data Science
+## Configuración del Bootcamp de Data Science
 
 Por favor escoge tu sistema operativo:
 
@@ -22,7 +22,7 @@ Por favor escoge tu sistema operativo:
   </tr>
 </table>
 
-# Mantén tu configuración al día después del bootcamp
+## Mantén tu configuración al día después del bootcamp
 
 Por favor escoge tu sistema operativo:
 
