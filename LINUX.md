@@ -480,6 +480,39 @@ plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
 
+### Uninstall `conda`
+
+As we are using `pyenv` to install and manage our Python version, we need to uninstall [`conda`](https://docs.conda.io/projects/conda/en/latest/), another package manager you may have on your machine if you previously installed [Anaconda](https://www.anaconda.com/). Thus, we are preventing any possible Python version issue later.
+
+Check if you have `conda` installed on your machine:
+```bash
+conda list
+```
+If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install `pyenv`** section.
+
+<details>
+    <summary markdown='span'><code>conda</code> uninstall instructions</summary>
+
+- Install the Anaconda-Clean package from your terminal and run the cleaning
+```bash
+conda install anaconda-clean
+anaconda-clean --yes
+```
+- Remove every Anaconda directories
+```bash
+rm -rf ~/anaconda2
+rm -rf ~/anaconda3
+```
+- Remove Anaconda path from your `.bash_profile`
+    - Open the file with `code ~/.bash_profile`
+    - If the file opens find the line matching the following pattern `export PATH="/path/to/anaconda3/bin:$PATH"` and delete the line
+    - Save the file with `CTRL` + `s`
+- Restart your terminal with `exec zsh`
+</details>
+
+
+### Install `pyenv`
+
 Ubuntu comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
 
 First let's install `pyenv` with the following Terminal command:
@@ -499,6 +532,8 @@ libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
 python-dev python3-dev
 ```
+
+### Install Python
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
