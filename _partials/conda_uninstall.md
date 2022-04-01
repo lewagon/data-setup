@@ -14,6 +14,9 @@ $MAC_END
 $LINUX_START
 If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install `pyenv`** section.
 $LINUX_END
+$WINDOWS_START
+If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install `pyenv`** section.
+$WINDOWS_END
 
 <details>
     <summary markdown='span'><code>conda</code> uninstall instructions</summary>
