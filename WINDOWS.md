@@ -904,6 +904,7 @@ Check if you have `conda` installed on your machine:
 ```bash
 conda list
 ```
+If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install `pyenv`** section.
 
 <details>
     <summary markdown='span'><code>conda</code> uninstall instructions</summary>
