@@ -55,7 +55,7 @@ Open a new terminal window from Applications > Utilities or search for it with [
 
 ![Open Terminal on macOS](https://github.com/lewagon/setup/blob/master/images/macos_open_terminal.png)
 
-Copy-paste the following command in the terminal and hit `ENTER` to execute.
+Copy-paste the following command in the terminal and hit `Enter` to execute.
 
 ``` bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
@@ -105,7 +105,7 @@ During this setup you will be asked to **quit and re-open** applications multipl
 
 ## Command Line Tools
 
-Open a new terminal, copy-paste the following command and hit `ENTER`:
+Open a new terminal, copy-paste the following command and hit `Enter`:
 
 ```bash
 xcode-select --install
@@ -270,7 +270,7 @@ Here is a list of the extensions you are installing:
 
 [Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
 
-Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
+Launch VS Code from your terminal by typing `code` and pressing `Enter`.
 
 Click on the little arrow at the bottom of the left bar :point_down:
 
@@ -1091,7 +1091,7 @@ The idea is that you'll have Slack open all day, so that you can share useful li
 
 To ensure that everything is working fine for video calls, let's test your camera and microphone:
 - Open the Slack app
-- In any channel message bar type `/call --test` and press `ENTER`
+- In any channel message bar type `/call --test` and press `Enter`
 - Click on the "Start test" green button
 
 ![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
