@@ -22,7 +22,6 @@ MAC_OS = %w[
   setup/vscode_liveshare
   setup/oh_my_zsh
   setup/gh_cli
-  setup/ssh_key
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
@@ -63,11 +62,9 @@ WINDOWS = %w[
   setup/windows_terminal
   vscode_extensions
   setup/vscode_liveshare
-  setup/git
-  setup/zsh
+  setup/cli_tools
   setup/oh_my_zsh
   setup/gh_cli
-  setup/ssh_key
   ubuntu_gcloud
   dotfiles
   dotfiles_new_student
@@ -106,12 +103,10 @@ LINUX = %w[
   setup/ubuntu_vscode
   vscode_extensions
   setup/vscode_liveshare
-  setup/git
+  setup/cli_tools
   chrome
-  setup/zsh
   setup/oh_my_zsh
   setup/gh_cli
-  setup/ssh_key
   ubuntu_gcloud
   dotfiles
   dotfiles_new_student
@@ -165,7 +160,7 @@ def load_partial(partial, locale)
   file = File.join("_partials", "#{partial}.md")
   if match_data
     require 'open-uri'
-    content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", file))
+    content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/22q4-setup-bug-bash", file))
             .string
     # replace data-setup repo relative path by setup repo URL
     image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
