@@ -1,51 +1,45 @@
-## ¿En Español?
+## Configuración del Bootcamp de Data Science
 
-Haz clic en <a href="README.es.md">este link</a> para acceder a la versión en español del setup.
-
-## In English
-
-### Data Science Bootcamp Setup
-
-Please choose your operating system (OS):
+Por favor escoge tu sistema operativo:
 
 <table>
   <tr>
     <td>
-      <a href="macOS.md">
+      <a href="macOS.es.md">
         <img src="images/apple.png" alt="macOS" />
       </a>
     </td>
     <td>
-      <a href="WINDOWS.md">
+      <a href="WINDOWS.es.md">
         <img src="images/windows.png" alt="Windows">
       </a>
     </td>
     <td>
-      <a href="LINUX.md">
+      <a href="LINUX.es.md">
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
   </tr>
 </table>
 
-### Keep your setup current after the bootcamp
+## Mantén tu configuración al día después del bootcamp
 
-Please choose your operating system (OS):
+Por favor escoge tu sistema operativo:
 
 <table>
   <tr>
     <td>
-      <a href="macOS_keep_current.md">
+      <a href="macOS_keep_current.es.md">
         <img src="images/apple.png" alt="macOS" />
       </a>
     </td>
     <td>
-      <a href="WINDOWS_keep_current.md">
+      <a href="WINDOWS_keep_current.es.md">
         <img src="images/windows.png" alt="Windows">
       </a>
     </td>
     <td>
-      <a href="LINUX_keep_current.md">
+      <a href="LINUX_keep_current.es.md">
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
