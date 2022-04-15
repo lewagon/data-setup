@@ -135,8 +135,7 @@ LINUX_KC = %w[
   python_checkup
 ]
 
-# LOCALES = ["", "es"]  # TODO: add support for the es locale when the content is merged
-LOCALES = [""]  # english locale only
+LOCALES = ["", "es"]  # english + spanish locales
 
 FILENAMES = {
   "WINDOWS" => ["WINDOWS", WINDOWS],
