@@ -9,3 +9,11 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 sudo apt-get install google-cloud-sdk-app-engine-python
 ```
 👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
+
+$WINDOWS_START
+## Windows Google Cloud CLI
+
+Install the [gcloud CLI on Windows](https://cloud.google.com/sdk/docs/install#windows) (follow the instructions).
+
+👉 The windows gcloud CLI is required in order to allow the WSL gcloud CLI to authenticate to your GCP account
+$WINDOWS_END

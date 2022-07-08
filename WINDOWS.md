@@ -684,6 +684,12 @@ sudo apt-get install google-cloud-sdk-app-engine-python
 ```
 👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
 
+## Windows Google Cloud CLI
+
+Install the [gcloud CLI on Windows](https://cloud.google.com/sdk/docs/install#windows) (follow the instructions).
+
+👉 The windows gcloud CLI is required in order to allow the WSL gcloud CLI to authenticate to your GCP account
+
 
 ## Dotfiles
 
@@ -1313,9 +1319,13 @@ Once the verification goes through, you should receive an email stating that "Yo
 ### Configure Cloud sdk
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
+
 ```bash
-gcloud auth login
+gcloud auth login --no-browser
 ```
+
+👆 Follow the instructions of the CLI (have a look at this [ticket](https://issuetracker.google.com/issues/227336096?pli=1) if you have an issue)
+
 - Login to your Google account on the new tab opened in your web browser
 - List your active account and check your email address you used for GCP is present
 ```bash
