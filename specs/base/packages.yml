@@ -66,6 +66,8 @@ modules:
     - tensorflow-datasets
     - gensim
     - kaggle
+  07-ML-Ops:
+    - graphviz
   07-Data-Engineering:
     - ipython
     - jupyter
