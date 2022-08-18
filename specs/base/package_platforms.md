@@ -72,6 +72,7 @@ py3-none-any                                tensorflow-datasets
 py3-none-any                                ipython
 py3-none-any                                jupyter
 py3-none-any                                google-cloud-bigquery
+py3-none-any                                graphviz
 py3-none-any                                Flask
 py3-none-any                                Flask-Cors
 py3-none-any                                mlflow

@@ -66,3 +66,4 @@ black
 pydantic
 nbdime
 tensorflow-macos<2.6
+graphviz
