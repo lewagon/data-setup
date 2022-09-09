@@ -1177,7 +1177,7 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 - One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
 
 
-## Slack
+## Slack (Optional)
 
 [Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
 
