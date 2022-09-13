@@ -1131,32 +1131,7 @@ Some Python packages require a compiler to function properly. Let's install one:
 
 [For x86 systems](https://aka.ms/vs/16/release/vc_redist.x86.exe)
 
-If you're unsure about which system you're using please ask a teacher.
-
-
-## Docker 🐋
-
-Docker is an open platform for developing, shipping, and running applications.
-
-_if you already have Docker installed on your machine please update with the latest version_
-
-### Install Docker
-
-Go to [Docker for WSL2](https://docs.docker.com/docker-for-windows/wsl/).
-
-Download and install the Docker Desktop WSL 2 backend.
-
-Once done, start Docker.
-
-You should be able to run in a Ubuntu terminal:
-
-```bash
-docker run hello-world
-```
-
-The following message should print:
-
-![](images/docker_hello.png)
+If you're unsure about which system you're using please ask a teacher or teaching assistant.
 
 
 ## Slack (Optional)
