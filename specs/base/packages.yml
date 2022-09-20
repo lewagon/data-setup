@@ -1,8 +1,4 @@
-# goal:
-# - scikit-learn >= 1.0.2
-# - tensorflow >= 2.7
-# - tensorflow-macos >= 2.5
-python: 3.8.12
+python: 3.10.6
 glovebox:
   - pytest
   - pylint<2.11               # prevent diffs between platforms for glovebox
@@ -32,11 +28,12 @@ setup:
   - pandas-profiling
 platform:
   apple_intel:
-    - tensorflow
+    - tensorflow=2.10
   apple_silicon:
-    - tensorflow-macos<2.6    # versions 2.6 and 2.7 do not work (kernel dies)
+    - tensorflow-macos=2.10
+    - tensorflow-metal=2.10
   linux:
-    - tensorflow
+    - tensorflow=2.1O
 modules:
   01-Python:
   02-Data-Toolkit:
@@ -72,15 +69,11 @@ modules:
     - ipython
     - jupyter
     - google-cloud-bigquery
-    - Flask
-    - Flask-Cors
-    - mlflow
-    - git+ssh://git@github.com/krokrob/packgenlite
+    - mlflow<2.0
     - termcolor
     - coverage
     - s3fs
     - category-encoders
-    - memoized-property
     - psutil
     - pygeohash
     - fastapi
