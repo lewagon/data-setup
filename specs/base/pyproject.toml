@@ -2,7 +2,7 @@
 name = "dependencies-x86"
 version = "1.0.0"
 description = "Le Wagon data setup Linux x86 - Q4 2022"
-authors = ["bruno lajoie <brunolajoie@gmail.com>"]
+authors = ["Sébastien Saunier <seb@lewagon.org>"]
 
 [tool.poetry.dependencies]
 python = "3.10.6"
