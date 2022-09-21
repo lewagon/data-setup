@@ -15,6 +15,15 @@ glovebox:
   - matplotlib
   - scikit-learn
 setup:
+  - pytest
+  - nbresult
+  - autopep8
+  - flake8
+  - ipdb
+  - beautifulsoup4
+  - PyYAML
+  - lxml
+  - requests
   - yapf
   - seaborn
   - plotly
