@@ -1419,6 +1419,14 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "memoized-property"
+version = "1.0.3"
+description = "A simple python decorator for defining properties that only run their fget function once"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "missingno"
 version = "0.5.1"
 description = "Missing data visualization module for Python."
@@ -2995,7 +3003,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "3.10.6"
-content-hash = "9b1b536c38a76d556c29173f1a24e3f0d95c50849d736fd8c707b3417a7d840e"
+content-hash = "85ab180ab64bdfe699661379a36694828f462f295bda5077e5ae5dd4ed1683e2"
 
 [metadata.files]
 absl-py = [
@@ -4013,6 +4021,9 @@ matplotlib-inline = [
 mccabe = [
     {file = "mccabe-0.7.0-py2.py3-none-any.whl", hash = "sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e"},
     {file = "mccabe-0.7.0.tar.gz", hash = "sha256:348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"},
+]
+memoized-property = [
+    {file = "memoized-property-1.0.3.tar.gz", hash = "sha256:4be4d0209944b9b9b678dae9d7e312249fe2e6fb8bdc9bdaa1da4de324f0fcf5"},
 ]
 missingno = [
     {file = "missingno-0.5.1-py3-none-any.whl", hash = "sha256:74e8fa1ea68c9482479a9429009856ae6cc64725f085092429950e30a8d78f55"},
