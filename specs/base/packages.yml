@@ -1,3 +1,8 @@
+# goal:
+# - scikit-learn >= 1.0.2
+# - tensorflow == 2.10
+# - tensorflow-macos == 2.10
+# - no tensorflow-metal at the moment (slows down performance on M1 silicon)
 python: 3.10.6
 glovebox:
   - pytest
@@ -15,15 +20,6 @@ glovebox:
   - matplotlib
   - scikit-learn
 setup:
-  - pytest
-  - nbresult
-  - autopep8
-  - flake8
-  - ipdb
-  - beautifulsoup4
-  - PyYAML
-  - lxml
-  - requests
   - yapf
   - seaborn
   - plotly
@@ -38,12 +34,11 @@ setup:
   - python-dotenv
 platform:
   apple_intel:
-    - tensorflow=2.10
+    - tensorflow==2.10
   apple_silicon:
-    - tensorflow-macos=2.10
-    - tensorflow-metal=2.10
+    - tensorflow-macos==2.10
   linux:
-    - tensorflow=2.1O
+    - tensorflow==2.10
 modules:
   01-Python:
   02-Data-Toolkit:
