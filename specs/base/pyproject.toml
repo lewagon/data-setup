@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "dependencies-x86"
+name = "data-setup-dependencies"
 version = "1.0.0"
-description = "Le Wagon data setup Linux x86 - Q4 2022"
+description = "Le Wagon Data Setup - Q4 2022"
 authors = ["Sébastien Saunier <seb@lewagon.org>"]
 
 [tool.poetry.dependencies]
