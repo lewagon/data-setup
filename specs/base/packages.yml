@@ -35,7 +35,7 @@ setup:
   - jupyter_nbextensions_configurator
   - nbconvert
   - statsmodels
-  - pandas-profiling
+  - python-dotenv
 platform:
   apple_intel:
     - tensorflow=2.10
@@ -56,6 +56,7 @@ modules:
     - scipy
   04-Decision-Science:
     - google-trans-new
+    - pandas-profiling
   05-ML:
     - scikit-image
     - pmdarima
