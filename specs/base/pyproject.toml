@@ -7,10 +7,10 @@ authors = ["Sébastien Saunier <seb@lewagon.org>"]
 [tool.poetry.dependencies]
 python = "3.10.6"
 tensorflow = [
-  { version = "^2.10", platform = "darwin" }
+  { version = "^2.10.0", platform = "linux" }
 ]
 tensorflow-macos = [
-  { version = "^2.10", platform = "linux" }
+  { version = "^2.10.0", platform = "darwin" }
 ]
 scikit-learn = "^1.1.0"
 pandas = "^1.5.0"
