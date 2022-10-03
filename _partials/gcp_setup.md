@@ -138,10 +138,8 @@ gcloud auth login
 $LINUX_END
 $WINDOWS_START
 ```bash
-gcloud auth login --no-browser
+gcloud auth login --no-launch-browser
 ```
-
-👆 Follow the instructions of the CLI (have a look at this [ticket](https://issuetracker.google.com/issues/227336096?pli=1) if you have an issue)
 $WINDOWS_END
 
 - Login to your Google account on the new tab opened in your web browser
