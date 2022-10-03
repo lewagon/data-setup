@@ -568,6 +568,9 @@ Let's install them, along with other useful tools:
 
 ```bash
 sudo apt update
+```
+
+```bash
 sudo apt install -y curl git imagemagick jq unzip vim zsh
 ```
 
@@ -582,6 +585,7 @@ Let's now install [GitHub official CLI](https://cli.github.com) (Command Line In
 In your terminal, copy-paste the following commands and type in your password if asked:
 
 ```bash
+sudo apt remove -y gitsome # gh command can conflict with gitsome if already installed
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update
@@ -683,12 +687,6 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 sudo apt-get install google-cloud-sdk-app-engine-python
 ```
 👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
-
-## Windows Google Cloud CLI
-
-Install the [gcloud CLI on Windows](https://cloud.google.com/sdk/docs/install#windows) (follow the instructions).
-
-👉 The windows gcloud CLI is required in order to allow the WSL gcloud CLI to authenticate to your GCP account
 
 
 ## Dotfiles
@@ -1321,10 +1319,8 @@ Once the verification goes through, you should receive an email stating that "Yo
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
 ```bash
-gcloud auth login --no-browser
+gcloud auth login --no-launch-browser
 ```
-
-👆 Follow the instructions of the CLI (have a look at this [ticket](https://issuetracker.google.com/issues/227336096?pli=1) if you have an issue)
 
 - Login to your Google account on the new tab opened in your web browser
 - List your active account and check your email address you used for GCP is present
