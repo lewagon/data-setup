@@ -487,6 +487,18 @@ brew install pyenv
 exec zsh
 ```
 
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
+
+We need to add the following environment variables in order to install python:
+
+``` bash
+export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
+```
+</details>
+
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
 
 ```bash
