@@ -13,7 +13,6 @@ MAC_OS = %w[
   intro
   setup/zoom
   setup/github
-  setup/macos_apple_silicon
   setup/macos_command_line_tools
   homebrew
   chrome
