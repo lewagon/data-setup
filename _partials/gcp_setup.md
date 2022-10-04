@@ -125,9 +125,23 @@ Once the verification goes through, you should receive an email stating that "Yo
 ### Configure Cloud sdk
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
+
+$MAC_START
 ```bash
 gcloud auth login
 ```
+$MAC_END
+$LINUX_START
+```bash
+gcloud auth login
+```
+$LINUX_END
+$WINDOWS_START
+```bash
+gcloud auth login --no-launch-browser
+```
+$WINDOWS_END
+
 - Login to your Google account on the new tab opened in your web browser
 - List your active account and check your email address you used for GCP is present
 ```bash
