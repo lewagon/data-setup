@@ -27,6 +27,7 @@ MAC_OS = %w[
   dotfiles_new_laptop
   dotfiles_new_laptop_heading
   dotfiles_new_laptop
+  osx_silicon
   osx_python
   virtualenv
   pip
