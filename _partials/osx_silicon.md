@@ -14,4 +14,20 @@ Copy-paste the following command in the terminal and hit `Enter` to execute.
 
 ☝️ The result of the command should indicate whether your computer uses Apple Silicon.
 
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
+
+You want to make sure that you are not using Rosetta, which is a way to use your Terminal as if you had an Intel computer.
+
+Open the Finder app (or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014)).
+
+Go to Applications > Utilities.
+
+Locate the Terminal app (select it).
+
+Press `Cmd` + `I` on the Terminal app, then verify that the box "Open using Rosetta" is **unchecked**.
+</details>
+
 🚨 Keep this in mind. You will need to remember later on in the setup whether your computer uses an Apple Silicon chip or is an Apple Intel version

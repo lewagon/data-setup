@@ -13,6 +13,7 @@ MAC_OS = %w[
   intro
   setup/zoom
   setup/github
+  osx_silicon
   setup/macos_command_line_tools
   homebrew
   chrome
@@ -27,7 +28,6 @@ MAC_OS = %w[
   dotfiles_new_laptop
   dotfiles_new_laptop_heading
   dotfiles_new_laptop
-  osx_silicon
   osx_python
   virtualenv
   pip
