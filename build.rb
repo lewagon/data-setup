@@ -20,6 +20,7 @@ MAC_OS = %w[
   vscode_extensions
   setup/vscode_liveshare
   setup/oh_my_zsh
+  setup/windows_browser
   direnv
   setup/gh_cli
   dotfiles
@@ -65,6 +66,7 @@ WINDOWS = %w[
   setup/vscode_liveshare
   setup/cli_tools
   setup/oh_my_zsh
+  setup/windows_browser
   direnv
   setup/gh_cli
   ubuntu_gcloud
@@ -108,6 +110,7 @@ LINUX = %w[
   setup/cli_tools
   chrome
   setup/oh_my_zsh
+  setup/windows_browser
   direnv
   setup/gh_cli
   ubuntu_gcloud
