@@ -47,54 +47,6 @@ Ya puedes cerrar la aplicación Zoom.
 ![Foto GitHub](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
 
-## Chips de Apple Silicon
-
-Si compraste tu computadora a finales del 2020, es posible que tenga un nuevo chip llamado Apple silicon en lugar de un procesador Intel: averigüémoslo.
-
-Abre una nueva ventana de tu terminal desde Applications > Utilities o búscala con [Spotlight](https://support.apple.com/en-gb/HT204014):
-
-![Abre la Terminal en macOS](https://github.com/lewagon/setup/blob/master/images/macos_open_terminal.png)
-
-Copia y pega el siguiente comando en la terminal y presiona `Enter` para ejecutarlo.
-
-``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
-```
-
-☝️ El resultado de ese comando debería indicarte si tu computadora tiene Apple Silicon.
-
-Si tu computadora usa Apple Silicon, expande el párrafo de abajo y léelo. Si no es el caso, ignóralo.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Configuración para Apple Silicon 👈</summary>
-
-### Desinstalación de Homebrew
-
-Debemos desinstalar homebrew en caso de que una versión nativa ya haya sido instalada.
-
-Ejecuta este comando en la terminal:
-
-``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-```
-
-Si brew no fue instalado, obtendrás el mensaje `brew: command not found!`
-
-### Configuración de la Terminal para Rosetta
-
-Abre la aplicación Finder (o búscala con [Spotlight](https://support.apple.com/en-gb/HT204014)).
-
-Ve a Applications > Utilities.
-
-Duplica la app de la terminal (selecciónala y luego presiona `Cmd` + `C`, `Cmd` + `V`) y cámbiale el nombre a la copia por Terminal Rosetta.
-
-Presiona `Cmd` + `I` en la aplicación Terminal Rosetta y luego selecciona la casilla "Open using Rosetta".
-
-⚠️ De ahora en adelante durante el bootcamp cuando te pidan que abras una Terminal, abrirás la aplicación **Terminal Rosetta**.
-
-</details>
-
-
 ## Cómo cerrar aplicaciones en una Mac correctamente
 
 Hacer clic en círculo rojo en la esquina superior izquierda de la ventana de la aplicación en Mac **no la termina el proceso**, solo cierra una ventana activa. Hay dos alternativas para cerrar la aplicación _realmente_. Puedes presionar `Cmd + Q` cuando la misma está activa. La otra opción es ir a `APP_NAME` -> `Quit` en la barra del menú.
@@ -305,6 +257,16 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
+## direnv
+
+[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
+
+``` bash
+brew install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
+
 ## GitHub CLI
 
 CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface) que significa interfaz de línea de comando.
@@ -494,6 +456,25 @@ Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor
 </details>
 
 
+## Apple Silicon Chips
+
+If you bought your computer after late 2020, chances are it has a new Apple silicon chip instead of an Intel processor: let's find out.
+
+Open a new terminal window from Applications > Utilities or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014):
+
+![Open Terminal on macOS](images/macos_open_terminal.png)
+
+Copy-paste the following command in the terminal and hit `Enter` to execute.
+
+``` bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
+```
+
+☝️ The result of the command should indicate whether your computer uses Apple Silicon.
+
+🚨 Keep this in mind. You will need to remember later on in the setup whether your computer uses an Apple Silicon chip or is an Apple Intel version
+
+
 ## Instalación de Python (con [`pyenv`](https://github.com/pyenv/pyenv))
 
 Antes de instalar Python, por favor verifica la versión de tu extensión `xz` con:
@@ -525,10 +506,22 @@ brew install pyenv
 exec zsh
 ```
 
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
+
+We need to add the following environment variables in order to install python:
+
+``` bash
+export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
+```
+</details>
+
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
@@ -553,7 +546,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Luego trata de instalar Python nuevamente:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignorar y continuar al paso siguiente.
@@ -564,11 +557,11 @@ Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignor
 OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
 
 ```bash
-pyenv global 3.8.12
+pyenv global 3.10.6
 exec zsh
 ```
 
-Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.8.12`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.10.6`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
 
 
 ## Entorno Virtual de Python
@@ -585,7 +578,7 @@ exec zsh
 Crea el entorno virtual que usaremos durante todo el bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon
+pyenv virtualenv 3.10.6 lewagon
 ```
 
 Define el entorno virtual con lo siguiente:
@@ -711,7 +704,7 @@ Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:

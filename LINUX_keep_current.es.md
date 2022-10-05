@@ -93,7 +93,7 @@ cd $(pyenv root) && git pull
 Instala la versión actual de python:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 👉 Asegúrate de que el comando se ejecute completamente y luego **reinicia tu terminal**.
@@ -107,7 +107,7 @@ pyenv virtualenv-delete lewagon_current
 Crea un nuevo ambiente virtual:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon_current
+pyenv virtualenv 3.10.6 lewagon_current
 ```
 
 Define el nuevo ambiente virtual como predeterminado:
@@ -126,8 +126,8 @@ pyenv versions
 
 ``` bash
   system
-  3.8.12
-  3.8.12/envs/lewagon_current
+  3.10.6
+  3.10.6/envs/lewagon_current
   3.7.6
   3.7.6/envs/lewagon
 * lewagon_current
@@ -277,7 +277,7 @@ sudo service docker stop
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:

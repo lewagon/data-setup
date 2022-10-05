@@ -47,54 +47,6 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 ![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
 
-## Apple Silicon Chips
-
-If you bought your computer after late 2020, chances are it has a new Apple silicon chip instead of an Intel processor: let's find out.
-
-Open a new terminal window from Applications > Utilities or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014):
-
-![Open Terminal on macOS](https://github.com/lewagon/setup/blob/master/images/macos_open_terminal.png)
-
-Copy-paste the following command in the terminal and hit `Enter` to execute.
-
-``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
-```
-
-☝️ The result of the command should indicate whether your computer uses Apple Silicon.
-
-If your computer uses Apple Silicon, expand the paragraph below and go through it. Otherwise ignore it.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
-
-### Uninstall Homebrew
-
-We need to uninstall Homebrew in case a native version was installed.
-
-Execute the following command in the terminal:
-
-``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-```
-
-If brew was not installed you will get the message `brew: command not found!`
-
-### Configure Terminal for Rosetta
-
-Open the Finder app (or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014)).
-
-Go to Applications > Utilities.
-
-Duplicate the terminal app (select it, then `Cmd` + `C`, `Cmd` + `V`), and rename a copy as Terminal Rosetta.
-
-Press `Cmd` + `I` on the Terminal Rosetta app, then check the box "Open using Rosetta".
-
-⚠️ From now on during the bootcamp, whenever you are asked to open a Terminal, you will use the **Terminal Rosetta** app.
-
-</details>
-
-
 ## A note about quitting apps on a Mac
 
 Clicking the little red cross in the top left corner of the application window on a Mac **does not really quit it**, it just closes an active window. To quit the application _for real_ either press `Cmd + Q` when the application is active, or navigate to `APP_NAME` -> `Quit` in the menu bar.
@@ -305,6 +257,16 @@ At the end your terminal should look like this:
 :x: Otherwise, please **ask for a teacher**
 
 
+## direnv
+
+[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
+
+``` bash
+brew install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
+
 ## GitHub CLI
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
@@ -501,6 +463,25 @@ Please now **quit** all your opened terminal windows.
 </details>
 
 
+## Apple Silicon Chips
+
+If you bought your computer after late 2020, chances are it has a new Apple silicon chip instead of an Intel processor: let's find out.
+
+Open a new terminal window from Applications > Utilities or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014):
+
+![Open Terminal on macOS](images/macos_open_terminal.png)
+
+Copy-paste the following command in the terminal and hit `Enter` to execute.
+
+``` bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
+```
+
+☝️ The result of the command should indicate whether your computer uses Apple Silicon.
+
+🚨 Keep this in mind. You will need to remember later on in the setup whether your computer uses an Apple Silicon chip or is an Apple Intel version
+
+
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
 
 Before installing Python, please check your `xz` version with:
@@ -532,10 +513,22 @@ brew install pyenv
 exec zsh
 ```
 
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
+
+We need to add the following environment variables in order to install python:
+
+``` bash
+export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
+```
+</details>
+
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -560,7 +553,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Then try to install Python again:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 It could raise another error about `bzip2`, you can ignore it and continue to the next step.
@@ -571,11 +564,11 @@ It could raise another error about `bzip2`, you can ignore it and continue to th
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.8.12
+pyenv global 3.10.6
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `3.8.12`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.10.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
@@ -592,7 +585,7 @@ exec zsh
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon
+pyenv virtualenv 3.10.6 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -718,7 +711,7 @@ You can close your web browser then terminate the jupyter server with `CTRL` + `
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Run the following command to check if you successfully installed the required packages:

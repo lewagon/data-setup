@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby -wU
 CONSTANTS = {
-  'PYTHON_VERSION' => '3.8.12',
+  'PYTHON_VERSION' => '3.10.6',
   'PYTHON_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh',
   'PIP_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh',
   'PIP_LOADER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py',
@@ -13,7 +13,6 @@ MAC_OS = %w[
   intro
   setup/zoom
   setup/github
-  setup/macos_apple_silicon
   setup/macos_command_line_tools
   homebrew
   chrome
@@ -21,12 +20,14 @@ MAC_OS = %w[
   vscode_extensions
   setup/vscode_liveshare
   setup/oh_my_zsh
+  direnv
   setup/gh_cli
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
   dotfiles_new_laptop_heading
   dotfiles_new_laptop
+  osx_silicon
   osx_python
   virtualenv
   pip
@@ -64,6 +65,8 @@ WINDOWS = %w[
   setup/vscode_liveshare
   setup/cli_tools
   setup/oh_my_zsh
+  setup/windows_browser
+  direnv
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
@@ -106,6 +109,7 @@ LINUX = %w[
   setup/cli_tools
   chrome
   setup/oh_my_zsh
+  direnv
   setup/gh_cli
   ubuntu_gcloud
   dotfiles
