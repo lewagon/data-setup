@@ -278,7 +278,7 @@ Cuando termines, tu terminal debería lucir así:
 
 ## direnv
 
-[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
 
 ``` bash
 brew install direnv
@@ -483,7 +483,7 @@ Antes de instalar Python, por favor verifica la versión de tu extensión `xz` c
 brew info xz
 ```
 
-Debe ser superior a `5.2.0`, **si no es el caso**, debes ejecutar lo siguiente:
+Debe ser superior a `5.2.0`. **Si no es el caso**, debes ejecutar lo siguiente:
 
 ```bash
 sudo rm -rf /usr/local/opt/xz
@@ -497,7 +497,7 @@ Luego ejecuta:
 brew install readline
 ```
 
-mmacOS viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
+macOS viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
 
 Primero instala `pyenv` con el siguiente comando en la Terminal:
 
@@ -506,19 +506,19 @@ brew install pyenv
 exec zsh
 ```
 
-If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
+Si tu computadora tiene un procesador **Apple Silicon** (M1, M2, entre otros), expande el párrafo de abajo y sigue las indicaciones. En caso contrario, ignóralo.
 
 <details>
-  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
+  <summary>👉&nbsp;&nbsp;Setup para Apple Silicon 👈</summary>
 
-We need to add the following environment variables in order to install python:
+Necesitamos agregar las siguientes variables de entorno para instalar python:
 
 ``` bash
 export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
 ```
 </details>
 
-Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
+Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
 
 ```bash
 pyenv install 3.10.6
@@ -561,7 +561,7 @@ pyenv global 3.10.6
 exec zsh
 ```
 
-Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.10.6`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.10.6`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
 
 
 ## Entorno Virtual de Python

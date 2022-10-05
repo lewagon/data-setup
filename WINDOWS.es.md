@@ -707,7 +707,7 @@ No dudes en **pedirle ayuda a tu profesor**.
 
 ## direnv
 
-[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
 
 ``` bash
 sudo apt-get update; sudo apt-get install direnv
