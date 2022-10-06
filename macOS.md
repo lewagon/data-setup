@@ -68,7 +68,7 @@ If your computer uses **Apple Silicon**, expand the paragraph below and go throu
 <details>
   <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
-You want to make sure that you are not using Rosetta, which is a way to use your Terminal as if you had an Intel computer.
+You want to make sure that you are **not using** Rosetta, which is a way to use your Terminal as if you had an Intel computer.
 
 Open the Finder app (or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014)).
 
