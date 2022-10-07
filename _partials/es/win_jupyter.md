@@ -21,7 +21,7 @@ Localiza la siguiente línea en el archivo de configuración:
 # c.NotebookApp.use_redirect_file = True
 ```
 
-Y reemplázala por esta:
+Y reemplázala por éste **precisamente** 👇 (incluyendo la eliminación del símbolo `#`)
 
 ``` python
 c.NotebookApp.use_redirect_file = False
