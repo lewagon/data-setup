@@ -1055,7 +1055,7 @@ Locate the following line in the configuration file:
 # c.NotebookApp.use_redirect_file = True
 ```
 
-And replace it with this one:
+And replace it with this one **precisely** 👇 (including removing the `#` symbol)
 
 ``` python
 c.NotebookApp.use_redirect_file = False
