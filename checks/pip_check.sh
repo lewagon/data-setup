@@ -5,8 +5,15 @@ while read -r line; do
    PACKS+=("$line")
 done <<< "$PACKAGES"
 missing=()
-system_name="$(uname -s)"
-if [ $system_name = 'Darwin' ]; then
+arch_name="$(uname -m)"
+if [ "${arch_name}" = "x86_64" ]; then
+  if [ "$(sysctl -in sysctl.proc_translated)" = "1" ]; then
+    arch_name='m1'
+  fi
+elif [ "${arch_name}" = "arm64" ]; then
+  arch_name='m1'
+fi
+if [ $arch_name = 'm1' ]; then
   REQUIRED=('pytest' 'pylint' 'ipdb' 'PyYAML' 'nbresult' 'autopep8' 'flake8' 'yapf' 'lxml' 'requests' 'beautifulsoup4' 'jupyterlab' 'pandas' 'matplotlib' 'seaborn' 'plotly' 'scikit-learn' 'tensorflow-macos' 'nbconvert' 'xgboost' 'statsmodels' 'pandas-profiling' 'jupyter-resource-usage')
 fi
 for r in ${REQUIRED[@]}; do
