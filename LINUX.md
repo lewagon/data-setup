@@ -210,10 +210,6 @@ At the end your terminal should look like this:
 
 [direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
 
-``` bash
-sudo apt-get update; sudo apt-get install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
 
 
 ## GitHub CLI
@@ -526,9 +522,6 @@ pip install --upgrade pip
 
 Then let's install some packages for the first weeks of the program:
 
-``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
-```
 
 
 ## `jupyter` notebook extensions
@@ -809,9 +802,6 @@ Once the verification goes through, you should receive an email stating that "Yo
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
-```bash
-gcloud auth login
-```
 
 - Login to your Google account on the new tab opened in your web browser
 - List your active account and check your email address you used for GCP is present

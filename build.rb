@@ -1,3 +1,5 @@
+require 'open-uri'
+require 'pry'
 #!/usr/bin/env ruby -wU
 CONSTANTS = {
   'PYTHON_VERSION' => '3.10.6',
@@ -139,6 +141,43 @@ LINUX_KC = %w[
   python_checkup
 ]
 
+VM = %w[
+  intro
+  setup/zoom
+  chrome
+  setup/github
+  de_setup/ssh_key
+  de_setup/gcp_setup
+  de_setup/virtual_machine
+  de_setup/win_vscode
+  de_setup/vscode_remote_ssh
+  vscode_extensions
+  setup/cli_tools
+  setup/oh_my_zsh
+  direnv
+  setup/gh_cli
+  de_setup/ubuntu_gcloud
+  de_setup/gcp_setup_linux
+  dotfiles
+  dotfiles_new_student
+  dotfiles_new_laptop
+  dotfiles_new_laptop_heading
+  dotfiles_new_laptop
+  de_setup/zsh_default_terminal
+  setup/ssh_agent
+  ubuntu_python
+  virtualenv
+  pip
+  nbextensions
+  python_checkup
+  dbeaver
+  ubuntu_docker
+  setup/kitt
+  setup/windows_slack
+  setup/slack_settings
+  kata
+]
+
 LOCALES = ["", "es"]  # english + spanish locales
 
 FILENAMES = {
@@ -147,24 +186,36 @@ FILENAMES = {
   "LINUX" => ["LINUX", LINUX],
   "WINDOWS_keep_current" => ["WINDOWS", WINDOWS_KC],
   "macOS_keep_current" => ["macOS", MAC_OS_KC],
-  "LINUX_keep_current" => ["LINUX", LINUX_KC]
+  "LINUX_keep_current" => ["LINUX", LINUX_KC],
+  "VM" => ["VM", VM]
 }
 
 DELIMITERS = {
   "WINDOWS" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
   "macOS" => ["\\$MAC_START\n", "\\$MAC_END\n"],
-  "LINUX" => ["\\$LINUX_START\n", "\\$LINUX_END\n"]
+  "LINUX" => ["\\$LINUX_START\n", "\\$LINUX_END\n"],
+  "VM" => ["\\$LINUX_START\n", "\\$LINUX_END\n"]
 }
 
 def load_partial(partial, locale)
-  match_data = partial.match(/setup\/(?<partial>[0-9a-z_]+)/)
-  partial = match_data[:partial] if match_data
+  match_setup = partial.match(/setup\/(?<partial>[0-9a-z_]+)/)
+  match_de_setup = partial.match(/de_setup\/(?<partial>[0-9a-z_]+)/)
+  if match_de_setup
+    partial = match_de_setup[:partial]
+  elsif match_setup
+    partial = match_setup[:partial]
+  end
   partial = File.join(locale, partial) unless locale.empty?
   file = File.join("_partials", "#{partial}.md")
-  if match_data
-    require 'open-uri'
+  if match_de_setup
+    content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/data-engineering-setup/main", file))
+            .read
+    # replace data-setup repo relative path by data-engineering-setup repo URL
+    image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
+    image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}")}
+  elsif match_setup
     content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", file))
-            .string
+            .read
     # replace data-setup repo relative path by setup repo URL
     image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
     image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/master/#{ip}")}
