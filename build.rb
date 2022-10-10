@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'pry'
 #!/usr/bin/env ruby -wU
 CONSTANTS = {
   'PYTHON_VERSION' => '3.10.6',
