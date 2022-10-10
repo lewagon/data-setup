@@ -322,14 +322,14 @@ $MAC_START
 Stop the Docker app
 $MAC_END
 $LINUX_START
-Start Docker :
+Stop Docker :
 
 ``` bash
 sudo service docker stop
 ```
 $LINUX_END
 $WINDOWS_START
-Start Docker :
+Stop Docker :
 
 ``` bash
 sudo service docker stop
