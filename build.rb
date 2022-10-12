@@ -239,6 +239,8 @@ LOCALES.each do |locale|
         content = loaded["#{partial}.#{locale}"].clone
         # remove the OS dependant blocks
         removed_blocks = DELIMITERS.keys - [os_name]
+        removed_blocks = removed_blocks - ["LINUX"] if os_name == "VM"
+        removed_blocks = removed_blocks - ["VM"] if os_name == "LINUX"
         removed_blocks.each do |block|
           delimiter_start, delimiter_end = DELIMITERS[block]
           pattern = "#{delimiter_start}(.|\n)*?(?<!#{delimiter_end})#{delimiter_end}"
