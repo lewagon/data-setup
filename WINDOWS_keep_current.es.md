@@ -252,11 +252,7 @@ gcloud auth configure-docker
 
 ## Docker
 
-Start Docker :
-
-``` bash
-sudo service docker start
-```
+Start the Docker Desktop app
 
 Verifica que Docker pueda ejecutar la imagen de hello-world:
 
@@ -266,19 +262,7 @@ docker run hello-world
 
 👉 Asegúrate de que este comando se ejecute completamente
 
-Start Docker :
-
-``` bash
-sudo service docker stop
-```
-
-Si este comando no funciona, reinicia Ubuntu ejecutando el comando siguiente en una ventana PowerShell:
-
-``` bash
-wsl --shutdown
-```
-
-Si después de eso el comando sigue sin funcionar, intenta reiniciar tu máquina Windows
+Stop the Docker Desktop app
 
 
 ### Chqueo de la configuración de Python

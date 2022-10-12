@@ -266,7 +266,7 @@ docker run hello-world
 
 👉 Asegúrate de que este comando se ejecute completamente
 
-Start Docker :
+Stop Docker :
 
 ``` bash
 sudo service docker stop

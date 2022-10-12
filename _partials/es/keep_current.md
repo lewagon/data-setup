@@ -303,11 +303,7 @@ sudo service docker start
 ```
 $LINUX_END
 $WINDOWS_START
-Start Docker :
-
-``` bash
-sudo service docker start
-```
+Start the Docker Desktop app
 $WINDOWS_END
 
 Verifica que Docker pueda ejecutar la imagen de hello-world:
@@ -322,24 +318,12 @@ $MAC_START
 Stop the Docker app
 $MAC_END
 $LINUX_START
-Start Docker :
+Stop Docker :
 
 ``` bash
 sudo service docker stop
 ```
 $LINUX_END
 $WINDOWS_START
-Start Docker :
-
-``` bash
-sudo service docker stop
-```
-
-Si este comando no funciona, reinicia Ubuntu ejecutando el comando siguiente en una ventana PowerShell:
-
-``` bash
-wsl --shutdown
-```
-
-Si después de eso el comando sigue sin funcionar, intenta reiniciar tu máquina Windows
+Stop the Docker Desktop app
 $WINDOWS_END
