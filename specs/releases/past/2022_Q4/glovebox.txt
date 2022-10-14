@@ -40,6 +40,7 @@ lxml==4.9.1
 matplotlib==3.5.3
 matplotlib-inline==0.1.6
 mccabe==0.7.0
+memoized-property==1.0.3
 more-itertools==8.14.0
 msgpack==1.0.4
 nbresult==0.0.8
