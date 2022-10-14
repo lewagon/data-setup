@@ -162,7 +162,7 @@ nbresult==0.0.8
 nest-asyncio==1.5.6
 networkx==2.8.7
 nltk==3.7
-notebook==6.5.0
+notebook==6.5.1
 notebook-shim==0.1.0
 numpy==1.23.4
 oauthlib==3.2.1
