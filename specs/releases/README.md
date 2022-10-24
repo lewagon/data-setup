@@ -1,11 +1,10 @@
 
-## file source
+## files
 
-files generated from https://github.com/lewagon/utils/tree/master/data-setup
+files generated from https://github.com/lewagon/utils/blob/master/data-setup/process/base/requirements.txt
 
-apple_intel         requirements_macOS_12.6_intel_i386.txt
-                    requirements_macOS_12.6_rosetta_i386.txt is unused
-apple_silicon       requirements_macOS_12.6_silicon_arm.txt
-glovebox            manually generated from previous release file + versions from requirements_Ubuntu_22.04_intel_x86_64.txt
-linux               requirements_Ubuntu_22.04_intel_x86_64.txt
+apple_intel
+apple_silicon       from this release this refers to a native silicon setup (without using rosetta i386)
+glovebox
+linux
 python_version
