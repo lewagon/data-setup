@@ -849,8 +849,6 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 exec zsh
 ```
 
-Ignore the `pyenv: no such command 'virtualenv-init' for now`.
-
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
 ```bash
