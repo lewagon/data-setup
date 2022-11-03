@@ -260,7 +260,7 @@ _Note: The following section requires you already have a [Google Cloud Platform]
     <img alt="gcloud-console-vm-e2-standard4" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/gcloud-console-vm-e2-standard4.png" width=500>
 - Boot disk > Change
   - Operating system > Ubuntu
-  - Version > Ubuntu 20.04 LTS
+  - Version > Ubuntu 22.04 LTS
   - Boot disk type > Balanced persistent disk
   - Size > upgrade to 150GB
 
@@ -283,7 +283,7 @@ _Note: The following section requires you already have a [Google Cloud Platform]
 - You will now have a public IP associated with your account, and later to your VM instance. Click on `Done` at the bottom of the section `Edit network interface` you were in.
 
     <img alt="gcloud-console-new-external-ip" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/gcloud-console-new-external-ip.png" width=300>
-    
+
 ### Public SSH key
 - Open the `Security` section
 
@@ -383,6 +383,32 @@ That's the only extension you should install on your _local_ machine, we will in
 <img alt="vscode-command-palette-new-terminal" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/vscode-command-palette-new-terminal.png" width=500>
 <br>
 <img alt="vscode-terminal" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/vscode-terminal.png" width=500>
+
+- Lets create a more readable version of your machine to connect to!
+
+Lets go to the ssh config
+
+```bash
+code ~/.ssh/config
+```
+
+You should see something like the following:
+
+```bash
+Host <machine ip>
+  HostName <machine ip>
+  IdentityFile <file path for your ssh key>
+  User <username>
+```
+You can now change Host to whatever you would like to see as the name of your connection or in terminal with `ssh <Host>`!
+
+```bash
+# For instance
+Host "data engineering bootcamp"
+  HostName 35.240.107.210
+  IdentityFile <file path for your ssh key>
+  User <username>
+```
 
 ℹ️ From now on, the setup of your local machine is over. The following steps aim at configuring your **virtual machine**.
 
@@ -624,7 +650,7 @@ The browser has now saved the service account json file 🔑 in your downloads d
         "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bootcamp%40kevin-bootcamp.iam.gserviceaccount.com"
     }
     ```
-- Create a `/.gcp_keys` directory on your Virtual Machine, then create a json file in it:
+- Create a `~/.gcp_keys` directory on your Virtual Machine, then create a json file in it:
     ``` bash
     mkdir ~/.gcp_keys
     touch ~/.gcp_keys/le-wagon-de-bootcamp.json
