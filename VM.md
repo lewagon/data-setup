@@ -265,7 +265,7 @@ _Note: The following section requires you already have a [Google Cloud Platform]
   - Size > upgrade to 150GB
 
     <img alt="gcloud-console-vm-ubunt" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/gcloud-console-vm-ubunt.png" width=500>
-- Open `Networking, Disks, ...`
+- Open `Networking, Disks, ...` under `Advanced options`
 - Open `Networking`
 
     <img alt="gcloud-console-vm-networking" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/gcloud-console-vm-networking.png" width=500>
@@ -313,7 +313,7 @@ _Note: The following section requires you already have a [Google Cloud Platform]
 - Click on your instance
 
     <img alt="gcloud-console-vm-running" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/gcloud-console-vm-running.png" width=500>
-- Go down to the section `SSH keys`, and write down your username
+- Go down to the section `SSH keys`, and write down your username (you need it for the next section)
 
     <img alt="gcloud-console-vm-username" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/gcloud-console-vm-username.png" width=300>
 
@@ -384,9 +384,7 @@ That's the only extension you should install on your _local_ machine, we will in
 <br>
 <img alt="vscode-terminal" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/vscode-terminal.png" width=500>
 
-- Lets create a more readable version of your machine to connect to!
-
-Lets go to the ssh config
+- Still on your *local* computer, lets create a more readable version of your machine to connect to!
 
 ```bash
 code ~/.ssh/config
@@ -410,7 +408,7 @@ Host "data engineering bootcamp"
   User <username>
 ```
 
-ℹ️ From now on, the setup of your local machine is over. The following steps aim at configuring your **virtual machine**.
+**The setup of your local machine is over. All following commands will be run from within your 🚨 virtual machine**🚨 terminal (via VS code for instance)
 
 
 ## VS Code Extensions
@@ -472,8 +470,17 @@ In your terminal, copy-paste the following commands and type in your password if
 ```bash
 sudo apt remove -y gitsome # gh command can conflict with gitsome if already installed
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+```
+
+```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+```
+
+```bash
 sudo apt update
+```
+
+```bash
 sudo apt install -y gh
 ```
 
@@ -650,7 +657,7 @@ The browser has now saved the service account json file 🔑 in your downloads d
         "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bootcamp%40kevin-bootcamp.iam.gserviceaccount.com"
     }
     ```
-- Create a `~/.gcp_keys` directory on your Virtual Machine, then create a json file in it:
+- **on your Virtual Machine**, create a `~/.gcp_keys` directory, then create a json file in it:
     ``` bash
     mkdir ~/.gcp_keys
     touch ~/.gcp_keys/le-wagon-de-bootcamp.json
@@ -854,12 +861,6 @@ code ~/.zshrc
 Then:
 - Spot the line starting with `plugins=`
 - Add `ssh-agent` at the end of the plugins list
-
-The list should look like:
-
-```bash
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
 
 :heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
 
@@ -1103,7 +1104,7 @@ If you are unsure about what to do, you can follow [this link](https://kitt.lewa
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
 
-Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
+Your teacher will then validate that you are indeed part of the batch. You can ask them to do it as soon as you completed the registration form.
 
 Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
 

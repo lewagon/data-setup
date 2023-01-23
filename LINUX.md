@@ -57,10 +57,25 @@ Copy (`Ctrl` + `C`) the commands below then paste them in your terminal (`Ctrl` 
 
 ```bash
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+```
+
+```bash
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+```
+
+```bash
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+```
+
+```bash
 rm -f packages.microsoft.gpg
+```
+
+```bash
 sudo apt update
+```
+
+```bash
 sudo apt install -y code
 ```
 
@@ -158,8 +173,17 @@ In your terminal, copy-paste the following commands and type in your password if
 ```bash
 sudo apt remove -y gitsome # gh command can conflict with gitsome if already installed
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+```
+
+```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+```
+
+```bash
 sudo apt update
+```
+
+```bash
 sudo apt install -y gh
 ```
 
@@ -438,12 +462,6 @@ code ~/.zshrc
 Then:
 - Spot the line starting with `plugins=`
 - Add `ssh-agent` at the end of the plugins list
-
-The list should look like:
-
-```bash
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
 
 :heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
 
@@ -956,7 +974,7 @@ If you are unsure about what to do, you can follow [this link](https://kitt.lewa
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
 
-Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
+Your teacher will then validate that you are indeed part of the batch. You can ask them to do it as soon as you completed the registration form.
 
 Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
 
