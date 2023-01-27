@@ -31,6 +31,7 @@ anaconda-clean --yes
 ```bash
 rm -rf ~/anaconda2
 rm -rf ~/anaconda3
+rm -rf ~/.anaconda_backup
 $MAC_START
 rm -rf ~/opt
 $MAC_END
