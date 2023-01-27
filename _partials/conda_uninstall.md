@@ -5,6 +5,7 @@
 As we are using `pyenv` to install and manage our Python version, we need to uninstall [`conda`](https://docs.conda.io/projects/conda/en/latest/), another package manager you may have on your machine if you previously installed [Anaconda](https://www.anaconda.com/). Thus, we are preventing any possible Python version issue later.
 
 Check if you have `conda` installed on your machine:
+
 ```bash
 conda list
 ```
