@@ -46,4 +46,7 @@ $LINUX_START
     - Save the file with `CTRL` + `s`
 $LINUX_END
 - Restart your terminal with `exec zsh`
+- Remove Anaconda initialization from your `.zshrc`:
+    - Open the file with `code ~/.zshrc` 
+    - Remove the code lines starting from `>>> conda initialize >>>` to `<<< conda initialize <<<`
 </details>
