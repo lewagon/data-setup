@@ -1,6 +1,6 @@
 # Instrucciones para la configuración
 
-Aquí abajo encontrarás las instrucciones para configurar tu computadora para [el curso de Data Science de Le Wagon](https://www.lewagon.com/es/data-science-course/full-time)
+Aquí abajo encontrarás las instrucciones para configurar tu computadora para [el curso de Data Science de Le Wagon](https://www.lewagon.com/data-science-course/full-time)
 
 Por favor **léelas cuidadosamente y ejecuta todos los comandos en el siguiente orden**. Si tienes algún problema, no dudes en pedirle ayuda a una profesor :raising_hand:
 
@@ -47,52 +47,39 @@ Ya puedes cerrar la aplicación Zoom.
 ![Foto GitHub](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
 
-## Chips de Apple Silicon
+## Chips Apple Silicon
 
-Si compraste tu computadora a finales del 2020, es posible que tenga un nuevo chip llamado Apple silicon en lugar de un procesador Intel: averigüémoslo.
+Si compraste tu computadora después de finales del 2020, es probable que tenga un nuevo chip Apple Silicon en lugar de un procesador Intel: descubrámoslo.
 
-Abre una nueva ventana de tu terminal desde Applications > Utilities o búscala con [Spotlight](https://support.apple.com/en-gb/HT204014):
+Abre una nueva ventana de la tarminal desde Aplicaciones > Utilidades o búscala con [Spotlight](https://support.apple.com/es-es/HT204014):
 
-![Abre la Terminal en macOS](https://github.com/lewagon/setup/blob/master/images/macos_open_terminal.png)
+![Abrir Terminal en macOS](images/macos_open_terminal.png)
 
-Copia y pega el siguiente comando en la terminal y presiona `ENTER` para ejecutarlo.
+Copia y pega el siguiente comando en la terminal y presiona `Enter` para ejecutarlo.
 
 ``` bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
 ```
 
-☝️ El resultado de ese comando debería indicarte si tu computadora tiene Apple Silicon.
+☝️ El resultado del comando debería indicar si tu computadora usa un chip Apple Silicon.
 
-Si tu computadora usa Apple Silicon, expande el párrafo de abajo y léelo. Si no es el caso, ignóralo.
+Si tu computadora usa **Apple Silicon**, expande el siguiente párrafo y ejecútalo. En caso contrario, ignóralo.
 
 <details>
-  <summary>👉&nbsp;&nbsp;Configuración para Apple Silicon 👈</summary>
+  <summary>👉&nbsp;&nbsp;Setup para Apple Silicon 👈</summary>
 
-### Desinstalación de Homebrew
+Quieres asegurarte que no estás usando Rosetta, que es una forma de usar tu Terminal como si tuvieras una computadora con Intel.
 
-Debemos desinstalar homebrew en caso de que una versión nativa ya haya sido instalada.
+Abre la app Finder (o búscala con [Spotlight](https://support.apple.com/es-es/HT204014)).
 
-Ejecuta este comando en la terminal:
+Ve a Aplicaciones > Utilidades.
 
-``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-```
+Ubica la app Terminal (selecciónala).
 
-Si brew no fue instalado, obtendrás el mensaje `brew: command not found!`
-
-### Configuración de la Terminal para Rosetta
-
-Abre la aplicación Finder (o búscala con [Spotlight](https://support.apple.com/en-gb/HT204014)).
-
-Ve a Applications > Utilities.
-
-Duplica la app de la terminal (selecciónala y luego presiona `Cmd` + `C`, `Cmd` + `V`) y cámbiale el nombre a la copia por Terminal Rosetta.
-
-Presiona `Cmd` + `I` en la aplicación Terminal Rosetta y luego selecciona la casilla "Open using Rosetta".
-
-⚠️ De ahora en adelante durante el bootcamp cuando te pidan que abras una Terminal, abrirás la aplicación **Terminal Rosetta**.
-
+Presiona `Cmd` + `I` en la app Terminal, luego verifica que la caja "Abrir usando Rosetta" esté **desmarcada**.
 </details>
+
+🚨 Ten esto en mente. Deberás recordarlo más adelante en este setup si tu computadora usa un chip Apple Silicon o Intel.
 
 
 ## Cómo cerrar aplicaciones en una Mac correctamente
@@ -105,7 +92,7 @@ Durante esta configuración, se te pedirá **cerrar y abrir nuevamente** aplicac
 
 ## Herramientas de la Línea de Comando
 
-Abre una nueva terminal, copia y pega el comando siguiente y presiona `ENTER`:
+Abre una nueva terminal, copia y pega el comando siguiente y presiona `Enter`:
 
 ```bash
 xcode-select --install
@@ -146,7 +133,7 @@ Para instalarlo, abre tu Terminal y ejecuta lo siguiente:
 ```
 
 Te pedirá tu confirmación (presiona `Enter`) y tu **contraseña de usuario macOS** (la que usas para [iniciar sesión](https://support.apple.com/en-gb/HT202860) cuando reinicias tu Macbook).
-:warning: Cuando escribas tu contraseña en la Terminal, **no** la verás (tampoco verás algo como `*****`). ¡Esto es **normal**! Simplemente escribe tu contraseña y confirma presionando `Enter`.
+:warning: Cuando escribas tu contraseña en la Terminal, **no** la verás (sólo verás algo como `*****`). ¡Esto es **normal**! Simplemente escribe tu contraseña y confirma presionando `Enter`.
 
 <details>
   <summary>🛠 Si aparece un <code>Error: Not a valid ref: refs/remotes/origin/master</code> </summary>
@@ -210,7 +197,7 @@ brew upgrade readline    || brew install readline
 
 Instala el navegador Google Chrome si no lo tienes todavía y configúralo como tu __navegador predeterminado__.
 
-Sigue los pasos en el siguiente enlace :point_right: [Instalación de Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=es)
+Sigue los pasos en el siguiente enlace :point_right: [Instalación de Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en-GB)
 
 __¿Por qué Chrome?__
 
@@ -270,7 +257,7 @@ Aquí está la lista de las extensiones que estás instalando:
 
 [Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) es una extensión de VS Code que te permite compartir el código en tu editor de texto para debugging y pair-programming: ¡Instalémoslo!
 
-Abre VS Code desde tu terminal escribiendo `code` y presionando `ENTER`.
+Abre VS Code desde tu terminal escribiendo `code` y presionando `Enter`.
 
 Haz clic en la pequeña flecha de la parte inferior de la barra de la izquierda:
 
@@ -282,7 +269,6 @@ Haz clic en la pequeña flecha de la parte inferior de la barra de la izquierda:
 - Es posible que VS Code muestre más ventanas emergentess: Ciérralas haciendo clic en "OK".
 
 Eso es todo. ¡Ya puedes continuar!
-
 
 
 ## Oh-my-zsh
@@ -306,6 +292,16 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
+## direnv
+
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
+
+``` bash
+brew install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
+
 ## GitHub CLI
 
 CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface) que significa interfaz de línea de comando.
@@ -322,6 +318,18 @@ Lo primero que hay que hacer para **iniciar sesión** es copiar y pegar el coman
 gh auth login -s 'user:email' -w
 ```
 
+gh le hará algunas preguntas:
+
+`What is your preferred protocol for Git operations?` Con las flechas, elige `SSH` y presiona `Enter`. SSH es un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+
+`Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
+
+Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
+
+`Enter a passphrase for your new SSH key (Optional)`. Pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro. Luego presiona `Enter`.
+
+:warning: Cuando escribas tu passphrase, no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu passphrase como su longitud. Simplemente escribe tu passphrase y presiona `Enter` al terminar.
+
 Obtendrás el siguiente resultado:
 
 ```bash
@@ -329,11 +337,11 @@ Obtendrás el siguiente resultado:
 - Press Enter to open github.com in your browser...
 ```
 
-Selecciona y copia el código (`0EF9-D015` en el ejemplo) y luego presiona `ENTER`.
+Selecciona y copia el código (`0EF9-D015` en el ejemplo) y luego presiona `Enter`.
 
 Tu navegador se abrirá y te pedirá que autorices GitHub CLI para usar tu cuenta GitHub. Acepta y espera un poco.
 
-Regresa a la terminal, presiona `ENTER` nuevamente y listo. Eso es todo.
+Regresa a la terminal, presiona `Enter` nuevamente y listo. Eso es todo.
 
 Para verificar que están conectado correctamente, escribe lo siguiente:
 
@@ -344,53 +352,6 @@ gh auth status
 :heavy_check_mark: Si obtienes este mensaje: `Logged in to github.com as <YOUR USERNAME> `, significa que todo está bien :+1:
 
 :x: De lo contrario, **contacta a un profesor**.
-
-Luego ejecuta esta línea de configuración:
-
-```bash
-gh config set git_protocol ssh
-```
-
-
-## SSH Key
-
-### Generación
-
-Debemos generar SSH keys las cuales serán utilizadas por GitHub para autenticarte. Piensa que es una manera de iniciar sesión pero diferente a la forma convencional del usuario/contraseña.
-
-:warning: Si ya has generado keys que utilizas actualmente con otros servicios, puedes ignorar este paso.
-
-Abre una terminal y copia y pega este comando, reemplazando el email con el **tuyo** (el que usaste cuando creaste tu cuenta en GitHub).
-
-```bash
-mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
-```
-
-Te pedirá información. Simplemente presiona enter hasta que pida una **passphrase**.
-
-:warning: Cuando te pidan una passphrase, pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro.
-
-:warning: Cuando escribas tu passphrase, no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu passphrase como su longitud. Simplemente escribe tu passphrase y presiona `ENTER` al terminar.
-
-### Comunicarle tu public key a GitHub
-
-Ahora le vas a dar tu **public** key a GitHub.
-
-En tu terminal copia y pega el siguiente comando:
-
-```bash
-gh auth refresh -s write:public_key
-```
-
-Mostrará una código una única vez (####-####) en la pantalla. Cópialo y presiona `ENTER`. Luego pega el código en tu navegador y sigue las instrucciones para **Autorizar a GitHub**.
-
-Vuelve a la terminal. Presiona `ENTER` y ejecuta esto:
-
-```bash
-gh ssh-key add ~/.ssh/id_ed25519.pub
-```
-
-Eso debería devolver `✓ Public key added to your account`. Si no es el caso, no dudes **en pedirle ayuda a un profesor**.
 
 
 ## Dotfiles
@@ -411,7 +372,7 @@ cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
 code . # Open it in VS Code
 ```
 
-En VS Code, abre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
+En VS Codeabre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
 
 Regresa a la terminal y ejecuta un `git diff` y pídele a un TA que venga y verifique este cambio de configuración. Debería ver cosas de Python y `pyenv`.
 
@@ -485,7 +446,7 @@ OR
 
 <details>
     <summary>
-        <strong>Ya hice el bootcamp de Web Development (FullStack) de Le Wagon <em>pero tengo una nueva laptop</em></strong>
+        <strong>IYa hice el bootcamp de Web Development (FullStack) de Le Wagon <em>pero tengo una nueva laptop</em></strong>
     </summary>
 
 
@@ -538,7 +499,7 @@ Antes de instalar Python, por favor verifica la versión de tu extensión `xz` c
 brew info xz
 ```
 
-Debe ser superior a `5.2.0`, **si no es el caso**, debes ejecutar lo siguiente:
+Debe ser superior a `5.2.0`. **Si no es el caso**, debes ejecutar lo siguiente:
 
 ```bash
 sudo rm -rf /usr/local/opt/xz
@@ -561,10 +522,22 @@ brew install pyenv
 exec zsh
 ```
 
+Si tu computadora tiene un procesador **Apple Silicon** (M1, M2, entre otros), expande el párrafo de abajo y sigue las indicaciones. En caso contrario, ignóralo.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup para Apple Silicon 👈</summary>
+
+Necesitamos agregar las siguientes variables de entorno para instalar python:
+
+``` bash
+export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
+```
+</details>
+
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
@@ -589,7 +562,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Luego trata de instalar Python nuevamente:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignorar y continuar al paso siguiente.
@@ -600,11 +573,11 @@ Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignor
 OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
 
 ```bash
-pyenv global 3.8.12
+pyenv global 3.10.6
 exec zsh
 ```
 
-Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.8.12`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.10.6`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
 
 
 ## Entorno Virtual de Python
@@ -621,7 +594,7 @@ exec zsh
 Crea el entorno virtual que usaremos durante todo el bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon
+pyenv virtualenv 3.10.6 lewagon
 ```
 
 Define el entorno virtual con lo siguiente:
@@ -747,7 +720,7 @@ Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
@@ -773,13 +746,13 @@ Asegúrate de que estés usando la versión correcta de python en el notebook. A
 import sys; sys.version
 ```
 
-¡Listo! Ya tienes un virtual env de python completo con todos los paquetes de terceros que necesitarás en el bootcamp.
+¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
 
 
 
 ## DBeaver
 
-Descarga e instala [DBeaver](https://dbeaver.io/), una herramienta poderosa, gratuita y de código abierto para conectar con cualquier base de datos, explorar su esquema e incluso **hacer consultas SQL**.
+DDescarga e instala [DBeaver](https://dbeaver.io/), una herramienta poderosa, gratuita y de código abierto para conectar con cualquier base de datos, explorar su esquema e incluso **hacer consultas SQL**.
 
 
 ## Docker 🐋
@@ -827,7 +800,7 @@ $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
 
 [GCP](https://cloud.google.com/) es una solución en la nube que usarás para colocar tus productos basados en Machine Learning en producción.
 
-🚨 Si estás en el grupo de estudiantes del **Bootcamp Part Time**, ¡IGNORA ESTA SECCIÓN POR AHORA! **GCP** ofrece $300 en créditos durante 3 meses, así que no es buena idea activar tu cuenta GCP demasiado pronto 🙅‍♂️
+🚨 Si estás en el grupo de estudiantes del **Bootcamp de Medio Tiempo**, ¡IGNORA ESTA SECCIÓN POR AHORA! **GCP** ofrece $300 en créditos durante 3 meses, así que no es buena idea activar tu cuenta GCP demasiado pronto 🙅‍♂️
 
 ### Preparación del Proyecto
 
@@ -1025,8 +998,17 @@ El navegador acaba de guardar la 🔑 del archivo json de la cuenta de servicio 
 - Guarda la **ruta absoluta** al archivo `JSON` como una variable de entorno:
 
 ``` bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.aliases
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.zshrc
 ```
+**Nota:** cada vez que ejecutes este comando, agregará esta línea a tu archivo zshrc sin importar si la línea ya existe en el archivo. Si cometiste un error y necesitas arreglarlo, es preferible que abras el archivo y edites la línea!
+
+Puedes hacerlo ejecutando
+
+```bash
+code ~/.zshrc
+```
+
+en la Terminal! 😄
 
 
 
@@ -1122,7 +1104,7 @@ La idea es tener Slack abierto todo el día para compartir enlaces útiles / ped
 
 Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba tu cámara y tu micrófono:
 - Abre la aplicación Slack
-- Escribe `/call --test` en la barra de mensaje de cualquier canal y presiona `ENTER`
+- Escribe `/call --test` en la barra de mensaje de cualquier canal y presiona `Enter`
 - Haz clic en el botón verde "Start test"
 
 ![Chequea el micrófono y la cámara con Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)

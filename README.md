@@ -1,4 +1,10 @@
-# Data Science Bootcamp Setup
+## ¿En Español?
+
+Haz clic en <a href="README.es.md">este link</a> para acceder a la versión en español del setup.
+
+## In English
+
+### Data Science Bootcamp Setup
 
 Please choose your operating system (OS):
 
@@ -19,10 +25,15 @@ Please choose your operating system (OS):
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
+    <td>
+      <a href="VM.md">
+        <img src="images/vm.png" alt="Virtual Machine">
+      </a>
+    </td>
   </tr>
 </table>
 
-# Keep your setup current after the bootcamp
+### Keep your setup current after the bootcamp
 
 Please choose your operating system (OS):
 

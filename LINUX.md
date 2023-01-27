@@ -57,16 +57,31 @@ Copy (`Ctrl` + `C`) the commands below then paste them in your terminal (`Ctrl` 
 
 ```bash
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+```
+
+```bash
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+```
+
+```bash
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+```
+
+```bash
 rm -f packages.microsoft.gpg
+```
+
+```bash
 sudo apt update
+```
+
+```bash
 sudo apt install -y code
 ```
 
 These commands will ask for your password: type it in.
 
-:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `ENTER`.
+:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `Enter`.
 
 ### Launching from the terminal
 
@@ -111,7 +126,7 @@ Here is a list of the extensions you are installing:
 
 [Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
 
-Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
+Launch VS Code from your terminal by typing `code` and pressing `Enter`.
 
 Click on the little arrow at the bottom of the left bar :point_down:
 
@@ -125,24 +140,29 @@ Click on the little arrow at the bottom of the left bar :point_down:
 That's it, you're good to go!
 
 
-## Git
+## Command line tools
 
-### Installation
+### Zsh & Git
 
-[`git`](https://git-scm.com/) is a command line software used for version control.
+Instead of using the default `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)), we will use `zsh`.
 
-To install `git`:
-- Open a terminal
+We will also use [`git`](https://git-scm.com/), a command line software used for version control.
+
+Let's install them, along with other useful tools:
+- Open an **Ubuntu terminal**
 - Copy and paste the following commands:
 
 ```bash
 sudo apt update
-sudo apt install -y git
+```
+
+```bash
+sudo apt install -y curl git imagemagick jq unzip vim zsh tree
 ```
 
 These commands will ask for your password: type it in.
 
-:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `ENTER`.
+:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type in your password and when you're done, press `Enter`.
 
 ### GitHub CLI installation
 
@@ -151,9 +171,19 @@ Let's now install [GitHub official CLI](https://cli.github.com) (Command Line In
 In your terminal, copy-paste the following commands and type in your password if asked:
 
 ```bash
+sudo apt remove -y gitsome # gh command can conflict with gitsome if already installed
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+```
+
+```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+```
+
+```bash
 sudo apt update
+```
+
+```bash
 sudo apt install -y gh
 ```
 
@@ -179,17 +209,6 @@ __Why Chrome?__
 We recommend to use it as your default browser as it's most compatible with testing or running your code, as well as working with Google Cloud Platform. Another alternative is Firefox, however we don't recommend using other tools like Opera, Internet Explorer or Safari.
 
 
-## zsh
-
-Instead of using the default `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)), we will use `zsh`.
-
-In a terminal execute the following command and type in your password if asked:
-
-```bash
-sudo apt install -y zsh curl vim imagemagick jq unzip
-```
-
-
 ## Oh-my-zsh
 
 Let's install the `zsh` plugin [Oh My Zsh](https://ohmyz.sh/).
@@ -211,6 +230,16 @@ At the end your terminal should look like this:
 :x: Otherwise, please **ask for a teacher**
 
 
+## direnv
+
+[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
+
+``` bash
+sudo apt-get update; sudo apt-get install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
+
 ## GitHub CLI
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
@@ -227,18 +256,30 @@ First in order to **login**, copy-paste the following command in your terminal:
 gh auth login -s 'user:email' -w
 ```
 
-You will get the following output:
+gh will ask you few questions:
+
+`What is your preferred protocol for Git operations?` With the arrows, choose `SSH` and press `Enter`. SSH is a protocol to log in using SSH keys instead of the well known username/password pair.
+
+`Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
+
+If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
+
+`Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
+
+:warning: When you type your passphrase, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your passphrase as a whole but also its length. Just type your passphrase and when you're done, press `Enter`.
+
+You will then get the following output:
 
 ```bash
 ! First copy your one-time code: 0EF9-D015
 - Press Enter to open github.com in your browser...
 ```
 
-Select and copy the code (`0EF9-D015` in the example), then press `ENTER`.
+Select and copy the code (`0EF9-D015` in the example), then press `Enter`.
 
 Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit.
 
-Come back to the terminal, press `ENTER` again, and that's it.
+Come back to the terminal, press `Enter` again, and that's it.
 
 To check that you are properly connected, type:
 
@@ -249,53 +290,6 @@ gh auth status
 :heavy_check_mark: If you get `Logged in to github.com as <YOUR USERNAME> `, then all good :+1:
 
 :x: If not, **contact a teacher**.
-
-Then run the following configuration line:
-
-```bash
-gh config set git_protocol ssh
-```
-
-
-## SSH Key
-
-### Generation
-
-We need to generate SSH keys which are going to be used by GitHub to authenticate you. You can think of it as a way to log in, but different from the well known username/password pair.
-
-:warning: If you already generated keys that you already use with other services, you can skip this step.
-
-Open a terminal and copy-paste this command, replacing the email with **yours** (the same one you used to create your GitHub account).
-
-```bash
-mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
-```
-
-It will prompt for information. Just press enter until it asks for a **passphrase**.
-
-:warning: When asked for a passphrase, put something you want and that you'll remember. It's a password to protect your private key stored on your hard drive.
-
-:warning: When you type your passphrase, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your passphrase as a whole but also its length. Just type your passphrase and when you're done, press `ENTER`.
-
-### Giving your public key to GitHub
-
-Now, you will give your **public** key to GitHub.
-
-In your terminal copy-paste the following command:
-
-```bash
-gh auth refresh -s write:public_key
-```
-
-It will prompt a one time code (####-####) on the screen. Copy it and press `ENTER`, then paste the code in your browser and follow the instructions to **Authorize GitHub**.
-
-Back in the terminal, press `ENTER` and run this:
-
-```bash
-gh ssh-key add ~/.ssh/id_ed25519.pub
-```
-
-This should return `✓ Public key added to your account`. If not, do not hesitate to **contact a teacher**.
 
 
 ## Google Cloud CLI
@@ -469,12 +463,6 @@ Then:
 - Spot the line starting with `plugins=`
 - Add `ssh-agent` at the end of the plugins list
 
-The list should look like:
-
-```bash
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
 :heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
 
 
@@ -522,15 +510,13 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 exec zsh
 ```
 
-Ignore the `pyenv: no such command 'virtualenv-init' for now`.
-
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
 ```bash
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-python-dev python3-dev
+python3-dev
 ```
 
 ### Install Python
@@ -538,7 +524,7 @@ python-dev python3-dev
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -546,11 +532,11 @@ This command might take a while, this is perfectly normal. Don't hesitate to hel
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.8.12
+pyenv global 3.10.6
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `3.8.12`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.10.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
@@ -567,7 +553,7 @@ exec zsh
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon
+pyenv virtualenv 3.10.6 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -677,7 +663,7 @@ You can close your web browser then terminate the jupyter server with `CTRL` + `
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Run the following command to check if you successfully installed the required packages:
@@ -873,9 +859,11 @@ Once the verification goes through, you should receive an email stating that "Yo
 ### Configure Cloud sdk
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
+
 ```bash
 gcloud auth login
 ```
+
 - Login to your Google account on the new tab opened in your web browser
 - List your active account and check your email address you used for GCP is present
 ```bash
@@ -946,8 +934,17 @@ The browser has now saved the service account json file 🔑 in your downloads d
 - Store the **absolute path** to the `JSON` file as an environment variable:
 
 ``` bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.aliases
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.zshrc
 ```
+**Note:** every time you run this command, it will add this line to your zshrc file regardless of whether you already have it. If you made a mistake and need to fix it, preferably open the file and edit the line!
+
+You can do so by running
+
+```bash
+code ~/.zshrc
+```
+
+in the Terminal! 😄
 
 
 
@@ -1012,7 +1009,7 @@ If you are unsure about what to do, you can follow [this link](https://kitt.lewa
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
 
-Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
+Your teacher will then validate that you are indeed part of the batch. You can ask them to do it as soon as you completed the registration form.
 
 Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
 
@@ -1043,7 +1040,7 @@ The idea is that you'll have Slack open all day, so that you can share useful li
 
 To ensure that everything is working fine for video calls, let's test your camera and microphone:
 - Open the Slack app
-- In any channel message bar type `/call --test` and press `ENTER`
+- In any channel message bar type `/call --test` and press `Enter`
 - Click on the "Start test" green button
 
 ![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)

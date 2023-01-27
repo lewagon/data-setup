@@ -1,6 +1,6 @@
 # Instrucciones para la configuración
 
-Aquí abajo encontrarás las instrucciones para configurar tu computadora para [el curso de Data Science de Le Wagon](https://www.lewagon.com/es/data-science-course/full-time)
+Aquí abajo encontrarás las instrucciones para configurar tu computadora para [el curso de Data Science de Le Wagon](https://www.lewagon.com/data-science-course/full-time)
 
 Por favor **léelas cuidadosamente y ejecuta todos los comandos en el siguiente orden**. Si tienes algún problema, no dudes en pedirle ayuda a una profesor :raising_hand:
 
@@ -273,6 +273,8 @@ wsl --set-default-version 2
   <summary>Habilita la feature de Windows Hyper-V</summary>
 
   Sigue los pasos [siguientes](https://winaero.com/enable-use-hyper-v-windows-10/) hasta que hayas habilitado el grupo <strong>Hyper-V</strong>
+
+  :information_source: Si tienes Windows 10 **Home edition**, la feature Hyper-V no está disponible para su sistema operativo. No es un bloqueo y puedes continuar con las siguientes instrucciones aquí abajo :ok_hand:
 </details>
 
 
@@ -323,7 +325,7 @@ La primera vez que lo abras, te pedirán que:
 - Escoge un **password**
 - Confírmalo
 
-:warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `ENTER` al terminar.
+:warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `Enter` al terminar.
 
 Ahora puedes cerrar la ventana de Ubuntu ya que está instalado en tu computadora.
 
@@ -381,7 +383,7 @@ Ya puedes cerrar la ventana de la terminal.
 
 Instala el navegador Google Chrome si no lo tienes todavía y configúralo como tu __navegador predeterminado__.
 
-Sigue los pasos en el siguiente enlace :point_right: [Instalación de Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=es)
+Sigue los pasos en el siguiente enlace :point_right: [Instalación de Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en-GB)
 
 __¿Por qué Chrome?__
 
@@ -463,6 +465,7 @@ Si tienes Windows 10, instala la terminal de Windows. Verás que es una terminal
 Cuando termine la instalación, el botón `Install` se transformará en un botón `Launch`: haz clic en él.
 
 ### Ubuntu como terminal predeterminada
+
 Hagamos que Ubuntu sea la terminal predeterminada de tu aplicación Windows terminal.
 
 Presiona `Ctrl` + `,`
@@ -537,7 +540,7 @@ Aquí está la lista de las extensiones que estás instalando:
 
 [Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) es una extensión de VS Code que te permite compartir el código en tu editor de texto para debugging y pair-programming: ¡Instalémoslo!
 
-Abre VS Code desde tu terminal escribiendo `code` y presionando `ENTER`.
+Abre VS Code desde tu terminal escribiendo `code` y presionando `Enter`.
 
 Haz clic en la pequeña flecha de la parte inferior de la barra de la izquierda:
 
@@ -551,25 +554,29 @@ Haz clic en la pequeña flecha de la parte inferior de la barra de la izquierda:
 Eso es todo. ¡Ya puedes continuar!
 
 
+## Herramientas de línea de comando
 
-## Git
+### Zsh & Git
 
-### Instalación
+En lugar de usar el `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)) predeterminado, usaremos `zsh`.
 
-[`git`](https://git-scm.com/) es un programa de línea de comando utilizado para control de versiones.
+También utilizaremos [`git`](https://git-scm.com/), un programa de línea de comando para control de versiones.
 
-Sigue estos pasos para instalar `git`:
-- Abre una terminal
+Vamos a instalarlos, junto con otros programas útiles:
+- Abre una **terminal de Ubuntu**
 - Copia y pega los siguientes comandos:
 
 ```bash
 sudo apt update
-sudo apt install -y git
 ```
 
-Estos comandos te pedirán tu contraseña: Agrégala.
+```bash
+sudo apt install -y curl git imagemagick jq unzip vim zsh
+```
 
-:warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `ENTER` al terminar.
+Estos comandos te pedirán tu contraseña: escríbela.
+
+:warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `Enter` al terminar.
 
 ### Instalación de la CLI de GitHub
 
@@ -578,6 +585,7 @@ Instalemos la [CLI oficial de GitHub](https://cli.github.com) (Interfaz de Líne
 En tu terminal, copia y pega los siguientes comandos y escribe tu contraseña si te la piden:
 
 ```bash
+sudo apt remove -y gitsome # gh command can conflict with gitsome if already installed
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update
@@ -593,17 +601,6 @@ gh --version
 :heavy_check_mark: Si ves esta versión `gh version X.Y.Z (YYYY-MM-DD)`, puedes continuar trabajando :+1:
 
 :x: Si no es el caso, por favor **contacta a un profesor**
-
-
-## zsh
-
-En lugar de usar el `bash` [shell](https://en.wikipedia.org/wiki/Shell_(computing)) predeterminado, usaremos `zsh`.
-
-Ejecuta el siguiente comando en una terminal y escribe tu contraseña si te la piden:
-
-```bash
-sudo apt install -y zsh curl vim imagemagick jq unzip
-```
 
 
 ## Oh-my-zsh
@@ -627,6 +624,97 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
+## Conexión de tu navegador predeterminado con Ubuntu
+
+Para asegurarnos de que puedas interactuar desde la terminal de Ubuntu con el navegador que tienes instalado en Windows, debemos definirlo como tu navegador predeterminado aquí.
+
+:warning: Tienes que ejecutar al menos uno de los siguientes comandos:
+
+<details>
+  <summary>Google Chrome como tu navegador predeterminado</summary>
+
+  Ejecuta este comando:
+
+  ```bash
+    ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
+  ```
+
+  Si obtienes un error como este `ls: cannot access...` corre el siguiente comando:
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
+  ```
+
+  Si no es el caso, ejecuta lo siguiente:
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
+  ```
+</details>
+
+<details>
+  <summary>Mozilla Firefox como tu navegador predeterminado</summary>
+
+  Ejecuta el siguiente comando:
+
+  ```bash
+    ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
+  ```
+
+  Si obtienes un error como este `ls: cannot access...` corre el siguiente comando:
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
+  ```
+
+  Si no es el caso, ejecuta lo siguiente:
+
+  ```bash
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
+  ```
+</details>
+
+<details>
+  <summary>Microsoft Edge como tu navegador predeterminado</summary>
+
+  Ejecuta el siguiente comando:
+
+  ```bash
+  echo "export BROWSER='\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"'" >> ~/.zshrc
+  ```
+</details>
+
+Reinicia tu terminal.
+
+Luego asegúrate de que el siguiente comando devuelva "Browser defined 👌":
+
+```bash
+[ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
+```
+
+Si no lo hace pero
+
+:heavy_check_mark: sí obtienes este mensaje, puedes continuar :+1:
+
+:x: De lo contrario, escoge un navegador de la lista de arriba y ejecuta el comando correspondiente. Luego no olvides reiniciar tu terminal:
+
+```bash
+exec zsh
+```
+
+No dudes en **pedirle ayuda a tu profesor**.
+
+
+## direnv
+
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
+
+``` bash
+sudo apt-get update; sudo apt-get install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
+
 ## GitHub CLI
 
 CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface) que significa interfaz de línea de comando.
@@ -643,6 +731,18 @@ Lo primero que hay que hacer para **iniciar sesión** es copiar y pegar el coman
 gh auth login -s 'user:email' -w
 ```
 
+gh le hará algunas preguntas:
+
+`What is your preferred protocol for Git operations?` Con las flechas, elige `SSH` y presiona `Enter`. SSH es un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+
+`Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
+
+Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
+
+`Enter a passphrase for your new SSH key (Optional)`. Pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro. Luego presiona `Enter`.
+
+:warning: Cuando escribas tu passphrase, no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu passphrase como su longitud. Simplemente escribe tu passphrase y presiona `Enter` al terminar.
+
 Obtendrás el siguiente resultado:
 
 ```bash
@@ -650,11 +750,11 @@ Obtendrás el siguiente resultado:
 - Press Enter to open github.com in your browser...
 ```
 
-Selecciona y copia el código (`0EF9-D015` en el ejemplo) y luego presiona `ENTER`.
+Selecciona y copia el código (`0EF9-D015` en el ejemplo) y luego presiona `Enter`.
 
 Tu navegador se abrirá y te pedirá que autorices GitHub CLI para usar tu cuenta GitHub. Acepta y espera un poco.
 
-Regresa a la terminal, presiona `ENTER` nuevamente y listo. Eso es todo.
+Regresa a la terminal, presiona `Enter` nuevamente y listo. Eso es todo.
 
 Para verificar que están conectado correctamente, escribe lo siguiente:
 
@@ -665,53 +765,6 @@ gh auth status
 :heavy_check_mark: Si obtienes este mensaje: `Logged in to github.com as <YOUR USERNAME> `, significa que todo está bien :+1:
 
 :x: De lo contrario, **contacta a un profesor**.
-
-Luego ejecuta esta línea de configuración:
-
-```bash
-gh config set git_protocol ssh
-```
-
-
-## SSH Key
-
-### Generación
-
-Debemos generar SSH keys las cuales serán utilizadas por GitHub para autenticarte. Piensa que es una manera de iniciar sesión pero diferente a la forma convencional del usuario/contraseña.
-
-:warning: Si ya has generado keys que utilizas actualmente con otros servicios, puedes ignorar este paso.
-
-Abre una terminal y copia y pega este comando, reemplazando el email con el **tuyo** (el que usaste cuando creaste tu cuenta en GitHub).
-
-```bash
-mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
-```
-
-Te pedirá información. Simplemente presiona enter hasta que pida una **passphrase**.
-
-:warning: Cuando te pidan una passphrase, pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro.
-
-:warning: Cuando escribas tu passphrase, no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu passphrase como su longitud. Simplemente escribe tu passphrase y presiona `ENTER` al terminar.
-
-### Comunicarle tu public key a GitHub
-
-Ahora le vas a dar tu **public** key a GitHub.
-
-En tu terminal copia y pega el siguiente comando:
-
-```bash
-gh auth refresh -s write:public_key
-```
-
-Mostrará una código una única vez (####-####) en la pantalla. Cópialo y presiona `ENTER`. Luego pega el código en tu navegador y sigue las instrucciones para **Autorizar a GitHub**.
-
-Vuelve a la terminal. Presiona `ENTER` y ejecuta esto:
-
-```bash
-gh ssh-key add ~/.ssh/id_ed25519.pub
-```
-
-Eso debería devolver `✓ Public key added to your account`. Si no es el caso, no dudes **en pedirle ayuda a un profesor**.
 
 
 ## CLI de Google Cloud
@@ -745,7 +798,7 @@ cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
 code . # Open it in VS Code
 ```
 
-En VS Code, abre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
+En VS Codeabre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
 
 Regresa a la terminal y ejecuta un `git diff` y pídele a un TA que venga y verifique este cambio de configuración. Debería ver cosas de Python y `pyenv`.
 
@@ -819,7 +872,7 @@ OR
 
 <details>
     <summary>
-        <strong>Ya hice el bootcamp de Web Development (FullStack) de Le Wagon <em>pero tengo una nueva laptop</em></strong>
+        <strong>IYa hice el bootcamp de Web Development (FullStack) de Le Wagon <em>pero tengo una nueva laptop</em></strong>
     </summary>
 
 
@@ -898,21 +951,19 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 exec zsh
 ```
 
-Ignora el mensaje `pyenv: no such command 'virtualenv-init' for now`.
-
 Instala algunas [dependencias](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) necesarias para crear Python desde `pyenv`:
 
 ```bash
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-python-dev python3-dev
+python3-dev
 ```
 
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
@@ -920,11 +971,11 @@ Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. 
 OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
 
 ```bash
-pyenv global 3.8.12
+pyenv global 3.10.6
 exec zsh
 ```
 
-Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `3.8.12`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `3.10.6`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
 
 
 ## Entorno Virtual de Python
@@ -941,7 +992,7 @@ exec zsh
 Crea el entorno virtual que usaremos durante todo el bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon
+pyenv virtualenv 3.10.6 lewagon
 ```
 
 Define el entorno virtual con lo siguiente:
@@ -993,7 +1044,7 @@ Localiza la siguiente línea en el archivo de configuración:
 # c.NotebookApp.use_redirect_file = True
 ```
 
-Y reemplázala por esta:
+Y reemplázala por éste **precisamente** 👇 (incluyendo la eliminación del símbolo `#`)
 
 ``` python
 c.NotebookApp.use_redirect_file = False
@@ -1011,7 +1062,7 @@ Este comando debió haber abierto una página Jupyter en tu navegador:
 
 Si no es el caso, por favor llama a un TA.
 
-Para cerrar el servidor jupyter en la terminal, presiona `CTRL` + `C`, ingresa la letra `y`. Luego presiona Enter.
+Para cerrar el servidor jupyter en la terminal, presiona `CTRL` + `C`, enter y. Luego presiona Enter.
 
 
 ## Extensiones de `jupyter` notebook
@@ -1095,7 +1146,7 @@ Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
@@ -1121,13 +1172,13 @@ Asegúrate de que estés usando la versión correcta de python en el notebook. A
 import sys; sys.version
 ```
 
-¡Listo! Ya tienes un virtual env de python completo con todos los paquetes de terceros que necesitarás en el bootcamp.
+¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
 
 
 
 ## DBeaver
 
-Descarga e instala [DBeaver](https://dbeaver.io/), una herramienta poderosa, gratuita y de código abierto para conectar con cualquier base de datos, explorar su esquema e incluso **hacer consultas SQL**.
+DDescarga e instala [DBeaver](https://dbeaver.io/), una herramienta poderosa, gratuita y de código abierto para conectar con cualquier base de datos, explorar su esquema e incluso **hacer consultas SQL**.
 
 
 ## Parámetros de Windows
@@ -1193,7 +1244,7 @@ Algunos paquetes Python requieren de un compilador para funcionar correctamente,
 
 [For x86 systems](https://aka.ms/vs/16/release/vc_redist.x86.exe)
 
-Si no sabes qué sistema estás usando, por favor pídele ayuda a un profesor.
+Si no sabes qué programa estás usando, por favor pídele ayuda a un profesor.
 
 
 ## Docker 🐋
@@ -1225,7 +1276,7 @@ Debería aparecer el siguiente mensaje:
 
 [GCP](https://cloud.google.com/) es una solución en la nube que usarás para colocar tus productos basados en Machine Learning en producción.
 
-🚨 Si estás en el grupo de estudiantes del **Bootcamp Part Time**, ¡IGNORA ESTA SECCIÓN POR AHORA! **GCP** ofrece $300 en créditos durante 3 meses, así que no es buena idea activar tu cuenta GCP demasiado pronto 🙅‍♂️
+🚨 Si estás en el grupo de estudiantes del **Bootcamp de Medio Tiempo**, ¡IGNORA ESTA SECCIÓN POR AHORA! **GCP** ofrece $300 en créditos durante 3 meses, así que no es buena idea activar tu cuenta GCP demasiado pronto 🙅‍♂️
 
 ### Preparación del Proyecto
 
@@ -1576,7 +1627,7 @@ La idea es tener Slack abierto todo el día para compartir enlaces útiles / ped
 
 Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba tu cámara y tu micrófono:
 - Abre la aplicación Slack
-- Escribe `/call --test` en la barra de mensaje de cualquier canal y presiona `ENTER`
+- Escribe `/call --test` en la barra de mensaje de cualquier canal y presiona `Enter`
 - Haz clic en el botón verde "Start test"
 
 ![Chequea el micrófono y la cámara con Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)

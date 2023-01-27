@@ -93,7 +93,7 @@ cd $(pyenv root) && git pull
 Install the current python version :
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 👉 Make sure that the command completes correctly and **restart your terminal**
@@ -107,7 +107,7 @@ pyenv virtualenv-delete lewagon_current
 Create a new virtual environment :
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon_current
+pyenv virtualenv 3.10.6 lewagon_current
 ```
 
 Set the new virtual environment as default :
@@ -126,8 +126,8 @@ pyenv versions
 
 ``` bash
   system
-  3.8.12
-  3.8.12/envs/lewagon_current
+  3.10.6
+  3.10.6/envs/lewagon_current
   3.7.6
   3.7.6/envs/lewagon
 * lewagon_current
@@ -252,11 +252,7 @@ gcloud auth configure-docker
 
 ## Docker
 
-Start Docker :
-
-``` bash
-sudo service docker start
-```
+Start the Docker Desktop app
 
 Verify that Docker can run the hello-world image :
 
@@ -266,26 +262,14 @@ docker run hello-world
 
 👉 Make sure that this command completes correctly
 
-Start Docker :
-
-``` bash
-sudo service docker stop
-```
-
-If this command does not work, restart Ubuntu by running the following command in a PowerShell window :
-
-``` bash
-wsl --shutdown
-```
-
-If the command still does not work, try to restart your Windows machine
+Stop the Docker Desktop app
 
 
 ### Python setup check up
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Run the following command to check if you successfully installed the required packages:

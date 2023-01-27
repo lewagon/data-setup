@@ -9,15 +9,13 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 exec zsh
 ```
 
-Ignore the `pyenv: no such command 'virtualenv-init' for now`.
-
 Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
 
 ```bash
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-python-dev python3-dev
+python3-dev
 ```
 
 ### Install Python

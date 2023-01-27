@@ -93,7 +93,7 @@ cd $(pyenv root) && git pull
 Instala la versión actual de python:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 👉 Asegúrate de que el comando se ejecute completamente y luego **reinicia tu terminal**.
@@ -107,7 +107,7 @@ pyenv virtualenv-delete lewagon_current
 Crea un nuevo ambiente virtual:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon_current
+pyenv virtualenv 3.10.6 lewagon_current
 ```
 
 Define el nuevo ambiente virtual como predeterminado:
@@ -126,8 +126,8 @@ pyenv versions
 
 ``` bash
   system
-  3.8.12
-  3.8.12/envs/lewagon_current
+  3.10.6
+  3.10.6/envs/lewagon_current
   3.7.6
   3.7.6/envs/lewagon
 * lewagon_current
@@ -252,11 +252,7 @@ gcloud auth configure-docker
 
 ## Docker
 
-Start Docker :
-
-``` bash
-sudo service docker start
-```
+Start the Docker Desktop app
 
 Verifica que Docker pueda ejecutar la imagen de hello-world:
 
@@ -266,26 +262,14 @@ docker run hello-world
 
 👉 Asegúrate de que este comando se ejecute completamente
 
-Start Docker :
-
-``` bash
-sudo service docker stop
-```
-
-Si este comando no funciona, reinicia Ubuntu ejecutando el comando siguiente en una ventana PowerShell:
-
-``` bash
-wsl --shutdown
-```
-
-Si después de eso el comando sigue sin funcionar, intenta reiniciar tu máquina Windows
+Stop the Docker Desktop app
 
 
 ### Chqueo de la configuración de Python
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
@@ -311,6 +295,6 @@ Asegúrate de que estés usando la versión correcta de python en el notebook. A
 import sys; sys.version
 ```
 
-¡Listo! Ya tienes un virtual env de python completo con todos los paquetes de terceros que necesitarás en el bootcamp.
+¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
 
 

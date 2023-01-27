@@ -53,9 +53,9 @@ If you bought your computer after late 2020, chances are it has a new Apple sili
 
 Open a new terminal window from Applications > Utilities or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014):
 
-![Open Terminal on macOS](https://github.com/lewagon/setup/blob/master/images/macos_open_terminal.png)
+![Open Terminal on macOS](images/macos_open_terminal.png)
 
-Copy-paste the following command in the terminal and hit `ENTER` to execute.
+Copy-paste the following command in the terminal and hit `Enter` to execute.
 
 ``` bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
@@ -63,36 +63,23 @@ Copy-paste the following command in the terminal and hit `ENTER` to execute.
 
 ☝️ The result of the command should indicate whether your computer uses Apple Silicon.
 
-If your computer uses Apple Silicon, expand the paragraph below and go through it. Otherwise ignore it.
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
   <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
-### Uninstall Homebrew
-
-We need to uninstall Homebrew in case a native version was installed.
-
-Execute the following command in the terminal:
-
-``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-```
-
-If brew was not installed you will get the message `brew: command not found!`
-
-### Configure Terminal for Rosetta
+You want to make sure that you are **not using** Rosetta, which is a way to use your Terminal as if you had an Intel computer.
 
 Open the Finder app (or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014)).
 
 Go to Applications > Utilities.
 
-Duplicate the terminal app (select it, then `Cmd` + `C`, `Cmd` + `V`), and rename a copy as Terminal Rosetta.
+Locate the Terminal app (select it).
 
-Press `Cmd` + `I` on the Terminal Rosetta app, then check the box "Open using Rosetta".
-
-⚠️ From now on during the bootcamp, whenever you are asked to open a Terminal, you will use the **Terminal Rosetta** app.
-
+Press `Cmd` + `I` on the Terminal app, then verify that the box "Open using Rosetta" is **unchecked**.
 </details>
+
+🚨 Keep this in mind. You will need to remember later on in the setup whether your computer uses an Apple Silicon chip or is an Apple Intel version
 
 
 ## A note about quitting apps on a Mac
@@ -105,7 +92,7 @@ During this setup you will be asked to **quit and re-open** applications multipl
 
 ## Command Line Tools
 
-Open a new terminal, copy-paste the following command and hit `ENTER`:
+Open a new terminal, copy-paste the following command and hit `Enter`:
 
 ```bash
 xcode-select --install
@@ -270,7 +257,7 @@ Here is a list of the extensions you are installing:
 
 [Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
 
-Launch VS Code from your terminal by typing `code` and pressing `ENTER`.
+Launch VS Code from your terminal by typing `code` and pressing `Enter`.
 
 Click on the little arrow at the bottom of the left bar :point_down:
 
@@ -305,6 +292,16 @@ At the end your terminal should look like this:
 :x: Otherwise, please **ask for a teacher**
 
 
+## direnv
+
+[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
+
+``` bash
+brew install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
+
 ## GitHub CLI
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
@@ -321,18 +318,30 @@ First in order to **login**, copy-paste the following command in your terminal:
 gh auth login -s 'user:email' -w
 ```
 
-You will get the following output:
+gh will ask you few questions:
+
+`What is your preferred protocol for Git operations?` With the arrows, choose `SSH` and press `Enter`. SSH is a protocol to log in using SSH keys instead of the well known username/password pair.
+
+`Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
+
+If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
+
+`Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
+
+:warning: When you type your passphrase, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your passphrase as a whole but also its length. Just type your passphrase and when you're done, press `Enter`.
+
+You will then get the following output:
 
 ```bash
 ! First copy your one-time code: 0EF9-D015
 - Press Enter to open github.com in your browser...
 ```
 
-Select and copy the code (`0EF9-D015` in the example), then press `ENTER`.
+Select and copy the code (`0EF9-D015` in the example), then press `Enter`.
 
 Your browser will open and ask you to authorize GitHub CLI to use your GitHub account. Accept and wait a bit.
 
-Come back to the terminal, press `ENTER` again, and that's it.
+Come back to the terminal, press `Enter` again, and that's it.
 
 To check that you are properly connected, type:
 
@@ -343,53 +352,6 @@ gh auth status
 :heavy_check_mark: If you get `Logged in to github.com as <YOUR USERNAME> `, then all good :+1:
 
 :x: If not, **contact a teacher**.
-
-Then run the following configuration line:
-
-```bash
-gh config set git_protocol ssh
-```
-
-
-## SSH Key
-
-### Generation
-
-We need to generate SSH keys which are going to be used by GitHub to authenticate you. You can think of it as a way to log in, but different from the well known username/password pair.
-
-:warning: If you already generated keys that you already use with other services, you can skip this step.
-
-Open a terminal and copy-paste this command, replacing the email with **yours** (the same one you used to create your GitHub account).
-
-```bash
-mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
-```
-
-It will prompt for information. Just press enter until it asks for a **passphrase**.
-
-:warning: When asked for a passphrase, put something you want and that you'll remember. It's a password to protect your private key stored on your hard drive.
-
-:warning: When you type your passphrase, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your passphrase as a whole but also its length. Just type your passphrase and when you're done, press `ENTER`.
-
-### Giving your public key to GitHub
-
-Now, you will give your **public** key to GitHub.
-
-In your terminal copy-paste the following command:
-
-```bash
-gh auth refresh -s write:public_key
-```
-
-It will prompt a one time code (####-####) on the screen. Copy it and press `ENTER`, then paste the code in your browser and follow the instructions to **Authorize GitHub**.
-
-Back in the terminal, press `ENTER` and run this:
-
-```bash
-gh ssh-key add ~/.ssh/id_ed25519.pub
-```
-
-This should return `✓ Public key added to your account`. If not, do not hesitate to **contact a teacher**.
 
 
 ## Dotfiles
@@ -605,10 +567,22 @@ exec zsh
 
 ### Install Python
 
+If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
+
+<details>
+  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
+
+We need to add the following environment variables in order to install python:
+
+``` bash
+export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
+```
+</details>
+
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -633,7 +607,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Then try to install Python again:
 
 ```bash
-pyenv install 3.8.12
+pyenv install 3.10.6
 ```
 
 It could raise another error about `bzip2`, you can ignore it and continue to the next step.
@@ -644,11 +618,11 @@ It could raise another error about `bzip2`, you can ignore it and continue to th
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.8.12
+pyenv global 3.10.6
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `3.8.12`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.10.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
@@ -665,7 +639,7 @@ exec zsh
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.8.12 lewagon
+pyenv virtualenv 3.10.6 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -791,7 +765,7 @@ You can close your web browser then terminate the jupyter server with `CTRL` + `
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.8.12
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
 ```
 
 Run the following command to check if you successfully installed the required packages:
@@ -994,9 +968,11 @@ Once the verification goes through, you should receive an email stating that "Yo
 ### Configure Cloud sdk
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
+
 ```bash
 gcloud auth login
 ```
+
 - Login to your Google account on the new tab opened in your web browser
 - List your active account and check your email address you used for GCP is present
 ```bash
@@ -1067,8 +1043,17 @@ The browser has now saved the service account json file 🔑 in your downloads d
 - Store the **absolute path** to the `JSON` file as an environment variable:
 
 ``` bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.aliases
+echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.zshrc
 ```
+**Note:** every time you run this command, it will add this line to your zshrc file regardless of whether you already have it. If you made a mistake and need to fix it, preferably open the file and edit the line!
+
+You can do so by running
+
+```bash
+code ~/.zshrc
+```
+
+in the Terminal! 😄
 
 
 
@@ -1133,7 +1118,7 @@ If you are unsure about what to do, you can follow [this link](https://kitt.lewa
 
 Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
 
-Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
+Your teacher will then validate that you are indeed part of the batch. You can ask them to do it as soon as you completed the registration form.
 
 Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
 
@@ -1147,7 +1132,7 @@ Once the teacher has approved your profile, go to your email inbox. You should h
 
 ### Installation
 
-[Download the Slack app](https://itunes.apple.com/fr/app/slack/id803453959?mt=12) and install it.
+[Download the Slack app](https://itunes.apple.com/us/app/slack/id803453959?mt=12) and install it.
 
 :warning: If you are already using Slack in your browser, please download and install **the desktop app** which is fully featured.
 
@@ -1164,7 +1149,7 @@ The idea is that you'll have Slack open all day, so that you can share useful li
 
 To ensure that everything is working fine for video calls, let's test your camera and microphone:
 - Open the Slack app
-- In any channel message bar type `/call --test` and press `ENTER`
+- In any channel message bar type `/call --test` and press `Enter`
 - Click on the "Start test" green button
 
 ![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
