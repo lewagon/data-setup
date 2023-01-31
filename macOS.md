@@ -505,6 +505,7 @@ Please now **quit** all your opened terminal windows.
 As we are using `pyenv` to install and manage our Python version, we need to uninstall [`conda`](https://docs.conda.io/projects/conda/en/latest/), another package manager you may have on your machine if you previously installed [Anaconda](https://www.anaconda.com/). Thus, we are preventing any possible Python version issue later.
 
 Check if you have `conda` installed on your machine:
+
 ```bash
 conda list
 ```
@@ -522,6 +523,7 @@ anaconda-clean --yes
 ```bash
 rm -rf ~/anaconda2
 rm -rf ~/anaconda3
+rm -rf ~/.anaconda_backup
 rm -rf ~/opt
 ```
 - Remove Anaconda path from your `.bash_profile`
@@ -529,6 +531,9 @@ rm -rf ~/opt
     - If the file opens find the line matching the following pattern `export PATH="/path/to/anaconda3/bin:$PATH"` and delete the line
     - Save the file with `CMD` + `s`
 - Restart your terminal with `exec zsh`
+- Remove Anaconda initialization from your `.zshrc`:
+    - Open the file with `code ~/.zshrc` 
+    - Remove the code lines starting from `>>> conda initialize >>>` to `<<< conda initialize <<<`
 </details>
 
 
@@ -578,6 +583,7 @@ We need to add the following environment variables in order to install python:
 export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
 ```
 </details>
+
 
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 

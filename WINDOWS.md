@@ -959,6 +959,7 @@ Then:
 As we are using `pyenv` to install and manage our Python version, we need to uninstall [`conda`](https://docs.conda.io/projects/conda/en/latest/), another package manager you may have on your machine if you previously installed [Anaconda](https://www.anaconda.com/). Thus, we are preventing any possible Python version issue later.
 
 Check if you have `conda` installed on your machine:
+
 ```bash
 conda list
 ```
@@ -976,11 +977,15 @@ anaconda-clean --yes
 ```bash
 rm -rf ~/anaconda2
 rm -rf ~/anaconda3
+rm -rf ~/.anaconda_backup
 ```
 - Remove Anaconda path from your `.bash_profile`
     - Open the file with `code ~/.bash_profile`
     - If the file opens find the line matching the following pattern `export PATH="/path/to/anaconda3/bin:$PATH"` and delete the line
 - Restart your terminal with `exec zsh`
+- Remove Anaconda initialization from your `.zshrc`:
+    - Open the file with `code ~/.zshrc` 
+    - Remove the code lines starting from `>>> conda initialize >>>` to `<<< conda initialize <<<`
 </details>
 
 
