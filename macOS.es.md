@@ -491,7 +491,7 @@ Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor
 </details>
 
 
-## Instalación de Python (con [`pyenv`](https://github.com/pyenv/pyenv))
+### Instalar pre-requisitos
 
 Antes de instalar Python, por favor verifica la versión de tu extensión `xz` con:
 
@@ -513,6 +513,8 @@ Luego ejecuta:
 brew install readline
 ```
 
+### Instala `pyenv`
+
 macOS viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
 
 Primero instala `pyenv` con el siguiente comando en la Terminal:
@@ -521,6 +523,8 @@ Primero instala `pyenv` con el siguiente comando en la Terminal:
 brew install pyenv
 exec zsh
 ```
+
+### Instala Python
 
 Si tu computadora tiene un procesador **Apple Silicon** (M1, M2, entre otros), expande el párrafo de abajo y sigue las indicaciones. En caso contrario, ignóralo.
 
@@ -533,6 +537,7 @@ Necesitamos agregar las siguientes variables de entorno para instalar python:
 export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
 ```
 </details>
+
 
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
 
