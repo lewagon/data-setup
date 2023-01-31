@@ -29,6 +29,7 @@ MAC_OS = %w[
   dotfiles_new_laptop
   dotfiles_new_laptop_heading
   dotfiles_new_laptop
+  conda_uninstall
   osx_python
   virtualenv
   pip
@@ -76,6 +77,7 @@ WINDOWS = %w[
   dotfiles_new_laptop_heading
   dotfiles_new_laptop
   setup/ssh_agent
+  conda_uninstall
   ubuntu_python
   virtualenv
   pip
@@ -119,6 +121,7 @@ LINUX = %w[
   dotfiles_new_laptop_heading
   dotfiles_new_laptop
   setup/ssh_agent
+  conda_uninstall
   ubuntu_python
   virtualenv
   pip
