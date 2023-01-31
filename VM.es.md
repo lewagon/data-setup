@@ -605,7 +605,7 @@ plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history
 :heavy_check_mark: Guarda el archivo `.zshrc` con `Ctrl` + `S` y cierra tu editor de texto.
 
 
-## Instalación de Python (con [`pyenv`](https://github.com/pyenv/pyenv))
+### Instala `pyenv`
 
 Ubuntu viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
 
@@ -624,6 +624,8 @@ libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
 python3-dev
 ```
+
+### Instala Python
 
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
 
