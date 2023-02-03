@@ -639,18 +639,16 @@ Para asegurarnos de que puedas interactuar desde la terminal de Ubuntu con el na
     ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
   ```
 
-  Si obtienes un error como este `ls: cannot access...` corre el siguiente comandos:
+  Si obtienes un error como este `ls: cannot access...` corre el siguiente comando:
 
   ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
+    echo "export BROWSER='\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
   ```
 
   Si no es el caso, ejecuta lo siguiente:
 
   ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
   ```
 </details>
 
@@ -663,29 +661,26 @@ Para asegurarnos de que puedas interactuar desde la terminal de Ubuntu con el na
     ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
   ```
 
-  Si obtienes un error como este `ls: cannot access...` corre el siguiente comandos:
+  Si obtienes un error como este `ls: cannot access...` corre el siguiente comando:
 
   ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
+    echo "export BROWSER='\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
   ```
 
   Si no es el caso, ejecuta lo siguiente:
 
   ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
   ```
 </details>
 
 <details>
   <summary>Microsoft Edge como tu navegador predeterminado</summary>
 
-  Ejecuta el siguiente comandos:
+  Ejecuta el siguiente comando:
 
   ```bash
   echo "export BROWSER='\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"'" >> ~/.zshrc
-  echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'\"" >> ~/.zshrc
   ```
 </details>
 
@@ -977,7 +972,7 @@ rm -rf ~/.anaconda_backup
     - Si el archivo abre, busca la línea que coincida con el siguiente patrón `export PATH="/path/to/anaconda3/bin:$PATH"` y eliminala
 - Reinicia la terminal con `exec zsh`
 - Remueve la inicializaciópn de Anaconda de tu `.zshrc`:
-    - Abre el archivo con `code ~/.zshrc`
+    - Abre el archivo con `code ~/.zshrc` 
     - Remueve las líneas de código desde `>>> conda initialize >>>` hasta `<<< conda initialize <<<`
 </details>
 
@@ -1690,3 +1685,5 @@ Si has terminado la configuración, te pedimos que preguntes si alguien necesita
 Si no tienes mucha experiencia con `git` y GitHub, por favor [ve nuevamente el video de este workshop](https://www.youtube.com/watch?v=Z9fIBT2NBGY) (puedes verlo a `1.25` de velocidad).
 
 Si aún te queda tiempo, puedes esperar trabajar en este [Kata de Tic-Tac-Toe](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/train/python) mientras esperas la primera clase.
+
+
