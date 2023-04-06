@@ -297,7 +297,7 @@ If you are running Windows 10, let's install Ubuntu throught the Microsoft Store
 - Click on `Microsoft Store` in the list
 - Search for `Ubuntu` in the search bar
 - **Select version without any number, just plain "Ubuntu"**
-- Click on `Install`
+- Click on `Get`
 
 :warning: Don't install **Ubuntu 18.04 LTS** nor **Ubuntu 20.04**!
 
@@ -312,7 +312,7 @@ If you are running Windows 10, let's install Ubuntu throught the Microsoft Store
   Find the software to uninstall and click on the uninstall button.
 </details>
 
-Once the installation is finished, the `Install` button becomes a `Launch` button: click on it.
+Once the installation is finished, the `Get` button becomes a `Open` button: click on it.
 
 ### First launch
 
@@ -376,6 +376,22 @@ wsl -l -v
   :x: If the conversion still does not work, please **contact a teacher**.
 </details>
 
+### Check the locale
+
+The locale is a mechanism allowing to customize programs to your language and country.
+
+Let's verify that the default locale is set to english:
+
+```bash
+locale
+```
+
+If the output does not contain `LANG=en_US.UTF-8`, run the following command in a Ubuntu terminal to install the english locale:
+
+```bash
+sudo locale-gen en_US.UTF-8
+```
+
 You can now close this terminal window.
 
 
@@ -423,7 +439,7 @@ Then open VS Code from your terminal:
 code .
 ```
 
-:heavy_check_mark: If you see `WSL: Ubuntu` in a green box in the bottom left corner of the VS Code window, you're good to go :+1:
+:heavy_check_mark: If you see `WSL: Ubuntu` in the bottom left corner of the VS Code window, you're good to go :+1:
 
 ![WSL Ubuntu Remote](https://github.com/lewagon/setup/blob/master/images/windows_remote_wsl.png)
 
@@ -650,16 +666,18 @@ To be sure that you can interact with your browser installed on Windows from you
     ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
   ```
 
-  If you get an error like `ls: cannot access...` Run the following command:
+  If you get an error like `ls: cannot access...` Run the following commands:
 
   ```bash
-    echo "export BROWSER='\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
+    echo "export BROWSER=\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
+    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
   ```
 
   Else run:
 
   ```bash
-    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"'" >> ~/.zshrc
+    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
+    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
   ```
 </details>
 
@@ -672,26 +690,29 @@ To be sure that you can interact with your browser installed on Windows from you
     ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
   ```
 
-  If you get an error like `ls: cannot access...` Run the following command:
+  If you get an error like `ls: cannot access...` Run the following commands:
 
   ```bash
-    echo "export BROWSER='\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
+    echo "export BROWSER=\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
+    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
   ```
 
   Else run:
 
   ```bash
-    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"'" >> ~/.zshrc
+    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
+    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
   ```
 </details>
 
 <details>
   <summary>Microsoft Edge as your default browser</summary>
 
-  Run the command:
+  Run the commands:
 
   ```bash
-  echo "export BROWSER='\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"'" >> ~/.zshrc
+    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"'" >> ~/.zshrc
+    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'\"" >> ~/.zshrc
   ```
 </details>
 
