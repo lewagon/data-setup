@@ -673,7 +673,7 @@ To be sure that you can interact with your browser installed on Windows from you
     echo "export GH_BROWSER=\"'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
   ```
 
-  Else run:
+  If you are using a 64-bit version of Windows, run this command:
 
   ```bash
     echo "export BROWSER=\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
