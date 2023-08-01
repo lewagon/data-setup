@@ -350,7 +350,7 @@ We need to connect VS Code to a virtual machine in the cloud so you will only wo
 
 That's the only extension you should install on your _local_ machine, we will install additional VS Code extensions on your _virtual machine_.
 
-### Virtual Machine connexion
+### Virtual Machine connection
 
 - Open VS Code > Open the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) > Type `Remote-SSH: Connect to Host...`
 
