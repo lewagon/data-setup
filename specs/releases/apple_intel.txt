@@ -231,7 +231,6 @@ TPOT==0.11.7
 tqdm==4.64.1
 traitlets==5.5.0
 transformers==4.34.0
-triton==2.1.0
 typing_extensions==4.4.0
 tzdata==2022.5
 tzlocal==4.2
