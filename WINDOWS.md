@@ -268,7 +268,6 @@ If you are running Windows 10, let's install Ubuntu throught the Microsoft Store
 - **Select version without any number, just plain "Ubuntu"**
 - Click on `Install`
 
-:warning: Don't install **Ubuntu 18.04 LTS** nor **Ubuntu 20.04**!
 
 <details>
   <summary>Uninstall wrong versions of Ubuntu</summary>
