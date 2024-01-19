@@ -1,0 +1,38 @@
+name: Machine Setup Testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup_apple_silicon:
+    runs-on: macos-13 # M1
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Apple Silicon machine
+      run: |
+        cat ./specs/resleases/apple_silicon.txt
+        # Add commands to set up Apple Silicon machine
+
+  setup_apple_intel:
+    runs-on: macos-12 # Latest intel
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Apple Intel machine
+      run: |
+        cat ./specs/resleases//apple_intel.txt
+        # Add commands to set up Apple Intel machine
+
+  setup_linux:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Linux machine
+      run: |
+        cat ./specs/resleases/linux.txt
+        # Add commands to set up Linux machine
