@@ -16,7 +16,15 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.10.6'
-
+        
+    - name: Check architecture
+      run: |
+        if [[ $(uname -m) == 'arm64' ]]; then
+          echo "Runner is ARM architecture (Apple Silicon)"
+        else
+          echo "Runner is NOT ARM architecture"
+          exit 1
+        fi
     - name: Upgrade pip
       run: pip install --upgrade pip
 
