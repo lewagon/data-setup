@@ -5,7 +5,6 @@ on:
     branches:
       - "setup-action"
 
-
 jobs:
   setup_apple_silicon:
     runs-on: macos-13 # M1
@@ -13,10 +12,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Apple Silicon machine
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+
+    - name: Upgrade pip
+      run: pip install --upgrade pip
+
+    - name: Install dependencies for Apple Silicon machine
       run: |
-        cat ./specs/releases/apple_silicon.txt
-        # Add commands to set up Apple Silicon machine
+        pip install -r ./specs/releases/apple_silicon.txt
 
   setup_apple_intel:
     runs-on: macos-12 # Latest intel
@@ -24,10 +28,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Apple Intel machine
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+
+    - name: Upgrade pip
+      run: pip install --upgrade pip
+
+    - name: Install dependencies for Apple Intel machine
       run: |
-        cat ./specs/releases//apple_intel.txt
-        # Add commands to set up Apple Intel machine
+        pip install -r ./specs/releases/apple_intel.txt
 
   setup_linux:
     runs-on: ubuntu-latest
@@ -35,7 +44,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Linux machine
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+
+    - name: Upgrade pip
+      run: pip install --upgrade pip
+
+    - name: Install dependencies for Linux machine
       run: |
-        cat ./specs/releases/linux.txt
-        # Add commands to set up Linux machine
+        pip install -r ./specs/releases/linux.txt
