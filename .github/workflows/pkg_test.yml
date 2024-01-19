@@ -1,12 +1,10 @@
 name: Machine Setup Testing
 
 on:
-  workflow_dispatch:
-    inputs:
-      branchName:
-        description: 'Branch to run on'
-        required: true
-        default: 'setup-action'
+  push:
+    branches:
+      - "setup-action"
+
 
 jobs:
   setup_apple_silicon:
@@ -14,8 +12,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.inputs.branchName }}
 
     - name: Set up Apple Silicon machine
       run: |
@@ -27,8 +23,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.inputs.branchName }}
 
     - name: Set up Apple Intel machine
       run: |
@@ -40,8 +34,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.inputs.branchName }}
 
     - name: Set up Linux machine
       run: |
