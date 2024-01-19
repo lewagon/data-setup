@@ -15,7 +15,7 @@ jobs:
 
     - name: Set up Apple Silicon machine
       run: |
-        cat ./specs/resleases/apple_silicon.txt
+        cat ./specs/releases/apple_silicon.txt
         # Add commands to set up Apple Silicon machine
 
   setup_apple_intel:
@@ -26,7 +26,7 @@ jobs:
 
     - name: Set up Apple Intel machine
       run: |
-        cat ./specs/resleases//apple_intel.txt
+        cat ./specs/releases//apple_intel.txt
         # Add commands to set up Apple Intel machine
 
   setup_linux:
@@ -37,5 +37,5 @@ jobs:
 
     - name: Set up Linux machine
       run: |
-        cat ./specs/resleases/linux.txt
+        cat ./specs/releases/linux.txt
         # Add commands to set up Linux machine
