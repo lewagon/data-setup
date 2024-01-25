@@ -38,6 +38,7 @@ if (( ${#missing[@]} )); then
   sentence+='` again.'
   echo '❌ Some packages are missing:'
   echo $sentence
+  exit 1
 else
   echo '✅ Everything is fine, continue the setup instructions.'
 fi
