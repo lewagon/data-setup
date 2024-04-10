@@ -62,7 +62,7 @@ google-pasta==0.2.0
 google-resumable-media==2.4.0
 google-trans-new==1.1.9
 googleapis-common-protos==1.56.4
-grpcio==1.50.0
+grpcio==1.62.1
 grpcio-status==1.48.2
 gunicorn==21.2.0
 h11==0.12.0
