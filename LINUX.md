@@ -46,6 +46,8 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 ![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
+:point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
+
 
 ## Visual Studio Code
 
@@ -859,7 +861,7 @@ Once the verification goes through, you should receive an email stating that "Yo
 
 ℹ️ You have a **$300 credit** to use for Google Cloud resources, which will be more than enough for the bootcamp.
 
-- [Enable the AI Platform Training & Prediction and Compute Engine APIs](https://console.cloud.google.com/flows/enableapi?apiid=ml.googleapis.com,compute_component&_ga=2.269215094.662509797.1580849510-2071889129.1567861089&_gac=1.154971594.1580849512.CjwKCAiAyeTxBRBvEiwAuM8dnbZ6uMwizbZW44J2mBCX6ncEjwjwpgF8S8QsvhYAXLkJ8awDnIRTNRoCJ_0QAvD_BwE) (This step may take a few minutes)
+- [Enable the BigQuery and Compute Engine APIs](https://console.cloud.google.com/flows/enableapi?apiid=bigquery,compute) (This step may take a few minutes)
 
 ### Configure Cloud sdk
 
