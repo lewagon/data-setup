@@ -46,6 +46,8 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 ![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
 
+:point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
+
 
 ## Windows version
 
@@ -1084,6 +1086,27 @@ pyenv install 3.10.6
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
+
+<details>
+  <summary>🛠 Troubleshooting `pyenv` not found</summary>
+
+If you encounter an error `Command 'pyenv' not found`: execute the following line:
+
+```bash
+source ~/.zprofile
+```
+
+Then try to install Python again:
+
+```bash
+pyenv install 3.10.6
+```
+
+If `pyenv` is still not found, contact a teacher.
+
+</details>
+<br>
+
 
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 

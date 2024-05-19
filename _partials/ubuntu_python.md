@@ -28,6 +28,27 @@ pyenv install <PYTHON_VERSION>
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
 
+<details>
+  <summary>🛠 Troubleshooting `pyenv` not found</summary>
+
+If you encounter an error `Command 'pyenv' not found`: execute the following line:
+
+```bash
+source ~/.zprofile
+```
+
+Then try to install Python again:
+
+```bash
+pyenv install <PYTHON_VERSION>
+```
+
+If `pyenv` is still not found, contact a teacher.
+
+</details>
+<br>
+
+
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
