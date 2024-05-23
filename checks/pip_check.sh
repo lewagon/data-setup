@@ -25,6 +25,11 @@ for r in ${REQUIRED[@]}; do
       if [ $r = ${q} ]; then
         present=1
       fi
+      if [ $r = 'tensorflow' ]; then
+        if [ 'tensorflow-cpu' = $q ]; then
+          present=1
+        fi
+      fi
     fi
   done
   if (($present == 0))
