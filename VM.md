@@ -376,7 +376,7 @@ That's the only extension you should install on your _local_ machine, we will in
 <img alt="vscode-connect-to-host" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/vscode-connect-to-host.png" width=500>
 
 - Click on `Add a new host`
-- Type `ssh -i <path/to/your/private/key> <username>@<ip address>`, for instance, my username is `somedude`, and private key at `~/.ssh/id_rsa`, with a public IP of `34.77.50.76`, I'll type `ssh -i ~/.ssh/id_rsa somedude@34.77.50.76`
+- Type `ssh -i <path/to/your/private/key> <username>@<ip address>`, for instance, my username is `somedude`, my private SSH key is located at `~/.ssh/id_rsa` on my local computer, my VM has a public IP of `34.77.50.76`: I'll type `ssh -i ~/.ssh/id_rsa somedude@34.77.50.76`
 
 <img alt="vscode-ssh-connection-command" src="https://wagon-public-datasets.s3.amazonaws.com/data-engineering/setup/vscode-ssh-connection-command.png" width=500>
 
@@ -424,7 +424,7 @@ You can now change Host to whatever you would like to see as the name of your co
 ```bash
 # For instance
 Host "de-bootcamp-vm"
-  HostName 35.240.107.210
+  HostName 34.77.50.76 # replace with your VM's public IP address
   IdentityFile <file path for your ssh key>
   User <username>
 ```
@@ -797,9 +797,8 @@ Run the git installer:
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
-:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email. Be careful
-you **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you
-don't do that, Kitt won't be able to track your progress.
+:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
+:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 Please now **quit** all your opened terminal windows.
 </details>
@@ -849,9 +848,8 @@ Run the git installer:
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
-:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email. Be careful
-you **need** to put one of the email listed above thanks to the previous `gh api ...` command. If you
-don't do that, Kitt won't be able to track your progress.
+:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
+:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 Please now **quit** all your opened terminal windows.
 </details>
