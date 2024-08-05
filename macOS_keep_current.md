@@ -245,7 +245,7 @@ Make sure that the file contains the correct :
 
 👉 If this does not display anything or if the email inside of the file is not the one of your service account, go back to the setup
 
-Make sure that Docker recognizes the GCP ressources :
+Make sure that Docker recognizes the GCP resources :
 
 ``` bash
 gcloud auth configure-docker

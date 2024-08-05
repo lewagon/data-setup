@@ -912,11 +912,11 @@ Now that you have created a `GCP account` and a `project` (identified by its `PR
   <summary>🤔 Why do we need a service account key ?</summary>
 
 
-  You have created a `GCP account` linked to your credit card. Your account will be billed according to your usage of the ressources of the **Google Cloud Platform**. The billing will occur if you consume anything once the free trial is over, or if you exceed the amount of spending allowed during the free trial.
+  You have created a `GCP account` linked to your credit card. Your account will be billed according to your usage of the resources of the **Google Cloud Platform**. The billing will occur if you consume anything once the free trial is over, or if you exceed the amount of spending allowed during the free trial.
 
-  In your `GCP account`, you have created a single `GCP project`, identified by its `PROJECT_ID`. The `GCP projects` allow you to organize and monitor more precisely how you consume the **GCP** ressources. For the purpose of the bootcamp, we are only going to create a single project.
+  In your `GCP account`, you have created a single `GCP project`, identified by its `PROJECT_ID`. The `GCP projects` allow you to organize and monitor more precisely how you consume the **GCP** resources. For the purpose of the bootcamp, we are only going to create a single project.
 
-  Now, we need a way to tell which ressources within a `GCP project` our code will be allowed to consume. Our code consumes GCP ressources through API calls.
+  Now, we need a way to tell which resources within a `GCP project` our code will be allowed to consume. Our code consumes GCP resources through API calls.
 
   Since API calls are not free, it is important to define with caution how our code will be allowed to use them. During the bootcamp this will not be an issue and we are going to allow our code to use all the API of **GCP** without any restrictions.
 
@@ -937,7 +937,7 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
   - Click on **CREATE SERVICE ACCOUNT**:
   - Give a `Service account name` to that account
   - Click on **CREATE AND CONTINUE**
-  - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all ressources
+  - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all resources
   - Click on **CONTINUE**
   - Click on **DONE**
 - Download the service account json file 🔑:
