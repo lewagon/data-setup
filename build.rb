@@ -38,9 +38,6 @@ MAC_OS = %w[
   dbeaver
   docker
   gcp_cli_setup
-  gcp_setup
-  gcp_setup_mid
-  gcp_setup_end
   setup/kitt
   setup/macos_slack
   setup/slack_settings
@@ -50,6 +47,12 @@ MAC_OS = %w[
 MAC_OS_KC = %w[
   keep_current
   python_checkup
+].freeze
+
+MAC_OS_GCP = %w[
+  gcp_setup
+  gcp_setup_mid
+  gcp_setup_end
 ].freeze
 
 WINDOWS = %w[
@@ -88,9 +91,6 @@ WINDOWS = %w[
   setup/windows_settings
   win_vs_redistributable
   win_docker
-  gcp_setup
-  gcp_setup_wsl
-  gcp_setup_end
   setup/kitt
   setup/windows_slack
   setup/slack_settings
@@ -100,6 +100,12 @@ WINDOWS = %w[
 WINDOWS_KC = %w[
   keep_current
   python_checkup
+].freeze
+
+WINDOWS_GCP = %w[
+  gcp_setup
+  gcp_setup_wsl
+  gcp_setup_end
 ].freeze
 
 LINUX = %w[
@@ -129,9 +135,6 @@ LINUX = %w[
   python_checkup
   dbeaver
   ubuntu_docker
-  gcp_setup
-  gcp_setup_linux
-  gcp_setup_end
   setup/kitt
   setup/ubuntu_slack
   setup/slack_settings
@@ -141,6 +144,12 @@ LINUX = %w[
 LINUX_KC = %w[
   keep_current
   python_checkup
+]
+
+LINUX_GCP = %w[
+  gcp_setup
+  gcp_setup_linux
+  gcp_setup_end
 ]
 
 VM = %w[
@@ -189,6 +198,9 @@ FILENAMES = {
   "WINDOWS_keep_current" => ["WINDOWS", WINDOWS_KC],
   "macOS_keep_current" => ["macOS", MAC_OS_KC],
   "LINUX_keep_current" => ["LINUX", LINUX_KC],
+  "WINDOWS_gcp" => ["WINDOWS", WINDOWS_GCP],
+  "macOS_gcp" => ["macOS", MAC_OS_GCP],
+  "LINUX_gcp" => ["LINUX", LINUX_GCP],
   "VM" => ["VM", VM]
 }
 
