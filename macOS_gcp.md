@@ -4,6 +4,8 @@
 
 ### Project setup
 
+> 🚨  **Skip this part if you are working on a project someone created for you**
+
 - Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one
 - In the Cloud Console, on the project list, select or create a Cloud project
 
@@ -31,6 +33,8 @@ Then switch the language to english:
 - Click on **Select**
 
 ### Billing account
+
+> 🚨  **Skip this part if you are working on a project someone created for you**
 
 You will now link your account to your credit card. This step is required or you will not be able to use the services provided by GCP. Do not worry, you will be able to consume most GCP services through free credits throughout the bootcamp.
 
@@ -113,6 +117,8 @@ Once the verification goes through, you should receive an email stating that "Yo
 </details>
 
 ### Enabling GCP services
+
+> 🚨  **Skip this part if you are working on a project someone created for you**
 
 - Make sure that billing is enabled for your Google Cloud project
 

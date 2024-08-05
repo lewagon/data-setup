@@ -4,6 +4,8 @@
 
 ### Preparación del Proyecto
 
+> 🚨 **Omita esta parte si está trabajando en un proyecto que alguien creó para usted**
+
 - Ve a [Google Cloud](https://console.cloud.google.com/) y crea una cuenta si aún no tienes una
 - En la consola de Cloud, en la lista de proyectos, selecciona o crea un proyecto Cloud
 
@@ -31,6 +33,8 @@ Cámbialo a inglés:
 - Haz clic en **Select**
 
 ### Cuenta de facturación
+
+> 🚨 **Omita esta parte si está trabajando en un proyecto que alguien creó para usted**
 
 Ahora conecta tu cuenta con tu tarjeta de crédito. Este paso es obligatorio para poder usar los servicios que suministra GCP. No te preocupes, podrás utilizar la mayoría de los servicios de GCP por medio de créditos gratuitos durante el bootcamp.
 
@@ -115,6 +119,8 @@ Cuando la cuenta sea validada recibirás un email diciendo lo siguiente: "Your G
 </details>
 
 ### Habilitación de servicios de GCP
+
+> 🚨 **Omita esta parte si está trabajando en un proyecto que alguien creó para usted**
 
 - Asegúrate de que la facturación está habilitada para tu proyecto Google Cloud
 
