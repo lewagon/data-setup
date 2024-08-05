@@ -1,4 +1,4 @@
-We will now move the service account json file from your Windows disk to the Ubuntu disk. This will allow the development tools in Ubuntu to access to the ressources of your GCP account.
+We will now move the service account json file from your Windows disk to the Ubuntu disk. This will allow the development tools in Ubuntu to access to the resources of your GCP account.
 
 First, let's create a directory in which we will store the file.
 
