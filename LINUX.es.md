@@ -694,14 +694,21 @@ Ve a la [documentación de instalación de Docker](https://docs.docker.com/engin
 
 Luego sigue las instrucciones del tutorial para instalar Docker **usando el repositorio**. Hay 2 pasos:
 
-- SET UP THE REPOSITORY. Esto significa configurar el repositorio
-- INSTALL DOCKER ENGINE. Esto significa instalar el motor de Docker
+1. Set up Docker's apt repository. > Esto significa configurar el repositorio
+2. Install the Docker packages. > Esto significa instalar el motor de Docker
 
-Cuando termines, podrás ejecutar lo siguiente:
+Ahora, asegurémonos de que podemos ejecutar `docker` sin `sudo`.
+
+Ejecute los siguientes comandos uno por uno:
 
 ```bash
-sudo service docker start
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo rm -rf ~/.docker/
 ```
+
+Cuando termines, podrás ejecutar lo siguiente:
 
 ```bash
 sudo docker run hello-world
@@ -710,10 +717,6 @@ sudo docker run hello-world
 Debería aparecer el siguiente mensaje:
 
 ![](images/docker_hello.png)
-
-```bash
-sudo service docker stop
-```
 
 
 ## Kitt

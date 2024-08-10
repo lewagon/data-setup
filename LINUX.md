@@ -736,14 +736,21 @@ Go to [Docker install documentation](https://docs.docker.com/engine/install/ubun
 
 Then follow the tutorial instructions to install Docker **using the repository**. There are 2 steps:
 
-- SET UP THE REPOSITORY
-- INSTALL DOCKER ENGINE
+1. Set up Docker's apt repository.
+2. Install the Docker packages.
 
-Once done, you should be able to run:
+Now, let's make sure we can run `docker` without `sudo`.
+
+Run the following commands one by one:
 
 ```bash
-sudo service docker start
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo rm -rf ~/.docker/
 ```
+
+When finished, run the following command:
 
 ```bash
 sudo docker run hello-world
@@ -752,10 +759,6 @@ sudo docker run hello-world
 The following message should print:
 
 ![](images/docker_hello.png)
-
-```bash
-sudo service docker stop
-```
 
 
 ## Kitt
