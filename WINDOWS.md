@@ -1409,6 +1409,34 @@ The following message should print:
 
 ![](images/docker_hello.png)
 
+<details>
+  <summary markdown='span'>Permission denied?</summary>
+
+Run the following commands one by one:
+
+```bash
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+Try `docker run hello-world` again.
+
+Seeing this error?
+```
+WARNING: Error loading config file: /home/user/.docker/config.json - stat /home/user/.docker/config.json: permission denied`?
+```
+
+Run the following command:
+
+```bash
+sudo rm -rf ~/.docker/
+```
+
+Try `docker run hello-world` again.
+
+</details>
+
 
 ## Google Cloud Platform setup
 

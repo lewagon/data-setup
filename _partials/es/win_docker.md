@@ -21,3 +21,32 @@ docker run hello-world
 Debería aparecer el siguiente mensaje:
 
 ![](images/docker_hello.png)
+
+<details>
+  <summary markdown='span'>Permission denied? (WSL / Ubuntu)</summary>
+
+Ejecute los siguientes comandos uno por uno:
+
+```bash
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+Intente `docker info` nuevamente.
+
+¿Ve este error?
+
+```
+WARNING: Error loading config file: /home/user/.docker/config.json - stat /home/user/.docker/config.json: permission denied`?
+```
+
+Ejecute el siguiente comando:
+
+```bash
+sudo rm -rf ~/.docker/
+```
+
+Intente `docker info` nuevamente.
+
+</details>
