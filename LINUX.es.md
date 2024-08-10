@@ -711,7 +711,7 @@ sudo rm -rf ~/.docker/
 Cuando termines, podrás ejecutar lo siguiente:
 
 ```bash
-sudo docker run hello-world
+docker run hello-world
 ```
 
 Debería aparecer el siguiente mensaje:
