@@ -25,11 +25,6 @@ Please choose your operating system (OS):
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
-    <td>
-      <a href="VM.md">
-        <img src="images/vm.png" alt="Virtual Machine">
-      </a>
-    </td>
   </tr>
 </table>
 
@@ -52,11 +47,6 @@ Please choose your operating system (OS):
     <td>
       <a href="LINUX_gcp.md">
         <img src="images/linux.png" alt="Linux">
-      </a>
-    </td>
-    <td>
-      <a href="VM.md">
-        <img src="images/vm.png" alt="Virtual Machine">
       </a>
     </td>
   </tr>
