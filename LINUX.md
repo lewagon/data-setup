@@ -753,7 +753,7 @@ sudo rm -rf ~/.docker/
 When finished, run the following command:
 
 ```bash
-sudo docker run hello-world
+docker run hello-world
 ```
 
 The following message should print:
