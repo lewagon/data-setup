@@ -1613,10 +1613,6 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
 
 #### Go to the Service Accounts page
 
-<details>
-  <summary><strong>Click to expand</strong>
-  </summary>
-
 Navigate to the GCP service accounts page at [this link](https://console.cloud.google.com/apis/credentials/serviceaccountkey).
 
 - Select your project in the list of recent projects if asked to.
@@ -1626,13 +1622,7 @@ An alternate way to navigate to the Service Accounts page is from the following:
 
 <img width="400" alt="01 Go to Service Accounts" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-01.png">
 
-</details>
-
 #### Create a service account
-
-<details>
-  <summary><strong>Click to expand</strong>
-  </summary>
 
 - Click on **CREATE SERVICE ACCOUNT**.
 
@@ -1650,14 +1640,8 @@ An alternate way to navigate to the Service Accounts page is from the following:
 
   <img width="400" alt="04 Done" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-05.png">
 
-</details>
-
 
 #### Create a json key 🔑 for this service account
-
-<details>
-  <summary><strong>Click to expand</strong>
-  </summary>
 
 - On the service accounts page, click on the email address of the newly created service account.
 
@@ -1678,8 +1662,6 @@ An alternate way to navigate to the Service Accounts page is from the following:
   <img width="400" alt="08 Choose JSON and Create" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-09.png">
 
 - The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`).
-
-</details>
 
 
 We will now move the service account json file from your Windows disk to the Ubuntu disk. This will allow the development tools in Ubuntu to access to the resources of your GCP account.
