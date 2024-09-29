@@ -1611,24 +1611,75 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
 
 ⚠️ **Do not share you service account json file 🔑** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
 
-- Go to the [service accounts page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
-- Select your project in the list of recent projects if asked to
-- Create a service account:
-  - Click on **CREATE SERVICE ACCOUNT**:
-  - Give a `Service account name` to that account
-  - Click on **CREATE AND CONTINUE**
-  - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all resources
-  - Click on **CONTINUE**
-  - Click on **DONE**
-- Download the service account json file 🔑:
-  - Click on the newly created service account
-  - Click on **KEYS**
-  - Click on **ADD KEY** then **Create new key**
-  - Select **JSON** and click on **CREATE**
+#### Go to the Service Accounts page
 
-![](images/gcp_create_key.png)
+<details>
+  <summary><strong>Click to expand</strong>
+  </summary>
 
-The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`)
+Navigate to the GCP service accounts page at [this link](https://console.cloud.google.com/apis/credentials/serviceaccountkey).
+
+- Select your project in the list of recent projects if asked to.
+- If not asked, make sure the right project is selected in the Project selecter list at the top of the page.
+
+An alternate way to navigate to the Service Accounts page is from the following:
+
+<img width="400" alt="01 Go to Service Accounts" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-01.png">
+
+</details>
+
+#### Create a service account
+
+<details>
+  <summary><strong>Click to expand</strong>
+  </summary>
+
+- Click on **CREATE SERVICE ACCOUNT**.
+
+  <img width="400" alt="02 Create Service Account" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-02.png">
+
+- Give your service account a name, an id and a description, and click on **CREATE AND CONTINUE**.
+
+  <img width="400" alt="03 Name the service account" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-03.png">
+
+- Click on **Select a role** and choose `Basic` then **`Owner`**, which gives the service account full access to all resources of your GCP project.
+
+  <img width="400" alt="04 Add BigQuery Job User" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-04.png">
+
+- Click on the blue **DONE** button at the bottom of this window. We don't need to worry about the section *Grant your users access to this service account*.
+
+  <img width="400" alt="04 Done" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-05.png">
+
+</details>
+
+
+#### Create a json key 🔑 for this service account
+
+<details>
+  <summary><strong>Click to expand</strong>
+  </summary>
+
+- On the service accounts page, click on the email address of the newly created service account.
+
+  <img width="400" alt="05 Select the service account" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-06.png">
+
+- Click on the **KEYS** tab at the top of the page.
+
+  <img width="400" alt="06 Go to Keys" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-07.png">
+
+
+- Click on **ADD KEY** then **Create new key**.
+
+  <img width="400" alt="07 Add Key" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-08.png">
+
+
+- Select **JSON** and click on **CREATE**.
+
+  <img width="400" alt="08 Choose JSON and Create" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-09.png">
+
+- The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`).
+
+</details>
 
 
 We will now move the service account json file from your Windows disk to the Ubuntu disk. This will allow the development tools in Ubuntu to access to the resources of your GCP account.
