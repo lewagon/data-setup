@@ -44,6 +44,7 @@ MAC_OS = %w[
   setup/kitt
   setup/macos_slack
   setup/slack_settings
+  setup/macos_settings
   kata
 ].freeze
 
