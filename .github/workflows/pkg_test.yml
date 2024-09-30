@@ -1,0 +1,69 @@
+name: Machine Setup Testing
+
+on:
+  push:
+    branches:
+      - "setup-action"
+
+jobs:
+  setup_apple_silicon:
+    runs-on:  macos-13-xlarge # M1
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.10.6
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10.6'
+
+    - name: Check architecture
+      run: |
+        if [[ $(uname -m) == 'arm64' ]]; then
+          echo "Runner is ARM architecture (Apple Silicon)"
+        else
+          echo "Runner is NOT ARM architecture"
+          exit 1
+        fi
+    - name: Upgrade pip
+      run: pip install --upgrade pip
+
+    - name: Install dependencies for Apple Silicon machine
+      run: |
+        pip install -r ./specs/releases/apple_silicon.txt
+
+  setup_apple_intel:
+    runs-on: macos-12 # Latest intel
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.10.6
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10.6'
+
+    - name: Upgrade pip
+      run: pip install --upgrade pip
+
+    - name: Install dependencies for Apple Intel machine
+      run: |
+        pip install -r ./specs/releases/apple_intel.txt
+
+  setup_linux:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.10.6
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10.6'
+
+    - name: Upgrade pip
+      run: pip install --upgrade pip
+
+    - name: Install dependencies for Linux machine
+      run: |
+        pip install -r ./specs/releases/linux.txt
