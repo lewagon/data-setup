@@ -79,6 +79,7 @@ Go to Applications > Utilities.
 Locate the Terminal app (select it).
 
 Press `Cmd` + `I` on the Terminal app, then verify that the box "Open using Rosetta" is **unchecked**.
+In case you don't see this box, just continue.
 </details>
 
 🚨 Keep this in mind. You will need to remember later on in the setup whether your computer uses an Apple Silicon chip or is an Apple Intel version
