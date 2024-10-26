@@ -41,11 +41,11 @@ for r in ${REQUIRED[@]}; do
   fi
 done
 if (( ${#missing[@]} )); then
-  sentence='Try to `pip install '
+  sentence='❌ Some packages are missing: '
   sentence+=$missing
-  sentence+='` again.'
-  echo '❌ Some packages are missing:'
   echo $sentence
+  echo '👉 Ask a TA for help to check your python setup.'
+  echo '   Note to TAs: First thing to do: redo the Python packages step of the instructions.'
   exit 1
 else
   echo '✅ Everything is fine, continue the setup instructions.'
