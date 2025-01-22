@@ -41,7 +41,7 @@ MAC_OS = %w[
   gcp_setup
   gcp_setup_mid
   gcp_setup_end
-  setup/kitt
+  kitt
   setup/macos_slack
   setup/slack_settings
   setup/macos_settings
@@ -92,7 +92,7 @@ WINDOWS = %w[
   gcp_setup
   gcp_setup_wsl
   gcp_setup_end
-  setup/kitt
+  kitt
   setup/windows_slack
   setup/slack_settings
   kata
@@ -133,7 +133,7 @@ LINUX = %w[
   gcp_setup
   gcp_setup_linux
   gcp_setup_end
-  setup/kitt
+  kitt
   setup/ubuntu_slack
   setup/slack_settings
   kata
@@ -175,7 +175,7 @@ VM = %w[
   python_checkup
   dbeaver
   ubuntu_docker
-  setup/kitt
+  kitt
   setup/windows_slack
   setup/slack_settings
   kata
