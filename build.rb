@@ -20,7 +20,6 @@ MAC_OS = %w[
   chrome
   setup/macos_vscode
   vscode_extensions
-  setup/vscode_liveshare
   setup/oh_my_zsh
   direnv
   setup/gh_cli
@@ -65,7 +64,6 @@ WINDOWS = %w[
   setup/windows_vscode
   setup/windows_terminal
   vscode_extensions
-  setup/vscode_liveshare
   setup/cli_tools
   setup/oh_my_zsh
   setup/windows_browser
@@ -109,7 +107,6 @@ LINUX = %w[
   setup/github
   setup/ubuntu_vscode
   vscode_extensions
-  setup/vscode_liveshare
   setup/cli_tools
   chrome
   setup/oh_my_zsh
