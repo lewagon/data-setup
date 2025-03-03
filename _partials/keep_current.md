@@ -140,8 +140,8 @@ pyenv versions
   system
   <PYTHON_VERSION>
   <PYTHON_VERSION>/envs/lewagon_current
-  3.7.6
-  3.7.6/envs/lewagon
+  3.10.6
+  3.10.6/envs/lewagon
 * lewagon_current
   lewagon
 ```
