@@ -1124,18 +1124,7 @@ Si no es el caso, por favor llama a un TA.
 Para cerrar el servidor jupyter en la terminal, presiona `CTRL` + `C`, enter y. Luego presiona Enter.
 
 
-## Extensiones de `jupyter` notebook
-
-Mejora tu `jupyter` notebooks con extensiones increíbles:
-
-```bash
-# install nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main
-jupyter nbextension enable collapsible_headings/main
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/code_prettify
-```
+## Mejora `jupyter` notebook y chequeo
 
 ### CSS personalizado
 

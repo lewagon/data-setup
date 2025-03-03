@@ -670,18 +670,7 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 </details>
 
 
-## Extensiones de `jupyter` notebook
-
-Mejora tu `jupyter` notebooks con extensiones increíbles:
-
-```bash
-# install nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main
-jupyter nbextension enable collapsible_headings/main
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/code_prettify
-```
+## Mejora `jupyter` notebook y chequeo
 
 ### CSS personalizado
 
