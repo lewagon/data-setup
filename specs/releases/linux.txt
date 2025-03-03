@@ -90,8 +90,8 @@ jupyterlab-spellchecker==0.8.4
 jupyterlab-widgets==3.0.13
 jupyterlab==4.3.5
 kagglehub==0.3.9
-keras-hub==0.18.1
-keras-nlp==0.18.1
+keras-hub==0.19.0
+keras-nlp==0.19.0
 keras==3.8.0
 kiwisolver==1.4.8
 lazy-loader==0.4
@@ -190,7 +190,6 @@ tensorboard-data-server==0.7.2
 tensorboard==2.16.2
 tensorflow-datasets==4.9.7
 tensorflow-metadata==1.16.1
-tensorflow-text==2.16.1
 tensorflow==2.16.2
 termcolor==2.5.0
 terminado==0.18.1

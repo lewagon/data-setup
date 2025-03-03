@@ -90,8 +90,8 @@ jupyterlab-spellchecker==0.8.4
 jupyterlab-widgets==3.0.13
 jupyterlab==4.3.5
 kagglehub==0.3.9
-keras-hub==0.18.1
-keras-nlp==0.18.1
+keras-hub==0.19.0
+keras-nlp==0.19.0
 keras==3.8.0
 kiwisolver==1.4.8
 lazy-loader==0.4
@@ -200,7 +200,7 @@ tinycss2==1.4.0
 tokenizers==0.21.0
 toml==0.10.2
 tomlkit==0.13.2
-torch==2.6.0
+torch==2.2.0
 tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
