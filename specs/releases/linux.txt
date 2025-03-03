@@ -190,7 +190,6 @@ tensorboard-data-server==0.7.2
 tensorboard==2.16.2
 tensorflow-datasets==4.9.7
 tensorflow-metadata==1.16.1
-tensorflow-text==2.16.1
 tensorflow==2.16.2
 termcolor==2.5.0
 terminado==0.18.1
