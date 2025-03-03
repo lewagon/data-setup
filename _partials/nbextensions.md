@@ -1,15 +1,4 @@
-## `jupyter` notebook extensions
-
-Pimp your `jupyter` notebooks with awesome extensions:
-
-```bash
-# install nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main
-jupyter nbextension enable collapsible_headings/main
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/code_prettify
-```
+## `jupyter` notebook tweaking and check up
 
 ### Custom CSS
 
@@ -61,15 +50,5 @@ Click on `New`:
 A tab should open on a new notebook:
 
 ![jupyter_notebook.png](images/jupyter_notebook.png)
-
-### `nbextensions` check up
-
-Perform a sanity check for `jupyter notebooks nbextensions`. Click on `Nbextensions`:
-
-![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
-
-Untick _"disable configuration for nbextensions without explicit compatibility"_ then check that _at least_ all `nbextensions` circled in red are enabled:
-
-![nbextensions.png](images/nbextensions.png)
 
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
