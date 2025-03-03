@@ -511,7 +511,7 @@ python3-dev
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -528,7 +528,7 @@ source ~/.zprofile
 Then try to install Python again:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 If `pyenv` is still not found, contact a teacher.
@@ -540,11 +540,11 @@ If `pyenv` is still not found, contact a teacher.
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.10.6
+pyenv global 3.12.9
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `3.10.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.12.9`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
@@ -561,7 +561,7 @@ exec zsh
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon
+pyenv virtualenv 3.12.9 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -590,18 +590,7 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
-## `jupyter` notebook extensions
-
-Pimp your `jupyter` notebooks with awesome extensions:
-
-```bash
-# install nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main
-jupyter nbextension enable collapsible_headings/main
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/code_prettify
-```
+## `jupyter` notebook tweaking and check up
 
 ### Custom CSS
 
@@ -654,16 +643,6 @@ A tab should open on a new notebook:
 
 ![jupyter_notebook.png](images/jupyter_notebook.png)
 
-### `nbextensions` check up
-
-Perform a sanity check for `jupyter notebooks nbextensions`. Click on `Nbextensions`:
-
-![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
-
-Untick _"disable configuration for nbextensions without explicit compatibility"_ then check that _at least_ all `nbextensions` circled in red are enabled:
-
-![nbextensions.png](images/nbextensions.png)
-
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 
@@ -671,7 +650,7 @@ You can close your web browser then terminate the jupyter server with `CTRL` + `
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Run the following command to check if you successfully installed the required packages:

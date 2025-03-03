@@ -568,7 +568,7 @@ export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
@@ -593,7 +593,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Luego trata de instalar Python nuevamente:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignorar y continuar al paso siguiente.
@@ -604,11 +604,11 @@ Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignor
 OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
 
 ```bash
-pyenv global 3.10.6
+pyenv global 3.12.9
 exec zsh
 ```
 
-Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.10.6`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.12.9`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
 
 
 ## Entorno Virtual de Python
@@ -625,7 +625,7 @@ exec zsh
 Crea el entorno virtual que usaremos durante todo el bootcamp:
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon
+pyenv virtualenv 3.12.9 lewagon
 ```
 
 Define el entorno virtual con lo siguiente:
@@ -751,7 +751,7 @@ Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:

@@ -93,7 +93,7 @@ cd $(pyenv root) && git pull
 Install the current python version :
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 👉 Make sure that the command completes correctly and **restart your terminal**
@@ -107,7 +107,7 @@ pyenv virtualenv-delete lewagon_current
 Create a new virtual environment :
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon_current
+pyenv virtualenv 3.12.9 lewagon_current
 ```
 
 Set the new virtual environment as default :
@@ -126,10 +126,10 @@ pyenv versions
 
 ``` bash
   system
+  3.12.9
+  3.12.9/envs/lewagon_current
   3.10.6
-  3.10.6/envs/lewagon_current
-  3.7.6
-  3.7.6/envs/lewagon
+  3.10.6/envs/lewagon
 * lewagon_current
   lewagon
 ```
@@ -269,7 +269,7 @@ Stop the Docker Desktop app
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Run the following command to check if you successfully installed the required packages:
