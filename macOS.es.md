@@ -655,7 +655,7 @@ Si tu computadora usa **Apple Silicon**, expande el párrafo de abajo y léelo. 
   <summary>👉&nbsp;&nbsp;Configuración para Apple Silicon 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/specs/releases/apple_silicon.txt
 ```
 </details>
 
@@ -665,7 +665,7 @@ Si tu computadora usa **Apple Intel**, expande el párrafo de abajo y léelo. Si
   <summary>👉&nbsp;&nbsp;Configuración para Apple Intel 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/specs/releases/apple_intel.txt
 ```
 </details>
 
@@ -751,17 +751,17 @@ Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/checks/python_checker.sh)" 3.10.6
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/checks/pip_check.sh)"
 ```
 
 Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquetes:
 ```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/checks/pip_check.py)"
 ```
 
 Asegúrate de que puedas usar Jupyter:

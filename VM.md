@@ -984,7 +984,7 @@ pip install --upgrade pip
 Then let's install some packages for the first weeks of the program:
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/specs/releases/linux.txt
 ```
 
 
@@ -1069,17 +1069,17 @@ You can close your web browser then terminate the jupyter server with `CTRL` + `
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/checks/python_checker.sh)" 3.10.6
 ```
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/checks/pip_check.sh)"
 ```
 
 Now run the following command to check if you can load these packages:
 ```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update/checks/pip_check.py)"
 ```
 
 Make sure you can run Jupyter:
