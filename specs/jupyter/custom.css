@@ -1,0 +1,57 @@
+/* Custom CSS for Jupyter Notebook
+
+   Should go into ~/.jupyter/custom/custom.css
+
+   Only impacts the Jupyter Notebook interface, not VS Code for example
+*/
+
+
+/* Prettify disclosure elements used for hints and solutions
+   - Use same color as cell editor background
+   - Add padding and margin to make it look like a card
+   - Make the summary element bold
+   - Add a marker to the summary element
+*/
+
+details {
+  padding: 5px 10px 5px;
+  margin-bottom: 1em;
+}
+
+details[open]{
+}
+
+body[data-jp-theme-light=true] details {
+  background-color: var(--jp-cell-editor-background);
+}
+
+body[data-jp-theme-light=false] details {
+  background-color: var(--jp-cell-editor-background);
+}
+
+summary {
+  cursor: pointer;
+  display: list-item;
+  font-weight: bold;
+  background-color: var(--jp-cell-editor-background);
+}
+
+summary::marker {
+  font-size: 1em;
+}
+
+details > p {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Reference for future use
+*/
+
+body[data-jp-theme-light=true] .jp-InputArea-editor {
+  /* To change code and markdown input cells in light mode */
+}
+
+body[data-jp-theme-light=false] .jp-InputArea-editor {
+  /* To change code and markdown input cells in dark mode */
+}
