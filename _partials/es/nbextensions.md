@@ -1,4 +1,4 @@
-### Mejora Jupyter Notebook
+## Mejora Jupyter Notebook
 
 Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
 
