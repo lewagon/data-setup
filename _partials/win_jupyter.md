@@ -1,13 +1,11 @@
 
-## Configuring Jupyter Notebook to open in your browser
+### Configuring Jupyter Notebook to open in your browser
 
 Let's generate the configuration file for **Jupyter Notebook**...
 
 ``` bash
 jupyter notebook --generate-config
 ```
-
-⚠️ Please copy the path returned by the previous command.
 
 We will now edit the generated Jupyter configuration file:
 

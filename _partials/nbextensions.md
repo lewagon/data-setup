@@ -1,54 +1,12 @@
-## `jupyter` notebook tweaking and check up
+## Jupyter Notebook tweaking
 
-### Custom CSS
+Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
 
-Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
-
-Open `custom/custom.css` in the config directory:
-```bash
-cd $(jupyter --config-dir)
-mkdir -p custom
-touch custom/custom.css
-<CODE_EDITOR_CMD> custom/custom.css
-```
-Edit `custom.css` with:
-
-```css
-summary {
-    cursor: pointer;
-    display:list-item;
-}
-summary::marker {
-    font-size: 1em;
-}
-```
-
-You can close <CODE_EDITOR>.
-
-### `jupyter` check up
-
-Let's reset your terminal:
+Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
 
 ```bash
-exec zsh
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
 ```
-
-Now, check you can launch a notebook server on your machine:
-
-```bash
-jupyter notebook
-```
-
-Your web browser should open on a `jupyter` window:
-
-![jupyter.png](images/jupyter.png)
-
-Click on `New`:
-
-![jupyter_new.png](images/jupyter_new.png)
-
-A tab should open on a new notebook:
-
-![jupyter_notebook.png](images/jupyter_notebook.png)
-
-You can close your web browser then terminate the jupyter server with `CTRL` + `C`.

@@ -1,5 +1,4 @@
-
-## Configuración de Jupyter Notebook para abrirlo en tu navegador
+### Configuración de Jupyter Notebook para abrirlo en tu navegador
 
 Genera el archivo de configuración para **Jupyter Notebook**...
 
