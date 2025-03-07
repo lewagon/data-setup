@@ -511,7 +511,7 @@ python3-dev
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -528,7 +528,7 @@ source ~/.zprofile
 Then try to install Python again:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 If `pyenv` is still not found, contact a teacher.
@@ -540,16 +540,18 @@ If `pyenv` is still not found, contact a teacher.
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.10.6
+pyenv global 3.12.9
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `3.10.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.12.9`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
 
 Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
+
+### Setup a virtualenv
 
 First let's install this plugin:
 
@@ -561,7 +563,7 @@ exec zsh
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon
+pyenv virtualenv 3.12.9 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -573,7 +575,7 @@ pyenv global lewagon
 Great! Anytime we'll install Python package, we'll do it in that environment.
 
 
-## Python packages
+### Python packages
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 
@@ -590,88 +592,33 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
-## `jupyter` notebook extensions
+## Jupyter Notebook tweaking
 
-Pimp your `jupyter` notebooks with awesome extensions:
+Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+
+Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
 
 ```bash
-# install nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main
-jupyter nbextension enable collapsible_headings/main
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/code_prettify
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
 ```
 
-### Custom CSS
 
-Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+## Python setup check
 
-Open `custom/custom.css` in the config directory:
-```bash
-cd $(jupyter --config-dir)
-mkdir -p custom
-touch custom/custom.css
-code custom/custom.css
-```
-Edit `custom.css` with:
-
-```css
-summary {
-    cursor: pointer;
-    display:list-item;
-}
-summary::marker {
-    font-size: 1em;
-}
-```
-
-You can close VS Code.
-
-### `jupyter` check up
+### Python and packages check
 
 Let's reset your terminal:
 
 ```bash
-exec zsh
+cd ~/code && exec zsh
 ```
-
-Now, check you can launch a notebook server on your machine:
-
-```bash
-jupyter notebook
-```
-
-Your web browser should open on a `jupyter` window:
-
-![jupyter.png](images/jupyter.png)
-
-Click on `New`:
-
-![jupyter_new.png](images/jupyter_new.png)
-
-A tab should open on a new notebook:
-
-![jupyter_notebook.png](images/jupyter_notebook.png)
-
-### `nbextensions` check up
-
-Perform a sanity check for `jupyter notebooks nbextensions`. Click on `Nbextensions`:
-
-![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
-
-Untick _"disable configuration for nbextensions without explicit compatibility"_ then check that _at least_ all `nbextensions` circled in red are enabled:
-
-![nbextensions.png](images/nbextensions.png)
-
-You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
-
-
-### Python setup check up
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Run the following command to check if you successfully installed the required packages:
@@ -684,18 +631,34 @@ Now run the following command to check if you can load these packages:
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
 
+### Jupyter check
+
 Make sure you can run Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-And open a `Python 3` notebook.
+Your web browser should open on a `jupyter` window:
 
-Make sure that you are running the correct python version in the notebook. Open a cell and run :
+![jupyter.png](images/jupyter.png)
+
+Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
+
+![jupyter_new.png](images/jupyter_new.png)
+
+A tab should open on a new notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
+
+Make sure that you are running the correct python version in the notebook. Open a cell and run:
 ``` python
 import sys; sys.version
 ```
+
+It should output `3.12.9` followed by some more details. If not, check with a TA.
+
+You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
 

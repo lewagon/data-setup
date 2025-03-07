@@ -1,4 +1,4 @@
-## Python packages
+### Python packages
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 

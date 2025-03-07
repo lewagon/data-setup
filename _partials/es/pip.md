@@ -1,4 +1,4 @@
-## Paquetes de Python
+### Paquetes de Python
 
 Ahora que tenemos el ambiente virtual de `lewagon` adecuado, es hora de instalarle algunos paquetes.
 
