@@ -1082,8 +1082,21 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
+### Mejora Jupyter Notebook
 
-## Configuración de Jupyter Notebook para abrirlo en tu navegador
+Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
+
+Ejecuta las siguientes líneas para crear una hoja de estilos `custom.css` en tu directorio de configuración de Jupyter:
+
+```bash
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
+```
+
+
+### Configuración de Jupyter Notebook para abrirlo en tu navegador
 
 Genera el archivo de configuración para **Jupyter Notebook**...
 
@@ -1102,13 +1115,13 @@ code $HOME/.jupyter/jupyter_notebook_config.py
 Localiza la siguiente línea en el archivo de configuración:
 
 ``` python
-# c.NotebookApp.use_redirect_file = True
+# c.ServerApp.use_redirect_file = True
 ```
 
 Y reemplázala por éste **precisamente** 👇 (incluyendo la eliminación del símbolo `#`)
 
 ``` python
-c.NotebookApp.use_redirect_file = False
+c.ServerApp.use_redirect_file = False
 ```
 
 Intenta usar Jupyter:
@@ -1126,21 +1139,9 @@ Si no es el caso, por favor llama a un TA.
 Para cerrar el servidor jupyter en la terminal, presiona `CTRL` + `C`, enter y. Luego presiona Enter.
 
 
-### Mejora `jupyter` notebook
-
-Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
-
-Ejecuta las siguientes líneas para crear una hoja de estilos `custom.css` en tu directorio de configuración de Jupyter:
-
-```bash
-LOCATION=$(jupyter --config-dir)/custom
-SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
-mkdir -p $LOCATION
-curl $SOURCE > $LOCATION/custom.css
-```
-
-
 ## Chequeo de la configuración de Python
+
+### Chequeo de Python y packages
 
 Reinicia tu terminal:
 
@@ -1162,6 +1163,8 @@ Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquet
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
+
+### Chequeo de Jupyter
 
 Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 

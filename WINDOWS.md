@@ -1143,16 +1143,28 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
+### Jupyter Notebook tweaking
 
-## Configuring Jupyter Notebook to open in your browser
+Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+
+Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
+
+```bash
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
+```
+
+
+
+### Configuring Jupyter Notebook to open in your browser
 
 Let's generate the configuration file for **Jupyter Notebook**...
 
 ``` bash
 jupyter notebook --generate-config
 ```
-
-⚠️ Please copy the path returned by the previous command.
 
 We will now edit the generated Jupyter configuration file:
 
@@ -1163,13 +1175,13 @@ code $HOME/.jupyter/jupyter_notebook_config.py
 Locate the following line in the configuration file:
 
 ``` python
-# c.NotebookApp.use_redirect_file = True
+# c.ServerApp.use_redirect_file = True
 ```
 
 And replace it with this one **precisely** 👇 (including removing the `#` symbol)
 
 ``` python
-c.NotebookApp.use_redirect_file = False
+c.ServerApp.use_redirect_file = False
 ```
 
 Let's try to run Jupyter:
@@ -1187,21 +1199,9 @@ If it is not the case, please call a TA.
 To stop the Jupyter server in the terminal, press `Ctrl` + `C`, enter y, then press Enter.
 
 
-### `jupyter` notebook tweaking
+## Python setup check
 
-Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
-
-Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
-
-```bash
-LOCATION=$(jupyter --config-dir)/custom
-SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
-mkdir -p $LOCATION
-curl $SOURCE > $LOCATION/custom.css
-```
-
-
-## Python setup check up
+### Python and packages check
 
 Let's reset your terminal:
 
@@ -1223,6 +1223,8 @@ Now run the following command to check if you can load these packages:
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
+
+### Jupyter check
 
 Make sure you can run Jupyter:
 

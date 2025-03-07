@@ -592,7 +592,7 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
-### `jupyter` notebook tweaking
+### Jupyter Notebook tweaking
 
 Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
 
@@ -606,7 +606,9 @@ curl $SOURCE > $LOCATION/custom.css
 ```
 
 
-## Python setup check up
+## Python setup check
+
+### Python and packages check
 
 Let's reset your terminal:
 
@@ -628,6 +630,8 @@ Now run the following command to check if you can load these packages:
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
+
+### Jupyter check
 
 Make sure you can run Jupyter:
 

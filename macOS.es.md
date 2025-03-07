@@ -672,7 +672,7 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 </details>
 
 
-### Mejora `jupyter` notebook
+### Mejora Jupyter Notebook
 
 Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
 
@@ -687,6 +687,8 @@ curl $SOURCE > $LOCATION/custom.css
 
 
 ## Chequeo de la configuración de Python
+
+### Chequeo de Python y packages
 
 Reinicia tu terminal:
 
@@ -708,6 +710,8 @@ Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquet
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
+
+### Chequeo de Jupyter
 
 Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 
