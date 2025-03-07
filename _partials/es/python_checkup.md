@@ -44,7 +44,7 @@ Asegúrate de que estés usando la versión correcta de python en el notebook. A
 import sys; sys.version
 ```
 
-Debería mostrar <PYTHON_VERSION> seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+Debería mostrar `<PYTHON_VERSION>` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
 
 Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 
