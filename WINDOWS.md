@@ -1185,63 +1185,27 @@ If it is not the case, please call a TA.
 To stop the Jupyter server in the terminal, press `Ctrl` + `C`, enter y, then press Enter.
 
 
-## `jupyter` notebook tweaking and check up
+## `jupyter` notebook tweaking
 
-### Custom CSS
+Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
 
-Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
 
-Open `custom/custom.css` in the config directory:
 ```bash
-cd $(jupyter --config-dir)
-mkdir -p custom
-touch custom/custom.css
-code custom/custom.css
-```
-Edit `custom.css` with:
-
-```css
-summary {
-    cursor: pointer;
-    display:list-item;
-}
-summary::marker {
-    font-size: 1em;
-}
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
 ```
 
-You can close VS Code.
 
-### `jupyter` check up
+### Python setup check up
 
 Let's reset your terminal:
 
 ```bash
-exec zsh
+cd ~/code && exec zsh
 ```
-
-Now, check you can launch a notebook server on your machine:
-
-```bash
-jupyter notebook
-```
-
-Your web browser should open on a `jupyter` window:
-
-![jupyter.png](images/jupyter.png)
-
-Click on `New`:
-
-![jupyter_new.png](images/jupyter_new.png)
-
-A tab should open on a new notebook:
-
-![jupyter_notebook.png](images/jupyter_notebook.png)
-
-You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
-
-
-### Python setup check up
 
 Check your Python version with the following commands:
 ```bash
@@ -1264,12 +1228,26 @@ Make sure you can run Jupyter:
 jupyter notebook
 ```
 
-And open a `Python 3` notebook.
+Your web browser should open on a `jupyter` window:
 
-Make sure that you are running the correct python version in the notebook. Open a cell and run :
+![jupyter.png](images/jupyter.png)
+
+Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
+
+![jupyter_new.png](images/jupyter_new.png)
+
+A tab should open on a new notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
+
+Make sure that you are running the correct python version in the notebook. Open a cell and run:
 ``` python
 import sys; sys.version
 ```
+
+It should output `3.12.9` followed by some more details. If not, check with a TA.
+
+You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
 

@@ -548,73 +548,27 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
-## Mejora `jupyter` notebook y chequeo
-
-### CSS personalizado
+## Mejora `jupyter` notebook
 
 Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
 
-Abre `custom/custom.css` en el directorio config:
+Ejecuta las siguientes líneas para crear una hoja de estilos `custom.css` en tu directorio de configuración de Jupyter:
+
 ```bash
-cd $(jupyter --config-dir)
-mkdir -p custom
-touch custom/custom.css
-code custom/custom.css
-```
-Edita `custom.css` con la siguiente información:
-
-```css
-summary {
-    cursor: pointer;
-    display:list-item;
-}
-summary::marker {
-    font-size: 1em;
-}
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
 ```
 
-Puedes cerrar VS Code.
 
-### Chequeo de `jupyter`
+### Chqueo de la configuración de Python
 
 Reinicia tu terminal:
 
 ```bash
-exec zsh
+cd ~/code && exec zsh
 ```
-
-Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
-
-```bash
-jupyter notebook
-```
-
-Tu navegador web debería abrir en una ventana `jupyter`:
-
-![jupyter.png](images/jupyter.png)
-
-Haz clic en `New`:
-
-![jupyter_new.png](images/jupyter_new.png)
-
-Debería abrirse una pestaña en un nuevo notebook:
-
-![jupyter_notebook.png](images/jupyter_notebook.png)
-
-### Chequeo de `nbextensions`
-
-Haz una revisión de las `jupyter notebooks nbextensions`. Haz clic en `Nbextensions`:
-
-![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
-
-Deselecciona _"disable configuration for nbextensions without explicit compatibility"_. Esto significa deshabilitar la configuración de nbextensions sin compatibilidad explícita. Luego verifica que _al menos_ las `nbextensions` marcadas en rojo estén habilitadas:
-
-![nbextensions.png](images/nbextensions.png)
-
-Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
-
-
-### Chqueo de la configuración de Python
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
@@ -631,18 +585,32 @@ Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquet
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
 
-Asegúrate de que puedas usar Jupyter:
+Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 
 ```bash
 jupyter notebook
 ```
 
-Y abre un notebook `Python 3`.
+Tu navegador web debería abrir en una ventana `jupyter`:
+
+![jupyter.png](images/jupyter.png)
+
+Haz clic en `New` y, en el menú desplegable, selecciona Python 3 (ipykernel):
+
+![jupyter_new.png](images/jupyter_new.png)
+
+Debería abrirse una pestaña en un nuevo notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
 
 Asegúrate de que estés usando la versión correcta de python en el notebook. Abre una celda y ejecuta lo siguiente:
 ``` python
 import sys; sys.version
 ```
+
+Debería mostrar 3.12.9 seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+
+Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 
 ¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
 
