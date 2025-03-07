@@ -80,8 +80,8 @@ WINDOWS = %w[
   ubuntu_python
   virtualenv
   pip
-  win_jupyter
   nbextensions
+  win_jupyter
   python_checkup
   dbeaver
   setup/windows_settings

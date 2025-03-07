@@ -1,5 +1,7 @@
 ## Chequeo de la configuración de Python
 
+### Chequeo de Python y packages
+
 Reinicia tu terminal:
 
 ```bash
@@ -20,6 +22,8 @@ Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquet
 ```bash
 python -c "$(curl -fsSL <PIP_LOADER_URL>)"
 ```
+
+### Chequeo de Jupyter
 
 Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 

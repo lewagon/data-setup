@@ -1,13 +1,11 @@
 
-## Configuring Jupyter Notebook to open in your browser
+### Configuring Jupyter Notebook to open in your browser
 
 Let's generate the configuration file for **Jupyter Notebook**...
 
 ``` bash
 jupyter notebook --generate-config
 ```
-
-⚠️ Please copy the path returned by the previous command.
 
 We will now edit the generated Jupyter configuration file:
 
@@ -18,13 +16,13 @@ We will now edit the generated Jupyter configuration file:
 Locate the following line in the configuration file:
 
 ``` python
-# c.NotebookApp.use_redirect_file = True
+# c.ServerApp.use_redirect_file = True
 ```
 
 And replace it with this one **precisely** 👇 (including removing the `#` symbol)
 
 ``` python
-c.NotebookApp.use_redirect_file = False
+c.ServerApp.use_redirect_file = False
 ```
 
 Let's try to run Jupyter:

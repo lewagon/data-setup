@@ -1,4 +1,6 @@
-## Python setup check up
+## Python setup check
+
+### Python and packages check
 
 Let's reset your terminal:
 
@@ -20,6 +22,8 @@ Now run the following command to check if you can load these packages:
 ```bash
 python -c "$(curl -fsSL <PIP_LOADER_URL>)"
 ```
+
+### Jupyter check
 
 Make sure you can run Jupyter:
 
