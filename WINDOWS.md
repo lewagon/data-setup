@@ -1169,19 +1169,7 @@ jupyter notebook --generate-config
 We will now edit the generated Jupyter configuration file:
 
 ``` bash
-code $HOME/.jupyter/jupyter_notebook_config.py
-```
-
-Locate the following line in the configuration file:
-
-``` python
-# c.ServerApp.use_redirect_file = True
-```
-
-And replace it with this one **precisely** 👇 (including removing the `#` symbol)
-
-``` python
-c.ServerApp.use_redirect_file = False
+sed -i.backup 's/# c.ServerApp.use_redirect_file = True/c.ServerApp.use_redirect_file = False/' ~/.jupyter/jupyter_notebook_config.py
 ```
 
 Let's try to run Jupyter:
