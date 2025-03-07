@@ -273,7 +273,7 @@ sudo service docker stop
 ```
 
 
-### Python setup check up
+## Python setup check up
 
 Let's reset your terminal:
 

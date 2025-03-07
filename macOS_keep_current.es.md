@@ -281,7 +281,7 @@ docker run hello-world
 Stop the Docker app
 
 
-### Chqueo de la configuración de Python
+## Chequeo de la configuración de Python
 
 Reinicia tu terminal:
 

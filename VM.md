@@ -949,6 +949,8 @@ To check if this worked, run `python --version`. If you see `3.12.9`, perfect! I
 
 Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
 
+### Setup a virtualenv
+
 First let's install this plugin:
 
 ```bash
@@ -971,7 +973,7 @@ pyenv global lewagon
 Great! Anytime we'll install Python package, we'll do it in that environment.
 
 
-## Python packages
+### Python packages
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 
@@ -988,7 +990,7 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
-## `jupyter` notebook tweaking
+### `jupyter` notebook tweaking
 
 Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
 
@@ -1002,7 +1004,7 @@ curl $SOURCE > $LOCATION/custom.css
 ```
 
 
-### Python setup check up
+## Python setup check up
 
 Let's reset your terminal:
 

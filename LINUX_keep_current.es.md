@@ -273,7 +273,7 @@ sudo service docker stop
 ```
 
 
-### Chqueo de la configuración de Python
+## Chequeo de la configuración de Python
 
 Reinicia tu terminal:
 

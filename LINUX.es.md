@@ -509,6 +509,8 @@ Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `3.1
 
 Antes de instalar paquetes de Python, aislaremos la configuración del Bootcamp en un entorno virtual **dedicado**. Usaremos un plugin `pyenv` llamado [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
 
+### Instala un virtualenv
+
 Primero instala este plugin:
 
 ```bash
@@ -531,7 +533,7 @@ pyenv global lewagon
 ¡Genial! Ahora cada vez que queramos instalar un paquete Python, lo haremos en ese entorno.
 
 
-## Paquetes de Python
+### Paquetes de Python
 
 Ahora que tenemos el ambiente virtual de `lewagon` adecuado, es hora de instalarle algunos paquetes.
 
@@ -548,7 +550,7 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
-## Mejora `jupyter` notebook
+### Mejora `jupyter` notebook
 
 Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
 
@@ -562,7 +564,7 @@ curl $SOURCE > $LOCATION/custom.css
 ```
 
 
-### Chqueo de la configuración de Python
+## Chequeo de la configuración de Python
 
 Reinicia tu terminal:
 
