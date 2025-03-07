@@ -592,7 +592,7 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
-### Jupyter Notebook tweaking
+## Jupyter Notebook tweaking
 
 Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
 
