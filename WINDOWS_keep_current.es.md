@@ -311,7 +311,7 @@ Asegúrate de que estés usando la versión correcta de python en el notebook. A
 import sys; sys.version
 ```
 
-Debería mostrar 3.12.9 seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+Debería mostrar `3.12.9` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
 
 Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 
