@@ -2,6 +2,8 @@
 
 Antes de instalar paquetes de Python, aislaremos la configuración del Bootcamp en un entorno virtual **dedicado**. Usaremos un plugin `pyenv` llamado [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
 
+### Instala un virtualenv
+
 Primero instala este plugin:
 
 ```bash
