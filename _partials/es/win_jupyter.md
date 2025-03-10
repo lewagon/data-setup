@@ -17,13 +17,13 @@ Ahora edita el archivo de configuración de Jupyter generado:
 Localiza la siguiente línea en el archivo de configuración:
 
 ``` python
-# c.NotebookApp.use_redirect_file = True
+# c.ServerApp.use_redirect_file = True
 ```
 
 Y reemplázala por éste **precisamente** 👇 (incluyendo la eliminación del símbolo `#`)
 
 ``` python
-c.NotebookApp.use_redirect_file = False
+c.ServerApp.use_redirect_file = False
 ```
 
 Intenta usar Jupyter:
