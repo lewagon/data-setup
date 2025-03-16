@@ -86,7 +86,6 @@ jupyterlab-code-formatter==3.0.2
 jupyterlab-execute-time==3.2.0
 jupyterlab-pygments==0.3.0
 jupyterlab-server==2.27.3
-jupyterlab-spellchecker==0.8.4
 jupyterlab-widgets==3.0.13
 jupyterlab==4.3.5
 kagglehub==0.3.9
