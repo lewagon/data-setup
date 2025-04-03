@@ -354,13 +354,6 @@ mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
 
-Now, your dotfiles might not be in sync anymore with the Le Wagon version. **Ask a TA** to run through these steps together:
-
-1. `git merge upstream/master`
-2. Check that you're not in MERGING state (if any conflicts resolve them)
-3. Do a `git diff HEAD~1 HEAD` to check what changed
-4. If nothing seems out of the ordinary, continue
-
 Run the `dotfiles` installer.
 
 ```bash
@@ -411,13 +404,6 @@ Time to fork the repo and clone it on your laptop:
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
-
-Now, your dotfiles might not be in sync anymore with the Le Wagon version. **Ask a TA** to run through these steps together:
-
-1. `git merge upstream/master`
-2. Check that you're not in MERGING state (if any conflicts resolve them)
-3. Do a `git diff HEAD~1 HEAD` to check what changed
-4. If nothing seems out of the ordinary, continue
 
 Run the `dotfiles` installer.
 
