@@ -502,27 +502,142 @@ gh repo clone lewagon/dotfiles
 ```
 
 
-OR
-
-<details>
-    <summary>
-        <strong>IYa hice el bootcamp de Web Development (FullStack) de Le Wagon <em>pero tengo una nueva laptop</em></strong>
-    </summary>
-
-
-<details>
-    <summary>
-        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon <em>pero tengo una nueva laptop</em></strong>
-    </summary>
-
-Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento.Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
-
-Es hora de clonarlo el repositorio en tu laptop:
+Abre tu terminal y ve a tu proyecto `dotfiles`:
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo clone lewagon/dotfiles
+cd ~/code/$GITHUB_USERNAME$/dotfiles
 ```
+
+Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
+
+1. Commit la versión actual de tus dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
+
+1. Trae los cambios del repositorio upstream: `git merge upstream/master`
+
+1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
+
+1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
+
+1. Si todo parece estar en orden, continúa.
+
+<details>
+  <summary>¿Demasiados conflictos?
+  </summary>
+
+  Vamos a tomar la versión actual de `lewagon/dotfiles`.
+
+  Primero aborta la merge: `git merge --abort`.
+
+  Ejecuta `code .`
+
+  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
+
+  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
+
+  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
+
+</details>
+
+Es hora de guardar tus cambios y subirlos.
+
+```bash
+git add .
+git commit -m "Update for Data Science bootcamp"
+git push origin master
+```
+
+</details>
+
+
+<details>
+    <summary>
+        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon </em>en la misma laptop</em></strong>
+    </summary>
+
+Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento. Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
+
+
+Abre tu terminal y ve a tu proyecto `dotfiles`:
+
+```bash
+cd ~/code/$GITHUB_USERNAME$/dotfiles
+```
+
+Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
+
+1. Commit la versión actual de tus dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
+
+1. Trae los cambios del repositorio upstream: `git merge upstream/master`
+
+1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
+
+1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
+
+1. Si todo parece estar en orden, continúa.
+
+<details>
+  <summary>¿Demasiados conflictos?
+  </summary>
+
+  Vamos a tomar la versión actual de `lewagon/dotfiles`.
+
+  Primero aborta la merge: `git merge --abort`.
+
+  Ejecuta `code .`
+
+  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
+
+  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
+
+  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
+
+</details>
+
+Es hora de guardar tus cambios y subirlos.
+
+```bash
+git add .
+git commit -m "Update for Data Science bootcamp"
+git push origin master
+```
+
+</details>
+
+
+### Ejecuta el instalador de dotfiles
+
+Ejecuta el instalador de `dotfiles`.
+
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
+```
+
+Verifica los emails registrados en tu cuenta GitHub. Deberás seleccionar uno de ellos en el próximo paso:
+
+```bash
+gh api user/emails | jq -r '.[].email'
+```
+
+Ejecuta el instalador de git:
+
+```bash
+cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
+```
+
+:point_up: Esto te **guiará** con tu nombre (`FirstName LastName`) y con tu email.
+:warning: Cuidado, **debes** poner uno de los emails de la lista de arriba que te suministra el comando `gh api ...` usado anteriormente. Si haces eso, Kitt no podrá hacerle seguimiento a tu progreso. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
+
+Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor.
 
 
 
