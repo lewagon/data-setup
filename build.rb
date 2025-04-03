@@ -26,8 +26,10 @@ MAC_OS = %w[
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
-  dotfiles_new_laptop_heading
-  dotfiles_new_laptop
+  dotfiles_merge_upstream
+  dotfiles_same_laptop
+  dotfiles_merge_upstream
+  dotfiles_installer
   conda_uninstall
   osx_python
   virtualenv
