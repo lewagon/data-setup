@@ -15,6 +15,6 @@ Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ay
 Parece que hay un problema con el paso anterior (`gh auth`).
 
 
-#### Fork y/o clone los archivos de configuración
+### Fork y/o clone los archivos de configuración
 
 Hay tres opciones, escoge **una**:
