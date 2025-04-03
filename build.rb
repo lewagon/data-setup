@@ -26,8 +26,10 @@ MAC_OS = %w[
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
-  dotfiles_new_laptop_heading
-  dotfiles_new_laptop
+  dotfiles_merge_upstream
+  dotfiles_same_laptop
+  dotfiles_merge_upstream
+  dotfiles_installer
   conda_uninstall
   osx_python
   virtualenv
@@ -73,8 +75,10 @@ WINDOWS = %w[
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
-  dotfiles_new_laptop_heading
-  dotfiles_new_laptop
+  dotfiles_merge_upstream
+  dotfiles_same_laptop
+  dotfiles_merge_upstream
+  dotfiles_installer
   setup/ssh_agent
   conda_uninstall
   ubuntu_python
@@ -116,8 +120,10 @@ LINUX = %w[
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
-  dotfiles_new_laptop_heading
-  dotfiles_new_laptop
+  dotfiles_merge_upstream
+  dotfiles_same_laptop
+  dotfiles_merge_upstream
+  dotfiles_installer
   setup/ssh_agent
   conda_uninstall
   ubuntu_python
@@ -161,8 +167,10 @@ VM = %w[
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
-  dotfiles_new_laptop_heading
-  dotfiles_new_laptop
+  dotfiles_merge_upstream
+  dotfiles_same_laptop
+  dotfiles_merge_upstream
+  dotfiles_installer
   de_setup/zsh_default_terminal
   setup/ssh_agent
   ubuntu_python
