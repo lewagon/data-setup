@@ -15,7 +15,9 @@ Time to merge the changes from `lewagon/dotfiles` into yours:
 1. Let's bring in the changes from upstream: `git merge upstream/master`
 
 1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
+
 1. Do a `git diff HEAD~1 HEAD` to check what changed.
+
 1. If nothing seems out of the ordinary, continue
 
 <details>
@@ -43,3 +45,5 @@ git add .
 git commit -m "Update for Data Science bootcamp"
 git push origin master
 ```
+
+</details>

@@ -1,6 +1,6 @@
 <details>
     <summary>
-        <strong>I did not attend the Web Dev or Data Science bootcamp at Le Wagon</strong>
+        <strong>I did not attend the Web Dev or Data Science & AI bootcamp at Le Wagon</strong>
     </summary>
 
  As your configuration is personal, you need your own repository storing it, so you'll need to fork it to your GitHub account.
@@ -14,3 +14,5 @@ Lets' run this command to fork the repo, and clone it on your laptop:
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
+
+</details>
