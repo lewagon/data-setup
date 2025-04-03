@@ -341,67 +341,174 @@ gh auth status
 
 ## Dotfiles
 
+Los hackers aman mejorar sus shells y sus herramientas. Comenzaremos con una configuración por defecto genial proporcionada por [Le Wagon](http://github.com/lewagon/dotfiles) y almacenada en GitHub.
+
+### Verifica tu configuración de GitHub CLI
+
+Primero, hagamos una verificación rápida. Abre tu terminal y ejecuta el comando siguiente:
+
+```bash
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
+```
+
+Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
+Parece que hay un problema con el paso anterior (`gh auth`).
+
+
+#### Fork y/o clone los archivos de configuración
+
 Hay tres opciones, escoge **una**:
+
 
 <details>
     <summary>
-        <strong>Ya hice el bootcamp de Web Development (FullStack) de Le Wagon <em>en la misma laptop</em></strong>
+        <strong>No he hecho el bootcamp de Web Development o Data Science & AI de Le Wagon</strong>
     </summary>
 
-Esto significa que ya has hecho el fork del repositorio GitHub `lewagon/dotfiles` pero tal vez la configuración para el nuevo bootcamp de Data Science no estaba lista en ese momento.
+ Tu configuración es personal, así que necesitas tu propio repositorio para almacenarla. Primero tienes que hacer el fork del repositorio en tu cuenta GitHub.
+
+Hacer un fork significa que crearás un nuevo repositorio en tu cuenta GitHub idéntico al original. Tendrás un nuevo repositorio en tu cuenta GitHub, `your_github_username/dotfiles`. El fork es necesario porque cada uno de ustedes necesitará poner información específica (e.g. tu nombre) en esos archivos.
+
+Ejecutemos este comando para hacer un **fork** del repositorio `lewagon/dotfiles` y clonarlo:
+
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
+```
+
+</details>
+
+
+<details>
+    <summary>
+        <strong>IYa hice el bootcamp de Web Development o Data Science & AI de Le Wagon <em>pero tengo una nueva laptop</em></strong>
+    </summary>
+
+Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento.Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
+
+Es hora de clonarlo el repositorio en tu laptop:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo clone lewagon/dotfiles
+```
+
 
 Abre tu terminal y ve a tu proyecto `dotfiles`:
 
 ```bash
-cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-code . # Open it in VS Code
+cd ~/code/$GITHUB_USERNAME$/dotfiles
 ```
 
-En VS Codeabre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
+Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
 
-Regresa a la terminal y ejecuta un `git diff` y pídele a un TA que venga y verifique este cambio de configuración. Debería ver cosas de Python y `pyenv`.
+1. Commit la versión actual de tus dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
 
-Cuando el TA termine de hacer la verificación, haz un commit y haz el push de tus cambios:
+1. Trae los cambios del repositorio upstream: `git merge upstream/master`
+
+1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
+
+1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
+
+1. Si todo parece estar en orden, continúa.
+
+<details>
+  <summary>¿Demasiados conflictos?
+  </summary>
+
+  Vamos a tomar la versión actual de `lewagon/dotfiles`.
+
+  Primero aborta la merge: `git merge --abort`.
+
+  Ejecuta `code .`
+
+  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
+
+  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
+
+  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
+
+</details>
+
+Es hora de guardar tus cambios y subirlos.
 
 ```bash
-git add zshrc
-git commit -m "Update zshrc for Data Science bootcamp"
+git add .
+git commit -m "Update for Data Science bootcamp"
 git push origin master
 ```
 
 </details>
 
-O
-
 
 <details>
     <summary>
-        <strong>No he hecho el bootcamp de Web Development (FullStack) de Le Wagon</strong>
+        <strong>a hice el bootcamp de Web Development o Data Science & AI de Le Wagon </em>en la misma laptop</em></strong>
     </summary>
 
-Los hackers aman mejorar sus shells y sus herramientas. Comenzaremos con una configuración por defecto genial proporcionada por [Le Wagon](http://github.com/lewagon/dotfiles) y almacenada en GitHub. Tu configuración es personal, así que necesitas tu propio repositorio para almacenarla. Primero tienes que hacer el fork del repositorio en tu cuenta GitHub.
-
-:arrow_right: [Haz clic aquí para hacer el **fork**](https://github.com/lewagon/dotfiles/fork) del repositorio `lewagon/dotfiles` a tu cuenta (deberás hacer clic nuevamente en tu foto para confirmar _dónde_ harás el fork).
-
-Hacer un fork significa que crearás un nuevo repositorio en tu cuenta GitHub idéntico al original. Tendrás un nuevo repositorio en tu cuenta GitHub, `your_github_username/dotfiles`. El fork es necesario porque cada uno de ustedes necesitará poner información específica (e.g. tu nombre) en esos archivos.
+Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento. Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
 
 
-Abre tu terminal y ejecuta el comando siguiente:
+Abre tu terminal y ve a tu proyecto `dotfiles`:
 
 ```bash
-export GITHUB_USERNAME=`gh api user | jq -r '.login'`
-echo $GITHUB_USERNAME
+cd ~/code/$GITHUB_USERNAME$/dotfiles
 ```
 
-Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
-Parece que hay un problema con el paso anterior (`gh auth`).
+Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
 
-Es hora de hacer el fork del repositorio y clonarlo en tu laptop:
+1. Commit la versión actual de tus dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
+
+1. Trae los cambios del repositorio upstream: `git merge upstream/master`
+
+1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
+
+1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
+
+1. Si todo parece estar en orden, continúa.
+
+<details>
+  <summary>¿Demasiados conflictos?
+  </summary>
+
+  Vamos a tomar la versión actual de `lewagon/dotfiles`.
+
+  Primero aborta la merge: `git merge --abort`.
+
+  Ejecuta `code .`
+
+  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
+
+  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
+
+  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
+
+</details>
+
+Es hora de guardar tus cambios y subirlos.
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo fork lewagon/dotfiles --clone
+git add .
+git commit -m "Update for Data Science bootcamp"
+git push origin master
 ```
+
+</details>
+
+
+### Ejecuta el instalador de dotfiles
 
 Ejecuta el instalador de `dotfiles`.
 
@@ -425,57 +532,6 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 :warning: Cuidado, **debes** poner uno de los emails de la lista de arriba que te suministra el comando `gh api ...` usado anteriormente. Si haces eso, Kitt no podrá hacerle seguimiento a tu progreso. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
 
 Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor.
-</details>
-
-
-OR
-
-<details>
-    <summary>
-        <strong>IYa hice el bootcamp de Web Development (FullStack) de Le Wagon <em>pero tengo una nueva laptop</em></strong>
-    </summary>
-
-
-Abre tu terminal y ejecuta el comando siguiente:
-
-```bash
-export GITHUB_USERNAME=`gh api user | jq -r '.login'`
-echo $GITHUB_USERNAME
-```
-
-Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
-Parece que hay un problema con el paso anterior (`gh auth`).
-
-Es hora de hacer el fork del repositorio y clonarlo en tu laptop:
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo fork lewagon/dotfiles --clone
-```
-
-Ejecuta el instalador de `dotfiles`.
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
-```
-
-Verifica los emails registrados en tu cuenta GitHub. Deberás seleccionar uno de ellos en el próximo paso:
-
-```bash
-gh api user/emails | jq -r '.[].email'
-```
-
-Ejecuta el instalador de git:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
-```
-
-:point_up: Esto te **guiará** con tu nombre (`FirstName LastName`) y con tu email.
-:warning: Cuidado, **debes** poner uno de los emails de la lista de arriba que te suministra el comando `gh api ...` usado anteriormente. Si haces eso, Kitt no podrá hacerle seguimiento a tu progreso. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
-
-Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor.
-</details>
 
 
 ## Instalando Python (con [`pyenv`](https://github.com/pyenv/pyenv))
