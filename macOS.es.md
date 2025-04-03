@@ -356,7 +356,7 @@ Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ay
 Parece que hay un problema con el paso anterior (`gh auth`).
 
 
-#### Fork y/o clone los archivos de configuración
+### Fork y/o clone los archivos de configuración
 
 Hay tres opciones, escoge **una**:
 
@@ -383,7 +383,7 @@ gh repo fork lewagon/dotfiles --clone
 
 <details>
     <summary>
-        <strong>IYa hice el bootcamp de Web Development o Data Science & AI de Le Wagon <em>pero tengo una nueva laptop</em></strong>
+        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon <em>pero tengo una nueva laptop</em></strong>
     </summary>
 
 Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento.Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
@@ -450,7 +450,7 @@ git push origin master
 
 <details>
     <summary>
-        <strong>a hice el bootcamp de Web Development o Data Science & AI de Le Wagon </em>en la misma laptop</em></strong>
+        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon </em>en la misma laptop</em></strong>
     </summary>
 
 Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento. Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
