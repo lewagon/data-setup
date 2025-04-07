@@ -398,7 +398,7 @@ gh repo clone $GITHUB_USERNAME/dotfiles
 Open your terminal and go to your `dotfiles` project:
 
 ```bash
-cd ~/code/$GITHUB_USERNAME$/dotfiles
+cd ~/code/$GITHUB_USERNAME/dotfiles
 ```
 
 Time to merge the changes from `lewagon/dotfiles` into yours:
@@ -457,7 +457,7 @@ This means that you already forked and cloned the GitHub repo `lewagon/dotfiles`
 Open your terminal and go to your `dotfiles` project:
 
 ```bash
-cd ~/code/$GITHUB_USERNAME$/dotfiles
+cd ~/code/$GITHUB_USERNAME/dotfiles
 ```
 
 Time to merge the changes from `lewagon/dotfiles` into yours:
