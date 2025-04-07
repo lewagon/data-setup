@@ -1,7 +1,7 @@
 Open your terminal and go to your `dotfiles` project:
 
 ```bash
-cd ~/code/$GITHUB_USERNAME$/dotfiles
+cd ~/code/$GITHUB_USERNAME/dotfiles
 ```
 
 Time to merge the changes from `lewagon/dotfiles` into yours:
