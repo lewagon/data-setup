@@ -6,9 +6,23 @@ _if you already have Docker installed on your machine please update with the lat
 
 ### Install Docker
 
-Go to [Docker for WSL2](https://docs.docker.com/docker-for-windows/wsl/).
+Go to [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/wsl/).
 
-Download and install the Docker Desktop WSL 2 backend.
+Download and install Docker Desktop.
+
+If you have an Intel or AMD processor, choose the first option ending with "x86_64".
+
+<details>
+  <summary markdown='span'>Not sure which processor you have?</summary>
+
+  Most probably you'll need the `x86_64`version, that is if you have an Intel or AMD processor.
+
+  If you don't know which processor your machine has,  run `arch` in your Ubuntu terminal. Check its output:
+  - `x86_64`: choose the first option "x86_64"
+  - `aarch64`: choose the second option "Arm"
+
+</details>
+
 
 Once done, start Docker.
 
