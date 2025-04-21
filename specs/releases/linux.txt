@@ -200,7 +200,8 @@ tokenizers==0.21.0
 toml==0.10.2
 tomlkit==0.13.2
 # torch==2.6.0+cpu
-https://download.pytorch.org/whl/cpu-cxx11-abi/torch-2.6.0%2Bcpu.cxx11.abi-cp312-cp312-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu-cxx11-abi/torch-2.6.0%2Bcpu.cxx11.abi-cp312-cp312-linux_x86_64.whl ; platform_machine == "x86_64"
+https://download.pytorch.org/whl/cpu/torch-2.6.0%2Bcpu-cp312-cp312-manylinux_2_28_aarch64.whl; platform_machine == "aarch64"
 tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
