@@ -60,7 +60,6 @@ iniconfig==2.0.0
 ipdb==0.13.13
 ipykernel==6.29.5
 ipympl==0.9.6
-ipython-genutils==0.2.0
 ipython==8.32.0
 ipywidgets==8.1.5
 isoduration==20.11.0
@@ -73,13 +72,9 @@ jsonpointer==3.0.0
 jsonschema-specifications==2024.10.1
 jsonschema==4.23.0
 jupyter-client==8.6.3
-jupyter-contrib-core==0.4.2
-jupyter-contrib-nbextensions==0.7.0
 jupyter-core==5.7.2
 jupyter-events==0.12.0
-jupyter-highlight-selected-word==0.2.0
 jupyter-lsp==2.2.5
-jupyter-nbextensions-configurator==0.6.4
 jupyter-server-terminals==0.5.3
 jupyter-server==2.15.0
 jupyterlab-code-formatter==3.0.2
