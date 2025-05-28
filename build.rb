@@ -12,7 +12,6 @@ CONSTANTS = {
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
   intro
-  setup/zoom
   setup/github
   osx_silicon
   setup/macos_command_line_tools
@@ -56,7 +55,6 @@ MAC_OS_KC = %w[
 
 WINDOWS = %w[
   intro
-  setup/zoom
   setup/github
   setup/windows_version
   setup/windows_virtualization
@@ -107,7 +105,6 @@ WINDOWS_KC = %w[
 
 LINUX = %w[
   intro
-  setup/zoom
   setup/github
   setup/ubuntu_vscode
   vscode_extensions
@@ -149,7 +146,6 @@ LINUX_KC = %w[
 
 VM = %w[
   intro
-  setup/zoom
   chrome
   setup/github
   de_setup/ssh_key
