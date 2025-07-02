@@ -1181,6 +1181,12 @@ First, let's configure your default browser again. We did this before, but when 
 grep -E "export (GH_)*BROWSER" .zshrc.backup >> .zshrc
 ```
 
+Then, restart your terminal with:
+
+```bash
+exec zsh
+```
+
 Let's generate the configuration file for **Jupyter Notebook**...
 
 ``` bash
