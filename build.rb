@@ -16,7 +16,6 @@ MAC_OS = %w[
   osx_silicon
   setup/macos_command_line_tools
   homebrew
-  chrome
   setup/macos_vscode
   vscode_extensions
   setup/oh_my_zsh
@@ -60,7 +59,6 @@ WINDOWS = %w[
   setup/windows_virtualization
   setup/windows_wsl
   setup/windows_ubuntu
-  chrome
   setup/windows_vscode
   setup/windows_terminal
   vscode_extensions
@@ -109,7 +107,6 @@ LINUX = %w[
   setup/ubuntu_vscode
   vscode_extensions
   setup/cli_tools
-  chrome
   setup/oh_my_zsh
   direnv
   setup/gh_cli
@@ -146,7 +143,6 @@ LINUX_KC = %w[
 
 VM = %w[
   intro
-  chrome
   setup/github
   de_setup/ssh_key
   de_setup/gcp_setup

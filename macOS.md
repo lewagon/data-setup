@@ -165,17 +165,6 @@ brew upgrade readline    || brew install readline
 ```
 
 
-## Chrome - your browser
-
-Install the Google Chrome browser if you haven't got it already and set it as a __default browser__.
-
-Follow the steps for your system from this link :point_right: [Install Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en-GB)
-
-__Why Chrome?__
-
-We recommend to use it as your default browser as it's most compatible with testing or running your code, as well as working with Google Cloud Platform. Another alternative is Firefox, however we don't recommend using other tools like Opera, Internet Explorer or Safari.
-
-
 ## Visual Studio Code
 
 ### Installation
@@ -500,7 +489,6 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 :warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 Please now **quit** all your opened terminal windows.
-</details>
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))

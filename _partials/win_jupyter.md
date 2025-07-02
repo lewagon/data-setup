@@ -1,6 +1,12 @@
 
 ### Configuring Jupyter Notebook to open in your browser
 
+First, let's configure your default browser again. We did this before, but when we installed the dotfiles it got removed. Not a problem, run this command to configure the settings again:
+
+```bash
+grep -E "export (GH_)*BROWSER" .zshrc.backup >> .zshrc
+```
+
 Let's generate the configuration file for **Jupyter Notebook**...
 
 ``` bash
