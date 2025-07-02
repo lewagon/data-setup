@@ -1124,6 +1124,11 @@ Primero, vamos a configurar tu navegador predeterminado nuevamente. Ya hicimos e
 grep -E "export (GH_)*BROWSER" .zshrc.backup >> .zshrc
 ```
 
+Luego, reinicia tu terminal con:
+
+```bash
+exec zsh
+```
 
 Genera el archivo de configuración para **Jupyter Notebook**...
 
