@@ -213,6 +213,7 @@ code --install-extension ms-python.python
 code --install-extension KevinRose.vsc-python-indent
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
+code --install-extension alexcvzz.vscode-sqlite
 ```
 
 Aquí está la lista de las extensiones que estás instalando:
@@ -223,6 +224,7 @@ Aquí está la lista de las extensiones que estás instalando:
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
 
 
 ## Oh-my-zsh
