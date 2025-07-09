@@ -601,72 +601,21 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
-## Conexión de tu navegador predeterminado con Ubuntu
+## Linking your default browser to Ubuntu
 
 Para asegurarnos de que puedas interactuar desde la terminal de Ubuntu con el navegador que tienes instalado en Windows, debemos definirlo como tu navegador predeterminado aquí.
 
-:warning: Tienes que ejecutar al menos uno de los siguientes comandos:
+Ejecuta el siguiente comando y sigue las instrucciones. La herramienta te pedirá que elijas uno de los navegadores disponibles en tu sistema. Solo necesitas escribir el **número** que aparece delante del navegador.
 
-<details>
-  <summary>Google Chrome como tu navegador predeterminado</summary>
+```bash
+bash -c "$(curl -s https://raw.githubusercontent.com/julesvanrie/wslsetbrowser/refs/heads/main/wslsetbrowser.sh)"
+```
 
-  Ejecuta este comando:
+Reinicia tu terminal:
 
-  ```bash
-    ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
-  ```
-
-  Si obtienes un error como este `ls: cannot access...` corre el siguiente comandos:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
-  ```
-
-  Si no es el caso, ejecuta lo siguiente:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
-  ```
-</details>
-
-<details>
-  <summary>Mozilla Firefox como tu navegador predeterminado</summary>
-
-  Ejecuta el siguiente comando:
-
-  ```bash
-    ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
-  ```
-
-  Si obtienes un error como este `ls: cannot access...` corre el siguiente comandos:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
-  ```
-
-  Si no es el caso, ejecuta lo siguiente:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
-  ```
-</details>
-
-<details>
-  <summary>Microsoft Edge como tu navegador predeterminado</summary>
-
-  Ejecuta el siguiente comandos:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'\"" >> ~/.zshrc
-  ```
-</details>
-
-Reinicia tu terminal.
+```bash
+exec zsh
+```
 
 Luego asegúrate de que el siguiente comando devuelva "Browser defined 👌":
 
@@ -674,15 +623,7 @@ Luego asegúrate de que el siguiente comando devuelva "Browser defined 👌":
 [ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
 ```
 
-Si no lo hace pero
-
-:heavy_check_mark: sí obtienes este mensaje, puedes continuar :+1:
-
-:x: De lo contrario, escoge un navegador de la lista de arriba y ejecuta el comando correspondiente. Luego no olvides reiniciar tu terminal:
-
-```bash
-exec zsh
-```
+Si no es así, puedes seguir [estas instrucciones](https://github.com/lewagon/setup/blob/master/_partials/es/windows_browser.md) para configurar tu navegador predeterminado manualmente.
 
 No dudes en **pedirle ayuda a tu profesor**.
 

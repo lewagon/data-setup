@@ -64,7 +64,7 @@ WINDOWS = %w[
   vscode_extensions
   setup/cli_tools
   setup/oh_my_zsh
-  setup/windows_browser
+  windows_browser
   direnv
   setup/gh_cli
   ubuntu_gcloud
