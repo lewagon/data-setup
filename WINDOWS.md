@@ -1089,7 +1089,7 @@ curl $SOURCE > $LOCATION/custom.css
 First, let's configure your default browser again. We did this before, but when we installed the dotfiles it got removed. Not a problem, run this command to configure the settings again:
 
 ```bash
-grep -E "export (GH_)*BROWSER" .zshrc.backup >> .zshrc
+grep -E "export (GH_)*BROWSER" ~/.zshrc.backup >> ~/.zshrc
 ```
 
 Then, restart your terminal with:
