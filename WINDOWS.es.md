@@ -953,7 +953,7 @@ rm -rf ~/.anaconda_backup
     - Si el archivo abre, busca la línea que coincida con el siguiente patrón `export PATH="/path/to/anaconda3/bin:$PATH"` y eliminala
 - Reinicia la terminal con `exec zsh`
 - Remueve la inicializaciópn de Anaconda de tu `.zshrc`:
-    - Abre el archivo con `code ~/.zshrc`
+    - Abre el archivo con `code ~/.zshrc` 
     - Remueve las líneas de código desde `>>> conda initialize >>>` hasta `<<< conda initialize <<<`
 </details>
 
@@ -1291,7 +1291,7 @@ Intente `docker info` nuevamente.
 </details>
 
 
-## Kitt
+  ## Kitt
 
 Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
 
@@ -1346,3 +1346,5 @@ Si has terminado la configuración, te pedimos que preguntes si alguien necesita
 Si no tienes mucha experiencia con `git` y GitHub, por favor [ve nuevamente el video de este workshop](https://www.youtube.com/watch?v=Z9fIBT2NBGY) (puedes verlo a `1.25` de velocidad).
 
 Si aún te queda tiempo, puedes esperar trabajar en este [Kata de Tic-Tac-Toe](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/python) mientras esperas la primera clase.
+
+

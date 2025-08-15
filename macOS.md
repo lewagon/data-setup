@@ -525,7 +525,7 @@ rm -rf ~/opt
     - Save the file with `CMD` + `s`
 - Restart your terminal with `exec zsh`
 - Remove Anaconda initialization from your `.zshrc`:
-    - Open the file with `code ~/.zshrc`
+    - Open the file with `code ~/.zshrc` 
     - Remove the code lines starting from `>>> conda initialize >>>` to `<<< conda initialize <<<`
 </details>
 
@@ -810,7 +810,7 @@ $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
 ```
 
 
-## Kitt
+  ## Kitt
 
 You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform).
 
@@ -912,3 +912,5 @@ If you are done with your setup, please ask around if some classmates need some 
 If you don't have a lot of experience with `git` and GitHub, please [(re-)watch this workshop](https://www.youtube.com/watch?v=Z9fIBT2NBGY) (`1.25` playback speed is fine).
 
 If you do, then you can wait for the first lecture working on this [Tic-Tac-Toe Kata](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/python)
+
+
