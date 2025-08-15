@@ -7,37 +7,6 @@ Por favor **léelas cuidadosamente y ejecuta todos los comandos en el siguiente 
 ¡Comencemos! :rocket:
 
 
-## Zoom
-
-Para poder interactuar cuando no estemos en el mismo lugar físico, usaremos [Zoom](https://zoom.us/), una herramienta de videoconferencia.
-
-:warning: Si ya tienes Zoom instalado, por favor asegúrate de que por lo menos tienes versión **5.6**.
-
-Ve a [zoom.us/download](https://zoom.us/download).
-
-Haz clic en el botón **Download** debajo de **Zoom Client**.
-
-Abre el archivo que acabas de descargar para instalar la aplicación.
-
-Abre la aplicación Zoom.
-
-Si ya tienes una cuenta Zoom, inicia sesión con tus credenciales.
-
-Si no, haz clic en el enlace **Sign Up Free**, que significa registrarse gratuitamente:
-
-![Registrarse gratuitamente en Zoom](https://github.com/lewagon/setup/blob/master/images/zoom_sign_up_free.png)
-
-Te redireccionarán a la página de Zoom para que completes un formulario.
-
-Cuando termines, regresa a la aplicación Zoom e inicia sesión usando tus credenciales.
-
-Deberías ver una pantalla como la siguiente:
-
-![Pantalla de inicio de Zoom](https://github.com/lewagon/setup/blob/master/images/zoom_home_screen.png)
-
-Ya puedes cerrar la aplicación Zoom.
-
-
 ## Cuenta GitHub
 
 ¿Ya tienes una cuenta GitHub? Si no es el caso, [ábrela ya](https://github.com/join).
@@ -79,6 +48,7 @@ Ve a Aplicaciones > Utilidades.
 Ubica la app Terminal (selecciónala).
 
 Presiona `Cmd` + `I` en la app Terminal, luego verifica que la caja "Abrir usando Rosetta" esté **desmarcada**.
+En caso de que no veas esta caja, simplemente continúa.
 </details>
 
 🚨 Ten esto en mente. Deberás recordarlo más adelante en este setup si tu computadora usa un chip Apple Silicon o Intel.
@@ -195,17 +165,6 @@ brew upgrade readline    || brew install readline
 ```
 
 
-## Chrome - tu navegador
-
-Instala el navegador Google Chrome si no lo tienes todavía y configúralo como tu __navegador predeterminado__.
-
-Sigue los pasos en el siguiente enlace :point_right: [Instalación de Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en-GB)
-
-__¿Por qué Chrome?__
-
-Lo recomendamos como navegador predeterminado porque es el más compatible con los tests y la ejecución de código. Además trabaja con Google Cloud Platform. Otra opción es Firefox. No recomendamos usar otros navegadores como Opera, Internet Explorer o Safari.
-
-
 ## Visual Studio Code
 
 ### Instalación
@@ -243,6 +202,7 @@ code --install-extension ms-python.python
 code --install-extension KevinRose.vsc-python-indent
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
+code --install-extension alexcvzz.vscode-sqlite
 ```
 
 Aquí está la lista de las extensiones que estás instalando:
@@ -253,24 +213,7 @@ Aquí está la lista de las extensiones que estás instalando:
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-
-
-### Configuración de Live Share
-
-[Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) es una extensión de VS Code que te permite compartir el código en tu editor de texto para debugging y pair-programming: ¡Instalémoslo!
-
-Abre VS Code desde tu terminal escribiendo `code` y presionando `Enter`.
-
-Haz clic en la pequeña flecha de la parte inferior de la barra de la izquierda:
-
-![VS Code Live Share](https://github.com/lewagon/setup/blob/master/images/vscode_live_share.png)
-
-- Haz clic en el botón "Share". Luego en "GitHub (Inicia sesión usando tu cuenta GitHub)".
-- Va a aparecer una ventana emergente pidiéndote que inicies sesión con GitHub: Haz clic en "Allow".
-- Te redireccionarán a una página GitHub en tu navegador pidiéndote que autorices Visual Studio Code: Haz clic en "Continue" y luego en "Authorize github".
-- Es posible que VS Code muestre más ventanas emergentess: Ciérralas haciendo clic en "OK".
-
-Eso es todo. ¡Ya puedes continuar!
+- [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
 
 
 ## Oh-my-zsh
@@ -310,6 +253,8 @@ CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wik
 
 En esta sección usaremos [GitHub CLI](https://cli.github.com/) para interactuar directamente con GitHub desde la terminal.
 
+Usaremos la GitHub CLI (`gh`) para conectarnos a GitHub utilizando *SSH*, un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+
 Ya debería haberse instalado en tu computadora con los comandos que ejecutaste anteriormente.
 
 Lo primero que hay que hacer para **iniciar sesión** es copiar y pegar el comando siguiente en tu terminal:
@@ -317,20 +262,18 @@ Lo primero que hay que hacer para **iniciar sesión** es copiar y pegar el coman
 :warning: **NO edites el `email`**
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh le hará algunas preguntas:
+`gh` le hará algunas preguntas:
 
-`What is your preferred protocol for Git operations?` Con las flechas, elige `SSH` y presiona `Enter`. SSH es un protocolo para iniciar la sesión utilizando claves SSH en lugar de la famosa pareja nombre de usuario y contraseña.
+- `Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
 
-`Generate a new SSH key to add to your GitHub account?` Presiona `Enter` para pedirle a gh que genere las claves SSH por ti.
+  Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
 
-Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
+- `Enter a passphrase for your new SSH key (Optional)`. Pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro. Luego presiona `Enter`.
 
-`Enter a passphrase for your new SSH key (Optional)`. Pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro. Luego presiona `Enter`.
-
-`Title for your SSH key`. Puede dejarlo en la propuesta "GitHub CLI", presiona `Enter`.
+- `Title for your SSH key`. Puede dejarlo en la propuesta "GitHub CLI", presiona `Enter`.
 
 Obtendrás el siguiente resultado:
 
@@ -358,67 +301,174 @@ gh auth status
 
 ## Dotfiles
 
+Los hackers aman mejorar sus shells y sus herramientas. Comenzaremos con una configuración por defecto genial proporcionada por [Le Wagon](http://github.com/lewagon/dotfiles) y almacenada en GitHub.
+
+### Verifica tu configuración de GitHub CLI
+
+Primero, hagamos una verificación rápida. Abre tu terminal y ejecuta el comando siguiente:
+
+```bash
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
+```
+
+Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
+Parece que hay un problema con el paso anterior (`gh auth`).
+
+
+### Fork y/o clone los archivos de configuración
+
 Hay tres opciones, escoge **una**:
+
 
 <details>
     <summary>
-        <strong>Ya hice el bootcamp de Web Development (FullStack) de Le Wagon <em>en la misma laptop</em></strong>
+        <strong>No he hecho el bootcamp de Web Development o Data Science & AI de Le Wagon</strong>
     </summary>
 
-Esto significa que ya has hecho el fork del repositorio GitHub `lewagon/dotfiles` pero tal vez la configuración para el nuevo bootcamp de Data Science no estaba lista en ese momento.
+ Tu configuración es personal, así que necesitas tu propio repositorio para almacenarla. Primero tienes que hacer el fork del repositorio en tu cuenta GitHub.
+
+Hacer un fork significa que crearás un nuevo repositorio en tu cuenta GitHub idéntico al original. Tendrás un nuevo repositorio en tu cuenta GitHub, `your_github_username/dotfiles`. El fork es necesario porque cada uno de ustedes necesitará poner información específica (e.g. tu nombre) en esos archivos.
+
+Ejecutemos este comando para hacer un **fork** del repositorio `lewagon/dotfiles` y clonarlo:
+
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
+```
+
+</details>
+
+
+<details>
+    <summary>
+        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon <em>pero tengo una nueva laptop</em></strong>
+    </summary>
+
+Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento.Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
+
+Es hora de clonarlo el repositorio en tu laptop:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo clone lewagon/dotfiles
+```
+
 
 Abre tu terminal y ve a tu proyecto `dotfiles`:
 
 ```bash
-cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-code . # Open it in VS Code
+cd ~/code/$GITHUB_USERNAME$/dotfiles
 ```
 
-En VS Codeabre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
+Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
 
-Regresa a la terminal y ejecuta un `git diff` y pídele a un TA que venga y verifique este cambio de configuración. Debería ver cosas de Python y `pyenv`.
+1. Commit la versión actual de tus dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
 
-Cuando el TA termine de hacer la verificación, haz un commit y haz el push de tus cambios:
+1. Trae los cambios del repositorio upstream: `git merge upstream/master`
+
+1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
+
+1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
+
+1. Si todo parece estar en orden, continúa.
+
+<details>
+  <summary>¿Demasiados conflictos?
+  </summary>
+
+  Vamos a tomar la versión actual de `lewagon/dotfiles`.
+
+  Primero aborta la merge: `git merge --abort`.
+
+  Ejecuta `code .`
+
+  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
+
+  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
+
+  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
+
+</details>
+
+Es hora de guardar tus cambios y subirlos.
 
 ```bash
-git add zshrc
-git commit -m "Update zshrc for Data Science bootcamp"
+git add .
+git commit -m "Update for Data Science bootcamp"
 git push origin master
 ```
 
 </details>
 
-O
-
 
 <details>
     <summary>
-        <strong>No he hecho el bootcamp de Web Development (FullStack) de Le Wagon</strong>
+        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon </em>en la misma laptop</em></strong>
     </summary>
 
-Los hackers aman mejorar sus shells y sus herramientas. Comenzaremos con una configuración por defecto genial proporcionada por [Le Wagon](http://github.com/lewagon/dotfiles) y almacenada en GitHub. Tu configuración es personal, así que necesitas tu propio repositorio para almacenarla. Primero tienes que hacer el fork del repositorio en tu cuenta GitHub.
-
-:arrow_right: [Haz clic aquí para hacer el **fork**](https://github.com/lewagon/dotfiles/fork) del repositorio `lewagon/dotfiles` a tu cuenta (deberás hacer clic nuevamente en tu foto para confirmar _dónde_ harás el fork).
-
-Hacer un fork significa que crearás un nuevo repositorio en tu cuenta GitHub idéntico al original. Tendrás un nuevo repositorio en tu cuenta GitHub, `your_github_username/dotfiles`. El fork es necesario porque cada uno de ustedes necesitará poner información específica (e.g. tu nombre) en esos archivos.
+Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento. Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
 
 
-Abre tu terminal y ejecuta el comando siguiente:
+Abre tu terminal y ve a tu proyecto `dotfiles`:
 
 ```bash
-export GITHUB_USERNAME=`gh api user | jq -r '.login'`
-echo $GITHUB_USERNAME
+cd ~/code/$GITHUB_USERNAME$/dotfiles
 ```
 
-Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
-Parece que hay un problema con el paso anterior (`gh auth`).
+Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
 
-Es hora de hacer el fork del repositorio y clonarlo en tu laptop:
+1. Commit la versión actual de tus dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
+
+1. Trae los cambios del repositorio upstream: `git merge upstream/master`
+
+1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
+
+1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
+
+1. Si todo parece estar en orden, continúa.
+
+<details>
+  <summary>¿Demasiados conflictos?
+  </summary>
+
+  Vamos a tomar la versión actual de `lewagon/dotfiles`.
+
+  Primero aborta la merge: `git merge --abort`.
+
+  Ejecuta `code .`
+
+  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
+
+  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
+
+  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
+
+</details>
+
+Es hora de guardar tus cambios y subirlos.
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo fork lewagon/dotfiles --clone
+git add .
+git commit -m "Update for Data Science bootcamp"
+git push origin master
 ```
+
+</details>
+
+
+### Ejecuta el instalador de dotfiles
 
 Ejecuta el instalador de `dotfiles`.
 
@@ -442,57 +492,6 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 :warning: Cuidado, **debes** poner uno de los emails de la lista de arriba que te suministra el comando `gh api ...` usado anteriormente. Si haces eso, Kitt no podrá hacerle seguimiento a tu progreso. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
 
 Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor.
-</details>
-
-
-OR
-
-<details>
-    <summary>
-        <strong>IYa hice el bootcamp de Web Development (FullStack) de Le Wagon <em>pero tengo una nueva laptop</em></strong>
-    </summary>
-
-
-Abre tu terminal y ejecuta el comando siguiente:
-
-```bash
-export GITHUB_USERNAME=`gh api user | jq -r '.login'`
-echo $GITHUB_USERNAME
-```
-
-Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
-Parece que hay un problema con el paso anterior (`gh auth`).
-
-Es hora de hacer el fork del repositorio y clonarlo en tu laptop:
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo fork lewagon/dotfiles --clone
-```
-
-Ejecuta el instalador de `dotfiles`.
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
-```
-
-Verifica los emails registrados en tu cuenta GitHub. Deberás seleccionar uno de ellos en el próximo paso:
-
-```bash
-gh api user/emails | jq -r '.[].email'
-```
-
-Ejecuta el instalador de git:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
-```
-
-:point_up: Esto te **guiará** con tu nombre (`FirstName LastName`) y con tu email.
-:warning: Cuidado, **debes** poner uno de los emails de la lista de arriba que te suministra el comando `gh api ...` usado anteriormente. Si haces eso, Kitt no podrá hacerle seguimiento a tu progreso. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
-
-Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor.
-</details>
 
 
 ## Instalando Python (con [`pyenv`](https://github.com/pyenv/pyenv))
@@ -569,23 +568,10 @@ exec zsh
 
 ### Instala Python
 
-Si tu computadora tiene un procesador **Apple Silicon** (M1, M2, entre otros), expande el párrafo de abajo y sigue las indicaciones. En caso contrario, ignóralo.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup para Apple Silicon 👈</summary>
-
-Necesitamos agregar las siguientes variables de entorno para instalar python:
-
-``` bash
-export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
-```
-</details>
-
-
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
@@ -610,7 +596,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Luego trata de instalar Python nuevamente:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignorar y continuar al paso siguiente.
@@ -621,16 +607,18 @@ Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignor
 OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
 
 ```bash
-pyenv global 3.10.6
+pyenv global 3.12.9
 exec zsh
 ```
 
-Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.10.6`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.12.9`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
 
 
 ## Entorno Virtual de Python
 
 Antes de instalar paquetes de Python, aislaremos la configuración del Bootcamp en un entorno virtual **dedicado**. Usaremos un plugin `pyenv` llamado [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
+
+### Instala un virtualenv
 
 Primero instala este plugin:
 
@@ -642,7 +630,7 @@ exec zsh
 Crea el entorno virtual que usaremos durante todo el bootcamp:
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon
+pyenv virtualenv 3.12.9 lewagon
 ```
 
 Define el entorno virtual con lo siguiente:
@@ -654,7 +642,7 @@ pyenv global lewagon
 ¡Genial! Ahora cada vez que queramos instalar un paquete Python, lo haremos en ese entorno.
 
 
-## Paquetes de Python
+### Paquetes de Python
 
 Ahora que tenemos el ambiente virtual de `lewagon` adecuado, es hora de instalarle algunos paquetes.
 
@@ -687,88 +675,33 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 </details>
 
 
-## Extensiones de `jupyter` notebook
-
-Mejora tu `jupyter` notebooks con extensiones increíbles:
-
-```bash
-# install nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main
-jupyter nbextension enable collapsible_headings/main
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/code_prettify
-```
-
-### CSS personalizado
+## Mejora Jupyter Notebook
 
 Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
 
-Abre `custom/custom.css` en el directorio config:
+Ejecuta las siguientes líneas para crear una hoja de estilos `custom.css` en tu directorio de configuración de Jupyter:
+
 ```bash
-cd $(jupyter --config-dir)
-mkdir -p custom
-touch custom/custom.css
-code custom/custom.css
-```
-Edita `custom.css` con la siguiente información:
-
-```css
-summary {
-    cursor: pointer;
-    display:list-item;
-}
-summary::marker {
-    font-size: 1em;
-}
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
 ```
 
-Puedes cerrar VS Code.
 
-### Chequeo de `jupyter`
+## Chequeo de la configuración de Python
+
+### Chequeo de Python y packages
 
 Reinicia tu terminal:
 
 ```bash
-exec zsh
+cd ~/code && exec zsh
 ```
-
-Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
-
-```bash
-jupyter notebook
-```
-
-Tu navegador web debería abrir en una ventana `jupyter`:
-
-![jupyter.png](images/jupyter.png)
-
-Haz clic en `New`:
-
-![jupyter_new.png](images/jupyter_new.png)
-
-Debería abrirse una pestaña en un nuevo notebook:
-
-![jupyter_notebook.png](images/jupyter_notebook.png)
-
-### Chequeo de `nbextensions`
-
-Haz una revisión de las `jupyter notebooks nbextensions`. Haz clic en `Nbextensions`:
-
-![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
-
-Deselecciona _"disable configuration for nbextensions without explicit compatibility"_. Esto significa deshabilitar la configuración de nbextensions sin compatibilidad explícita. Luego verifica que _al menos_ las `nbextensions` marcadas en rojo estén habilitadas:
-
-![nbextensions.png](images/nbextensions.png)
-
-Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
-
-
-### Chqueo de la configuración de Python
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
@@ -781,18 +714,34 @@ Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquet
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
 
-Asegúrate de que puedas usar Jupyter:
+### Chequeo de Jupyter
+
+Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 
 ```bash
 jupyter notebook
 ```
 
-Y abre un notebook `Python 3`.
+Tu navegador web debería abrir en una ventana `jupyter`:
+
+![jupyter.png](images/jupyter.png)
+
+Haz clic en `New` y, en el menú desplegable, selecciona Python 3 (ipykernel):
+
+![jupyter_new.png](images/jupyter_new.png)
+
+Debería abrirse una pestaña en un nuevo notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
 
 Asegúrate de que estés usando la versión correcta de python en el notebook. Abre una celda y ejecuta lo siguiente:
 ``` python
 import sys; sys.version
 ```
+
+Debería mostrar `3.12.9` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+
+Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 
 ¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
 
@@ -844,20 +793,13 @@ $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
 ```
 
 
-## Kitt
+  ## Kitt
 
-:warning: Si recibiste una invitación por email de Le Wagon para crear una cuenta en Kitt (nuestra plataforma de aprendizaje), ignora este paso y sigue las instrucciones en el email si es que todavía no lo has hecho.
+Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
 
-Si no sabes que hacer, haz clic en [este enlace](https://kitt.lewagon.com/). Si ya iniciaste sesión, puedes omitir esta sección. Si no, haz clic en `Enter Kitt as a Student`. Esto significa iniciar sesión como estudiante. Si no tienes problemas para iniciar sesión, puedes omitir este paso. De lo contrario pídele a un profesor que te confirme si debiste haber recibido o si debes seguir las instrucciones de aquí abajo.
+Entonces deberías recibir una invitación adicional de Slack, invitándote a la comunidad de los alumni de Le Wagon en slack (donde podrás chatear con tus compañeros y todos los demás alumni). Haz clic en **Join** y completa la información que te piden.
 
-Registrate como alumni de Le Wagon yendo a [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Selecciona tu batch, inicia sesión con GitHub y completa toda la información que te piden.
-
-Ahora tu profesor podrá validar que realmente eres parte del batch. Pídele que lo haga justo después de que hayas completado el formulario de registro.
-
-Cuando el profesor haya aprobado tu perfil, ve a la bandeja de entrada de tu email. Deberías tener 2 nuevos emails:
-
-- Uno de Slack, invitándote a la comunidad de los alumni de Le Wagon en slack (donde podrás chatear con tus compañeros y todos los demás alumni). Haz clic en **Join** y completa la información que te piden.
-- Otro de GitHub, invitándote a `lewagon` team. **Acéptala**, de lo contrario no podrás acceder a las diapositivas de las clases.
+Si no lo has recibido, por favor contacta a tu equipo de enseñanza.
 
 
 ## Slack
@@ -899,12 +841,60 @@ Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba
 ¡También puedes instalar la aplicación Slack en tu smartphone e iniciar sesión en `lewagon-alumni`!
 
 
+## Parámetros de macOS
+
+### Seguridad
+
+Es imperativo proteger tu sesión con una contraseña. Si todavía no es el caso, ve a ` > System Settings... > Users & Groups` y cambia la contraseña de tu computadora. Luego ve a ` > System Settings... > Lock Screen`. Configura el sistema para que pida la contraseña cada `5 seconds` después de regresar de la opción suspender y cuando se active el protector de pantalla.
+
+También puedes ir a ` > System Settings... > Desktop & Dock` y hacer clic en el botón `Hot Corners...` abajo a la izquierda. Selecciona la opción donde al hacer clic en la esquina inferior derecha se active el protector de pantalla. De esa manera al dejar tu escritorio podrás bloquear tu pantalla rápidamente poniendo el cursor del ratón en la esquina inferior derecha. En 5 segundos tu Macbook se bloqueará y te pedirá la contraseña para volver a tu sesión.
+
+### Teclado
+
+A medida que te vayas convirtiendo en programador, entenderás que pierdes tiempo cuando quitas las manos del teclado para usar otra herramienta. Por esa razón es importante aprender a minimizar el uso del trackpad o del ratón. Aquí te mostramos algunos trucos para que lo hagas en macOS.
+
+#### Velocidad del teclado
+
+Ve a ` > System Settings... > Keyboard`. Coloca a `Key repeat rate` en la posición más rápida (a la derecha) y a `Delay until repeat` en la posición más corta (a la derecha).
+
+#### macOS para hackers
+
+[Lee este script](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) y selecciona algunas cosas que creas que serán útiles para ti. Por ejemplo, puedes escribir lo siguiente en la terminal:
+
+```bash
+# Expanding the save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Save screenshots to the Desktop (or elsewhere)
+defaults write com.apple.screencapture location "${HOME}/Desktop"
+
+# etc..
+```
+
+### Anclaje de aplicaciones a tu dock
+
+Usarás frecuentemente casi todas las aplicaciones que has instalado hoy. ¡Anclémoslas a tu dock para que estén a solo un clic de ti!
+
+Para ello, inicia la aplicación. Haz clic derecho en el ícono de la barra de tareas para hacer que aparezca el menú contextual (también llamado emergente) y selecciona "Options" y después "Keep in Dock".
+
+![Cómo anclar una aplicación a la barra de tareas en macOS](https://github.com/lewagon/setup/blob/master/images/macos_dock.png)
+
+Ancla lo siguiente:
+- Tu terminal
+- Tu explorador de archivos
+- VS Code
+- Tu navegador de Internet
+- Slack
+
+
 ## Kata (Extra)
 
 Si has terminado la configuración, te pedimos que preguntes si alguien necesita ayuda con la suya (macOS, Linux o Windows). Las primeras clases son a las 2pm. Hablaremos de la configuración que acabas de hacer y de Kitt.
 
 Si no tienes mucha experiencia con `git` y GitHub, por favor [ve nuevamente el video de este workshop](https://www.youtube.com/watch?v=Z9fIBT2NBGY) (puedes verlo a `1.25` de velocidad).
 
-Si aún te queda tiempo, puedes esperar trabajar en este [Kata de Tic-Tac-Toe](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/train/python) mientras esperas la primera clase.
+Si aún te queda tiempo, puedes esperar trabajar en este [Kata de Tic-Tac-Toe](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/python) mientras esperas la primera clase.
 
 

@@ -1,5 +1,17 @@
 
-## Configuring Jupyter Notebook to open in your browser
+### Configuring Jupyter Notebook to open in your browser
+
+First, let's configure your default browser again. We did this before, but when we installed the dotfiles it got removed. Not a problem, run this command to configure the settings again:
+
+```bash
+grep -E "export (GH_)*BROWSER" ~/.zshrc.backup >> ~/.zshrc
+```
+
+Then, restart your terminal with:
+
+```bash
+exec zsh
+```
 
 Let's generate the configuration file for **Jupyter Notebook**...
 
@@ -7,24 +19,10 @@ Let's generate the configuration file for **Jupyter Notebook**...
 jupyter notebook --generate-config
 ```
 
-⚠️ Please copy the path returned by the previous command.
-
 We will now edit the generated Jupyter configuration file:
 
 ``` bash
-<CODE_EDITOR_CMD> $HOME/.jupyter/jupyter_notebook_config.py
-```
-
-Locate the following line in the configuration file:
-
-``` python
-# c.NotebookApp.use_redirect_file = True
-```
-
-And replace it with this one **precisely** 👇 (including removing the `#` symbol)
-
-``` python
-c.NotebookApp.use_redirect_file = False
+sed -i.backup 's/# c.ServerApp.use_redirect_file = True/c.ServerApp.use_redirect_file = False/' ~/.jupyter/jupyter_notebook_config.py
 ```
 
 Let's try to run Jupyter:

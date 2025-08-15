@@ -2,6 +2,8 @@
 
 Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
 
+### Setup a virtualenv
+
 First let's install this plugin:
 
 ```bash

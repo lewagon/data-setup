@@ -93,7 +93,7 @@ brew update && brew upgrade pyenv
 Instala la versión actual de python:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 👉 Asegúrate de que el comando se ejecute completamente y luego **reinicia tu terminal**.
@@ -107,7 +107,7 @@ pyenv virtualenv-delete lewagon_current
 Crea un nuevo ambiente virtual:
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon_current
+pyenv virtualenv 3.12.9 lewagon_current
 ```
 
 Define el nuevo ambiente virtual como predeterminado:
@@ -126,8 +126,8 @@ pyenv versions
 
 ``` bash
   system
-  3.10.6
-  3.10.6/envs/lewagon_current
+  3.12.9
+  3.12.9/envs/lewagon_current
   3.7.6
   3.7.6/envs/lewagon
 * lewagon_current
@@ -281,11 +281,19 @@ docker run hello-world
 Stop the Docker app
 
 
-### Chqueo de la configuración de Python
+## Chequeo de la configuración de Python
+
+### Chequeo de Python y packages
+
+Reinicia tu terminal:
+
+```bash
+cd ~/code && exec zsh
+```
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
@@ -298,18 +306,34 @@ Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquet
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
 
-Asegúrate de que puedas usar Jupyter:
+### Chequeo de Jupyter
+
+Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 
 ```bash
 jupyter notebook
 ```
 
-Y abre un notebook `Python 3`.
+Tu navegador web debería abrir en una ventana `jupyter`:
+
+![jupyter.png](images/jupyter.png)
+
+Haz clic en `New` y, en el menú desplegable, selecciona Python 3 (ipykernel):
+
+![jupyter_new.png](images/jupyter_new.png)
+
+Debería abrirse una pestaña en un nuevo notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
 
 Asegúrate de que estés usando la versión correcta de python en el notebook. Abre una celda y ejecuta lo siguiente:
 ``` python
 import sys; sys.version
 ```
+
+Debería mostrar `3.12.9` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+
+Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 
 ¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
 

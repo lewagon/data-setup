@@ -93,7 +93,7 @@ brew update && brew upgrade pyenv
 Install the current python version :
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 👉 Make sure that the command completes correctly and **restart your terminal**
@@ -107,7 +107,7 @@ pyenv virtualenv-delete lewagon_current
 Create a new virtual environment :
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon_current
+pyenv virtualenv 3.12.9 lewagon_current
 ```
 
 Set the new virtual environment as default :
@@ -126,10 +126,10 @@ pyenv versions
 
 ``` bash
   system
+  3.12.9
+  3.12.9/envs/lewagon_current
   3.10.6
-  3.10.6/envs/lewagon_current
-  3.7.6
-  3.7.6/envs/lewagon
+  3.10.6/envs/lewagon
 * lewagon_current
   lewagon
 ```
@@ -281,11 +281,19 @@ docker run hello-world
 Stop the Docker app
 
 
-### Python setup check up
+## Python setup check
+
+### Python and packages check
+
+Let's reset your terminal:
+
+```bash
+cd ~/code && exec zsh
+```
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Run the following command to check if you successfully installed the required packages:
@@ -298,18 +306,34 @@ Now run the following command to check if you can load these packages:
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
 
+### Jupyter check
+
 Make sure you can run Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-And open a `Python 3` notebook.
+Your web browser should open on a `jupyter` window:
 
-Make sure that you are running the correct python version in the notebook. Open a cell and run :
+![jupyter.png](images/jupyter.png)
+
+Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
+
+![jupyter_new.png](images/jupyter_new.png)
+
+A tab should open on a new notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
+
+Make sure that you are running the correct python version in the notebook. Open a cell and run:
 ``` python
 import sys; sys.version
 ```
+
+It should output `3.12.9` followed by some more details. If not, check with a TA.
+
+You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
 

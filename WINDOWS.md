@@ -7,37 +7,6 @@ Please **read them carefully and execute all commands in the following order**. 
 Let's start :rocket:
 
 
-## Zoom
-
-To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
-
-:warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
-
-Go to [zoom.us/download](https://zoom.us/download).
-
-Under **Zoom Client** click the **Download** button.
-
-Open the file you have just downloaded to install the app.
-
-Open the Zoom app.
-
-If you already have a Zoom account, sign in using your credentials.
-
-If not, click on the **Sign Up Free** link:
-
-![Sign Up Free to Zoom](https://github.com/lewagon/setup/blob/master/images/zoom_sign_up_free.png)
-
-You will be redirected to Zoom's website to complete a form.
-
-When it's done, go back to the Zoom app and sign in using your credentials.
-
-You should then see a screen like this:
-
-![Zoom Home Screen](https://github.com/lewagon/setup/blob/master/images/zoom_home_screen.png)
-
-You can now close the Zoom app.
-
-
 ## GitHub account
 
 Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
@@ -62,65 +31,54 @@ To check your Windows version:
 - Type  `winver`
 - Press `Enter`
 
-:heavy_check_mark: If the first words of this window are **Windows 10 or Windows 11** you're good to go :+1:
+:heavy_check_mark: If the first words of this window are **Windows 11** you're good to go :+1:
 
-:x: If not, you cannot proceed with this setup. You have to upgrade to Windows 10 first :point_down:
+If the first words of this window are **Windows 10**, check the **Version number**:
 
-<details>
-  <summary>Upgrade to Windows 10</summary>
+- :heavy_check_mark: If it says at least `2004`, you are good to go :+1:
 
-  - Download Windows 10 from [Microsoft](https://www.microsoft.com/software-download/windows10ISO)
-  - Install it. It should take roughly an hour, but this depends on your computer.
-  - When the installation is over, execute the commands above :point_up: to check that you now have **Windows 10**.
-</details>
+- :x: If it is below `2004`, you need to run an update.
 
-:information_source: [Windows 11 upgrade is rolling out now](https://www.microsoft.com/en-us/windows/get-windows-11), which means it may or may not be available for your computer just yet.
+- <details>
+  <summary>How to install updates?</summary>
 
-:warning: **If you have Windows 10 installed, you don't need to upgrade to Windows 11 to proceed with this setup**.
-
-### Latest updates
-
-Once you're sure that you're using Windows 10 or 11, you need to install all the latest updates.
-
-Open Windows Update:
-- Press `Windows` + `R`
-- Type  `ms-settings:windowsupdate`
-- Press `Enter`
-- Click on `Check updates`
-
-:heavy_check_mark: If you see a green check mark and the message "You're up to date", you're good to go :+1:
-
-:warning: If you have a red exclamation mark and the message "Update available", please install them and repeat the process until it says that you are up to date :loop:
-
-:x: If you have an error message about Windows not being able to apply updates, please **contact a teacher**.
-
-<details>
-  <summary>Activate Windows Update Service to fix Updates</summary>
-
-  Some antiviruses and pieces of software deactivate the Update service we need, resulting in the error you see. Let's fix that!
+  Open Windows Update:
   - Press `Windows` + `R`
-  - Type  `services.msc`
+  - Type  `ms-settings:windowsupdate`
   - Press `Enter`
-  - Double Click `Windows Update Service`
-  - Set its `Startup` to `Automatic`
-  - Click on `Start`
-  - Click on `Ok`
-  Then let's try updates again!
-</details>
+  - Click on `Check updates`
 
-### Minimum version
+  :heavy_check_mark: If you see a green check mark and the message "You're up to date", you're good to go :+1:
 
-Some of the tools we need to install have been release with the `1903` version **or above** of Windows 10 so we need to make sure you have at least this one.
+  :warning: If you have a red exclamation mark and the message "Update available", please install them and repeat the process until it says that you are up to date :loop:
 
-- Press `Windows` + `R`
-- Type  `winver`
-- Press `Enter`
+  :x: If you have an error message about Windows not being able to apply updates, please **contact a teacher**.
 
-Check the **Version number**:
+  <details>
+    <summary>Activate Windows Update Service to fix Updates</summary>
 
-:heavy_check_mark: If it says at least `1903`, you are good to go :+1:
+    Some antiviruses and pieces of software deactivate the Update service we need, resulting in the error you see. Let's fix that!
+    - Press `Windows` + `R`
+    - Type  `services.msc`
+    - Press `Enter`
+    - Double Click `Windows Update Service`
+    - Set its `Startup` to `Automatic`
+    - Click on `Start`
+    - Click on `Ok`
+    Then let's try updates again!
+  </details>
 
-:x: If it is below `1903`, please **contact a teacher**.
+  Check the version number again:
+
+  - Press `Windows` + `R`
+  - Type  `winver`
+  - Press `Enter`
+
+  :heavy_check_mark: If it says at least `2004`, you are good to go :+1:
+
+  :x: If it is below `2004`, **contact a TA**.
+
+  </details>
 
 
 ## Virtualization
@@ -166,21 +124,17 @@ For many computers, this is already the case. Let's check:
 
 WSL is the development environment we are using to run Ubuntu. You can learn more about WSL [here](https://docs.microsoft.com/en-us/windows/wsl/faq).
 
-:information_source: The following instructions depend on your version of Windows. Please execute only the instructions corresponding to your version :point_down:
+We will install WSL 2 and Ubuntu in one command through the Windows Command Prompt.
 
-### Windows 11
-
-If you are running Windows 11, we will install WSL 2 and Ubuntu in one command through the Windows Terminal.
-
-:warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows Terminal** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
+:warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows Command Prompt** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
 
 - Press `Windows` + `R`
-- Type  `wt`
+- Type  `cmd`
 - Press **`Ctrl` + `Shift` + `Enter`**
 
 :warning: You may have to accept the UAC confirmation about the privilege elevation.
 
-A blue terminal window will appear:
+A black terminal window will appear:
 - Copy the following command (`Ctrl` + `C`)
 - Paste it into the terminal window (`Ctrl` + `V` or by right-clicking in the window)
 - Run it by pressing `Enter`
@@ -191,13 +145,13 @@ wsl --install
 
 :heavy_check_mark: If the command ran without any error, please restart your computer and continue below :+1:
 
-:x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**
+:x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**.
 
-### Windows 10
+<details>
+<summary>Troubleshooting for Windows 10 (only if needed, check with a TA)
+</summary>
 
-#### Install WSL 1
-
-If you are running Windows 10, we will first install WSL 1 through the PowerShell Terminal.
+#### For Windows 10 < 2004: install WSL 1 first
 
 :warning: In the following instruction, please be aware of the `Ctrl` + `Shift` + `Enter` key stroke to execute **Windows PowerShell** with administrator privileges instead of just clicking on `Ok`or pressing `Enter`.
 
@@ -228,7 +182,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 :x: If you encounter an error message (or if you see some text in red in the window), please **contact a teacher**
 
-#### Upgrade to WSL 2
+#### For Windows 10 users running WSL 1: Upgrade to WSL 2
 
 If you are running Windows 10, we will then upgrade WSL to version 2.
 
@@ -246,7 +200,7 @@ Once your computer has restarted, we need to download the WSL2 installer.
 
 :x: If you encounter the error "This update only applies to machines with the Windows Subsystem for Linux", **right click** on the program and select `uninstall`; you shall be able to install it normally this time.
 
-#### Make WSL 2 the default Windows Subsystem for Linux
+#### For Windows 10 users running WSL 1: Make WSL 2 the default Windows Subsystem for Linux
 
 If you are running Windows 10, we will set WSL default version to 2.
 
@@ -279,18 +233,20 @@ wsl --set-default-version 2
   :information_source: If you are running Windows 10 **Home edition**, Hyper-V feature is not available for your operating system. It's non-blocking and you can still continue to follow the instructions below :ok_hand:
 </details>
 
+</details>
+
 
 ## Ubuntu
 
 ### Installation
 
-:information_source: The following instructions depend on your version of Windows. Please execute only the instructions corresponding to your version :point_down:
+After restarting you computer, you should see a terminal window saying WSL is resuming the Ubuntu installation process. When it's done, Ubuntu will be launched.
 
-#### Windows 11
+<details>
+<summary>Troubleshooting for Windows 10 (only if needed, check with a TA)
+</summary>
 
-If you are running Windows 11, after restarting you computer, you should see a terminal window saying WSL is resuming the Ubuntu installation process. When it's done, Ubuntu will be launched.
-
-#### Windows 10
+If the Ubuntu installation did not resume, first try it again: launch Powershell or the Command Prompt again and run `wsl --install` again.
 
 If you are running Windows 10, let's install Ubuntu throught the Microsoft Store:
 
@@ -316,6 +272,8 @@ If you are running Windows 10, let's install Ubuntu throught the Microsoft Store
 
 Once the installation is finished, the `Get` button becomes a `Open` button: click on it.
 
+</details>
+
 ### First launch
 
 At first launch, you will be asked some information:
@@ -329,7 +287,6 @@ At first launch, you will be asked some information:
 
 :warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `Enter`.
 
-You can close the Ubuntu window now that it is installed on your computer.
 
 ### Check the WSL version of Ubuntu
 
@@ -359,7 +316,6 @@ wsl -l -v
   :heavy_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
 
   :x: If it does not work, we need to be sure that Ubuntu files are not compressed.
-</details>
 
 <details>
   <summary>Check for Uncompressed Files</summary>
@@ -377,6 +333,22 @@ wsl -l -v
 
   :x: If the conversion still does not work, please **contact a teacher**.
 </details>
+
+You can close this terminal now.
+
+</details>
+
+### Check your username
+
+Type this in the Ubuntu terminal:
+
+```bash
+whoami
+```
+
+It should return the username you chose before.
+
+:x: It if says `root`, **contact a TA** before continuing!
 
 ### Check the locale
 
@@ -407,19 +379,6 @@ sudo apt-get update
 sudo apt-get install language-pack-en language-pack-en-base manpages
 ```
 </details>
-
-You can now close this terminal window.
-
-
-## Chrome - your browser
-
-Install the Google Chrome browser if you haven't got it already and set it as a __default browser__.
-
-Follow the steps for your system from this link :point_right: [Install Google Chrome](https://support.google.com/chrome/answer/95346?co=GENIE.Platform%3DDesktop&hl=en-GB)
-
-__Why Chrome?__
-
-We recommend to use it as your default browser as it's most compatible with testing or running your code, as well as working with Google Cloud Platform. Another alternative is Firefox, however we don't recommend using other tools like Opera, Internet Explorer or Safari.
 
 
 ## Visual Studio Code
@@ -470,7 +429,10 @@ code .
 
 If you are running Windows 11, the Windows Terminal is already installed and you can proceed to the next section :point_down:
 
-If you are running Windows 10, let's install Windows Terminal, a real modern terminal:
+If you are running Windows 10, let's install Windows Terminal, a real modern terminal.
+
+<details>
+<summary><strong>Windows 10</strong>: Install Windows Terminal</summary>
 
 - Click on `Start`
 - Type  `Microsoft Store`
@@ -495,6 +457,8 @@ If you are running Windows 10, let's install Windows Terminal, a real modern ter
 
 Once the installation is finished, the `Install` button becomes a `Launch` button: click on it.
 
+</details>
+
 ### Ubuntu as the default terminal
 
 Let's make Ubuntu the default terminal of your Windows Terminal application.
@@ -511,7 +475,7 @@ It should open the terminal settings:
 
 You may see an orange circle rather than a penguin as the logo for Ubuntu.
 
-We have circle in red the part you will change:
+We have circled in red the part you need to change:
 
 ![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings_json.png)
 
@@ -525,7 +489,7 @@ First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory inst
 
 :warning: Do not forget the comma at the end of the line!
 
-Then, let's disable warning for copy-pasting commands between Windows and Ubuntu:
+Then, let's disable warnings for copy-pasting commands between Windows and Ubuntu:
 - Locate the line `"defaultProfile": "{2c4de342-...}"`
 - Add the following line after it:
 
@@ -558,6 +522,7 @@ code --install-extension ms-python.python
 code --install-extension KevinRose.vsc-python-indent
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
+code --install-extension alexcvzz.vscode-sqlite
 ```
 
 Here is a list of the extensions you are installing:
@@ -568,24 +533,7 @@ Here is a list of the extensions you are installing:
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-
-
-### Live Share configuration
-
-[Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
-
-Launch VS Code from your terminal by typing `code` and pressing `Enter`.
-
-Click on the little arrow at the bottom of the left bar :point_down:
-
-![VS Code Live Share](https://github.com/lewagon/setup/blob/master/images/vscode_live_share.png)
-
-- Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
-- A popup appears asking you to sign in with GitHub: click on "Allow".
-- You are redirected to a GitHub page in you browser asking you to authorize Visual Studio Code: click on "Continue" then "Authorize github".
-- VS Code may display additional pop-ups: close them by clicking "OK".
-
-That's it, you're good to go!
+- [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
 
 
 ## Command line tools
@@ -671,98 +619,17 @@ At the end your terminal should look like this:
 
 To be sure that you can interact with your browser installed on Windows from your Ubuntu terminal, we need to set it as your default browser there.
 
-:warning: You need to execute at least one of the following commands below:
+Run the following command and follow the instructions. The tool will prompt you to choose one of the browsers that are available on your system. You just need to type in the **number** that is shown in front of the browser.
 
-<details>
-  <summary>Google Chrome as your default browser</summary>
+```bash
+bash -c "$(curl -s https://raw.githubusercontent.com/julesvanrie/wslsetbrowser/refs/heads/main/wslsetbrowser.sh)"
+```
 
-  Run the command:
+Reset your terminal:
 
-  ```bash
-    ls /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe
-  ```
-
-  Did you get an error like `ls: cannot access...`?
-
-<details>
-  <summary>Yes, I had an error</summary>
-
-Run the following commands:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
-  ```
-</details>
-
-<details>
-  <summary>No, everything was fine</summary>
-
-  Run the following commands:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'\"" >> ~/.zshrc
-  ```
-</details>
-
----
-
-</details>
-
-<details>
-  <summary>Mozilla Firefox as your default browser</summary>
-
-  Run the command:
-
-  ```bash
-    ls /mnt/c/Program\ Files\ \(x86\)/Mozilla\ Firefox/firefox.exe
-  ```
-
-  Did you get an error like `ls: cannot access...`?
-
-<details>
-  <summary>Yes, I had an error</summary>
-
-  Run the following commands:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
-  ```
-
-</details>
-
-<details>
-  <summary>No, everything was fine</summary>
-
-  Run the following commands:
-
-  ```bash
-    echo "export BROWSER=\"/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe\"" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Mozilla Firefox/firefox.exe'\"" >> ~/.zshrc
-  ```
-</details>
-
----
-
-</details>
-
-<details>
-  <summary>Microsoft Edge as your default browser</summary>
-
-  Run the commands:
-
-  ```bash
-    echo "export BROWSER='\"/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"'" >> ~/.zshrc
-    echo "export GH_BROWSER=\"'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'\"" >> ~/.zshrc
-  ```
-
----
-
-</details>
-
-Restart your terminal.
+```bash
+exec zsh
+```
 
 Then please make sure that the following command returns "Browser defined 👌":
 
@@ -770,18 +637,9 @@ Then please make sure that the following command returns "Browser defined 👌":
 [ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
 ```
 
-If it does not,
-
-:heavy_check_mark: If you got this message, you can continue :+1:
-
-:x: If not, choose a browser in the list above and execute the corresponding command. Then don't forget to reset your terminal:
-
-```bash
-exec zsh
-```
+If it does not, you can follow [these instructions](https://github.com/lewagon/setup/blob/master/_partials/windows_browser.md) to set your default browser manually.
 
 Do not hesitate to **contact a teacher**.
-
 
 
 ## direnv
@@ -802,25 +660,25 @@ In this section, we will use [GitHub CLI](https://cli.github.com/) to interact w
 
 It should already be installed on your computer from the previous commands.
 
+We will use the GitHub CLI (`gh`) to connect to GitHub using *SSH*, a protocol to log in using SSH keys instead of the well known username/password pair.
+
 First in order to **login**, copy-paste the following command in your terminal:
 
 :warning: **DO NOT edit the `email`**
 
 ```bash
-gh auth login -s 'user:email' -w
+gh auth login -s 'user:email' -w --git-protocol ssh
 ```
 
-gh will ask you few questions:
+`gh` will ask you few questions:
 
-`What is your preferred protocol for Git operations?` With the arrows, choose `SSH` and press `Enter`. SSH is a protocol to log in using SSH keys instead of the well known username/password pair.
+- `Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
 
-`Generate a new SSH key to add to your GitHub account?` Press `Enter` to ask gh to generate the SSH keys for you.
+  If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
 
-If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
+- `Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
 
-`Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
-
-`Title for your SSH key`. You can leave it at the proposed "GitHub CLI", press `Enter`.
+- `Title for your SSH key`. You can leave it at the proposed "GitHub CLI", press `Enter`.
 
 You will then get the following output:
 
@@ -861,77 +719,179 @@ sudo apt-get install google-cloud-sdk-app-engine-python
 
 ## Dotfiles
 
+Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub.
+
+### Check your GitHub CLI configuration
+
+First, let's do a quick check. Open your terminal and run the following command:
+
+```bash
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
+```
+
+You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
+There seems to be a problem with the previous step (`gh auth`).
+
+### Fork and/or clone dotfiles
+
 There are three options, choose **one**:
+
 
 <details>
     <summary>
-        <strong>I already attended Web Development (FullStack) bootcamp at Le Wagon <em>on the same laptop</em></strong>
+        <strong>I did not attend the Web Dev or Data Science & AI bootcamp at Le Wagon</strong>
     </summary>
 
-This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the new Data Science bootcamp.
+ As your configuration is personal, you need your own repository storing it, so you'll need to fork it to your GitHub account.
+
+Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
+files.
+
+Lets' run this command to fork the repo, and clone it on your laptop:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo fork lewagon/dotfiles --clone
+```
+
+</details>
+
+
+<details>
+    <summary>
+        <strong>I already attended a Le Wagon coding bootcamp (Web Development or Data Science & AI) <em>but I have a new laptop</em></strong>
+    </summary>
+
+This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the current Data Science & AI bootcamp. Let's update it. **Ask a TA to join you for the nex steps.**
+
+First, clone your fork on this machine:
+
+```bash
+mkdir -p ~/code/$GITHUB_USERNAME && cd $_
+gh repo clone $GITHUB_USERNAME/dotfiles
+```
+
 
 Open your terminal and go to your `dotfiles` project:
 
 ```bash
-cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-code . # Open it in VS Code
+cd ~/code/$GITHUB_USERNAME/dotfiles
 ```
 
-In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) of that file that we provide. Save to disk.
+Time to merge the changes from `lewagon/dotfiles` into yours:
+1. Commit your current version of your dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
 
-Back to the terminal, run a `git diff` and ask a TA to come and check about this configuration change. You should see stuff about Python and `pyenv`.
+1. Let's bring in the changes from upstream: `git merge upstream/master`
 
-Once this is good, commit and push your changes:
+1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
+
+1. Do a `git diff HEAD~1 HEAD` to check what changed.
+
+1. If nothing seems out of the ordinary, continue
+
+<details>
+  <summary>Too many conflicts?
+  </summary>
+
+  Let's just take over the current version from `lewagon/dotfiles`.
+
+  First abort the merge: `git merge --abort`.
+
+  Run `code .`
+
+  In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
+
+  Still in VS Code, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
+
+  Back in the terminal, run a `git diff` and check if this didn't remove any personal configuration setting that you wanted to keep.
+
+</details>
+
+Time to commit your changes and push them.
 
 ```bash
-git add zshrc
-git commit -m "Update zshrc for Data Science bootcamp"
+git add .
+git commit -m "Update for Data Science bootcamp"
 git push origin master
 ```
 
 </details>
 
-OR
-
 
 <details>
     <summary>
-        <strong>I did not attend the Web Dev bootcamp at Le Wagon</strong>
+        <strong>I already did the setup of a Le Wagon coding bootcamp (WebDev or Data Science & AI) <em>on the same laptop</em> before</strong>
     </summary>
 
-Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
-
-:arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `lewagon/dotfiles` repository to your account (you'll need to click again on your picture to confirm _where_ you do the fork).
-
-Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
-files.
+This means that you already forked and cloned the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the current Data Science & AI bootcamp. Let's update it. **Ask a TA to join you for the nex steps.**
 
 
-Open your terminal and run the following command:
+Open your terminal and go to your `dotfiles` project:
 
 ```bash
-export GITHUB_USERNAME=`gh api user | jq -r '.login'`
-echo $GITHUB_USERNAME
+cd ~/code/$GITHUB_USERNAME/dotfiles
 ```
 
-You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
-There seems to be a problem with the previous step (`gh auth`).
+Time to merge the changes from `lewagon/dotfiles` into yours:
+1. Commit your current version of your dotfiles:
+   ```bash
+   git add .
+   git status # Check what will be committed
+   git commit -m "Version prior to new setup"
+   ```
 
-Time to fork the repo and clone it on your laptop:
+1. Let's bring in the changes from upstream: `git merge upstream/master`
+
+1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
+
+1. Do a `git diff HEAD~1 HEAD` to check what changed.
+
+1. If nothing seems out of the ordinary, continue
+
+<details>
+  <summary>Too many conflicts?
+  </summary>
+
+  Let's just take over the current version from `lewagon/dotfiles`.
+
+  First abort the merge: `git merge --abort`.
+
+  Run `code .`
+
+  In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
+
+  Still in VS Code, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
+
+  Back in the terminal, run a `git diff` and check if this didn't remove any personal configuration setting that you wanted to keep.
+
+</details>
+
+Time to commit your changes and push them.
 
 ```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo fork lewagon/dotfiles --clone
+git add .
+git commit -m "Update for Data Science bootcamp"
+git push origin master
 ```
 
-Run the `dotfiles` installer.
+</details>
+
+
+### Run the dotfiles installer
+
+It's time to run the `dotfiles` installer:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
 ```
 
-Check the emails registered with your GitHub Account. You'll need to pick one
-at the next step:
+Check the emails registered with your GitHub Account. You'll need to pick one at the next step:
 
 ```bash
 gh api user/emails | jq -r '.[].email'
@@ -947,58 +907,6 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 :warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 Please now **quit** all your opened terminal windows.
-</details>
-
-
-OR
-
-<details>
-    <summary>
-        <strong>I already attended Web Development (FullStack) bootcamp at Le Wagon <em>but I have a new laptop</em></strong>
-    </summary>
-
-
-Open your terminal and run the following command:
-
-```bash
-export GITHUB_USERNAME=`gh api user | jq -r '.login'`
-echo $GITHUB_USERNAME
-```
-
-You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
-There seems to be a problem with the previous step (`gh auth`).
-
-Time to fork the repo and clone it on your laptop:
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo fork lewagon/dotfiles --clone
-```
-
-Run the `dotfiles` installer.
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
-```
-
-Check the emails registered with your GitHub Account. You'll need to pick one
-at the next step:
-
-```bash
-gh api user/emails | jq -r '.[].email'
-```
-
-Run the git installer:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
-```
-
-:point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
-:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
-
-Please now **quit** all your opened terminal windows.
-</details>
 
 
 ## Disable SSH passphrase prompt
@@ -1070,7 +978,7 @@ Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-bui
 
 ```bash
 sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libbz2-dev libreadline-dev sqlite3 libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
 python3-dev
 ```
@@ -1080,7 +988,7 @@ python3-dev
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -1097,7 +1005,7 @@ source ~/.zprofile
 Then try to install Python again:
 
 ```bash
-pyenv install 3.10.6
+pyenv install 3.12.9
 ```
 
 If `pyenv` is still not found, contact a teacher.
@@ -1109,16 +1017,18 @@ If `pyenv` is still not found, contact a teacher.
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global 3.10.6
+pyenv global 3.12.9
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `3.10.6`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `3.12.9`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
 
 
 ## Python Virtual Environment
 
 Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
+
+### Setup a virtualenv
 
 First let's install this plugin:
 
@@ -1130,7 +1040,7 @@ exec zsh
 Let's create the virtual environment we are going to use during the whole bootcamp:
 
 ```bash
-pyenv virtualenv 3.10.6 lewagon
+pyenv virtualenv 3.12.9 lewagon
 ```
 
 Let's now set the virtual environment with:
@@ -1142,7 +1052,7 @@ pyenv global lewagon
 Great! Anytime we'll install Python package, we'll do it in that environment.
 
 
-## Python packages
+### Python packages
 
 Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
 
@@ -1159,8 +1069,34 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 ```
 
 
+## Jupyter Notebook tweaking
 
-## Configuring Jupyter Notebook to open in your browser
+Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+
+Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
+
+```bash
+LOCATION=$(jupyter --config-dir)/custom
+SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
+mkdir -p $LOCATION
+curl $SOURCE > $LOCATION/custom.css
+```
+
+
+
+### Configuring Jupyter Notebook to open in your browser
+
+First, let's configure your default browser again. We did this before, but when we installed the dotfiles it got removed. Not a problem, run this command to configure the settings again:
+
+```bash
+grep -E "export (GH_)*BROWSER" ~/.zshrc.backup >> ~/.zshrc
+```
+
+Then, restart your terminal with:
+
+```bash
+exec zsh
+```
 
 Let's generate the configuration file for **Jupyter Notebook**...
 
@@ -1168,24 +1104,10 @@ Let's generate the configuration file for **Jupyter Notebook**...
 jupyter notebook --generate-config
 ```
 
-⚠️ Please copy the path returned by the previous command.
-
 We will now edit the generated Jupyter configuration file:
 
 ``` bash
-code $HOME/.jupyter/jupyter_notebook_config.py
-```
-
-Locate the following line in the configuration file:
-
-``` python
-# c.NotebookApp.use_redirect_file = True
-```
-
-And replace it with this one **precisely** 👇 (including removing the `#` symbol)
-
-``` python
-c.NotebookApp.use_redirect_file = False
+sed -i.backup 's/# c.ServerApp.use_redirect_file = True/c.ServerApp.use_redirect_file = False/' ~/.jupyter/jupyter_notebook_config.py
 ```
 
 Let's try to run Jupyter:
@@ -1203,88 +1125,19 @@ If it is not the case, please call a TA.
 To stop the Jupyter server in the terminal, press `Ctrl` + `C`, enter y, then press Enter.
 
 
-## `jupyter` notebook extensions
+## Python setup check
 
-Pimp your `jupyter` notebooks with awesome extensions:
-
-```bash
-# install nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextension enable toc2/main
-jupyter nbextension enable collapsible_headings/main
-jupyter nbextension enable spellchecker/main
-jupyter nbextension enable code_prettify/code_prettify
-```
-
-### Custom CSS
-
-Improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
-
-Open `custom/custom.css` in the config directory:
-```bash
-cd $(jupyter --config-dir)
-mkdir -p custom
-touch custom/custom.css
-code custom/custom.css
-```
-Edit `custom.css` with:
-
-```css
-summary {
-    cursor: pointer;
-    display:list-item;
-}
-summary::marker {
-    font-size: 1em;
-}
-```
-
-You can close VS Code.
-
-### `jupyter` check up
+### Python and packages check
 
 Let's reset your terminal:
 
 ```bash
-exec zsh
+cd ~/code && exec zsh
 ```
-
-Now, check you can launch a notebook server on your machine:
-
-```bash
-jupyter notebook
-```
-
-Your web browser should open on a `jupyter` window:
-
-![jupyter.png](images/jupyter.png)
-
-Click on `New`:
-
-![jupyter_new.png](images/jupyter_new.png)
-
-A tab should open on a new notebook:
-
-![jupyter_notebook.png](images/jupyter_notebook.png)
-
-### `nbextensions` check up
-
-Perform a sanity check for `jupyter notebooks nbextensions`. Click on `Nbextensions`:
-
-![jupyter_nbextensions.png](images/jupyter_nbextensions.png)
-
-Untick _"disable configuration for nbextensions without explicit compatibility"_ then check that _at least_ all `nbextensions` circled in red are enabled:
-
-![nbextensions.png](images/nbextensions.png)
-
-You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
-
-
-### Python setup check up
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.10.6
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Run the following command to check if you successfully installed the required packages:
@@ -1297,18 +1150,34 @@ Now run the following command to check if you can load these packages:
 python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
 ```
 
+### Jupyter check
+
 Make sure you can run Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-And open a `Python 3` notebook.
+Your web browser should open on a `jupyter` window:
 
-Make sure that you are running the correct python version in the notebook. Open a cell and run :
+![jupyter.png](images/jupyter.png)
+
+Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
+
+![jupyter_new.png](images/jupyter_new.png)
+
+A tab should open on a new notebook:
+
+![jupyter_notebook.png](images/jupyter_notebook.png)
+
+Make sure that you are running the correct python version in the notebook. Open a cell and run:
 ``` python
 import sys; sys.version
 ```
+
+It should output `3.12.9` followed by some more details. If not, check with a TA.
+
+You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
 
@@ -1370,7 +1239,6 @@ You must pin:
 - VS Code
 - Your Internet browser
 - Slack
-- Zoom
 
 
 ## Visual C++ Redistributable
@@ -1378,11 +1246,6 @@ You must pin:
 Some Python packages require a compiler to function properly. Let's install one:
 
 [For x64 systems](https://aka.ms/vs/16/release/vc_redist.x64.exe)
-
-
-[For x86 systems](https://aka.ms/vs/16/release/vc_redist.x86.exe)
-
-If you're unsure about which system you're using please ask a teacher.
 
 
 ## Docker 🐋
@@ -1393,9 +1256,23 @@ _if you already have Docker installed on your machine please update with the lat
 
 ### Install Docker
 
-Go to [Docker for WSL2](https://docs.docker.com/docker-for-windows/wsl/).
+Go to [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/wsl/).
 
-Download and install the Docker Desktop WSL 2 backend.
+Download and install Docker Desktop.
+
+If you have an Intel or AMD processor, choose the first option ending with "x86_64".
+
+<details>
+  <summary markdown='span'>Not sure which processor you have?</summary>
+
+  Most probably you'll need the `x86_64`version, that is if you have an Intel or AMD processor.
+
+  If you don't know which processor your machine has,  run `arch` in your Ubuntu terminal. Check its output:
+  - `x86_64`: choose the first option "x86_64"
+  - `aarch64`: choose the second option "Arm"
+
+</details>
+
 
 Once done, start Docker.
 
@@ -1438,25 +1315,18 @@ Try `docker run hello-world` again.
 </details>
 
 
-## Kitt
+  ## Kitt
 
-:warning: If you have received an email from Le Wagon inviting you to sign up on Kitt (our learning platform), you can safely skip this step. Instead, please follow the instructions in the email you received if you haven't done so already.
+You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform).
 
-If you are unsure about what to do, you can follow [this link](https://kitt.lewagon.com/). If you are already logged in, you can safely skip this section. If you are not logged in, click on `Enter Kitt as a Student`. If you manage to login, you can safely skip this step. Otherwise ask a teacher whether you should have received an email or follow the instructions below.
+Then you should receive an additional invitation from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and complete the information.
 
-Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
-
-Your teacher will then validate that you are indeed part of the batch. You can ask them to do it as soon as you completed the registration form.
-
-Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
-
-- One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
-- One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
+If you haven't, please contact your teaching team.
 
 
 ## Slack
 
-[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
+[Slack](https://slack.com/) is a communication platform pretty popular in the tech industry.
 
 ### Installation
 
@@ -1498,6 +1368,6 @@ If you are done with your setup, please ask around if some classmates need some 
 
 If you don't have a lot of experience with `git` and GitHub, please [(re-)watch this workshop](https://www.youtube.com/watch?v=Z9fIBT2NBGY) (`1.25` playback speed is fine).
 
-If you do, then you can wait for the first lecture working on this [Tic-Tac-Toe Kata](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/train/python)
+If you do, then you can wait for the first lecture working on this [Tic-Tac-Toe Kata](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/python)
 
 

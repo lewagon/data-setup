@@ -12,6 +12,7 @@ code --install-extension ms-python.python
 code --install-extension KevinRose.vsc-python-indent
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
+code --install-extension alexcvzz.vscode-sqlite
 ```
 
 Here is a list of the extensions you are installing:
@@ -22,3 +23,4 @@ Here is a list of the extensions you are installing:
 - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
