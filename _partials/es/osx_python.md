@@ -33,19 +33,6 @@ exec zsh
 
 ### Instala Python
 
-Si tu computadora tiene un procesador **Apple Silicon** (M1, M2, entre otros), expande el párrafo de abajo y sigue las indicaciones. En caso contrario, ignóralo.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup para Apple Silicon 👈</summary>
-
-Necesitamos agregar las siguientes variables de entorno para instalar python:
-
-``` bash
-export LDFLAGS="-L/opt/homebrew/lib"; export CPPFLAGS="-I/opt/homebrew/include"
-```
-</details>
-
-
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
 
 ```bash

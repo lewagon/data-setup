@@ -1,33 +1,20 @@
 ## Dotfiles
 
+Los hackers aman mejorar sus shells y sus herramientas. Comenzaremos con una configuración por defecto genial proporcionada por [Le Wagon](http://github.com/lewagon/dotfiles) y almacenada en GitHub.
+
+### Verifica tu configuración de GitHub CLI
+
+Primero, hagamos una verificación rápida. Abre tu terminal y ejecuta el comando siguiente:
+
+```bash
+export GITHUB_USERNAME=`gh api user | jq -r '.login'`
+echo $GITHUB_USERNAME
+```
+
+Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
+Parece que hay un problema con el paso anterior (`gh auth`).
+
+
+### Fork y/o clone los archivos de configuración
+
 Hay tres opciones, escoge **una**:
-
-<details>
-    <summary>
-        <strong>Ya hice el bootcamp de Web Development (FullStack) de Le Wagon <em>en la misma laptop</em></strong>
-    </summary>
-
-Esto significa que ya has hecho el fork del repositorio GitHub `lewagon/dotfiles` pero tal vez la configuración para el nuevo bootcamp de Data Science no estaba lista en ese momento.
-
-Abre tu terminal y ve a tu proyecto `dotfiles`:
-
-```bash
-cd ~/code/<YOUR_GITHUB_NICKNAME>/dotfiles
-<CODE_EDITOR_CMD> . # Open it in <CODE_EDITOR>
-```
-
-En <CODE_EDITOR>abre  el archivo `zshrc`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc) de ese archivo que te suministramos. Luego guárdalo en el disco.
-
-Regresa a la terminal y ejecuta un `git diff` y pídele a un TA que venga y verifique este cambio de configuración. Debería ver cosas de Python y `pyenv`.
-
-Cuando el TA termine de hacer la verificación, haz un commit y haz el push de tus cambios:
-
-```bash
-git add zshrc
-git commit -m "Update zshrc for Data Science bootcamp"
-git push origin master
-```
-
-</details>
-
-O

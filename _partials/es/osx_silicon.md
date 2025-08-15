@@ -28,6 +28,7 @@ Ve a Aplicaciones > Utilidades.
 Ubica la app Terminal (selecciónala).
 
 Presiona `Cmd` + `I` en la app Terminal, luego verifica que la caja "Abrir usando Rosetta" esté **desmarcada**.
+En caso de que no veas esta caja, simplemente continúa.
 </details>
 
 🚨 Ten esto en mente. Deberás recordarlo más adelante en este setup si tu computadora usa un chip Apple Silicon o Intel.
