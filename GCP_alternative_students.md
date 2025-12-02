@@ -138,7 +138,7 @@ This command moves the `key.json` file to a specific directory in your home fold
 Set the GOOGLE_APPLICATION_CREDENTIALS environment variable:
 
 ```bash
-echo "export GOOGLE_APPLICATION_CREDENTIALS='/~/code/${GITHUB_USERNAME}/gcp/key.json'" >> ~/.zshrc
+echo "export GOOGLE_APPLICATION_CREDENTIALS='~/code/${GITHUB_USERNAME}/gcp/key.json'" >> ~/.zshrc
 ```
 This adds an export command to your `.zshrc` file, setting the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of your key file. This allows Google Cloud client libraries to automatically find and use the credentials for authentication.
 
