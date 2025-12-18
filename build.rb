@@ -18,6 +18,7 @@ MAC_OS = %w[
   homebrew
   setup/macos_vscode
   vscode_extensions
+  setup/vscode_aifeatures
   setup/oh_my_zsh
   direnv
   setup/gh_cli
@@ -62,6 +63,7 @@ WINDOWS = %w[
   setup/windows_vscode
   setup/windows_terminal
   vscode_extensions
+  setup/vscode_aifeatures
   setup/cli_tools
   setup/oh_my_zsh
   windows_browser
@@ -106,6 +108,7 @@ LINUX = %w[
   setup/github
   setup/ubuntu_vscode
   vscode_extensions
+  setup/vscode_aifeatures
   setup/cli_tools
   setup/oh_my_zsh
   direnv
@@ -150,6 +153,7 @@ VM = %w[
   de_setup/win_vscode
   de_setup/vscode_remote_ssh
   vscode_extensions
+  setup/vscode_aifeatures
   setup/cli_tools
   setup/oh_my_zsh
   direnv
