@@ -24,6 +24,10 @@ Before we start, we need to check that the version of Windows installed on your 
 
 ### Windows 10 or Windows 11
 
+> :warning: **Note on Windows 10 and security**
+>
+> The Le Wagon bootcamp setup works on Windows 10. That said, we highly recommend to upgrade to Windows 11. Since October 14th, 2025, Microsoft has ended support for Windows 10, which means it will no longer receive security updates, potentially putting your machine at risk. For more details, read [Microsoft's guide](https://support.microsoft.com/en-us/windows/windows-10-support-has-ended-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281). In case your machine can't run Windows 11, consider switching to Ubuntu.
+
 To be able to set up your computer, you need to have **Windows 10 or Windows 11** installed.
 
 To check your Windows version:
@@ -504,6 +508,25 @@ Here is a list of the extensions you are installing:
 - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 - [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
+
+
+### VS Code AI Features
+
+VS Code includes many powerful **AI features**, which are a great tool once you already know how to code.
+
+That said, relying on AI too early can hide important concepts and make debugging harder to understand. Once you’re comfortable with the fundamentals, you’ll know when and how to use AI effectively — without letting it do the thinking for you.
+
+For the start of the bootcamp, we’ll disable these features. At the right point in the course, we’ll reenable them so you can put them to good use.
+
+In **VS Code**:
+
+1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P` (Windows / Linux) or `Cmd-Shift-P` (macOS).
+1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
+   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/master/../images/vscode_find_aifeatures.png)
+1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
+   ![Check the disable option](https://github.com/lewagon/setup/blob/master/../images/vscode_disable_aifeatures.png)
+
+Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
 
 ## Command line tools
