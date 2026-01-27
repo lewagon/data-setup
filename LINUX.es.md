@@ -741,8 +741,8 @@ Debería aparecer el siguiente mensaje:
 - En la consola de Cloud, en la lista de proyectos, selecciona o crea un proyecto Cloud
 
 ![](images/gcp-create-project.png)
-
 - Asígnale un nombre como `Wagon Bootcamp` por ejemplo
+- ❗ Comprueba que el campo _Location_ esté establecido en _No organization_ ❗
 - Verás que se creará un `ID` automáticamente para el proyecto e. g. `wagon-bootcamp-123456`
 
 ![](images/gcp_project.png)

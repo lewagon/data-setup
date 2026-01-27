@@ -857,6 +857,7 @@ If that doesn't work, contact a TA.
 ![](images/gcp-create-project.png)
 
 - Give it a name such as `Wagon Bootcamp` for example
+- ❗ Check that the field _Location_ is set to _No organization_ ❗
 - Notice the `ID` automatically created for the project, e.g. `wagon-bootcamp-123456`
 
 ![](images/gcp_project.png)

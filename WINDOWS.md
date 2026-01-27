@@ -449,13 +449,13 @@ It should open the terminal settings:
 
 You may see an orange circle rather than a penguin as the logo for Ubuntu.
 
-We have circled in red the part you need to change:
+We have circled in red the part you need to add:
 
 ![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings_json.png)
 
-First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
-- Locate the entry with both `"name": "Ubuntu",` and `"hidden": false,`
-- Add the following line after it:
+First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one.
+
+- Place this line inside the { } block that contains "name": "Ubuntu" (like in the screenshot):
 
 ```bash
 "commandline": "wsl.exe ~",
@@ -464,7 +464,8 @@ First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory inst
 :warning: Do not forget the comma at the end of the line!
 
 Then, let's disable warnings for copy-pasting commands between Windows and Ubuntu:
-- Locate the line `"defaultProfile": "{2c4de342-...}"`
+
+- Locate the line "defaultProfile": "{2c4de342-...}"
 - Add the following line after it:
 
 ```bash
@@ -1352,6 +1353,7 @@ Try `docker run hello-world` again.
 ![](images/gcp-create-project.png)
 
 - Give it a name such as `Wagon Bootcamp` for example
+- ❗ Check that the field _Location_ is set to _No organization_ ❗
 - Notice the `ID` automatically created for the project, e.g. `wagon-bootcamp-123456`
 
 ![](images/gcp_project.png)
