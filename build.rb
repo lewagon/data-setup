@@ -191,14 +191,13 @@ FILENAMES = {
   "WINDOWS_keep_current" => ["WINDOWS", WINDOWS_KC],
   "macOS_keep_current" => ["macOS", MAC_OS_KC],
   "LINUX_keep_current" => ["LINUX", LINUX_KC],
-  "VM" => ["VM", VM]
+  "VM" => ["LINUX", VM]
 }
 
 DELIMITERS = {
   "WINDOWS" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
   "macOS" => ["\\$MAC_START\n", "\\$MAC_END\n"],
   "LINUX" => ["\\$LINUX_START\n", "\\$LINUX_END\n"],
-  "VM" => ["\\$LINUX_START\n", "\\$LINUX_END\n"]
 }
 
 def load_partial(partial, locale)
@@ -247,8 +246,6 @@ LOCALES.each do |locale|
         content = loaded["#{partial}.#{locale}"].clone
         # remove the OS dependant blocks
         removed_blocks = DELIMITERS.keys - [os_name]
-        removed_blocks = removed_blocks - ["LINUX"] if os_name == "VM"
-        removed_blocks = removed_blocks - ["VM"] if os_name == "LINUX"
         removed_blocks.each do |block|
           delimiter_start, delimiter_end = DELIMITERS[block]
           pattern = "#{delimiter_start}(.|\n)*?(?<!#{delimiter_end})#{delimiter_end}"
