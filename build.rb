@@ -182,6 +182,45 @@ VM = %w[
   kata
 ]
 
+# remote vm provided by lewagon
+REMOTE_SETUP = %w[
+  intro
+  setup/github
+  de_setup/ssh_key
+  de_setup/gcp_setup
+  de_setup/virtual_machine
+  de_setup/win_vscode
+  de_setup/vscode_remote_ssh
+  vscode_extensions
+  setup/vscode_aifeatures
+  setup/cli_tools
+  setup/oh_my_zsh
+  direnv
+  setup/gh_cli
+  de_setup/ubuntu_gcloud
+  de_setup/gcp_setup_linux
+  dotfiles
+  dotfiles_new_student
+  dotfiles_new_laptop
+  dotfiles_merge_upstream
+  dotfiles_same_laptop
+  dotfiles_merge_upstream
+  dotfiles_installer
+  de_setup/zsh_default_terminal
+  setup/ssh_agent
+  ubuntu_python
+  virtualenv
+  pip
+  nbextensions
+  python_checkup
+  dbeaver
+  ubuntu_docker
+  kitt
+  setup/windows_slack
+  setup/slack_settings
+  kata
+]
+
 LOCALES = ["", "es"]  # english + spanish locales
 
 FILENAMES = {
@@ -191,7 +230,8 @@ FILENAMES = {
   "WINDOWS_keep_current" => ["WINDOWS", WINDOWS_KC],
   "macOS_keep_current" => ["macOS", MAC_OS_KC],
   "LINUX_keep_current" => ["LINUX", LINUX_KC],
-  "VM" => ["LINUX", VM]
+  "VM" => ["LINUX", VM],
+  "REMOTE_SETUP" => ["LINUX", REMOTE_SETUP]
 }
 
 DELIMITERS = {
