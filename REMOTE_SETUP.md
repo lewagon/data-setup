@@ -114,7 +114,7 @@ Now let's register your SSH key:
 - Select **New SSH Key**
 - Enter your alias
 - Enter your SSH **public** key
-- Validate with **Enter**
+- Validate with **Create**
 
 ![](images/register_ssh_key.png)
 
