@@ -28,6 +28,12 @@ cat 👉PATH_TO_YOUR_PUBLIC_KEY👈
 # cat ~/.ssh/id_ed25519.pub
 ```
 
+You should see something similar to the following even though multiple formats exist:
+
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG8ToZnCWvZkjqw6ueq3RRWSGtGE6DE+VODZQEHibYMY alexdev@gmail.com
+```
+
 Fetch the alias provided to you by Le Wagon. The alias contains random pet names separated by dashes, for exampe `daring-tuna-1a03dab5`. If you cannot find it, ask a teacher for help 🙋
 
 Now let's register your SSH key:
