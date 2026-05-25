@@ -223,6 +223,7 @@ REMOTE_SETUP = %w[
 ]
 
 LOCALES = ["", "es"]  # english + spanish locales
+ENGLISH_ONLY = %w[REMOTE_SETUP].freeze
 
 FILENAMES = {
   "WINDOWS" => ["WINDOWS", WINDOWS],
@@ -272,14 +273,19 @@ def load_partial(partial, locale)
   return content
 end
 
-# load partials
-loaded = FILENAMES.map { |filename, (os_name, partials)| partials }.flatten.uniq
-loaded = loaded.map { |partial| LOCALES.map { |locale| [partial, locale]} }.flatten(1)
-loaded = loaded.map { |partial, locale| ["#{partial}.#{locale}", load_partial(partial, locale)] }.to_h
+# load partials (skip non-English locales for ENGLISH_ONLY configurations)
+pairs = FILENAMES.flat_map { |filename, (os_name, partials)|
+  LOCALES.flat_map { |locale|
+    next [] if !locale.empty? && ENGLISH_ONLY.include?(filename)
+    partials.map { |partial| [partial, locale] }
+  }
+}.uniq
+loaded = pairs.map { |partial, locale| ["#{partial}.#{locale}", load_partial(partial, locale)] }.to_h
 
 # write files
 LOCALES.each do |locale|
   FILENAMES.each do |filename, (os_name, partials)|
+    next if !locale.empty? && ENGLISH_ONLY.include?(filename)
     filename += ".#{locale}" unless locale.empty?
     filename += ".md"
     File.open(filename, "w:utf-8") do |f|
