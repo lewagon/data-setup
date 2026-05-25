@@ -11,41 +11,41 @@ CONSTANTS = {
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
-  intro
-  setup/github
+    intro
+    setup/github
   osx_silicon
   setup/macos_command_line_tools
   homebrew
-  setup/macos_vscode
-  vscode_extensions
-  setup/vscode_aifeatures
-  setup/oh_my_zsh
-  direnv
-  setup/gh_cli
-  dotfiles
-  dotfiles_new_student
-  dotfiles_new_laptop
-  dotfiles_merge_upstream
-  dotfiles_same_laptop
-  dotfiles_merge_upstream
-  dotfiles_installer
+    setup/macos_vscode
+    vscode_extensions
+    setup/vscode_aifeatures
+    setup/oh_my_zsh
+    direnv
+    setup/gh_cli
+    dotfiles
+    dotfiles_new_student
+    dotfiles_new_laptop
+    dotfiles_merge_upstream
+    dotfiles_same_laptop
+    dotfiles_merge_upstream
+    dotfiles_installer
   conda_uninstall
-  osx_python
-  virtualenv
-  pip
-  nbextensions
-  python_checkup
-  dbeaver
-  docker
+    osx_python
+    virtualenv
+    pip
+    nbextensions
+    python_checkup
+    dbeaver
+    docker
   gcp_cli_setup
   gcp_setup
   gcp_setup_mid
   gcp_setup_end
-  kitt
-  setup/macos_slack
-  setup/slack_settings
+    kitt
+    setup/macos_slack
+    setup/slack_settings
   setup/macos_settings
-  kata
+    kata
 ].freeze
 
 MAC_OS_KC = %w[
@@ -185,41 +185,42 @@ VM = %w[
 
 # student installs vscode, uses vm provided by lewagon, runs setup on vm
 REMOTE_SETUP = %w[
-  intro
-  setup/github
+    intro
+    setup/github
   de_setup/ssh_key
+  vm_register
   de_setup/gcp_setup
   de_setup/virtual_machine
-  de_setup/win_vscode
+    de_setup/win_vscode
   de_setup/vscode_remote_ssh
-  vscode_extensions
-  setup/vscode_aifeatures
+    vscode_extensions
+    setup/vscode_aifeatures
   setup/cli_tools
-  setup/oh_my_zsh
-  direnv
-  setup/gh_cli
+    setup/oh_my_zsh
+    direnv
+    setup/gh_cli
   de_setup/ubuntu_gcloud
   de_setup/gcp_setup_linux
-  dotfiles
-  dotfiles_new_student
-  dotfiles_new_laptop
-  dotfiles_merge_upstream
-  dotfiles_same_laptop
-  dotfiles_merge_upstream
-  dotfiles_installer
+    dotfiles
+    dotfiles_new_student
+    dotfiles_new_laptop
+    dotfiles_merge_upstream
+    dotfiles_same_laptop
+    dotfiles_merge_upstream
+    dotfiles_installer
   de_setup/zsh_default_terminal
   setup/ssh_agent
-  ubuntu_python
-  virtualenv
-  pip
-  nbextensions
-  python_checkup
-  dbeaver
-  ubuntu_docker
-  kitt
-  setup/windows_slack
-  setup/slack_settings
-  kata
+    ubuntu_python
+    virtualenv
+    pip
+    nbextensions
+    python_checkup
+    dbeaver
+    ubuntu_docker
+    kitt
+    setup/windows_slack
+    setup/slack_settings
+    kata
 ]
 
 LOCALES = ["", "es"]  # english + spanish locales
