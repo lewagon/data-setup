@@ -88,3 +88,23 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
 
   This can happen if the virtual machine was just started and the SSH server is not ready yet to accept connections. If the issue persists after a couple of minutes, ask a teacher for help 🙋
 </details>
+
+A new terminal invite should be visible once connected to the machine:
+
+``` bash
+lewagon@daring-tuna-9609dab8:~$
+```
+
+You can now disconnect from the virtual machine:
+
+``` bash
+exit
+```
+
+You will be back to the regular terminal prompt:
+
+``` bash
+lewagon@daring-tuna-9609dab8:~$ exit
+logout
+Connection to 34.52.208.105 closed.
+```
