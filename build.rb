@@ -144,6 +144,7 @@ LINUX_KC = %w[
   python_checkup
 ]
 
+# student installs vscode, creates gcp vm, runs setup on vm
 VM = %w[
   intro
   setup/github
@@ -182,7 +183,7 @@ VM = %w[
   kata
 ]
 
-# remote vm provided by lewagon
+# student installs vscode, uses vm provided by lewagon, runs setup on vm
 REMOTE_SETUP = %w[
   intro
   setup/github
