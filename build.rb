@@ -189,8 +189,6 @@ REMOTE_SETUP = %w[
   setup/github
   de_setup/ssh_key
   vm_register
-  de_setup/gcp_setup
-  de_setup/virtual_machine
   de_setup/win_vscode
   de_setup/vscode_remote_ssh
   vscode_extensions
@@ -217,6 +215,7 @@ REMOTE_SETUP = %w[
   python_checkup
   dbeaver
   ubuntu_docker
+  de_setup/gcp_setup
   kitt
   setup/windows_slack
   setup/slack_settings
