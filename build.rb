@@ -188,6 +188,7 @@ REMOTE_SETUP = %w[
   intro
   setup/github
   de_setup/ssh_key
+  vm_register
   de_setup/gcp_setup
   de_setup/virtual_machine
   de_setup/win_vscode
