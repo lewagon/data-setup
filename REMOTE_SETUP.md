@@ -89,7 +89,7 @@ In order to move forwards, you will need to use:
 
   A SSH key is a pair constituted of linked public and private keys.
 
-  The **PRIVATE** part of the SSH key (private key) is the part that allows you **alone** to use the key. It should not be communicated to anyone and should never leave your machine.
+  The **PRIVATE** part of the SSH key (private key) is the part that allows you alone to use the key. It should not be communicated to anyone and should never leave your machine.
 
   The **public** part of the SSH key (public key) is the part that identifies you when communicating over SSH. It can be communicated widely.
 
