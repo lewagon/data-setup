@@ -942,3 +942,7 @@ The following message should print:
 ![](images/docker_hello.png)
 
 
+
+Congratulations, you're all set! 🎉
+
+

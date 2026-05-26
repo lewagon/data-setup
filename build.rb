@@ -220,6 +220,7 @@ REMOTE_SETUP = %w[
   #setup/windows_slack
   #setup/slack_settings
   #kata
+  end
 ]
 
 LOCALES = ["", "es"]  # english + spanish locales
