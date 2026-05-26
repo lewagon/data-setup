@@ -22,12 +22,26 @@ In order to move forwards, you will need to use:
 
 
 Retrieve your SSH **public** key using the command below:
-- Replace the path to your **public** key
+- Replace `👉PATH_TO_YOUR_PUBLIC_KEY👈` with the path to your **public** key
+
+<details>
+  <summary markdown='span'>Windows</summary>
+
+```bash
+type 👉PATH_TO_YOUR_PUBLIC_KEY👈
+# type C:\Users\<YourUsername>\.ssh\id_ed25519.pub
+```
+</details>
+
+<details>
+  <summary markdown='span'>MacOS & Linux</summary>
 
 ``` bash
 cat 👉PATH_TO_YOUR_PUBLIC_KEY👈
 # cat ~/.ssh/id_ed25519.pub
 ```
+</details>
+
 
 You should see something similar to the following even though multiple formats exist:
 

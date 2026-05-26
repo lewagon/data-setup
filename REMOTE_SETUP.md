@@ -98,13 +98,28 @@ In order to move forwards, you will need to use:
   In this setup we will publish the **public** key to the virtual machine provided by Le Wagon in order to identify ourselves. We will then use the **PRIVATE** key to authenticate remotely and connect to the virtual machine.
 </details>
 
+
 Retrieve your SSH **public** key using the command below:
-- Replace the path to your **public** key
+- Replace `👉PATH_TO_YOUR_PUBLIC_KEY👈` with the path to your **public** key
+
+<details>
+  <summary markdown='span'>Windows</summary>
+
+```bash
+type 👉PATH_TO_YOUR_PUBLIC_KEY👈
+# type C:\Users\<YourUsername>\.ssh\id_ed25519.pub
+```
+</details>
+
+<details>
+  <summary markdown='span'>MacOS & Linux</summary>
 
 ``` bash
 cat 👉PATH_TO_YOUR_PUBLIC_KEY👈
 # cat ~/.ssh/id_ed25519.pub
 ```
+</details>
+
 
 You should see something similar to the following even though multiple formats exist:
 
@@ -155,6 +170,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   The virtual machine is not started, ask a teacher for help 🙋
 </details>
 
+
 <details>
 
   <summary>❌ Connection refused</summary>
@@ -166,6 +182,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
 
   This can happen if the virtual machine was just started and the SSH server is not ready yet to accept connections. If the issue persists after a couple of minutes, ask a teacher for help 🙋
 </details>
+
 
 A new terminal invite should be visible once connected to the machine:
 
