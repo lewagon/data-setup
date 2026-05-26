@@ -63,7 +63,7 @@ Now let's register your SSH key:
 
 👉 Your SSH **public** key is being added to your virtual machine
 
-After a couple of minutes, a comment should indicate when the operation is complete. If the registration fails, ask a teacher for help 🙋
+After a couple of minutes, a comment should appear and indicate that the operation is complete. If the registration fails, ask a teacher for help 🙋
 
 ❗️ Retrieve the IP address of your virtual machine and note it down for later
 
