@@ -70,13 +70,27 @@ After a couple of minutes, a comment should appear and indicate that the operati
 ![](images/register_complete.png)
 
 Now let's check the connection to the virtual machine with the command below:
-- Replace your IP address
-- Replace the path to your **PRIVATE** key
+- Replace `👉YOUR_IP_ADDRESS👈` with the IP address of your virtual machine
+- Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
+
+<details>
+  <summary markdown='span'>Windows</summary>
+
+``` bash
+ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
+# ssh -i C:\Users\<YourUsername>\.ssh\id_ed25519 lewagon@34.52.208.105
+```
+</details>
+
+<details>
+  <summary markdown='span'>MacOS & Linux</summary>
 
 ``` bash
 ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
 # ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
 ```
+</details>
+
 
 <details>
 
