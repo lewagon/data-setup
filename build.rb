@@ -258,7 +258,7 @@ def load_partial(partial, locale)
             .read
     # replace data-setup repo relative path by data-engineering-setup repo URL
     image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
-    image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}")}
+    image_paths.reject { |ip| ip.start_with?("http") }.each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}")}
     # alternative image format
     image_paths = content.scan(/src="(images\/.*)"/).flatten
     image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}")}
