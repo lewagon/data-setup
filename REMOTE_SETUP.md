@@ -76,160 +76,147 @@ Your new SSH Key will be named `de-bootcamp`. Make sure to remember it for later
 </details>
 
 
-## Google Cloud Platform setup
 
-[GCP](https://cloud.google.com/) is a cloud solution that you are going to use in order to work on a virtual machine.
+## Authenticate to your virtual machine
 
-### Project setup
-
-**👌 Note: Skip to the next section if you already have a GCP project**
-
-- Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one
-- In the Cloud Console, on the project list, select or create a Cloud project
-
-![](https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp-create-project.png)
-
-- Give it a name such as `Wagon Bootcamp` for example
-- Notice the `ID` automatically created for the project, e.g. `wagon-bootcamp-123456`
-
-![](https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp_project.png)
-
-### Account language
-
-In order to facilitate the following of the instructions during the bootcamp, open your GCP account preferences:
-
-https://myaccount.google.com/language
-
-If the *preferred language* is not:
-- **English**
-- **United States**
-
-Then switch the language to english:
-- Click on the edit pen logo
-- Select **English**
-- Select **United States**
-- Click on **Select**
-
-### Billing account
-
-**👌 Note: Skip to the next section if you already have a valid billing account**
-
-You will now link your account to your credit card. This step is required or you will not be able to use the services provided by GCP. Do not worry, you will be able to consume most GCP services through free credits throughout the bootcamp.
-
-![](https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp-billing.png)
-
-- Click on **Billing**
-- Click on **MANAGE BILLING ACCOUNTS**
-- Click on **ADD BILLING ACCOUNT**
-- Give a name to your billing account, e.g. `My Billing Account`
-- Click on "I have read..." and agree the to the terms of service
-- Click on **CONTINUE**
-- Select your account type: `Individual`
-- Fill your name and address
-
-You should see that you have a free credit of "$300 credits over the next 90days".
-
-- Click on card details
-- Enter your credit card info
-- Click on **START MY FREE TRIAL**
-
-Once this is done, verify that your billing account is linked to your GCP project.
-
-- Select your project
-- Go to **Billing**
-- Select **LINK A BILLING ACCOUNT**
-- Select `My Billing Account`
-- Click on **SET ACCOUNT**
-
-You should now see:
-
-```
-Free trial status: $300 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
-```
+In order to move forwards, you will need to use:
+- The SSH **public** and **PRIVATE** keys you just created
+- The alias provided to you by Le Wagon
 
 <details>
-  <summary>👉 If you do not own a credit card 👈</summary>
+
+  <summary>🤔 What are the SSH public and private keys ?</summary>
+
+  A SSH key is a pair constituted of linked public and private keys.
+
+  The **PRIVATE** part of the SSH key (private key) is the part that allows you alone to use the key. It should not be communicated to anyone and should never leave your machine.
+
+  The **public** part of the SSH key (public key) is the part that identifies you when communicating over SSH. It can be communicated widely.
+
+  The file storing the public key ends in `.pub` (for example `id_ed25519.pub`), while the file storing the private key does not have an extension (for example `id_ed25519`).
+
+  In this setup we will publish the **public** key to the virtual machine provided by Le Wagon in order to identify ourselves. We will then use the **PRIVATE** key to authenticate remotely and connect to the virtual machine.
+</details>
 
 
-If you do not own a credit card, an alternative is to setup a **Revolut** account.
-Revolut is a financial app that will allow you to create a virtual credit card linked to your mobile phone billing account.
+Retrieve your SSH **public** key using the command below:
+- Replace `👉PATH_TO_YOUR_PUBLIC_KEY👈` with the path to your **public** key
 
-Skip this step if you own a credit card and use your credit card for the setup.
+<details>
+  <summary markdown='span'>Windows</summary>
 
-Download the Revolut app, or go to [revolut](https://www.revolut.com/a-radically-better-account) and follow the steps to download the app (enter your mobile phone number and click on Get Started).
-
-- Open the Revolut app
-- Enter your mobile phone number
-- Enter the verification code received by SMS
-- The app will ask for your country, address, first and last name, date of birth, email address
-- The app will also ask for a selfie and request your profession
-- The app will require a photo of your identification card or passport
-
-Once this is done, select the standard (free) plan. No need to add the card to Apple pay, or ask for a the delivery of a physical card, or add money securely.
-
-You now have a virtual card which we will use for the GCP setup.
-
-In the main view of the Revolut the app
-- Click on Ready to use
-- Click on the card
-- Click on Show card details
-- Note down the references of the virtual credit card and use them in order to proceed with the GCP setup
-
+```bash
+type 👉PATH_TO_YOUR_PUBLIC_KEY👈
+# type C:\Users\<YourUsername>\.ssh\id_ed25519.pub
+```
 </details>
 
 <details>
-  <summary>👉 If you receive an email from Google saying "Urgent: your billing account XXXXXX-XXXXXX-XXXXXX has been suspended" 👈</summary>
+  <summary markdown='span'>MacOS & Linux</summary>
 
-
-This may happen especially in case you just setup a Revolut account.
-
-- Click on PROCEED TO VERIFICATION
-- You will be asked to send a picture of your credit card (only the last 4 digits, no other info)
-- In case you used **Revolut**, you can send a screenshot of your virtual credit card (do not forget to remove the validity date from the screenshot)
-- Explain that you are attending the Le Wagon bootcamp, do not own a credit card, and have just created a Revolut account in order to setup GCP for the bootcamp using a virtual credit card
-
-You may receive a validation or requests for more information within 30 minutes.
-
-Once the verification goes through, you should receive an email stating that "Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.".
-
+``` bash
+cat 👉PATH_TO_YOUR_PUBLIC_KEY👈
+# cat ~/.ssh/id_ed25519.pub
+```
 </details>
 
-## GCP APIs
 
-You will use different GCP services during the bootcamp which needs to be activated and configured.
+You should see something similar to the following even though multiple formats exist:
 
-### Default APIs
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG8ToZnCWvZkjqw6ueq3RRWSGtGE6DE+VODZQEHibYMY alexdev@gmail.com
+```
 
-Go to your project [APIs dashboard](https://console.cloud.google.com/apis/dashboard), you can see a bunch of APIs are already enabled:
+Fetch the alias provided to you by Le Wagon. The alias contains random pet names separated by dashes, for exampe `daring-tuna-1a03dab5`. If you cannot find it, ask a teacher for help 🙋
 
-<img alt='GCP APIs dashboard' src="https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp_apis_dashboard.png" width=200>
+Now let's register your SSH key:
+- Go to https://github.com/lewagon/remote-setup/issues
+- Click on **New issue**
+- Select **New SSH Key**
+- Enter your alias
+- Enter your SSH **public** key
+- Validate with **Create**
 
-### Enable Compute Engine (virtual machines) API
+![](images/register_ssh_key.png)
 
-**👌 Note: Skip to the next section if you already have Compute Engine enabled**
+👉 Your SSH **public** key is being added to your virtual machine
 
-- In the search bar, type _compute_ and click on the Compute Engine result
-    <img alt='APIs search' src="https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp_apis_search.png" width=500>
-- Click on `ENABLE`
+After a couple of minutes, a comment should appear and indicate that the operation is complete. If the registration fails, ask a teacher for help 🙋
 
-    <img alt='APIs enable' src="https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp_apis_enable.png" width=300>
-- Compute Engine is now enabled on your project
+❗️ Retrieve the IP address of your virtual machine and note it down for later
+
+![](images/register_complete.png)
+
+Now let's check the connection to the virtual machine with the command below:
+- Replace `👉YOUR_IP_ADDRESS👈` with the IP address of your virtual machine
+- Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
+
+<details>
+  <summary markdown='span'>Windows</summary>
+
+``` bash
+ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
+# ssh -i C:\Users\<YourUsername>\.ssh\id_ed25519 lewagon@34.52.208.105
+```
+</details>
+
+<details>
+  <summary markdown='span'>MacOS & Linux</summary>
+
+``` bash
+ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
+# ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
+```
+</details>
 
 
+<details>
 
-## Virtual Machine (VM)
+  <summary>❌ Operation timed out</summary>
 
-_Note: The VM setup requires a [Google Cloud Platform](https://cloud.google.com/) account associated with an active [Billing account](https://console.cloud.google.com/billing)_
+  Error:
 
-ℹ️ In the guide, left click to drag the screenshots if necessary
+  ``` bash
+  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
+  ssh: connect to host 34.52.208.105 port 22: Operation timed out
+  ```
 
-ℹ️ You may adjust the aspect ratio of your browser window to see the full screenshots
+  The virtual machine is not started, ask a teacher for help 🙋
+</details>
 
-<a href="https://scribehow.com/embed/Create_a_Google_Cloud_VM_Instance_with_SSH_Key__1ohFlAbSR9yoG28S0PDfwg">
-  <img src="https://github.com/lewagon/data-engineering-setup/blob/main/images/scribe_gcp_vm.png" alt="scribe gcp vm" width="500">
-</a>
 
-**👌 Follow [this guide](https://scribehow.com/embed/Create_a_Google_Cloud_VM_Instance_with_SSH_Key__1ohFlAbSR9yoG28S0PDfwg) or skip to the next section if you already have a VM set up**
+<details>
+
+  <summary>❌ Connection refused</summary>
+
+  ``` bash
+  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
+  ssh: connect to host 34.52.208.105 port 22: Connection refused
+  ```
+
+  This can happen if the virtual machine was just started and the SSH server is not ready yet to accept connections. If the issue persists after a couple of minutes, ask a teacher for help 🙋
+</details>
+
+
+A new terminal invite should be visible once connected to the machine:
+
+``` bash
+lewagon@daring-tuna-9609dab8:~$
+```
+
+You can now disconnect from the virtual machine:
+
+``` bash
+exit
+```
+
+You will be back to the regular terminal prompt:
+
+``` bash
+lewagon@daring-tuna-9609dab8:~$ exit
+logout
+Connection to 34.52.208.105 closed.
+```
 
 
 ## Visual Studio Code
@@ -543,120 +530,6 @@ gh auth status
 :heavy_check_mark: If you get `Logged in to github.com as <YOUR USERNAME> `, then all good :+1:
 
 :x: If not, **contact a teacher**.
-
-
-## Google Cloud CLI
-
-Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
-```bash
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get install apt-transport-https ca-certificates gnupg
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk
-sudo apt-get install google-cloud-sdk-app-engine-python
-```
-👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
-
-### Create a service account key 🔑
-
-**👌 Note: Skip to the next section if you already have a service account key**
-
-Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
-
-<details>
-  <summary>🤔 Why do we need a service account key ?</summary>
-
-
-  You have created a `GCP account` linked to your credit card. Your account will be billed according to your usage of the ressources of the **Google Cloud Platform**. The billing will occur if you consume anything once the free trial is over, or if you exceed the amount of spending allowed during the free trial.
-
-  In your `GCP account`, you have created a single `GCP project`, identified by its `PROJECT_ID`. The `GCP projects` allow you to organize and monitor more precisely how you consume the **GCP** ressources. For the purpose of the bootcamp, we are only going to create a single project.
-
-  Now, we need a way to tell which ressources within a `GCP project` our code will be allowed to consume. Our code consumes GCP ressources through API calls.
-
-  Since API calls are not free, it is important to define with caution how our code will be allowed to use them. During the bootcamp this will not be an issue and we are going to allow our code to use all the API of **GCP** without any restrictions.
-
-  In the same way that there may be several projects associated with a GCP account, a project may be composed of several services (any bundle of code, whatever its form factor, that requires the usage of GCP API calls in order to fulfill its purpose).
-
-  GCP requires that the services of the projects using API calls are registered on the platform and their credentials configured through the access granted to a `service account`.
-
-  For the moment we will only need to use a single service and will create the corresponding `service account`.
-</details>
-
-Since the [service account](https://cloud.google.com/iam/docs/service-accounts) is what identifies your application (and therefore your GCP billing account and ultimately your credit card), you are going to want to be cautious with the next steps.
-
-⚠️ **Do not share you service account json file 🔑** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
-
-- Go to the [service accounts page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
-- Select your project in the list of recent projects if asked to
-- Create a service account:
-  - Click on **CREATE SERVICE ACCOUNT**:
-  - Give a `Service account name` to that account
-  - Click on **CREATE AND CONTINUE**
-  - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all ressources
-  - Click on **CONTINUE**
-  - Click on **DONE**
-- Download the service account json file 🔑:
-  - Click on the newly created service account
-  - Click on **KEYS**
-  - Click on **ADD KEY** then **Create new key**
-  - Select **JSON** and click on **CREATE**
-
-![](https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp_create_key.png)
-
-The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`)
-
-
-### Configure Cloud sdk
-
-- Open the service account json file with any text editor and copy the key
-    ```
-    # It looks like:
-    {
-        "type": "service_account",
-        "project_id": "kevin-bootcamp",
-        "private_key_id": "1234567890",
-        "private_key": "-----BEGIN PRIVATE KEY-----\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n-----END PRIVATE KEY-----\n",
-        "client_email": "bootcamp@kevin-bootcamp.iam.gserviceaccount.com",
-        "client_id": "1234567890",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bootcamp%40kevin-bootcamp.iam.gserviceaccount.com"
-    }
-    ```
-- **on your Virtual Machine**, create a `~/.gcp_keys` directory, then create a json file in it:
-    ``` bash
-    mkdir ~/.gcp_keys
-    touch ~/.gcp_keys/le-wagon-de-bootcamp.json
-    ```
-- Open the json file then store the service account json file pasting the key:
-    ```bash
-    code ~/.gcp_keys/le-wagon-de-bootcamp.json
-    ```
-    ![service account json key](https://github.com/lewagon/data-engineering-setup/blob/main/images/service_account_json_key.png)
-
-    ❗️Don't forget to **save** the file with `CMD` + `s` or `CTRL` + `s`
-
-- Authenticate the `gcloud` CLI with the google account you used for GCP
-    ```bash
-    # Replace service_account_name@project_id.iam.gserviceaccount.com with your own
-    SERVICE_ACCOUNT_EMAIL=service_account_name@project_id.iam.gserviceaccount.com
-    KEY_FILE=$HOME/.gcp_keys/le-wagon-de-bootcamp.json
-    gcloud auth activate-service-account $SERVICE_ACCOUNT_EMAIL --key-file=$KEY_FILE
-    ```
-- List your active account and check your email address you used for GCP is present
-    ```bash
-    gcloud auth list
-    ```
-- Set your current project
-    ```bash
-    # Replace `PROJECT_ID` with the `ID` of your project, e.g. `wagon-bootcamp-123456`
-    gcloud config set project PROJECT_ID
-    ```
-- List your active account and current project and check your project is present
-    ```bash
-    gcloud config list
-    ```
 
 
 ## Dotfiles
@@ -1100,59 +973,9 @@ The following message should print:
 ![](images/docker_hello.png)
 
 
-  ## Kitt
 
-You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform).
+## This is it!
 
-Then you should receive an additional invitation from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and complete the information.
-
-If you haven't, please contact your teaching team.
-
-
-## Slack
-
-[Slack](https://slack.com/) is a communication platform pretty popular in the tech industry.
-
-### Installation
-
-[Download the Slack app](https://slack.com/downloads/windows) and install it.
-
-:warning: If you are already using Slack in your browser, please download and install **the desktop app** which is fully featured.
-
-
-### Settings
-
-Launch the app and sign in to `lewagon-alumni` organization.
-
-Make sure you **upload a profile picture** :point_down:
-
-![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
-
-The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
-
-To ensure that everything is working fine for video calls, let's test your camera and microphone:
-- Open the Slack app
-- Click your profile picture in the top right.
-- Select `Preferences` from the menu.
-- Click `Audio & video` in the left-side column.
-- Below `Troubleshooting`, click `Run an audio, video and screensharing test`. The test will open in a new window.
-- Check that your preferred speaker, microphone and camera devices appear in the drop-down menus, then click `Start test`.
-
-![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
-
-:heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
-
-:x: If not, **contact a teacher**.
-
-You can also install Slack app on your phone and sign in `lewagon-alumni`!
-
-
-## (Bonus) Kata
-
-If you are done with your setup, please ask around if some classmates need some help with theirs (macOS, Linux, Windows). We will have our first lectures at 2pm and will talk about the Setup you just did + onboard you on Kitt.
-
-If you don't have a lot of experience with `git` and GitHub, please [(re-)watch this workshop](https://www.youtube.com/watch?v=Z9fIBT2NBGY) (`1.25` playback speed is fine).
-
-If you do, then you can wait for the first lecture working on this [Tic-Tac-Toe Kata](https://www.codewars.com/kata/5b817c2a0ce070ace8002be0/python)
+Congratulations, you're all set! 🎉
 
 
