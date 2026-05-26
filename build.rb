@@ -277,7 +277,7 @@ end
 pairs = FILENAMES.flat_map { |filename, (os_name, partials)|
   LOCALES.flat_map { |locale|
     next [] if !locale.empty? && ENGLISH_ONLY.include?(filename)
-    partials.map { |partial| [partial, locale] }
+    partials.reject { |s| s.start_with?("#") }.map { |partial| [partial, locale] }
   }
 }.uniq
 loaded = pairs.map { |partial, locale| ["#{partial}.#{locale}", load_partial(partial, locale)] }.to_h
@@ -289,7 +289,7 @@ LOCALES.each do |locale|
     filename += ".#{locale}" unless locale.empty?
     filename += ".md"
     File.open(filename, "w:utf-8") do |f|
-      partials.each do |partial|
+      partials.reject { |s| s.start_with?("#") }.each do |partial|
         content = loaded["#{partial}.#{locale}"].clone
         # remove the OS dependant blocks
         removed_blocks = DELIMITERS.keys - [os_name]
