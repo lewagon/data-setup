@@ -20,6 +20,7 @@ In order to move forwards, you will need to use:
   In this setup we will publish the **public** key to the virtual machine provided by Le Wagon in order to identify ourselves. We will then use the **PRIVATE** key to authenticate remotely and connect to the virtual machine.
 </details>
 
+
 Retrieve your SSH **public** key using the command below:
 - Replace the path to your **public** key
 
@@ -77,6 +78,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   The virtual machine is not started, ask a teacher for help 🙋
 </details>
 
+
 <details>
 
   <summary>❌ Connection refused</summary>
@@ -88,6 +90,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
 
   This can happen if the virtual machine was just started and the SSH server is not ready yet to accept connections. If the issue persists after a couple of minutes, ask a teacher for help 🙋
 </details>
+
 
 A new terminal invite should be visible once connected to the machine:
 
