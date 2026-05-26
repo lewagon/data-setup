@@ -197,8 +197,8 @@ REMOTE_SETUP = %w[
   setup/oh_my_zsh
   direnv
   setup/gh_cli
-  de_setup/ubuntu_gcloud
-  de_setup/gcp_setup_linux
+  #de_setup/ubuntu_gcloud
+  #de_setup/gcp_setup_linux
   dotfiles
   dotfiles_new_student
   dotfiles_new_laptop
@@ -215,11 +215,11 @@ REMOTE_SETUP = %w[
   python_checkup
   dbeaver
   ubuntu_docker
-  de_setup/gcp_setup
-  kitt
-  setup/windows_slack
-  setup/slack_settings
-  kata
+  #de_setup/gcp_setup
+  #kitt
+  #setup/windows_slack
+  #setup/slack_settings
+  #kata
 ]
 
 LOCALES = ["", "es"]  # english + spanish locales
