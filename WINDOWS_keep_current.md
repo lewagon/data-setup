@@ -298,9 +298,15 @@ Make sure you can run Jupyter:
 jupyter notebook
 ```
 
-Your web browser should open on a `jupyter` window:
+Let's open the jupyter app:
 
-![jupyter.png](images/jupyter.png)
+<details>
+
+  <summary>Regular setup</summary>
+
+  Your web browser should open on a `jupyter` window.
+</details>
+
 
 <details>
 
@@ -321,6 +327,10 @@ Your web browser should open on a `jupyter` window:
   You are now interacting from your local machine with the jupyter application running in your virtual machine.
 </details>
 
+
+You now have access to the `jupyter` window:
+
+![jupyter.png](images/jupyter.png)
 
 Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
 
