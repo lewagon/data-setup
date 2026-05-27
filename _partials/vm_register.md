@@ -1,5 +1,5 @@
 
-## Redeem your virtual machine
+## Redeem your Virtual Machine (VM)
 
 Let's redeem the virtual machine on which we will work.
 

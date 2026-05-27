@@ -1,6 +1,10 @@
 
 ## Verify the connection to your virtual machine
 
+Once the VM is started, it takes a couple of minutes for the SSH server to be ready and accept incoming connections ⏳
+
+You may take a quick sip ☕️
+
 Let's check the connection to the virtual machine with the command below:
 - Replace `👉YOUR_IP_ADDRESS👈` with the IP address of your virtual machine
 - Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
