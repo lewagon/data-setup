@@ -318,6 +318,26 @@ Your web browser should open on a `jupyter` window:
 
 ![jupyter.png](images/jupyter.png)
 
+<details>
+
+  <summary>Virtual machine setup</summary>
+
+  VSCode detects that a jupyter notebook started in your virtual machine and creates a port forward in order to allow you to open the application in your browser.
+
+  Hit Open in Browser or go to http://localhost:8888/ (the url to use is available in the terminal).
+
+  ![](images/jupyter_port_forward.png)
+
+  On the first run, jupyter will ask for the token displayed in the terminal of your virtual machine in order to allow you to connect to the application from your local machine.
+
+  Fill the token and hit Log in.
+
+  ![](images/jupyter_token.png)
+
+  You are now interacting from your local machine with the jupyter application running in your virtual machine.
+</details>
+
+
 Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
 
 ![jupyter_new.png](images/jupyter_new.png)
