@@ -1037,7 +1037,7 @@ The following message should print:
 
 ## Stop the VM
 
-Now that we are done with the setup, we can turn off the VM to converve energy 💡
+Now that we are done with the setup, we can turn off the VM to conserve energy 💡
 
 Let's stop your virtual machine:
 - Go to https://github.com/lewagon/remote-setup/issues
@@ -1061,5 +1061,3 @@ After a couple of minutes, a comment should appear and indicate that the operati
 ## This is it!
 
 Congratulations, you're all set! 🎉
-
-

@@ -1,7 +1,7 @@
 
 ## Stop the VM
 
-Now that we are done with the setup, we can turn off the VM to converve energy 💡
+Now that we are done with the setup, we can turn off the VM to conserve energy 💡
 
 Let's stop your virtual machine:
 - Go to https://github.com/lewagon/remote-setup/issues
