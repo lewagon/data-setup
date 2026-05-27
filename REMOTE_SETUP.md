@@ -77,7 +77,9 @@ Your new SSH Key will be named `de-bootcamp`. Make sure to remember it for later
 
 
 
-## Authenticate to your virtual machine
+## Redeem your Virtual Machine (VM)
+
+Let's redeem the virtual machine on which we will work.
 
 In order to move forwards, you will need to use:
 - The SSH **public** and **PRIVATE** keys you just created
@@ -147,7 +149,36 @@ After a couple of minutes, a comment should appear and indicate that the operati
 
 ![](images/register_complete.png)
 
-Now let's check the connection to the virtual machine with the command below:
+
+
+## Let's start your VM for the first time
+
+Your virtual machine is like any regular computer. You will not be able to access and use it unless it is started. To conserve energy, it should be turned off whenever it is not in use 💡
+
+Let's start your virtual machine:
+- Go to https://github.com/lewagon/remote-setup/issues
+- Click on **New issue**
+- Select **Start my VM**
+- Enter your alias
+- Validate with **Create**
+
+![](images/vm_start.png)
+
+👉 The VM is being started
+
+After a couple of minutes, a comment should appear and indicate that the operation is complete. If the start fails, ask a teacher for help 🙋
+
+![](images/vm_start_res.png)
+
+
+
+## Verify the connection to your virtual machine
+
+Once the VM is started, it takes a couple of minutes for the SSH server to be ready and accept incoming connections ⏳
+
+You may take a quick sip ☕️
+
+Let's check the connection to the virtual machine with the command below:
 - Replace `👉YOUR_IP_ADDRESS👈` with the IP address of your virtual machine
 - Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
 
@@ -971,6 +1002,29 @@ docker run hello-world
 The following message should print:
 
 ![](images/docker_hello.png)
+
+
+
+## Stop the VM
+
+Now that we are done with the setup, we can turn off the VM to converve energy 💡
+
+Let's stop your virtual machine:
+- Go to https://github.com/lewagon/remote-setup/issues
+- Click on **New issue**
+- Select **Stop my VM**
+- Enter your alias
+- Validate with **Create**
+
+![](images/vm_stop.png)
+
+👉 The VM is being stopped
+
+You will notice it takes a couple of minutes more to stop the VM than it takes to start it.
+
+After a couple of minutes, a comment should appear and indicate that the operation is complete. If the stop fails, ask a teacher for help 🙋
+
+![](images/vm_stop_res.png)
 
 
 
