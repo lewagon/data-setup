@@ -77,7 +77,9 @@ Your new SSH Key will be named `de-bootcamp`. Make sure to remember it for later
 
 
 
-## Authenticate to your virtual machine
+## Redeem your virtual machine
+
+Let's redeem the virtual machine on which we will work.
 
 In order to move forwards, you will need to use:
 - The SSH **public** and **PRIVATE** keys you just created
@@ -147,7 +149,13 @@ After a couple of minutes, a comment should appear and indicate that the operati
 
 ![](images/register_complete.png)
 
-Now let's check the connection to the virtual machine with the command below:
+
+
+
+
+## Verify the connection to your virtual machine
+
+Let's check the connection to the virtual machine with the command below:
 - Replace `👉YOUR_IP_ADDRESS👈` with the IP address of your virtual machine
 - Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
 
@@ -971,6 +979,8 @@ docker run hello-world
 The following message should print:
 
 ![](images/docker_hello.png)
+
+
 
 
 

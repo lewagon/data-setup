@@ -189,6 +189,8 @@ REMOTE_SETUP = %w[
   setup/github
   de_setup/ssh_key
   vm_register
+  vm_start
+  vm_test
   de_setup/win_vscode
   de_setup/vscode_remote_ssh
   vscode_extensions
@@ -220,6 +222,7 @@ REMOTE_SETUP = %w[
   #setup/windows_slack
   #setup/slack_settings
   #kata
+  vm_stop
   end
 ]
 

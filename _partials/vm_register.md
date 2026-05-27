@@ -1,5 +1,7 @@
 
-## Authenticate to your virtual machine
+## Redeem your virtual machine
+
+Let's redeem the virtual machine on which we will work.
 
 In order to move forwards, you will need to use:
 - The SSH **public** and **PRIVATE** keys you just created
@@ -68,74 +70,3 @@ After a couple of minutes, a comment should appear and indicate that the operati
 ❗️ Retrieve the IP address of your virtual machine and note it down for later
 
 ![](images/register_complete.png)
-
-Now let's check the connection to the virtual machine with the command below:
-- Replace `👉YOUR_IP_ADDRESS👈` with the IP address of your virtual machine
-- Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
-
-<details>
-  <summary markdown='span'>Windows</summary>
-
-``` bash
-ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
-# ssh -i C:\Users\<YourUsername>\.ssh\id_ed25519 lewagon@34.52.208.105
-```
-</details>
-
-<details>
-  <summary markdown='span'>MacOS & Linux</summary>
-
-``` bash
-ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
-# ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
-```
-</details>
-
-
-<details>
-
-  <summary>❌ Operation timed out</summary>
-
-  Error:
-
-  ``` bash
-  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
-  ssh: connect to host 34.52.208.105 port 22: Operation timed out
-  ```
-
-  The virtual machine is not started, ask a teacher for help 🙋
-</details>
-
-
-<details>
-
-  <summary>❌ Connection refused</summary>
-
-  ``` bash
-  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
-  ssh: connect to host 34.52.208.105 port 22: Connection refused
-  ```
-
-  This can happen if the virtual machine was just started and the SSH server is not ready yet to accept connections. If the issue persists after a couple of minutes, ask a teacher for help 🙋
-</details>
-
-
-A new terminal invite should be visible once connected to the machine:
-
-``` bash
-lewagon@daring-tuna-9609dab8:~$
-```
-
-You can now disconnect from the virtual machine:
-
-``` bash
-exit
-```
-
-You will be back to the regular terminal prompt:
-
-``` bash
-lewagon@daring-tuna-9609dab8:~$ exit
-logout
-Connection to 34.52.208.105 closed.
-```
