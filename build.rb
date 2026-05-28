@@ -1,5 +1,7 @@
-require 'open-uri'
 #!/usr/bin/env ruby -wU
+
+require 'open-uri'
+
 CONSTANTS = {
   'PYTHON_VERSION' => '3.12.9',
   'PYTHON_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh',
