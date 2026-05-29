@@ -185,7 +185,7 @@ VM = %w[
   kata
 ]
 
-# student installs vscode, uses vm provided by lewagon, runs setup on vm
+# student installs vscode, redeems vm provided by lewagon, runs setup on vm
 REMOTE_SETUP = %w[
   intro
   setup/github
