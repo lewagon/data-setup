@@ -6,6 +6,7 @@ Let's redeem the virtual machine on which we will work.
 In order to move forwards, you will need to use:
 - The SSH **public** and **PRIVATE** keys you just created
 - The alias provided to you by Le Wagon
+- The IP address provided to you by Le Wagon
 
 <details>
 
@@ -66,7 +67,5 @@ Now let's register your SSH key:
 👉 Your SSH **public** key is being added to your virtual machine
 
 After a couple of minutes, a comment should appear and indicate that the operation is complete. If the registration fails, ask a teacher for help 🙋
-
-❗️ Retrieve the IP address of your virtual machine and note it down for later
 
 ![](images/register_complete.png)
