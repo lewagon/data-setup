@@ -52,7 +52,7 @@ You should see something similar to the following even though multiple formats e
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG8ToZnCWvZkjqw6ueq3RRWSGtGE6DE+VODZQEHibYMY alexdev@gmail.com
 ```
 
-Fetch the alias provided to you by Le Wagon. The alias contains random pet names separated by dashes, for exampe `daring-tuna-1a03dab5`. If you cannot find it, ask a teacher for help 🙋
+Fetch the alias provided to you by Le Wagon. The alias contains random pet names separated by dashes, for exampe `actual-macaque-5115d600`. If you cannot find it, ask a teacher for help 🙋
 
 Now let's register your SSH key:
 - Go to https://github.com/lewagon/remote-setup/issues
