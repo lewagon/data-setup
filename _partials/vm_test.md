@@ -59,7 +59,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
 A new terminal invite should be visible once connected to the machine:
 
 ``` bash
-lewagon@daring-tuna-9609dab8:~$
+lewagon@actual-macaque-5115d600:~$
 ```
 
 You can now disconnect from the virtual machine:
@@ -71,7 +71,7 @@ exit
 You will be back to the regular terminal prompt:
 
 ``` bash
-lewagon@daring-tuna-9609dab8:~$ exit
+lewagon@actual-macaque-5115d600:~$ exit
 logout
 Connection to 34.52.208.105 closed.
 ```
