@@ -6,7 +6,7 @@ Once the VM is started, it takes a couple of minutes for the SSH server to be re
 You may take a quick sip ☕️
 
 Let's check the connection to the virtual machine with the command below:
-- Replace `👉YOUR_IP_ADDRESS👈` with the IP address of your virtual machine
+- Replace `👉YOUR_IP_ADDRESS👈` with the IP address for your virtual machine provided to you by Le Wagon
 - Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
 
 <details>
