@@ -1,12 +1,12 @@
 
 CONSTANTS = {
-  'PYTHON_VERSION' => '3.12.9',
-  'PYTHON_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh',
-  'PIP_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh',
-  'PIP_LOADER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py',
-  'CODE_EDITOR' => 'VS Code',
-  'CODE_EDITOR_CMD' => 'code'
-}
+  'PYTHON_VERSION'      => '3.12.9',
+  'PYTHON_CHECKER_URL'  => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh',
+  'PIP_CHECKER_URL'     => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh',
+  'PIP_LOADER_URL'      => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py',
+  'CODE_EDITOR'         => 'VS Code',
+  'CODE_EDITOR_CMD'     => 'code'
+}.freeze
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
 MAC_OS = %w[
@@ -225,7 +225,7 @@ REMOTE_SETUP = %w[
   end
 ].freeze
 
-LOCALES = ['', 'es'].freeze  # english + spanish locales
+LOCALES = ['', 'es'].freeze # english + spanish locales
 ENGLISH_ONLY = %w[REMOTE_SETUP].freeze
 
 # Maps output filename to its OS target (for conditional block filtering) and partial list.
@@ -238,11 +238,11 @@ BUILDS = {
   'macOS_keep_current'   => { os: 'macOS',   partials: MAC_OS_KC },
   'LINUX_keep_current'   => { os: 'LINUX',   partials: LINUX_KC },
   'VM'                   => { os: 'LINUX',   partials: VM },
-  'REMOTE_SETUP'         => { os: 'LINUX',   partials: REMOTE_SETUP },
-}
+  'REMOTE_SETUP'         => { os: 'LINUX',   partials: REMOTE_SETUP }
+}.freeze
 
 DELIMITERS = {
   'WINDOWS' => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
   'macOS'   => ["\\$MAC_START\n",     "\\$MAC_END\n"],
-  'LINUX'   => ["\\$LINUX_START\n",   "\\$LINUX_END\n"],
-}
+  'LINUX'   => ["\\$LINUX_START\n",   "\\$LINUX_END\n"]
+}.freeze
