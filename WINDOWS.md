@@ -670,10 +670,12 @@ Do not hesitate to **contact a teacher**.
 
 [direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
 
+
 ``` bash
 sudo apt-get update; sudo apt-get install direnv
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
+
 
 
 ## GitHub CLI
@@ -963,7 +965,9 @@ Check if you have `conda` installed on your machine:
 ```bash
 conda list
 ```
+
 If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install `pyenv`** section.
+
 
 <details>
     <summary markdown='span'><code>conda</code> uninstall instructions</summary>
@@ -978,10 +982,12 @@ anaconda-clean --yes
 rm -rf ~/anaconda2
 rm -rf ~/anaconda3
 rm -rf ~/.anaconda_backup
+
 ```
 - Remove Anaconda path from your `.bash_profile`
     - Open the file with `code ~/.bash_profile`
     - If the file opens find the line matching the following pattern `export PATH="/path/to/anaconda3/bin:$PATH"` and delete the line
+
 - Restart your terminal with `exec zsh`
 - Remove Anaconda initialization from your `.zshrc`:
     - Open the file with `code ~/.zshrc` 
@@ -1090,9 +1096,11 @@ pip install --upgrade pip
 
 Then let's install some packages for the first weeks of the program:
 
+
 ``` bash
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
+
 
 
 ## Jupyter Notebook tweaking
@@ -1500,9 +1508,11 @@ Once the verification goes through, you should receive an email stating that "Yo
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
+
 ```bash
 gcloud auth login --no-launch-browser
 ```
+
 
 - Login to your Google account on the new tab opened in your web browser
 - List your active account and check your email address you used for GCP is present

@@ -86,9 +86,11 @@ type -a pyenv > /dev/null && eval "$(pyenv init --path)"
 
 Update pyenv :
 
+
 ``` bash
 brew update && brew upgrade pyenv
 ```
+
 
 Install the current python version :
 
@@ -140,6 +142,7 @@ pyenv versions
 pip install -U pip
 ```
 
+
 If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
@@ -159,6 +162,7 @@ If your computer uses **Apple Intel**, expand the paragraph below and go through
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
 ```
 </details>
+
 
 ## GCP
 
@@ -268,7 +272,9 @@ gcloud auth configure-docker
 
 ## Docker
 
+
 Start the Docker app
+
 
 Verify that Docker can run the hello-world image :
 
@@ -278,7 +284,9 @@ docker run hello-world
 
 👉 Make sure that this command completes correctly
 
+
 Stop the Docker app
+
 
 
 ## Python setup check

@@ -86,9 +86,11 @@ type -a pyenv > /dev/null && eval "$(pyenv init --path)"
 
 Actualiza pyenv:
 
+
 ``` bash
 cd $(pyenv root) && git pull
 ```
+
 
 Instala la versión actual de python:
 
@@ -140,9 +142,11 @@ pyenv versions
 pip install -U pip
 ```
 
+
 ``` bash
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
+
 
 ## GCP
 
@@ -252,7 +256,9 @@ gcloud auth configure-docker
 
 ## Docker
 
+
 Start the Docker Desktop app
+
 
 Verifica que Docker pueda ejecutar la imagen de hello-world:
 
@@ -262,7 +268,9 @@ docker run hello-world
 
 👉 Asegúrate de que este comando se ejecute completamente
 
+
 Stop the Docker Desktop app
+
 
 
 ## Chequeo de la configuración de Python
