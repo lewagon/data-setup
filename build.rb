@@ -57,12 +57,7 @@ def collect_partials
 end
 
 def render_content(content, os_name, variables)
-  (DELIMITERS.keys - [os_name]).each do |block|
-    start_d, end_d = DELIMITERS[block]
-    content.gsub!(/#{start_d}(.|\n)*?(?<!#{end_d})#{end_d}/, "")
-  end
-  DELIMITERS[os_name].each { |d| content.gsub!(/#{d}/, "") }
-  content = Liquid::Template.parse(content).render(variables)
+  content = Liquid::Template.parse(content).render(variables.merge('os' => os_name))
   CONSTANTS.each { |k, v| content.gsub!("<#{k}>", v) }
   content
 end

@@ -231,18 +231,12 @@ ENGLISH_ONLY = %w[REMOTE_SETUP].freeze
 # Maps output filename to its OS target (for conditional block filtering) and partial list.
 # Entries prefixed with "#" in a partial list are skipped (used to document excluded steps).
 BUILDS = {
-  'WINDOWS'              => { os: 'WINDOWS', partials: WINDOWS },
-  'macOS'                => { os: 'macOS',   partials: MAC_OS },
-  'LINUX'                => { os: 'LINUX',   partials: LINUX },
-  'WINDOWS_keep_current' => { os: 'WINDOWS', partials: WINDOWS_KC },
-  'macOS_keep_current'   => { os: 'macOS',   partials: MAC_OS_KC },
-  'LINUX_keep_current'   => { os: 'LINUX',   partials: LINUX_KC },
-  'VM'                   => { os: 'LINUX',   partials: VM },
-  'REMOTE_SETUP'         => { os: 'LINUX',   partials: REMOTE_SETUP }
-}.freeze
-
-DELIMITERS = {
-  'WINDOWS' => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
-  'macOS'   => ["\\$MAC_START\n",     "\\$MAC_END\n"],
-  'LINUX'   => ["\\$LINUX_START\n",   "\\$LINUX_END\n"]
+  'WINDOWS'              => { os: 'windows', partials: WINDOWS },
+  'macOS'                => { os: 'macos',   partials: MAC_OS },
+  'LINUX'                => { os: 'linux',   partials: LINUX },
+  'WINDOWS_keep_current' => { os: 'windows', partials: WINDOWS_KC },
+  'macOS_keep_current'   => { os: 'macos',   partials: MAC_OS_KC },
+  'LINUX_keep_current'   => { os: 'linux',   partials: LINUX_KC },
+  'VM'                   => { os: 'linux',   partials: VM },
+  'REMOTE_SETUP'         => { os: 'linux',   partials: REMOTE_SETUP }
 }.freeze
