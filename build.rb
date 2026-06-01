@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby -wU
 
 require 'open-uri'
+require 'liquid'
 
 CONSTANTS = {
   'PYTHON_VERSION' => '3.12.9',
@@ -279,11 +280,23 @@ def load_partial(partial, locale)
   return content
 end
 
+def partial_name(entry)
+  entry.is_a?(Array) ? entry[0] : entry
+end
+
+def partial_vars(entry)
+  entry.is_a?(Array) ? entry[1] : {}
+end
+
+def skipped?(entry)
+  partial_name(entry).start_with?("#")
+end
+
 # load partials (skip non-English locales for ENGLISH_ONLY configurations)
 pairs = FILENAMES.flat_map { |filename, (os_name, partials)|
   LOCALES.flat_map { |locale|
     next [] if !locale.empty? && ENGLISH_ONLY.include?(filename)
-    partials.reject { |s| s.start_with?("#") }.map { |partial| [partial, locale] }
+    partials.reject { |entry| skipped?(entry) }.map { |entry| [partial_name(entry), locale] }
   }
 }.uniq
 loaded = pairs.map { |partial, locale| ["#{partial}.#{locale}", load_partial(partial, locale)] }.to_h
@@ -295,8 +308,8 @@ LOCALES.each do |locale|
     filename += ".#{locale}" unless locale.empty?
     filename += ".md"
     File.open(filename, "w:utf-8") do |f|
-      partials.reject { |s| s.start_with?("#") }.each do |partial|
-        content = loaded["#{partial}.#{locale}"].clone
+      partials.reject { |entry| skipped?(entry) }.each do |entry|
+        content = loaded["#{partial_name(entry)}.#{locale}"].clone
         # remove the OS dependant blocks
         removed_blocks = DELIMITERS.keys - [os_name]
         removed_blocks.each do |block|
@@ -308,6 +321,10 @@ LOCALES.each do |locale|
         DELIMITERS[os_name].each do |delimiter|
           content.gsub!(/#{delimiter}/, "")
         end
+        # render Liquid templates (local partials use {{ var }} syntax)
+        variables = CONSTANTS.merge(partial_vars(entry))
+        content = Liquid::Template.parse(content).render(variables)
+        # gsub fallback for external partials that still use <PLACEHOLDER> syntax
         CONSTANTS.each do |placeholder, value|
           content.gsub!("<#{placeholder}>", value)
         end
