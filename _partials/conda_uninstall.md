@@ -9,15 +9,13 @@ Check if you have `conda` installed on your machine:
 ```bash
 conda list
 ```
-$MAC_START
+{% if os == "macos" %}
 If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install pre-requisites** section.
-$MAC_END
-$LINUX_START
+{% elsif os == "linux" %}
 If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install `pyenv`** section.
-$LINUX_END
-$WINDOWS_START
+{% elsif os == "windows" %}
 If you have `zsh: command not found: conda`, you can **skip** the uninstall of `conda` and jump to the **Install `pyenv`** section.
-$WINDOWS_END
+{% endif %}
 
 <details>
     <summary markdown='span'><code>conda</code> uninstall instructions</summary>
@@ -32,19 +30,18 @@ anaconda-clean --yes
 rm -rf ~/anaconda2
 rm -rf ~/anaconda3
 rm -rf ~/.anaconda_backup
-$MAC_START
+{% if os == "macos" %}
 rm -rf ~/opt
-$MAC_END
+{% endif %}
 ```
 - Remove Anaconda path from your `.bash_profile`
     - Open the file with `code ~/.bash_profile`
     - If the file opens find the line matching the following pattern `export PATH="/path/to/anaconda3/bin:$PATH"` and delete the line
-$MAC_START
+{% if os == "macos" %}
     - Save the file with `CMD` + `s`
-$MAC_END
-$LINUX_START
+{% elsif os == "linux" %}
     - Save the file with `CTRL` + `s`
-$LINUX_END
+{% endif %}
 - Restart your terminal with `exec zsh`
 - Remove Anaconda initialization from your `.zshrc`:
     - Open the file with `code ~/.zshrc` 

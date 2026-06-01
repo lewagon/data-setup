@@ -86,21 +86,19 @@ type -a pyenv > /dev/null && eval "$(pyenv init --path)"
 
 Update pyenv :
 
-$MAC_START
+{% if os == "macos" %}
 ``` bash
 brew update && brew upgrade pyenv
 ```
-$MAC_END
-$LINUX_START
+{% elsif os == "linux" %}
 ``` bash
 cd $(pyenv root) && git pull
 ```
-$LINUX_END
-$WINDOWS_START
+{% elsif os == "windows" %}
 ``` bash
 cd $(pyenv root) && git pull
 ```
-$WINDOWS_END
+{% endif %}
 
 Install the current python version :
 
@@ -152,7 +150,7 @@ pyenv versions
 pip install -U pip
 ```
 
-$MAC_START
+{% if os == "macos" %}
 If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
 
 <details>
@@ -172,17 +170,15 @@ If your computer uses **Apple Intel**, expand the paragraph below and go through
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
 ```
 </details>
-$MAC_END
-$WINDOWS_START
+{% elsif os == "windows" %}
 ``` bash
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
-$WINDOWS_END
-$LINUX_START
+{% elsif os == "linux" %}
 ``` bash
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
-$LINUX_END
+{% endif %}
 
 ## GCP
 
@@ -292,19 +288,17 @@ gcloud auth configure-docker
 
 ## Docker
 
-$MAC_START
+{% if os == "macos" %}
 Start the Docker app
-$MAC_END
-$LINUX_START
+{% elsif os == "linux" %}
 Start Docker :
 
 ``` bash
 sudo service docker start
 ```
-$LINUX_END
-$WINDOWS_START
+{% elsif os == "windows" %}
 Start the Docker Desktop app
-$WINDOWS_END
+{% endif %}
 
 Verify that Docker can run the hello-world image :
 
@@ -314,16 +308,14 @@ docker run hello-world
 
 👉 Make sure that this command completes correctly
 
-$MAC_START
+{% if os == "macos" %}
 Stop the Docker app
-$MAC_END
-$LINUX_START
+{% elsif os == "linux" %}
 Stop Docker :
 
 ``` bash
 sudo service docker stop
 ```
-$LINUX_END
-$WINDOWS_START
+{% elsif os == "windows" %}
 Stop the Docker Desktop app
-$WINDOWS_END
+{% endif %}
