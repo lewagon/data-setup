@@ -228,7 +228,7 @@ REMOTE_SETUP = %w[
 LOCALES = ['', 'es'].freeze # english + spanish locales
 ENGLISH_ONLY = %w[REMOTE_SETUP].freeze
 
-# Maps output filename to its OS target (for conditional block filtering) and partial list.
+# Maps output build filename to its OS target (for conditional block filtering) and partial list.
 # Entries prefixed with "#" in a partial list are skipped (used to document excluded steps).
 BUILDS = {
   'WINDOWS'              => { os: 'windows', partials: WINDOWS },
