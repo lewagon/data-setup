@@ -103,7 +103,7 @@ cd $(pyenv root) && git pull
 Instala la versión actual de python:
 
 ```bash
-pyenv install <PYTHON_VERSION>
+pyenv install {{ PYTHON_VERSION }}
 ```
 
 👉 Asegúrate de que el comando se ejecute completamente y luego **reinicia tu terminal**.
@@ -117,7 +117,7 @@ pyenv virtualenv-delete lewagon_current
 Crea un nuevo ambiente virtual:
 
 ```bash
-pyenv virtualenv <PYTHON_VERSION> lewagon_current
+pyenv virtualenv {{ PYTHON_VERSION }} lewagon_current
 ```
 
 Define el nuevo ambiente virtual como predeterminado:
@@ -136,8 +136,8 @@ pyenv versions
 
 ``` bash
   system
-  <PYTHON_VERSION>
-  <PYTHON_VERSION>/envs/lewagon_current
+  {{ PYTHON_VERSION }}
+  {{ PYTHON_VERSION }}/envs/lewagon_current
   3.7.6
   3.7.6/envs/lewagon
 * lewagon_current

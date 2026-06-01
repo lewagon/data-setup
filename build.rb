@@ -57,9 +57,7 @@ def collect_partials
 end
 
 def render_content(content, os_name, variables)
-  content = Liquid::Template.parse(content).render(variables.merge('os' => os_name))
-  CONSTANTS.each { |k, v| content.gsub!("<#{k}>", v) }
-  content
+  Liquid::Template.parse(content).render(variables.merge('os' => os_name))
 end
 
 def generate_files(loaded)

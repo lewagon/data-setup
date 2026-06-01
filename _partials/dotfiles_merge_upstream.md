@@ -28,11 +28,11 @@ Time to merge the changes from `lewagon/dotfiles` into yours:
 
   First abort the merge: `git merge --abort`.
 
-  Run `<CODE_EDITOR_CMD> .`
+  Run `{{ CODE_EDITOR_CMD }} .`
 
-  In <CODE_EDITOR>, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
+  In {{ CODE_EDITOR }}, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
 
-  Still in <CODE_EDITOR>, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
+  Still in {{ CODE_EDITOR }}, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
 
   Back in the terminal, run a `git diff` and check if this didn't remove any personal configuration setting that you wanted to keep.
 
