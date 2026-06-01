@@ -232,105 +232,105 @@ REMOTE_SETUP = %w[
 LOCALES = ["", "es"]  # english + spanish locales
 ENGLISH_ONLY = %w[REMOTE_SETUP].freeze
 
-FILENAMES = {
-  "WINDOWS" => ["WINDOWS", WINDOWS],
-  "macOS" => ["macOS", MAC_OS],
-  "LINUX" => ["LINUX", LINUX],
-  "WINDOWS_keep_current" => ["WINDOWS", WINDOWS_KC],
-  "macOS_keep_current" => ["macOS", MAC_OS_KC],
-  "LINUX_keep_current" => ["LINUX", LINUX_KC],
-  "VM" => ["LINUX", VM],
-  "REMOTE_SETUP" => ["LINUX", REMOTE_SETUP]
+# Maps output filename to its OS target (for conditional block filtering) and partial list.
+# Entries prefixed with "#" in a partial list are skipped (used to document excluded steps).
+BUILDS = {
+  "WINDOWS"              => { os: "WINDOWS", partials: WINDOWS },
+  "macOS"                => { os: "macOS",   partials: MAC_OS },
+  "LINUX"                => { os: "LINUX",   partials: LINUX },
+  "WINDOWS_keep_current" => { os: "WINDOWS", partials: WINDOWS_KC },
+  "macOS_keep_current"   => { os: "macOS",   partials: MAC_OS_KC },
+  "LINUX_keep_current"   => { os: "LINUX",   partials: LINUX_KC },
+  "VM"                   => { os: "LINUX",   partials: VM },
+  "REMOTE_SETUP"         => { os: "LINUX",   partials: REMOTE_SETUP },
 }
 
 DELIMITERS = {
   "WINDOWS" => ["\\$WINDOWS_START\n", "\\$WINDOWS_END\n"],
-  "macOS" => ["\\$MAC_START\n", "\\$MAC_END\n"],
-  "LINUX" => ["\\$LINUX_START\n", "\\$LINUX_END\n"],
+  "macOS"   => ["\\$MAC_START\n",     "\\$MAC_END\n"],
+  "LINUX"   => ["\\$LINUX_START\n",   "\\$LINUX_END\n"],
 }
 
+def load_de_setup_partial(name, locale)
+  name = File.join(locale, name) unless locale.empty?
+  file = File.join("_partials", "#{name}.md")
+  content = URI.open("https://raw.githubusercontent.com/lewagon/data-engineering-setup/main/#{file}").read
+  content.scan(/\!\[.*\]\((.*)\)/).flatten
+         .reject { |ip| ip.start_with?("http") }
+         .each   { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}") }
+  content.scan(/src="(images\/.*)"/).flatten
+         .each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}") }
+  content
+end
+
+def load_setup_partial(name, locale)
+  name = File.join(locale, name) unless locale.empty?
+  file = File.join("_partials", "#{name}.md")
+  content = URI.open("https://raw.githubusercontent.com/lewagon/setup/master/#{file}").read
+  content.scan(/\!\[.*\]\((.*)\)/).flatten
+         .each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/master/#{ip}") }
+  content
+end
+
+def load_local_partial(name, locale)
+  name = File.join(locale, name) unless locale.empty?
+  File.read(File.join("_partials", "#{name}.md"), encoding: "utf-8")
+end
+
 def load_partial(partial, locale)
-  match_setup = partial.match(/setup\/(?<partial>[0-9a-z_]+)/)
-  match_de_setup = partial.match(/de_setup\/(?<partial>[0-9a-z_]+)/)
-  if match_de_setup
-    partial = match_de_setup[:partial]
-  elsif match_setup
-    partial = match_setup[:partial]
-  end
-  partial = File.join(locale, partial) unless locale.empty?
-  file = File.join("_partials", "#{partial}.md")
-  if match_de_setup
-    content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/data-engineering-setup/main", file))
-            .read
-    # replace data-setup repo relative path by data-engineering-setup repo URL
-    image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
-    image_paths.reject { |ip| ip.start_with?("http") }.each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}")}
-    # alternative image format
-    image_paths = content.scan(/src="(images\/.*)"/).flatten
-    image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}")}
-  elsif match_setup
-    content = URI.open(File.join("https://raw.githubusercontent.com/lewagon/setup/master", file))
-            .read
-    # replace data-setup repo relative path by setup repo URL
-    image_paths = content.scan(/\!\[.*\]\((.*)\)/).flatten
-    image_paths.each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/master/#{ip}")}
+  if (m = partial.match(%r{\Ade_setup/(?<name>[0-9a-z_]+)\z}))
+    load_de_setup_partial(m[:name], locale)
+  elsif (m = partial.match(%r{\Asetup/(?<name>[0-9a-z_]+)\z}))
+    load_setup_partial(m[:name], locale)
   else
-    content = File.read(file, encoding: "utf-8")
+    load_local_partial(partial, locale)
   end
-  return content
 end
 
-def partial_name(entry)
-  entry.is_a?(Array) ? entry[0] : entry
+def partial_name(entry) = entry.is_a?(Array) ? entry[0] : entry
+def partial_vars(entry) = entry.is_a?(Array) ? entry[1] : {}
+def skipped?(entry) = partial_name(entry).start_with?("#")
+
+def collect_partials
+  BUILDS.flat_map { |filename, build|
+    LOCALES.flat_map { |locale|
+      next [] if !locale.empty? && ENGLISH_ONLY.include?(filename)
+      build[:partials].reject { |e| skipped?(e) }.map { |e| [partial_name(e), locale] }
+    }
+  }.uniq.map { |partial, locale|
+    ["#{partial}.#{locale}", load_partial(partial, locale)]
+  }.to_h
 end
 
-def partial_vars(entry)
-  entry.is_a?(Array) ? entry[1] : {}
+def render_content(content, os_name, variables)
+  (DELIMITERS.keys - [os_name]).each do |block|
+    start_d, end_d = DELIMITERS[block]
+    content.gsub!(/#{start_d}(.|\n)*?(?<!#{end_d})#{end_d}/, "")
+  end
+  DELIMITERS[os_name].each { |d| content.gsub!(/#{d}/, "") }
+  content = Liquid::Template.parse(content).render(variables)
+  CONSTANTS.each { |k, v| content.gsub!("<#{k}>", v) }
+  content
 end
 
-def skipped?(entry)
-  partial_name(entry).start_with?("#")
-end
+def generate_files(loaded)
+  LOCALES.each do |locale|
+    BUILDS.each do |filename, build|
+      next if !locale.empty? && ENGLISH_ONLY.include?(filename)
 
-# load partials (skip non-English locales for ENGLISH_ONLY configurations)
-pairs = FILENAMES.flat_map { |filename, (os_name, partials)|
-  LOCALES.flat_map { |locale|
-    next [] if !locale.empty? && ENGLISH_ONLY.include?(filename)
-    partials.reject { |entry| skipped?(entry) }.map { |entry| [partial_name(entry), locale] }
-  }
-}.uniq
-loaded = pairs.map { |partial, locale| ["#{partial}.#{locale}", load_partial(partial, locale)] }.to_h
+      output = locale.empty? ? "#{filename}.md" : "#{filename}.#{locale}.md"
 
-# write files
-LOCALES.each do |locale|
-  FILENAMES.each do |filename, (os_name, partials)|
-    next if !locale.empty? && ENGLISH_ONLY.include?(filename)
-    filename += ".#{locale}" unless locale.empty?
-    filename += ".md"
-    File.open(filename, "w:utf-8") do |f|
-      partials.reject { |entry| skipped?(entry) }.each do |entry|
-        content = loaded["#{partial_name(entry)}.#{locale}"].clone
-        # remove the OS dependant blocks
-        removed_blocks = DELIMITERS.keys - [os_name]
-        removed_blocks.each do |block|
-          delimiter_start, delimiter_end = DELIMITERS[block]
-          pattern = "#{delimiter_start}(.|\n)*?(?<!#{delimiter_end})#{delimiter_end}"
-          content.gsub!(/#{pattern}/, "")
+      File.open(output, "w:utf-8") do |f|
+        build[:partials].reject { |e| skipped?(e) }.each do |entry|
+          content = loaded["#{partial_name(entry)}.#{locale}"].clone
+          variables = CONSTANTS.merge(partial_vars(entry))
+          f << render_content(content, build[:os], variables)
+          f << "\n\n"
         end
-        # remove the OS dependant block delimiters
-        DELIMITERS[os_name].each do |delimiter|
-          content.gsub!(/#{delimiter}/, "")
-        end
-        # render Liquid templates (local partials use {{ var }} syntax)
-        variables = CONSTANTS.merge(partial_vars(entry))
-        content = Liquid::Template.parse(content).render(variables)
-        # gsub fallback for external partials that still use <PLACEHOLDER> syntax
-        CONSTANTS.each do |placeholder, value|
-          content.gsub!("<#{placeholder}>", value)
-        end
-        f << content
-        f << "\n\n"
       end
     end
   end
 end
+
+loaded = collect_partials
+generate_files(loaded)
