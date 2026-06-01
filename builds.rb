@@ -1,11 +1,11 @@
 
 CONSTANTS = {
-  'PYTHON_VERSION' => '3.12.9',
+  'PYTHON_VERSION'     => '3.12.9',
   'PYTHON_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh',
-  'PIP_CHECKER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh',
-  'PIP_LOADER_URL' => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py',
-  'CODE_EDITOR' => 'VS Code',
-  'CODE_EDITOR_CMD' => 'code'
+  'PIP_CHECKER_URL'    => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh',
+  'PIP_LOADER_URL'     => 'https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py',
+  'CODE_EDITOR'        => 'VS Code',
+  'CODE_EDITOR_CMD'    => 'code'
 }
 
 # NOTE(ssaunier): This script needs https://github.com/lewagon/setup to be cloned as well
