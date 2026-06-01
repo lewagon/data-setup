@@ -136,12 +136,12 @@ LINUX = %w[
   setup/ubuntu_slack
   setup/slack_settings
   kata
-]
+].freeze
 
 LINUX_KC = %w[
   keep_current
   python_checkup
-]
+].freeze
 
 # student installs vscode, creates gcp vm, runs setup on vm
 VM = %w[
@@ -180,7 +180,7 @@ VM = %w[
   setup/windows_slack
   setup/slack_settings
   kata
-]
+].freeze
 
 # student installs vscode, redeems vm provided by lewagon, runs setup on vm
 REMOTE_SETUP = %w[
@@ -223,22 +223,22 @@ REMOTE_SETUP = %w[
   #kata
   vm_stop
   end
-]
+].freeze
 
-LOCALES = ["", "es"]  # english + spanish locales
+LOCALES = ['', 'es'].freeze  # english + spanish locales
 ENGLISH_ONLY = %w[REMOTE_SETUP].freeze
 
 # Maps output filename to its OS target (for conditional block filtering) and partial list.
 # Entries prefixed with "#" in a partial list are skipped (used to document excluded steps).
 BUILDS = {
-  "WINDOWS"              => { os: "WINDOWS", partials: WINDOWS },
-  "macOS"                => { os: "macOS",   partials: MAC_OS },
-  "LINUX"                => { os: "LINUX",   partials: LINUX },
-  "WINDOWS_keep_current" => { os: "WINDOWS", partials: WINDOWS_KC },
-  "macOS_keep_current"   => { os: "macOS",   partials: MAC_OS_KC },
-  "LINUX_keep_current"   => { os: "LINUX",   partials: LINUX_KC },
-  "VM"                   => { os: "LINUX",   partials: VM },
-  "REMOTE_SETUP"         => { os: "LINUX",   partials: REMOTE_SETUP },
+  'WINDOWS'              => { os: 'WINDOWS', partials: WINDOWS },
+  'macOS'                => { os: 'macOS',   partials: MAC_OS },
+  'LINUX'                => { os: 'LINUX',   partials: LINUX },
+  'WINDOWS_keep_current' => { os: 'WINDOWS', partials: WINDOWS_KC },
+  'macOS_keep_current'   => { os: 'macOS',   partials: MAC_OS_KC },
+  'LINUX_keep_current'   => { os: 'LINUX',   partials: LINUX_KC },
+  'VM'                   => { os: 'LINUX',   partials: VM },
+  'REMOTE_SETUP'         => { os: 'LINUX',   partials: REMOTE_SETUP },
 }
 
 DELIMITERS = {
