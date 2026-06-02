@@ -370,10 +370,12 @@ Cuando termines, tu terminal debería lucir así:
 
 [direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
 
+
 ``` bash
 sudo apt-get update; sudo apt-get install direnv
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
+
 
 
 ## GitHub CLI
@@ -756,9 +758,11 @@ pip install --upgrade pip
 
 Ahora instala algunos paquetes para las primeras semanas del programa:
 
+
 ``` bash
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
+
 
 
 ## Mejora Jupyter Notebook

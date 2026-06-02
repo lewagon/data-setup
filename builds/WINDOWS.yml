@@ -1,0 +1,46 @@
+
+os: windows
+locales: [en, es]
+partials:
+  - intro
+  - setup/github
+  - setup/windows_version
+  - setup/windows_virtualization
+  - setup/windows_wsl
+  - setup/windows_ubuntu
+  - setup/windows_vscode
+  - setup/windows_terminal
+  - vscode_extensions
+  - setup/vscode_aifeatures
+  - setup/cli_tools
+  - setup/oh_my_zsh
+  - windows_browser
+  - direnv
+  - setup/gh_cli
+  - ubuntu_gcloud
+  - dotfiles
+  - dotfiles_new_student
+  - dotfiles_new_laptop
+  - dotfiles_merge_upstream
+  - dotfiles_same_laptop
+  - dotfiles_merge_upstream
+  - dotfiles_installer
+  - setup/ssh_agent
+  - conda_uninstall
+  - ubuntu_python
+  - virtualenv
+  - pip
+  - nbextensions
+  - win_jupyter
+  - python_checkup
+  - dbeaver
+  - setup/windows_settings
+  - win_vs_redistributable
+  - win_docker
+  - gcp_setup
+  - gcp_setup_wsl
+  - gcp_setup_end
+  - kitt
+  - setup/windows_slack
+  - setup/slack_settings
+  - kata

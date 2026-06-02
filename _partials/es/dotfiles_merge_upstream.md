@@ -29,11 +29,11 @@ Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
 
   Primero aborta la merge: `git merge --abort`.
 
-  Ejecuta `<CODE_EDITOR_CMD> .`
+  Ejecuta `{{ CODE_EDITOR_CMD }} .`
 
-  En <CODE_EDITOR>, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
+  En {{ CODE_EDITOR }}, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
 
-  Aún en <CODE_EDITOR>, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
+  Aún en {{ CODE_EDITOR }}, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
 
   Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
 

@@ -1,0 +1,39 @@
+
+os: macos
+locales: [en, es]
+partials:
+  - intro
+  - setup/github
+  - osx_silicon
+  - setup/macos_command_line_tools
+  - homebrew
+  - setup/macos_vscode
+  - vscode_extensions
+  - setup/vscode_aifeatures
+  - setup/oh_my_zsh
+  - direnv
+  - setup/gh_cli
+  - dotfiles
+  - dotfiles_new_student
+  - dotfiles_new_laptop
+  - dotfiles_merge_upstream
+  - dotfiles_same_laptop
+  - dotfiles_merge_upstream
+  - dotfiles_installer
+  - conda_uninstall
+  - osx_python
+  - virtualenv
+  - pip
+  - nbextensions
+  - python_checkup
+  - dbeaver
+  - docker
+  - gcp_cli_setup
+  - gcp_setup
+  - gcp_setup_mid
+  - gcp_setup_end
+  - kitt
+  - setup/macos_slack
+  - setup/slack_settings
+  - setup/macos_settings
+  - kata

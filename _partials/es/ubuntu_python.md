@@ -23,7 +23,7 @@ python3-dev
 Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
 
 ```bash
-pyenv install <PYTHON_VERSION>
+pyenv install {{ PYTHON_VERSION }}
 ```
 
 Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
@@ -31,8 +31,8 @@ Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. 
 OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
 
 ```bash
-pyenv global <PYTHON_VERSION>
+pyenv global {{ PYTHON_VERSION }}
 exec zsh
 ```
 
-Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `<PYTHON_VERSION>`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
+Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `{{ PYTHON_VERSION }}`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).

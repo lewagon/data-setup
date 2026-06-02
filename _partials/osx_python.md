@@ -36,7 +36,7 @@ exec zsh
 Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
 
 ```bash
-pyenv install <PYTHON_VERSION>
+pyenv install {{ PYTHON_VERSION }}
 ```
 
 This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
@@ -53,7 +53,7 @@ source ~/.zprofile
 Then try to install Python again:
 
 ```bash
-pyenv install <PYTHON_VERSION>
+pyenv install {{ PYTHON_VERSION }}
 ```
 
 If `pyenv` is still not found, contact a teacher.
@@ -81,7 +81,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 Then try to install Python again:
 
 ```bash
-pyenv install <PYTHON_VERSION>
+pyenv install {{ PYTHON_VERSION }}
 ```
 
 It could raise another error about `bzip2`, you can ignore it and continue to the next step.
@@ -92,8 +92,8 @@ It could raise another error about `bzip2`, you can ignore it and continue to th
 OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
 
 ```bash
-pyenv global <PYTHON_VERSION>
+pyenv global {{ PYTHON_VERSION }}
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `<PYTHON_VERSION>`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
+To check if this worked, run `python --version`. If you see `{{ PYTHON_VERSION }}`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).

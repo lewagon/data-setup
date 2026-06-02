@@ -1,0 +1,6 @@
+
+branches:
+  setup: master
+
+aliases:
+  de_setup: data-engineering-setup

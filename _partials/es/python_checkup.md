@@ -10,17 +10,17 @@ cd ~/code && exec zsh
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL <PYTHON_CHECKER_URL>)" <PYTHON_VERSION>
+zsh -c "$(curl -fsSL {{ PYTHON_CHECKER_URL }})" {{ PYTHON_VERSION }}
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
 ```bash
-zsh -c "$(curl -fsSL <PIP_CHECKER_URL>)"
+zsh -c "$(curl -fsSL {{ PIP_CHECKER_URL }})"
 ```
 
 Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquetes:
 ```bash
-python -c "$(curl -fsSL <PIP_LOADER_URL>)"
+python -c "$(curl -fsSL {{ PIP_LOADER_URL }})"
 ```
 
 ### Chequeo de Jupyter
@@ -48,7 +48,7 @@ Asegúrate de que estés usando la versión correcta de python en el notebook. A
 import sys; sys.version
 ```
 
-Debería mostrar `<PYTHON_VERSION>` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+Debería mostrar `{{ PYTHON_VERSION }}` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
 
 Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 

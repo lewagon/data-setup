@@ -14,7 +14,7 @@ exec zsh
 Crea el entorno virtual que usaremos durante todo el bootcamp:
 
 ```bash
-pyenv virtualenv <PYTHON_VERSION> lewagon
+pyenv virtualenv {{ PYTHON_VERSION }} lewagon
 ```
 
 Define el entorno virtual con lo siguiente:

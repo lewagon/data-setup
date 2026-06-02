@@ -655,10 +655,12 @@ No dudes en **pedirle ayuda a tu profesor**.
 
 [direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
 
+
 ``` bash
 sudo apt-get update; sudo apt-get install direnv
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
+
 
 
 ## GitHub CLI
@@ -957,7 +959,9 @@ Chequea si tienes `conda` instalado en tu computadora:
 ```bash
 conda list
 ```
+
 Si aparece `zsh: command not found: conda`, puedes **saltear** la desinstalación de `conda` e ir directo a la sección de **Instalar pre-requisitos**.
+
 
 <details>
     <summary markdown='span'>Instrucciones de desinstalación <code>conda</code></summary>
@@ -972,10 +976,12 @@ anaconda-clean --yes
 rm -rf ~/anaconda2
 rm -rf ~/anaconda3
 rm -rf ~/.anaconda_backup
+
 ```
 - Elimina el directorio Anaconda de tu `.bash_profile`
     - Abre el archivo con `code ~/.bash_profile`
     - Si el archivo abre, busca la línea que coincida con el siguiente patrón `export PATH="/path/to/anaconda3/bin:$PATH"` y eliminala
+
 - Reinicia la terminal con `exec zsh`
 - Remueve la inicializaciópn de Anaconda de tu `.zshrc`:
     - Abre el archivo con `code ~/.zshrc` 
@@ -1063,9 +1069,11 @@ pip install --upgrade pip
 
 Ahora instala algunos paquetes para las primeras semanas del programa:
 
+
 ``` bash
 pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
+
 
 
 ## Mejora Jupyter Notebook
