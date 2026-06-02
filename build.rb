@@ -5,7 +5,8 @@ require 'liquid'
 require 'yaml'
 
 def load_de_setup_partial(name, locale)
-  name = File.join(locale, name) unless locale.empty?
+  remote_locale = locale == 'en' ? '' : locale
+  name = File.join(remote_locale, name) unless remote_locale.empty?
   file = File.join("_partials", "#{name}.md")
   content = URI.open("https://raw.githubusercontent.com/lewagon/data-engineering-setup/main/#{file}").read
   content.scan(/\!\[.*\]\((.*)\)/).flatten
@@ -17,7 +18,8 @@ def load_de_setup_partial(name, locale)
 end
 
 def load_setup_partial(name, locale)
-  name = File.join(locale, name) unless locale.empty?
+  remote_locale = locale == 'en' ? '' : locale
+  name = File.join(remote_locale, name) unless remote_locale.empty?
   file = File.join("_partials", "#{name}.md")
   content = URI.open("https://raw.githubusercontent.com/lewagon/setup/master/#{file}").read
   content.scan(/\!\[.*\]\((.*)\)/).flatten
@@ -26,8 +28,7 @@ def load_setup_partial(name, locale)
 end
 
 def load_local_partial(name, locale)
-  name = File.join(locale, name) unless locale.empty?
-  File.read(File.join("_partials", "#{name}.md"), encoding: "utf-8")
+  File.read(File.join("_partials", locale, "#{name}.md"), encoding: "utf-8")
 end
 
 def load_partial(partial, locale)
@@ -61,7 +62,7 @@ end
 def generate_files(loaded, builds, constants)
   builds.each do |filename, build|
     build[:locales].each do |locale|
-      output = locale.empty? ? "#{filename}.md" : "#{filename}.#{locale}.md"
+      output = locale == 'en' ? "#{filename}.md" : "#{filename}.#{locale}.md"
 
       File.open(output, "w:utf-8") do |f|
         build[:partials].reject { |e| skipped?(e) }.each do |entry|
@@ -80,7 +81,7 @@ constants = YAML.load_file('constants/constants.yml').freeze
 builds = Dir['builds/*.yml'].sort.map { |f|
   name = File.basename(f, '.yml')
   data = YAML.load_file(f)
-  locales = data['locales'].map { |l| l == 'en' ? '' : l }
+  locales = data['locales']
   [name, { os: data['os'], locales: locales, partials: data['partials'] }]
 }.to_h.freeze
 
