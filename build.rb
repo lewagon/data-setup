@@ -21,7 +21,8 @@ def load_remote_partial(repo, name, locale)
 end
 
 def load_local_partial(name, locale)
-  path = locale == 'en' ? "_partials/#{name}.md" : "_partials/#{locale}/#{name}.md"
+  localized = "_partials/#{locale}/#{name}.md"
+  path = (locale != 'en' && File.exist?(localized)) ? localized : "_partials/#{name}.md"
   File.read(path, encoding: "utf-8")
 end
 
@@ -58,7 +59,7 @@ def generate_files(loaded, builds, constants)
       File.open(output, "w:utf-8") do |f|
         build[:partials].each do |entry|
           content = loaded["#{partial_name(entry)}.#{locale}"].clone
-          variables = constants.merge(partial_vars(entry))
+          variables = constants.merge(partial_vars(entry)).merge('build_md' => output)
           f << render_content(content, build[:os], variables)
           f << "\n\n"
         end
