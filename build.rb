@@ -76,8 +76,6 @@ def generate_files(loaded, builds, constants)
   end
 end
 
-constants = YAML.load_file('constants/constants.yml').freeze
-
 builds = Dir['builds/*.yml'].map { |f|
   name = File.basename(f, '.yml')
   data = YAML.load_file(f)
@@ -85,4 +83,7 @@ builds = Dir['builds/*.yml'].map { |f|
 }.to_h.freeze
 
 loaded = collect_partials(builds)
+
+constants = YAML.load_file('constants/constants.yml').freeze
+
 generate_files(loaded, builds, constants)
