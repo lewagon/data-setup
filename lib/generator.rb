@@ -11,10 +11,10 @@ class Generator
 
   def run
     @localized_builds.each do |build|
-      warn "building #{build.output_filename}"
       File.open(build.output_filename, 'w:utf-8') do |f|
         build.partials.each { |partial| f << render(partial, build) }
       end
+      warn "built #{build.output_filename}"
     end
   end
 

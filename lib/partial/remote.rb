@@ -16,7 +16,6 @@ module Partial
     end
 
     def content
-      warn "fetching #{@url}"
       text = URI.open(@url).read
       # Rewrite relative image paths to absolute GitHub URLs so they render outside their source repo
       text.scan(/\!\[.*\]\((.*)\)/).flatten
@@ -24,6 +23,7 @@ module Partial
           .each   { |ip| text.gsub!(ip, "#{@base_url}/#{ip}") }
       text.scan(/src="(images\/.*)"/).flatten
           .each   { |ip| text.gsub!(ip, "#{@base_url}/#{ip}") }
+      warn "fetched #{@url}"
       text
     end
   end
