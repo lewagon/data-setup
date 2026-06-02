@@ -1,5 +1,5 @@
-repos:
-  setup:
-    branch: master
-  data-engineering-setup:
-    alias: de_setup
+branches:
+  setup: master
+
+aliases:
+  de_setup: data-engineering-setup

@@ -4,12 +4,13 @@ require 'open-uri'
 require 'liquid'
 require 'yaml'
 
-REPOS        = YAML.load_file('constants/repos.yml').fetch('repos').freeze
-REPO_ALIASES = REPOS.filter_map { |name, cfg| [cfg['alias'], name] if cfg['alias'] }.to_h.freeze
+_repos_cfg    = YAML.load_file('constants/repos.yml')
+REPO_BRANCHES = (_repos_cfg['branches'] || {}).freeze
+REPO_ALIASES  = (_repos_cfg['aliases']  || {}).freeze
 
 def load_remote_partial(repo, name, locale)
   repo   = REPO_ALIASES[repo] || repo
-  branch = REPOS.dig(repo, 'branch') || 'main'
+  branch = REPO_BRANCHES[repo] || 'main'
   remote_locale = locale == 'en' ? '' : locale
   path = remote_locale.empty? ? name : "#{remote_locale}/#{name}"
   base_url = "https://github.com/lewagon/#{repo}/blob/#{branch}"
