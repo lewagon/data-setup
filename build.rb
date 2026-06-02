@@ -21,7 +21,8 @@ def load_remote_partial(repo, name, locale)
 end
 
 def load_local_partial(name, locale)
-  File.read(File.join("_partials", locale, "#{name}.md"), encoding: "utf-8")
+  path = locale == 'en' ? "_partials/#{name}.md" : "_partials/#{locale}/#{name}.md"
+  File.read(path, encoding: "utf-8")
 end
 
 def load_partial(partial, locale)
