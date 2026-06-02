@@ -2,8 +2,7 @@
 
 require 'open-uri'
 require 'liquid'
-
-require_relative 'builds'
+require 'yaml'
 
 def load_de_setup_partial(name, locale)
   name = File.join(locale, name) unless locale.empty?
@@ -45,10 +44,9 @@ def partial_name(entry) = entry.is_a?(Array) ? entry[0] : entry
 def partial_vars(entry) = entry.is_a?(Array) ? entry[1] : {}
 def skipped?(entry) = partial_name(entry).start_with?("#")
 
-def collect_partials
-  BUILDS.flat_map { |filename, build|
-    LOCALES.flat_map { |locale|
-      next [] if !locale.empty? && ENGLISH_ONLY.include?(filename)
+def collect_partials(builds)
+  builds.flat_map { |_filename, build|
+    build[:locales].flat_map { |locale|
       build[:partials].reject { |e| skipped?(e) }.map { |e| [partial_name(e), locale] }
     }
   }.uniq.map { |partial, locale|
@@ -60,17 +58,15 @@ def render_content(content, os_name, variables)
   Liquid::Template.parse(content).render(variables.merge('os' => os_name))
 end
 
-def generate_files(loaded)
-  LOCALES.each do |locale|
-    BUILDS.each do |filename, build|
-      next if !locale.empty? && ENGLISH_ONLY.include?(filename)
-
+def generate_files(loaded, builds, constants)
+  builds.each do |filename, build|
+    build[:locales].each do |locale|
       output = locale.empty? ? "#{filename}.md" : "#{filename}.#{locale}.md"
 
       File.open(output, "w:utf-8") do |f|
         build[:partials].reject { |e| skipped?(e) }.each do |entry|
           content = loaded["#{partial_name(entry)}.#{locale}"].clone
-          variables = CONSTANTS.merge(partial_vars(entry))
+          variables = constants.merge(partial_vars(entry))
           f << render_content(content, build[:os], variables)
           f << "\n\n"
         end
@@ -79,5 +75,14 @@ def generate_files(loaded)
   end
 end
 
-loaded = collect_partials
-generate_files(loaded)
+constants = YAML.load_file('constants/constants.yml').freeze
+
+builds = Dir['builds/*.yml'].sort.map { |f|
+  name = File.basename(f, '.yml')
+  data = YAML.load_file(f)
+  locales = data['locales'].map { |l| l == 'en' ? '' : l }
+  [name, { os: data['os'], locales: locales, partials: data['partials'] }]
+}.to_h.freeze
+
+loaded = collect_partials(builds)
+generate_files(loaded, builds, constants)

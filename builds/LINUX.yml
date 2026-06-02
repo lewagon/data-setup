@@ -1,0 +1,36 @@
+os: linux
+locales: [en, es]
+partials:
+  - intro
+  - setup/github
+  - setup/ubuntu_vscode
+  - vscode_extensions
+  - setup/vscode_aifeatures
+  - setup/cli_tools
+  - setup/oh_my_zsh
+  - direnv
+  - setup/gh_cli
+  - ubuntu_gcloud
+  - dotfiles
+  - dotfiles_new_student
+  - dotfiles_new_laptop
+  - dotfiles_merge_upstream
+  - dotfiles_same_laptop
+  - dotfiles_merge_upstream
+  - dotfiles_installer
+  - setup/ssh_agent
+  - conda_uninstall
+  - ubuntu_python
+  - virtualenv
+  - pip
+  - nbextensions
+  - python_checkup
+  - dbeaver
+  - ubuntu_docker
+  - gcp_setup
+  - gcp_setup_linux
+  - gcp_setup_end
+  - kitt
+  - setup/ubuntu_slack
+  - setup/slack_settings
+  - kata

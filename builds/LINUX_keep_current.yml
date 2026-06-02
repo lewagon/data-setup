@@ -1,0 +1,5 @@
+os: linux
+locales: [en, es]
+partials:
+  - keep_current
+  - python_checkup
