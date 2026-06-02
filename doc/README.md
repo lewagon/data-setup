@@ -25,6 +25,6 @@ CI runs the build on every push and commits the generated files if they changed.
 
 ## Guide descriptions
 
-`VM` — student installs VS Code, creates a GCP VM, runs setup on the VM
+`VM`: student installs VS Code, creates a GCP VM, runs setup on the VM
 
-`REMOTE_SETUP` — student installs VS Code, redeems a Le Wagon-provided VM, runs setup on the VM
+`REMOTE_SETUP`: student installs VS Code, redeems a Le Wagon-provided VM, runs setup on the VM
