@@ -4,26 +4,21 @@ require 'open-uri'
 require 'liquid'
 require 'yaml'
 
-def load_de_setup_partial(name, locale)
+REPOS        = YAML.load_file('constants/repos.yml').fetch('repos').freeze
+REPO_ALIASES = REPOS.filter_map { |name, cfg| [cfg['alias'], name] if cfg['alias'] }.to_h.freeze
+
+def load_remote_partial(repo, name, locale)
+  repo   = REPO_ALIASES[repo] || repo
+  branch = REPOS.dig(repo, 'branch') || 'main'
   remote_locale = locale == 'en' ? '' : locale
-  name = File.join(remote_locale, name) unless remote_locale.empty?
-  file = File.join("_partials", "#{name}.md")
-  content = URI.open("https://raw.githubusercontent.com/lewagon/data-engineering-setup/main/#{file}").read
+  path = remote_locale.empty? ? name : "#{remote_locale}/#{name}"
+  base_url = "https://github.com/lewagon/#{repo}/blob/#{branch}"
+  content = URI.open("https://raw.githubusercontent.com/lewagon/#{repo}/#{branch}/_partials/#{path}.md").read
   content.scan(/\!\[.*\]\((.*)\)/).flatten
          .reject { |ip| ip.start_with?("http") }
-         .each   { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}") }
+         .each   { |ip| content.gsub!(ip, "#{base_url}/#{ip}") }
   content.scan(/src="(images\/.*)"/).flatten
-         .each { |ip| content.gsub!(ip, "https://github.com/lewagon/data-engineering-setup/blob/main/#{ip}") }
-  content
-end
-
-def load_setup_partial(name, locale)
-  remote_locale = locale == 'en' ? '' : locale
-  name = File.join(remote_locale, name) unless remote_locale.empty?
-  file = File.join("_partials", "#{name}.md")
-  content = URI.open("https://raw.githubusercontent.com/lewagon/setup/master/#{file}").read
-  content.scan(/\!\[.*\]\((.*)\)/).flatten
-         .each { |ip| content.gsub!(ip, "https://github.com/lewagon/setup/blob/master/#{ip}") }
+         .each   { |ip| content.gsub!(ip, "#{base_url}/#{ip}") }
   content
 end
 
@@ -32,10 +27,8 @@ def load_local_partial(name, locale)
 end
 
 def load_partial(partial, locale)
-  if (m = partial.match(%r{\Ade_setup/(?<name>[0-9a-z_]+)\z}))
-    load_de_setup_partial(m[:name], locale)
-  elsif (m = partial.match(%r{\Asetup/(?<name>[0-9a-z_]+)\z}))
-    load_setup_partial(m[:name], locale)
+  if (m = partial.match(%r{\A(?<repo>[a-z][a-z0-9_-]*)/(?<name>[a-z0-9_]+)\z}))
+    load_remote_partial(m[:repo], m[:name], locale)
   else
     load_local_partial(partial, locale)
   end

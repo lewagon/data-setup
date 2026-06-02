@@ -1,0 +1,6 @@
+repos:
+  setup:
+    branch: master
+  data-engineering-setup:
+    branch: main
+    alias: de_setup
