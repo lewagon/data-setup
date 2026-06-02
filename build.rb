@@ -81,8 +81,7 @@ constants = YAML.load_file('constants/constants.yml').freeze
 builds = Dir['builds/*.yml'].sort.map { |f|
   name = File.basename(f, '.yml')
   data = YAML.load_file(f)
-  locales = data['locales']
-  [name, { os: data['os'], locales: locales, partials: data['partials'] }]
+  [name, { os: data['os'], locales: data['locales'], partials: data['partials'] }]
 }.to_h.freeze
 
 loaded = collect_partials(builds)
