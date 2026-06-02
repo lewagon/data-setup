@@ -4,13 +4,19 @@
 require 'yaml'
 require_relative 'lib/builder'
 
-repos_cfg = YAML.load_file('constants/repos.yml').freeze
-constants = YAML.load_file('constants/constants.yml').freeze
+build_specs = Dir['builds/*.yml'].map { |filename|
 
-builds = Dir['builds/*.yml'].map { |filename|
-  name = File.basename(filename, '.yml')
   data = YAML.load_file(filename)
-  [name, { os: data['os'], locales: data['locales'], partials: data['partials'] }]
-}.to_h.freeze
 
-Builder.new(builds, constants, repos_cfg).run
+  BuildSpec.new(
+    name:     File.basename(filename, '.yml'),
+    os:       data['os'],
+    locales:  data['locales'],
+    partials: data['partials']
+  )
+}
+
+constants   = YAML.load_file('constants/constants.yml').freeze
+repos_cfg   = YAML.load_file('constants/repos.yml').freeze
+
+Builder.new(build_specs, constants, repos_cfg).run
