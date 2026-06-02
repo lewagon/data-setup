@@ -43,12 +43,11 @@ end
 
 def partial_name(entry) = entry.is_a?(Array) ? entry[0] : entry
 def partial_vars(entry) = entry.is_a?(Array) ? entry[1] : {}
-def skipped?(entry) = partial_name(entry).start_with?("#")
 
 def collect_partials(builds)
   builds.flat_map { |_filename, build|
     build[:locales].flat_map { |locale|
-      build[:partials].reject { |e| skipped?(e) }.map { |e| [partial_name(e), locale] }
+      build[:partials].map { |e| [partial_name(e), locale] }
     }
   }.uniq.map { |partial, locale|
     ["#{partial}.#{locale}", load_partial(partial, locale)]
@@ -65,7 +64,7 @@ def generate_files(loaded, builds, constants)
       output = locale == 'en' ? "#{filename}.md" : "#{filename}.#{locale}.md"
 
       File.open(output, "w:utf-8") do |f|
-        build[:partials].reject { |e| skipped?(e) }.each do |entry|
+        build[:partials].each do |entry|
           content = loaded["#{partial_name(entry)}.#{locale}"].clone
           variables = constants.merge(partial_vars(entry))
           f << render_content(content, build[:os], variables)
