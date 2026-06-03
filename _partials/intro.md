@@ -1,3 +1,4 @@
+
 # Setup instructions
 
 You will find below the instructions to set up you computer for [Le Wagon Data Science course](https://www.lewagon.com/data-science-course/full-time)
