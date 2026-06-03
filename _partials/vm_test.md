@@ -35,7 +35,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   Error:
 
   ``` bash
-  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
+  ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
   ssh: connect to host 34.52.208.105 port 22: Operation timed out
   ```
 
@@ -48,7 +48,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   <summary>❌ Connection refused</summary>
 
   ``` bash
-  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
+  ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
   ssh: connect to host 34.52.208.105 port 22: Connection refused
   ```
 
