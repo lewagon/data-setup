@@ -1,2 +1,4 @@
 .DS_Store
 .ipynb_ckeckpoints
+.bundle/
+vendor/
