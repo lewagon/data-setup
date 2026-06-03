@@ -69,10 +69,10 @@ To create a separate SSH key to exclusively use for this bootcamp use the follow
 
 ```bash
 # replace your_email@example.com, this is purely informative and allows you to remember the use of this key
-ssh-keygen -t ed25519 -f ~/.ssh/de-bootcamp -C your_email@example.com
+ssh-keygen -t ed25519 -f ~/.ssh/ds-bootcamp -C your_email@example.com
 ```
 
-Your new SSH Key will be named `de-bootcamp`. Make sure to remember it for later!
+Your new SSH Key will be named `ds-bootcamp`. Make sure to remember it for later!
 </details>
 
 
@@ -207,7 +207,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   Error:
 
   ``` bash
-  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
+  ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
   ssh: connect to host 34.52.208.105 port 22: Operation timed out
   ```
 
@@ -220,7 +220,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   <summary>❌ Connection refused</summary>
 
   ``` bash
-  ssh -i ~/.ssh/id_ed25519_data_eng_setup lewagon@34.52.208.105
+  ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
   ssh: connect to host 34.52.208.105 port 22: Connection refused
   ```
 
@@ -333,7 +333,7 @@ You can now change Host to whatever you would like to see as the name of your co
 
 ```bash
 # For instance
-Host "de-bootcamp-vm"
+Host "ds-bootcamp-vm"
   HostName 34.77.50.76 # replace with your VM's public IP address
   IdentityFile <file path for your ssh key>
   User <username>

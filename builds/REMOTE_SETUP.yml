@@ -4,12 +4,16 @@ locales: [en]
 partials:
   - intro
   - setup/github
-  - de_setup/ssh_key
+  - name: de_setup/ssh_key
+    vars:
+      key_name: ds-bootcamp
   - vm_register
   - vm_start
   - vm_test
   - de_setup/win_vscode
-  - de_setup/vscode_remote_ssh
+  - name: de_setup/vscode_remote_ssh
+    vars:
+      vm_hostname: ds-bootcamp-vm
   - vscode_extensions
   - setup/vscode_aifeatures
   - setup/cli_tools

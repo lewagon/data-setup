@@ -69,10 +69,10 @@ To create a separate SSH key to exclusively use for this bootcamp use the follow
 
 ```bash
 # replace your_email@example.com, this is purely informative and allows you to remember the use of this key
-ssh-keygen -t ed25519 -f ~/.ssh/de-bootcamp -C your_email@example.com
+ssh-keygen -t ed25519 -f ~/.ssh/ds-bootcamp -C your_email@example.com
 ```
 
-Your new SSH Key will be named `de-bootcamp`. Make sure to remember it for later!
+Your new SSH Key will be named `ds-bootcamp`. Make sure to remember it for later!
 </details>
 
 
@@ -316,7 +316,7 @@ You can now change Host to whatever you would like to see as the name of your co
 
 ```bash
 # For instance
-Host "de-bootcamp-vm"
+Host "ds-bootcamp-vm"
   HostName 34.77.50.76 # replace with your VM's public IP address
   IdentityFile <file path for your ssh key>
   User <username>
