@@ -39,7 +39,11 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   ssh: connect to host 34.52.208.105 port 22: Operation timed out
   ```
 
+  {%- if ip_filtering %}
+  The virtual machine is not started OR your IP address is not registered, ask a teacher for help 🙋
+  {%- else %}
   The virtual machine is not started, ask a teacher for help 🙋
+  {%- endif %}
 </details>
 
 
