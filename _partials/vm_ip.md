@@ -32,8 +32,8 @@ Retrieve your public IP address:
 <details>
   <summary markdown='span'>Windows</summary>
 
-```bash
-curl -s ifconfig.me && echo
+```powershell
+curl.exe -s ifconfig.me
 ```
 </details>
 
