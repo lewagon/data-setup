@@ -11,7 +11,7 @@ In order to move forwards, you will need to use:
 
 <details>
 
-  <summary>🤔 How does my **public** IP address differ from my **VM** IP address ?</summary>
+  <summary>🤔 How does my public IP address differ from my VM IP address ?</summary>
 
   Your **public** IP address is the address from which you are accessing the network. It changes whenever you change locations or if you switch your means of connecting to the Internet.
 
