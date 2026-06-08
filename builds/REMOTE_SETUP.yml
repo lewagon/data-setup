@@ -8,8 +8,11 @@ partials:
     vars:
       key_name: ds-bootcamp
   - vm_register
+  - vm_ip
   - vm_start
-  - vm_test
+  - name: vm_test
+    vars:
+      ip_filtering: true
   - de_setup/win_vscode
   - name: de_setup/vscode_remote_ssh
     vars:
