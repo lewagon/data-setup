@@ -15,7 +15,7 @@ In order to move forwards, you will need to use:
 
   Your **public** IP address is the address from which you are accessing the network. It changes whenever you change locations or if you switch your means of connecting to the Internet.
 
-  This IP address is coined as public since it is the address any website or application you connect to sees. It is the IP address we need the VM to accept connections from.
+  This IP address is coined as public since it is the address any website or application sees when you connect to it. It is the IP address we need the VM to accept connections from.
 
   Your **public** IP address identifies the location from which you connect.
 
