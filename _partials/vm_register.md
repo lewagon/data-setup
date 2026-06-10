@@ -6,7 +6,7 @@ Let's redeem the virtual machine on which we will work.
 In order to move forwards, you will need to use:
 - The SSH **public** and **PRIVATE** keys you just created
 - The alias provided to you by Le Wagon
-- The IP address provided to you by Le Wagon
+- The VM IP address provided to you by Le Wagon
 
 <details>
 

@@ -6,14 +6,14 @@ Once the VM is started, it takes a couple of minutes for the SSH server to be re
 You may take a quick sip ☕️
 
 Let's check the connection to the virtual machine with the command below:
-- Replace `👉YOUR_IP_ADDRESS👈` with the IP address for your virtual machine provided to you by Le Wagon
+- Replace `👉YOUR_VM_IP_ADDRESS👈` with the VM IP address provided to you by Le Wagon
 - Replace `👉PATH_TO_YOUR_PRIVATE_KEY👈` with the path to your **PRIVATE** key
 
 <details>
   <summary markdown='span'>Windows</summary>
 
 ``` bash
-ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
+ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_VM_IP_ADDRESS👈
 # ssh -i C:\Users\<YourUsername>\.ssh\id_ed25519 lewagon@34.52.208.105
 ```
 </details>
@@ -22,7 +22,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   <summary markdown='span'>MacOS & Linux</summary>
 
 ``` bash
-ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
+ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_VM_IP_ADDRESS👈
 # ssh -i ~/.ssh/id_ed25519 lewagon@34.52.208.105
 ```
 </details>
@@ -40,7 +40,7 @@ ssh -i 👉PATH_TO_YOUR_PRIVATE_KEY👈 lewagon@👉YOUR_IP_ADDRESS👈
   ```
 
   {%- if ip_filtering %}
-  The virtual machine is not started OR your IP address is not registered, ask a teacher for help 🙋
+  The virtual machine is not started OR your public IP address is not registered, ask a teacher for help 🙋
   {%- else %}
   The virtual machine is not started, ask a teacher for help 🙋
   {%- endif %}
