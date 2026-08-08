@@ -25,9 +25,30 @@ Please choose your operating system (OS):
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
+  </tr>
+</table>
+
+### GCP Setup
+
+**Only do this if and when instructed by your teaching crew!**
+
+Please choose your operating system (OS):
+
+<table>
+  <tr>
     <td>
-      <a href="VM.md">
-        <img src="images/vm.png" alt="Virtual Machine">
+      <a href="macOS_GCP.md">
+        <img src="images/apple.png" alt="macOS" />
+      </a>
+    </td>
+    <td>
+      <a href="WINDOWS_GCP.md">
+        <img src="images/windows.png" alt="Windows">
+      </a>
+    </td>
+    <td>
+      <a href="LINUX_GCP.md">
+        <img src="images/linux.png" alt="Linux">
       </a>
     </td>
   </tr>

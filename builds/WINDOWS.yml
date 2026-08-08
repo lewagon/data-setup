@@ -17,7 +17,6 @@ partials:
   - windows_browser
   - direnv
   - setup/gh_cli
-  - ubuntu_gcloud
   - dotfiles
   - dotfiles_new_student
   - dotfiles_new_laptop
@@ -37,9 +36,6 @@ partials:
   - setup/windows_settings
   - win_vs_redistributable
   - win_docker
-  - gcp_setup
-  - gcp_setup_wsl
-  - gcp_setup_end
   - kitt
   - setup/windows_slack
   - setup/slack_settings

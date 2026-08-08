@@ -1,0 +1,8 @@
+
+os: linux
+locales: [en, es]
+partials:
+  - ubuntu_gcloud
+  - gcp_setup
+  - gcp_setup_linux
+  - gcp_setup_end

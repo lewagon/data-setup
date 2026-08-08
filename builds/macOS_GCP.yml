@@ -1,0 +1,8 @@
+
+os: macos
+locales: [en, es]
+partials:
+  - gcp_cli_setup
+  - gcp_setup
+  - gcp_setup_mid
+  - gcp_setup_end

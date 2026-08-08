@@ -1,0 +1,7 @@
+
+os: windows
+locales: [en, es]
+partials:
+  - gcp_setup
+  - gcp_setup_wsl
+  - gcp_setup_end
