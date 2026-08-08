@@ -24,6 +24,10 @@ Before we start, we need to check that the version of Windows installed on your 
 
 ### Windows 10 or Windows 11
 
+> :warning: **Note on Windows 10 and security**
+>
+> The Le Wagon bootcamp setup works on Windows 10. That said, we highly recommend to upgrade to Windows 11. Since October 14th, 2025, Microsoft has ended support for Windows 10, which means it will no longer receive security updates, potentially putting your machine at risk. For more details, read [Microsoft's guide](https://support.microsoft.com/en-us/windows/windows-10-support-has-ended-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281). In case your machine can't run Windows 11, consider switching to Ubuntu.
+
 To be able to set up your computer, you need to have **Windows 10 or Windows 11** installed.
 
 To check your Windows version:
@@ -445,13 +449,13 @@ It should open the terminal settings:
 
 You may see an orange circle rather than a penguin as the logo for Ubuntu.
 
-We have circled in red the part you need to change:
+We have circled in red the part you need to add:
 
 ![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings_json.png)
 
-First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one:
-- Locate the entry with both `"name": "Ubuntu",` and `"hidden": false,`
-- Add the following line after it:
+First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one.
+
+- Place this line inside the { } block that contains "name": "Ubuntu" (like in the screenshot):
 
 ```bash
 "commandline": "wsl.exe ~",
@@ -460,7 +464,8 @@ First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory inst
 :warning: Do not forget the comma at the end of the line!
 
 Then, let's disable warnings for copy-pasting commands between Windows and Ubuntu:
-- Locate the line `"defaultProfile": "{2c4de342-...}"`
+
+- Locate the line "defaultProfile": "{2c4de342-...}"
 - Add the following line after it:
 
 ```bash
@@ -664,7 +669,7 @@ We will use the GitHub CLI (`gh`) to connect to GitHub using *SSH*, a protocol t
 
 First in order to **login**, copy-paste the following command in your terminal:
 
-:warning: **DO NOT edit the `email`**
+:warning: **DO NOT edit the `email`** — Even though `user:email` looks like a placeholder for your actual email address, it isn't — do not replace it.
 
 ```bash
 gh auth login -s 'user:email' -w --git-protocol ssh
@@ -676,7 +681,9 @@ gh auth login -s 'user:email' -w --git-protocol ssh
 
   If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
 
-- `Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
+- `Enter a passphrase for your new SSH key (Optional)`:
+  - **FOR MOST PEOPLE:** Just press `Enter` to skip. You don't need a passphrase for the bootcamp and it would prompt you every time you use the key. There is a risk, however, that if someone steals your laptop, they could then push to GitHub.
+  - **IF SECURITY IS REALLY IMPORTANT TO YOU:** Enter a passphrase of your choice and press `Enter`. It's _really_ important that if you enter a passphrase, you write it down somewhere immediately and do not lose/forget it. You will need to enter this frequently.
 
 - `Title for your SSH key`. You can leave it at the proposed "GitHub CLI", press `Enter`.
 

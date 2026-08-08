@@ -36,8 +36,8 @@ We highly recommend installing [Windows Terminal](https://apps.microsoft.com/sto
   <summary markdown='span'>Windows</summary>
 
 ```bash
-# replace "your_email@example.com" with your GCP account email
-ssh-keygen.exe -t ed25519 -C "your_email@example.com"
+# replace your_email@example.com, this is purely informative and allows you to remember the use of this key
+ssh-keygen.exe -t ed25519 -C your_email@example.com
 ```
 </details>
 
@@ -45,8 +45,8 @@ ssh-keygen.exe -t ed25519 -C "your_email@example.com"
   <summary markdown='span'>MacOS & Linux</summary>
 
 ```bash
-# replace "your_email@example.com" with your GCP account email
-ssh-keygen -t ed25519 -C "your_email@example.com"
+# replace your_email@example.com, this is purely informative and allows you to remember the use of this key
+ssh-keygen -t ed25519 -C your_email@example.com
 ```
 </details>
 
@@ -68,11 +68,11 @@ If you receive this message, you may already have an SSH Key with the same name 
 To create a separate SSH key to exclusively use for this bootcamp use the following:
 
 ```bash
-# replace "your_email@example.com" with your GCP account email
-ssh-keygen -t ed25519 -f ~/.ssh/de-bootcamp -C "your_email@example.com"
+# replace your_email@example.com, this is purely informative and allows you to remember the use of this key
+ssh-keygen -t ed25519 -f ~/.ssh/{{ key_name }} -C your_email@example.com
 ```
 
-Your new SSH Key will be named `de-bootcamp`. Make sure to remember it for later!
+Your new SSH Key will be named `{{ key_name }}`. Make sure to remember it for later!
 </details>
 
 
@@ -316,7 +316,7 @@ You can now change Host to whatever you would like to see as the name of your co
 
 ```bash
 # For instance
-Host "de-bootcamp-vm"
+Host "{{ vm_hostname }}"
   HostName 34.77.50.76 # replace with your VM's public IP address
   IdentityFile <file path for your ssh key>
   User <username>
@@ -484,7 +484,7 @@ We will use the GitHub CLI (`gh`) to connect to GitHub using *SSH*, a protocol t
 
 First in order to **login**, copy-paste the following command in your terminal:
 
-:warning: **DO NOT edit the `email`**
+:warning: **DO NOT edit the `email`** — Even though `user:email` looks like a placeholder for your actual email address, it isn't — do not replace it.
 
 ```bash
 gh auth login -s 'user:email' -w --git-protocol ssh
@@ -496,7 +496,9 @@ gh auth login -s 'user:email' -w --git-protocol ssh
 
   If you already have SSH keys, you will see instead `Upload your SSH public key to your GitHub account?` With the arrows, select your public key file path and press `Enter`.
 
-- `Enter a passphrase for your new SSH key (Optional)`. Type something you want and that you'll remember. It's a password to protect your private key stored on your hard drive. Then press `Enter`.
+- `Enter a passphrase for your new SSH key (Optional)`:
+  - **FOR MOST PEOPLE:** Just press `Enter` to skip. You don't need a passphrase for the bootcamp and it would prompt you every time you use the key. There is a risk, however, that if someone steals your laptop, they could then push to GitHub.
+  - **IF SECURITY IS REALLY IMPORTANT TO YOU:** Enter a passphrase of your choice and press `Enter`. It's _really_ important that if you enter a passphrase, you write it down somewhere immediately and do not lose/forget it. You will need to enter this frequently.
 
 - `Title for your SSH key`. You can leave it at the proposed "GitHub CLI", press `Enter`.
 

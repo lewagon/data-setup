@@ -24,6 +24,10 @@ Antes de comenzar, necesitamos verificar que la versión de Windows instalada en
 
 ### Windows 10 o Windows 11
 
+> :warning: **Nota sobre Windows 10 y seguridad**
+>
+> La configuración del bootcamp de Le Wagon funciona en Windows 10. Dicho esto, recomendamos encarecidamente actualizar a Windows 11. Desde el 14 de octubre de 2025 Microsoft finalizó el soporte para Windows 10, lo que significa que ya no recibirá actualizaciones de seguridad y podría poner tu equipo en riesgo. Para más detalles, consulta la [guía de Microsoft](https://support.microsoft.com/en-us/windows/windows-10-support-has-ended-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281). Si tu equipo no puede ejecutar Windows 11, considera cambiar a Ubuntu.
+
 Para poder configurar tu computadora, necesitas tener **Windows 10 o Windows 11** instalado.
 
 Para chequear la versión de tu Windows:
@@ -650,7 +654,7 @@ Ya debería haberse instalado en tu computadora con los comandos que ejecutaste 
 
 Lo primero que hay que hacer para **iniciar sesión** es copiar y pegar el comando siguiente en tu terminal:
 
-:warning: **NO edites el `email`**
+:warning: **NO edites el `email`** — Aunque `user:email` parezca un marcador de posición para tu dirección de correo real, no lo es — no lo reemplaces.
 
 ```bash
 gh auth login -s 'user:email' -w --git-protocol ssh
@@ -662,7 +666,9 @@ gh auth login -s 'user:email' -w --git-protocol ssh
 
   Si ya tienes claves SSH, verás en su lugar `Upload your SSH public key to your GitHub account?`Con las flechas, selecciona la ruta de tu archivo de clave pública y pulsa `Intro`.
 
-- `Enter a passphrase for your new SSH key (Optional)`. Pon algo que quieras y que recuerdes. Es una contraseña para proteger tu private key que está almacenada en tu disco duro. Luego presiona `Enter`.
+- `Enter a passphrase for your new SSH key (Optional)`:
+  - **PARA LA MAYORÍA DE LOS ESTUDIANTES:** Simplemente presiona `Enter` para omitir. No necesitas una contraseña para el bootcamp y te la pediría cada vez que uses la clave. Sin embargo, hay un riesgo de que si alguien roba tu computadora, pueda subir código a GitHub.
+  - **SI LA SEGURIDAD ES MUY IMPORTANTE PARA TI:** Escribe una contraseña de tu elección y presiona `Enter`. Es _muy_ importante que si introduces una contraseña, la anotes en algún lugar inmediatamente y no la pierdas ni la olvides. Tendrás que introducirla con frecuencia.
 
 - `Title for your SSH key`. Puede dejarlo en la propuesta "GitHub CLI", presiona `Enter`.
 
