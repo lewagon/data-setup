@@ -1320,45 +1320,6 @@ Entonces deberías recibir una invitación adicional de Slack, invitándote a la
 Si no lo has recibido, por favor contacta a tu equipo de enseñanza.
 
 
-## Slack
-
-[Slack](https://slack.com/) es una plataforma de comunicación popular en la industria tech.
-
-### Instalación
-
-[Descarga la aplicación Slack](https://slack.com/downloads/windows) e instálala.
-
-:warning: Si ya estás usando Slack en tu navegador, por favor descarga e instala **la aplicación de escritorio** la cual tiene todas las funciones.
-
-
-### Parámetros
-
-Abre la aplicación e inicia sesión en `lewagon-alumni`.
-
-Asegúrate de **subir una foto para tu perfil** :point_down:
-
-![Cómo subir una foto de perfil en Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
-
-La idea es tener Slack abierto todo el día para compartir enlaces útiles / pedir ayuda / decidir dónde almorzar / etc.
-
-Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba tu cámara y tu micrófono:
-- Abre la aplicación Slack
-- Haz clic en tu foto de perfil en la esquina superior derecha
-- Selecciona "Preferencias" en el menú.
-- Haz clic en "Audio y vídeo" en la columna de la izquierda.
-- Debajo de "Solución de problemas", haz clic en "Ejecutar una prueba de audio, vídeo y pantalla compartida". La prueba se abrirá en una nueva ventana.
-- Comprueba que tus dispositivos preferidos de altavoz, micrófono y cámara aparecen en los menús desplegables y haz clic en "Iniciar prueba"
-- Haz clic en el botón verde "Start test"
-
-![Chequea el micrófono y la cámara con Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
-
-:heavy_check_mark: Cuando termine el test deberías ver mensajes de "Succeed" en verde por lo menos para tu micrófono y tu cámara. :+1:
-
-:x: Si no es el caso, **contacta a un profesor**.
-
-¡También puedes instalar la aplicación Slack en tu smartphone e iniciar sesión en `lewagon-alumni`!
-
-
 ## Kata (Extra)
 
 Si has terminado la configuración, te pedimos que preguntes si alguien necesita ayuda con la suya (macOS, Linux o Windows). Las primeras clases son a las 2pm. Hablaremos de la configuración que acabas de hacer y de Kitt.

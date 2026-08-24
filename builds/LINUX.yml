@@ -28,6 +28,4 @@ partials:
   - dbeaver
   - ubuntu_docker
   - kitt
-  - setup/ubuntu_slack
-  - setup/slack_settings
   - kata
