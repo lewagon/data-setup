@@ -37,6 +37,4 @@ partials:
   - win_vs_redistributable
   - win_docker
   - kitt
-  - setup/windows_slack
-  - setup/slack_settings
   - kata

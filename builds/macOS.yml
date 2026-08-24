@@ -29,7 +29,5 @@ partials:
   - dbeaver
   - docker
   - kitt
-  - setup/macos_slack
-  - setup/slack_settings
   - setup/macos_settings
   - kata
