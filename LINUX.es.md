@@ -727,15 +727,6 @@ Debería aparecer el siguiente mensaje:
 ![](images/docker_hello.png)
 
 
-  ## Kitt
-
-Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
-
-Entonces deberías recibir una invitación adicional de Slack, invitándote a la comunidad de los alumni de Le Wagon en slack (donde podrás chatear con tus compañeros y todos los demás alumni). Haz clic en **Join** y completa la información que te piden.
-
-Si no lo has recibido, por favor contacta a tu equipo de enseñanza.
-
-
 ## Kata (Extra)
 
 Si has terminado la configuración, te pedimos que preguntes si alguien necesita ayuda con la suya (macOS, Linux o Windows). Las primeras clases son a las 2pm. Hablaremos de la configuración que acabas de hacer y de Kitt.

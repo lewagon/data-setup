@@ -794,15 +794,6 @@ The following message should print:
 ![](images/docker_hello.png)
 
 
-  ## Kitt
-
-You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform).
-
-Then you should receive an additional invitation from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and complete the information.
-
-If you haven't, please contact your teaching team.
-
-
 ## (Bonus) Kata
 
 If you are done with your setup, please ask around if some classmates need some help with theirs (macOS, Linux, Windows). We will have our first lectures at 2pm and will talk about the Setup you just did + onboard you on Kitt.
