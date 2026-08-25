@@ -28,6 +28,4 @@ partials:
   - python_checkup
   - dbeaver
   - docker
-  - kitt
-  - setup/macos_settings
   - kata

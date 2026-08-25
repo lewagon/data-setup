@@ -36,5 +36,4 @@ partials:
   - setup/windows_settings
   - win_vs_redistributable
   - win_docker
-  - kitt
   - kata
