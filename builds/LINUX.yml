@@ -27,5 +27,4 @@ partials:
   - python_checkup
   - dbeaver
   - ubuntu_docker
-  - kitt
   - kata
