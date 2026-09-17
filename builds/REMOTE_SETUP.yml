@@ -26,12 +26,6 @@ partials:
   # - de_setup/ubuntu_gcloud
   # - de_setup/gcp_setup_linux
   - dotfiles
-  - dotfiles_new_student
-  - dotfiles_new_laptop
-  - dotfiles_merge_upstream
-  - dotfiles_same_laptop
-  - dotfiles_merge_upstream
-  - dotfiles_installer
   - de_setup/zsh_default_terminal
   - setup/ssh_agent
   - ubuntu_python
