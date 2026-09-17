@@ -291,8 +291,6 @@ Stop the Docker app
 
 ## Python setup check
 
-### Python and packages check
-
 Let's reset your terminal:
 
 ```bash
@@ -304,37 +302,17 @@ Check your Python version with the following commands:
 zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
-Run the following command to check if you successfully installed the required packages:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
-```
-
-Now run the following command to check if you can load these packages:
-```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
-```
-
-### Jupyter check
-
 Make sure you can run Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-Let's open the jupyter app:
+Your web browser should open on a `jupyter` window.
 
 <details>
 
-  <summary>Regular setup</summary>
-
-  Your web browser should open on a `jupyter` window.
-</details>
-
-
-<details>
-
-  <summary>Virtual machine setup</summary>
+  <summary>Note if you're running the setup on a virtual machine</summary>
 
   VSCode detects that a jupyter notebook started in your virtual machine and creates a port forward in order to allow you to open the application in your browser.
 
@@ -352,8 +330,6 @@ Let's open the jupyter app:
 </details>
 
 
-You now have access to the `jupyter` window:
-
 ![jupyter.png](images/jupyter.png)
 
 Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
@@ -365,11 +341,21 @@ A tab should open on a new notebook:
 ![jupyter_notebook.png](images/jupyter_notebook.png)
 
 Make sure that you are running the correct python version in the notebook. Open a cell and run:
+
 ``` python
 import sys; sys.version
 ```
 
 It should output `3.12.9` followed by some more details. If not, check with a TA.
+
+In another cell, run:
+
+```python
+import pandas as pd
+pd.__version___
+```
+
+This might take a few minutes to run. It should output a version number, `2.2.3`.  If not, check with a TA.
 
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 

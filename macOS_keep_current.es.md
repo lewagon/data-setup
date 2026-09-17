@@ -304,18 +304,6 @@ Verifica tu versión de Python con los siguientes comandos:
 zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
-Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
-```
-
-Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquetes:
-```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
-```
-
-### Chequeo de Jupyter
-
 Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 
 ```bash
@@ -340,6 +328,15 @@ import sys; sys.version
 ```
 
 Debería mostrar `3.12.9` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+
+En otra celda, ejecuta:
+
+```python
+import pandas as pd
+pd.__version___
+```
+
+Esto podría tomar algunos minutos en ejecutarse. Debería mostrar un número de versión, `2.2.3`. Si no es así, consulta con un TA.
 
 Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 

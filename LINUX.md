@@ -304,179 +304,64 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 
 ## Dotfiles
 
-Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub.
+Let's enhance the experience of your machine by installing Le Wagon's pre-configured [dotfiles 🔗](https://github.com/lewagon/dotfiles). These are configuration files for your terminal, zsh, git, and VS Code.
 
-### Check your GitHub CLI configuration
+### Forking the dotfiles
 
-First, let's do a quick check. Open your terminal and run the following command:
+To customise this configuration for yourself, you'll need to **fork** the repository to your own Github account.
+
+**Forking** creates a copy of the repository under your account (`your_github_username/dotfiles`), which you can then modify with your personal information, such as your name.
+
+<details>
+    <summary>❗ <strong>If</strong> you already did another Le Wagon bootcamp  (<strong>Web Development, AI Software Development, Data Analytics, Data Science & AI</strong>, open this first ❗
+    </summary>
+
+    You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
+
+
+    **Open a ticket** with a TA and do one of the following:
+    - Compare your existing dotfiles with the current Le Wagon [dotfiles 🔗](https://github.com/lewagon/dotfiles), particularly the `.zshrc`, `.zprofile`, and `settings.json` - if there is no meaningful difference other than your name and email setting, continue with the setup.
+    - If you are OK with losing your existing dotfiles (recommended):
+        - Delete your existing dotfiles repository on GitHub and continue with the setup.
+        - Delete the local repository: `rm -rf ~/code/<your_github_username>/dotifles`.
+    - If you do not want to lose your existing dotfiles, we recommend working with branches:
+        - On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**
+        - Create a branch of your existing dotfiles setup (`git checkout -b old-setup`), and push to GitHub - `git push origin old-setup`,
+        - Go back to `master`: `git checkout master`.
+        - On local `master`, `git pull upstream master`, resolve any conflicts, `git commit -m "merged"`, and `git push origin master`. It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files.
+        - Continue with the setup.
+
+</details>
+
+<br>
+
+Run the following command:
 
 ```bash
 export GITHUB_USERNAME=`gh api user | jq -r '.login'`
 echo $GITHUB_USERNAME
 ```
 
-You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
-There seems to be a problem with the previous step (`gh auth`).
+✔️ You should see your Github username printed.
 
-### Fork and/or clone dotfiles
+❌ If not, stop here and ask for help. There may be a problem with the previous step (`gh auth`).
 
-There are three options, choose **one**:
-
-
-<details>
-    <summary>
-        <strong>I did not attend the Web Dev or Data Science & AI bootcamp at Le Wagon</strong>
-    </summary>
-
- As your configuration is personal, you need your own repository storing it, so you'll need to fork it to your GitHub account.
-
-Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
-files.
-
-Lets' run this command to fork the repo, and clone it on your laptop:
+Time to fork the repo and clone it on your computer:
 
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
 
-</details>
+### Installing the dotfiles
 
-
-<details>
-    <summary>
-        <strong>I already attended a Le Wagon coding bootcamp (Web Development or Data Science & AI) <em>but I have a new laptop</em></strong>
-    </summary>
-
-This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the current Data Science & AI bootcamp. Let's update it. **Ask a TA to join you for the nex steps.**
-
-First, clone your fork on this machine:
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo clone $GITHUB_USERNAME/dotfiles
-```
-
-
-Open your terminal and go to your `dotfiles` project:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-```
-
-Time to merge the changes from `lewagon/dotfiles` into yours:
-1. Commit your current version of your dotfiles:
-   ```bash
-   git add .
-   git status # Check what will be committed
-   git commit -m "Version prior to new setup"
-   ```
-
-1. Let's bring in the changes from upstream: `git merge upstream/master`
-
-1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
-
-1. Do a `git diff HEAD~1 HEAD` to check what changed.
-
-1. If nothing seems out of the ordinary, continue
-
-<details>
-  <summary>Too many conflicts?
-  </summary>
-
-  Let's just take over the current version from `lewagon/dotfiles`.
-
-  First abort the merge: `git merge --abort`.
-
-  Run `code .`
-
-  In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
-
-  Still in VS Code, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
-
-  Back in the terminal, run a `git diff` and check if this didn't remove any personal configuration setting that you wanted to keep.
-
-</details>
-
-Time to commit your changes and push them.
-
-```bash
-git add .
-git commit -m "Update for Data Science bootcamp"
-git push origin master
-```
-
-</details>
-
-
-<details>
-    <summary>
-        <strong>I already did the setup of a Le Wagon coding bootcamp (WebDev or Data Science & AI) <em>on the same laptop</em> before</strong>
-    </summary>
-
-This means that you already forked and cloned the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the current Data Science & AI bootcamp. Let's update it. **Ask a TA to join you for the nex steps.**
-
-
-Open your terminal and go to your `dotfiles` project:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-```
-
-Time to merge the changes from `lewagon/dotfiles` into yours:
-1. Commit your current version of your dotfiles:
-   ```bash
-   git add .
-   git status # Check what will be committed
-   git commit -m "Version prior to new setup"
-   ```
-
-1. Let's bring in the changes from upstream: `git merge upstream/master`
-
-1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
-
-1. Do a `git diff HEAD~1 HEAD` to check what changed.
-
-1. If nothing seems out of the ordinary, continue
-
-<details>
-  <summary>Too many conflicts?
-  </summary>
-
-  Let's just take over the current version from `lewagon/dotfiles`.
-
-  First abort the merge: `git merge --abort`.
-
-  Run `code .`
-
-  In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
-
-  Still in VS Code, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
-
-  Back in the terminal, run a `git diff` and check if this didn't remove any personal configuration setting that you wanted to keep.
-
-</details>
-
-Time to commit your changes and push them.
-
-```bash
-git add .
-git commit -m "Update for Data Science bootcamp"
-git push origin master
-```
-
-</details>
-
-
-### Run the dotfiles installer
-
-It's time to run the `dotfiles` installer:
+Run the `dotfiles` installer with:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
 ```
 
-Check the emails registered with your GitHub Account. You'll need to pick one at the next step:
+Check the emails registered with your GitHub Account. You'll need to pick one in the next step:
 
 ```bash
 gh api user/emails | jq -r '.[].email'
@@ -489,9 +374,10 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
 :point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
-:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
-Please now **quit** all your opened terminal windows.
+:warning: You **need** to put one of the emails listed above from the previous `gh api ...` command. If you don't do that, Kitt will not be able to track your progress.
+
+💡 Select the `...@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 
 ## Disable SSH passphrase prompt
@@ -678,8 +564,6 @@ curl $SOURCE > $LOCATION/custom.css
 
 ## Python setup check
 
-### Python and packages check
-
 Let's reset your terminal:
 
 ```bash
@@ -691,37 +575,17 @@ Check your Python version with the following commands:
 zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
-Run the following command to check if you successfully installed the required packages:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
-```
-
-Now run the following command to check if you can load these packages:
-```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
-```
-
-### Jupyter check
-
 Make sure you can run Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-Let's open the jupyter app:
+Your web browser should open on a `jupyter` window.
 
 <details>
 
-  <summary>Regular setup</summary>
-
-  Your web browser should open on a `jupyter` window.
-</details>
-
-
-<details>
-
-  <summary>Virtual machine setup</summary>
+  <summary>Note if you're running the setup on a virtual machine</summary>
 
   VSCode detects that a jupyter notebook started in your virtual machine and creates a port forward in order to allow you to open the application in your browser.
 
@@ -739,8 +603,6 @@ Let's open the jupyter app:
 </details>
 
 
-You now have access to the `jupyter` window:
-
 ![jupyter.png](images/jupyter.png)
 
 Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
@@ -752,21 +614,25 @@ A tab should open on a new notebook:
 ![jupyter_notebook.png](images/jupyter_notebook.png)
 
 Make sure that you are running the correct python version in the notebook. Open a cell and run:
+
 ``` python
 import sys; sys.version
 ```
 
 It should output `3.12.9` followed by some more details. If not, check with a TA.
 
+In another cell, run:
+
+```python
+import pandas as pd
+pd.__version___
+```
+
+This might take a few minutes to run. It should output a version number, `2.2.3`.  If not, check with a TA.
+
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
-
-
-
-## DBeaver
-
-Download and install [DBeaver](https://dbeaver.io/), a free and open source powerful tool to connect to any database, explore the schema and even **run SQL queries**.
 
 
 ## Docker 🐋
@@ -808,34 +674,39 @@ The following message should print:
 
 ## Google Cloud Platform setup
 
-[GCP](https://cloud.google.com/) is a cloud solution that you are going to use in order to deploy your Machine Learning-based products to production.
+[Google Cloud](https://cloud.google.com/) is a cloud solution that you are going to use in order to deploy your Machine Learning-based products to production.
 
-🚨 If you are a student of the **Part-Time Bootcamp**, SKIP THIS SECTION FOR NOW! **GCP** offers $300 worth of free credits for a duration of 3 months. You do not want to activate your GCP account too soon 🙅‍♂️
+🚨 If you are a student of the **Part-Time Bootcamp**, SKIP THIS SECTION FOR NOW! **Google Cloud** offers $300 worth of free credits for a duration of 3 months. You do not want to activate your Google Cloud account too soon 🙅‍♂️
 
 ### Project setup
 
 - Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one
 - In the Cloud Console, on the project list, select or create a Cloud project
 
+⚠️ **Important:** When creating a new project, you will see an **Organization** field. Leave this set to **"No organization"**. Do not select or create an organization. Choosing an organization applies restrictions that can prevent you from using Google Cloud services during the bootcamp.
+
 ![](images/gcp-create-project.png)
 
 - Give it a name such as `Wagon Bootcamp` for example
-- ❗ Check that the field _Location_ is set to _No organization_ ❗
 - Notice the `ID` automatically created for the project, e.g. `wagon-bootcamp-123456`
 
 ![](images/gcp_project.png)
 
+ℹ️ Note the **Project ID** (e.g. `wagon-bootcamp-123456`) this is **not** the same as the project name you chose (e.g. `Wagon Bootcamp`). You will need the ID later when running terminal commands, but don't worry, you can always find it in Google Cloud.
+
 ### Account language
 
-In order to facilitate the following of the instructions during the bootcamp, open your GCP account preferences:
+In order to facilitate the following of the instructions during the bootcamp, open your Google Cloud account preferences:
 
-https://myaccount.google.com/language
+[https://myaccount.google.com/language](https://myaccount.google.com/language)
 
 If the *preferred language* is not:
+
 - **English**
 - **United States**
 
 Then switch the language to english:
+
 - Click on the edit pen logo
 - Select **English**
 - Select **United States**
@@ -843,7 +714,9 @@ Then switch the language to english:
 
 ### Billing account
 
-You will now link your account to your credit card. This step is required or you will not be able to use the services provided by GCP. Do not worry, you will be able to consume most GCP services through free credits throughout the bootcamp.
+You will now link your account to your credit card. This step is required or you will not be able to use the services provided by Google Cloud. Do not worry, you will be able to consume most Google Cloud services through free credits throughout the bootcamp.
+
+⚠️ In some cases, Google may charge your card (around €10) to verify that it is valid. This will unfortunately not be refunded once you are approved, but will be added as credit in Google Cloud that you can use once your free credits have been used or expired.
 
 ![](images/gcp-billing.png)
 
@@ -862,7 +735,7 @@ You should see that you have a free credit of "$300 credits over the next 90days
 - Enter your credit card info
 - Click on **START MY FREE TRIAL**
 
-Once this is done, verify that your billing account is linked to your GCP project.
+Once this is done, verify that your billing account is linked to your Google Cloud project.
 
 - Select your project
 - Go to **Billing**
@@ -872,13 +745,12 @@ Once this is done, verify that your billing account is linked to your GCP projec
 
 You should now see:
 
-```
+```bash
 Free trial status: $300 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
 ```
 
 <details>
   <summary>👉 If you do not own a credit card 👈</summary>
-
 
 If you do not own a credit card, an alternative is to setup a **Revolut** account.
 Revolut is a financial app that will allow you to create a virtual credit card linked to your mobile phone billing account.
@@ -896,26 +768,26 @@ Download the Revolut app, or go to [revolut](https://www.revolut.com/a-radically
 
 Once this is done, select the standard (free) plan. No need to add the card to Apple pay, or ask for a the delivery of a physical card, or add money securely.
 
-You now have a virtual card which we will use for the GCP setup.
+You now have a virtual card which we will use for the Google Cloud setup.
 
-In the main view of the Revolut the app
+In the main view of the Revolut app
+
 - Click on Ready to use
 - Click on the card
 - Click on Show card details
-- Note down the references of the virtual credit card and use them in order to proceed with the GCP setup
+- Note down the references of the virtual credit card and use them in order to proceed with the Google Cloud setup
 
 </details>
 
 <details>
   <summary>👉 If you receive an email from Google saying "Urgent: your billing account XXXXXX-XXXXXX-XXXXXX has been suspended" 👈</summary>
 
-
 This may happen especially in case you just setup a Revolut account.
 
 - Click on PROCEED TO VERIFICATION
 - You will be asked to send a picture of your credit card (only the last 4 digits, no other info)
 - In case you used **Revolut**, you can send a screenshot of your virtual credit card (do not forget to remove the validity date from the screenshot)
-- Explain that you are attending the Le Wagon bootcamp, do not own a credit card, and have just created a Revolut account in order to setup GCP for the bootcamp using a virtual credit card
+- Explain that you are attending the Le Wagon bootcamp, do not own a credit card, and have just created a Revolut account in order to setup Google Cloud for the bootcamp using a virtual credit card
 
 You may receive a validation or requests for more information within 30 minutes.
 
@@ -923,7 +795,7 @@ Once the verification goes through, you should receive an email stating that "Yo
 
 </details>
 
-### Enabling GCP services
+### Enabling Google Cloud services
 
 - Make sure that billing is enabled for your Google Cloud project
 
@@ -931,182 +803,61 @@ Once the verification goes through, you should receive an email stating that "Yo
 
 - [Enable the BigQuery and Compute Engine APIs](https://console.cloud.google.com/flows/enableapi?apiid=bigquery,compute) (This step may take a few minutes)
 
+That's it for the browser setup! Terminal setup comes later in this guide.
+
+
 ### Configure Cloud sdk
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
-
-```bash
-gcloud auth login
-```
-
+  
+  ```bash
+  gcloud auth login
+  ```
+  
 
 - Login to your Google account on the new tab opened in your web browser
+
 - List your active account and check your email address you used for GCP is present
-```bash
-gcloud auth list
-```
+
+  ```bash
+  gcloud auth list
+  ```
+
 - Set your current project (replace `PROJECT_ID` with the `ID` of your project, e.g. `wagon-bootcamp-123456`)
-```bash
-gcloud config set project PROJECT_ID
-```
+
+  ```bash
+  gcloud config set project PROJECT_ID
+  ```
+
 - List your active account and current project and check your project is present
-```bash
-gcloud config list
-```
 
-### Create a service account key 🔑
+  ```bash
+  gcloud config list
+  ```
 
-Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
+- Now let's set up Application Default Credentials so your Python code can access GCP:
 
-<details>
-  <summary>🤔 Why do we need a service account key ?</summary>
+  ```bash
+  gcloud auth application-default login
+  ```
 
+  This will open a browser window. Log in with the same Google account you used to create your GCP project. Your credentials will be saved automatically.
 
-  You have created a `GCP account` linked to your credit card. Your account will be billed according to your usage of the resources of the **Google Cloud Platform**. The billing will occur if you consume anything once the free trial is over, or if you exceed the amount of spending allowed during the free trial.
+- Let's verify your Application Default Credentials are working:
 
-  In your `GCP account`, you have created a single `GCP project`, identified by its `PROJECT_ID`. The `GCP projects` allow you to organize and monitor more precisely how you consume the **GCP** resources. For the purpose of the bootcamp, we are only going to create a single project.
+  ```bash
+  gcloud auth application-default print-access-token
+  ```
 
-  Now, we need a way to tell which resources within a `GCP project` our code will be allowed to consume. Our code consumes GCP resources through API calls.
+  You should see a long token string. If you see an error, run `gcloud auth application-default login` again.
 
-  Since API calls are not free, it is important to define with caution how our code will be allowed to use them. During the bootcamp this will not be an issue and we are going to allow our code to use all the API of **GCP** without any restrictions.
+  <details>
+    <summary>Troubleshooting</summary>
 
-  In the same way that there may be several projects associated with a GCP account, a project may be composed of several services (any bundle of code, whatever its form factor, that requires the usage of GCP API calls in order to fulfill its purpose).
-
-  GCP requires that the services of the projects using API calls are registered on the platform and their credentials configured through the access granted to a `service account`.
-
-  For the moment we will only need to use a single service and will create the corresponding `service account`.
-</details>
-
-Since the [service account](https://cloud.google.com/iam/docs/service-accounts) is what identifies your application (and therefore your GCP billing account and ultimately your credit card), you are going to want to be cautious with the next steps.
-
-⚠️ **Do not share you service account json file 🔑** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
-
-#### Go to the Service Accounts page
-
-Navigate to the GCP service accounts page at [this link](https://console.cloud.google.com/apis/credentials/serviceaccountkey).
-
-- Select your project in the list of recent projects if asked to.
-- If not asked, make sure the right project is selected in the Project selecter list at the top of the page.
-
-An alternate way to navigate to the Service Accounts page is from the following:
-
-<img width="400" alt="01 Go to Service Accounts" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-01.png">
-
-#### Create a service account
-
-- Click on **CREATE SERVICE ACCOUNT**.
-
-  <img width="400" alt="02 Create Service Account" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-02.png">
-
-- Give your service account a name, an id and a description, and click on **CREATE AND CONTINUE**.
-
-  <img width="400" alt="03 Name the service account" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-03.png">
-
-- Click on **Select a role** and choose `Basic` then **`Owner`**, which gives the service account full access to all resources of your GCP project.
-
-  <img width="400" alt="04 Add BigQuery Job User" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-04.png">
-
-- Click on the blue **DONE** button at the bottom of this window. We don't need to worry about the section *Grant your users access to this service account*.
-
-  <img width="400" alt="04 Done" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-05.png">
-
-
-#### Create a json key 🔑 for this service account
-
-- On the service accounts page, click on the email address of the newly created service account.
-
-  <img width="400" alt="05 Select the service account" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-06.png">
-
-- Click on the **KEYS** tab at the top of the page.
-
-  <img width="400" alt="06 Go to Keys" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-07.png">
-
-
-- Click on **ADD KEY** then **Create new key**.
-
-  <img width="400" alt="07 Add Key" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-08.png">
-
-
-- Select **JSON** and click on **CREATE**.
-
-  <img width="400" alt="08 Choose JSON and Create" src="https://wagon-public-datasets.s3.amazonaws.com/data-science-images/00-Setup/GCP/service-account-09.png">
-
-- The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`).
-
-
-- Store the service account json file somewhere you'll remember, for example:
-
-``` bash
-/home/LINUX_USERNAME/code/GITHUB_NICKNAME/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
-```
-
-- Store the **absolute path** to the `JSON` file as an environment variable:
-
-``` bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.zshrc
-```
-**Note:** every time you run this command, it will add this line to your zshrc file regardless of whether you already have it. If you made a mistake and need to fix it, preferably open the file and edit the line!
-
-You can do so by running
-
-```bash
-code ~/.zshrc
-```
-
-in the Terminal! 😄
-
-
-
-<details>
-  <summary>ℹ️ How to find the absolute path of a file?</summary>
-  You can drag and drop the file in your terminal.
-</details>
-
-**Restart** your terminal and run:
-
-``` bash
-echo $GOOGLE_APPLICATION_CREDENTIALS
-```
-
-The ouptut should be the following:
-
-```bash
-/some/absolute/path/to/your/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
-```
-
-Now let's verify that the path to your service account json file is correct:
-
-``` bash
-cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
-```
-
-👉 This command should display the content of your service account json file. If it does not, ask for a TA 🙏
-
-Your code and utilities are now able to access the resources of your GCP account.
-
-Let's proceed with the final steps of configuration...
-
-- List the service accounts associated to your active account and current project
-```bash
-gcloud iam service-accounts list
-```
-- Retrieve the service account email address, e.g. `SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com`
-- List the roles of the service account from the cli (replace PROJECT_ID and SERVICE_ACCOUNT_EMAIL)
-```bash
-gcloud projects get-iam-policy PROJECT_ID \
---flatten="bindings[].members" \
---format='table(bindings.role)' \
---filter="bindings.members:SERVICE_ACCOUNT_EMAIL"
-```
-- You should see that your service account has a role of `roles/owner`
-
-<details>
-  <summary>Troubleshooting</summary>
-
-- `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
-  - Make sure that billing is enabled for your Google Cloud Platform project https://cloud.google.com/billing/docs/how-to/modify-project
-</details>
+  - `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
+    - Make sure that billing is enabled for your Google Cloud Platform project [https://cloud.google.com/billing/docs/how-to/modify-project](https://cloud.google.com/billing/docs/how-to/modify-project)
+  </details>
 
 🏁 You are done with the GCP setup!
 
