@@ -1,59 +1,33 @@
 ## Homebrew
-### 1. Install:
-On Mac, you need to install [Homebrew](http://brew.sh/) which is a Package Manager.
-It will be used as soon as we need to install some software.
-To do so, open your Terminal and run:
+
+[Homebrew](http://brew.sh/) is a package manager: it's a software used to install other software from the command line. Let's install it!
+
+Open a terminal and run:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 This will ask for your confirmation (hit `Enter`) and your **macOS user account password** (the one you use to [log in](https://support.apple.com/en-gb/HT202860) when you reboot your Macbook).
-:warning: When typing a password in the Terminal, you will **not** get a visual feedback (something like `*****`), this is **normal**!! Type the password and confirm by typing `Enter`.
 
-<details>
-  <summary>🛠 If you get a <code>Error: Not a valid ref: refs/remotes/origin/master</code> error</summary>
-
-
-The full error would be:
-
-``` bash
-Error: Not a valid ref: refs/remotes/origin/master :
-fatal: ambiguous argument 'refs/remotes/origin/master': unknown revision or path not in the working tree.
-```
-
-Run the following commands to solve it:
-
-``` bash
-rm -fr $(brew --repo homebrew/core)  # because you can't `brew untap homebrew/core`
-brew tap homebrew/core
-```
-
-</details>
+:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `Enter`.
 
 If you already have Homebrew, it will tell you so, that's fine, go on.
 
-### 2. Make sure you are on the latest version:
+Once Homebrew has finished installing, run these two commands to add it to your `PATH`:
+
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+Make sure you're on the latest version:
 
 ```bash
 brew update
 ```
 
-<details>
-  <summary>🛠 If you get a <code>/usr/local must be writable</code> error</summary>
-
-Just run this:
-
-``` bash
-sudo chown -R $USER:admin /usr/local
-brew update
-```
-
-</details>
-
-### 3. Then install some useful software:
-
-Proceed running the following in the terminal (you can copy / paste all the lines at once).
+Then install some useful software (you can copy / paste all the lines at once):
 
 ```bash
 brew upgrade git         || brew install git
