@@ -28,7 +28,6 @@ partials:
   - win_jupyter
   - python_checkup
   - setup/windows_settings
-  - win_vs_redistributable
   - win_docker
   - gcp_account_setup
   - gcp_setup
