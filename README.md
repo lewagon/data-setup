@@ -1,6 +1,6 @@
 ## ¿En Español?
 
-Haz clic en <a href="README.es.md">este link</a> para acceder a la versión en español del setup.
+Haz clic en <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/README.es.md">este link</a> para acceder a la versión en español del setup.
 
 ## In English
 
@@ -11,22 +11,22 @@ Please choose your operating system (OS):
 <table>
   <tr>
     <td>
-      <a href="macOS.md">
+      <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/macOS.md">
         <img src="images/apple.png" alt="macOS" />
       </a>
     </td>
     <td>
-      <a href="WINDOWS.md">
+      <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/WINDOWS.md">
         <img src="images/windows.png" alt="Windows">
       </a>
     </td>
     <td>
-      <a href="LINUX.md">
+      <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/LINUX.md">
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>
     <td>
-      <a href="VM.md">
+      <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/VM.md">
         <img src="images/vm.png" alt="Virtual Machine">
       </a>
     </td>
@@ -40,17 +40,17 @@ Please choose your operating system (OS):
 <table>
   <tr>
     <td>
-      <a href="macOS_keep_current.md">
+      <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/macOS_keep_current.md">
         <img src="images/apple.png" alt="macOS" />
       </a>
     </td>
     <td>
-      <a href="WINDOWS_keep_current.md">
+      <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/WINDOWS_keep_current.md">
         <img src="images/windows.png" alt="Windows">
       </a>
     </td>
     <td>
-      <a href="LINUX_keep_current.md">
+      <a href="https://github.com/lewagon/data-setup/blob/no-update-2026/LINUX_keep_current.md">
         <img src="images/linux.png" alt="Linux">
       </a>
     </td>

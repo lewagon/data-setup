@@ -149,7 +149,7 @@ If your computer uses **Apple Silicon**, expand the paragraph below and go throu
   <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/specs/releases/apple_silicon.txt
 ```
 </details>
 
@@ -159,7 +159,7 @@ If your computer uses **Apple Intel**, expand the paragraph below and go through
   <summary>👉&nbsp;&nbsp;Setup for Apple Intel 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/specs/releases/apple_intel.txt
 ```
 </details>
 
@@ -301,17 +301,17 @@ cd ~/code && exec zsh
 
 Check your Python version with the following commands:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/checks/python_checker.sh)" 3.12.9
 ```
 
 Run the following command to check if you successfully installed the required packages:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/checks/pip_check.sh)"
 ```
 
 Now run the following command to check if you can load these packages:
 ```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/checks/pip_check.py)"
 ```
 
 ### Jupyter check

@@ -1070,7 +1070,7 @@ Ahora instala algunos paquetes para las primeras semanas del programa:
 
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+pip install -r https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/specs/releases/linux.txt
 ```
 
 
@@ -1144,17 +1144,17 @@ cd ~/code && exec zsh
 
 Verifica tu versión de Python con los siguientes comandos:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/checks/python_checker.sh)" 3.12.9
 ```
 
 Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
 ```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/checks/pip_check.sh)"
 ```
 
 Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquetes:
 ```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
+python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/no-update-2026/checks/pip_check.py)"
 ```
 
 ### Chequeo de Jupyter
