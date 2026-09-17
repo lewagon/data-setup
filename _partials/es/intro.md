@@ -1,7 +1,10 @@
-# Instrucciones para la configuración
 
-Aquí abajo encontrarás las instrucciones para configurar tu computadora para [el curso de Data Science de Le Wagon](https://www.lewagon.com/data-science-course/full-time)
+# Instrucciones de configuración
 
-Por favor **léelas cuidadosamente y ejecuta todos los comandos en el siguiente orden**. Si tienes algún problema, no dudes en pedirle ayuda a una profesor :raising_hand:
+A continuación encontrarás las instrucciones para configurar tu ordenador para el [bootcamp de Data Science & AI de Le Wagon](https://www.lewagon.com/data-science-course).
 
-¡Comencemos! :rocket:
+Por favor, **léelas detenidamente y ejecuta todos los comandos en el siguiente orden**.
+
+Esta configuración no es un ejercicio; su único propósito es preparar tu ordenador de forma estandarizada. No experimentes ni pidas ayuda a un LLM. Si te atascas, simplemente pide ayuda a un profesor :raising_hand:
+
+Empecemos :rocket:
