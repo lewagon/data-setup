@@ -1,10 +1,13 @@
-# Instrucciones para la configuración
 
-Aquí abajo encontrarás las instrucciones para configurar tu computadora para [el curso de Data Science de Le Wagon](https://www.lewagon.com/data-science-course/full-time)
+# Instrucciones de configuración
 
-Por favor **léelas cuidadosamente y ejecuta todos los comandos en el siguiente orden**. Si tienes algún problema, no dudes en pedirle ayuda a una profesor :raising_hand:
+A continuación encontrarás las instrucciones para configurar tu ordenador para el [bootcamp de Data Science & AI de Le Wagon](https://www.lewagon.com/data-science-course).
 
-¡Comencemos! :rocket:
+Por favor, **léelas detenidamente y ejecuta todos los comandos en el siguiente orden**.
+
+Esta configuración no es un ejercicio; su único propósito es preparar tu ordenador de forma estandarizada. No experimentes ni pidas ayuda a un LLM. Si te atascas, simplemente pide ayuda a un profesor :raising_hand:
+
+Empecemos :rocket:
 
 
 ## Cuenta GitHub
@@ -468,23 +471,23 @@ Para personalizar esta configuración, tendrás que hacer un **fork** del reposi
 Al hacer un **fork**, se crea una copia del repositorio en tu cuenta (`your_github_username/dotfiles`), que luego podrás modificar con tu información personal, como tu nombre.
 
 <details>
-    <summary>❗ <strong>Si</strong> ya hiciste otro bootcamp de Le Wagon (<strong>Desarrollo Web, Desarrollo de Software con IA, Análisis de Datos, Ciencia de Datos e IA</strong>), abre esto primero ❗
-    </summary>
+<summary>❗ <strong>Si</strong> ya hiciste otro bootcamp de Le Wagon (<strong>Desarrollo Web, Desarrollo de Software con IA, Análisis de Datos, Ciencia de Datos e IA</strong>), abre esto primero ❗
+</summary>
 
-    Es posible que tengas una versión anterior de los dotfiles de Le Wagon. Podrían ser incompatibles con la configuración actual.
+Es posible que tengas una versión anterior de los dotfiles de Le Wagon. Podrían ser incompatibles con la configuración actual.
 
 
-    **Abre un ticket** con un TA y haz una de las siguientes cosas:
-    - Compara tus dotfiles existentes con los [dotfiles 🔗](https://github.com/lewagon/dotfiles) actuales de Le Wagon, especialmente `.zshrc`, `.zprofile` y `settings.json`. Si no hay ninguna diferencia significativa aparte de tu nombre y correo electrónico, continúa con la configuración.
-    - Si no te importa perder tus dotfiles existentes (recomendado):
-        - Elimina tu repositorio de dotfiles existente en GitHub y continúa con la configuración.
-        - Elimina el repositorio local: `rm -rf ~/code/<your_github_username>/dotifles`.
-    - Si no quieres perder tus dotfiles existentes, recomendamos trabajar con ramas:
-        - En tu **portátil**, o donde tengas una copia **local** de **tu versión existente de los dotfiles**.
-        - Crea una rama de tu configuración existente de dotfiles (`git checkout -b old-setup`) y súbela a GitHub: `git push origin old-setup`.
-        - Vuelve a `master`: `git checkout master`.
-        - En la rama local `master`, ejecuta `git pull upstream master`, resuelve los conflictos, ejecuta `git commit -m "merged"` y `git push origin master`. Es importante que aceptes los cambios entrantes en los archivos `.zshrc`, `.zprofile` y `settings.json`.
-        - Continúa con la configuración.
+**Abre un ticket** con un TA y haz una de las siguientes cosas:
+- Compara tus dotfiles existentes con los [dotfiles 🔗](https://github.com/lewagon/dotfiles) actuales de Le Wagon, especialmente `.zshrc`, `.zprofile` y `settings.json`. Si no hay ninguna diferencia significativa aparte de tu nombre y correo electrónico, continúa con la configuración.
+- Si no te importa perder tus dotfiles existentes (recomendado):
+    - Elimina tu repositorio de dotfiles existente en GitHub y continúa con la configuración.
+    - Elimina el repositorio local: `rm -rf ~/code/<your_github_username>/dotifles`.
+- Si no quieres perder tus dotfiles existentes, recomendamos trabajar con ramas:
+    - En tu **portátil**, o donde tengas una copia **local** de **tu versión existente de los dotfiles**.
+    - Crea una rama de tu configuración existente de dotfiles (`git checkout -b old-setup`) y súbela a GitHub: `git push origin old-setup`.
+    - Vuelve a `master`: `git checkout master`.
+    - En la rama local `master`, ejecuta `git pull upstream master`, resuelve los conflictos, ejecuta `git commit -m "merged"` y `git push origin master`. Es importante que aceptes los cambios entrantes en los archivos `.zshrc`, `.zprofile` y `settings.json`.
+    - Continúa con la configuración.
 
 </details>
 

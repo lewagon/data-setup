@@ -1,9 +1,11 @@
 
 # Setup instructions
 
-You will find below the instructions to set up you computer for [Le Wagon Data Science course](https://www.lewagon.com/data-science-course/full-time)
+Below are the instructions for setting up your computer for the [Le Wagon Data Science & AI bootcamp](https://www.lewagon.com/data-science-course).
 
-Please **read them carefully and execute all commands in the following order**. If you get stuck, don't hesitate to ask a teacher for help :raising_hand:
+Please **read them carefully and execute all commands in the following order**. 
+
+This setup is not an exercise; its sole purpose is to prepare your machine in a standardised way. Do not experiment or ask an LLM for help. If you get stuck, simply ask a teacher for help :raising_hand:
 
 Let's start :rocket:
 
@@ -756,23 +758,23 @@ To customise this configuration for yourself, you'll need to **fork** the reposi
 **Forking** creates a copy of the repository under your account (`your_github_username/dotfiles`), which you can then modify with your personal information, such as your name.
 
 <details>
-    <summary>❗ <strong>If</strong> you already did another Le Wagon bootcamp  (<strong>Web Development, AI Software Development, Data Analytics, Data Science & AI</strong>, open this first ❗
-    </summary>
+<summary>❗ <strong>If</strong> you already did another Le Wagon bootcamp  (<strong>Web Development, AI Software Development, Data Analytics, Data Science & AI</strong>, open this first ❗
+</summary>
 
-    You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
+You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
 
 
-    **Open a ticket** with a TA and do one of the following:
-    - Compare your existing dotfiles with the current Le Wagon [dotfiles 🔗](https://github.com/lewagon/dotfiles), particularly the `.zshrc`, `.zprofile`, and `settings.json` - if there is no meaningful difference other than your name and email setting, continue with the setup.
-    - If you are OK with losing your existing dotfiles (recommended):
-        - Delete your existing dotfiles repository on GitHub and continue with the setup.
-        - Delete the local repository: `rm -rf ~/code/<your_github_username>/dotifles`.
-    - If you do not want to lose your existing dotfiles, we recommend working with branches:
-        - On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**
-        - Create a branch of your existing dotfiles setup (`git checkout -b old-setup`), and push to GitHub - `git push origin old-setup`,
-        - Go back to `master`: `git checkout master`.
-        - On local `master`, `git pull upstream master`, resolve any conflicts, `git commit -m "merged"`, and `git push origin master`. It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files.
-        - Continue with the setup.
+**Open a ticket** with a TA and do one of the following:
+- Compare your existing dotfiles with the current Le Wagon [dotfiles 🔗](https://github.com/lewagon/dotfiles), particularly the `.zshrc`, `.zprofile`, and `settings.json` - if there is no meaningful difference other than your name and email setting, continue with the setup.
+- If you are OK with losing your existing dotfiles (recommended):
+    - Delete your existing dotfiles repository on GitHub and continue with the setup.
+    - Delete the local repository: `rm -rf ~/code/<your_github_username>/dotifles`.
+- If you do not want to lose your existing dotfiles, we recommend working with branches:
+    - On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**
+    - Create a branch of your existing dotfiles setup (`git checkout -b old-setup`), and push to GitHub - `git push origin old-setup`,
+    - Go back to `master`: `git checkout master`.
+    - On local `master`, `git pull upstream master`, resolve any conflicts, `git commit -m "merged"`, and `git push origin master`. It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files.
+    - Continue with the setup.
 
 </details>
 
