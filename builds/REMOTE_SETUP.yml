@@ -39,7 +39,6 @@ partials:
   - pip
   - nbextensions
   - python_checkup
-  - dbeaver
   - ubuntu_docker
   # - de_setup/gcp_setup
   # - kitt

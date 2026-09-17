@@ -35,7 +35,6 @@ partials:
   - pip
   - nbextensions
   - python_checkup
-  - dbeaver
   - ubuntu_docker
   - kitt
   - setup/windows_slack

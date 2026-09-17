@@ -33,7 +33,6 @@ partials:
   - nbextensions
   - win_jupyter
   - python_checkup
-  - dbeaver
   - setup/windows_settings
   - win_vs_redistributable
   - win_docker

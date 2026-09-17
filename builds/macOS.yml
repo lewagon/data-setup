@@ -26,7 +26,6 @@ partials:
   - pip
   - nbextensions
   - python_checkup
-  - dbeaver
   - docker
   - gcp_cli_setup
   - gcp_setup
