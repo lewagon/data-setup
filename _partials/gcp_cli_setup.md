@@ -15,6 +15,8 @@ Then you can:
 $(brew --prefix)/share/google-cloud-sdk/install.sh
 ```
 
+When asked if you want to make updates, choose `y`. When asked for the path to an rc file, hit `Enter` to accept the default `.zshrc`.
+
 <details>
   <summary>Getting a <code>no such file or directory</code> error?
   </summary>
