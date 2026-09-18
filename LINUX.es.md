@@ -384,6 +384,11 @@ First, we'll install `uv`:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
+Next, restart your shell by running this:
+
+```bash
+exec zsh
+```
 
 ### Create a virtual environment
 

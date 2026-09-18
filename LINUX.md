@@ -343,6 +343,8 @@ mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
 
+If you're asked _"Are you sure you want to continue connecting (yes/no/[fingerprint])?"_, type `yes` followed by `Enter`.
+
 ### Installing the dotfiles
 
 Run the `dotfiles` installer with:
@@ -402,6 +404,11 @@ First, we'll install `uv`:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
+Next, restart your shell by running this:
+
+```bash
+exec zsh
+```
 
 ### Create a virtual environment
 
@@ -521,7 +528,7 @@ In another cell, run:
 
 ```python
 import pandas as pd
-pd.__version___
+pd.__version__
 ```
 
 This might take a few minutes to run. It should output a version number, `2.2.3`.  If not, check with a TA.
