@@ -821,130 +821,62 @@ plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history
 :heavy_check_mark: Guarda el archivo `.zshrc` con `Ctrl` + `S` y cierra tu editor de texto.
 
 
-## Instalando Python (con [`pyenv`](https://github.com/pyenv/pyenv))
+## Install Python and dependencies
 
-### Desinstalar `conda`
+Your operating system - macOS, or Ubuntu (native, or inside WSL) - come with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and wher you'll be able to switch which version you want to use for each project you work on.
 
-Como estamos utilizando `pyenv` para instalar y gestionar la versión de Python, necesitamos desinstalar [`conda`](https://docs.conda.io/projects/conda/en/latest/), otro gestor de paquetes que podrías tener en tu computadora si previamente instalaste [Anaconda](https://www.anaconda.com/). De esta forma, evitaremos problemas con Python más adelante.
+To manage different Python versions and virtual environments (you'll discover what that means during the setup lecture), we will use the state-of-the-art [`uv` created by Astral](https://docs.astral.sh/uv/).
 
-Chequea si tienes `conda` instalado en tu computadora:
+
+### Install `uv`
+
+First, we'll install `uv`:
 
 ```bash
-conda list
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Si aparece `zsh: command not found: conda`, puedes **saltear** la desinstalación de `conda` e ir directo a la sección de **Instalar pre-requisitos**.
 
+### Create a virtual environment
 
-<details>
-    <summary markdown='span'>Instrucciones de desinstalación <code>conda</code></summary>
+Next, we'll create a virtual environment (an isolated environment with Python and the dependencies for the bootcamp):
 
-- Instala el paquete Anaconda-Clean desde tu terminal y comienza la limpieza
 ```bash
-conda install anaconda-clean
-anaconda-clean --yes
+uv venv ~/.lewagon/venvs/lewagon --python 3.12.9
 ```
-- Remueve todos los directorios de Anaconda
-```bash
-rm -rf ~/anaconda2
-rm -rf ~/anaconda3
-rm -rf ~/.anaconda_backup
 
-```
-- Elimina el directorio Anaconda de tu `.bash_profile`
-    - Abre el archivo con `code ~/.bash_profile`
-    - Si el archivo abre, busca la línea que coincida con el siguiente patrón `export PATH="/path/to/anaconda3/bin:$PATH"` y eliminala
-
-- Reinicia la terminal con `exec zsh`
-- Remueve la inicializaciópn de Anaconda de tu `.zshrc`:
-    - Abre el archivo con `code ~/.zshrc` 
-    - Remueve las líneas de código desde `>>> conda initialize >>>` hasta `<<< conda initialize <<<`
-</details>
-
-
-### Instala `pyenv`
-
-Ubuntu viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
-
-Primero instala `pyenv` con el siguiente comando en la Terminal:
+Now that we created this new virtual environment, let's restart our shell to pick it up (this works thanks to the `lewagon/dotfiles` we installed before):
 
 ```bash
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 exec zsh
 ```
 
-Instala algunas [dependencias](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) necesarias para crear Python desde `pyenv`:
+Let's check that everything went right. Run this:
 
 ```bash
-sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev sqlite3 libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-python3-dev
+which python3
 ```
 
-### Instala Python
-
-Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
-
-```bash
-pyenv install 3.12.9
-```
-
-Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
-
-OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
-
-```bash
-pyenv global 3.12.9
-exec zsh
-```
-
-Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `3.12.9`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
-
-
-## Entorno Virtual de Python
-
-Antes de instalar paquetes de Python, aislaremos la configuración del Bootcamp en un entorno virtual **dedicado**. Usaremos un plugin `pyenv` llamado [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
-
-### Instala un virtualenv
-
-Primero instala este plugin:
-
-```bash
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-exec zsh
-```
-
-Crea el entorno virtual que usaremos durante todo el bootcamp:
-
-```bash
-pyenv virtualenv 3.12.9 lewagon
-```
-
-Define el entorno virtual con lo siguiente:
-
-```bash
-pyenv global lewagon
-```
-
-¡Genial! Ahora cada vez que queramos instalar un paquete Python, lo haremos en ese entorno.
-
-
-### Paquetes de Python
-
-Ahora que tenemos el ambiente virtual de `lewagon` adecuado, es hora de instalarle algunos paquetes.
-
-Primero, actualiza `pip`, la herramienta para instalar Paquetes Python desde [pypi.org](https://pypi.org). Ejecuta lo siguiente en la última terminal donde esté activado el virtualenv de `lewagon`:
-
-```bash
-pip install --upgrade pip
-```
-
-Ahora instala algunos paquetes para las primeras semanas del programa:
+It should return this:
 
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+/home/your-username/.lewagon/venvs/lewagon/bin/python3
+```
+
+
+If it doesn't, check with a TA! Do not continue with the next step before you solved this!
+
+
+### Install dependencies
+
+Python is great for data, because the communitiy has developed an enormous amount of packages we can re-use.
+
+Let's install the most common ones:
+
+
+``` bash
+uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
 
 
