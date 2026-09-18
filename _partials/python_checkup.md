@@ -1,14 +1,11 @@
 ## Python setup check
 
+Let's run some checks. If any of the following steps fail, ask a TA for help.
+
 Let's reset your terminal:
 
 ```bash
 cd ~/code && exec zsh
-```
-
-Check your Python version with the following commands:
-```bash
-zsh -c "$(curl -fsSL {{ PYTHON_CHECKER_URL }})" {{ PYTHON_VERSION }}
 ```
 
 Make sure you can run Jupyter:
