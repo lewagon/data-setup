@@ -49,6 +49,8 @@ mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
 
+If you're asked _"Are you sure you want to continue connecting (yes/no/[fingerprint])?"_, type `yes` followed by `Enter`.
+
 ### Installing the dotfiles
 
 Run the `dotfiles` installer with:
