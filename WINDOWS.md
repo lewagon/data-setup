@@ -735,18 +735,6 @@ gh auth status
 :x: If not, **contact a teacher**.
 
 
-## Google Cloud CLI
-
-Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
-```bash
-sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get update && sudo apt-get install google-cloud-cli
-```
-👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
-
-
 ## Dotfiles
 
 Let's enhance the experience of your machine by installing Le Wagon's pre-configured [dotfiles 🔗](https://github.com/lewagon/dotfiles). These are configuration files for your terminal, zsh, git, and VS Code.
@@ -1049,15 +1037,12 @@ To stop the Jupyter server in the terminal, press `Ctrl` + `C`, enter y, then pr
 
 ## Python setup check
 
+Let's run some checks. If any of the following steps fail, ask a TA for help.
+
 Let's reset your terminal:
 
 ```bash
 cd ~/code && exec zsh
-```
-
-Check your Python version with the following commands:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Make sure you can run Jupyter:
@@ -1118,59 +1103,6 @@ This might take a few minutes to run. It should output a version number, `2.2.3`
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
-
-
-## Windows settings
-
-### Exchange files between Windows and Ubuntu
-
-We need an easy way to transfer files from Windows to Ubuntu and vice versa.
-
-In order to do that, let's create shortcuts to Ubuntu directories in the Windows **File Explorer**:
-- Open the Windows File Explorer (or use the shortcut `WIN` + `E`)
-- In the Address Bar, enter `\\wsl$\` (or `\\wsl$\Ubuntu` if it does not work)
-- You now have acces to the Ubuntu file system
-- Dive into the Ubuntu file system in order to look for directories of interest
-- Drag the desired folders into the Address Bar in order to create shortcuts
-
-![How to add a shortcut to Ubuntu file system on Windows](https://github.com/lewagon/setup/blob/master/images/windows_ubuntu_file_system_shortcut.gif)
-
-### Open the Windows File Explorer from the Ubuntu terminal
-
-Another option to move files around is to open the Windows **File Explorer** from the Ubuntu terminal:
-- Open an Ubuntu terminal
-- Go to the directory you wish to explore
-- Run the `explorer.exe .` command (alternatively, use `wslview .`)
-- If you get an input output error message, run `wsl --shutdown` in a Windows PowerShell and reopen an Ubuntu terminal
-
-![How to launch Windows Explorer from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_explorer_from_terminal.png)
-
-### Find your way in the Ubuntu File System
-
-You might want to figure out the exact location of a Windows directory in the Ubuntu file system, or the other way around.
-
-In order to convert a Windows path to and from an Ubuntu path:
-- Open an Ubuntu terminal
-- Use the `wslpath "C:\Program Files"` command in order to translate a Windows path into an Ubuntu path
-- Use the `wslpath -w "/home"` command in order to translate an Ubuntu path into a Windows path
-- In particular, the `wslpath -w $(pwd)` command returns the Windows path of the current Ubuntu directory
-
-![How to access a Windows path from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_path_from_terminal.png)
-
-### Pin apps to your taskbar
-
-You are going to use most of the apps you've installed today really often. Let's pin them to your taskbar so that they are just one click away!
-
-To pin an app to your taskbar, launch the app, right-click on the icon in the taskbar to bring up the context menu and choose "Pin to taskbar".
-
-![How to pin an app to the taskbar in Windows](https://github.com/lewagon/setup/blob/master/images/windows_taskbar.png)
-
-You must pin:
-- Your terminal
-- Your file explorer
-- VS Code
-- Your Internet browser
-- Slack
 
 
 ## Docker 🐋
@@ -1374,7 +1306,22 @@ Once the verification goes through, you should receive an email stating that "Yo
 That's it for the browser setup! Terminal setup comes later in this guide.
 
 
-### Configure Cloud sdk
+
+## Google Cloud CLI
+
+### Install `gcloud`
+
+Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
+```bash
+sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get update && sudo apt-get install google-cloud-cli
+```
+👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
+
+
+### Configure the Google Cloud CLI
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
@@ -1475,6 +1422,59 @@ To ensure that everything is working fine for video calls, let's test your camer
 :x: If not, **contact a teacher**.
 
 You can also install Slack app on your phone and sign in `lewagon-alumni`!
+
+
+## Windows settings
+
+### Exchange files between Windows and Ubuntu
+
+We need an easy way to transfer files from Windows to Ubuntu and vice versa.
+
+In order to do that, let's create shortcuts to Ubuntu directories in the Windows **File Explorer**:
+- Open the Windows File Explorer (or use the shortcut `WIN` + `E`)
+- In the Address Bar, enter `\\wsl$\` (or `\\wsl$\Ubuntu` if it does not work)
+- You now have acces to the Ubuntu file system
+- Dive into the Ubuntu file system in order to look for directories of interest
+- Drag the desired folders into the Address Bar in order to create shortcuts
+
+![How to add a shortcut to Ubuntu file system on Windows](https://github.com/lewagon/setup/blob/master/images/windows_ubuntu_file_system_shortcut.gif)
+
+### Open the Windows File Explorer from the Ubuntu terminal
+
+Another option to move files around is to open the Windows **File Explorer** from the Ubuntu terminal:
+- Open an Ubuntu terminal
+- Go to the directory you wish to explore
+- Run the `explorer.exe .` command (alternatively, use `wslview .`)
+- If you get an input output error message, run `wsl --shutdown` in a Windows PowerShell and reopen an Ubuntu terminal
+
+![How to launch Windows Explorer from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_explorer_from_terminal.png)
+
+### Find your way in the Ubuntu File System
+
+You might want to figure out the exact location of a Windows directory in the Ubuntu file system, or the other way around.
+
+In order to convert a Windows path to and from an Ubuntu path:
+- Open an Ubuntu terminal
+- Use the `wslpath "C:\Program Files"` command in order to translate a Windows path into an Ubuntu path
+- Use the `wslpath -w "/home"` command in order to translate an Ubuntu path into a Windows path
+- In particular, the `wslpath -w $(pwd)` command returns the Windows path of the current Ubuntu directory
+
+![How to access a Windows path from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_path_from_terminal.png)
+
+### Pin apps to your taskbar
+
+You are going to use most of the apps you've installed today really often. Let's pin them to your taskbar so that they are just one click away!
+
+To pin an app to your taskbar, launch the app, right-click on the icon in the taskbar to bring up the context menu and choose "Pin to taskbar".
+
+![How to pin an app to the taskbar in Windows](https://github.com/lewagon/setup/blob/master/images/windows_taskbar.png)
+
+You must pin:
+- Your terminal
+- Your file explorer
+- VS Code
+- Your Internet browser
+- Slack
 
 
 ## (Bonus) Kata

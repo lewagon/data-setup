@@ -283,15 +283,12 @@ sudo service docker stop
 
 ## Python setup check
 
+Let's run some checks. If any of the following steps fail, ask a TA for help.
+
 Let's reset your terminal:
 
 ```bash
 cd ~/code && exec zsh
-```
-
-Check your Python version with the following commands:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Make sure you can run Jupyter:

@@ -539,15 +539,12 @@ curl $SOURCE > $LOCATION/custom.css
 
 ## Python setup check
 
+Let's run some checks. If any of the following steps fail, ask a TA for help.
+
 Let's reset your terminal:
 
 ```bash
 cd ~/code && exec zsh
-```
-
-Check your Python version with the following commands:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Make sure you can run Jupyter:
@@ -633,36 +630,6 @@ docker info
 You should get:
 
 ![](images/docker_info.png)
-
-
-
-## `gcloud` CLI
-
-Before Setting up our Google Cloud Platform account let's configure the `gcloud` CLI (A command line interface for Google Cloud Platform). Run the below and follow the terminal prompts to update your $PATH and enable shell command completion for the `.zshrc` file:
-
-```bash
-brew install --cask google-cloud-sdk
-```
-
-Then you can:
-
-```bash
-$(brew --prefix)/share/google-cloud-sdk/install.sh
-```
-
-<details>
-  <summary>Getting a <code>no such file or directory</code> error?
-  </summary>
-
-  Try this:
-
-```bash
-$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
-```
-
-If that doesn't work, contact a TA.
-
-</details>
 
 
 ## Google Cloud Platform setup
@@ -799,7 +766,39 @@ Once the verification goes through, you should receive an email stating that "Yo
 That's it for the browser setup! Terminal setup comes later in this guide.
 
 
-### Configure Cloud sdk
+
+## Google Cloud CLI
+
+### Install `gcloud`
+
+Before Setting up our Google Cloud Platform account let's configure the `gcloud` CLI (A command line interface for Google Cloud Platform). Run the below and follow the terminal prompts to update your $PATH and enable shell command completion for the `.zshrc` file:
+
+```bash
+brew install --cask google-cloud-sdk
+```
+
+Then you can:
+
+```bash
+$(brew --prefix)/share/google-cloud-sdk/install.sh
+```
+
+<details>
+  <summary>Getting a <code>no such file or directory</code> error?
+  </summary>
+
+  Try this:
+
+```bash
+$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
+```
+
+If that doesn't work, contact a TA.
+
+</details>
+
+
+### Configure the Google Cloud CLI
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 

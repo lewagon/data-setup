@@ -268,18 +268,6 @@ gh auth status
 :x: De lo contrario, **contacta a un profesor**.
 
 
-## CLI de Google Cloud
-
-Instala la CLI de `gcloud` para comunicar con [Google Cloud Platform](https://cloud.google.com/) a través de la terminal:
-```bash
-sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get update && sudo apt-get install google-cloud-cli
-```
-👉 [Documentación para la instalación](https://cloud.google.com/sdk/docs/install#deb)
-
-
 ## Dotfiles
 
 Mejoremos la experiencia de tu máquina instalando los [dotfiles 🔗](https://github.com/lewagon/dotfiles) preconfigurados de Le Wagon. Son archivos de configuración para tu terminal, zsh, git y VS Code.
@@ -748,6 +736,18 @@ Una vez completada la verificación, deberías recibir un correo que indique: "Y
 - [Activa las API de BigQuery y Compute Engine](https://console.cloud.google.com/flows/enableapi?apiid=bigquery,compute) (Este paso puede tardar unos minutos)
 
 ¡Eso es todo para la configuración en el navegador! La configuración de la terminal aparece más adelante en esta guía.
+
+
+## CLI de Google Cloud
+
+Instala la CLI de `gcloud` para comunicar con [Google Cloud Platform](https://cloud.google.com/) a través de la terminal:
+```bash
+sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get update && sudo apt-get install google-cloud-cli
+```
+👉 [Documentación para la instalación](https://cloud.google.com/sdk/docs/install#deb)
 
 
 ### Configurar Cloud SDK

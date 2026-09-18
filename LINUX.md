@@ -292,18 +292,6 @@ gh auth status
 :x: If not, **contact a teacher**.
 
 
-## Google Cloud CLI
-
-Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
-```bash
-sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get update && sudo apt-get install google-cloud-cli
-```
-👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
-
-
 ## Dotfiles
 
 Let's enhance the experience of your machine by installing Le Wagon's pre-configured [dotfiles 🔗](https://github.com/lewagon/dotfiles). These are configuration files for your terminal, zsh, git, and VS Code.
@@ -566,15 +554,12 @@ curl $SOURCE > $LOCATION/custom.css
 
 ## Python setup check
 
+Let's run some checks. If any of the following steps fail, ask a TA for help.
+
 Let's reset your terminal:
 
 ```bash
 cd ~/code && exec zsh
-```
-
-Check your Python version with the following commands:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
 
 Make sure you can run Jupyter:
@@ -808,7 +793,22 @@ Once the verification goes through, you should receive an email stating that "Yo
 That's it for the browser setup! Terminal setup comes later in this guide.
 
 
-### Configure Cloud sdk
+
+## Google Cloud CLI
+
+### Install `gcloud`
+
+Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
+```bash
+sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get update && sudo apt-get install google-cloud-cli
+```
+👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
+
+
+### Configure the Google Cloud CLI
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 

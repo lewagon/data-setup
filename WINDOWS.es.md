@@ -720,18 +720,6 @@ gh auth status
 :x: De lo contrario, **contacta a un profesor**.
 
 
-## CLI de Google Cloud
-
-Instala la CLI de `gcloud` para comunicar con [Google Cloud Platform](https://cloud.google.com/) a través de la terminal:
-```bash
-sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get update && sudo apt-get install google-cloud-cli
-```
-👉 [Documentación para la instalación](https://cloud.google.com/sdk/docs/install#deb)
-
-
 ## Dotfiles
 
 Mejoremos la experiencia de tu máquina instalando los [dotfiles 🔗](https://github.com/lewagon/dotfiles) preconfigurados de Le Wagon. Son archivos de configuración para tu terminal, zsh, git y VS Code.
@@ -1072,59 +1060,6 @@ Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `
 ¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
 
 
-## Parámetros de Windows
-
-### Intercambio de archivos entre Windows y Ubuntu
-
-Necesitamos una manera fácil de transferir archivos de Windows a Ubuntu y viceversa.
-
-Para ello, vamos a crear atajos a directorios Ubuntu en el **Explorador de Archivos** de Windows:
-- Abre el Explorador de Archivos de Windows (o usa el atajo `WIN` + `E`)
-- En la Barra de Direcciones, coloca `\\wsl$\` (o `\\wsl$\Ubuntu` si eso no funciona)
-- Ahora tienes acceso al sistema de archivos de Ubuntu
-- Navega por el sistema de archivos de Ubuntu para encontrar los directorios que te interesen
-- Arrastra las carpetas que te interesen a la Barra de Direcciones para crear atajos
-
-![Cómo agregar un atajo al sistema de archivos de Ubuntu en Windows](https://github.com/lewagon/setup/blob/master/images/windows_ubuntu_file_system_shortcut.gif)
-
-### Abre el Explorador de Archivos de Windows desde la terminal de Ubuntu
-
-Otra opción para mover archivos es abrir el **Explorador de Archivos** de Windows desde la terminal de Ubuntu:
-- Abre una terminal de Ubuntu
-- Ve al directorio que quieres explorar
-- Ejecuta el comando `explorer.exe .` (Otra alternativa es usar `wslview .`)
-- Si obtienes un mensaje de input output error, ejecuta `wsl --shutdown` en una PowerShell de Windows y abre la terminal de Ubuntu nuevamente
-
-![Cómo abrir Windows Explorer desde la terminal de Ubuntu](https://github.com/lewagon/setup/blob/master/images/windows_explorer_from_terminal.png)
-
-### Uso del Sistema de Archivos de Ubuntu
-
-Es posible que quieras averiguar la localización exacta de un directorio en Windows en el sistema de archivos de Ubuntu o viceversa.
-
-Para convertir una ruta Windows a una Ubuntu y viceversa:
-- Abre una terminal de Ubuntu
-- Usa el comando `wslpath "C:\Program Files"` para traducir la ruta Windows a una Ubuntu
-- Usa el comando `wslpath -w "/home"` para traducir una ruta Ubuntu a una Windows
-- El comando `wslpath -w $(pwd)` devuelve la ruta Windows del directorio Ubuntu actual
-
-![Cómo acceder a una ruta Windows desde una terminal de Ubuntu](https://github.com/lewagon/setup/blob/master/images/windows_path_from_terminal.png)
-
-### Anclaje de aplicaciones a tu barra de tareas
-
-Usarás frecuentemente casi todas las aplicaciones que has instalado hoy. ¡Anclémoslas a tu barra de tareas para que estén a solo un clic de ti!
-
-Para ello, abre la aplicación. Haz clic derecho en el ícono de la barra de tareas para hacer que aparezca el menú contextual (también llamado emergente) y selecciona "Pin to taskbar".
-
-![Cómo anclar una aplicación a la barra de tareas en Windows](https://github.com/lewagon/setup/blob/master/images/windows_taskbar.png)
-
-Ancla lo siguiente:
-- Tu terminal
-- Tu explorador de archivos
-- VS Code
-- Tu navegador de Internet
-- Slack
-
-
 ## Docker 🐋
 
 Docker es una plataforma abierta para desarrollo, entrega y operación de aplicaciones.
@@ -1327,6 +1262,18 @@ Una vez completada la verificación, deberías recibir un correo que indique: "Y
 ¡Eso es todo para la configuración en el navegador! La configuración de la terminal aparece más adelante en esta guía.
 
 
+## CLI de Google Cloud
+
+Instala la CLI de `gcloud` para comunicar con [Google Cloud Platform](https://cloud.google.com/) a través de la terminal:
+```bash
+sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get update && sudo apt-get install google-cloud-cli
+```
+👉 [Documentación para la instalación](https://cloud.google.com/sdk/docs/install#deb)
+
+
 ### Configurar Cloud SDK
 
 - Autentica la CLI de `gcloud` con la cuenta de Google que utilizaste para GCP
@@ -1429,6 +1376,59 @@ Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba
 :x: Si no es el caso, **contacta a un profesor**.
 
 ¡También puedes instalar la aplicación Slack en tu smartphone e iniciar sesión en `lewagon-alumni`!
+
+
+## Parámetros de Windows
+
+### Intercambio de archivos entre Windows y Ubuntu
+
+Necesitamos una manera fácil de transferir archivos de Windows a Ubuntu y viceversa.
+
+Para ello, vamos a crear atajos a directorios Ubuntu en el **Explorador de Archivos** de Windows:
+- Abre el Explorador de Archivos de Windows (o usa el atajo `WIN` + `E`)
+- En la Barra de Direcciones, coloca `\\wsl$\` (o `\\wsl$\Ubuntu` si eso no funciona)
+- Ahora tienes acceso al sistema de archivos de Ubuntu
+- Navega por el sistema de archivos de Ubuntu para encontrar los directorios que te interesen
+- Arrastra las carpetas que te interesen a la Barra de Direcciones para crear atajos
+
+![Cómo agregar un atajo al sistema de archivos de Ubuntu en Windows](https://github.com/lewagon/setup/blob/master/images/windows_ubuntu_file_system_shortcut.gif)
+
+### Abre el Explorador de Archivos de Windows desde la terminal de Ubuntu
+
+Otra opción para mover archivos es abrir el **Explorador de Archivos** de Windows desde la terminal de Ubuntu:
+- Abre una terminal de Ubuntu
+- Ve al directorio que quieres explorar
+- Ejecuta el comando `explorer.exe .` (Otra alternativa es usar `wslview .`)
+- Si obtienes un mensaje de input output error, ejecuta `wsl --shutdown` en una PowerShell de Windows y abre la terminal de Ubuntu nuevamente
+
+![Cómo abrir Windows Explorer desde la terminal de Ubuntu](https://github.com/lewagon/setup/blob/master/images/windows_explorer_from_terminal.png)
+
+### Uso del Sistema de Archivos de Ubuntu
+
+Es posible que quieras averiguar la localización exacta de un directorio en Windows en el sistema de archivos de Ubuntu o viceversa.
+
+Para convertir una ruta Windows a una Ubuntu y viceversa:
+- Abre una terminal de Ubuntu
+- Usa el comando `wslpath "C:\Program Files"` para traducir la ruta Windows a una Ubuntu
+- Usa el comando `wslpath -w "/home"` para traducir una ruta Ubuntu a una Windows
+- El comando `wslpath -w $(pwd)` devuelve la ruta Windows del directorio Ubuntu actual
+
+![Cómo acceder a una ruta Windows desde una terminal de Ubuntu](https://github.com/lewagon/setup/blob/master/images/windows_path_from_terminal.png)
+
+### Anclaje de aplicaciones a tu barra de tareas
+
+Usarás frecuentemente casi todas las aplicaciones que has instalado hoy. ¡Anclémoslas a tu barra de tareas para que estén a solo un clic de ti!
+
+Para ello, abre la aplicación. Haz clic derecho en el ícono de la barra de tareas para hacer que aparezca el menú contextual (también llamado emergente) y selecciona "Pin to taskbar".
+
+![Cómo anclar una aplicación a la barra de tareas en Windows](https://github.com/lewagon/setup/blob/master/images/windows_taskbar.png)
+
+Ancla lo siguiente:
+- Tu terminal
+- Tu explorador de archivos
+- VS Code
+- Tu navegador de Internet
+- Slack
 
 
 ## Kata (Extra)

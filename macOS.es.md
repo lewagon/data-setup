@@ -632,35 +632,6 @@ Deberías obtener lo siguiente:
 ![](images/docker_info.png)
 
 
-
-## CLI de `gcloud`
-
-Antes de configurar nuestra cuenta Google Cloud Platform vamos a configurar el CLI de `gcloud` (una interfaz de línea de comando para Google Cloud Platform). Ejecuta el siguiente código y sigue las indicaciones de la terminal para actualizar tu $PATH y habilitar la finalización del comando del shell para el archivo `.zshrc`:
-
-```bash
-brew install --cask google-cloud-sdk
-```
-
-Luego podrás ejecutar lo siguiente:
-
-```bash
-$(brew --prefix)/share/google-cloud-sdk/install.sh
-```
-
-<details>
-  <summary>¿Recibes un error <code>no such file or directory</code>?</summary>
-
-  Prueba esto:
-
-```bash
-$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
-```
-
-Si eso no funciona, contacta a un TA.
-
-</details>
-
-
 ## Configuración de Google Cloud Platform
 
 [Google Cloud](https://cloud.google.com/) es una solución en la nube que utilizarás para desplegar tus productos basados en Machine Learning en producción.
@@ -793,6 +764,35 @@ Una vez completada la verificación, deberías recibir un correo que indique: "Y
 - [Activa las API de BigQuery y Compute Engine](https://console.cloud.google.com/flows/enableapi?apiid=bigquery,compute) (Este paso puede tardar unos minutos)
 
 ¡Eso es todo para la configuración en el navegador! La configuración de la terminal aparece más adelante en esta guía.
+
+
+
+## CLI de `gcloud`
+
+Antes de configurar nuestra cuenta Google Cloud Platform vamos a configurar el CLI de `gcloud` (una interfaz de línea de comando para Google Cloud Platform). Ejecuta el siguiente código y sigue las indicaciones de la terminal para actualizar tu $PATH y habilitar la finalización del comando del shell para el archivo `.zshrc`:
+
+```bash
+brew install --cask google-cloud-sdk
+```
+
+Luego podrás ejecutar lo siguiente:
+
+```bash
+$(brew --prefix)/share/google-cloud-sdk/install.sh
+```
+
+<details>
+  <summary>¿Recibes un error <code>no such file or directory</code>?</summary>
+
+  Prueba esto:
+
+```bash
+$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh
+```
+
+Si eso no funciona, contacta a un TA.
+
+</details>
 
 
 ### Configurar Cloud SDK
