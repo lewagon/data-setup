@@ -13,10 +13,7 @@ partials:
   - setup/gh_cli
   - dotfiles
   - setup/ssh_agent
-  - conda_uninstall
-  - ubuntu_python
-  - virtualenv
-  - pip
+  - install_python
   - nbextensions
   - python_checkup
   - ubuntu_docker

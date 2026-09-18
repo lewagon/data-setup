@@ -14,10 +14,7 @@ partials:
   - direnv
   - setup/gh_cli
   - dotfiles
-  - conda_uninstall
-  - osx_python
-  - virtualenv
-  - pip
+  - install_python
   - nbextensions
   - python_checkup
   - docker
