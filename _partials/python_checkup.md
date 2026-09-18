@@ -58,7 +58,7 @@ In another cell, run:
 
 ```python
 import pandas as pd
-pd.__version___
+pd.__version__
 ```
 
 This might take a few minutes to run. It should output a version number, `2.2.3`.  If not, check with a TA.
