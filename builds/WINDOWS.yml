@@ -26,7 +26,6 @@ partials:
   - nbextensions
   - win_jupyter
   - python_checkup
-  - setup/windows_settings
   - win_docker
   - gcp_account_setup
   - ubuntu_gcloud
@@ -34,4 +33,5 @@ partials:
   - kitt
   - setup/windows_slack
   - setup/slack_settings
+  - setup/windows_settings
   - kata
