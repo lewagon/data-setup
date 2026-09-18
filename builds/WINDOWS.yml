@@ -17,7 +17,6 @@ partials:
   - windows_browser
   - direnv
   - setup/gh_cli
-  - ubuntu_gcloud
   - dotfiles
   - setup/ssh_agent
   - conda_uninstall
@@ -30,6 +29,7 @@ partials:
   - setup/windows_settings
   - win_docker
   - gcp_account_setup
+  - ubuntu_gcloud
   - gcp_setup
   - kitt
   - setup/windows_slack

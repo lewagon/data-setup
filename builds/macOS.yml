@@ -21,8 +21,8 @@ partials:
   - nbextensions
   - python_checkup
   - docker
-  - gcp_cli_setup
   - gcp_account_setup
+  - gcp_cli_setup
   - gcp_setup
   - kitt
   - setup/macos_slack

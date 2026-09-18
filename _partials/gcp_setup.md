@@ -1,4 +1,4 @@
-### Configure Cloud sdk
+### Configure the Google Cloud CLI
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
