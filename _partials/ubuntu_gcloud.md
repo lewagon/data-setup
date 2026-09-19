@@ -1,4 +1,7 @@
+
 ## Google Cloud CLI
+
+### Install `gcloud`
 
 Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
 ```bash

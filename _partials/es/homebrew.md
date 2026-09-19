@@ -1,59 +1,33 @@
 ## Homebrew
-### 1. Instálalo:
-Si usas Mac tienes que instalar [Homebrew](http://brew.sh/) el cual es un sistema de gestión de paquetes.
-Será necesario cuando tengamos que instalar algún programa.
-Para instalarlo, abre tu Terminal y ejecuta lo siguiente:
+
+[Homebrew](http://brew.sh/) es un gestionador de paquetes: es un programa que se usa para instalar otros programas desde la línea de comando. ¡Vamos a instalarlo!
+
+Abre la terminal y ejecuta lo siguiente:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Te pedirá tu confirmación (presiona `Enter`) y tu **contraseña de usuario macOS** (la que usas para [iniciar sesión](https://support.apple.com/en-gb/HT202860) cuando reinicias tu Macbook).
-:warning: Cuando escribas tu contraseña en la Terminal, **no** la verás (sólo verás algo como `*****`). ¡Esto es **normal**! Simplemente escribe tu contraseña y confirma presionando `Enter`.
+Te pedirá que confirmes (presionando `Enter`) y también te pedirá la **contraseña de tu cuenta de usuario macOS** (la que usas para [iniciar sesión](https://support.apple.com/en-gb/HT202860) cuando reinicias tu Macbook).
 
-<details>
-  <summary>🛠 Si aparece un <code>Error: Not a valid ref: refs/remotes/origin/master</code> </summary>
+:warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `Enter` al terminar.
 
+Si ya tienes Homebrew instalado, el sistema te lo dirá y puedes continuar.
 
-El error completo es el siguiente:
+Una vez que Homebrew haya terminado de instalarse, ejecuta estos dos comandos para agregarlo a tu `PATH`:
 
-``` bash
-Error: Not a valid ref: refs/remotes/origin/master :
-fatal: ambiguous argument 'refs/remotes/origin/master': unknown revision or path not in the working tree.
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-Ejecuta los siguientes comandos para resolverlo:
-
-``` bash
-rm -fr $(brew --repo homebrew/core)  # because you can't `brew untap homebrew/core`
-brew tap homebrew/core
-```
-
-</details>
-
-Si ya tienes Homebrew, el sistema te lo dirá. No hay problema, así que puedes continuar.
-
-### 2. Asegúrate de tener la versión más reciente:
+Asegúrate de tener la última versión:
 
 ```bash
 brew update
 ```
 
-<details>
-  <summary>🛠 Si aparece un error <code>/usr/local must be writable</code> </summary>
-
-Simplemente ejecuta lo siguiente:
-
-``` bash
-sudo chown -R $USER:admin /usr/local
-brew update
-```
-
-</details>
-
-### 3. Luego instala algunos programas útiles:
-
-Ejecuta lo siguiente en la terminal (puedes copiar / pegar todas las líneas juntas una sola vez).
+Luego, instala algunos programas útiles (puedes copiar y pegar todas las líneas de código al mismo tiempo):
 
 ```bash
 brew upgrade git         || brew install git

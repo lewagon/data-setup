@@ -1,9 +1,11 @@
 
 # Setup instructions
 
-You will find below the instructions to set up you computer for [Le Wagon Data Science course](https://www.lewagon.com/data-science-course/full-time)
+Below are the instructions for setting up your computer for the [Le Wagon Data Science & AI bootcamp](https://www.lewagon.com/data-science-course).
 
-Please **read them carefully and execute all commands in the following order**. If you get stuck, don't hesitate to ask a teacher for help :raising_hand:
+Please **read them carefully and execute all commands in the following order**. 
+
+This setup is not an exercise; its sole purpose is to prepare your machine in a standardised way. Do not experiment or ask an LLM for help. If you get stuck, simply ask a teacher for help :raising_hand:
 
 Let's start :rocket:
 
@@ -14,7 +16,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
-![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
+![GitHub picture](https://github.com/lewagon/setup/blob/simplify-conso/images/github_picture.png)
 
 :point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
 
@@ -457,9 +459,9 @@ In **VS Code**:
 
 1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P` (Windows / Linux) or `Cmd-Shift-P` (macOS).
 1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
-   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/master/images/vscode_find_aifeatures.png)
+   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
-   ![Check the disable option](https://github.com/lewagon/setup/blob/master/images/vscode_disable_aifeatures.png)
+   ![Check the disable option](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_disable_aifeatures.png)
 
 Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
@@ -566,7 +568,7 @@ If asked "Do you want to change your default shell to zsh?", press `Y`
 
 At the end your terminal should look like this:
 
-![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
+![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/simplify-conso/images/oh_my_zsh.png)
 
 :heavy_check_mark: If it does, you can continue :+1:
 
@@ -641,179 +643,140 @@ gh auth status
 
 ## Dotfiles
 
-Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub.
+Let's enhance the experience of your machine by installing Le Wagon's pre-configured [dotfiles 🔗](https://github.com/lewagon/dotfiles). These are configuration files for your terminal, zsh, git, and VS Code.
 
-### Check your GitHub CLI configuration
 
-First, let's do a quick check. Open your terminal and run the following command:
+### Get your GitHub username
+
+Run the following command:
 
 ```bash
 export GITHUB_USERNAME=`gh api user | jq -r '.login'`
 echo $GITHUB_USERNAME
 ```
 
-You should see your GitHub username printed. If it's not the case, **stop here** and ask for help.
-There seems to be a problem with the previous step (`gh auth`).
+✔️ You should see your Github username printed.
 
-### Fork and/or clone dotfiles
+❌ If not, stop here and ask for help. There may be a problem with the previous step (`gh auth`).
 
-There are three options, choose **one**:
 
+### Forking the dotfiles
+
+To customise this configuration for yourself, you'll need to **fork** the repository to your own Github account.
+
+**Forking** creates a copy of the repository under your account (`your_github_username/dotfiles`), which you can then modify with your personal information, such as your name.
 
 <details>
-    <summary>
-        <strong>I did not attend the Web Dev or Data Science & AI bootcamp at Le Wagon</strong>
-    </summary>
+<summary>❗ <strong>If you already did another Le Wagon bootcamp</strong> (<em>Web Development, AI Software Development, Data Analytics, Data Science & AI</em>, <strong>open a ticket with a TA</strong> and open this for instructions ❗
+</summary>
 
- As your configuration is personal, you need your own repository storing it, so you'll need to fork it to your GitHub account.
+You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
 
-Forking means that it will create a new repo in your GitHub account, identical to the original one. You'll have a new repository on your GitHub account, `your_github_username/dotfiles`. We need to fork because each of you will need to put specific information (e.g. your name) in those
-files.
 
-Lets' run this command to fork the repo, and clone it on your laptop:
+**Together with a TA**, do one of the following:
+
+<details>
+<summary>I'm using <strong>the same machine</strong> (or a new machine which already has the dotfiles).</summary>
+
+1. Move into your existing dotfiles folder:
+   ```bash
+   cd ~/code/$GITHUB_USERNAME/dotifles
+   ```
+
+1. Check the diff against the current version of Le Wagon's dotfiles:
+    ```bash
+    git diff upstream/master
+    ```
+
+If there is no meaningful difference other than your name and email setting, continue with the setup.
+
+</details>
+
+<details>
+<summary>I'm using <strong>a new machine</strong> without the dotfiles.</summary>
+
+1. Browse to GitHub and find your `dotfiles` repository.
+
+1. Check how many commits it's behind and ahead `lewagon/dotfiles:master`. You can see this just above the file list.
+
+1. Click through to the behind and the ahead, and scroll down to see the diffs.
+
+If there is no meaningful difference other than your name and email setting, continue with the setup.
+
+</details>
+
+<details>
+<summary>The previous step revealed <strong>meaningful differences</strong>.</summary>
+
+If you are OK with losing your existing dotfiles (recommended):
+
+1. Delete your existing dotfiles repository on GitHub.
+1. Delete the local repository:
+    ```bash
+    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotifles
+    ```
+1. Continue with the setup.
+
+<details>
+<summary>If you do not want to lose your existing dotfiles, we recommend working with branches. Click to open.</summary>
+
+On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**.
+
+1. Commit your current version of your dotfiles:
+
+    ```bash
+    git add .
+    git status # Check what will be committed
+    git commit -m "Version prior to new setup"
+    ```
+
+1. Create a branch of your current dotfiles setup, and push to GitHub:
+    
+    ```bash
+    git checkout -b old-setup
+    git push origin old-setup
+    ```
+
+1. Go back to `master`: `git checkout master`.
+
+1. On local `master`, `git pull upstream master`.
+
+1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
+    
+    It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files. Especially anything related to `pyenv` and to Python environments.
+
+    If there are too many conficts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
+
+    Commit your conflict resolution: `git commit --no-edit`
+
+1. Push your changes to GitHub: `git push origin master`.
+
+1. Continue with the setup.
+
+</details>
+
+</details>
+
+</details>
+
+<br>
+
+Time to fork the repo and clone it on your computer:
 
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
 
-</details>
+### Installing the dotfiles
 
-
-<details>
-    <summary>
-        <strong>I already attended a Le Wagon coding bootcamp (Web Development or Data Science & AI) <em>but I have a new laptop</em></strong>
-    </summary>
-
-This means that you already forked the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the current Data Science & AI bootcamp. Let's update it. **Ask a TA to join you for the nex steps.**
-
-First, clone your fork on this machine:
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo clone $GITHUB_USERNAME/dotfiles
-```
-
-
-Open your terminal and go to your `dotfiles` project:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-```
-
-Time to merge the changes from `lewagon/dotfiles` into yours:
-1. Commit your current version of your dotfiles:
-   ```bash
-   git add .
-   git status # Check what will be committed
-   git commit -m "Version prior to new setup"
-   ```
-
-1. Let's bring in the changes from upstream: `git merge upstream/master`
-
-1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
-
-1. Do a `git diff HEAD~1 HEAD` to check what changed.
-
-1. If nothing seems out of the ordinary, continue
-
-<details>
-  <summary>Too many conflicts?
-  </summary>
-
-  Let's just take over the current version from `lewagon/dotfiles`.
-
-  First abort the merge: `git merge --abort`.
-
-  Run `code .`
-
-  In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
-
-  Still in VS Code, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
-
-  Back in the terminal, run a `git diff` and check if this didn't remove any personal configuration setting that you wanted to keep.
-
-</details>
-
-Time to commit your changes and push them.
-
-```bash
-git add .
-git commit -m "Update for Data Science bootcamp"
-git push origin master
-```
-
-</details>
-
-
-<details>
-    <summary>
-        <strong>I already did the setup of a Le Wagon coding bootcamp (WebDev or Data Science & AI) <em>on the same laptop</em> before</strong>
-    </summary>
-
-This means that you already forked and cloned the GitHub repo `lewagon/dotfiles`, but at that time the configuration was maybe not ready for the current Data Science & AI bootcamp. Let's update it. **Ask a TA to join you for the nex steps.**
-
-
-Open your terminal and go to your `dotfiles` project:
-
-```bash
-cd ~/code/$GITHUB_USERNAME/dotfiles
-```
-
-Time to merge the changes from `lewagon/dotfiles` into yours:
-1. Commit your current version of your dotfiles:
-   ```bash
-   git add .
-   git status # Check what will be committed
-   git commit -m "Version prior to new setup"
-   ```
-
-1. Let's bring in the changes from upstream: `git merge upstream/master`
-
-1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
-
-1. Do a `git diff HEAD~1 HEAD` to check what changed.
-
-1. If nothing seems out of the ordinary, continue
-
-<details>
-  <summary>Too many conflicts?
-  </summary>
-
-  Let's just take over the current version from `lewagon/dotfiles`.
-
-  First abort the merge: `git merge --abort`.
-
-  Run `code .`
-
-  In VS Code, open the `zshrc` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Save to disk.
-
-  Still in VS Code, open the `zprofile` file. Replace its content with the [newest version](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Save to disk.
-
-  Back in the terminal, run a `git diff` and check if this didn't remove any personal configuration setting that you wanted to keep.
-
-</details>
-
-Time to commit your changes and push them.
-
-```bash
-git add .
-git commit -m "Update for Data Science bootcamp"
-git push origin master
-```
-
-</details>
-
-
-### Run the dotfiles installer
-
-It's time to run the `dotfiles` installer:
+Run the `dotfiles` installer with:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
 ```
 
-Check the emails registered with your GitHub Account. You'll need to pick one at the next step:
+Check the emails registered with your GitHub Account. You'll need to pick one in the next step:
 
 ```bash
 gh api user/emails | jq -r '.[].email'
@@ -826,9 +789,10 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
 :point_up: This will **prompt** you for your name (`FirstName LastName`) and your email.
-:warning: You **need** to put one of the emails listed above thanks to the previous `gh api ...` command. If you don't do that, Kitt won't be able to track your progress. 💡 Select the `@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
-Please now **quit** all your opened terminal windows.
+:warning: You **need** to put one of the emails listed above from the previous `gh api ...` command. If you don't do that, Kitt will not be able to track your progress.
+
+💡 Select the `...@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 
 ### zsh default terminal
@@ -984,7 +948,7 @@ curl $SOURCE > $LOCATION/custom.css
 
 ## Python setup check
 
-### Python and packages check
+Let's run some checks. If any of the following steps fail, ask a TA for help.
 
 Let's reset your terminal:
 
@@ -992,42 +956,17 @@ Let's reset your terminal:
 cd ~/code && exec zsh
 ```
 
-Check your Python version with the following commands:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
-```
-
-Run the following command to check if you successfully installed the required packages:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
-```
-
-Now run the following command to check if you can load these packages:
-```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
-```
-
-### Jupyter check
-
 Make sure you can run Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-Let's open the jupyter app:
+Your web browser should open on a `jupyter` window.
 
 <details>
 
-  <summary>Regular setup</summary>
-
-  Your web browser should open on a `jupyter` window.
-</details>
-
-
-<details>
-
-  <summary>Virtual machine setup</summary>
+  <summary>Note if you're running the setup on a virtual machine</summary>
 
   VSCode detects that a jupyter notebook started in your virtual machine and creates a port forward in order to allow you to open the application in your browser.
 
@@ -1045,8 +984,6 @@ Let's open the jupyter app:
 </details>
 
 
-You now have access to the `jupyter` window:
-
 ![jupyter.png](images/jupyter.png)
 
 Click on `New` and in the dropdown menu select `Python 3 (ipykernel)`:
@@ -1058,21 +995,25 @@ A tab should open on a new notebook:
 ![jupyter_notebook.png](images/jupyter_notebook.png)
 
 Make sure that you are running the correct python version in the notebook. Open a cell and run:
+
 ``` python
 import sys; sys.version
 ```
 
 It should output `3.12.9` followed by some more details. If not, check with a TA.
 
+In another cell, run:
+
+```python
+import pandas as pd
+pd.__version___
+```
+
+This might take a few minutes to run. It should output a version number, `2.2.3`.  If not, check with a TA.
+
 You can close your web browser then terminate the jupyter server with `CTRL` + `C`.
 
 Here you have it! A complete python virtual env with all the third-party packages you'll need for the whole bootcamp.
-
-
-
-## DBeaver
-
-Download and install [DBeaver](https://dbeaver.io/), a free and open source powerful tool to connect to any database, explore the schema and even **run SQL queries**.
 
 
 ## Docker 🐋

@@ -13,18 +13,6 @@ Verifica tu versión de Python con los siguientes comandos:
 zsh -c "$(curl -fsSL {{ PYTHON_CHECKER_URL }})" {{ PYTHON_VERSION }}
 ```
 
-Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
-```bash
-zsh -c "$(curl -fsSL {{ PIP_CHECKER_URL }})"
-```
-
-Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquetes:
-```bash
-python -c "$(curl -fsSL {{ PIP_LOADER_URL }})"
-```
-
-### Chequeo de Jupyter
-
 Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 
 ```bash
@@ -49,6 +37,15 @@ import sys; sys.version
 ```
 
 Debería mostrar `{{ PYTHON_VERSION }}` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
+
+En otra celda, ejecuta:
+
+```python
+import pandas as pd
+pd.__version___
+```
+
+Esto podría tomar algunos minutos en ejecutarse. Debería mostrar un número de versión, `2.2.3`. Si no es así, consulta con un TA.
 
 Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 
