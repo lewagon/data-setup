@@ -11,9 +11,9 @@ partials:
   - vscode_extensions
   - setup/vscode_aifeatures
   - setup/oh_my_zsh
-  - direnv
   - setup/gh_cli
   - dotfiles
+  - direnv
   - install_python
   - nbextensions
   - python_checkup

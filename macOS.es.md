@@ -16,7 +16,7 @@ Empecemos :rocket:
 
 :point_right: **[Sube una foto](https://github.com/settings/profile)** y escribe tu nombre correctamente en tu cuenta GitHub. Esto es importante porque nosotros usaremos un tablero de comando interno con tu avatar. Por favor hazlo **ahora** antes de dar un paso más en esta guía.
 
-![Foto GitHub](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
+![Foto GitHub](https://github.com/lewagon/setup/blob/simplify-conso/images/github_picture.png)
 
 :point_right: **[Habilita la Autenticación de Dos Factores (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub te enviará mensajes de texto con un código cuando intentes iniciar sesión. Esto es importante para la seguridad y también pronto será necesario para contribuir código en GitHub.
 
@@ -34,7 +34,7 @@ Si no estás seguro, haz clic en el icono de Apple situado en la esquina superio
 
 Hacer clic en círculo rojo en la esquina superior izquierda de la ventana de la aplicación en Mac **no la termina el proceso**, solo cierra una ventana activa. Hay dos alternativas para cerrar la aplicación _realmente_. Puedes presionar `Cmd + Q` cuando la misma está activa. La otra opción es ir a `APP_NAME` -> `Quit` en la barra del menú.
 
-![Cerrar la Terminal en macOS](https://github.com/lewagon/setup/blob/master/images/macos_quit.png)
+![Cerrar la Terminal en macOS](https://github.com/lewagon/setup/blob/simplify-conso/images/macos_quit.png)
 
 Durante esta configuración, se te pedirá **cerrar y abrir nuevamente** aplicaciones varias veces. Por favor asegúrate de hacerlo correctamente :pray:
 
@@ -55,7 +55,7 @@ Si obtienes el mensaje que te mostramos a continuación, puedes ignorar este pas
 Este mensaje significa que las herramientas de la línea de comando ya están instaladas y te pide que uses "Software Update" para instalar las actualizaciones. Si no recibes este mensaje, se abrirá una ventana preguntándote si quieres instalar algún programa: haz clic en "Install" y espera.
 
 
-![Instalación de xcode-select en macOS](https://github.com/lewagon/setup/blob/master/images/macos_xcode_select_install.png)
+![Instalación de xcode-select en macOS](https://github.com/lewagon/setup/blob/simplify-conso/images/macos_xcode_select_install.png)
 
 :heavy_check_mark: Si ves el mensaje "The software was installed", lo que significa que el programa se ha instalado, entonces todo está bien :+1:
 
@@ -178,9 +178,9 @@ En **VS Code**:
 
 1. Abramos la "Paleta de comandos" de VS Code: escribe `Ctrl-Shift-P` (Windows / Linux) o `Cmd-Shift-P` (macOS).
 1. Se abrirá la Paleta de comandos: una pequeña caja de texto en la parte superior de la pantalla. Empieza a escribir `aifeatures` hasta que veas "Chat: Learn How to Hide AI features". Haz clic en ella.
-  ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/master/images/vscode_find_aifeatures.png)
+  ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. Esto abrirá la configuración y te mostrará la opción "Disable and hide built-in AI features ...". Marca la casilla delante de esa opción.
-  ![Check the disable option](https://github.com/lewagon/setup/blob/master/images/vscode_disable_aifeatures.png)
+  ![Check the disable option](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_disable_aifeatures.png)
 
 Más adelante, si quieres **volver a habilitar** las funciones de IA, puedes seguir las mismas instrucciones para desmarcar la casilla.
 
@@ -199,23 +199,11 @@ Si te preguntan "Do you want to change your default shell to zsh?", presiona `Y`
 
 Cuando termines, tu terminal debería lucir así:
 
-![La terminal de Ubuntu con OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
+![La terminal de Ubuntu con OhMyZsh](https://github.com/lewagon/setup/blob/simplify-conso/images/oh_my_zsh.png)
 
 :heavy_check_mark: Si es el caso, puedes continuar :+1:
 
 :x: Si no, por favor **pídele ayuda a un profesor**.
-
-
-## direnv
-
-[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
-
-
-``` bash
-brew install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
-
 
 
 ## GitHub CLI
@@ -350,7 +338,20 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 💡 Selecciona la dirección `...@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en repositorios públicos a los que contribuyas.
 
 
+## direnv
+
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
+
+
+``` bash
+brew install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
+
 ## Install Python and dependencies
+
+## Instalando Python (con [`pyenv`](https://github.com/pyenv/pyenv))
 
 Your operating system - macOS, or Ubuntu (native, or inside WSL) - come with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and wher you'll be able to switch which version you want to use for each project you work on.
 
@@ -753,7 +754,7 @@ Abre la aplicación e inicia sesión en `lewagon-alumni`.
 
 Asegúrate de **subir una foto para tu perfil** :point_down:
 
-![Cómo subir una foto de perfil en Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
+![Cómo subir una foto de perfil en Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_profile_picture.gif)
 
 La idea es tener Slack abierto todo el día para compartir enlaces útiles / pedir ayuda / decidir dónde almorzar / etc.
 
@@ -766,7 +767,7 @@ Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba
 - Comprueba que tus dispositivos preferidos de altavoz, micrófono y cámara aparecen en los menús desplegables y haz clic en "Iniciar prueba"
 - Haz clic en el botón verde "Start test"
 
-![Chequea el micrófono y la cámara con Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
+![Chequea el micrófono y la cámara con Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_call_test.png)
 
 :heavy_check_mark: Cuando termine el test deberías ver mensajes de "Succeed" en verde por lo menos para tu micrófono y tu cámara. :+1:
 
@@ -813,7 +814,7 @@ Usarás frecuentemente casi todas las aplicaciones que has instalado hoy. ¡Ancl
 
 Para ello, inicia la aplicación. Haz clic derecho en el ícono de la barra de tareas para hacer que aparezca el menú contextual (también llamado emergente) y selecciona "Options" y después "Keep in Dock".
 
-![Cómo anclar una aplicación a la barra de tareas en macOS](https://github.com/lewagon/setup/blob/master/images/macos_dock.png)
+![Cómo anclar una aplicación a la barra de tareas en macOS](https://github.com/lewagon/setup/blob/simplify-conso/images/macos_dock.png)
 
 Ancla lo siguiente:
 - Tu terminal

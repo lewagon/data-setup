@@ -9,10 +9,9 @@ partials:
   - setup/vscode_aifeatures
   - setup/cli_tools
   - setup/oh_my_zsh
-  - direnv
   - setup/gh_cli
   - dotfiles
-  - setup/ssh_agent
+  - direnv
   - install_python
   - nbextensions
   - python_checkup

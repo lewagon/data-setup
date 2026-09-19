@@ -16,7 +16,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
-![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
+![GitHub picture](https://github.com/lewagon/setup/blob/simplify-conso/images/github_picture.png)
 
 :point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
 
@@ -99,7 +99,7 @@ For many computers, this is already the case. Let's check:
 - Click on the `Performance` tab
 - Click on `CPU`
 
-![Windows task manager](https://github.com/lewagon/setup/blob/master/images/windows_task_manager.png)
+![Windows task manager](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_task_manager.png)
 
 :heavy_check_mark: If you see "Virtualization: Enabled", you're good to go :+1:
 
@@ -201,7 +201,7 @@ Once your computer has restarted, we need to download the WSL2 installer.
 - Click `Next`
 - Click `Finish`
 
-![Update WSL from version 1 to 2](https://github.com/lewagon/setup/blob/master/images/windows_update_wsl.png)
+![Update WSL from version 1 to 2](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_update_wsl.png)
 
 :heavy_check_mark: If didn't encounter any error message, you're good to go :+1:
 
@@ -294,57 +294,6 @@ At first launch, you will be asked some information:
 
 :warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `Enter`.
 
-
-### Check the WSL version of Ubuntu
-
-- Press `Windows` + `R`
-- Type  `cmd`
-- Press `Enter`
-
-Type the following command:
-
-```bash
-wsl -l -v
-```
-
-:heavy_check_mark: If the version of Ubuntu WSL is 2, you are good to go :+1:
-
-:x: If the version of Ubuntu WSL is 1, we will need to convert it to version 2.
-
-<details>
-  <summary>Convert Ubuntu WSL V1 to V2</summary>
-
-  In the Command Prompt window, type:
-
-  ```bash
-  wsl --set-version Ubuntu 2
-  ```
-
-  :heavy_check_mark: After a few seconds, you should get the following message: `The conversion is complete`.
-
-  :x: If it does not work, we need to be sure that Ubuntu files are not compressed.
-
-<details>
-  <summary>Check for Uncompressed Files</summary>
-
-  - Press `Windows` + `R`
-  - Type  `%localappdata%\Packages`
-  - Press `Enter`
-  - Open the folder named `CanonicalGroupLimited.UbuntuonWindows...`
-  - Right Click on the `LocalState` folder
-  - Click on `Properties`
-  - Click on `Advanced`
-  - Make sure that the option `Compress content` is **not** ticked, then click on `Ok`.
-
-  Apply changes to this folder only and try to convert the Ubuntu WSL version again.
-
-  :x: If the conversion still does not work, please **contact a teacher**.
-</details>
-
-You can close this terminal now.
-
-</details>
-
 ### Check your username
 
 Type this in the Ubuntu terminal:
@@ -369,7 +318,7 @@ Let's install [Visual Studio Code](https://code.visualstudio.com) text editor.
 - Open the file you have just downloaded.
 - Install it with few options:
 
-![VS Code installation options](https://github.com/lewagon/setup/blob/master/images/windows_vscode_installation.png)
+![VS Code installation options](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_vscode_installation.png)
 
 When the installation is finished, launch VS Code.
 
@@ -393,7 +342,7 @@ code .
 
 :heavy_check_mark: If you see `WSL: Ubuntu` in the bottom left corner of the VS Code window, you're good to go :+1:
 
-![WSL Ubuntu Remote](https://github.com/lewagon/setup/blob/master/images/windows_remote_wsl.png)
+![WSL Ubuntu Remote](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_remote_wsl.png)
 
 :x: Otherwise, please **contact a teacher**
 
@@ -444,7 +393,7 @@ Press `Ctrl` + `,`
 
 It should open the terminal settings:
 
-![Windows Terminal Settings](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings.png)
+![Windows Terminal Settings](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_terminal_settings.png)
 
 - Change the default profile to "Ubuntu"
 - Click on "Save"
@@ -454,7 +403,7 @@ You may see an orange circle rather than a penguin as the logo for Ubuntu.
 
 We have circled in red the part you need to add:
 
-![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings_json.png)
+![Windows Terminal JSON settings file](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_terminal_settings_json.png)
 
 First, let's ask Ubuntu to start directly inside your Ubuntu Home Directory instead of the Windows one.
 
@@ -526,9 +475,9 @@ In **VS Code**:
 
 1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P` (Windows / Linux) or `Cmd-Shift-P` (macOS).
 1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
-   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/master/images/vscode_find_aifeatures.png)
+   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
-   ![Check the disable option](https://github.com/lewagon/setup/blob/master/images/vscode_disable_aifeatures.png)
+   ![Check the disable option](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_disable_aifeatures.png)
 
 Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
@@ -635,7 +584,7 @@ If asked "Do you want to change your default shell to zsh?", press `Y`
 
 At the end your terminal should look like this:
 
-![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
+![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/simplify-conso/images/oh_my_zsh.png)
 
 :heavy_check_mark: If it does, you can continue :+1:
 
@@ -667,18 +616,6 @@ Then please make sure that the following command returns "Browser defined 👌":
 If it does not, you can follow [these instructions](https://github.com/lewagon/setup/blob/master/_partials/windows_browser.md) to set your default browser manually.
 
 Do not hesitate to **contact a teacher**.
-
-
-## direnv
-
-[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
-
-
-``` bash
-sudo apt-get update; sudo apt-get install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
-
 
 
 ## GitHub CLI
@@ -739,34 +676,8 @@ gh auth status
 
 Let's enhance the experience of your machine by installing Le Wagon's pre-configured [dotfiles 🔗](https://github.com/lewagon/dotfiles). These are configuration files for your terminal, zsh, git, and VS Code.
 
-### Forking the dotfiles
 
-To customise this configuration for yourself, you'll need to **fork** the repository to your own Github account.
-
-**Forking** creates a copy of the repository under your account (`your_github_username/dotfiles`), which you can then modify with your personal information, such as your name.
-
-<details>
-<summary>❗ <strong>If</strong> you already did another Le Wagon bootcamp  (<strong>Web Development, AI Software Development, Data Analytics, Data Science & AI</strong>, open this first ❗
-</summary>
-
-You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
-
-
-**Open a ticket** with a TA and do one of the following:
-- Compare your existing dotfiles with the current Le Wagon [dotfiles 🔗](https://github.com/lewagon/dotfiles), particularly the `.zshrc`, `.zprofile`, and `settings.json` - if there is no meaningful difference other than your name and email setting, continue with the setup.
-- If you are OK with losing your existing dotfiles (recommended):
-    - Delete your existing dotfiles repository on GitHub and continue with the setup.
-    - Delete the local repository: `rm -rf ~/code/<your_github_username>/dotifles`.
-- If you do not want to lose your existing dotfiles, we recommend working with branches:
-    - On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**
-    - Create a branch of your existing dotfiles setup (`git checkout -b old-setup`), and push to GitHub - `git push origin old-setup`,
-    - Go back to `master`: `git checkout master`.
-    - On local `master`, `git pull upstream master`, resolve any conflicts, `git commit -m "merged"`, and `git push origin master`. It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files.
-    - Continue with the setup.
-
-</details>
-
-<br>
+### Get your GitHub username
 
 Run the following command:
 
@@ -778,6 +689,108 @@ echo $GITHUB_USERNAME
 ✔️ You should see your Github username printed.
 
 ❌ If not, stop here and ask for help. There may be a problem with the previous step (`gh auth`).
+
+
+### Forking the dotfiles
+
+To customise this configuration for yourself, you'll need to **fork** the repository to your own Github account.
+
+**Forking** creates a copy of the repository under your account (`your_github_username/dotfiles`), which you can then modify with your personal information, such as your name.
+
+<details>
+<summary>❗ <strong>If you already did another Le Wagon bootcamp</strong> (<em>Web Development, AI Software Development, Data Analytics, Data Science & AI</em>, <strong>open a ticket with a TA</strong> and open this for instructions ❗
+</summary>
+
+You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
+
+
+**Together with a TA**, do one of the following:
+
+<details>
+<summary>I'm using <strong>the same machine</strong> (or a new machine which already has the dotfiles).</summary>
+
+1. Move into your existing dotfiles folder:
+   ```bash
+   cd ~/code/$GITHUB_USERNAME/dotifles
+   ```
+
+1. Check the diff against the current version of Le Wagon's dotfiles:
+    ```bash
+    git diff upstream/master
+    ```
+
+If there is no meaningful difference other than your name and email setting, continue with the setup.
+
+</details>
+
+<details>
+<summary>I'm using <strong>a new machine</strong> without the dotfiles.</summary>
+
+1. Browse to GitHub and find your `dotfiles` repository.
+
+1. Check how many commits it's behind and ahead `lewagon/dotfiles:master`. You can see this just above the file list.
+
+1. Click through to the behind and the ahead, and scroll down to see the diffs.
+
+If there is no meaningful difference other than your name and email setting, continue with the setup.
+
+</details>
+
+<details>
+<summary>The previous step revealed <strong>meaningful differences</strong>.</summary>
+
+If you are OK with losing your existing dotfiles (recommended):
+
+1. Delete your existing dotfiles repository on GitHub.
+1. Delete the local repository:
+    ```bash
+    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotifles
+    ```
+1. Continue with the setup.
+
+<details>
+<summary>If you do not want to lose your existing dotfiles, we recommend working with branches. Click to open.</summary>
+
+On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**.
+
+1. Commit your current version of your dotfiles:
+
+    ```bash
+    git add .
+    git status # Check what will be committed
+    git commit -m "Version prior to new setup"
+    ```
+
+1. Create a branch of your current dotfiles setup, and push to GitHub:
+    
+    ```bash
+    git checkout -b old-setup
+    git push origin old-setup
+    ```
+
+1. Go back to `master`: `git checkout master`.
+
+1. On local `master`, `git pull upstream master`.
+
+1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
+    
+    It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files. Especially anything related to `pyenv` and to Python environments.
+
+    If there are too many conficts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
+
+    Commit your conflict resolution: `git commit --no-edit`
+
+1. Push your changes to GitHub: `git push origin master`.
+
+1. Continue with the setup.
+
+</details>
+
+</details>
+
+</details>
+
+<br>
 
 Time to fork the repo and clone it on your computer:
 
@@ -815,21 +828,16 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 💡 Select the `...@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 
-## Disable SSH passphrase prompt
+## direnv
 
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
+[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
 
-First, open the `.zshrc` file:
 
-```bash
-code ~/.zshrc
+``` bash
+sudo apt-get update; sudo apt-get install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
 
-Then:
-- Spot the line starting with `plugins=`
-- Add `ssh-agent` at the end of the plugins list
-
-:heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
 
 
 ## Install Python and dependencies
@@ -1321,7 +1329,7 @@ Launch the app and sign in to `lewagon-alumni` organization.
 
 Make sure you **upload a profile picture** :point_down:
 
-![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
+![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_profile_picture.gif)
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
@@ -1333,7 +1341,7 @@ To ensure that everything is working fine for video calls, let's test your camer
 - Below `Troubleshooting`, click `Run an audio, video and screensharing test`. The test will open in a new window.
 - Check that your preferred speaker, microphone and camera devices appear in the drop-down menus, then click `Start test`.
 
-![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
+![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_call_test.png)
 
 :heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
 
@@ -1355,7 +1363,7 @@ In order to do that, let's create shortcuts to Ubuntu directories in the Windows
 - Dive into the Ubuntu file system in order to look for directories of interest
 - Drag the desired folders into the Address Bar in order to create shortcuts
 
-![How to add a shortcut to Ubuntu file system on Windows](https://github.com/lewagon/setup/blob/master/images/windows_ubuntu_file_system_shortcut.gif)
+![How to add a shortcut to Ubuntu file system on Windows](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_ubuntu_file_system_shortcut.gif)
 
 ### Open the Windows File Explorer from the Ubuntu terminal
 
@@ -1365,7 +1373,7 @@ Another option to move files around is to open the Windows **File Explorer** fro
 - Run the `explorer.exe .` command (alternatively, use `wslview .`)
 - If you get an input output error message, run `wsl --shutdown` in a Windows PowerShell and reopen an Ubuntu terminal
 
-![How to launch Windows Explorer from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_explorer_from_terminal.png)
+![How to launch Windows Explorer from Ubuntu terminal](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_explorer_from_terminal.png)
 
 ### Find your way in the Ubuntu File System
 
@@ -1377,7 +1385,7 @@ In order to convert a Windows path to and from an Ubuntu path:
 - Use the `wslpath -w "/home"` command in order to translate an Ubuntu path into a Windows path
 - In particular, the `wslpath -w $(pwd)` command returns the Windows path of the current Ubuntu directory
 
-![How to access a Windows path from Ubuntu terminal](https://github.com/lewagon/setup/blob/master/images/windows_path_from_terminal.png)
+![How to access a Windows path from Ubuntu terminal](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_path_from_terminal.png)
 
 ### Pin apps to your taskbar
 
@@ -1385,7 +1393,7 @@ You are going to use most of the apps you've installed today really often. Let's
 
 To pin an app to your taskbar, launch the app, right-click on the icon in the taskbar to bring up the context menu and choose "Pin to taskbar".
 
-![How to pin an app to the taskbar in Windows](https://github.com/lewagon/setup/blob/master/images/windows_taskbar.png)
+![How to pin an app to the taskbar in Windows](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_taskbar.png)
 
 You must pin:
 - Your terminal
