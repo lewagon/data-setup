@@ -1,6 +1,6 @@
 
 branches:
-  setup: master
+  setup: simplify-conso
 
 aliases:
   de_setup: data-engineering-setup
