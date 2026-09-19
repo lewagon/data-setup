@@ -798,48 +798,48 @@ echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 
 
 
-## Install Python and dependencies
+## Instalar Python y sus dependencias
 
-Your operating system - macOS, or Ubuntu (native, or inside WSL) - come with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and wher you'll be able to switch which version you want to use for each project you work on.
+Tu sistema operativo - macOS, o Ubuntu (nativo, o dentro de WSL) - viene con un "Python del sistema". Esa es una versión de Python de la que depende tu sistema. No vamos a tocar esa. Vamos a hacer una configuración profesional de Python en la que no estropees tu "Python del sistema" y en la que podrás cambiar la versión que quieras usar para cada proyecto en el que trabajes.
 
-To manage different Python versions and virtual environments (you'll discover what that means during the setup lecture), we will use the state-of-the-art [`uv` created by Astral](https://docs.astral.sh/uv/).
+Para gestionar diferentes versiones de Python y entornos virtuales (descubrirás qué significa eso durante la clase de configuración), usaremos la herramienta de última generación [`uv` creada por Astral](https://docs.astral.sh/uv/).
 
 
-### Install `uv`
+### Instalar `uv`
 
-First, we'll install `uv`:
+Primero, instalaremos `uv`:
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Next, restart your shell by running this:
+A continuación, reinicia tu shell ejecutando esto:
 
 ```bash
 exec zsh
 ```
 
-### Create a virtual environment
+### Crear un entorno virtual
 
-Next, we'll create a virtual environment (an isolated environment with Python and the dependencies for the bootcamp):
+A continuación, crearemos un entorno virtual (un entorno aislado con Python y las dependencias del bootcamp):
 
 ```bash
 uv venv ~/.lewagon/venvs/lewagon --python 3.12.9
 ```
 
-Now that we created this new virtual environment, let's restart our shell to pick it up (this works thanks to the `lewagon/dotfiles` we installed before):
+Ahora que hemos creado este nuevo entorno virtual, reiniciemos nuestro shell para que lo detecte (esto funciona gracias a los `lewagon/dotfiles` que instalamos antes):
 
 ```bash
 exec zsh
 ```
 
-Let's check that everything went right. Run this:
+Comprobemos que todo ha ido bien. Ejecuta esto:
 
 ```bash
 which python3
 ```
 
-It should return this:
+Debería devolver esto:
 
 
 ``` bash
@@ -847,14 +847,14 @@ It should return this:
 ```
 
 
-If it doesn't, check with a TA! Do not continue with the next step before you solved this!
+Si no lo hace, ¡consulta con un TA! No continúes con el siguiente paso hasta que hayas resuelto esto.
 
 
-### Install dependencies
+### Instalar dependencias
 
-Python is great for data, because the communitiy has developed an enormous amount of packages we can re-use.
+Python es genial para datos, porque la comunidad ha desarrollado una enorme cantidad de paquetes que podemos reutilizar.
 
-Let's install the most common ones:
+Instalemos los más comunes:
 
 
 ``` bash
