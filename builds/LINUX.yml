@@ -9,10 +9,10 @@ partials:
   - setup/vscode_aifeatures
   - setup/cli_tools
   - setup/oh_my_zsh
-  - direnv
   - setup/gh_cli
   - dotfiles
   - setup/ssh_agent
+  - direnv
   - conda_uninstall
   - ubuntu_python
   - virtualenv

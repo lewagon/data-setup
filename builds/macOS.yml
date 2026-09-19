@@ -11,9 +11,9 @@ partials:
   - vscode_extensions
   - setup/vscode_aifeatures
   - setup/oh_my_zsh
-  - direnv
   - setup/gh_cli
   - dotfiles
+  - direnv
   - conda_uninstall
   - osx_python
   - virtualenv
