@@ -276,34 +276,8 @@ gh auth status
 
 Let's enhance the experience of your machine by installing Le Wagon's pre-configured [dotfiles 🔗](https://github.com/lewagon/dotfiles). These are configuration files for your terminal, zsh, git, and VS Code.
 
-### Forking the dotfiles
 
-To customise this configuration for yourself, you'll need to **fork** the repository to your own Github account.
-
-**Forking** creates a copy of the repository under your account (`your_github_username/dotfiles`), which you can then modify with your personal information, such as your name.
-
-<details>
-<summary>❗ <strong>If</strong> you already did another Le Wagon bootcamp  (<strong>Web Development, AI Software Development, Data Analytics, Data Science & AI</strong>, open this first ❗
-</summary>
-
-You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
-
-
-**Open a ticket** with a TA and do one of the following:
-- Compare your existing dotfiles with the current Le Wagon [dotfiles 🔗](https://github.com/lewagon/dotfiles), particularly the `.zshrc`, `.zprofile`, and `settings.json` - if there is no meaningful difference other than your name and email setting, continue with the setup.
-- If you are OK with losing your existing dotfiles (recommended):
-    - Delete your existing dotfiles repository on GitHub and continue with the setup.
-    - Delete the local repository: `rm -rf ~/code/<your_github_username>/dotifles`.
-- If you do not want to lose your existing dotfiles, we recommend working with branches:
-    - On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**
-    - Create a branch of your existing dotfiles setup (`git checkout -b old-setup`), and push to GitHub - `git push origin old-setup`,
-    - Go back to `master`: `git checkout master`.
-    - On local `master`, `git pull upstream master`, resolve any conflicts, `git commit -m "merged"`, and `git push origin master`. It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files.
-    - Continue with the setup.
-
-</details>
-
-<br>
+### Get your GitHub username
 
 Run the following command:
 
@@ -315,6 +289,108 @@ echo $GITHUB_USERNAME
 ✔️ You should see your Github username printed.
 
 ❌ If not, stop here and ask for help. There may be a problem with the previous step (`gh auth`).
+
+
+### Forking the dotfiles
+
+To customise this configuration for yourself, you'll need to **fork** the repository to your own Github account.
+
+**Forking** creates a copy of the repository under your account (`your_github_username/dotfiles`), which you can then modify with your personal information, such as your name.
+
+<details>
+<summary>❗ <strong>If you already did another Le Wagon bootcamp</strong> (<em>Web Development, AI Software Development, Data Analytics, Data Science & AI</em>, <strong>open a ticket with a TA</strong> and open this for instructions ❗
+</summary>
+
+You may have an older version of the Le Wagon dotfiles. They could be incompatible with the current setup.
+
+
+**Together with a TA**, do one of the following:
+
+<details>
+<summary>I'm using <strong>the same machine</strong> (or a new machine which already has the dotfiles).</summary>
+
+1. Move into your existing dotfiles folder:
+   ```bash
+   cd ~/code/$GITHUB_USERNAME/dotifles
+   ```
+
+1. Check the diff against the current version of Le Wagon's dotfiles:
+    ```bash
+    git diff upstream/master
+    ```
+
+If there is no meaningful difference other than your name and email setting, continue with the setup.
+
+</details>
+
+<details>
+<summary>I'm using <strong>a new machine</strong> without the dotfiles.</summary>
+
+1. Browse to GitHub and find your `dotfiles` repository.
+
+1. Check how many commits it's behind and ahead `lewagon/dotfiles:master`. You can see this just above the file list.
+
+1. Click through to the behind and the ahead, and scroll down to see the diffs.
+
+If there is no meaningful difference other than your name and email setting, continue with the setup.
+
+</details>
+
+<details>
+<summary>The previous step revealed <strong>meaningful differences</strong>.</summary>
+
+If you are OK with losing your existing dotfiles (recommended):
+
+1. Delete your existing dotfiles repository on GitHub.
+1. Delete the local repository:
+    ```bash
+    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotifles
+    ```
+1. Continue with the setup.
+
+<details>
+<summary>If you do not want to lose your existing dotfiles, we recommend working with branches. Click to open.</summary>
+
+On your **laptop**, or wherever you have a **local** copy of **your existing version of dotfiles**.
+
+1. Commit your current version of your dotfiles:
+
+    ```bash
+    git add .
+    git status # Check what will be committed
+    git commit -m "Version prior to new setup"
+    ```
+
+1. Create a branch of your current dotfiles setup, and push to GitHub:
+    
+    ```bash
+    git checkout -b old-setup
+    git push origin old-setup
+    ```
+
+1. Go back to `master`: `git checkout master`.
+
+1. On local `master`, `git pull upstream master`.
+
+1. Check that you're not in `MERGING` state. If you are, resolve any conflicts.
+    
+    It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files. Especially anything related to `pyenv` and to Python environments.
+
+    If there are too many conficts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
+
+    Commit your conflict resolution: `git commit --no-edit`
+
+1. Push your changes to GitHub: `git push origin master`.
+
+1. Continue with the setup.
+
+</details>
+
+</details>
+
+</details>
+
+<br>
 
 Time to fork the repo and clone it on your computer:
 
