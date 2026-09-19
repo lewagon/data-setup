@@ -16,7 +16,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
-![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
+![GitHub picture](https://github.com/lewagon/setup/blob/simplify-conso/images/github_picture.png)
 
 :point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
 
@@ -368,9 +368,9 @@ In **VS Code**:
 
 1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P` (Windows / Linux) or `Cmd-Shift-P` (macOS).
 1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
-   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/master/images/vscode_find_aifeatures.png)
+   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
-   ![Check the disable option](https://github.com/lewagon/setup/blob/master/images/vscode_disable_aifeatures.png)
+   ![Check the disable option](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_disable_aifeatures.png)
 
 Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
@@ -477,7 +477,7 @@ If asked "Do you want to change your default shell to zsh?", press `Y`
 
 At the end your terminal should look like this:
 
-![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
+![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/simplify-conso/images/oh_my_zsh.png)
 
 :heavy_check_mark: If it does, you can continue :+1:
 
@@ -1101,7 +1101,7 @@ Launch the app and sign in to `lewagon-alumni` organization.
 
 Make sure you **upload a profile picture** :point_down:
 
-![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
+![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_profile_picture.gif)
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
@@ -1113,7 +1113,7 @@ To ensure that everything is working fine for video calls, let's test your camer
 - Below `Troubleshooting`, click `Run an audio, video and screensharing test`. The test will open in a new window.
 - Check that your preferred speaker, microphone and camera devices appear in the drop-down menus, then click `Start test`.
 
-![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
+![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_call_test.png)
 
 :heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
 

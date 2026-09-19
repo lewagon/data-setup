@@ -16,7 +16,7 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 :point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
 
-![GitHub picture](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
+![GitHub picture](https://github.com/lewagon/setup/blob/simplify-conso/images/github_picture.png)
 
 :point_right: **[Enable Two-Factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub will send you text messages with a code when you try to log in. This is important for security and also will soon be required in order to contribute code on GitHub.
 
@@ -34,13 +34,17 @@ If you're unsure, click the Apple icon in the top-left corner of your screen, th
 
 Clicking the little red cross in the top left corner of the application window on a Mac **does not really quit it**, it just closes an active window. To quit the application _for real_ either press `Cmd + Q` when the application is active, or navigate to `APP_NAME` -> `Quit` in the menu bar.
 
-![Quit Terminal on macOS](https://github.com/lewagon/setup/blob/master/images/macos_quit.png)
+![Quit Terminal on macOS](https://github.com/lewagon/setup/blob/simplify-conso/images/macos_quit.png)
 
 During this setup you will be asked to **quit and re-open** applications multiple times, please make sure you do it properly :pray:
 
 ## Command Line Tools
 
-Open a new terminal, copy-paste the following command and hit `Enter`:
+Open a new terminal window from Launchpad > Other, or from Finder > Applications > Utilities, or search for it with [Spotlight](https://support.apple.com/en-gb/HT204014):
+
+![Open Terminal on macOS](https://github.com/lewagon/setup/blob/simplify-conso/images/macos_open_terminal.png)
+
+Copy-paste the following command and hit `Enter`:
 
 ```bash
 xcode-select --install
@@ -55,7 +59,7 @@ If you receive the following message, you can just skip this step and go to next
 Otherwise, it will open a window asking you if you want to install some software: click on "Install" and wait.
 
 
-![Install xcode-select on macOS](https://github.com/lewagon/setup/blob/master/images/macos_xcode_select_install.png)
+![Install xcode-select on macOS](https://github.com/lewagon/setup/blob/simplify-conso/images/macos_xcode_select_install.png)
 
 :heavy_check_mark: If you see the message "The software was installed" then all good :+1:
 
@@ -178,9 +182,9 @@ In **VS Code**:
 
 1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P` (Windows / Linux) or `Cmd-Shift-P` (macOS).
 1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
-   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/master/images/vscode_find_aifeatures.png)
+   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
-   ![Check the disable option](https://github.com/lewagon/setup/blob/master/images/vscode_disable_aifeatures.png)
+   ![Check the disable option](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_disable_aifeatures.png)
 
 Later, if you want **to reenable** the AI features, you can follow the same instructions to untick the checkbox.
 
@@ -199,7 +203,7 @@ If asked "Do you want to change your default shell to zsh?", press `Y`
 
 At the end your terminal should look like this:
 
-![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
+![Ubuntu terminal with OhMyZsh](https://github.com/lewagon/setup/blob/simplify-conso/images/oh_my_zsh.png)
 
 :heavy_check_mark: If it does, you can continue :+1:
 
@@ -956,7 +960,7 @@ Launch the app and sign in to `lewagon-alumni` organization.
 
 Make sure you **upload a profile picture** :point_down:
 
-![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
+![How to upload a profile picture on Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_profile_picture.gif)
 
 The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
 
@@ -968,7 +972,7 @@ To ensure that everything is working fine for video calls, let's test your camer
 - Below `Troubleshooting`, click `Run an audio, video and screensharing test`. The test will open in a new window.
 - Check that your preferred speaker, microphone and camera devices appear in the drop-down menus, then click `Start test`.
 
-![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
+![Check microphone and webcam with Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_call_test.png)
 
 :heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
 
@@ -1015,7 +1019,7 @@ You are going to use most of the apps you've installed today really often. Let's
 
 To pin an app to your dock, launch the app, right-click on the icon in the taskbar to bring up the context menu and choose "Options" then "Keep in Dock".
 
-![How to pin an app to the taskbar in macOS](https://github.com/lewagon/setup/blob/master/images/macos_dock.png)
+![How to pin an app to the taskbar in macOS](https://github.com/lewagon/setup/blob/simplify-conso/images/macos_dock.png)
 
 You must pin:
 - Your terminal

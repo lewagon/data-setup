@@ -16,7 +16,7 @@ Empecemos :rocket:
 
 :point_right: **[Sube una foto](https://github.com/settings/profile)** y escribe tu nombre correctamente en tu cuenta GitHub. Esto es importante porque nosotros usaremos un tablero de comando interno con tu avatar. Por favor hazlo **ahora** antes de dar un paso más en esta guía.
 
-![Foto GitHub](https://github.com/lewagon/setup/blob/master/images/github_picture.png)
+![Foto GitHub](https://github.com/lewagon/setup/blob/simplify-conso/images/github_picture.png)
 
 :point_right: **[Habilita la Autenticación de Dos Factores (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub te enviará mensajes de texto con un código cuando intentes iniciar sesión. Esto es importante para la seguridad y también pronto será necesario para contribuir código en GitHub.
 
@@ -99,7 +99,7 @@ Normalmente ya es el caso en muchas computadoras. Verifiquemos:
 - Haz clic en la pestaña `Performance`
 - Haz clic en `CPU`
 
-![Windows task manager](https://github.com/lewagon/setup/blob/master/images/windows_task_manager.png)
+![Windows task manager](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_task_manager.png)
 
 :heavy_check_mark: Si ves "Virtualization: Enabled", entonces todo está bien :+1:
 
@@ -200,7 +200,7 @@ Cuando se reinicie tu computadora, descarga el instalador de WSL2.
 - Haz clic en `Next`
 - Haz clic en `Finish`
 
-![Actualiza WSL de la versión 1 a la 2](https://github.com/lewagon/setup/blob/master/images/windows_update_wsl.png)
+![Actualiza WSL de la versión 1 a la 2](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_update_wsl.png)
 
 :heavy_check_mark: Si no obtuviste ningún mensaje de error, entonces puedes continuar :+1:
 
@@ -367,7 +367,7 @@ Instala el editor de texto [Visual Studio Code](https://code.visualstudio.com).
 - Abre el archivo que acabas de descargar.
 - Instálalo con pocas opciones:
 
-![Opciones de instalación de VS Code](https://github.com/lewagon/setup/blob/master/images/windows_vscode_installation.png)
+![Opciones de instalación de VS Code](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_vscode_installation.png)
 
 Abre VS Code cuando termine la instalación.
 
@@ -391,7 +391,7 @@ code .
 
 :heavy_check_mark: Si ves `WSL: Ubuntu` en la esquina inferior izquierda de la ventana de VS Code, entonces todo está bien y puedes continuar :+1:
 
-![WSL Ubuntu Remote](https://github.com/lewagon/setup/blob/master/images/windows_remote_wsl.png)
+![WSL Ubuntu Remote](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_remote_wsl.png)
 
 :x: Si no es el caso, por favor **pídele ayuda a un profesor**.
 
@@ -442,7 +442,7 @@ Presiona `Ctrl` + `,`
 
 Debería abrir los parámetros de la terminal:
 
-![Parámetros de Windows Terminal](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings.png)
+![Parámetros de Windows Terminal](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_terminal_settings.png)
 
 - Cambia el perfil predeterminado a "Ubuntu"
 - Haz clic en "Save"
@@ -450,7 +450,7 @@ Debería abrir los parámetros de la terminal:
 
 Verás la parte a cambiar en un círculo rojo:
 
-![Archivo de parámetros JSON de Windows Terminal](https://github.com/lewagon/setup/blob/master/images/windows_terminal_settings_json.png)
+![Archivo de parámetros JSON de Windows Terminal](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_terminal_settings_json.png)
 
 Primero pídele a Ubuntu que inicie directamente dentro de tu Ubuntu Home Directory en vez de hacerlo desde Windows:
 - Localiza el `"name": "Ubuntu",`
@@ -520,9 +520,9 @@ En **VS Code**:
 
 1. Abramos la "Paleta de comandos" de VS Code: escribe `Ctrl-Shift-P` (Windows / Linux) o `Cmd-Shift-P` (macOS).
 1. Se abrirá la Paleta de comandos: una pequeña caja de texto en la parte superior de la pantalla. Empieza a escribir `aifeatures` hasta que veas "Chat: Learn How to Hide AI features". Haz clic en ella.
-  ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/master/images/vscode_find_aifeatures.png)
+  ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. Esto abrirá la configuración y te mostrará la opción "Disable and hide built-in AI features ...". Marca la casilla delante de esa opción.
-  ![Check the disable option](https://github.com/lewagon/setup/blob/master/images/vscode_disable_aifeatures.png)
+  ![Check the disable option](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_disable_aifeatures.png)
 
 Más adelante, si quieres **volver a habilitar** las funciones de IA, puedes seguir las mismas instrucciones para desmarcar la casilla.
 
@@ -620,7 +620,7 @@ Si te preguntan "Do you want to change your default shell to zsh?", presiona `Y`
 
 Cuando termines, tu terminal debería lucir así:
 
-![La terminal de Ubuntu con OhMyZsh](https://github.com/lewagon/setup/blob/master/images/oh_my_zsh.png)
+![La terminal de Ubuntu con OhMyZsh](https://github.com/lewagon/setup/blob/simplify-conso/images/oh_my_zsh.png)
 
 :heavy_check_mark: Si es el caso, puedes continuar :+1:
 
@@ -1356,7 +1356,7 @@ Abre la aplicación e inicia sesión en `lewagon-alumni`.
 
 Asegúrate de **subir una foto para tu perfil** :point_down:
 
-![Cómo subir una foto de perfil en Slack](https://github.com/lewagon/setup/blob/master/images/slack_profile_picture.gif)
+![Cómo subir una foto de perfil en Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_profile_picture.gif)
 
 La idea es tener Slack abierto todo el día para compartir enlaces útiles / pedir ayuda / decidir dónde almorzar / etc.
 
@@ -1369,7 +1369,7 @@ Para asegurarte de que todo lo relacionado a videollamadas funcione bien, prueba
 - Comprueba que tus dispositivos preferidos de altavoz, micrófono y cámara aparecen en los menús desplegables y haz clic en "Iniciar prueba"
 - Haz clic en el botón verde "Start test"
 
-![Chequea el micrófono y la cámara con Slack](https://github.com/lewagon/setup/blob/master/images/slack_call_test.png)
+![Chequea el micrófono y la cámara con Slack](https://github.com/lewagon/setup/blob/simplify-conso/images/slack_call_test.png)
 
 :heavy_check_mark: Cuando termine el test deberías ver mensajes de "Succeed" en verde por lo menos para tu micrófono y tu cámara. :+1:
 
@@ -1391,7 +1391,7 @@ Para ello, vamos a crear atajos a directorios Ubuntu en el **Explorador de Archi
 - Navega por el sistema de archivos de Ubuntu para encontrar los directorios que te interesen
 - Arrastra las carpetas que te interesen a la Barra de Direcciones para crear atajos
 
-![Cómo agregar un atajo al sistema de archivos de Ubuntu en Windows](https://github.com/lewagon/setup/blob/master/images/windows_ubuntu_file_system_shortcut.gif)
+![Cómo agregar un atajo al sistema de archivos de Ubuntu en Windows](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_ubuntu_file_system_shortcut.gif)
 
 ### Abre el Explorador de Archivos de Windows desde la terminal de Ubuntu
 
@@ -1401,7 +1401,7 @@ Otra opción para mover archivos es abrir el **Explorador de Archivos** de Windo
 - Ejecuta el comando `explorer.exe .` (Otra alternativa es usar `wslview .`)
 - Si obtienes un mensaje de input output error, ejecuta `wsl --shutdown` en una PowerShell de Windows y abre la terminal de Ubuntu nuevamente
 
-![Cómo abrir Windows Explorer desde la terminal de Ubuntu](https://github.com/lewagon/setup/blob/master/images/windows_explorer_from_terminal.png)
+![Cómo abrir Windows Explorer desde la terminal de Ubuntu](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_explorer_from_terminal.png)
 
 ### Uso del Sistema de Archivos de Ubuntu
 
@@ -1413,7 +1413,7 @@ Para convertir una ruta Windows a una Ubuntu y viceversa:
 - Usa el comando `wslpath -w "/home"` para traducir una ruta Ubuntu a una Windows
 - El comando `wslpath -w $(pwd)` devuelve la ruta Windows del directorio Ubuntu actual
 
-![Cómo acceder a una ruta Windows desde una terminal de Ubuntu](https://github.com/lewagon/setup/blob/master/images/windows_path_from_terminal.png)
+![Cómo acceder a una ruta Windows desde una terminal de Ubuntu](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_path_from_terminal.png)
 
 ### Anclaje de aplicaciones a tu barra de tareas
 
@@ -1421,7 +1421,7 @@ Usarás frecuentemente casi todas las aplicaciones que has instalado hoy. ¡Ancl
 
 Para ello, abre la aplicación. Haz clic derecho en el ícono de la barra de tareas para hacer que aparezca el menú contextual (también llamado emergente) y selecciona "Pin to taskbar".
 
-![Cómo anclar una aplicación a la barra de tareas en Windows](https://github.com/lewagon/setup/blob/master/images/windows_taskbar.png)
+![Cómo anclar una aplicación a la barra de tareas en Windows](https://github.com/lewagon/setup/blob/simplify-conso/images/windows_taskbar.png)
 
 Ancla lo siguiente:
 - Tu terminal
