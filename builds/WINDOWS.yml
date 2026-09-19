@@ -17,7 +17,6 @@ partials:
   - windows_browser
   - setup/gh_cli
   - dotfiles
-  - setup/ssh_agent
   - direnv
   - conda_uninstall
   - ubuntu_python
