@@ -423,19 +423,18 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 
 ``` bash
-brew install direnv
+brew install -y direnv
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
 
 
 
-## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
+## Install Python and dependencies
 
 Your operating system - macOS, or Ubuntu (native, or inside WSL) - come with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and wher you'll be able to switch which version you want to use for each project you work on.
 
 To manage different Python versions and virtual environments (you'll discover what that means during the setup lecture), we will use the state-of-the-art [`uv` created by Astral](https://docs.astral.sh/uv/).
 
-## Install Python and dependencies
 
 ### Install `uv`
 
