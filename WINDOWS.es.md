@@ -1111,6 +1111,8 @@ Intente `docker info` nuevamente.
 
 🚨 Si eres estudiante del **Part-Time Bootcamp**, ¡OMITE ESTA SECCIÓN POR AHORA! **Google Cloud** ofrece 300 $ de crédito gratuito durante 3 meses. No querrás activar tu cuenta de Google Cloud demasiado pronto 🙅‍♂️
 
+
+
 ### Configuración del proyecto
 
 - Ve a [Google Cloud](https://console.cloud.google.com/) y crea una cuenta si aún no tienes una
