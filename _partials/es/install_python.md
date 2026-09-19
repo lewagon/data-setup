@@ -66,14 +66,14 @@ Instalemos los más comunes:
 
 {% if os == "macos" %}
 ``` bash
-uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
+uv pip install -r {{ SPECS_LOCATION }}/apple_silicon.txt
 ```
 {% elsif os == "windows" %}
 ``` bash
-uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+uv pip install -r {{ SPECS_LOCATION }}/linux.txt
 ```
 {% elsif os == "linux" %}
 ``` bash
-uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+uv pip install -r {{ SPECS_LOCATION }}/linux.txt
 ```
 {% endif %}
