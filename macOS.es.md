@@ -206,18 +206,6 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
-## direnv
-
-[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
-
-
-``` bash
-brew install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
-
-
-
 ## GitHub CLI
 
 CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface) que significa interfaz de línea de comando.
@@ -348,6 +336,18 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 :warning: **Debes** introducir uno de los correos electrónicos indicados arriba mediante el comando anterior `gh api ...`. Si no lo haces, Kitt no podrá realizar el seguimiento de tu progreso.
 
 💡 Selecciona la dirección `...@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en repositorios públicos a los que contribuyas.
+
+
+## direnv
+
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
+
+
+``` bash
+brew install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+```
+
 
 
 ## Instalando Python (con [`pyenv`](https://github.com/pyenv/pyenv))

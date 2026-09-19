@@ -202,18 +202,6 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
-## direnv
-
-[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
-
-
-``` bash
-sudo apt-get update; sudo apt-get install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
-
-
-
 ## GitHub CLI
 
 CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface) que significa interfaz de línea de comando.
@@ -346,27 +334,16 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 💡 Selecciona la dirección `...@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en repositorios públicos a los que contribuyas.
 
 
-## Desahilitación de la solicitud de SSH passphrase
+## direnv
 
-No vas a querer que te pidan tu passphrase cada vez que te comuniques con un repositorio remoto. Por eso debes agregarle plugin `ssh-agent` a `oh my zsh`:
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
 
-Primero abre el archivo `.zshrc`:
 
-```bash
-code ~/.zshrc
+``` bash
+sudo apt-get update; sudo apt-get install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
 
-Luego:
-- Identifica la línea que comienza por `plugins=`
-- Agrega `ssh-agent` al final de la lista de plugins
-
-La lista debería verse de la siguiente manera:
-
-```bash
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
-:heavy_check_mark: Guarda el archivo `.zshrc` con `Ctrl` + `S` y cierra tu editor de texto.
 
 
 ## Instalando Python (con [`pyenv`](https://github.com/pyenv/pyenv))

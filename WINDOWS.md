@@ -618,18 +618,6 @@ If it does not, you can follow [these instructions](https://github.com/lewagon/s
 Do not hesitate to **contact a teacher**.
 
 
-## direnv
-
-[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
-
-
-``` bash
-sudo apt-get update; sudo apt-get install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
-
-
-
 ## GitHub CLI
 
 CLI is the acronym of [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface).
@@ -838,21 +826,16 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 💡 Select the `...@users.noreply.github.com` address if you don't want your email to appear in public repositories you may contribute to.
 
 
-## Disable SSH passphrase prompt
+## direnv
 
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
+[direnv](https://direnv.net/) is a shell extension. It makes it easy to deal with per project environment variables. This will be useful in order to customize the behavior of your code.
 
-First, open the `.zshrc` file:
 
-```bash
-code ~/.zshrc
+``` bash
+sudo apt-get update; sudo apt-get install direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
 
-Then:
-- Spot the line starting with `plugins=`
-- Add `ssh-agent` at the end of the plugins list
-
-:heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
 
 
 ## Installing Python (with [`pyenv`](https://github.com/pyenv/pyenv))
