@@ -1333,11 +1333,9 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
-  
   ```bash
-  gcloud auth login --no-launch-browser
+  gcloud auth login
   ```
-  
 
 - Login to your Google account on the new tab opened in your web browser
 

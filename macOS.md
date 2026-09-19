@@ -882,11 +882,9 @@ If that doesn't work, contact a TA.
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
-  
   ```bash
   gcloud auth login
   ```
-  
 
 - Login to your Google account on the new tab opened in your web browser
 
