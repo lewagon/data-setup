@@ -539,18 +539,25 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 
 
 
-## Mejora Jupyter Notebook
+## Configuración de Jupyter Notebook
 
-Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
+Dependiendo de tu sistema, necesitamos hacer algunos cambios pequeños en tu configuración de Jupyter.
 
-Ejecuta las siguientes líneas para crear una hoja de estilos `custom.css` en tu directorio de configuración de Jupyter:
+Ejecuta esto:
 
 ```bash
-LOCATION=$(jupyter --config-dir)/custom
-SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
-mkdir -p $LOCATION
-curl $SOURCE > $LOCATION/custom.css
+bash -c "$(curl -s https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/checks/setup_jupyter.sh)"
 ```
+
+<details>
+<summary>Si tienes curiosidad sobre lo que sucede aquí, haz clic aquí.</summary>
+
+Este script añade una configuración para mejorar la visualización de los [elementos `details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
+
+Si estás usando Windows WSL, también soluciona otros problemas.
+
+
+</details>
 
 
 ## Chequeo de la configuración de Python
