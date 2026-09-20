@@ -643,16 +643,6 @@ Reinicia tu terminal:
 exec zsh
 ```
 
-Luego asegúrate de que el siguiente comando devuelva "Browser defined 👌":
-
-```bash
-[ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
-```
-
-Si no es así, puedes seguir [estas instrucciones](https://github.com/lewagon/setup/blob/master/_partials/es/windows_browser.md) para configurar tu navegador predeterminado manualmente.
-
-No dudes en **pedirle ayuda a tu profesor**.
-
 
 ## GitHub CLI
 
