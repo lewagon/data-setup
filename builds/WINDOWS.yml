@@ -23,7 +23,6 @@ partials:
   - virtualenv
   - pip
   - nbextensions
-  - win_jupyter
   - python_checkup
   - win_docker
   - gcp_account_setup_intro
