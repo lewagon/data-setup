@@ -21,13 +21,13 @@ Empecemos :rocket:
 :point_right: **[Habilita la Autenticación de Dos Factores (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub te enviará mensajes de texto con un código cuando intentes iniciar sesión. Esto es importante para la seguridad y también pronto será necesario para contribuir código en GitHub.
 
 
-## Comprueba tu procesador
+## Verifica tu procesador
 
-Como se explica en los requisitos de nuestros portátiles, esta configuración solo es compatible con Apple silicon y ya no admite Macs con procesadores Intel.
+De acuerdo con nuestros requisitos de computadoras portátiles, esta configuración solo es compatible con arquitecturas de Apple silicon. **La configuración no funciona en computadoras Mac con procesadores Intel.**
 
-Si compraste tu Mac después de finales de 2020, lo más probable es que tenga un chip Apple silicon en lugar de un procesador Intel.
+Si compraste tu Mac después de finales de 2020, es probable que cuente con un chip Apple silicon.
 
-Si no estás seguro, haz clic en el icono de Apple situado en la esquina superior izquierda de la pantalla y selecciona *"Acerca de este Mac"*. Si el campo *"Chip"* comienza por *"Apple"*, puedes continuar. Si comienza por *"Intel"*, tu Mac no es compatible.
+Para verificar tu procesador, haz clic en el ícono de Apple en la esquina superior izquierda de tu pantalla y selecciona *"Acerca de esta Mac"*. Si el campo *"Chip"* (o *"Procesador"*) indica *"Apple"*, tu equipo es compatible. Si dice *"Intel"*, tu Mac no es compatible.
 
 
 ## Cómo cerrar aplicaciones en una Mac correctamente
@@ -567,7 +567,7 @@ Ahora vincularás tu cuenta a tu tarjeta de crédito. Este paso es obligatorio; 
 - Selecciona el tipo de cuenta: `Individual`
 - Introduce tu nombre y dirección
 
-Deberías ver que tienes un crédito gratuito de "$300 credits over the next 90days".
+Deberías ver que tienes un crédito gratuito de "$300 credits over the next 90 days".
 
 - Haz clic en los datos de la tarjeta
 - Introduce los datos de tu tarjeta de crédito
