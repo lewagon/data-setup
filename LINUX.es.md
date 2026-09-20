@@ -93,7 +93,7 @@ Para el inicio del bootcamp, desactivaremos estas funciones. Llegado el momento 
 
 En **VS Code**:
 
-1. Abramos la "Paleta de comandos" de VS Code: escribe `Ctrl-Shift-P` (Windows / Linux) o `Cmd-Shift-P` (macOS).
+1. Abramos la "Paleta de comandos" de VS Code: escribe `Ctrl-Shift-P`.
 1. Se abrirá la Paleta de comandos: una pequeña caja de texto en la parte superior de la pantalla. Empieza a escribir `aifeatures` hasta que veas "Chat: Learn How to Hide AI features". Haz clic en ella.
   ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. Esto abrirá la configuración y te mostrará la opción "Disable and hide built-in AI features ...". Marca la casilla delante de esa opción.
@@ -521,6 +521,8 @@ Debería aparecer el siguiente mensaje:
 [Google Cloud](https://cloud.google.com/) es una solución en la nube que utilizarás para desplegar tus productos basados en Machine Learning en producción.
 
 🚨 Si eres estudiante del **Part-Time Bootcamp**, ¡OMITE ESTA SECCIÓN POR AHORA! **Google Cloud** ofrece 300 $ de crédito gratuito durante 3 meses. No querrás activar tu cuenta de Google Cloud demasiado pronto 🙅‍♂️
+
+
 
 ### Configuración del proyecto
 

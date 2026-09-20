@@ -108,7 +108,7 @@ For the start of the bootcamp, we’ll disable these features. At the right poin
 
 In **VS Code**:
 
-1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P` (Windows / Linux) or `Cmd-Shift-P` (macOS).
+1. Let's open the VS Code "Command **P**alette": type `Ctrl-Shift-P`.
 1. This will open the Command Palette: a small text box at the top of your screen. Start typing `aifeatures` until you see "Chat: Learn How to Hide AI features". Click on it.
    ![The Command Palette at the top of the screen](https://github.com/lewagon/setup/blob/simplify-conso/images/vscode_find_aifeatures.png)
 1. This will open the settings, and will show you the option "Disable and hide built-in AI features ...". Tick the checkbox in front of that option.
@@ -640,6 +640,8 @@ The following message should print:
 
 🚨 If you are a student of the **Part-Time Bootcamp or the Flex bootcamp**, SKIP THIS SECTION FOR NOW! **Google Cloud** offers $300 worth of free credits for a duration of 3 months. You do not want to activate your Google Cloud account too soon 🙅‍♂️
 
+
+
 ### Project setup
 
 - Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one
@@ -787,11 +789,9 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 
 - Authenticate the `gcloud` CLI with the google account you used for GCP
 
-  
   ```bash
   gcloud auth login
   ```
-  
 
 - Login to your Google account on the new tab opened in your web browser
 

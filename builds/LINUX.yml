@@ -16,6 +16,7 @@ partials:
   - nbextensions
   - python_checkup
   - ubuntu_docker
+  - gcp_account_setup_intro
   - gcp_account_setup
   - ubuntu_gcloud
   - gcp_setup
