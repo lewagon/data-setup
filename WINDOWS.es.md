@@ -1058,7 +1058,7 @@ Ahora vincularás tu cuenta a tu tarjeta de crédito. Este paso es obligatorio; 
 - Selecciona el tipo de cuenta: `Individual`
 - Introduce tu nombre y dirección
 
-Deberías ver que tienes un crédito gratuito de "$300 credits over the next 90days".
+Deberías ver que tienes un crédito gratuito de "$300 credits over the next 90 days".
 
 - Haz clic en los datos de la tarjeta
 - Introduce los datos de tu tarjeta de crédito

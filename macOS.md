@@ -23,11 +23,14 @@ Have you signed up to GitHub? If not, [do it right away](https://github.com/join
 
 ## Check your processor
 
-As explained in our laptop requirements, this setup supports only Apple silicon and no longer supports Macs with Intel processors.
+In line with our laptop requirements, this setup only supports Apple silicon architectures. **The setup does not work on Macs with Intel processors.**
 
-If you bought your Mac after late 2020, it most likely has an Apple silicon chip rather than an Intel processor.
+If you purchased your Mac after late 2020, it likely features an Apple silicon chip.
 
-If you're unsure, click the Apple icon in the top-left corner of your screen, then select *"About This Mac"*. If the *"Chip"* field starts with *"Apple"*, you're good to go. If it starts with *"Intel"*, your Mac isn't supported.
+To verify your processor, click the Apple icon in the top-left corner of your screen and select *"About This Mac"*. If the *"Chip"* (or *"Processor"*) field lists *"Apple"*, your machine is compatible. If it says *"Intel"*, your Mac is not supported.
+
+
+
 
 
 ## A note about quitting apps on a Mac
@@ -673,7 +676,7 @@ You will now link your account to your credit card. This step is required or you
 - Select your account type: `Individual`
 - Fill your name and address
 
-You should see that you have a free credit of "$300 credits over the next 90days".
+You should see that you have a free credit of "$300 credits over the next 90 days".
 
 - Click on card details
 - Enter your credit card info

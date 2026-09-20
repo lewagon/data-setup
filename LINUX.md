@@ -700,7 +700,7 @@ You will now link your account to your credit card. This step is required or you
 - Select your account type: `Individual`
 - Fill your name and address
 
-You should see that you have a free credit of "$300 credits over the next 90days".
+You should see that you have a free credit of "$300 credits over the next 90 days".
 
 - Click on card details
 - Enter your credit card info
