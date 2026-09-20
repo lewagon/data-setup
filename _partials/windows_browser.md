@@ -13,13 +13,3 @@ Reset your terminal:
 ```bash
 exec zsh
 ```
-
-Then please make sure that the following command returns "Browser defined 👌":
-
-```bash
-[ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
-```
-
-If it does not, you can follow [these instructions](https://github.com/lewagon/setup/blob/master/_partials/windows_browser.md) to set your default browser manually.
-
-Do not hesitate to **contact a teacher**.
