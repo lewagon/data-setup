@@ -1,7 +1,10 @@
 ## Check your processor
 
-As explained in our laptop requirements, this setup supports only Apple silicon and no longer supports Macs with Intel processors.
+In line with our laptop requirements, this setup only supports Apple silicon architectures. **The setup does not work on Macs with Intel processors.**
 
-If you bought your Mac after late 2020, it most likely has an Apple silicon chip rather than an Intel processor.
+If you purchased your Mac after late 2020, it likely features an Apple silicon chip.
 
-If you're unsure, click the Apple icon in the top-left corner of your screen, then select *"About This Mac"*. If the *"Chip"* field starts with *"Apple"*, you're good to go. If it starts with *"Intel"*, your Mac isn't supported.
+To verify your processor, click the Apple icon in the top-left corner of your screen and select *"About This Mac"*. If the *"Chip"* (or *"Processor"*) field lists *"Apple"*, your machine is compatible. If it says *"Intel"*, your Mac is not supported.
+
+
+
