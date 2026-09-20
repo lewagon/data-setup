@@ -762,7 +762,8 @@ Debería aparecer el siguiente mensaje:
 ![](images/docker_hello.png)
 
 
-  ## Kitt
+
+## Kitt
 
 Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
 

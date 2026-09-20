@@ -727,7 +727,8 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 🏁 ¡Has terminado la configuración de GCP!
 
 
-  ## Kitt
+
+## Kitt
 
 Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
 

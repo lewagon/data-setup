@@ -838,7 +838,8 @@ If that doesn't work, contact a TA.
 🏁 You are done with the GCP setup!
 
 
-  ## Kitt
+
+## Kitt
 
 You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform).
 

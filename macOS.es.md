@@ -734,7 +734,8 @@ Si eso no funciona, contacta a un TA.
 🏁 ¡Has terminado la configuración de GCP!
 
 
-  ## Kitt
+
+## Kitt
 
 Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
 
