@@ -40,4 +40,5 @@ brew upgrade tree        || brew install -y tree
 brew upgrade ncdu        || brew install -y ncdu
 brew upgrade xz          || brew install -y xz
 brew upgrade readline    || brew install -y readline
+brew upgrade direnv      || brew install -y direnv
 ```
