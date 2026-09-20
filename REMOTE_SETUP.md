@@ -936,16 +936,23 @@ pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs
 
 ## Jupyter Notebook tweaking
 
-Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+Depending on your system, we need to make some small changes to your Jupyter configuration.
 
-Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
+Run this:
 
 ```bash
-LOCATION=$(jupyter --config-dir)/custom
-SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
-mkdir -p $LOCATION
-curl $SOURCE > $LOCATION/custom.css
+bash -c "$(curl -s https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/checks/setup_jupyter.sh)"
 ```
+
+<details>
+<summary>If you are curious about what happens here, click here.</summary>
+
+This script adds a configuration to improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+
+If you're using Windows WSL, it also fixes some other problems.
+
+
+</details>
 
 
 ## Python setup check

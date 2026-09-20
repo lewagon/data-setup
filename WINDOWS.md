@@ -607,16 +607,6 @@ Reset your terminal:
 exec zsh
 ```
 
-Then please make sure that the following command returns "Browser defined 👌":
-
-```bash
-[ -z "$BROWSER" ] && echo "ERROR: please define a BROWSER environment variable ⚠️" || echo "Browser defined 👌"
-```
-
-If it does not, you can follow [these instructions](https://github.com/lewagon/setup/blob/master/_partials/windows_browser.md) to set your default browser manually.
-
-Do not hesitate to **contact a teacher**.
-
 
 ## GitHub CLI
 
@@ -907,58 +897,26 @@ uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/sp
 
 ## Jupyter Notebook tweaking
 
-Let's improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
+Depending on your system, we need to make some small changes to your Jupyter configuration.
 
-Run the following lines to create a `custom.css` stylesheet in your Jupyter config directory:
-
-```bash
-LOCATION=$(jupyter --config-dir)/custom
-SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
-mkdir -p $LOCATION
-curl $SOURCE > $LOCATION/custom.css
-```
-
-
-
-### Configuring Jupyter Notebook to open in your browser
-
-First, let's configure your default browser again. We did this before, but when we installed the dotfiles it got removed. Not a problem, run this command to configure the settings again:
+Run this:
 
 ```bash
-grep -E "export (GH_)*BROWSER" ~/.zshrc.backup >> ~/.zshrc
+bash -c "$(curl -s https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/checks/setup_jupyter.sh)"
 ```
 
-Then, restart your terminal with:
+<details>
+<summary>If you are curious about what happens here, click here.</summary>
 
-```bash
-exec zsh
-```
+This script adds a configuration to improve the display of the [`details` disclosure elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) in your notebooks.
 
-Let's generate the configuration file for **Jupyter Notebook**...
+If you're using Windows WSL, it also fixes some other problems.
 
-``` bash
-jupyter notebook --generate-config
-```
+- It makes sure you're BROWSER is configured correctly. It was configured before, but was overwritten by the dotfiles setup.
+- It fixes a known bug with Jupyter Notebook always opening the directory tree, even if you specify a specific file path.
 
-We will now edit the generated Jupyter configuration file:
 
-``` bash
-sed -i.backup 's/# c.ServerApp.use_redirect_file = True/c.ServerApp.use_redirect_file = False/' ~/.jupyter/jupyter_notebook_config.py
-```
-
-Let's try to run Jupyter:
-
-``` bash
-jupyter notebook
-```
-
-This command should have opened a Jupyter page in your browser:
-
-![](images/wsl_jupyter_notebook.png)
-
-If it is not the case, please call a TA.
-
-To stop the Jupyter server in the terminal, press `Ctrl` + `C`, enter y, then press Enter.
+</details>
 
 
 ## Python setup check
