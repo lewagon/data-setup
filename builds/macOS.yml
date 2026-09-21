@@ -6,7 +6,7 @@ partials:
   - setup/github
   - osx_silicon
   - setup/macos_command_line_tools
-  - homebrew
+  - setup/macos_homebrew
   - setup/macos_vscode
   - vscode_extensions
   - setup/vscode_aifeatures
