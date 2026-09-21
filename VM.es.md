@@ -369,18 +369,6 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
-## direnv
-
-[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
-
-
-``` bash
-sudo apt-get update; sudo apt-get install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
-
-
-
 ## GitHub CLI
 
 CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface) que significa interfaz de línea de comando.
