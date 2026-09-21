@@ -4,7 +4,7 @@ In line with our laptop requirements, this setup only supports Apple silicon arc
 
 If you purchased your Mac after late 2020, it likely features an Apple silicon chip.
 
-To verify your processor, click the Apple icon in the top-left corner of your screen and select *"About This Mac"*. If the *"Chip"* (or *"Processor"*) field lists *"Apple"*, your machine is compatible. If it says *"Intel"*, your Mac is not supported.
+To verify your processor, click the Apple icon in the top-left corner of your screen and select *"About This Mac"*. Check the *"Chip"* (or *"Processor"*) field:
 
-
-
+- ✔️ If it lists *"Apple"*, your machine is compatible.
+- ❌ If it says *"Intel"*, your Mac is not supported. You cannot continue the setup, contact the teaching crew.

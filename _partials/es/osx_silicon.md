@@ -4,4 +4,7 @@ De acuerdo con nuestros requisitos de computadoras portátiles, esta configuraci
 
 Si compraste tu Mac después de finales de 2020, es probable que cuente con un chip Apple silicon.
 
-Para verificar tu procesador, haz clic en el ícono de Apple en la esquina superior izquierda de tu pantalla y selecciona *"Acerca de esta Mac"*. Si el campo *"Chip"* (o *"Procesador"*) indica *"Apple"*, tu equipo es compatible. Si dice *"Intel"*, tu Mac no es compatible.
+Para verificar tu procesador, haz clic en el ícono de Apple en la esquina superior izquierda de tu pantalla y selecciona *"Acerca de esta Mac"*. Comprueba el campo *"Chip"* (o *"Procesador"*):
+
+- ✔️ Si aparece *"Apple"*, tu máquina es compatible.
+- ❌ Si aparece *"Intel"*, tu Mac no es compatible. No puedes continuar con la configuración; ponte en contacto con el equipo docente.
