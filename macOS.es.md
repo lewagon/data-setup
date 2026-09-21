@@ -425,7 +425,7 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 
 ``` bash
-brew install direnv
+brew install -y direnv
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
 

@@ -4,7 +4,7 @@
 
 {% if os == "macos" %}
 ``` bash
-brew install direnv
+brew install -y direnv
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
 {% elsif os == "windows" %}
