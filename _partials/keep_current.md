@@ -8,6 +8,22 @@ First and foremost, in order to work in good conditions, make sure that :
 - your computer has enough memory (8GB), so that you can run your code efficiently
 - your computer has enough disk space (30GB), so that you can work on big datasets
 
+In this guide we focus on the essentials:
+
+- Git and GitHub
+- The `dotfiles`, the configuration files for your shell. These are important to get Python working.
+- Installing Python and dependencies with `uv`.
+- Authenticating with Google Cloud.
+
+Depending on your use case you might also want to update other parts. If so, refer to the full setup instructions.
+
+{% if os == "macos" %}
+:warning: Note that the current setup no longer supports Apple computers equipped with Intel processors. 
+
+Refer to the full setup instructions if you are not sure about your processor.
+{% endif %}
+
+
 ## git
 
 Verify that git works
@@ -22,300 +38,29 @@ git --version
 git version 2.33.0
 ```
 
+If this doesn't work, we recommend you follow the full setup instructions.
+
 ## GitHub
 
-Verify that you have access to the Le Wagon public GitHub repositories
+Check that the `gh` CLI is authenticated:
 
-``` bash
-cd ~/code/<YOUR_GITHUB_NICKNAME>/
-git clone git@github.com:lewagon/data-setup data-setup
-```
-
-👉 The repo should clone correctly :
-
-``` bash
-Cloning into 'data-setup'...
-remote: Enumerating objects: 21, done.
-remote: Counting objects: 100% (21/21), done.
-remote: Compressing objects: 100% (14/14), done.
-Receiving objects: 100% (21/21), done.
-Resolving deltas: 100% (6/6), done.
-remote: Total 21 (delta 6), reused 16 (delta 1), pack-reused 0
-```
-
-👉 You can delete the cloned repo
-
-``` bash
-rm -Rf data-setup
-```
-
-## Verify your pyenv configuration
-
-Verify that you have a `~/.zprofile` :
-
-``` bash
-cat ~/.zprofile
-```
-
-👉 You should see the following lines :
-
-``` bash
-# Setup the PATH for pyenv binaries and shims
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-type -a pyenv > /dev/null && eval "$(pyenv init --path)"
-```
-
-If the command does not output anything, create the `~/.zprofile` file :
-
-``` bash
-cd
-touch .zprofile
-```
-
-Add the following lines to your `~/.zprofile` :
-
-``` bash
-# Setup the PATH for pyenv binaries and shims
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-type -a pyenv > /dev/null && eval "$(pyenv init --path)"
-```
-
-## Create a dedicated virtual environment
-
-Update pyenv :
-
-{% if os == "macos" %}
-``` bash
-brew update && brew upgrade pyenv
-```
-{% elsif os == "linux" %}
-``` bash
-cd $(pyenv root) && git pull
-```
-{% elsif os == "windows" %}
-``` bash
-cd $(pyenv root) && git pull
-```
-{% endif %}
-
-Install the current python version :
+✔️ If you get this you are all good 👍
 
 ```bash
-pyenv install {{ PYTHON_VERSION }}
+✔️ Logged in to github.com as <YOUR GITHUB USERNAME>
+- Active account: true
+- Git operation protocol: ssh
+...
 ```
 
-👉 Make sure that the command completes correctly and **restart your terminal**
+Pay attention to `ssh` in the third line. If it says something else, your setup is no longer current.
 
-Let's remove the existing current virtual environment :
-
-```bash
-pyenv virtualenv-delete lewagon_current
-```
-
-Create a new virtual environment :
-
-```bash
-pyenv virtualenv {{ PYTHON_VERSION }} lewagon_current
-```
-
-Set the new virtual environment as default :
-
-```bash
-pyenv global lewagon_current
-```
-
-You should now be able to see the new virtual environment as active :
-
-``` bash
-pyenv versions
-```
-
-👉 Here is a sample output :
-
-``` bash
-  system
-  {{ PYTHON_VERSION }}
-  {{ PYTHON_VERSION }}/envs/lewagon_current
-  3.10.6
-  3.10.6/envs/lewagon
-* lewagon_current
-  lewagon
-```
-
-### Install the bootcamp packages
-
-```bash
-pip install -U pip
-```
-
-{% if os == "macos" %}
-If your computer uses **Apple Silicon**, expand the paragraph below and go through it. Otherwise ignore it.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup for Apple Silicon 👈</summary>
-
-``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
-```
-</details>
-
-If your computer uses **Apple Intel**, expand the paragraph below and go through it. Otherwise ignore it.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup for Apple Intel 👈</summary>
-
-``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
-```
-</details>
-{% elsif os == "windows" %}
-``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
-```
-{% elsif os == "linux" %}
-``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
-```
-{% endif %}
-
-## GCP
-
-Make sure that the `gcloud` command is linked to the email address of your Google Cloud Platform account :
-
-``` bash
-gcloud auth list
-```
-
-👉 This lists the email address of your GCP account :
-
-``` bash
-      Credentialed Accounts
-ACTIVE  ACCOUNT
-*       your.email_address@your.email.provider
-
-To set the active account, run:
-    $ gcloud config set account `ACCOUNT`
-```
-
-Verify the name of your gcp project :
-
-``` bash
-gcloud config list
-```
-
-👉 This lists both the email address of your GCP account and your GCP project :
+❌ If not, we recommend you follow the full setup instructions.
 
 
-``` bash
-[core]
-account = your.email_address@your.email.provider
-disable_usage_reporting = True
-project = your-gcp-project-id
+## Updating your dotfiles
 
-Your active configuration is: [default]
-```
+The dotfiles have gone through a major change in September 2026. If you installed them before, you need to update them.
 
-Verify the email created for the service account allowing your code to identify to GCP :
+Follow the instructions below for returning students.
 
-``` bash
-gcloud iam service-accounts list
-```
-
-👉 This lists the GCP email address of the service account that allows your code to identify to GCP
-
-``` bash
-DISPLAY NAME          EMAIL                                                              DISABLED
-your-gcp-project-id   your-service-account@your-service-account.iam.gserviceaccount.com  False
-```
-
-Go to [GCP IAM & Admin / Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts):
-- Select your project
-- Click on the service account email
-- Go to `PERMISSIONS`
-- Make sure that the service account email has a `Role` set to `Owner`
-
-Verify that you have configured your machine to allow your code to identify to GCP. The service account credentials json key file should be linked to the correct service account email :
-
-``` bash
-cat $GOOGLE_APPLICATION_CREDENTIALS
-```
-
-👉 This lists the content of your service account credentials json key :
-
-``` bash
-{
-  "type": "service_account",
-  "project_id": "your-gcp-project-id",
-  "private_key_id": "a2d4a2d4a2d4a2d4a2d4a2d4a2d4a2d4a2d4a2d4",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInMIInM=\n-----END PRIVATE KEY-----\n",
-  "client_email": "your-service-account@your-service-account.iam.gserviceaccount.com",
-  "client_id": "105410541054105410541",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/your-service-account%40your-service-account.iam.gserviceaccount.com"
-}
-```
-
-Make sure that the file contains the correct :
-- project id : your-gcp-project-id
-- service account email address : your-service-account@your-service-account.iam.gserviceaccount.com
-
-👉 If this does not display anything or if the email inside of the file is not the one of your service account, go back to the setup
-
-Make sure that Docker recognizes the GCP resources :
-
-``` bash
-gcloud auth configure-docker
-```
-
-👉 This lists the image name prefixes recognized by Docker as targetted to GCP
-
-``` bash
-{
-  "credHelpers": {
-    "us.gcr.io": "gcloud",
-    "eu.gcr.io": "gcloud",
-    "asia.gcr.io": "gcloud",
-    "staging-k8s.gcr.io": "gcloud",
-    "marketplace.gcr.io": "gcloud",
-    "gcr.io": "gcloud"
-  }
-}
-```
-
-## Docker
-
-{% if os == "macos" %}
-Start the Docker app
-{% elsif os == "linux" %}
-Start Docker :
-
-``` bash
-sudo service docker start
-```
-{% elsif os == "windows" %}
-Start the Docker Desktop app
-{% endif %}
-
-Verify that Docker can run the hello-world image :
-
-``` bash
-docker run hello-world
-```
-
-👉 Make sure that this command completes correctly
-
-{% if os == "macos" %}
-Stop the Docker app
-{% elsif os == "linux" %}
-Stop Docker :
-
-``` bash
-sudo service docker stop
-```
-{% elsif os == "windows" %}
-Stop the Docker Desktop app
-{% endif %}

@@ -3,4 +3,9 @@ os: linux
 locales: [en, es]
 partials:
   - keep_current
+  - dotfiles
+  - install_python
+  - nbextensions
   - python_checkup
+  - ubuntu_gcloud
+  - gcp_setup

@@ -3,4 +3,9 @@ os: macos
 locales: [en, es]
 partials:
   - keep_current
+  - dotfiles
+  - install_python
+  - nbextensions
   - python_checkup
+  - gcp_cli_setup
+  - gcp_setup
