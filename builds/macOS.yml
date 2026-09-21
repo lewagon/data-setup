@@ -13,7 +13,6 @@ partials:
   - setup/oh_my_zsh
   - setup/gh_cli
   - dotfiles
-  - direnv
   - install_python
   - nbextensions
   - python_checkup
