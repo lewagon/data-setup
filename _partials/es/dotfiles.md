@@ -19,7 +19,7 @@ Es posible que tengas una versión anterior de los dotfiles de Le Wagon. Podría
 - Compara tus dotfiles existentes con los [dotfiles 🔗](https://github.com/lewagon/dotfiles) actuales de Le Wagon, especialmente `.zshrc`, `.zprofile` y `settings.json`. Si no hay ninguna diferencia significativa aparte de tu nombre y correo electrónico, continúa con la configuración.
 - Si no te importa perder tus dotfiles existentes (recomendado):
     - Elimina tu repositorio de dotfiles existente en GitHub y continúa con la configuración.
-    - Elimina el repositorio local: `rm -rf ~/code/<your_github_username>/dotifles`.
+    - Elimina el repositorio local: `rm -rf ~/code/<your_github_username>/dotfiles`.
 - Si no quieres perder tus dotfiles existentes, recomendamos trabajar con ramas:
     - En tu **portátil**, o donde tengas una copia **local** de **tu versión existente de los dotfiles**.
     - Crea una rama de tu configuración existente de dotfiles (`git checkout -b old-setup`) y súbela a GitHub: `git push origin old-setup`.

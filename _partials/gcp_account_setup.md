@@ -45,7 +45,7 @@ You will now link your account to your credit card. This step is required or you
 - Click on **MANAGE BILLING ACCOUNTS**
 - Click on **ADD BILLING ACCOUNT**
 - Give a name to your billing account, e.g. `My Billing Account`
-- Click on "I have read..." and agree the to the terms of service
+- Click on "I have read..." and agree to the terms of service
 - Click on **CONTINUE**
 - Select your account type: `Individual`
 - Fill your name and address

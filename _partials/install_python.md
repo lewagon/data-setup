@@ -1,6 +1,6 @@
 ## Install Python and dependencies
 
-Your operating system - macOS, or Ubuntu (native, or inside WSL) - comes with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and wher you'll be able to switch which version you want to use for each project you work on.
+Your operating system - macOS, or Ubuntu (native, or inside WSL) - comes with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and where you'll be able to switch which version you want to use for each project you work on.
 
 To manage different Python versions and virtual environments (you'll discover what that means during the setup lecture), we will use the state-of-the-art [`uv` created by Astral](https://docs.astral.sh/uv/).
 
@@ -60,7 +60,7 @@ If it doesn't, check with a TA! Do not continue with the next step before you so
 
 ### Install dependencies
 
-Python is great for data, because the communitiy has developed an enormous amount of packages we can re-use.
+Python is great for data, because the community has developed an enormous amount of packages we can re-use.
 
 Let's install the most common ones:
 

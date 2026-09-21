@@ -15,7 +15,7 @@ Este script añade una configuración para mejorar la visualización de los [ele
 
 Si estás usando Windows WSL, también soluciona otros problemas.
 {% if os == "windows" %}
-- Se asegura de que tu variable BROWSER esté configurada correctamente. Se configuró antes, pero fue sobrescrita por la configuración de dotfiles.
+- Se asegura de que tu navegador esté configurado correctamente. Ya estaba configurado, pero la configuración de dotfiles lo sobrescribió.
 - Soluciona un error conocido en Jupyter Notebook que siempre abre el árbol de directorios, incluso si especificas una ruta de archivo específica.
 {% endif %}
 
