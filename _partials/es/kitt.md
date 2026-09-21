@@ -1,4 +1,5 @@
-  ## Kitt
+
+## Kitt
 
 Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
 

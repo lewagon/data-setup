@@ -1,4 +1,5 @@
-  ## Kitt
+
+## Kitt
 
 You should have received an email from Le Wagon inviting you to sign up on [Kitt](https://kitt.lewagon.com) (our learning platform).
 

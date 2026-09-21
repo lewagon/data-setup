@@ -5,3 +5,4 @@ PIP_CHECKER_URL: "https://raw.githubusercontent.com/lewagon/data-setup/master/ch
 PIP_LOADER_URL: "https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py"
 CODE_EDITOR: "VS Code"
 CODE_EDITOR_CMD: "code"
+SPECS_LOCATION: "https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases"

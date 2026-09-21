@@ -11,27 +11,17 @@ partials:
   - vscode_extensions
   - setup/vscode_aifeatures
   - setup/oh_my_zsh
-  - direnv
   - setup/gh_cli
   - dotfiles
-  - dotfiles_new_student
-  - dotfiles_new_laptop
-  - dotfiles_merge_upstream
-  - dotfiles_same_laptop
-  - dotfiles_merge_upstream
-  - dotfiles_installer
-  - conda_uninstall
-  - osx_python
-  - virtualenv
-  - pip
+  - direnv
+  - install_python
   - nbextensions
   - python_checkup
-  - dbeaver
   - docker
+  - gcp_account_setup_intro
+  - gcp_account_setup
   - gcp_cli_setup
   - gcp_setup
-  - gcp_setup_mid
-  - gcp_setup_end
   - kitt
   - setup/macos_slack
   - setup/slack_settings

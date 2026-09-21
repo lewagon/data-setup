@@ -1,10 +1,13 @@
-# Instrucciones para la configuración
 
-Aquí abajo encontrarás las instrucciones para configurar tu computadora para [el curso de Data Science de Le Wagon](https://www.lewagon.com/data-science-course/full-time)
+# Instrucciones de configuración
 
-Por favor **léelas cuidadosamente y ejecuta todos los comandos en el siguiente orden**. Si tienes algún problema, no dudes en pedirle ayuda a una profesor :raising_hand:
+A continuación encontrarás las instrucciones para configurar tu ordenador para el [bootcamp de Data Science & AI de Le Wagon](https://www.lewagon.com/data-science-course).
 
-¡Comencemos! :rocket:
+Por favor, **léelas detenidamente y ejecuta todos los comandos en el siguiente orden**.
+
+Esta configuración no es un ejercicio; su único propósito es preparar tu ordenador de forma estandarizada. No experimentes ni pidas ayuda a un LLM. Si te atascas, simplemente pide ayuda a un profesor :raising_hand:
+
+Empecemos :rocket:
 
 
 ## Cuenta GitHub
@@ -18,40 +21,16 @@ Por favor **léelas cuidadosamente y ejecuta todos los comandos en el siguiente 
 :point_right: **[Habilita la Autenticación de Dos Factores (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)**. GitHub te enviará mensajes de texto con un código cuando intentes iniciar sesión. Esto es importante para la seguridad y también pronto será necesario para contribuir código en GitHub.
 
 
-## Chips Apple Silicon
+## Verifica tu procesador
 
-Si compraste tu computadora después de finales del 2020, es probable que tenga un nuevo chip Apple Silicon en lugar de un procesador Intel: descubrámoslo.
+De acuerdo con nuestros requisitos de computadoras portátiles, esta configuración solo es compatible con arquitecturas de Apple silicon. **La configuración no funciona en computadoras Mac con procesadores Intel.**
 
-Abre una nueva ventana de la tarminal desde Aplicaciones > Utilidades o búscala con [Spotlight](https://support.apple.com/es-es/HT204014):
+Si compraste tu Mac después de finales de 2020, es probable que cuente con un chip Apple silicon.
 
-![Abrir Terminal en macOS](images/macos_open_terminal.png)
+Para verificar tu procesador, haz clic en el ícono de Apple en la esquina superior izquierda de tu pantalla y selecciona *"Acerca de esta Mac"*. Comprueba el campo *"Chip"* (o *"Procesador"*):
 
-Copia y pega el siguiente comando en la terminal y presiona `Enter` para ejecutarlo.
-
-``` bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/setup/master/utils/macos_list_processor_type.sh)"
-```
-
-☝️ El resultado del comando debería indicar si tu computadora usa un chip Apple Silicon.
-
-Si tu computadora usa **Apple Silicon**, expande el siguiente párrafo y ejecútalo. En caso contrario, ignóralo.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Setup para Apple Silicon 👈</summary>
-
-Quieres asegurarte que no estás usando Rosetta, que es una forma de usar tu Terminal como si tuvieras una computadora con Intel.
-
-Abre la app Finder (o búscala con [Spotlight](https://support.apple.com/es-es/HT204014)).
-
-Ve a Aplicaciones > Utilidades.
-
-Ubica la app Terminal (selecciónala).
-
-Presiona `Cmd` + `I` en la app Terminal, luego verifica que la caja "Abrir usando Rosetta" esté **desmarcada**.
-En caso de que no veas esta caja, simplemente continúa.
-</details>
-
-🚨 Ten esto en mente. Deberás recordarlo más adelante en este setup si tu computadora usa un chip Apple Silicon o Intel.
+- ✔️ Si aparece *"Apple"*, tu máquina es compatible.
+- ❌ Si aparece *"Intel"*, tu Mac no es compatible. No puedes continuar con la configuración; ponte en contacto con el equipo docente.
 
 
 ## Cómo cerrar aplicaciones en una Mac correctamente
@@ -95,73 +74,45 @@ Cuando termines eso, puedes intentar hacer la instalación nuevamente.
 
 
 ## Homebrew
-### 1. Instálalo:
-Si usas Mac tienes que instalar [Homebrew](http://brew.sh/) el cual es un sistema de gestión de paquetes.
-Será necesario cuando tengamos que instalar algún programa.
-Para instalarlo, abre tu Terminal y ejecuta lo siguiente:
+
+[Homebrew](http://brew.sh/) es un gestionador de paquetes: es un programa que se usa para instalar otros programas desde la línea de comando. ¡Vamos a instalarlo!
+
+Abre la terminal y ejecuta lo siguiente:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Te pedirá tu confirmación (presiona `Enter`) y tu **contraseña de usuario macOS** (la que usas para [iniciar sesión](https://support.apple.com/en-gb/HT202860) cuando reinicias tu Macbook).
-:warning: Cuando escribas tu contraseña en la Terminal, **no** la verás (sólo verás algo como `*****`). ¡Esto es **normal**! Simplemente escribe tu contraseña y confirma presionando `Enter`.
+Te pedirá que confirmes (presionando `Enter`) y también te pedirá la **contraseña de tu cuenta de usuario macOS** (la que usas para [iniciar sesión](https://support.apple.com/en-gb/HT202860) cuando reinicias tu Macbook).
 
-<details>
-  <summary>🛠 Si aparece un <code>Error: Not a valid ref: refs/remotes/origin/master</code> </summary>
+:warning: Cuando escribas tu contraseña no verás nada en la pantalla. **Esto es normal**. Es una herramienta de seguridad para ocultar tanto el contenido de tu contraseña como su longitud. Simplemente escribe tu contraseña y presiona `Enter` al terminar.
 
+Si ya tienes Homebrew instalado, el sistema te lo dirá y puedes continuar.
 
-El error completo es el siguiente:
+Una vez que Homebrew haya terminado de instalarse, ejecuta estos dos comandos para agregarlo a tu `PATH`:
 
-``` bash
-Error: Not a valid ref: refs/remotes/origin/master :
-fatal: ambiguous argument 'refs/remotes/origin/master': unknown revision or path not in the working tree.
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-Ejecuta los siguientes comandos para resolverlo:
-
-``` bash
-rm -fr $(brew --repo homebrew/core)  # because you can't `brew untap homebrew/core`
-brew tap homebrew/core
-```
-
-</details>
-
-Si ya tienes Homebrew, el sistema te lo dirá. No hay problema, así que puedes continuar.
-
-### 2. Asegúrate de tener la versión más reciente:
+Asegúrate de tener la última versión:
 
 ```bash
 brew update
 ```
 
-<details>
-  <summary>🛠 Si aparece un error <code>/usr/local must be writable</code> </summary>
-
-Simplemente ejecuta lo siguiente:
-
-``` bash
-sudo chown -R $USER:admin /usr/local
-brew update
-```
-
-</details>
-
-### 3. Luego instala algunos programas útiles:
-
-Ejecuta lo siguiente en la terminal (puedes copiar / pegar todas las líneas juntas una sola vez).
+Luego, instala algunos programas útiles (puedes copiar y pegar todas las líneas de código al mismo tiempo):
 
 ```bash
-brew upgrade git         || brew install git
-brew upgrade gh          || brew install gh
-brew upgrade wget        || brew install wget
-brew upgrade imagemagick || brew install imagemagick
-brew upgrade jq          || brew install jq
-brew upgrade openssl     || brew install openssl
-brew upgrade tree        || brew install tree
-brew upgrade ncdu        || brew install ncdu
-brew upgrade xz          || brew install xz
-brew upgrade readline    || brew install readline
+brew upgrade git         || brew install -y git
+brew upgrade gh          || brew install -y gh
+brew upgrade wget        || brew install -y wget
+brew upgrade imagemagick || brew install -y imagemagick
+brew upgrade jq          || brew install -y jq
+brew upgrade openssl     || brew install -y openssl
+brew upgrade tree        || brew install -y tree
+brew upgrade direnv      || brew install -y direnv
 ```
 
 
@@ -256,18 +207,6 @@ Cuando termines, tu terminal debería lucir así:
 :x: Si no, por favor **pídele ayuda a un profesor**.
 
 
-## direnv
-
-[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
-
-
-``` bash
-brew install direnv
-echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
-```
-
-
-
 ## GitHub CLI
 
 CLI es una abreviación de [Command-line Interface](https://en.wikipedia.org/wiki/Command-line_interface) que significa interfaz de línea de comando.
@@ -324,182 +263,144 @@ gh auth status
 
 ## Dotfiles
 
-Los hackers aman mejorar sus shells y sus herramientas. Comenzaremos con una configuración por defecto genial proporcionada por [Le Wagon](http://github.com/lewagon/dotfiles) y almacenada en GitHub.
+Mejoremos la experiencia de tu máquina instalando los [dotfiles 🔗](https://github.com/lewagon/dotfiles) preconfigurados de Le Wagon. Son archivos de configuración para tu terminal, zsh, git y VS Code.
 
-### Verifica tu configuración de GitHub CLI
 
-Primero, hagamos una verificación rápida. Abre tu terminal y ejecuta el comando siguiente:
+### Obtener tu nombre de usuario de GitHub
+
+Ejecuta el siguiente comando:
 
 ```bash
 export GITHUB_USERNAME=`gh api user | jq -r '.login'`
 echo $GITHUB_USERNAME
 ```
 
-Deberías ver tu usuario GitHub. Si no es así, **no hagas más nada** y pide ayuda.
-Parece que hay un problema con el paso anterior (`gh auth`).
+✔️ Deberías ver tu nombre de usuario de GitHub en la pantalla.
+
+❌ Si no es así, detente aquí y pide ayuda. Puede haber un problema con el paso anterior (`gh auth`).
 
 
-### Fork y/o clone los archivos de configuración
+### Crear un fork de los dotfiles
 
-Hay tres opciones, escoge **una**:
+Para personalizar esta configuración, tendrás que crear un **fork** del repositorio en tu propia cuenta de GitHub.
 
+Crear un **fork** genera una copia del repositorio en tu cuenta (`your_github_username/dotfiles`), que luego podrás modificar con tus datos personales, como tu nombre.
 
 <details>
-    <summary>
-        <strong>No he hecho el bootcamp de Web Development o Data Science & AI de Le Wagon</strong>
-    </summary>
+<summary>❗ <strong>Si ya hiciste otro bootcamp de Le Wagon</strong> (<em>Desarrollo web, Desarrollo de software con IA, Análisis de datos, Ciencia de datos e IA</em>), <strong>abre un ticket con un TA</strong> y abre esta sección para ver las instrucciones ❗
+</summary>
 
- Tu configuración es personal, así que necesitas tu propio repositorio para almacenarla. Primero tienes que hacer el fork del repositorio en tu cuenta GitHub.
+Es posible que tengas una versión antigua de los dotfiles de Le Wagon. Podrían ser incompatibles con la configuración actual.
 
-Hacer un fork significa que crearás un nuevo repositorio en tu cuenta GitHub idéntico al original. Tendrás un nuevo repositorio en tu cuenta GitHub, `your_github_username/dotfiles`. El fork es necesario porque cada uno de ustedes necesitará poner información específica (e.g. tu nombre) en esos archivos.
 
-Ejecutemos este comando para hacer un **fork** del repositorio `lewagon/dotfiles` y clonarlo:
+**Junto con un TA**, haz una de las siguientes acciones:
 
+<details>
+<summary>Estoy usando <strong>la misma máquina</strong> (o una máquina nueva que ya tiene los dotfiles).</summary>
+
+1. Ve a tu carpeta actual de dotfiles:
+   ```bash
+   cd ~/code/$GITHUB_USERNAME/dotfiles
+   ```
+
+1. Comprueba las diferencias con la versión actual de los dotfiles de Le Wagon:
+    ```bash
+    git diff upstream/master
+    ```
+
+Si no hay diferencias importantes aparte de tu nombre y correo electrónico, continúa con la configuración.
+
+</details>
+
+<details>
+<summary>Estoy usando <strong>una máquina nueva</strong> sin los dotfiles.</summary>
+
+1. Ve a GitHub y encuentra tu repositorio de `dotfiles`.
+
+1. Comprueba cuántos commits por detrás y por delante está de `lewagon/dotfiles:master`. Puedes verlo justo encima de la lista de archivos.
+
+1. Haz clic en los enlaces de commits por detrás y por delante, y desplázate hacia abajo para ver las diferencias.
+
+Si no hay diferencias importantes aparte de tu nombre y correo electrónico, continúa con la configuración.
+
+</details>
+
+<details>
+<summary>El paso anterior mostró <strong>diferencias importantes</strong>.</summary>
+
+Si estás de acuerdo con perder tus dotfiles actuales (recomendado):
+
+Ten en cuenta que esto eliminará cualquier cambio personal que hayas hecho en la configuración de tu shell, como cargar utilidades adicionales o cambiar su apariencia. Si no recuerdas haber hecho cambios, no debería haber ningún problema.
+
+1. Elimina tu repositorio actual de dotfiles en GitHub.
+1. Elimina el repositorio local:
+    ```bash
+    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotfiles
+    ```
+1. Continúa con la configuración.
+
+<details>
+<summary>Si no quieres perder tus dotfiles actuales, te recomendamos trabajar con ramas. Haz clic para abrir.</summary>
+
+En tu **portátil**, o donde tengas una copia **local** de **tu versión actual de los dotfiles**.
+
+1. Haz commit de tu versión actual de los dotfiles:
+
+    ```bash
+    git add .
+    git status # Comprueba qué se incluirá en el commit
+    git commit -m "Version prior to new setup"
+    ```
+
+1. Crea una rama de tu configuración actual de dotfiles y súbela a GitHub:
+    
+    ```bash
+    git checkout -b old-setup
+    git push origin old-setup
+    ```
+
+1. Vuelve a `master`: `git checkout master`.
+
+1. En tu `master` local, ejecuta `git pull upstream master`.
+
+1. Comprueba que no estés en estado `MERGING`. Si lo estás, resuelve los conflictos.
+    
+    Es importante que aceptes los cambios entrantes en los archivos `.zshrc`, `.zprofile` y `settings.json`, especialmente todo lo relacionado con `pyenv` y los entornos de Python.
+
+    Si hay demasiados conflictos, usa tu editor de código para reemplazar el contenido de los archivos en conflicto por el de los [dotfiles de Le Wagon](https://www.github.com/lewagon/dotfiles).
+
+    Haz commit de la resolución de conflictos: `git commit --no-edit`
+
+1. Sube tus cambios a GitHub: `git push origin master`.
+
+1. Continúa con la configuración.
+
+</details>
+
+</details>
+
+</details>
+
+<br>
+
+Es hora de crear un fork del repositorio y clonarlo en tu ordenador:
 
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
 
-</details>
+Si aparece la pregunta _"Are you sure you want to continue connecting (yes/no/[fingerprint])?"_, escribe `yes` y pulsa `Enter`.
 
+### Instalar los dotfiles
 
-<details>
-    <summary>
-        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon <em>pero tengo una nueva laptop</em></strong>
-    </summary>
-
-Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento.Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
-
-Es hora de clonarlo el repositorio en tu laptop:
-
-```bash
-mkdir -p ~/code/$GITHUB_USERNAME && cd $_
-gh repo clone lewagon/dotfiles
-```
-
-
-Abre tu terminal y ve a tu proyecto `dotfiles`:
-
-```bash
-cd ~/code/$GITHUB_USERNAME$/dotfiles
-```
-
-Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
-
-1. Commit la versión actual de tus dotfiles:
-   ```bash
-   git add .
-   git status # Check what will be committed
-   git commit -m "Version prior to new setup"
-   ```
-
-1. Trae los cambios del repositorio upstream: `git merge upstream/master`
-
-1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
-
-1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
-
-1. Si todo parece estar en orden, continúa.
-
-<details>
-  <summary>¿Demasiados conflictos?
-  </summary>
-
-  Vamos a tomar la versión actual de `lewagon/dotfiles`.
-
-  Primero aborta la merge: `git merge --abort`.
-
-  Ejecuta `code .`
-
-  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
-
-  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
-
-  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
-
-</details>
-
-Es hora de guardar tus cambios y subirlos.
-
-```bash
-git add .
-git commit -m "Update for Data Science bootcamp"
-git push origin master
-```
-
-</details>
-
-
-<details>
-    <summary>
-        <strong>Ya hice el bootcamp de Web Development o Data Science & AI de Le Wagon </em>en la misma laptop</em></strong>
-    </summary>
-
-Esto significa que ya has hecho el fork del repositorio GitHub lewagon/dotfiles pero tal vez la configuración para el nuevo bootcamp de Data Science & AI no estaba lista en ese momento. Actualicémoslo. **Pide a un TA que te acompañe en los siguientes pasos.**
-
-
-Abre tu terminal y ve a tu proyecto `dotfiles`:
-
-```bash
-cd ~/code/$GITHUB_USERNAME$/dotfiles
-```
-
-Es hora de fusionar los cambios de lewagon/dotfiles en los tuyos:
-
-1. Commit la versión actual de tus dotfiles:
-   ```bash
-   git add .
-   git status # Check what will be committed
-   git commit -m "Version prior to new setup"
-   ```
-
-1. Trae los cambios del repositorio upstream: `git merge upstream/master`
-
-1. Verifica que no estés en estado MERGING. Si lo estás, resuelve los conflictos.
-
-1. Haz un `git diff HEAD~1 HEAD` para revisar qué cambió.
-
-1. Si todo parece estar en orden, continúa.
-
-<details>
-  <summary>¿Demasiados conflictos?
-  </summary>
-
-  Vamos a tomar la versión actual de `lewagon/dotfiles`.
-
-  Primero aborta la merge: `git merge --abort`.
-
-  Ejecuta `code .`
-
-  En VS Code, abre el archivo zshrc. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zshrc). Luego guárdalo en el disco.
-
-  Aún en VS Code, abre el archivo `zprofile`. Reemplaza su contenido con la [versión más reciente](https://raw.githubusercontent.com/lewagon/dotfiles/master/zprofile). Luego guárdalo en el disco.
-
-  Regresa a la terminal y ejecuta un `git diff` y verifica que esto no haya eliminado ninguna configuración personal que quisieras conservar.
-
-</details>
-
-Es hora de guardar tus cambios y subirlos.
-
-```bash
-git add .
-git commit -m "Update for Data Science bootcamp"
-git push origin master
-```
-
-</details>
-
-
-### Ejecuta el instalador de dotfiles
-
-Ejecuta el instalador de `dotfiles`.
+Ejecuta el instalador de `dotfiles` con:
 
 ```bash
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh install.sh
 ```
 
-Verifica los emails registrados en tu cuenta GitHub. Deberás seleccionar uno de ellos en el próximo paso:
+Comprueba los correos electrónicos registrados en tu cuenta de GitHub. Tendrás que elegir uno en el siguiente paso:
 
 ```bash
 gh api user/emails | jq -r '.[].email'
@@ -511,213 +412,109 @@ Ejecuta el instalador de git:
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
-:point_up: Esto te **guiará** con tu nombre (`FirstName LastName`) y con tu email.
-:warning: Cuidado, **debes** poner uno de los emails de la lista de arriba que te suministra el comando `gh api ...` usado anteriormente. Si haces eso, Kitt no podrá hacerle seguimiento a tu progreso. Cualquier correo que elijas se mostrará **públicamente** en internet. 💡 Selecciona la dirección `@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en los repositorios públicos a los que puedas contribuir.
+:point_up: Se te pedirá tu nombre (`FirstName LastName`) y tu correo electrónico.
 
-Ahora **cierra** todas las ventanas de tu terminal que tengas abiertas por favor.
+:warning: **Debes** introducir uno de los correos que aparecen arriba, obtenidos con el comando `gh api ...`. Si no lo haces, Kitt no podrá realizar un seguimiento de tu progreso.
 
-
-## Instalando Python (con [`pyenv`](https://github.com/pyenv/pyenv))
-
-### Desinstalar `conda`
-
-Como estamos utilizando `pyenv` para instalar y gestionar la versión de Python, necesitamos desinstalar [`conda`](https://docs.conda.io/projects/conda/en/latest/), otro gestor de paquetes que podrías tener en tu computadora si previamente instalaste [Anaconda](https://www.anaconda.com/). De esta forma, evitaremos problemas con Python más adelante.
-
-Chequea si tienes `conda` instalado en tu computadora:
-
-```bash
-conda list
-```
-
-Si aparece `zsh: command not found: conda`, puedes **saltear** la desinstalación de `conda` e ir directo a la sección de **Instalar pre-requisitos**.
+💡 Selecciona la dirección `...@users.noreply.github.com` si no quieres que tu correo aparezca en repositorios públicos a los que contribuyas.
 
 
-<details>
-    <summary markdown='span'>Instrucciones de desinstalación <code>conda</code></summary>
+## direnv
 
-- Instala el paquete Anaconda-Clean desde tu terminal y comienza la limpieza
-```bash
-conda install anaconda-clean
-anaconda-clean --yes
-```
-- Remueve todos los directorios de Anaconda
-```bash
-rm -rf ~/anaconda2
-rm -rf ~/anaconda3
-rm -rf ~/.anaconda_backup
+[direnv](https://direnv.net/) es una extensión del shell. Facilita trabajar con variables de entorno por proyecto, lo cual será útil para customizar el comportamiento de tu código.
 
-rm -rf ~/opt
-
-```
-- Elimina el directorio Anaconda de tu `.bash_profile`
-    - Abre el archivo con `code ~/.bash_profile`
-    - Si el archivo abre, busca la línea que coincida con el siguiente patrón `export PATH="/path/to/anaconda3/bin:$PATH"` y eliminala
-
-    - Guarda el archivo con `CMD` + `s`
-
-- Reinicia la terminal con `exec zsh`
-- Remueve la inicializaciópn de Anaconda de tu `.zshrc`:
-    - Abre el archivo con `code ~/.zshrc` 
-    - Remueve las líneas de código desde `>>> conda initialize >>>` hasta `<<< conda initialize <<<`
-</details>
-
-
-### Instalar pre-requisitos
-
-Antes de instalar Python, por favor verifica la versión de tu extensión `xz` con:
-
-```bash
-brew info xz
-```
-
-Debe ser superior a `5.2.0`. **Si no es el caso**, debes ejecutar lo siguiente:
-
-```bash
-sudo rm -rf /usr/local/opt/xz
-brew upgrade
-brew install xz
-```
-
-Luego ejecuta:
-
-```bash
-brew install readline
-```
-
-### Instala `pyenv`
-
-macOS viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
-
-Primero instala `pyenv` con el siguiente comando en la Terminal:
-
-```bash
-brew install pyenv
-exec zsh
-```
-
-### Instala Python
-
-Instala la [última versión estable de Python](https://www.python.org/doc/versions/) aceptada en el currículum de Le Wagon:
-
-```bash
-pyenv install 3.12.9
-```
-
-Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
-
-<details>
-  <summary>🛠 Resolución de problemas</summary>
-
-Si aparece un error durante la instalación de Python con `pyenv` y relacionada con `zlib`:
-
-```txt
-zipimport.ZipImportError: can't decompress data; zlib not available
-```
-
-Instala `zlib` con lo siguiente:
-
-```bash
-brew install zlib
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
-```
-
-Luego trata de instalar Python nuevamente:
-
-```bash
-pyenv install 3.12.9
-```
-
-Es posible que aparezca otro error relacionado con `bzip2`. Esto lo puedes ignorar y continuar al paso siguiente.
-
-</details>
-<br>
-
-OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
-
-```bash
-pyenv global 3.12.9
-exec zsh
-```
-
-Para verificar si esto ha funcionado, ejecuta `python --version`. Si ves `3.12.9`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio `pyenv versions` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
-
-
-## Entorno Virtual de Python
-
-Antes de instalar paquetes de Python, aislaremos la configuración del Bootcamp en un entorno virtual **dedicado**. Usaremos un plugin `pyenv` llamado [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
-
-### Instala un virtualenv
-
-Primero instala este plugin:
-
-```bash
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-exec zsh
-```
-
-Crea el entorno virtual que usaremos durante todo el bootcamp:
-
-```bash
-pyenv virtualenv 3.12.9 lewagon
-```
-
-Define el entorno virtual con lo siguiente:
-
-```bash
-pyenv global lewagon
-```
-
-¡Genial! Ahora cada vez que queramos instalar un paquete Python, lo haremos en ese entorno.
-
-
-### Paquetes de Python
-
-Ahora que tenemos el ambiente virtual de `lewagon` adecuado, es hora de instalarle algunos paquetes.
-
-Primero, actualiza `pip`, la herramienta para instalar Paquetes Python desde [pypi.org](https://pypi.org). Ejecuta lo siguiente en la última terminal donde esté activado el virtualenv de `lewagon`:
-
-```bash
-pip install --upgrade pip
-```
-
-Ahora instala algunos paquetes para las primeras semanas del programa:
-
-
-Si tu computadora usa **Apple Silicon**, expande el párrafo de abajo y léelo. Si no es el caso, ignóralo.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Configuración para Apple Silicon 👈</summary>
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
+brew install -y direnv
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 ```
-</details>
-
-Si tu computadora usa **Apple Intel**, expande el párrafo de abajo y léelo. Si no es el caso, ignóralo.
-
-<details>
-  <summary>👉&nbsp;&nbsp;Configuración para Apple Intel 👈</summary>
-
-``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_intel.txt
-```
-</details>
 
 
 
-## Mejora Jupyter Notebook
+## Instalar Python y sus dependencias
 
-Mejora la visualización del [elemento `details` para revelación de información](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
+Tu sistema operativo - macOS, o Ubuntu (nativo, o dentro de WSL) - viene con un "Python del sistema". Esa es una versión de Python de la que depende tu sistema. No vamos a tocar esa. Vamos a hacer una configuración profesional de Python en la que no estropees tu "Python del sistema" y en la que podrás cambiar la versión que quieras usar para cada proyecto en el que trabajes.
 
-Ejecuta las siguientes líneas para crear una hoja de estilos `custom.css` en tu directorio de configuración de Jupyter:
+Para gestionar diferentes versiones de Python y entornos virtuales (descubrirás qué significa eso durante la clase de configuración), usaremos la herramienta de última generación [`uv` creada por Astral](https://docs.astral.sh/uv/).
+
+
+### Instalar `uv`
+
+Primero, instalaremos `uv`:
 
 ```bash
-LOCATION=$(jupyter --config-dir)/custom
-SOURCE=https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/specs/jupyter/custom.css
-mkdir -p $LOCATION
-curl $SOURCE > $LOCATION/custom.css
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+
+A continuación, reinicia tu shell ejecutando esto:
+
+```bash
+exec zsh
+```
+
+### Crear un entorno virtual
+
+A continuación, crearemos un entorno virtual (un entorno aislado con Python y las dependencias del bootcamp):
+
+```bash
+uv venv ~/.lewagon/venvs/lewagon --python 3.12.9
+```
+
+Ahora que hemos creado este nuevo entorno virtual, reiniciemos nuestro shell para que lo detecte (esto funciona gracias a los `lewagon/dotfiles` que instalamos antes):
+
+```bash
+exec zsh
+```
+
+Comprobemos que todo ha ido bien. Ejecuta esto:
+
+```bash
+which python3
+```
+
+Debería devolver esto:
+
+
+``` bash
+/Users/your-username/.lewagon/venvs/lewagon/bin/python3
+```
+
+
+Si no lo hace, ¡consulta con un TA! No continúes con el siguiente paso hasta que hayas resuelto esto.
+
+
+### Instalar dependencias
+
+Python es genial para datos, porque la comunidad ha desarrollado una enorme cantidad de paquetes que podemos reutilizar.
+
+Instalemos los más comunes:
+
+
+``` bash
+uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/apple_silicon.txt
+```
+
+
+
+## Configuración de Jupyter Notebook
+
+Dependiendo de tu sistema, necesitamos hacer algunos cambios pequeños en tu configuración de Jupyter.
+
+Ejecuta esto:
+
+```bash
+bash -c "$(curl -s https://raw.githubusercontent.com/lewagon/data-setup/refs/heads/master/checks/setup_jupyter.sh)"
+```
+
+<details>
+<summary>Si tienes curiosidad sobre lo que sucede aquí, haz clic aquí.</summary>
+
+Este script añade una configuración para mejorar la visualización de los [elementos `details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) en tus notebooks.
+
+Si estás usando Windows WSL, también soluciona otros problemas.
+
+
+</details>
 
 
 ## Chequeo de la configuración de Python
@@ -734,18 +531,6 @@ Verifica tu versión de Python con los siguientes comandos:
 ```bash
 zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/python_checker.sh)" 3.12.9
 ```
-
-Ejecuta el comando siguiente para verificar que hayas instalado los paquetes requeridos correctamente:
-```bash
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.sh)"
-```
-
-Ahora ejecuta el siguiente comando para verificar que puedas cargar estos paquetes:
-```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/lewagon/data-setup/master/checks/pip_check.py)"
-```
-
-### Chequeo de Jupyter
 
 Ahora verifica que puedas iniciar un servidor de notebook en tu máquina:
 
@@ -772,15 +557,18 @@ import sys; sys.version
 
 Debería mostrar `3.12.9` seguido de algunos detalles adicionales. Si no es así, consulta con un TA.
 
+En otra celda, ejecuta:
+
+```python
+import pandas as pd
+pd.__version___
+```
+
+Esto podría tomar algunos minutos en ejecutarse. Debería mostrar un número de versión, `2.2.3`. Si no es así, consulta con un TA.
+
 Puedes cerrar tu navegador web y luego cerrar el servidor jupyter con `CTRL` + `C`.
 
 ¡Listo! Ya tienes un virtual env de python completo con todos los paquetes tercerizados que necesitarás en el bootcamp.
-
-
-
-## DBeaver
-
-DDescarga e instala [DBeaver](https://dbeaver.io/), una herramienta poderosa, gratuita y de código abierto para conectar con cualquier base de datos, explorar su esquema e incluso **hacer consultas SQL**.
 
 
 ## Docker 🐋
@@ -806,6 +594,142 @@ docker info
 Deberías obtener lo siguiente:
 
 ![](images/docker_info.png)
+
+
+## Configuración de Google Cloud Platform
+
+[Google Cloud](https://cloud.google.com/) es una solución en la nube que utilizarás para desplegar tus productos basados en Machine Learning en producción.
+
+🚨 Si eres estudiante del **Part-Time Bootcamp**, ¡OMITE ESTA SECCIÓN POR AHORA! **Google Cloud** ofrece 300 $ de crédito gratuito durante 3 meses. No querrás activar tu cuenta de Google Cloud demasiado pronto 🙅‍♂️
+
+
+
+### Configuración del proyecto
+
+- Ve a [Google Cloud](https://console.cloud.google.com/) y crea una cuenta si aún no tienes una
+- En Cloud Console, en la lista de proyectos, selecciona o crea un proyecto de Cloud
+
+⚠️ **Importante:** Al crear un proyecto nuevo, verás un campo **Organization**. Déjalo como **"No organization"**. No selecciones ni crees una organización. Elegir una organización aplica restricciones que pueden impedirte utilizar los servicios de Google Cloud durante el bootcamp.
+
+![](images/gcp-create-project.png)
+
+- Asígnale un nombre, por ejemplo, `Wagon Bootcamp`
+- Observa el `ID` que se crea automáticamente para el proyecto, por ejemplo, `wagon-bootcamp-123456`
+
+![](images/gcp_project.png)
+
+ℹ️ Anota el **Project ID** (por ejemplo, `wagon-bootcamp-123456`), que **no** es lo mismo que el nombre del proyecto que elegiste (por ejemplo, `Wagon Bootcamp`). Necesitarás el ID más adelante al ejecutar comandos en la terminal, pero no te preocupes: siempre puedes encontrarlo en Google Cloud.
+
+### Idioma de la cuenta
+
+Para facilitar el seguimiento de las instrucciones durante el bootcamp, abre las preferencias de tu cuenta de Google Cloud:
+
+[https://myaccount.google.com/language](https://myaccount.google.com/language)
+
+Si el *idioma preferido* no es:
+
+- **English**
+- **United States**
+
+Entonces cambia el idioma a inglés:
+
+- Haz clic en el icono del lápiz de edición
+- Selecciona **English**
+- Selecciona **United States**
+- Haz clic en **Select**
+
+### Cuenta de facturación
+
+Ahora vincularás tu cuenta a tu tarjeta de crédito. Este paso es obligatorio; de lo contrario, no podrás utilizar los servicios proporcionados por Google Cloud. No te preocupes: podrás utilizar la mayoría de los servicios de Google Cloud mediante créditos gratuitos durante el bootcamp.
+
+⚠️ En algunos casos, Google puede hacer un cargo en tu tarjeta (de unos 10 €) para verificar que es válida. Desafortunadamente, no se reembolsará una vez aprobada, pero se añadirá como crédito en Google Cloud que podrás utilizar cuando hayas usado o hayan caducado tus créditos gratuitos.
+
+![](images/gcp-billing.png)
+
+- Haz clic en **Billing**
+- Haz clic en **MANAGE BILLING ACCOUNTS**
+- Haz clic en **ADD BILLING ACCOUNT**
+- Ponle un nombre a tu cuenta de facturación, por ejemplo, `My Billing Account`
+- Haz clic en "I have read..." y acepta las condiciones del servicio
+- Haz clic en **CONTINUE**
+- Selecciona el tipo de cuenta: `Individual`
+- Introduce tu nombre y dirección
+
+Deberías ver que tienes un crédito gratuito de "$300 credits over the next 90 days".
+
+- Haz clic en los datos de la tarjeta
+- Introduce los datos de tu tarjeta de crédito
+- Haz clic en **START MY FREE TRIAL**
+
+Una vez hecho esto, verifica que tu cuenta de facturación esté vinculada a tu proyecto de Google Cloud.
+
+- Selecciona tu proyecto
+- Ve a **Billing**
+- Selecciona **LINK A BILLING ACCOUNT**
+- Selecciona `My Billing Account`
+- Haz clic en **SET ACCOUNT**
+
+Ahora deberías ver:
+
+```bash
+Free trial status: $300 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
+```
+
+<details>
+  <summary>👉 Si no tienes una tarjeta de crédito 👈</summary>
+
+Si no tienes una tarjeta de crédito, una alternativa es crear una cuenta de **Revolut**.
+Revolut es una aplicación financiera que te permite crear una tarjeta de crédito virtual vinculada a tu cuenta de facturación del teléfono móvil.
+
+Omite este paso si tienes una tarjeta de crédito y la utilizas para la configuración.
+
+Descarga la aplicación Revolut o visita [revolut](https://www.revolut.com/a-radically-better-account) y sigue los pasos para descargar la aplicación (introduce tu número de teléfono móvil y haz clic en Get Started).
+
+- Abre la aplicación Revolut
+- Introduce tu número de teléfono móvil
+- Introduce el código de verificación recibido por SMS
+- La aplicación te pedirá tu país, dirección, nombre y apellidos, fecha de nacimiento y dirección de correo electrónico
+- La aplicación también te pedirá un selfie y tu profesión
+- La aplicación requerirá una foto de tu documento de identidad o pasaporte
+
+Una vez hecho esto, selecciona el plan estándar (gratuito). No es necesario añadir la tarjeta a Apple Pay, solicitar el envío de una tarjeta física ni añadir dinero.
+
+Ahora tienes una tarjeta virtual que utilizaremos para configurar Google Cloud.
+
+En la vista principal de la aplicación Revolut
+
+- Haz clic en Ready to use
+- Haz clic en la tarjeta
+- Haz clic en Show card details
+- Anota los datos de la tarjeta de crédito virtual y utilízalos para continuar con la configuración de Google Cloud
+
+</details>
+
+<details>
+  <summary>👉 Si recibes un correo de Google que dice "Urgent: your billing account XXXXXX-XXXXXX-XXXXXX has been suspended" 👈</summary>
+
+Esto puede ocurrir especialmente si acabas de configurar una cuenta de Revolut.
+
+- Haz clic en PROCEED TO VERIFICATION
+- Se te pedirá que envíes una foto de tu tarjeta de crédito (solo los últimos 4 dígitos, sin ninguna otra información)
+- Si utilizaste **Revolut**, puedes enviar una captura de pantalla de tu tarjeta de crédito virtual (no olvides eliminar la fecha de caducidad de la captura)
+- Explica que estás asistiendo al bootcamp de Le Wagon, que no tienes una tarjeta de crédito y que acabas de crear una cuenta de Revolut para configurar Google Cloud para el bootcamp mediante una tarjeta de crédito virtual
+
+Puedes recibir una validación o solicitudes de más información en un plazo de 30 minutos.
+
+Una vez completada la verificación, deberías recibir un correo que indique: "Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.".
+
+</details>
+
+### Activación de los servicios de Google Cloud
+
+- Asegúrate de que la facturación esté activada para tu proyecto de Google Cloud
+
+ℹ️ Tienes un **crédito de 300 $** para utilizar en recursos de Google Cloud, más que suficiente para el bootcamp.
+
+- [Activa las API de BigQuery y Compute Engine](https://console.cloud.google.com/flows/enableapi?apiid=bigquery,compute) (Este paso puede tardar unos minutos)
+
+¡Eso es todo para la configuración en el navegador! La configuración de la terminal aparece más adelante en esta guía.
 
 
 
@@ -837,276 +761,64 @@ Si eso no funciona, contacta a un TA.
 </details>
 
 
-## Configuración de Google Cloud Platform
+### Configurar Cloud SDK
 
-[GCP](https://cloud.google.com/) es una solución en la nube que usarás para colocar tus productos basados en Machine Learning en producción.
+- Autentica la CLI de `gcloud` con la cuenta de Google que utilizaste para GCP
 
-🚨 Si estás en el grupo de estudiantes del **Bootcamp de Medio Tiempo**, ¡IGNORA ESTA SECCIÓN POR AHORA! **GCP** ofrece $300 en créditos durante 3 meses, así que no es buena idea activar tu cuenta GCP demasiado pronto 🙅‍♂️
+  
+  ```bash
+  gcloud auth login
+  ```
+  
 
-### Preparación del Proyecto
+- Inicia sesión en tu cuenta de Google en la nueva pestaña que se abrió en tu navegador web
 
-- Ve a [Google Cloud](https://console.cloud.google.com/) y crea una cuenta si aún no tienes una
-- En la consola de Cloud, en la lista de proyectos, selecciona o crea un proyecto Cloud
+- Muestra tu cuenta activa y comprueba que aparece la dirección de correo electrónico que utilizaste para GCP
 
-![](images/gcp-create-project.png)
-- Asígnale un nombre como `Wagon Bootcamp` por ejemplo
-- ❗ Comprueba que el campo _Location_ esté establecido en _No organization_ ❗
-- Verás que se creará un `ID` automáticamente para el proyecto e. g. `wagon-bootcamp-123456`
+  ```bash
+  gcloud auth list
+  ```
 
-![](images/gcp_project.png)
+- Establece tu proyecto actual (reemplaza `PROJECT_ID` por el `ID` de tu proyecto, por ejemplo, `wagon-bootcamp-123456`)
 
-### Idioma de la cuenta
+  ```bash
+  gcloud config set project PROJECT_ID
+  ```
 
-Abre las preferencias en tu cuenta GCP para facilitar el seguimiento de las instrucciones durante el bootcamp:
+- Muestra tu cuenta activa y tu proyecto actual, y comprueba que aparece tu proyecto
 
-https://myaccount.google.com/language
+  ```bash
+  gcloud config list
+  ```
 
-Si el *idioma de preferencia* no es:
-- **English**
-- **United States**
+- Ahora vamos a configurar las credenciales predeterminadas de la aplicación para que tu código Python pueda acceder a GCP:
 
-Cámbialo a inglés:
-- Haz clic en el logo edición (es una lapicera)
-- Selecciona **English**
-- Selecciona **United States**
-- Haz clic en **Select**
+  ```bash
+  gcloud auth application-default login
+  ```
 
-### Cuenta de facturación
+  Esto abrirá una ventana del navegador. Inicia sesión con la misma cuenta de Google que utilizaste para crear tu proyecto de GCP. Tus credenciales se guardarán automáticamente.
 
-Ahora conecta tu cuenta con tu tarjeta de crédito. Este paso es obligatorio para poder usar los servicios que suministra GCP. No te preocupes, podrás utilizar la mayoría de los servicios de GCP por medio de créditos gratuitos durante el bootcamp.
+- Verifiquemos que tus credenciales predeterminadas de la aplicación funcionan:
 
-![](images/gcp-billing.png)
+  ```bash
+  gcloud auth application-default print-access-token
+  ```
 
-- Haz clic en **Billing**
-- Haz clic en **MANAGE BILLING ACCOUNTS**
-- Haz clic en **ADD BILLING ACCOUNT**
-- Asígnale un nombre a tu cuenta de facturación, e. g. `My Billing Account`
-- Haz clic en "I have read..." y acepta los términos de uso
-- Haz clic en **CONTINUE**
-- Selecciona tu tipo de cuenta: `Individual`
-- Agrega tu nombre y dirección
+  Deberías ver una cadena de token larga. Si aparece un error, vuelve a ejecutar `gcloud auth application-default login`.
 
-Verás que tienes créditos gratuitos con un valor de "$300 a utilizar en los próximos 90 días".
+  <details>
+    <summary>Solución de problemas</summary>
 
-- Haz clic en los detalles de la tarjeta
-- Agrega la información de tu tarjeta de crédito
-- Haz clic en **START MY FREE TRIAL**. Esto significa comenzar mi período de prueba.
+  - `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
+    - Asegúrate de que la facturación esté habilitada para tu proyecto de Google Cloud Platform [https://cloud.google.com/billing/docs/how-to/modify-project](https://cloud.google.com/billing/docs/how-to/modify-project)
+  </details>
 
-Cuando termines, verifica que la cuenta de facturación esté conectada con tu proyecto GCP.
+🏁 ¡Has terminado la configuración de GCP!
 
-- Selecciona tu proyecto
-- Ve a **Billing**
-- Selecciona **LINK A BILLING ACCOUNT**
-- Selecciona `My Billing Account`
-- Haz clic en **SET ACCOUNT**
 
-Ahora deberías ver lo siguiente:
 
-```
-Free trial status: $300 credit and 91 days remaining - with a full account, you'll get unlimited access to all of Google Cloud Platform.
-```
-
-Esto significa Estado de período de prueba: crédito de $300 y 91 días para usarlo - con la full account, tendrás acceso ilimitado a todo lo que ofrece Google Cloud Platform.
-
-<details>
-  <summary>👉 Si no tienes una tarjeta de crédito 👈</summary>
-
-
-Si no tienes una tarjeta de crédito, puedes abrir una cuenta en **Revolut**.
-Revolut es una aplicación que funciona como un banco y que te permitirá crear una tarjeta de crédito virtual conectada a la dirección de facturación de tu smartphone.
-
-Ignora este paso si ya tienes una tarjeta de crédito. Simplemente úsala para hacer la configuración.
-
-Descarga la app Revolut o ve a [revolut](https://www.revolut.com/a-radically-better-account) y sigue los pasos para descargar la app (introduce tu número de teléfono móvil y haz clic en Get Started).
-
-- Abre la app Revolut
-- Agrega tu número de teléfono móvil
-- Agrega el código de verificación que recibiste por SMS
-- La app te preguntará por tu país, dirección, primer y segundo nombre, fecha de nacimiento y el email
-- La app también te pedirá tu profesión y una selfie
-- La app te pedirá una foto de tu documento nacional de identidad o pasaporte
-
-Cuando termines, selecciona el plan estándar (gratuito). No tienes que agregar la tarjeta a Apple pay, pedir que te envíen una tarjeta a tu domicilio ni tampoco agregar dinero a la cuenta.
-
-Ahora tienes una tarjeta virtual que podrás usar para hacer la configuración de GCP.
-
-En la vista principal de la app Revolut
-- Haz clic en Ready to use
-- Haz clic en the card
-- Haz clic en Show card details
-- Toma nota de la información de la tarjeta de crédito virtual y úsala para completar la configuración de GCP
-
-</details>
-
-<details>
-  <summary>👉 Si recibes un email de Google diciendo "Urgent: your billing account XXXXXX-XXXXXX-XXXXXX has been suspended" 👈</summary>
-
-
-Esto puede pasar justo después de haber creado la cuenta en Revolut.
-
-- Haz clic en PROCEED TO VERIFICATION
-- Te pedirán que envíes una foto de tu tarjeta de crédito (solo los últimos 4 dígitos, nada más)
-- Si ya has usado **Revolut**, puedes enviar una captura de pantalla de tu tarjeta de crédito virtual (no olvides quitar la fecha de vencimiento de la captura)
-- Explica que estás haciendo el bootcamp de Le Wagon, que no tienes una tarjeta de crédito y que acabas de crear una cuenta en Revolut para poder configurar GCP para el bootcamp con una tarjeta de crédito virtual
-
-Es posible que te validen la cuenta pero también es posible que te pidan más información en los próximos 30 minutos.
-
-Cuando la cuenta sea validada recibirás un email diciendo lo siguiente: "Your Google Cloud Platform billing account XXXXXX-XXXXXX-XXXXXX has been fully reinstated and is ready to use.". Esto significa que tu cuenta Google Cloud Platform ha sido restablecida
-
-</details>
-
-### Habilitación de servicios de GCP
-
-- Asegúrate de que la facturación está habilitada para tu proyecto Google Cloud
-
-ℹ️ Tienes un **crédito de $300** para usar con recursos de Google Cloud. Esto será más que suficiente para el bootcamp.
-
-- [Habilita las APIs BigQuery y Compute Engine](https://console.cloud.google.com/flows/enableapi?apiid=bigquery,compute) (Esto puede tomar varios minutos)
-
-### Configuración de Cloud sdk
-
-- Autentica el CLI de `gcloud` con la cuenta que usaste para GCP
-```bash
-gcloud auth login
-```
-- Inicia sesión en tu cuenta Google en la nueva pestaña que se abrió en tu navegador
-- Lista la cuenta que tienes activa y verifica que el email que usaste para GCP está ahí
-```bash
-gcloud auth list
-```
-- Define tu proyecto actual (reemplaza `PROJECT_ID` con el `ID` de tu proyecto e.g. `wagon-bootcamp-123456`)
-```bash
-gcloud config set project PROJECT_ID
-```
-- Lista la cuenta que tienes activa y tu proyecto actual y verifica que tu proyecto está ahí
-```bash
-gcloud config list
-```
-
-### Crea una llave 🔑 de cuenta de servicio
-
-Como ya creaste una cuenta `GCP account` y un `project` (identificado por su `PROJECT_ID`), vamos a configurar las acciones (llamadas API calls) que quieres que tu código ejecute.
-
-<details>
-  <summary>🤔 ¿Por qué necesitamos una clave de cuenta de servicio?</summary>
-
-
-  Creaste una `cuenta GCP` conectada a una tarjeta de crédito. Te facturarán de acuerdo al uso que les des a los recursos de **Google Cloud Platform**. El cargo se hará si utilizas algo después de que el período de prueba gratuito se haya terminado o si te excedes del límite de consumo que te permite dicho período.
-
-  En tu `cuenta GCP` has creado un solo `proyecto GCP` identificado por su `PROJECT_ID`. Los `proyectos GCP` te permiten organizar y monitorear la manera en que consumes los recursos **GCP** de forma más precisa. En este bootcamp solo crearemos un solo proyecto.
-
-  Ahora necesitamos una manera de saber qué recursos nuestro código podrá consumir dentro de un `GCP project`. Nuestro código consume recursos GCP por medio de llamadas API.
-
-  Ya que las llamadas API no son gratuitas, es importante definir cuidadosamente cómo nuestro código las utilizará. Sin embargo, durante el bootcamp no habrá restricciones. Le permitiremos a nuestro código que utilice todas las API **GCP** sin restricciones.
-
-  Así como pueden haber varios proyectos asociados a una cuenta GCP, un proyecto puede estar compuesto de muchos servicios (cualquier paquete de código, sin importar su formato, que necesite utilizar llamadas a la API de GCP para cumplir con su propósito).
-
-  GCP exige que los servicios de los proyectos que usen llamadas API se registren en la plataforma y que se configuren sus credenciales por medio del acceso concedido a una `service account`.
-
-  Por ahora solo tendremos que usar un solo servicio y crearemos la `service account` correspondiente.
-</details>
-
-Ya que la [service account](https://cloud.google.com/iam/docs/service-accounts) es lo que identifica tu aplicación (y por ende tu cuenta de facturación GCP y, en última instancia, tu tarjeta de crédito), lo mejor es ser cuidadoso en los próximos pasos.
-
-⚠️ **No compartas la 🔑 del archivo json de tu cuenta de servicio** ⚠️ No la guardes en tu escritorio ni en tu código base de git (incluso si tu repositorio git es privado). Que no se te olvide en un lugar como la máquina de café y, por supuesto, no la envíes en un tweet.
-
-- Ve a la [página de las cuentas de servicio](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
-- Selecciona tu proyecto en la lista de proyectos recientes si te piden que
-- Crees una cuenta de servicio:
-  - Haz clic en **CREATE SERVICE ACCOUNT** que significa crear une cuenta de servicio:
-  - Define un `Service account name` para esa cuenta. Esto significa Nombre de cuenta de servicio
-  - Haz clic en **CREATE AND CONTINUE** que significa crear y continuar
-  - Haz clic en **Select a role** que significa selecciona un rol. Escoge `Quick access/Basic` luego **Owner**. Esto  otorga acceso total a todos los recursos
-  - Haz clic en **CONTINUE**
-  - Haz clic en **DONE**
-- Descarga la 🔑 del archivo json de la cuenta de servicio:
-  - Haz clic en la cuenta de servicio recién creada
-  - Haz clic en **KEYS**
-  - Haz clic en **ADD KEY** y luego en **Create new key**
-  - Selecciona **JSON** y haz clic en **CREATE**
-
-![](images/gcp_create_key.png)
-
-El navegador acaba de guardar la 🔑 del archivo json de la cuenta de servicio en tu carpeta de descargas (el nombre se le asigna según el nombre de la cuenta de servicio. Es algo como `le-wagon-data-123456789abc.json`)
-
-
-- Guarda el archivo json de la cuenta de servicio en un lugar que recuerdes. Por ejemplo:
-
-``` bash
-/Users/MACOS_USERNAME/code/GITHUB_NICKNAME/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
-```
-
-- Guarda la **ruta absoluta** al archivo `JSON` como una variable de entorno:
-
-``` bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.zshrc
-```
-**Nota:** cada vez que ejecutes este comando, agregará esta línea a tu archivo zshrc sin importar si la línea ya existe en el archivo. Si cometiste un error y necesitas arreglarlo, es preferible que abras el archivo y edites la línea!
-
-Puedes hacerlo ejecutando
-
-```bash
-code ~/.zshrc
-```
-
-en la Terminal! 😄
-
-
-
-<details>
-  <summary>ℹ️ ¿Cómo encontrar la ruta absoluta de un archivo?</summary>
-  Puedes arrastrar el archivo a tu terminal.
-</details>
-
-**Reinicia** tu terminal y ejecuta lo siguiente:
-
-``` bash
-echo $GOOGLE_APPLICATION_CREDENTIALS
-```
-
-Deberías obtener la siguiente información:
-
-```bash
-/some/absolute/path/to/your/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
-```
-
-Ahora verifica si la ruta al archivo json de tu cuenta de servicio es el correcto:
-
-``` bash
-cat $(echo $GOOGLE_APPLICATION_CREDENTIALS)
-```
-
-👉 Este comando debería mostrar el contenido del archivo json de tu cuenta de servicio. Si no es el caso, pídele ayuda a un TA 🙏
-
-Tu código y utilidades ahora pueden acceder a los recursos de tu cuenta GCP.
-
-Continuemos con los últimos pasos de la configuración...
-
-- Lista las cuentas de servicio asociadas a tu cuenta activa y a tu proyecto actual
-```bash
-gcloud iam service-accounts list
-```
-- Recupera el email de la cuenta de servicio e. g. `SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com`
-- Lista los roles de la cuenta de servicio desde la cli (reemplaza el PROJECT_ID y el SERVICE_ACCOUNT_EMAIL)
-```bash
-gcloud projects get-iam-policy PROJECT_ID \
---flatten="bindings[].members" \
---format='table(bindings.role)' \
---filter="bindings.members:SERVICE_ACCOUNT_EMAIL"
-```
-- Ahora deberías ver que tu cuenta de servicio tiene el rol de `roles/owner`
-
-<details>
-  <summary>Resolución de problemas</summary>
-
-- `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`. Esto significa que el proyecto a facturar está asociado a una cuenta de facturación que no está habilitada
-  - Asegúrate de habilitar la facturación para tu proyecto https://cloud.google.com/billing/docs/how-to/modify-project
-</details>
-
-🏁 Listo. ¡Has terminado la configuración de GCP!
-
-
-  ## Kitt
+## Kitt
 
 Deberías haber recibido un correo electrónico de Le Wagon invitándote a registrarte en [Kitt](https://kitt.lewagon.com) (nuestra plataforma de aprendizaje).
 
