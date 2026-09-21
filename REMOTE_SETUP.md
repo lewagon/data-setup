@@ -680,7 +680,7 @@ You may have an older version of the Le Wagon dotfiles. They could be incompatib
 
 1. Move into your existing dotfiles folder:
    ```bash
-   cd ~/code/$GITHUB_USERNAME/dotifles
+   cd ~/code/$GITHUB_USERNAME/dotfiles
    ```
 
 1. Check the diff against the current version of Le Wagon's dotfiles:
@@ -710,10 +710,12 @@ If there is no meaningful difference other than your name and email setting, con
 
 If you are OK with losing your existing dotfiles (recommended):
 
+Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilites, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
+
 1. Delete your existing dotfiles repository on GitHub.
 1. Delete the local repository:
     ```bash
-    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotifles
+    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotfiles
     ```
 1. Continue with the setup.
 

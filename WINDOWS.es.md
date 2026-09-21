@@ -702,34 +702,8 @@ gh auth status
 
 Mejoremos la experiencia de tu máquina instalando los [dotfiles 🔗](https://github.com/lewagon/dotfiles) preconfigurados de Le Wagon. Son archivos de configuración para tu terminal, zsh, git y VS Code.
 
-### Hacer un fork de los dotfiles
 
-Para personalizar esta configuración, tendrás que hacer un **fork** del repositorio en tu propia cuenta de Github.
-
-Al hacer un **fork**, se crea una copia del repositorio en tu cuenta (`your_github_username/dotfiles`), que luego podrás modificar con tu información personal, como tu nombre.
-
-<details>
-<summary>❗ <strong>Si</strong> ya hiciste otro bootcamp de Le Wagon (<strong>Desarrollo Web, Desarrollo de Software con IA, Análisis de Datos, Ciencia de Datos e IA</strong>), abre esto primero ❗
-</summary>
-
-Es posible que tengas una versión anterior de los dotfiles de Le Wagon. Podrían ser incompatibles con la configuración actual.
-
-
-**Abre un ticket** con un TA y haz una de las siguientes cosas:
-- Compara tus dotfiles existentes con los [dotfiles 🔗](https://github.com/lewagon/dotfiles) actuales de Le Wagon, especialmente `.zshrc`, `.zprofile` y `settings.json`. Si no hay ninguna diferencia significativa aparte de tu nombre y correo electrónico, continúa con la configuración.
-- Si no te importa perder tus dotfiles existentes (recomendado):
-    - Elimina tu repositorio de dotfiles existente en GitHub y continúa con la configuración.
-    - Elimina el repositorio local: `rm -rf ~/code/<your_github_username>/dotifles`.
-- Si no quieres perder tus dotfiles existentes, recomendamos trabajar con ramas:
-    - En tu **portátil**, o donde tengas una copia **local** de **tu versión existente de los dotfiles**.
-    - Crea una rama de tu configuración existente de dotfiles (`git checkout -b old-setup`) y súbela a GitHub: `git push origin old-setup`.
-    - Vuelve a `master`: `git checkout master`.
-    - En la rama local `master`, ejecuta `git pull upstream master`, resuelve los conflictos, ejecuta `git commit -m "merged"` y `git push origin master`. Es importante que aceptes los cambios entrantes en los archivos `.zshrc`, `.zprofile` y `settings.json`.
-    - Continúa con la configuración.
-
-</details>
-
-<br>
+### Obtener tu nombre de usuario de GitHub
 
 Ejecuta el siguiente comando:
 
@@ -738,16 +712,122 @@ export GITHUB_USERNAME=`gh api user | jq -r '.login'`
 echo $GITHUB_USERNAME
 ```
 
-✔️ Deberías ver tu nombre de usuario de Github impreso.
+✔️ Deberías ver tu nombre de usuario de GitHub en la pantalla.
 
 ❌ Si no es así, detente aquí y pide ayuda. Puede haber un problema con el paso anterior (`gh auth`).
 
-Es hora de hacer un fork del repositorio y clonarlo en tu ordenador:
+
+### Crear un fork de los dotfiles
+
+Para personalizar esta configuración, tendrás que crear un **fork** del repositorio en tu propia cuenta de GitHub.
+
+Crear un **fork** genera una copia del repositorio en tu cuenta (`your_github_username/dotfiles`), que luego podrás modificar con tus datos personales, como tu nombre.
+
+<details>
+<summary>❗ <strong>Si ya hiciste otro bootcamp de Le Wagon</strong> (<em>Desarrollo web, Desarrollo de software con IA, Análisis de datos, Ciencia de datos e IA</em>), <strong>abre un ticket con un TA</strong> y abre esta sección para ver las instrucciones ❗
+</summary>
+
+Es posible que tengas una versión antigua de los dotfiles de Le Wagon. Podrían ser incompatibles con la configuración actual.
+
+
+**Junto con un TA**, haz una de las siguientes acciones:
+
+<details>
+<summary>Estoy usando <strong>la misma máquina</strong> (o una máquina nueva que ya tiene los dotfiles).</summary>
+
+1. Ve a tu carpeta actual de dotfiles:
+   ```bash
+   cd ~/code/$GITHUB_USERNAME/dotfiles
+   ```
+
+1. Comprueba las diferencias con la versión actual de los dotfiles de Le Wagon:
+    ```bash
+    git diff upstream/master
+    ```
+
+Si no hay diferencias importantes aparte de tu nombre y correo electrónico, continúa con la configuración.
+
+</details>
+
+<details>
+<summary>Estoy usando <strong>una máquina nueva</strong> sin los dotfiles.</summary>
+
+1. Ve a GitHub y encuentra tu repositorio de `dotfiles`.
+
+1. Comprueba cuántos commits por detrás y por delante está de `lewagon/dotfiles:master`. Puedes verlo justo encima de la lista de archivos.
+
+1. Haz clic en los enlaces de commits por detrás y por delante, y desplázate hacia abajo para ver las diferencias.
+
+Si no hay diferencias importantes aparte de tu nombre y correo electrónico, continúa con la configuración.
+
+</details>
+
+<details>
+<summary>El paso anterior mostró <strong>diferencias importantes</strong>.</summary>
+
+Si estás de acuerdo con perder tus dotfiles actuales (recomendado):
+
+Ten en cuenta que esto eliminará cualquier cambio personal que hayas hecho en la configuración de tu shell, como cargar utilidades adicionales o cambiar su apariencia. Si no recuerdas haber hecho cambios, no debería haber ningún problema.
+
+1. Elimina tu repositorio actual de dotfiles en GitHub.
+1. Elimina el repositorio local:
+    ```bash
+    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotfiles
+    ```
+1. Continúa con la configuración.
+
+<details>
+<summary>Si no quieres perder tus dotfiles actuales, te recomendamos trabajar con ramas. Haz clic para abrir.</summary>
+
+En tu **portátil**, o donde tengas una copia **local** de **tu versión actual de los dotfiles**.
+
+1. Haz commit de tu versión actual de los dotfiles:
+
+    ```bash
+    git add .
+    git status # Comprueba qué se incluirá en el commit
+    git commit -m "Version prior to new setup"
+    ```
+
+1. Crea una rama de tu configuración actual de dotfiles y súbela a GitHub:
+    
+    ```bash
+    git checkout -b old-setup
+    git push origin old-setup
+    ```
+
+1. Vuelve a `master`: `git checkout master`.
+
+1. En tu `master` local, ejecuta `git pull upstream master`.
+
+1. Comprueba que no estés en estado `MERGING`. Si lo estás, resuelve los conflictos.
+    
+    Es importante que aceptes los cambios entrantes en los archivos `.zshrc`, `.zprofile` y `settings.json`, especialmente todo lo relacionado con `pyenv` y los entornos de Python.
+
+    Si hay demasiados conflictos, usa tu editor de código para reemplazar el contenido de los archivos en conflicto por el de los [dotfiles de Le Wagon](https://www.github.com/lewagon/dotfiles).
+
+    Haz commit de la resolución de conflictos: `git commit --no-edit`
+
+1. Sube tus cambios a GitHub: `git push origin master`.
+
+1. Continúa con la configuración.
+
+</details>
+
+</details>
+
+</details>
+
+<br>
+
+Es hora de crear un fork del repositorio y clonarlo en tu ordenador:
 
 ```bash
 mkdir -p ~/code/$GITHUB_USERNAME && cd $_
 gh repo fork lewagon/dotfiles --clone
 ```
+
+Si aparece la pregunta _"Are you sure you want to continue connecting (yes/no/[fingerprint])?"_, escribe `yes` y pulsa `Enter`.
 
 ### Instalar los dotfiles
 
@@ -769,11 +849,11 @@ Ejecuta el instalador de git:
 cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 ```
 
-:point_up: Se te pedirá (**prompt**) tu nombre (`Nombre Apellido`) y tu correo electrónico.
+:point_up: Se te pedirá tu nombre (`FirstName LastName`) y tu correo electrónico.
 
-:warning: **Debes** introducir uno de los correos electrónicos indicados arriba mediante el comando anterior `gh api ...`. Si no lo haces, Kitt no podrá realizar el seguimiento de tu progreso.
+:warning: **Debes** introducir uno de los correos que aparecen arriba, obtenidos con el comando `gh api ...`. Si no lo haces, Kitt no podrá realizar un seguimiento de tu progreso.
 
-💡 Selecciona la dirección `...@users.noreply.github.com` si no quieres que tu correo electrónico aparezca en repositorios públicos a los que contribuyas.
+💡 Selecciona la dirección `...@users.noreply.github.com` si no quieres que tu correo aparezca en repositorios públicos a los que contribuyas.
 
 
 ## direnv
@@ -870,7 +950,7 @@ Este script añade una configuración para mejorar la visualización de los [ele
 
 Si estás usando Windows WSL, también soluciona otros problemas.
 
-- Se asegura de que tu variable BROWSER esté configurada correctamente. Se configuró antes, pero fue sobrescrita por la configuración de dotfiles.
+- Se asegura de que tu navegador esté configurado correctamente. Ya estaba configurado, pero la configuración de dotfiles lo sobrescribió.
 - Soluciona un error conocido en Jupyter Notebook que siempre abre el árbol de directorios, incluso si especificas una ruta de archivo específica.
 
 

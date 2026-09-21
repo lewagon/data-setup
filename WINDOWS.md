@@ -701,7 +701,7 @@ You may have an older version of the Le Wagon dotfiles. They could be incompatib
 
 1. Move into your existing dotfiles folder:
    ```bash
-   cd ~/code/$GITHUB_USERNAME/dotifles
+   cd ~/code/$GITHUB_USERNAME/dotfiles
    ```
 
 1. Check the diff against the current version of Le Wagon's dotfiles:
@@ -731,10 +731,12 @@ If there is no meaningful difference other than your name and email setting, con
 
 If you are OK with losing your existing dotfiles (recommended):
 
+Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilites, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
+
 1. Delete your existing dotfiles repository on GitHub.
 1. Delete the local repository:
     ```bash
-    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotifles
+    cd ~/code && rm -rf ~/code/$GITHUB_USERNAME/dotfiles
     ```
 1. Continue with the setup.
 
@@ -832,7 +834,7 @@ echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
 
 ## Install Python and dependencies
 
-Your operating system - macOS, or Ubuntu (native, or inside WSL) - comes with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and wher you'll be able to switch which version you want to use for each project you work on.
+Your operating system - macOS, or Ubuntu (native, or inside WSL) - comes with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and where you'll be able to switch which version you want to use for each project you work on.
 
 To manage different Python versions and virtual environments (you'll discover what that means during the setup lecture), we will use the state-of-the-art [`uv` created by Astral](https://docs.astral.sh/uv/).
 
@@ -884,7 +886,7 @@ If it doesn't, check with a TA! Do not continue with the next step before you so
 
 ### Install dependencies
 
-Python is great for data, because the communitiy has developed an enormous amount of packages we can re-use.
+Python is great for data, because the community has developed an enormous amount of packages we can re-use.
 
 Let's install the most common ones:
 
@@ -912,7 +914,7 @@ This script adds a configuration to improve the display of the [`details` disclo
 
 If you're using Windows WSL, it also fixes some other problems.
 
-- It makes sure you're BROWSER is configured correctly. It was configured before, but was overwritten by the dotfiles setup.
+- It makes sure you're browser is configured correctly. It was configured before, but was overwritten by the dotfiles setup.
 - It fixes a known bug with Jupyter Notebook always opening the directory tree, even if you specify a specific file path.
 
 
@@ -1110,7 +1112,7 @@ You will now link your account to your credit card. This step is required or you
 - Click on **MANAGE BILLING ACCOUNTS**
 - Click on **ADD BILLING ACCOUNT**
 - Give a name to your billing account, e.g. `My Billing Account`
-- Click on "I have read..." and agree the to the terms of service
+- Click on "I have read..." and agree to the terms of service
 - Click on **CONTINUE**
 - Select your account type: `Individual`
 - Fill your name and address
