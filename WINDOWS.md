@@ -914,7 +914,7 @@ This script adds a configuration to improve the display of the [`details` disclo
 
 If you're using Windows WSL, it also fixes some other problems.
 
-- It makes sure you're browser is configured correctly. It was configured before, but was overwritten by the dotfiles setup.
+- It makes sure your browser is configured correctly. It was configured before, but was overwritten by the dotfiles setup.
 - It fixes a known bug with Jupyter Notebook always opening the directory tree, even if you specify a specific file path.
 
 
