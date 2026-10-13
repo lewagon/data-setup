@@ -149,7 +149,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y curl git imagemagick jq unzip vim zsh tree direnv
+sudo apt install -y curl direnv git imagemagick jq make tree unzip vim zsh
 ```
 
 Estos comandos te pedirán tu contraseña: escríbela.
@@ -604,16 +604,17 @@ Debería aparecer el siguiente mensaje:
 - Ve a [Google Cloud](https://console.cloud.google.com/) y crea una cuenta si aún no tienes una
 - En Cloud Console, en la lista de proyectos, selecciona o crea un proyecto de Cloud
 
-⚠️ **Importante:** Al crear un proyecto nuevo, verás un campo **Organization**. Déjalo como **"No organization"**. No selecciones ni crees una organización. Elegir una organización aplica restricciones que pueden impedirte utilizar los servicios de Google Cloud durante el bootcamp.
+⚠️ **Importante:** Al crear un proyecto nuevo, verás un campo **Parent resource**. Déjalo como **"No organization"**. No selecciones ni crees una organización. Elegir una organización aplica restricciones que pueden impedirte utilizar los servicios de Google Cloud durante el bootcamp. ⚠️
 
 ![](images/gcp-create-project.png)
 
-- Asígnale un nombre, por ejemplo, `Wagon Bootcamp`
-- Observa el `ID` que se crea automáticamente para el proyecto, por ejemplo, `wagon-bootcamp-123456`
+- Asígnale un nombre, por ejemplo, `Wagon Bootcamp`  seguido de tu nombre
+- Asegúrate de dejar **Parent resource** como **"No organization"**
+- Observa el `ID` que se crea automáticamente para el proyecto, por ejemplo, `wagon-bootcamp-tu-nombre-123456`
 
 ![](images/gcp_project.png)
 
-ℹ️ Anota el **Project ID** (por ejemplo, `wagon-bootcamp-123456`), que **no** es lo mismo que el nombre del proyecto que elegiste (por ejemplo, `Wagon Bootcamp`). Necesitarás el ID más adelante al ejecutar comandos en la terminal, pero no te preocupes: siempre puedes encontrarlo en Google Cloud.
+ℹ️ Anota el **Project ID** (por ejemplo, `wagon-bootcamp-tu-nombre-123456`), que **no** es lo mismo que el nombre del proyecto que elegiste (por ejemplo, `Wagon Bootcamp Tu Nombre`). Necesitarás el ID más adelante al ejecutar comandos en la terminal, pero no te preocupes: siempre puedes encontrarlo en Google Cloud.
 
 ### Idioma de la cuenta
 
