@@ -538,119 +538,6 @@ gh auth status
 :x: If not, **contact a teacher**.
 
 
-## Google Cloud CLI
-
-Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
-```bash
-sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get update && sudo apt-get install google-cloud-cli
-```
-👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
-
-### Create a service account key 🔑
-
-**👌 Note: Skip to the next section if you already have a service account key**
-
-Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
-
-<details>
-  <summary>🤔 Why do we need a service account key ?</summary>
-
-
-  You have created a `GCP account` linked to your credit card. Your account will be billed according to your usage of the ressources of the **Google Cloud Platform**. The billing will occur if you consume anything once the free trial is over, or if you exceed the amount of spending allowed during the free trial.
-
-  In your `GCP account`, you have created a single `GCP project`, identified by its `PROJECT_ID`. The `GCP projects` allow you to organize and monitor more precisely how you consume the **GCP** ressources. For the purpose of the bootcamp, we are only going to create a single project.
-
-  Now, we need a way to tell which ressources within a `GCP project` our code will be allowed to consume. Our code consumes GCP ressources through API calls.
-
-  Since API calls are not free, it is important to define with caution how our code will be allowed to use them. During the bootcamp this will not be an issue and we are going to allow our code to use all the API of **GCP** without any restrictions.
-
-  In the same way that there may be several projects associated with a GCP account, a project may be composed of several services (any bundle of code, whatever its form factor, that requires the usage of GCP API calls in order to fulfill its purpose).
-
-  GCP requires that the services of the projects using API calls are registered on the platform and their credentials configured through the access granted to a `service account`.
-
-  For the moment we will only need to use a single service and will create the corresponding `service account`.
-</details>
-
-Since the [service account](https://cloud.google.com/iam/docs/service-accounts) is what identifies your application (and therefore your GCP billing account and ultimately your credit card), you are going to want to be cautious with the next steps.
-
-⚠️ **Do not share you service account json file 🔑** ⚠️ Do not store it on your desktop, do not store it in your git codebase (even if your git repository is private), do not let it by the coffee machine, do not send it as a tweet.
-
-- Go to the [service accounts page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
-- Select your project in the list of recent projects if asked to
-- Create a service account:
-  - Click on **CREATE SERVICE ACCOUNT**:
-  - Give a `Service account name` to that account
-  - Click on **CREATE AND CONTINUE**
-  - Click on **Select a role** and choose `Quick access/Basic` then **Owner**, which gives full access to all ressources
-  - Click on **CONTINUE**
-  - Click on **DONE**
-- Download the service account json file 🔑:
-  - Click on the newly created service account
-  - Click on **KEYS**
-  - Click on **ADD KEY** then **Create new key**
-  - Select **JSON** and click on **CREATE**
-
-![](https://github.com/lewagon/data-engineering-setup/blob/main/images/gcp_create_key.png)
-
-The browser has now saved the service account json file 🔑 in your downloads directory (it is named according to your service account name, something like `le-wagon-data-123456789abc.json`)
-
-
-### Configure Cloud sdk
-
-- Open the service account json file with any text editor and copy the key
-    ```
-    # It looks like:
-    {
-        "type": "service_account",
-        "project_id": "kevin-bootcamp",
-        "private_key_id": "1234567890",
-        "private_key": "-----BEGIN PRIVATE KEY-----\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n-----END PRIVATE KEY-----\n",
-        "client_email": "bootcamp@kevin-bootcamp.iam.gserviceaccount.com",
-        "client_id": "1234567890",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bootcamp%40kevin-bootcamp.iam.gserviceaccount.com"
-    }
-    ```
-- **on your Virtual Machine**, create a `~/.gcp_keys` directory, then create a json file in it:
-    ``` bash
-    mkdir ~/.gcp_keys
-    touch ~/.gcp_keys/le-wagon-de-bootcamp.json
-    ```
-- Open the json file then store the service account json file pasting the key:
-    ```bash
-    code ~/.gcp_keys/le-wagon-de-bootcamp.json
-    ```
-    ![service account json key](https://github.com/lewagon/data-engineering-setup/blob/main/images/service_account_json_key.png)
-
-    ❗️Don't forget to **save** the file with `CMD` + `s` or `CTRL` + `s`
-
-- Authenticate the `gcloud` CLI with the google account you used for GCP
-    ```bash
-    # Replace service_account_name@project_id.iam.gserviceaccount.com with your own
-    SERVICE_ACCOUNT_EMAIL=service_account_name@project_id.iam.gserviceaccount.com
-    KEY_FILE=$HOME/.gcp_keys/le-wagon-de-bootcamp.json
-    gcloud auth activate-service-account $SERVICE_ACCOUNT_EMAIL --key-file=$KEY_FILE
-    ```
-- List your active account and check your email address you used for GCP is present
-    ```bash
-    gcloud auth list
-    ```
-- Set your current project
-    ```bash
-    # Replace `PROJECT_ID` with the `ID` of your project, e.g. `wagon-bootcamp-123456`
-    gcloud config set project PROJECT_ID
-    ```
-- List your active account and current project and check your project is present
-    ```bash
-    gcloud config list
-    ```
-
-
 ## Dotfiles
 
 Let's enhance the experience of your machine by installing Le Wagon's pre-configured [dotfiles 🔗](https://github.com/lewagon/dotfiles). These are configuration files for your terminal, zsh, git, and VS Code.
@@ -821,127 +708,67 @@ Set `zsh` as your default VS Code terminal.
     <img alt="Terminal zsh profile" src="https://github.com/lewagon/data-engineering-setup/blob/main/images/terminal_zsh_profile.png" width=300>
 
 
-## Disable SSH passphrase prompt
+## Install Python and dependencies
 
-You don't want to be asked for your passphrase every time you communicate with a distant repository. So, you need to add the plugin `ssh-agent` to `oh my zsh`:
+Your operating system - macOS, or Ubuntu (native, or inside WSL) - comes with a "system Python". That's a Python version your system depends on. We don't mess around with that one. We're going to do a professional setup of Python where you don't mess up your "system Python" and where you'll be able to switch which version you want to use for each project you work on.
 
-First, open the `.zshrc` file:
+To manage different Python versions and virtual environments (you'll discover what that means during the setup lecture), we will use the state-of-the-art [`uv` created by Astral](https://docs.astral.sh/uv/).
+
+
+### Install `uv`
+
+First, we'll install `uv`:
 
 ```bash
-code ~/.zshrc
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Then:
-- Spot the line starting with `plugins=`
-- Add `ssh-agent` at the end of the plugins list
-
-:heavy_check_mark: Save the `.zshrc` file with `Ctrl` + `S` and close your text editor.
-
-
-### Install `pyenv`
-
-Ubuntu comes with an outdated version of Python that we don't want to use. You might already have installed Anaconda or something else to tinker with Python and Data Science packages. All of this does not really matter as we are going to do a professional setup of Python where you'll be able to switch which version you want to use whenever you type `python` in the terminal.
-
-First let's install `pyenv` with the following Terminal command:
+Next, restart your shell by running this:
 
 ```bash
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 exec zsh
 ```
 
-Let's install some [dependencies](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) needed to build Python from `pyenv`:
+### Create a virtual environment
+
+Next, we'll create a virtual environment (an isolated environment with Python and the dependencies for the bootcamp):
 
 ```bash
-sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev sqlite3 libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-python3-dev
+uv venv ~/.lewagon/venvs/lewagon --python 3.12.9
 ```
 
-### Install Python
-
-Let's install the [latest stable version of Python](https://www.python.org/doc/versions/) supported by Le Wagon's curriculum:
+Now that we created this new virtual environment, let's restart our shell to pick it up (this works thanks to the `lewagon/dotfiles` we installed before):
 
 ```bash
-pyenv install 3.12.9
-```
-
-This command might take a while, this is perfectly normal. Don't hesitate to help other students seated next to you!
-
-<details>
-  <summary>🛠 Troubleshooting `pyenv` not found</summary>
-
-If you encounter an error `Command 'pyenv' not found`: execute the following line:
-
-```bash
-source ~/.zprofile
-```
-
-Then try to install Python again:
-
-```bash
-pyenv install 3.12.9
-```
-
-If `pyenv` is still not found, contact a teacher.
-
-</details>
-<br>
-
-
-OK once this command is complete, we are going to tell the system to use this version of Python **by default**. This is done with:
-
-```bash
-pyenv global 3.12.9
 exec zsh
 ```
 
-To check if this worked, run `python --version`. If you see `3.12.9`, perfect! If not, ask a TA that will help you debug the problem thanks to `pyenv versions` and `type -a python` (`python` should be using the `.pyenv/shims` version first).
-
-
-## Python Virtual Environment
-
-Before we start installing relevant Python packages, we will isolate the setup for the Bootcamp into a **dedicated** virtual environment. We will use a `pyenv` plugin called [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
-
-### Setup a virtualenv
-
-First let's install this plugin:
+Let's check that everything went right. Run this:
 
 ```bash
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-exec zsh
+which python3
 ```
 
-Let's create the virtual environment we are going to use during the whole bootcamp:
-
-```bash
-pyenv virtualenv 3.12.9 lewagon
-```
-
-Let's now set the virtual environment with:
-
-```bash
-pyenv global lewagon
-```
-
-Great! Anytime we'll install Python package, we'll do it in that environment.
-
-
-### Python packages
-
-Now that we have a pristine `lewagon` virtual environment, it's time to install some packages in it.
-
-First, let's upgrade `pip`, the tool to install Python Packages from [pypi.org](https://pypi.org). In the latest terminal where the virtualenv `lewagon` is activated, run:
-
-```bash
-pip install --upgrade pip
-```
-
-Then let's install some packages for the first weeks of the program:
+It should return this:
 
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+/home/your-username/.lewagon/venvs/lewagon/bin/python3
+```
+
+
+If it doesn't, check with a TA! Do not continue with the next step before you solved this!
+
+
+### Install dependencies
+
+Python is great for data, because the community has developed an enormous amount of packages we can re-use.
+
+Let's install the most common ones:
+
+
+``` bash
+uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
 
 
@@ -1072,6 +899,75 @@ docker run hello-world
 The following message should print:
 
 ![](images/docker_hello.png)
+
+
+
+## Google Cloud CLI
+
+### Install `gcloud`
+
+Install the `gcloud` CLI to communicate with [Google Cloud Platform](https://cloud.google.com/) through your terminal:
+```bash
+sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get update && sudo apt-get install google-cloud-cli
+```
+👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
+
+
+### Configure the Google Cloud CLI
+
+- Authenticate the `gcloud` CLI with the google account you used for GCP
+
+  ```bash
+  gcloud auth login
+  ```
+
+- Login to your Google account on the new tab opened in your web browser
+
+- List your active account and check your email address you used for GCP is present
+
+  ```bash
+  gcloud auth list
+  ```
+
+- Set your current project (replace `PROJECT_ID` with the `ID` of your project, e.g. `wagon-bootcamp-123456`)
+
+  ```bash
+  gcloud config set project PROJECT_ID
+  ```
+
+- List your active account and current project and check your project is present
+
+  ```bash
+  gcloud config list
+  ```
+
+- Now let's set up Application Default Credentials so your Python code can access GCP:
+
+  ```bash
+  gcloud auth application-default login
+  ```
+
+  This will open a browser window. Log in with the same Google account you used to create your GCP project. Your credentials will be saved automatically.
+
+- Let's verify your Application Default Credentials are working:
+
+  ```bash
+  gcloud auth application-default print-access-token
+  ```
+
+  You should see a long token string. If you see an error, run `gcloud auth application-default login` again.
+
+  <details>
+    <summary>Troubleshooting</summary>
+
+  - `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
+    - Make sure that billing is enabled for your Google Cloud Platform project [https://cloud.google.com/billing/docs/how-to/modify-project](https://cloud.google.com/billing/docs/how-to/modify-project)
+  </details>
+
+🏁 You are done with the GCP setup!
 
 
 
