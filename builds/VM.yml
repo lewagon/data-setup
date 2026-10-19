@@ -18,17 +18,14 @@ partials:
   - setup/cli_tools
   - setup/oh_my_zsh
   - setup/gh_cli
-  - de_setup/ubuntu_gcloud
-  - de_setup/gcp_setup_linux
   - dotfiles
   - de_setup/zsh_default_terminal
-  - setup/ssh_agent
-  - ubuntu_python
-  - virtualenv
-  - pip
+  - install_python
   - nbextensions
   - python_checkup
   - ubuntu_docker
+  - ubuntu_gcloud
+  - gcp_setup
   - kitt
   - setup/windows_slack
   - setup/slack_settings

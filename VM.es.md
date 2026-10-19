@@ -423,31 +423,6 @@ gh auth status
 :x: De lo contrario, **contacta a un profesor**.
 
 
-## CLI de Google Cloud
-
-Instala la CLI de `gcloud` para comunicar con [Google Cloud Platform](https://cloud.google.com/) a través de la terminal:
-```bash
-sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get update && sudo apt-get install google-cloud-cli
-```
-👉 [Documentación para la instalación](https://cloud.google.com/sdk/docs/install#deb)
-
-
-- Guarda el archivo json de la cuenta de servicio en un lugar que recuerdes. Por ejemplo:
-
-``` bash
-/home/LINUX_USERNAME/code/GITHUB_NICKNAME/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
-```
-
-- Guarda la **ruta absoluta** al archivo `JSON` como una variable de entorno:
-
-``` bash
-echo 'export GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json' >> ~/.aliases
-```
-
-
 ## Dotfiles
 
 Mejoremos la experiencia de tu máquina instalando los [dotfiles 🔗](https://github.com/lewagon/dotfiles) preconfigurados de Le Wagon. Son archivos de configuración para tu terminal, zsh, git y VS Code.
@@ -608,112 +583,67 @@ cd ~/code/$GITHUB_USERNAME/dotfiles && zsh git_setup.sh
 
 
 
-## Desahilitación de la solicitud de SSH passphrase
+## Instalar Python y sus dependencias
 
-No vas a querer que te pidan tu passphrase cada vez que te comuniques con un repositorio remoto. Por eso debes agregarle plugin `ssh-agent` a `oh my zsh`:
+Tu sistema operativo - macOS, o Ubuntu (nativo, o dentro de WSL) - viene con un "Python del sistema". Esa es una versión de Python de la que depende tu sistema. No vamos a tocar esa. Vamos a hacer una configuración profesional de Python en la que no estropees tu "Python del sistema" y en la que podrás cambiar la versión que quieras usar para cada proyecto en el que trabajes.
 
-Primero abre el archivo `.zshrc`:
+Para gestionar diferentes versiones de Python y entornos virtuales (descubrirás qué significa eso durante la clase de configuración), usaremos la herramienta de última generación [`uv` creada por Astral](https://docs.astral.sh/uv/).
+
+
+### Instalar `uv`
+
+Primero, instalaremos `uv`:
 
 ```bash
-code ~/.zshrc
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Luego:
-- Identifica la línea que comienza por `plugins=`
-- Agrega `ssh-agent` al final de la lista de plugins
-
-La lista debería verse de la siguiente manera:
+A continuación, reinicia tu shell ejecutando esto:
 
 ```bash
-plugins=(gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent)
-```
-
-:heavy_check_mark: Guarda el archivo `.zshrc` con `Ctrl` + `S` y cierra tu editor de texto.
-
-
-### Instala `pyenv`
-
-Ubuntu viene con una versión vieja de Python que no queremos usar. Tal vez ya hayas instalado Anaconda u otro programa para utilizar Python y paquetes de Ciencia de Datos. Si es así, no pasa nada ya que haremos una configuración profesional de Python que te permitirá cambiar de versión cuando quieras al escribir `python` en la terminal.
-
-Primero instala `pyenv` con el siguiente comando en la Terminal:
-
-```bash
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 exec zsh
 ```
 
-Instala algunas [dependencias](https://github.com/pyenv/pyenv/wiki/common-build-problems#prerequisites) necesarias para crear Python desde `pyenv`:
+### Crear un entorno virtual
+
+A continuación, crearemos un entorno virtual (un entorno aislado con Python y las dependencias del bootcamp):
 
 ```bash
-sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev sqlite3 libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-python3-dev
+uv venv ~/.lewagon/venvs/lewagon --python 3.12.9
 ```
 
-### Instala Python
-
-Instala la [última versión estable de Python](https://www.python.org/doc/versions/) que sea aceptada en el currículum de Le Wagon:
+Ahora que hemos creado este nuevo entorno virtual, reiniciemos nuestro shell para que lo detecte (esto funciona gracias a los `lewagon/dotfiles` que instalamos antes):
 
 ```bash
-pyenv install 3.12.9
-```
-
-Este comando puede tomar un tiempo en ejecutarse. Esto es completamente normal. ¡No dudes en ayudar a los estudiantes que estén sentados cerca de ti!
-
-OK. Cuando este comando termine de ejecutarse, le diremos al sistema que use esta versión de Python **por defecto**. Esto se hace con:
-
-```bash
-pyenv global 3.12.9
 exec zsh
 ```
 
-Para verificar que esto haya funcionado, ejecuta `python --version`. Si ves `3.12.9`, ¡todo está bien! Si no, pídele ayuda a un TA para resolver el problema por medio de `versiones de pyenv` y `type -a python` (`python` debería estar usando la versión `.pyenv/shims` de primero).
-
-
-## Entorno Virtual de Python
-
-Antes de instalar paquetes de Python, aislaremos la configuración del Bootcamp en un entorno virtual **dedicado**. Usaremos un plugin `pyenv` llamado [`pyenv-virtualenv`](https://github.com/pyenv/pyenv-virtualenv).
-
-### Instala un virtualenv
-
-Primero instala este plugin:
+Comprobemos que todo ha ido bien. Ejecuta esto:
 
 ```bash
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-exec zsh
+which python3
 ```
 
-Crea el entorno virtual que usaremos durante todo el bootcamp:
-
-```bash
-pyenv virtualenv 3.12.9 lewagon
-```
-
-Define el entorno virtual con lo siguiente:
-
-```bash
-pyenv global lewagon
-```
-
-¡Genial! Ahora cada vez que queramos instalar un paquete Python, lo haremos en ese entorno.
-
-
-### Paquetes de Python
-
-Ahora que tenemos el ambiente virtual de `lewagon` adecuado, es hora de instalarle algunos paquetes.
-
-Primero, actualiza `pip`, la herramienta para instalar Paquetes Python desde [pypi.org](https://pypi.org). Ejecuta lo siguiente en la última terminal donde esté activado el virtualenv de `lewagon`:
-
-```bash
-pip install --upgrade pip
-```
-
-Ahora instala algunos paquetes para las primeras semanas del programa:
+Debería devolver esto:
 
 
 ``` bash
-pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
+/home/your-username/.lewagon/venvs/lewagon/bin/python3
+```
+
+
+Si no lo hace, ¡consulta con un TA! No continúes con el siguiente paso hasta que hayas resuelto esto.
+
+
+### Instalar dependencias
+
+Python es genial para datos, porque la comunidad ha desarrollado una enorme cantidad de paquetes que podemos reutilizar.
+
+Instalemos los más comunes:
+
+
+``` bash
+uv pip install -r https://raw.githubusercontent.com/lewagon/data-setup/master/specs/releases/linux.txt
 ```
 
 
@@ -828,6 +758,74 @@ docker run hello-world
 Debería aparecer el siguiente mensaje:
 
 ![](images/docker_hello.png)
+
+
+## CLI de Google Cloud
+
+Instala la CLI de `gcloud` para comunicar con [Google Cloud Platform](https://cloud.google.com/) a través de la terminal:
+```bash
+sudo apt-get update && sudo apt-get install ca-certificates gnupg curl
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get update && sudo apt-get install google-cloud-cli
+```
+👉 [Documentación para la instalación](https://cloud.google.com/sdk/docs/install#deb)
+
+
+### Configurar Cloud SDK
+
+- Autentica la CLI de `gcloud` con la cuenta de Google que utilizaste para GCP
+
+  
+  ```bash
+  gcloud auth login
+  ```
+  
+
+- Inicia sesión en tu cuenta de Google en la nueva pestaña que se abrió en tu navegador web
+
+- Muestra tu cuenta activa y comprueba que aparece la dirección de correo electrónico que utilizaste para GCP
+
+  ```bash
+  gcloud auth list
+  ```
+
+- Establece tu proyecto actual (reemplaza `PROJECT_ID` por el `ID` de tu proyecto, por ejemplo, `wagon-bootcamp-123456`)
+
+  ```bash
+  gcloud config set project PROJECT_ID
+  ```
+
+- Muestra tu cuenta activa y tu proyecto actual, y comprueba que aparece tu proyecto
+
+  ```bash
+  gcloud config list
+  ```
+
+- Ahora vamos a configurar las credenciales predeterminadas de la aplicación para que tu código Python pueda acceder a GCP:
+
+  ```bash
+  gcloud auth application-default login
+  ```
+
+  Esto abrirá una ventana del navegador. Inicia sesión con la misma cuenta de Google que utilizaste para crear tu proyecto de GCP. Tus credenciales se guardarán automáticamente.
+
+- Verifiquemos que tus credenciales predeterminadas de la aplicación funcionan:
+
+  ```bash
+  gcloud auth application-default print-access-token
+  ```
+
+  Deberías ver una cadena de token larga. Si aparece un error, vuelve a ejecutar `gcloud auth application-default login`.
+
+  <details>
+    <summary>Solución de problemas</summary>
+
+  - `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
+    - Asegúrate de que la facturación esté habilitada para tu proyecto de Google Cloud Platform [https://cloud.google.com/billing/docs/how-to/modify-project](https://cloud.google.com/billing/docs/how-to/modify-project)
+  </details>
+
+🏁 ¡Has terminado la configuración de GCP!
 
 
 
