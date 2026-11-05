@@ -578,7 +578,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install -y curl direnv git imagemagick jq make tree unzip vim zsh
+sudo apt install -y curl direnv git imagemagick jq make sqlite3 tree unzip vim zsh
 ```
 
 Estos comandos te pedirán tu contraseña: escríbela.
