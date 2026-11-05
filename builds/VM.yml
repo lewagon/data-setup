@@ -15,7 +15,7 @@ partials:
       vm_hostname: ds-bootcamp-vm
   - vscode_extensions
   - setup/vscode_aifeatures
-  - setup/cli_tools
+  - cli_tools
   - setup/oh_my_zsh
   - setup/gh_cli
   - dotfiles

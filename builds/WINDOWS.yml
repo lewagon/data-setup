@@ -12,7 +12,7 @@ partials:
   - setup/windows_terminal
   - vscode_extensions
   - setup/vscode_aifeatures
-  - setup/cli_tools
+  - cli_tools
   - setup/oh_my_zsh
   - windows_browser
   - setup/gh_cli
