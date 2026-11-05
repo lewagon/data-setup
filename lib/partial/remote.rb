@@ -15,8 +15,10 @@ module Partial
       @vars     = vars
     end
 
+    MAX_ATTEMPTS = 5
+
     def content
-      text = URI.open(@url).read
+      text = fetch
       # Rewrite relative image paths to absolute GitHub URLs so they render outside their source repo
       text.scan(/\!\[.*\]\((.*)\)/).flatten
           .reject { |ip| ip.start_with?('http') }
@@ -24,6 +26,27 @@ module Partial
       text.scan(/src="(images\/.*)"/).flatten
           .each   { |ip| text.gsub!(ip, "#{@base_url}/#{ip}") }
       text
+    end
+
+    private
+
+    # raw.githubusercontent.com intermittently answers concurrent requests with
+    # 5xx errors (e.g. "501 First fragment: Transfer-Encoding not supported"),
+    # so retry transient failures with exponential backoff
+    def fetch
+      attempt = 0
+      begin
+        attempt += 1
+        URI.open(@url).read
+      rescue OpenURI::HTTPError, SocketError, Timeout::Error, SystemCallError, OpenSSL::SSL::SSLError => e
+        status = e.respond_to?(:io) ? e.io.status.first.to_i : nil
+        transient = status.nil? || status == 429 || status >= 500
+        raise unless transient && attempt < MAX_ATTEMPTS
+
+        warn "retrying #{@url} (attempt #{attempt} of #{MAX_ATTEMPTS} failed): #{e.message}"
+        sleep(2**attempt)
+        retry
+      end
     end
   end
 end
