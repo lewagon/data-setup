@@ -349,7 +349,7 @@ If there is no meaningful difference other than your name and email setting, con
 
 If you are OK with losing your existing dotfiles (recommended):
 
-Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilites, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
+Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilities, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
 
 1. Delete your existing dotfiles repository on GitHub.
 1. Delete the local repository:
@@ -386,7 +386,7 @@ On your **laptop**, or wherever you have a **local** copy of **your existing ver
     
     It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files. Especially anything related to `pyenv` and to Python environments.
 
-    If there are too many conficts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
+    If there are too many conflicts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
 
     Commit your conflict resolution: `git commit --no-edit`
 
