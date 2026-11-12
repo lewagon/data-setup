@@ -1,6 +1,7 @@
 # WSL only - This fixes the case where the tree is opened instead of a specified file
 # This needs to go into ~/.jupyter/jupyter_notebook_config.py
 
+import os
 import sys
 
 # Extract the requested filename from command-line arguments
@@ -15,5 +16,6 @@ if target_file:
     c.JupyterNotebookApp.default_url = f"/notebooks/{target_file}"
 
 # Keep your WSL browser routing intact
-c.ServerApp.browser = '/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe %s'
+BROWSER_PATH = os.environ.get('BROWSER').replace(' ', '\ ')
+c.ServerApp.browser = f'{BROWSER_PATH} %s'
 c.ServerApp.use_redirect_file = False
