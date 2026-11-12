@@ -133,7 +133,7 @@ You should see something similar to the following even though multiple formats e
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG8ToZnCWvZkjqw6ueq3RRWSGtGE6DE+VODZQEHibYMY alexdev@gmail.com
 ```
 
-Fetch the alias provided to you by Le Wagon. The alias contains random pet names separated by dashes, for exampe `actual-macaque-5115d600`. If you cannot find it, ask a teacher for help 🙋
+Fetch the alias provided to you by Le Wagon. The alias contains random pet names separated by dashes, for example `actual-macaque-5115d600`. If you cannot find it, ask a teacher for help 🙋
 
 Now let's register your SSH key:
 - Go to https://github.com/lewagon/remote-setup/issues
@@ -710,7 +710,7 @@ If there is no meaningful difference other than your name and email setting, con
 
 If you are OK with losing your existing dotfiles (recommended):
 
-Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilites, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
+Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilities, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
 
 1. Delete your existing dotfiles repository on GitHub.
 1. Delete the local repository:
@@ -747,7 +747,7 @@ On your **laptop**, or wherever you have a **local** copy of **your existing ver
     
     It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files. Especially anything related to `pyenv` and to Python environments.
 
-    If there are too many conficts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
+    If there are too many conflicts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
 
     Commit your conflict resolution: `git commit --no-edit`
 

@@ -261,7 +261,7 @@ If the Ubuntu installation did not resume, try it again:
 </summary>
 
 
-If you are running Windows 10, let's install Ubuntu throught the Microsoft Store:
+If you are running Windows 10, let's install Ubuntu through the Microsoft Store:
 
 - Click on `Start`
 - Type  `Microsoft Store`
@@ -737,7 +737,7 @@ If there is no meaningful difference other than your name and email setting, con
 
 If you are OK with losing your existing dotfiles (recommended):
 
-Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilites, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
+Be aware that this will remove any personal changes you made to your shell configuration, like loading extra utilities, or changing the look and feel of your shell. If you're not aware of any changes you made yourself, this should be fine.
 
 1. Delete your existing dotfiles repository on GitHub.
 1. Delete the local repository:
@@ -774,7 +774,7 @@ On your **laptop**, or wherever you have a **local** copy of **your existing ver
     
     It is important that you accept incoming changes to the `.zshrc`, `.zprofile`, and `settings.json` files. Especially anything related to `pyenv` and to Python environments.
 
-    If there are too many conficts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
+    If there are too many conflicts, use your code editor to replace the contents of the conflicting files with the ones from [the Le Wagon dotfiles](https://www.github.com/lewagon/dotfiles).
 
     Commit your conflict resolution: `git commit --no-edit`
 
@@ -1315,7 +1315,7 @@ We need an easy way to transfer files from Windows to Ubuntu and vice versa.
 In order to do that, let's create shortcuts to Ubuntu directories in the Windows **File Explorer**:
 - Open the Windows File Explorer (or use the shortcut `WIN` + `E`)
 - In the Address Bar, enter `\\wsl$\` (or `\\wsl$\Ubuntu` if it does not work)
-- You now have acces to the Ubuntu file system
+- You now have access to the Ubuntu file system
 - Dive into the Ubuntu file system in order to look for directories of interest
 - Drag the desired folders into the Address Bar in order to create shortcuts
 
